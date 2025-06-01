@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
@@ -12,7 +11,7 @@ const Index = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-2">
-                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto object-fill" />
+                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-12 w-auto object-fill" />
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -55,22 +54,22 @@ const Index = () => {
                 WALLOP!
               </div>
               <div className="space-y-6">
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+                <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                  <span className="text-gray-900">
                     Cloud Labs,
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">
+                  <span className="text-gray-900">
                     Virtual Desktops
                   </span>
                   <br />
                   <span className="text-gray-900">& High-Performance</span>
                   <br />
-                  <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+                  <span className="text-gray-900">
                     VPS
                   </span>
                   <br />
-                  <span className="text-gray-700 text-3xl lg:text-4xl font-normal">
+                  <span className="bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent text-3xl lg:text-4xl font-normal">
                     All in One Platform
                   </span>
                 </h1>
