@@ -1,23 +1,16 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-2">
-                <img 
-                  src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" 
-                  alt="CloudAdda Logo" 
-                  className="h-8 w-auto"
-                />
-                <span className="font-bold text-xl text-gray-900">CloudAdda</span>
+                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
+                
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -78,11 +71,7 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/6df3b19a-2c57-45c8-89b1-a0f0e58db9ab.png" 
-                alt="3D illustration of a person with laptop and lightbulb idea" 
-                className="w-full max-w-lg mx-auto"
-              />
+              <img src="/lovable-uploads/6df3b19a-2c57-45c8-89b1-a0f0e58db9ab.png" alt="3D illustration of a person with laptop and lightbulb idea" className="w-full max-w-lg mx-auto" />
             </div>
           </div>
         </div>
@@ -196,9 +185,7 @@ const Index = () => {
               
               <div className="flex items-center space-x-2">
                 <div className="flex text-yellow-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-current" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
                 </div>
                 <span className="text-gray-600">"Easy to use, quick to spin up environments!"</span>
               </div>
@@ -346,11 +333,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <img 
-                  src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" 
-                  alt="CloudAdda Logo" 
-                  className="h-8 w-auto"
-                />
+                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
                 <span className="font-bold text-xl">CloudAdda</span>
               </div>
               <p className="text-gray-400">
@@ -398,8 +381,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
