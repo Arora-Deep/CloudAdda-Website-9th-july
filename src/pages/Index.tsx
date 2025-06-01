@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
@@ -81,18 +80,11 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="w-96 h-96 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-64 h-64 bg-white rounded-full opacity-10"></div>
-                </div>
-                <div className="absolute top-8 right-8 w-4 h-4 bg-red-500 rounded-full"></div>
-                <div className="absolute bottom-16 right-16 w-8 h-8 bg-red-500 rounded-full opacity-60"></div>
-                <div className="absolute bottom-20 left-8">
-                  <div className="bg-white rounded-lg p-3 shadow-lg">
-                    <div className="text-xs text-gray-600">👋 Welcome to CloudShare! 🚀</div>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/lovable-uploads/6df3b19a-2c57-45c8-89b1-a0f0e58db9ab.png" 
+                alt="3D illustration of a person with laptop and lightbulb idea" 
+                className="w-full max-w-lg mx-auto"
+              />
             </div>
           </div>
         </div>
@@ -103,7 +95,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-2xl mb-8">
-              <span className="text-purple-300">njoyable...</span> User-friendly, <span className="text-purple-300">Scalable</span>, C<span className="text-purple-300">ost-effective</span>
+              <span className="text-purple-300">Enjoyable...</span> User-friendly, <span className="text-purple-300">Scalable</span>, Cost-effective
             </h2>
             <h3 className="text-3xl font-normal mb-8">If your training looks like this...</h3>
             
