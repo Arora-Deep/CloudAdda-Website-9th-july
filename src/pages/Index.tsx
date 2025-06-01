@@ -8,10 +8,10 @@ const Index = () => {
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
               <div className="flex items-center space-x-2">
-                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-12 w-auto object-fill" />
+                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -53,23 +53,18 @@ const Index = () => {
                 <span className="bg-pink-500 w-2 h-2 rounded-full inline-block mr-2"></span>
                 WALLOP!
               </div>
-              <div className="space-y-6">
-                <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                  <span className="text-gray-900">
+              <div className="space-y-8">
+                <h1 className="leading-tight">
+                  <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-2">
                     Cloud Labs,
                   </span>
-                  <br />
-                  <span className="text-gray-900">
+                  <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-2">
                     Virtual Desktops
                   </span>
-                  <br />
-                  <span className="text-gray-900">& High-Performance</span>
-                  <br />
-                  <span className="text-gray-900">
-                    VPS
+                  <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-4">
+                    & High-Performance VPS
                   </span>
-                  <br />
-                  <span className="bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent text-3xl lg:text-4xl font-normal">
+                  <span className="bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent text-4xl lg:text-5xl font-bold block">
                     All in One Platform
                   </span>
                 </h1>
