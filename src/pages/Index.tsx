@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
@@ -11,10 +12,12 @@ const Index = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
-                  <div className="w-4 h-4 bg-white rounded-full"></div>
-                </div>
-                <span className="font-bold text-xl text-gray-900">cloudshare</span>
+                <img 
+                  src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" 
+                  alt="CloudAdda Logo" 
+                  className="h-8 w-auto"
+                />
+                <span className="font-bold text-xl text-gray-900">CloudAdda</span>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -58,18 +61,13 @@ const Index = () => {
               </div>
               <div className="space-y-6">
                 <h1 className="text-5xl lg:text-6xl font-normal text-gray-900 leading-tight">
-                  Create <span className="text-purple-600 font-bold">HIGH IMPACT</span>
+                  <span className="text-purple-600 font-bold">Cloud Labs, Virtual Desktops &amp; High-Performance VPS</span>
                   <br />
-                  Virtual Training & Demos In
-                  <br />
-                  Less Time Than It Takes To
-                  <br />
-                  Finish Your Coffee
+                  All in One Platform
                 </h1>
                 <p className="text-lg text-gray-600 max-w-lg">
-                  CloudShare gives you a brilliantly simple virtual hands-on
-                  lab to create compelling software product experiences that
-                  WOW your users.
+                  High-performance cloud built for training providers, remote teams, 
+                  and developers who demand more.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -348,10 +346,12 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
-                  <div className="w-4 h-4 bg-white rounded-full"></div>
-                </div>
-                <span className="font-bold text-xl">cloudshare</span>
+                <img 
+                  src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" 
+                  alt="CloudAdda Logo" 
+                  className="h-8 w-auto"
+                />
+                <span className="font-bold text-xl">CloudAdda</span>
               </div>
               <p className="text-gray-400">
                 Empowering organizations with virtual IT environments for training, demos, and development.
@@ -390,7 +390,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">© 2024 CloudShare. All rights reserved.</p>
+            <p className="text-gray-400">© 2024 CloudAdda. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
