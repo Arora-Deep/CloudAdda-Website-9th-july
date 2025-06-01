@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3 } from "lucide-react";
+import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
 
 const Index = () => {
   return (
@@ -12,20 +12,36 @@ const Index = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-2">
-                <Cloud className="h-8 w-8 text-blue-600" />
-                <span className="font-bold text-xl text-gray-900">CloudShare</span>
+                <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
+                  <div className="w-4 h-4 bg-white rounded-full"></div>
+                </div>
+                <span className="font-bold text-xl text-gray-900">cloudshare</span>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Solutions</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Products</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Resources</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Pricing</a>
-              <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50">
-                Sign In
+              <a href="#" className="text-gray-700 hover:text-red-500 transition-colors">Product</a>
+              <div className="relative group">
+                <a href="#" className="text-gray-700 hover:text-red-500 transition-colors flex items-center">
+                  Solutions <span className="ml-1">▼</span>
+                </a>
+              </div>
+              <div className="relative group">
+                <a href="#" className="text-gray-700 hover:text-red-500 transition-colors flex items-center">
+                  Resources <span className="ml-1">▼</span>
+                </a>
+              </div>
+              <div className="relative group">
+                <a href="#" className="text-gray-700 hover:text-red-500 transition-colors flex items-center">
+                  About Us <span className="ml-1">▼</span>
+                </a>
+              </div>
+              <a href="#" className="text-gray-700 hover:text-red-500 transition-colors">Pricing</a>
+              <Button variant="ghost" className="text-red-500 hover:text-red-600">
+                Log In
               </Button>
-              <Button className="bg-blue-600 hover:bg-blue-700">
-                Get Started
+              <Button className="bg-red-500 hover:bg-red-600 text-white rounded-full px-6">
+                Book a demo
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -33,66 +49,47 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 pt-20 pb-32">
+      <section className="bg-white pt-16 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Virtual IT Labs
-                  <span className="block text-blue-600">Made Simple</span>
+              <div className="bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full inline-block">
+                <span className="bg-pink-500 w-2 h-2 rounded-full inline-block mr-2"></span>
+                WALLOP!
+              </div>
+              <div className="space-y-6">
+                <h1 className="text-5xl lg:text-6xl font-normal text-gray-900 leading-tight">
+                  Create <span className="text-purple-600 font-bold">HIGH IMPACT</span>
+                  <br />
+                  Virtual Training & Demos In
+                  <br />
+                  Less Time Than It Takes To
+                  <br />
+                  Finish Your Coffee
                 </h1>
-                <p className="text-xl text-gray-600 max-w-lg">
-                  Deliver hands-on IT training, demos, and proof-of-concepts with cloud-based virtual environments that work anywhere, anytime.
+                <p className="text-lg text-gray-600 max-w-lg">
+                  CloudShare gives you a brilliantly simple virtual hands-on
+                  lab to create compelling software product experiences that
+                  WOW your users.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">
-                  Start Free Trial
+                <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white text-lg px-8 py-4 rounded-full">
+                  Book a demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-2">
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch Demo
-                </Button>
-              </div>
-              <div className="flex items-center space-x-8 text-sm text-gray-600">
-                <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  No credit card required
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  Setup in minutes
-                </div>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 transform rotate-3 shadow-2xl">
-                <div className="bg-white rounded-lg p-6 transform -rotate-3">
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-semibold text-gray-900">Virtual Lab Environment</h3>
-                      <div className="flex space-x-2">
-                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-3 gap-3">
-                      <div className="bg-blue-100 p-3 rounded-lg text-center">
-                        <Cloud className="h-6 w-6 text-blue-600 mx-auto mb-1" />
-                        <div className="text-xs font-medium">Server 1</div>
-                      </div>
-                      <div className="bg-green-100 p-3 rounded-lg text-center">
-                        <Settings className="h-6 w-6 text-green-600 mx-auto mb-1" />
-                        <div className="text-xs font-medium">Config</div>
-                      </div>
-                      <div className="bg-purple-100 p-3 rounded-lg text-center">
-                        <BarChart3 className="h-6 w-6 text-purple-600 mx-auto mb-1" />
-                        <div className="text-xs font-medium">Monitor</div>
-                      </div>
-                    </div>
+              <div className="w-96 h-96 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-64 h-64 bg-white rounded-full opacity-10"></div>
+                </div>
+                <div className="absolute top-8 right-8 w-4 h-4 bg-red-500 rounded-full"></div>
+                <div className="absolute bottom-16 right-16 w-8 h-8 bg-red-500 rounded-full opacity-60"></div>
+                <div className="absolute bottom-20 left-8">
+                  <div className="bg-white rounded-lg p-3 shadow-lg">
+                    <div className="text-xs text-gray-600">👋 Welcome to CloudShare! 🚀</div>
                   </div>
                 </div>
               </div>
@@ -101,144 +98,168 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-white">
+      {/* Value Proposition Section */}
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-purple-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose CloudShare?
+            <h2 className="text-2xl mb-8">
+              <span className="text-purple-300">njoyable...</span> User-friendly, <span className="text-purple-300">Scalable</span>, C<span className="text-purple-300">ost-effective</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Empower your team with instant access to virtual IT environments that scale with your needs
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="h-8 w-8 text-blue-600" />
-                </div>
-                <CardTitle className="text-xl">Instant Deployment</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <CardDescription className="text-base">
-                  Launch fully configured virtual environments in seconds. No complex setup or infrastructure management required.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-green-600" />
-                </div>
-                <CardTitle className="text-xl">Collaborative Learning</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <CardDescription className="text-base">
-                  Enable team training with shared environments. Multiple users can access the same lab simultaneously.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-purple-600" />
-                </div>
-                <CardTitle className="text-xl">Enterprise Security</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <CardDescription className="text-base">
-                  Bank-grade security with isolated environments, encryption, and compliance with industry standards.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <h3 className="text-3xl font-normal mb-8">If your training looks like this...</h3>
+            
+            <div className="grid md:grid-cols-3 gap-8 text-center mb-12">
+              <div>
+                <h4 className="font-semibold mb-2">You're still rolling out training the old school way</h4>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">It's hard to get learners to participate</h4>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">You can't get more budget because you can't prove ROI</h4>
+              </div>
+            </div>
+            
+            <h3 className="text-3xl font-normal">...we can help you fix it</h3>
           </div>
         </div>
       </section>
 
-      {/* Solutions Section */}
+      {/* Solutions Cards Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
+            <div className="space-y-8">
+              <div className="w-64 h-64 bg-gray-100 rounded-full relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-32 h-32 bg-purple-100 rounded-full"></div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-3xl font-bold text-gray-900">Virtual Training</h3>
+                <p className="text-gray-600">
+                  Deliver engaging, hands-on self-paced and virtual instructor-led
+                  training every time with CloudShare's training solutions
+                </p>
+                <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6">
+                  Learn more
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+            
+            <div className="space-y-8">
+              <div className="w-64 h-64 bg-gray-100 rounded-full relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-32 h-32 bg-purple-100 rounded-full"></div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-3xl font-bold text-gray-900">Sales Demos & POCs</h3>
+                <p className="text-gray-600">
+                  Take that first impression to the next level and deliver engaging virtual
+                  sales demos and POCs in the cloud.
+                </p>
+                <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6">
+                  Learn more
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fast Setup Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
+              <div className="text-sm text-purple-600 font-semibold uppercase tracking-wide">FAST SETUP</div>
+              <h2 className="text-4xl font-bold text-gray-900">
+                Spin up interactive software experiences in a flash
+              </h2>
+              <p className="text-gray-600">
+                Create or clone environments in minutes to mimic real world experiences for demos,
+                POCs, and training. No code required - all you need is your web browser (and the
+                internet, obviously).
+              </p>
+              
               <div className="space-y-4">
-                <h2 className="text-4xl font-bold text-gray-900">
-                  Perfect for IT Training & Development
-                </h2>
-                <p className="text-lg text-gray-600">
-                  Whether you're training new employees, conducting product demos, or testing new configurations, CloudShare provides the perfect virtual environment.
-                </p>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-3"></div>
+                  <p className="text-gray-700">Start fast with customizable templates.</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-3"></div>
+                  <p className="text-gray-700">Duplicate environments with just a click.</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-3"></div>
+                  <p className="text-gray-700">Cloud-agnostic setup.</p>
+                </div>
               </div>
               
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Hands-on Training</h3>
-                    <p className="text-gray-600">Create realistic training scenarios with pre-configured software and realistic data sets.</p>
+              <p className="text-gray-600">
+                Easily build complex networking between environments to deliver the exact scenario for
+                your users.
+              </p>
+              
+              <div className="flex items-center space-x-2">
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-current" />
+                  ))}
+                </div>
+                <span className="text-gray-600">"Easy to use, quick to spin up environments!"</span>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="bg-white rounded-lg shadow-lg p-6">
+                <div className="space-y-4">
+                  <div className="bg-gray-100 rounded-lg p-4">
+                    <div className="text-sm font-medium text-gray-900">CloudShare Environment</div>
+                    <div className="text-xs text-gray-600 mt-1">Spinning up...</div>
                   </div>
                 </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Product Demonstrations</h3>
-                    <p className="text-gray-600">Showcase your solutions with live, interactive demos that prospects can explore themselves.</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Development & Testing</h3>
-                    <p className="text-gray-600">Spin up development environments quickly for testing new features and configurations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hands-on Experience Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="bg-white rounded-lg shadow-lg p-6">
+                <div className="space-y-4">
+                  <div className="bg-gray-100 rounded-lg p-4">
+                    <div className="text-sm font-medium text-gray-900">Welcome</div>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-gray-900">Active Lab Sessions</h3>
-                    <Globe className="h-6 w-6 text-blue-600" />
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
-                      <div>
-                        <div className="font-medium text-gray-900">Windows Server Lab</div>
-                        <div className="text-sm text-gray-600">12 active users</div>
-                      </div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    </div>
-                    
-                    <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
-                      <div>
-                        <div className="font-medium text-gray-900">Azure Training Environment</div>
-                        <div className="text-sm text-gray-600">8 active users</div>
-                      </div>
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                    </div>
-                    
-                    <div className="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
-                      <div>
-                        <div className="font-medium text-gray-900">Security Demo</div>
-                        <div className="text-sm text-gray-600">3 active users</div>
-                      </div>
-                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    </div>
-                  </div>
+            <div className="space-y-8">
+              <div className="text-sm text-purple-600 font-semibold uppercase tracking-wide">HANDS-ON EXPERIENCES</div>
+              <h2 className="text-4xl font-bold text-gray-900">
+                Our "play and break" philosophy
+              </h2>
+              <p className="text-gray-600">
+                Take people from "Hmm" to "Aha!" with interactive replicas of your product. And if they
+                break something? There's a handy reset button to start over.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-3"></div>
+                  <p className="text-gray-700">Train people in risk-free, hands-on environments.</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-3"></div>
+                  <p className="text-gray-700">Interact with learners in virtual classes.</p>
                 </div>
               </div>
             </div>
@@ -246,22 +267,85 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Transform Your IT Training?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of organizations using CloudShare to deliver exceptional virtual IT experiences.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
-              Start Free Trial
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4">
-              Contact Sales
-            </Button>
+      {/* Stats Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-sm text-gray-600 mb-2">Globally Recognised</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">1M+</div>
+              <div className="text-sm text-gray-600">Happy & productive users worldwide</div>
+            </div>
+            <div>
+              <div className="text-sm text-gray-600 mb-2">Sales Enablement</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">311%</div>
+              <div className="text-sm text-gray-600">Increase in POC buyer engagement</div>
+            </div>
+            <div>
+              <div className="text-sm text-gray-600 mb-2">Virtual Training</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">365%</div>
+              <div className="text-sm text-gray-600">Higher course completion rate</div>
+            </div>
+            <div>
+              <div className="text-sm text-gray-600 mb-2">Net Promoter Score</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">>50 NPS</div>
+              <div className="text-sm text-gray-600">Customers that work with us, stay with us</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resources Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Want to learn more?</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="p-0">
+                <div className="h-48 bg-gradient-to-br from-purple-600 to-blue-600 rounded-t-lg relative">
+                  <div className="absolute top-4 right-4 bg-white text-xs px-2 py-1 rounded">eBooks</div>
+                  <div className="p-6 text-white">
+                    <h3 className="text-xl font-bold mb-2">Virtual Hands-on Labs:</h3>
+                    <h4 className="text-lg font-bold">A Strategic Buyer's Guide</h4>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="text-sm text-purple-600 uppercase tracking-wide mb-2">VIRTUAL TRAINING</div>
+                <h4 className="font-semibold text-gray-900">Virtual Hands-On Labs: A Strategic Buyer's Guide</h4>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="p-0">
+                <div className="h-48 bg-gradient-to-br from-purple-600 to-purple-800 rounded-t-lg relative">
+                  <div className="absolute top-4 right-4 bg-white text-xs px-2 py-1 rounded">eBooks</div>
+                  <div className="p-6 text-white">
+                    <h3 className="text-6xl font-bold mb-2">10</h3>
+                    <h4 className="text-lg">Top Training Tips For Cyber C&I Leaders</h4>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="text-sm text-purple-600 uppercase tracking-wide mb-2">VIRTUAL TRAINING</div>
+                <h4 className="font-semibold text-gray-900">Expert Insights: Inside Track Cyber Training</h4>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="p-0">
+                <div className="h-48 bg-gray-800 rounded-t-lg relative">
+                  <div className="absolute top-4 right-4 bg-white text-xs px-2 py-1 rounded">Videos</div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="text-sm text-purple-600 uppercase tracking-wide mb-2">CYBER SECURITY</div>
+                <h4 className="font-semibold text-gray-900">How CloudShare Transformed Technical Training for Thales</h4>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -272,8 +356,10 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <Cloud className="h-8 w-8 text-blue-400" />
-                <span className="font-bold text-xl">CloudShare</span>
+                <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
+                  <div className="w-4 h-4 bg-white rounded-full"></div>
+                </div>
+                <span className="font-bold text-xl">cloudshare</span>
               </div>
               <p className="text-gray-400">
                 Empowering organizations with virtual IT environments for training, demos, and development.
