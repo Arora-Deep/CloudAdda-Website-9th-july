@@ -1,8 +1,11 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
+
 const Index = () => {
-  return <div className="min-h-screen bg-white">
+  return (
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,7 +13,6 @@ const Index = () => {
             <div className="flex items-center">
               <div className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto object-fill" />
-                
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -53,18 +55,32 @@ const Index = () => {
                 WALLOP!
               </div>
               <div className="space-y-6">
-                <h1 className="text-5xl lg:text-6xl font-normal text-gray-900 leading-tight">
-                  <span className="text-purple-600 font-bold">Cloud Labs, Virtual Desktops &amp; High-Performance VPS</span>
+                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+                    Cloud Labs,
+                  </span>
                   <br />
-                  All in One Platform
+                  <span className="bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">
+                    Virtual Desktops
+                  </span>
+                  <br />
+                  <span className="text-gray-900">& High-Performance</span>
+                  <br />
+                  <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+                    VPS
+                  </span>
+                  <br />
+                  <span className="text-gray-700 text-3xl lg:text-4xl font-normal">
+                    All in One Platform
+                  </span>
                 </h1>
-                <p className="text-lg text-gray-600 max-w-lg">
+                <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
                   High-performance cloud built for training providers, remote teams, 
                   and developers who demand more.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white text-lg px-8 py-4 rounded-full">
+                <Button size="lg" className="bg-gradient-to-r from-red-500 to-purple-600 hover:from-red-600 hover:to-purple-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                   Book a demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -108,16 +124,14 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
             <div className="space-y-8">
-              <div className="w-64 h-64 bg-gray-100 rounded-full relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-purple-100 rounded-full"></div>
-                </div>
+              <div className="relative">
+                <img src="/lovable-uploads/eb2c47ec-d601-4c75-b1fc-847f67a73aa6.png" alt="3D illustration of businessman meditating" className="w-full max-w-sm mx-auto" />
               </div>
               <div className="space-y-4">
-                <h3 className="text-3xl font-bold text-gray-900">Virtual Training</h3>
+                <h3 className="text-3xl font-bold text-gray-900">Cloud Labs</h3>
                 <p className="text-gray-600">
                   Deliver engaging, hands-on self-paced and virtual instructor-led
-                  training every time with CloudShare's training solutions
+                  training every time with CloudAdda's cloud lab solutions
                 </p>
                 <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6">
                   Learn more
@@ -127,10 +141,8 @@ const Index = () => {
             </div>
             
             <div className="space-y-8">
-              <div className="w-64 h-64 bg-gray-100 rounded-full relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-purple-100 rounded-full"></div>
-                </div>
+              <div className="relative">
+                <img src="/lovable-uploads/5aab5b8e-c5b5-423b-a473-bcb996375d02.png" alt="3D illustration of woman working at desk" className="w-full max-w-sm mx-auto" />
               </div>
               <div className="space-y-4">
                 <h3 className="text-3xl font-bold text-gray-900">Sales Demos & POCs</h3>
@@ -195,7 +207,7 @@ const Index = () => {
               <div className="bg-white rounded-lg shadow-lg p-6">
                 <div className="space-y-4">
                   <div className="bg-gray-100 rounded-lg p-4">
-                    <div className="text-sm font-medium text-gray-900">CloudShare Environment</div>
+                    <div className="text-sm font-medium text-gray-900">CloudAdda Environment</div>
                     <div className="text-xs text-gray-600 mt-1">Spinning up...</div>
                   </div>
                 </div>
@@ -244,7 +256,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 text-center">
@@ -265,14 +276,13 @@ const Index = () => {
             </div>
             <div>
               <div className="text-sm text-gray-600 mb-2">Net Promoter Score</div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">>50 NPS</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">&gt;50 NPS</div>
               <div className="text-sm text-gray-600">Customers that work with us, stay with us</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Resources Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -320,14 +330,13 @@ const Index = () => {
               </CardHeader>
               <CardContent className="p-6">
                 <div className="text-sm text-purple-600 uppercase tracking-wide mb-2">CYBER SECURITY</div>
-                <h4 className="font-semibold text-gray-900">How CloudShare Transformed Technical Training for Thales</h4>
+                <h4 className="font-semibold text-gray-900">How CloudAdda Transformed Technical Training for Thales</h4>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
@@ -381,6 +390,8 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
