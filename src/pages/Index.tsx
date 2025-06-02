@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
@@ -116,7 +117,7 @@ const Index = () => {
       {/* Solutions Cards Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid md:grid-cols-3 gap-16 items-center mb-20">
             <div className="space-y-8">
               <div className="relative">
                 <img src="/lovable-uploads/eb2c47ec-d601-4c75-b1fc-847f67a73aa6.png" alt="3D illustration of businessman meditating" className="w-full max-w-sm mx-auto" />
@@ -143,6 +144,23 @@ const Index = () => {
                 <p className="text-gray-600">
                   Take that first impression to the next level and deliver engaging virtual
                   sales demos and POCs in the cloud.
+                </p>
+                <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6">
+                  Learn more
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div className="relative">
+                <img src="/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png" alt="3D illustration of woman working with laptop" className="w-full max-w-sm mx-auto" />
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-3xl font-bold text-gray-900">VPS</h3>
+                <p className="text-gray-600">
+                  High-performance Virtual Private Servers with full root access and
+                  scalable resources for your development and production needs.
                 </p>
                 <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6">
                   Learn more
