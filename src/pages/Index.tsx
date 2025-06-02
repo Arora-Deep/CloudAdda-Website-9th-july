@@ -154,7 +154,7 @@ const Index = () => {
 
             <div className="space-y-8">
               <div className="relative">
-                <img src="/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png" alt="3D illustration of woman working with laptop" className="w-full max-w-sm mx-auto" />
+                <img src="/lovable-uploads/0190e56d-e54b-4c1f-81b8-34e45bd41e84.png" alt="3D illustration of woman working with laptop" className="w-full max-w-sm mx-auto" />
               </div>
               <div className="space-y-4">
                 <h3 className="text-3xl font-bold text-gray-900">VPS</h3>
