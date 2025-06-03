@@ -86,29 +86,35 @@ const Index = () => {
       {/* Premium Purple Section */}
       <section className="py-20 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-              CloudAdda is Born in India, Built for the World
-            </h2>
-            
-            <p className="text-xl lg:text-2xl text-purple-100 leading-relaxed">
-              We're not a low-end provider. We're a new kind of cloud — built around your actual needs. 
-              No bloated control panels, no guessing, no jargon.
-            </p>
+          <div className="text-center space-y-12">
+            <div className="space-y-4">
+              <h2 className="text-4xl lg:text-5xl font-bold text-white">
+                About CloudAdda
+              </h2>
+              <p className="text-xl text-purple-100">
+                Born in India, Built for the World
+              </p>
+            </div>
 
-            <div className="space-y-6 text-lg text-white leading-relaxed">
-              <p>We specialize in three things, and we do them well:</p>
-              
-              <div className="space-y-4 text-purple-100">
-                <p><strong className="text-white">Training Infrastructure</strong> - Custom labs that work flawlessly for your courses and workshops</p>
-                <p><strong className="text-white">Desktops for Teams</strong> - Powerful cloud desktops that enable remote work without compromise</p>
-                <p><strong className="text-white">Fast VPS for People Who Care</strong> - Premium hosting infrastructure that delivers real performance</p>
+            <div className="space-y-8 text-white">
+              <p className="text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto">
+                We're not a low-end provider. We're a new kind of cloud — built around your actual needs. No bloated control panels, no guessing, no jargon.
+              </p>
+
+              <div className="space-y-6">
+                <h3 className="text-xl lg:text-2xl font-semibold">
+                  We specialize in three things, and we do them well:
+                </h3>
+                
+                <div className="space-y-3 text-left max-w-2xl mx-auto">
+                  <p className="text-lg">• Training Infrastructure</p>
+                  <p className="text-lg">• Desktops for teams</p>
+                  <p className="text-lg">• Fast VPS for people who care</p>
+                </div>
               </div>
 
-              <p className="text-xl text-white font-medium pt-6">
-                All of it with <span className="text-yellow-300 font-bold">elite customer service</span>, 
-                <span className="text-yellow-300 font-bold"> clear pricing</span>, and a 
-                <span className="text-yellow-300 font-bold"> 100% commitment to reliability</span>.
+              <p className="text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto pt-4">
+                All of it with elite customer service, clear pricing, and a 100% commitment to reliability.
               </p>
             </div>
           </div>
