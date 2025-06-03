@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -115,13 +116,13 @@ const Index = () => {
       </section>
 
       {/* The Pain Section - Clean Design */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-              You're Not a <span className="text-orange-500">Cloud Company.</span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
+              You're Not a <span className="text-orange-400">Cloud Company.</span>
               <br />
-              <span className="text-2xl lg:text-3xl font-normal text-gray-600 mt-4">
+              <span className="text-2xl lg:text-3xl font-normal text-purple-100 mt-4">
                 Why Are You Doing Cloud's Job?
               </span>
             </h2>
@@ -132,7 +133,7 @@ const Index = () => {
                   You're not in business to <span className="text-orange-500 font-bold">manage servers.</span>
                 </p>
                 <p className="text-xl lg:text-2xl leading-relaxed text-gray-700 mb-6">
-                  You're here to <span className="text-purple-600 font-bold">teach.</span> To <span className="text-purple-600 font-bold">launch.</span> To <span className="text-purple-600 font-bold">build.</span>
+                  You're here to <span className="text-orange-500 font-bold">teach.</span> To <span className="text-orange-500 font-bold">launch.</span> To <span className="text-orange-500 font-bold">build.</span>
                 </p>
                 <p className="text-xl lg:text-2xl leading-relaxed text-gray-700 mb-8">
                   But you're stuck <span className="text-orange-500 font-bold">provisioning machines, babysitting desktops, firefighting downtime.</span>
