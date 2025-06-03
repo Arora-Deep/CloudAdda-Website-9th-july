@@ -520,8 +520,8 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Horizontally Sliding Title */}
           <div className="text-center mb-20 relative">
-            <div className="h-24 flex items-center justify-center overflow-hidden">
-              <div className="relative w-full max-w-4xl">
+            <div className="h-32 flex items-center justify-center overflow-hidden">
+              <div className="relative w-full max-w-6xl mx-auto">
                 <div 
                   className="flex transition-transform duration-700 ease-in-out"
                   style={{
@@ -531,9 +531,9 @@ const Index = () => {
                   {slidingWords.map((slide, index) => (
                     <div 
                       key={index}
-                      className="min-w-full flex items-center justify-center"
+                      className="min-w-full flex items-center justify-center px-8"
                     >
-                      <h2 className="text-4xl lg:text-6xl font-bold text-center leading-tight">
+                      <h2 className="text-4xl lg:text-6xl font-bold text-center leading-tight whitespace-nowrap">
                         <span className="text-gray-900">{slide.text} </span>
                         <span className="text-purple-600">{slide.highlight}</span>
                       </h2>
