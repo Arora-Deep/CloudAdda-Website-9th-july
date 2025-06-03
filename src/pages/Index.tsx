@@ -18,7 +18,7 @@ const Index = () => {
 
   // New sliding words for the "Cloud Company That Actually Cares" section
   const slidingWords = [
-    { text: "Cloud Company That Actually", highlight: "Cares" },
+    { text: "A Cloud Company That Actually", highlight: "Cares" },
     { text: "Infrastructure That's", highlight: "Reliable" },
     { text: "Support That's", highlight: "Human" },
     { text: "Solutions That", highlight: "Scale" },
