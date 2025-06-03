@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
@@ -202,7 +203,7 @@ const Index = () => {
             {/* Left Image - Confused Person */}
             <div className="lg:col-span-1 flex justify-center">
               <img 
-                src="/lovable-uploads/582562124811-c09040d0a901.png" 
+                src="/lovable-uploads/9b9e01c2-e3f9-4704-9bc8-59a73b35ce7d.png" 
                 alt="Confused person representing before state" 
                 className="w-full max-w-xs" 
               />
@@ -216,20 +217,20 @@ const Index = () => {
                   {/* Before */}
                   <div className="bg-gray-100 p-8 relative">
                     <div className="absolute top-4 right-4 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                      <span className="text-red-500 text-xl">❌</span>
+                      <span className="text-red-500 text-xl">X</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-4">Before CloudAdda</h3>
                     <div className="space-y-3 text-gray-700">
                       <p className="flex items-start">
-                        <span className="text-red-500 mr-2">❌</span>
+                        <span className="text-red-500 mr-2">X</span>
                         Manual infra setup every time
                       </p>
                       <p className="flex items-start">
-                        <span className="text-red-500 mr-2">❌</span>
+                        <span className="text-red-500 mr-2">X</span>
                         Labs crash mid-session
                       </p>
                       <p className="flex items-start">
-                        <span className="text-red-500 mr-2">❌</span>
+                        <span className="text-red-500 mr-2">X</span>
                         Late starts, angry clients
                       </p>
                       <p className="italic text-gray-600 mt-4 text-sm">
@@ -248,20 +249,20 @@ const Index = () => {
                   {/* After */}
                   <div className="bg-blue-50 p-8 relative">
                     <div className="absolute top-4 right-4 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-500 text-xl">✅</span>
+                      <span className="text-green-500 text-xl">✓</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-4">After CloudAdda</h3>
                     <div className="space-y-3 text-gray-700">
                       <p className="flex items-start">
-                        <span className="text-green-500 mr-2">✅</span>
+                        <span className="text-green-500 mr-2">✓</span>
                         You send a config, we deliver the lab
                       </p>
                       <p className="flex items-start">
-                        <span className="text-green-500 mr-2">✅</span>
+                        <span className="text-green-500 mr-2">✓</span>
                         Environments provisioned in hours
                       </p>
                       <p className="flex items-start">
-                        <span className="text-green-500 mr-2">✅</span>
+                        <span className="text-green-500 mr-2">✓</span>
                         Rock-solid infra, every time
                       </p>
                       <p className="italic text-gray-600 mt-4 text-sm">
@@ -278,20 +279,20 @@ const Index = () => {
                   {/* Before */}
                   <div className="bg-gray-100 p-8 relative">
                     <div className="absolute top-4 right-4 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                      <span className="text-red-500 text-xl">❌</span>
+                      <span className="text-red-500 text-xl">X</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-4">Before CloudAdda</h3>
                     <div className="space-y-3 text-gray-700">
                       <p className="flex items-start">
-                        <span className="text-red-500 mr-2">❌</span>
+                        <span className="text-red-500 mr-2">X</span>
                         Devs using laptops from 2019
                       </p>
                       <p className="flex items-start">
-                        <span className="text-red-500 mr-2">❌</span>
+                        <span className="text-red-500 mr-2">X</span>
                         Zoom + IDE = system freeze
                       </p>
                       <p className="flex items-start">
-                        <span className="text-red-500 mr-2">❌</span>
+                        <span className="text-red-500 mr-2">X</span>
                         No control over security
                       </p>
                       <p className="italic text-gray-600 mt-4 text-sm">
@@ -310,20 +311,20 @@ const Index = () => {
                   {/* After */}
                   <div className="bg-blue-50 p-8 relative">
                     <div className="absolute top-4 right-4 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-500 text-xl">✅</span>
+                      <span className="text-green-500 text-xl">✓</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-4">After CloudAdda</h3>
                     <div className="space-y-3 text-gray-700">
                       <p className="flex items-start">
-                        <span className="text-green-500 mr-2">✅</span>
+                        <span className="text-green-500 mr-2">✓</span>
                         Scalable cloud desktops with serious power
                       </p>
                       <p className="flex items-start">
-                        <span className="text-green-500 mr-2">✅</span>
+                        <span className="text-green-500 mr-2">✓</span>
                         Secure access, zero lag
                       </p>
                       <p className="flex items-start">
-                        <span className="text-green-500 mr-2">✅</span>
+                        <span className="text-green-500 mr-2">✓</span>
                         Ideal for remote teams & fast dev cycles
                       </p>
                       <p className="italic text-gray-600 mt-4 text-sm">
@@ -340,20 +341,20 @@ const Index = () => {
                   {/* Before */}
                   <div className="bg-gray-100 p-8 relative">
                     <div className="absolute top-4 right-4 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                      <span className="text-red-500 text-xl">❌</span>
+                      <span className="text-red-500 text-xl">X</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-4">Before CloudAdda</h3>
                     <div className="space-y-3 text-gray-700">
                       <p className="flex items-start">
-                        <span className="text-red-500 mr-2">❌</span>
+                        <span className="text-red-500 mr-2">X</span>
                         Paying AWS bills that don't make sense
                       </p>
                       <p className="flex items-start">
-                        <span className="text-red-500 mr-2">❌</span>
+                        <span className="text-red-500 mr-2">X</span>
                         CPUs throttled, support unhelpful
                       </p>
                       <p className="flex items-start">
-                        <span className="text-red-500 mr-2">❌</span>
+                        <span className="text-red-500 mr-2">X</span>
                         Complex dashboards, hidden limits
                       </p>
                       <p className="italic text-gray-600 mt-4 text-sm">
@@ -372,20 +373,20 @@ const Index = () => {
                   {/* After */}
                   <div className="bg-blue-50 p-8 relative">
                     <div className="absolute top-4 right-4 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-500 text-xl">✅</span>
+                      <span className="text-green-500 text-xl">✓</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-4">After CloudAdda</h3>
                     <div className="space-y-3 text-gray-700">
                       <p className="flex items-start">
-                        <span className="text-green-500 mr-2">✅</span>
+                        <span className="text-green-500 mr-2">✓</span>
                         NVMe, AMD EPYC servers built for speed
                       </p>
                       <p className="flex items-start">
-                        <span className="text-green-500 mr-2">✅</span>
+                        <span className="text-green-500 mr-2">✓</span>
                         Flat pricing. No surprises.
                       </p>
                       <p className="flex items-start">
-                        <span className="text-green-500 mr-2">✅</span>
+                        <span className="text-green-500 mr-2">✓</span>
                         Friendly support, real help
                       </p>
                       <p className="italic text-gray-600 mt-4 text-sm">
@@ -400,7 +401,7 @@ const Index = () => {
             {/* Right Image - Happy Person */}
             <div className="lg:col-span-1 flex justify-center">
               <img 
-                src="/lovable-uploads/1581090464777-f3220bbe1b8b.png" 
+                src="/lovable-uploads/8a2d7816-a253-40ef-a846-db190a4798a5.png" 
                 alt="Happy person representing after state" 
                 className="w-full max-w-xs" 
               />
