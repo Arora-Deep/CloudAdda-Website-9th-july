@@ -199,41 +199,41 @@ const Index = () => {
           </div>
 
           {/* Images and Cards Layout */}
-          <div className="grid lg:grid-cols-5 gap-8 items-center">
+          <div className="grid lg:grid-cols-7 gap-8 items-center">
             {/* Left Image - Confused Person */}
-            <div className="lg:col-span-1 flex justify-center">
+            <div className="lg:col-span-2 flex justify-center">
               <img 
                 src="/lovable-uploads/9b9e01c2-e3f9-4704-9bc8-59a73b35ce7d.png" 
                 alt="Confused person representing before state" 
-                className="w-full max-w-md h-auto object-contain" 
+                className="w-full max-w-lg h-auto object-contain" 
               />
             </div>
 
             {/* Cards */}
-            <div className="lg:col-span-3 space-y-6">
+            <div className="lg:col-span-3 space-y-4">
               {/* Card 1: Training Labs */}
-              <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
                 <div className="grid md:grid-cols-2">
                   {/* Before */}
-                  <div className="bg-gray-100 p-6 relative">
-                    <div className="absolute top-4 right-4 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                      <span className="text-red-500 text-xl">X</span>
+                  <div className="bg-gray-100 p-4 relative">
+                    <div className="absolute top-3 right-3 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center">
+                      <span className="text-red-500 text-sm">X</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">Before CloudAdda</h3>
-                    <div className="space-y-2 text-gray-700">
-                      <p className="flex items-start text-sm">
-                        <span className="text-red-500 mr-2">X</span>
+                    <h3 className="text-md font-bold text-gray-900 mb-2">Before CloudAdda</h3>
+                    <div className="space-y-1 text-gray-700">
+                      <p className="flex items-start text-xs">
+                        <span className="text-red-500 mr-1">X</span>
                         Manual infra setup every time
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-red-500 mr-2">X</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-red-500 mr-1">X</span>
                         Labs crash mid-session
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-red-500 mr-2">X</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-red-500 mr-1">X</span>
                         Late starts, angry clients
                       </p>
-                      <p className="italic text-gray-600 mt-3 text-xs">
+                      <p className="italic text-gray-600 mt-2 text-xs">
                         "We were losing credibility with every batch."
                       </p>
                     </div>
@@ -241,31 +241,31 @@ const Index = () => {
                   
                   {/* Divider Arrow */}
                   <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                    <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                      <ArrowRight className="w-6 h-6 text-white" />
+                    <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                      <ArrowRight className="w-4 h-4 text-white" />
                     </div>
                   </div>
 
                   {/* After */}
-                  <div className="bg-blue-50 p-6 relative">
-                    <div className="absolute top-4 right-4 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-500 text-xl">✓</span>
+                  <div className="bg-blue-50 p-4 relative">
+                    <div className="absolute top-3 right-3 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-500 text-sm">✓</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">After CloudAdda</h3>
-                    <div className="space-y-2 text-gray-700">
-                      <p className="flex items-start text-sm">
-                        <span className="text-green-500 mr-2">✓</span>
+                    <h3 className="text-md font-bold text-gray-900 mb-2">After CloudAdda</h3>
+                    <div className="space-y-1 text-gray-700">
+                      <p className="flex items-start text-xs">
+                        <span className="text-green-500 mr-1">✓</span>
                         You send a config, we deliver the lab
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-green-500 mr-2">✓</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-green-500 mr-1">✓</span>
                         Environments provisioned in hours
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-green-500 mr-2">✓</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-green-500 mr-1">✓</span>
                         Rock-solid infra, every time
                       </p>
-                      <p className="italic text-gray-600 mt-3 text-xs">
+                      <p className="italic text-gray-600 mt-2 text-xs">
                         "We focus on training. CloudAdda handles the rest."
                       </p>
                     </div>
@@ -274,28 +274,28 @@ const Index = () => {
               </div>
 
               {/* Card 2: Cloud Workstations */}
-              <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
                 <div className="grid md:grid-cols-2">
                   {/* Before */}
-                  <div className="bg-gray-100 p-6 relative">
-                    <div className="absolute top-4 right-4 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                      <span className="text-red-500 text-xl">X</span>
+                  <div className="bg-gray-100 p-4 relative">
+                    <div className="absolute top-3 right-3 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center">
+                      <span className="text-red-500 text-sm">X</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">Before CloudAdda</h3>
-                    <div className="space-y-2 text-gray-700">
-                      <p className="flex items-start text-sm">
-                        <span className="text-red-500 mr-2">X</span>
+                    <h3 className="text-md font-bold text-gray-900 mb-2">Before CloudAdda</h3>
+                    <div className="space-y-1 text-gray-700">
+                      <p className="flex items-start text-xs">
+                        <span className="text-red-500 mr-1">X</span>
                         Devs using laptops from 2019
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-red-500 mr-2">X</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-red-500 mr-1">X</span>
                         Zoom + IDE = system freeze
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-red-500 mr-2">X</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-red-500 mr-1">X</span>
                         No control over security
                       </p>
-                      <p className="italic text-gray-600 mt-3 text-xs">
+                      <p className="italic text-gray-600 mt-2 text-xs">
                         "Work was slow, fragile, and risky."
                       </p>
                     </div>
@@ -303,31 +303,31 @@ const Index = () => {
                   
                   {/* Divider Arrow */}
                   <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                    <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                      <ArrowRight className="w-6 h-6 text-white" />
+                    <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                      <ArrowRight className="w-4 h-4 text-white" />
                     </div>
                   </div>
 
                   {/* After */}
-                  <div className="bg-blue-50 p-6 relative">
-                    <div className="absolute top-4 right-4 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-500 text-xl">✓</span>
+                  <div className="bg-blue-50 p-4 relative">
+                    <div className="absolute top-3 right-3 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-500 text-sm">✓</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">After CloudAdda</h3>
-                    <div className="space-y-2 text-gray-700">
-                      <p className="flex items-start text-sm">
-                        <span className="text-green-500 mr-2">✓</span>
+                    <h3 className="text-md font-bold text-gray-900 mb-2">After CloudAdda</h3>
+                    <div className="space-y-1 text-gray-700">
+                      <p className="flex items-start text-xs">
+                        <span className="text-green-500 mr-1">✓</span>
                         Scalable cloud desktops with serious power
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-green-500 mr-2">✓</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-green-500 mr-1">✓</span>
                         Secure access, zero lag
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-green-500 mr-2">✓</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-green-500 mr-1">✓</span>
                         Ideal for remote teams & fast dev cycles
                       </p>
-                      <p className="italic text-gray-600 mt-3 text-xs">
+                      <p className="italic text-gray-600 mt-2 text-xs">
                         "We finally work like a real tech team should."
                       </p>
                     </div>
@@ -336,28 +336,28 @@ const Index = () => {
               </div>
 
               {/* Card 3: VPS */}
-              <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
                 <div className="grid md:grid-cols-2">
                   {/* Before */}
-                  <div className="bg-gray-100 p-6 relative">
-                    <div className="absolute top-4 right-4 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                      <span className="text-red-500 text-xl">X</span>
+                  <div className="bg-gray-100 p-4 relative">
+                    <div className="absolute top-3 right-3 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center">
+                      <span className="text-red-500 text-sm">X</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">Before CloudAdda</h3>
-                    <div className="space-y-2 text-gray-700">
-                      <p className="flex items-start text-sm">
-                        <span className="text-red-500 mr-2">X</span>
+                    <h3 className="text-md font-bold text-gray-900 mb-2">Before CloudAdda</h3>
+                    <div className="space-y-1 text-gray-700">
+                      <p className="flex items-start text-xs">
+                        <span className="text-red-500 mr-1">X</span>
                         Paying AWS bills that don't make sense
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-red-500 mr-2">X</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-red-500 mr-1">X</span>
                         CPUs throttled, support unhelpful
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-red-500 mr-2">X</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-red-500 mr-1">X</span>
                         Complex dashboards, hidden limits
                       </p>
-                      <p className="italic text-gray-600 mt-3 text-xs">
+                      <p className="italic text-gray-600 mt-2 text-xs">
                         "We paid more and got less."
                       </p>
                     </div>
@@ -365,31 +365,31 @@ const Index = () => {
                   
                   {/* Divider Arrow */}
                   <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                    <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                      <ArrowRight className="w-6 h-6 text-white" />
+                    <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                      <ArrowRight className="w-4 h-4 text-white" />
                     </div>
                   </div>
 
                   {/* After */}
-                  <div className="bg-blue-50 p-6 relative">
-                    <div className="absolute top-4 right-4 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-500 text-xl">✓</span>
+                  <div className="bg-blue-50 p-4 relative">
+                    <div className="absolute top-3 right-3 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-500 text-sm">✓</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">After CloudAdda</h3>
-                    <div className="space-y-2 text-gray-700">
-                      <p className="flex items-start text-sm">
-                        <span className="text-green-500 mr-2">✓</span>
+                    <h3 className="text-md font-bold text-gray-900 mb-2">After CloudAdda</h3>
+                    <div className="space-y-1 text-gray-700">
+                      <p className="flex items-start text-xs">
+                        <span className="text-green-500 mr-1">✓</span>
                         NVMe, AMD EPYC servers built for speed
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-green-500 mr-2">✓</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-green-500 mr-1">✓</span>
                         Flat pricing. No surprises.
                       </p>
-                      <p className="flex items-start text-sm">
-                        <span className="text-green-500 mr-2">✓</span>
+                      <p className="flex items-start text-xs">
+                        <span className="text-green-500 mr-1">✓</span>
                         Friendly support, real help
                       </p>
-                      <p className="italic text-gray-600 mt-3 text-xs">
+                      <p className="italic text-gray-600 mt-2 text-xs">
                         "It's cloud infra that finally makes sense."
                       </p>
                     </div>
@@ -399,11 +399,11 @@ const Index = () => {
             </div>
 
             {/* Right Image - Happy Person */}
-            <div className="lg:col-span-1 flex justify-center">
+            <div className="lg:col-span-2 flex justify-center">
               <img 
                 src="/lovable-uploads/8a2d7816-a253-40ef-a846-db190a4798a5.png" 
                 alt="Happy person representing after state" 
-                className="w-full max-w-md h-auto object-contain" 
+                className="w-full max-w-lg h-auto object-contain" 
               />
             </div>
           </div>
