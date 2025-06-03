@@ -1,8 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive } from "lucide-react";
+import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Index = () => {
@@ -118,13 +117,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Pain Section */}
+      {/* The Pain Section - UPDATED */}
       <section className="py-20 bg-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="max-w-4xl mx-auto">
-              <p className="text-xl leading-relaxed mb-6">
-                You're not in business to manage servers. You're here to <span className="text-orange-400 font-bold">teach</span>. To <span className="text-orange-400 font-bold">launch</span>. To <span className="text-orange-400 font-bold">build</span>. But you're stuck provisioning machines, babysitting desktops, firefighting downtime.
+              <p className="text-xl leading-relaxed mb-8">
+                You're not in business to manage servers. You're here
+              </p>
+              <div className="mb-8">
+                <p className="text-4xl lg:text-5xl font-bold text-orange-400 leading-tight">
+                  to teach. To launch. To build.
+                </p>
+              </div>
+              <p className="text-xl leading-relaxed mb-12">
+                But you're stuck provisioning machines, babysitting desktops, firefighting downtime.
               </p>
               <div className="mt-16">
                 <p className="text-4xl lg:text-5xl font-bold text-center leading-tight text-white">
@@ -886,7 +893,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section - REDESIGNED */}
-      <section className="py-32 bg-gray-50 relative">
+      <section className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
@@ -900,63 +907,96 @@ const Index = () => {
             </h2>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {[
               {
-                title: "Labs",
-                price: "Custom quote based on your spec",
-                description: "We'll ask you 3–5 questions, then send a complete lab setup.",
-                highlight: "Same-day delivery possible.",
+                title: "Training Labs",
+                price: "Custom Quote",
+                subtitle: "Based on your exact requirements",
+                description: "We ask 3-5 questions about your training needs, then deliver a complete lab environment.",
+                features: [
+                  "Same-day delivery possible",
+                  "Fully customized environments",
+                  "Windows, Linux, or mixed stacks",
+                  "Scalable to any number of users"
+                ],
                 cta: "Get Custom Quote",
                 popular: false,
-                color: "bg-blue-500"
+                gradient: "from-blue-500 to-blue-600"
               },
               {
-                title: "Virtual Desktops", 
-                price: "Starting ₹3,299/user/month",
-                description: "2vCPU, 4GB RAM, SSD.",
-                highlight: "Fully scalable. Just add users.",
+                title: "Virtual Desktops",
+                price: "₹3,299",
+                subtitle: "per user/month",
+                description: "High-performance cloud desktops with 2vCPU, 4GB RAM, and enterprise-grade security.",
+                features: [
+                  "2vCPU, 4GB RAM, SSD storage",
+                  "99.9% uptime guarantee",
+                  "Built-in security & compliance",
+                  "Instant scaling"
+                ],
                 cta: "Launch Desktop",
                 popular: true,
-                color: "bg-purple-500"
+                gradient: "from-purple-500 to-purple-600"
               },
               {
-                title: "VPS",
-                price: "Starting ₹1,499/month", 
-                description: "NVMe. AMD EPYC. Perfect isolation.",
-                highlight: "",
+                title: "VPS Hosting",
+                price: "₹1,499",
+                subtitle: "per month",
+                description: "NVMe-powered virtual servers with AMD EPYC processors and dedicated resources.",
+                features: [
+                  "NVMe SSD storage",
+                  "AMD EPYC processors",
+                  "Full root access",
+                  "Multiple data center locations"
+                ],
                 cta: "Get VPS Now",
                 popular: false,
-                color: "bg-orange-500"
+                gradient: "from-orange-500 to-orange-600"
               }
             ].map((plan, index) => (
-              <div key={index} className={`group relative ${plan.popular ? 'transform scale-105 lg:scale-110' : ''}`}>
+              <div key={index} className={`group relative ${plan.popular ? 'transform scale-105' : ''}`}>
                 {plan.popular && (
                   <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
-                    <span className="bg-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                    <span className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
                       Most Popular
                     </span>
                   </div>
                 )}
                 
-                <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                  <div className={`h-2 ${plan.color}`}></div>
+                <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+                  {/* Gradient top bar */}
+                  <div className={`h-2 bg-gradient-to-r ${plan.gradient}`}></div>
                   
                   <div className="p-10">
+                    {/* Header */}
                     <div className="text-center mb-8">
                       <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.title}</h3>
-                      <div className="text-3xl font-bold text-gray-900 mb-2">{plan.price}</div>
+                      <div className="space-y-2">
+                        <div className="text-4xl font-bold text-gray-900">{plan.price}</div>
+                        <div className="text-gray-600">{plan.subtitle}</div>
+                      </div>
                     </div>
                     
+                    {/* Description */}
+                    <p className="text-gray-600 text-center mb-8 leading-relaxed">{plan.description}</p>
+                    
+                    {/* Features */}
                     <div className="space-y-4 mb-8">
-                      <p className="text-gray-600">{plan.description}</p>
-                      {plan.highlight && (
-                        <p className="text-sm text-purple-600 font-semibold">{plan.highlight}</p>
-                      )}
+                      {plan.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center space-x-3">
+                          <div className={`w-5 h-5 bg-gradient-to-r ${plan.gradient} rounded-full flex items-center justify-center flex-shrink-0`}>
+                            <CheckCircle className="w-3 h-3 text-white" />
+                          </div>
+                          <span className="text-gray-700 text-sm">{feature}</span>
+                        </div>
+                      ))}
                     </div>
                     
-                    <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105">
+                    {/* CTA Button */}
+                    <Button className={`w-full bg-gradient-to-r ${plan.gradient} hover:opacity-90 text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 shadow-lg`}>
                       {plan.cta}
+                      <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </div>
                 </div>
@@ -965,51 +1005,139 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-16">
+            <p className="text-gray-600 mb-6">Need something custom? We've got you covered.</p>
             <Button size="lg" variant="outline" className="text-orange-500 border-2 border-orange-500 hover:bg-orange-50 text-lg px-8 py-4 rounded-2xl">
-              View All Plans
+              Talk to Our Team
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </div>
       </section>
 
-      {/* The Closer Section - REDESIGNED */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight text-gray-900">
-            You Can't Afford to Waste Time
-            <br />
-            <span className="text-purple-600">
-              on Bad Infra.
-            </span>
-          </h2>
-          
-          <div className="space-y-6 mb-12 text-lg lg:text-xl leading-relaxed">
-            <p className="text-gray-600">
-              Bad infrastructure is invisible... until it costs you customers, kills your momentum, or ruins your launch.
-            </p>
-            <p className="text-gray-600">
-              CloudAdda is for those who can't afford to fail. And those who don't want to build infra teams just to stay online.
-            </p>
-            <div className="bg-purple-50 rounded-2xl p-8 border border-purple-100">
-              <p className="text-2xl lg:text-3xl font-bold text-purple-600">
-                You bring the vision. We bring the horsepower. Let's go.
-              </p>
+      {/* The Closer Section - COMPLETELY REDESIGNED */}
+      <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-purple-800/30 backdrop-blur-sm border border-purple-500/30 rounded-full px-6 py-3 mb-8">
+              <Sparkles className="w-5 h-5 text-orange-400" />
+              <span className="text-orange-400 font-semibold">The Moment of Truth</span>
+            </div>
+            
+            <h2 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-white via-purple-200 to-orange-200 bg-clip-text text-transparent">
+                Your Competition
+              </span>
+              <br />
+              <span className="text-white">
+                Is Already Moving.
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-red-500/20 border border-red-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Target className="w-6 h-6 text-red-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">While You're Managing Servers...</h3>
+                    <p className="text-gray-300">They're training more customers, launching faster, and scaling without the headaches.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-orange-500/20 border border-orange-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-6 h-6 text-orange-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">While You're Fighting Downtime...</h3>
+                    <p className="text-gray-300">They're building reputation, winning clients, and growing revenue.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Lightbulb className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">While You're Troubleshooting...</h3>
+                    <p className="text-gray-300">They're innovating, creating, and leaving you behind.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-purple-600/20 to-orange-600/20 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
+                <div className="text-center space-y-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto">
+                    <Rocket className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">Don't Let Them Win</h3>
+                  <p className="text-xl text-gray-300">
+                    Every day you spend on infrastructure is a day they gain on you.
+                  </p>
+                  <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 border border-green-500/30 rounded-xl p-6">
+                    <p className="text-lg text-white font-semibold">
+                      "We switched to CloudAdda and grew 300% in 6 months. Best decision ever."
+                    </p>
+                    <p className="text-sm text-gray-400 mt-2">- CEO, Leading Training Company</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-              Request Demo
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-              Start Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
-              Get Custom Quote
-            </Button>
+
+          {/* Urgency Section */}
+          <div className="text-center space-y-8 mb-16">
+            <div className="bg-gradient-to-r from-red-600/20 to-orange-600/20 border border-red-500/30 rounded-2xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-white mb-4">The Cost of Waiting</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-red-400 mb-2">$10K+</div>
+                  <p className="text-gray-300">Lost revenue per month from infrastructure issues</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-orange-400 mb-2">40hrs</div>
+                  <p className="text-gray-300">Wasted weekly on server management</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-purple-400 mb-2">60%</div>
+                  <p className="text-gray-300">Of teams switch within 6 months anyway</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-500/30 rounded-2xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-white mb-6">Make The Switch. Today.</h3>
+              <p className="text-xl text-gray-300 mb-8">
+                Join 500+ companies who stopped fighting infrastructure and started winning customers.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105">
+                  Start Your Transformation
+                  <Rocket className="ml-3 h-6 w-6" />
+                </Button>
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
+                  Talk to Our Team
+                  <ArrowRight className="ml-3 h-6 w-6" />
+                </Button>
+              </div>
+              
+              <p className="text-sm text-gray-400 mt-6">
+                ⚡ Setup in hours, not weeks • 💰 Pay for what you use • 🔒 Enterprise security included
+              </p>
+            </div>
           </div>
         </div>
       </section>
