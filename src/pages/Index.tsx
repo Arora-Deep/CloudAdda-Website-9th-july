@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
   
   const headings = [
     "The Cloud Company That Actually Cares.",
@@ -24,6 +25,18 @@ const Index = () => {
     { text: "Performance That", highlight: "Delivers" }
   ];
 
+  // Customer logos for carousel
+  const customerLogos = [
+    { name: "Company 1", logo: "/placeholder.svg" },
+    { name: "Company 2", logo: "/placeholder.svg" },
+    { name: "Company 3", logo: "/placeholder.svg" },
+    { name: "Company 4", logo: "/placeholder.svg" },
+    { name: "Company 5", logo: "/placeholder.svg" },
+    { name: "Company 6", logo: "/placeholder.svg" },
+    { name: "Company 7", logo: "/placeholder.svg" },
+    { name: "Company 8", logo: "/placeholder.svg" }
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeading((prev) => (prev + 1) % headings.length);
@@ -38,6 +51,13 @@ const Index = () => {
     return () => clearInterval(slideInterval);
   }, []);
 
+  useEffect(() => {
+    const logoInterval = setInterval(() => {
+      setCurrentLogoIndex((prev) => (prev + 1) % customerLogos.length);
+    }, 2000);
+    return () => clearInterval(logoInterval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -50,23 +70,11 @@ const Index = () => {
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Product</a>
-              <div className="relative group">
-                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors flex items-center">
-                  Solutions <span className="ml-1">▼</span>
-                </a>
-              </div>
-              <div className="relative group">
-                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors flex items-center">
-                  Resources <span className="ml-1">▼</span>
-                </a>
-              </div>
-              <div className="relative group">
-                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors flex items-center">
-                  About Us <span className="ml-1">▼</span>
-                </a>
-              </div>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</a>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</a>
               <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</a>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</a>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Support</a>
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
@@ -79,12 +87,12 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section - UPDATED */}
+      {/* Hero Section - SIMPLIFIED */}
       <section className="bg-white pt-16 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="space-y-8">
+              <div className="space-y-6">
                 <h1 className="leading-tight">
                   <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-4">
                     Stop Fighting the Infra.
@@ -96,11 +104,10 @@ const Index = () => {
                     CloudAdda runs your Labs, Desktops & VPS — so your team doesn't have to.
                   </span>
                 </h1>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
                     You've got a business to run. Customers to train. Products to build.
                     Not time to wrestle VMs, flaky labs, and slow desktops.
-                    We give you battle-ready infra — fully managed, stupid-fast, and ready when you are.
                   </p>
                   <p className="text-md text-gray-800 font-semibold max-w-lg">
                     No chaos. No cloud headaches. Just clean infra that does its damn job.
@@ -164,6 +171,60 @@ const Index = () => {
                 src="/lovable-uploads/69230053-96f2-4f6a-ad77-9419979d6f8e.png" 
                 alt="Frustrated person at desk with laptop" 
                 className="w-full max-w-lg h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who It's For Section - MOVED UP */}
+      <section className="py-32 bg-gray-50 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              It's Not for Everyone.
+              <br />
+              <span className="text-purple-600">
+                Just the Smart Ones.
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="text-4xl lg:text-5xl font-bold text-purple-600 mb-8">
+                If
+              </div>
+              
+              {[
+                "You're tired of spending hours configuring labs.",
+                "You want your team to work — not wait for IT.",
+                "You care about performance. But you care more about reliability.",
+                "You want to scale, without feeling like you're managing a data center."
+              ].map((text, index) => (
+                <div key={index} className="flex items-start space-x-6 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      {index + 1}
+                    </div>
+                  </div>
+                  <p className="text-xl text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
+                    {text}
+                  </p>
+                </div>
+              ))}
+              
+              <div className="text-4xl lg:text-5xl font-bold text-purple-600 mt-12">
+                Then you're our people.
+              </div>
+              <div className="w-24 h-1 bg-purple-600 rounded-full"></div>
+            </div>
+            
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/f690fdec-4d37-4062-af23-158e9b86a21e.png" 
+                alt="Professional man in business suit with welcoming gesture" 
+                className="w-full max-w-lg" 
               />
             </div>
           </div>
@@ -397,7 +458,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Switch You Didn't Know You Needed Section - REDESIGNED WITH TABLE */}
+      {/* The Switch You Didn't Know You Needed Section - REDESIGNED WITH BIGGER IMAGES */}
       <section className="py-32 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -414,22 +475,22 @@ const Index = () => {
           </div>
 
           <div className="grid lg:grid-cols-7 gap-8 items-center">
-            {/* Left Image - Confused Person */}
+            {/* Left Image - Confused Person - BIGGER */}
             <div className="lg:col-span-2 flex justify-center">
               <img 
                 src="/lovable-uploads/9b9e01c2-e3f9-4704-9bc8-59a73b35ce7d.png" 
                 alt="Confused person representing before state" 
-                className="w-full max-w-2xl h-auto object-contain" 
+                className="w-full max-w-sm h-auto object-contain transform scale-150" 
               />
             </div>
 
-            {/* Center Table */}
+            {/* Center Table - CLEANER DESIGN */}
             <div className="lg:col-span-3">
-              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
+              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
                 <div className="overflow-x-auto">
                   <table className="w-full">
-                    <thead className="bg-gradient-to-r from-red-50 to-green-50">
-                      <tr>
+                    <thead>
+                      <tr className="bg-gradient-to-r from-red-50 to-green-50">
                         <th className="text-left p-6 text-lg font-bold text-red-600 border-r border-gray-200">
                           ❌ Before CloudAdda
                         </th>
@@ -438,7 +499,7 @@ const Index = () => {
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-100">
+                    <tbody className="divide-y divide-gray-50">
                       {[
                         {
                           before: "Manual infra setup. Every time.",
@@ -465,11 +526,11 @@ const Index = () => {
                           after: "Friendly support that actually helps."
                         }
                       ].map((row, index) => (
-                        <tr key={index} className="hover:bg-gray-50 transition-colors">
-                          <td className="p-4 text-sm text-gray-700 border-r border-gray-200 bg-red-50/30">
+                        <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
+                          <td className="p-5 text-sm text-gray-700 border-r border-gray-100 bg-red-25">
                             {row.before}
                           </td>
-                          <td className="p-4 text-sm text-gray-700 bg-green-50/30">
+                          <td className="p-5 text-sm text-gray-700 bg-green-25">
                             {row.after}
                           </td>
                         </tr>
@@ -480,12 +541,12 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right Image - Happy Person */}
+            {/* Right Image - Happy Person - BIGGER */}
             <div className="lg:col-span-2 flex justify-center">
               <img 
                 src="/lovable-uploads/8a2d7816-a253-40ef-a846-db190a4798a5.png" 
                 alt="Happy person representing after state" 
-                className="w-full max-w-2xl h-auto object-contain" 
+                className="w-full max-w-sm h-auto object-contain transform scale-150" 
               />
             </div>
           </div>
@@ -503,60 +564,6 @@ const Index = () => {
               <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
                 Talk to a Human
               </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who It's For Section - REDESIGNED */}
-      <section className="py-32 bg-gray-50 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              It's Not for Everyone.
-              <br />
-              <span className="text-purple-600">
-                Just the Smart Ones.
-              </span>
-            </h2>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="text-4xl lg:text-5xl font-bold text-purple-600 mb-8">
-                If
-              </div>
-              
-              {[
-                "You're tired of spending hours configuring labs.",
-                "You want your team to work — not wait for IT.",
-                "You care about performance. But you care more about reliability.",
-                "You want to scale, without feeling like you're managing a data center."
-              ].map((text, index) => (
-                <div key={index} className="flex items-start space-x-6 group">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
-                      {index + 1}
-                    </div>
-                  </div>
-                  <p className="text-xl text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
-                    {text}
-                  </p>
-                </div>
-              ))}
-              
-              <div className="text-4xl lg:text-5xl font-bold text-purple-600 mt-12">
-                Then you're our people.
-              </div>
-              <div className="w-24 h-1 bg-purple-600 rounded-full"></div>
-            </div>
-            
-            <div className="flex justify-center">
-              <img 
-                src="/lovable-uploads/f690fdec-4d37-4062-af23-158e9b86a21e.png" 
-                alt="Professional man in business suit with welcoming gesture" 
-                className="w-full max-w-lg" 
-              />
             </div>
           </div>
         </div>
@@ -766,6 +773,42 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Customer Logo Carousel */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Trusted by 500+ Companies Worldwide</h3>
+            <p className="text-gray-600">Join industry leaders who've made the smart switch</p>
+          </div>
+          
+          <div className="relative">
+            <div className="flex justify-center items-center overflow-hidden">
+              <div 
+                className="flex transition-transform duration-1000 ease-in-out"
+                style={{
+                  transform: `translateX(-${currentLogoIndex * (100 / 4)}%)`
+                }}
+              >
+                {customerLogos.concat(customerLogos).map((logo, index) => (
+                  <div 
+                    key={index}
+                    className="flex-shrink-0 w-1/4 px-8 flex items-center justify-center"
+                  >
+                    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 w-full max-w-[200px] h-20 flex items-center justify-center">
+                      <img 
+                        src={logo.logo} 
+                        alt={logo.name}
+                        className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About CloudAdda Section */}
       <section className="py-20 bg-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -786,7 +829,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Section - REDESIGNED */}
+      {/* Pricing Section - CLEANER DESIGN */}
       <section className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -795,9 +838,11 @@ const Index = () => {
                 Transparent Pricing.
               </span>
               <br />
-              <span className="text-3xl lg:text-4xl font-normal text-gray-600">
-                No Hidden Gotchas. Ever.
-              </span>
+              <div className="inline-flex items-center justify-center bg-gradient-to-r from-orange-100 to-red-100 border-2 border-orange-300 rounded-2xl px-8 py-4 mt-6">
+                <span className="text-3xl lg:text-4xl font-bold text-orange-600">
+                  No Hidden Gotchas. Ever.
+                </span>
+              </div>
             </h2>
           </div>
           
@@ -815,7 +860,6 @@ const Index = () => {
                   "Scalable to any number of users"
                 ],
                 cta: "Get Custom Quote",
-                popular: false,
                 gradient: "from-blue-500 to-blue-600"
               },
               {
@@ -830,7 +874,6 @@ const Index = () => {
                   "Instant scaling"
                 ],
                 cta: "Launch Desktop",
-                popular: true,
                 gradient: "from-purple-500 to-purple-600"
               },
               {
@@ -845,19 +888,10 @@ const Index = () => {
                   "Multiple data center locations"
                 ],
                 cta: "Get VPS Now",
-                popular: false,
                 gradient: "from-orange-500 to-orange-600"
               }
             ].map((plan, index) => (
-              <div key={index} className={`group relative ${plan.popular ? 'transform scale-105' : ''}`}>
-                {plan.popular && (
-                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
-                    <span className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
+              <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
                   {/* Gradient top bar */}
                   <div className={`h-2 bg-gradient-to-r ${plan.gradient}`}></div>
@@ -908,7 +942,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Closer Section - COMPLETELY REDESIGNED */}
+      {/* The Closer Section - SIMPLIFIED */}
       <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0">
@@ -976,10 +1010,6 @@ const Index = () => {
                   <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto">
                     <Rocket className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white">Don't Let Them Win</h3>
-                  <p className="text-xl text-gray-300">
-                    Every day you spend on infrastructure is a day they gain on you.
-                  </p>
                   <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 border border-green-500/30 rounded-xl p-6">
                     <p className="text-lg text-white font-semibold">
                       "We switched to CloudAdda and grew 300% in 6 months. Best decision ever."
