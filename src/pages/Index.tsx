@@ -1,10 +1,26 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
+import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [currentHeading, setCurrentHeading] = useState(0);
+  
+  const headings = [
+    "The Cloud Company That Actually Cares.",
+    "Premium Infrastructure. Human Touch.",
+    "Where Performance Meets Compassion.",
+    "Your Success Is Our Mission."
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeading((prev) => (prev + 1) % headings.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -481,60 +497,145 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Us Section - REDESIGNED */}
-      <section className="py-32 bg-white relative">
+      {/* Why Us Section - REDESIGNED WITH CAROUSEL */}
+      <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
-              The Cloud Company That
-              <br />
-              <span className="text-purple-600">
-                Actually Cares.
-              </span>
-            </h2>
+          {/* Carousel Heading */}
+          <div className="text-center mb-20 relative">
+            <div className="h-32 flex items-center justify-center overflow-hidden">
+              <h2 className="text-6xl lg:text-8xl font-bold leading-tight transition-all duration-1000 ease-in-out transform">
+                <span 
+                  className="block"
+                  style={{
+                    transform: `translateY(${-currentHeading * 100}%)`,
+                    transition: 'transform 1s ease-in-out'
+                  }}
+                >
+                  {headings.map((heading, index) => (
+                    <span 
+                      key={index}
+                      className={`block h-32 flex items-center justify-center ${
+                        index === currentHeading 
+                          ? 'text-purple-600' 
+                          : 'text-gray-200'
+                      }`}
+                    >
+                      {heading}
+                    </span>
+                  ))}
+                </span>
+              </h2>
+            </div>
+            
+            {/* Progress indicators */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {headings.map((_, index) => (
+                <div
+                  key={index}
+                  className={`h-2 w-8 rounded-full transition-all duration-300 ${
+                    index === currentHeading ? 'bg-purple-600' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
           
+          {/* Trust Indicators */}
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
+            {[
+              { number: "99.9%", label: "Uptime SLA", icon: Shield },
+              { number: "24/7", label: "Human Support", icon: Users },
+              { number: "< 2hrs", label: "Setup Time", icon: Clock },
+              { number: "500+", label: "Happy Clients", icon: Award }
+            ].map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4 group-hover:bg-purple-600 transition-colors duration-300">
+                  <stat.icon className="w-8 h-8 text-purple-600 group-hover:text-white transition-colors duration-300" />
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
+                <div className="text-gray-600">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Premium Feature Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: Users,
                 title: "You Talk to Humans",
-                description: "Engineers, not bots. Every ticket. Every time.",
-                color: "bg-blue-500"
+                description: "Engineers, not bots. Every ticket. Every time. Real people who understand your problems.",
+                color: "bg-gradient-to-br from-blue-500 to-blue-600",
+                badge: "Human Touch"
               },
               {
                 icon: Settings,
                 title: "We Customize Everything",
-                description: "No one-size-fits-all. We tailor setups to your use case.",
-                color: "bg-purple-500"
+                description: "No one-size-fits-all. We tailor setups to your exact use case and requirements.",
+                color: "bg-gradient-to-br from-purple-500 to-purple-600",
+                badge: "Bespoke Solutions"
               },
               {
                 icon: Zap,
                 title: "We Move Fast",
-                description: "Environments provisioned in hours, not days.",
-                color: "bg-orange-500"
+                description: "Environments provisioned in hours, not days. Speed without compromising quality.",
+                color: "bg-gradient-to-br from-orange-500 to-orange-600",
+                badge: "Lightning Speed"
               },
               {
                 icon: Shield,
                 title: "We Don't Oversell",
-                description: "When you pay for performance, you get performance.",
-                color: "bg-green-500"
+                description: "When you pay for performance, you get performance. Guaranteed resources, always.",
+                color: "bg-gradient-to-br from-green-500 to-green-600",
+                badge: "Guaranteed Performance"
               }
             ].map((item, index) => (
               <div key={index} className="group relative">
-                <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon className="w-8 h-8 text-white" />
+                <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden">
+                  {/* Badge */}
+                  <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-semibold">
+                    {item.badge}
                   </div>
+                  
+                  {/* Gradient Background Effect */}
+                  <div className={`absolute inset-0 ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
+                  
+                  <div className={`w-20 h-20 ${item.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <item.icon className="w-10 h-10 text-white" />
+                  </div>
+                  
                   <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     {item.description}
                   </p>
+                  
+                  {/* Decorative element */}
+                  <div className="mt-6">
+                    <div className={`w-12 h-1 bg-gradient-to-r ${item.color.replace('bg-gradient-to-br', '')} rounded-full group-hover:w-20 transition-all duration-300`}></div>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* Premium CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center justify-center space-x-2 bg-purple-100 text-purple-600 px-6 py-3 rounded-full text-sm font-semibold mb-6">
+              <HeartHandshake className="w-4 h-4" />
+              <span>Trusted by 500+ Companies Worldwide</span>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                Experience the Difference
+                <Rocket className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-purple-600 text-purple-600 hover:bg-purple-50">
+                Talk to Our Team
+              </Button>
+            </div>
           </div>
         </div>
       </section>
