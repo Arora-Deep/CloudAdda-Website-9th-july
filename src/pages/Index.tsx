@@ -1,88 +1,113 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <div className="flex items-center space-x-2">
-                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
-              </div>
+              <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-10 w-auto object-contain" />
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-red-500 transition-colors">Product</a>
-              <div className="relative group">
-                <a href="#" className="text-gray-700 hover:text-red-500 transition-colors flex items-center">
-                  Solutions <span className="ml-1">▼</span>
-                </a>
-              </div>
-              <div className="relative group">
-                <a href="#" className="text-gray-700 hover:text-red-500 transition-colors flex items-center">
-                  Resources <span className="ml-1">▼</span>
-                </a>
-              </div>
-              <div className="relative group">
-                <a href="#" className="text-gray-700 hover:text-red-500 transition-colors flex items-center">
-                  About Us <span className="ml-1">▼</span>
-                </a>
-              </div>
-              <a href="#" className="text-gray-700 hover:text-red-500 transition-colors">Pricing</a>
-              <Button variant="ghost" className="text-red-500 hover:text-red-600">
-                Log In
-              </Button>
-              <Button className="bg-red-500 hover:bg-red-600 text-white rounded-full px-6">
-                Book a demo
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <a href="#" className="text-gray-700 hover:text-black transition-colors font-medium">HOME</a>
+              <a href="#" className="text-gray-700 hover:text-black transition-colors font-medium">ABOUT</a>
+              <a href="#" className="text-gray-700 hover:text-black transition-colors font-medium">CONTACT</a>
+              <a href="#" className="text-gray-700 hover:text-black transition-colors font-medium">DISCOUNT</a>
+            </div>
+            <div className="bg-black text-white px-6 py-2 rounded-full text-sm">
+              Search
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-white pt-16 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gray-50 pt-16 pb-20 relative overflow-hidden">
+        {/* Background decorative circles */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-green-200 rounded-full opacity-60"></div>
+        <div className="absolute top-40 right-20 w-48 h-48 bg-green-300 rounded-full opacity-40"></div>
+        <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-green-400 rounded-full opacity-50"></div>
+        <div className="absolute top-60 right-1/3 w-16 h-16 bg-green-500 rounded-full opacity-30"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full inline-block">
-                <span className="bg-pink-500 w-2 h-2 rounded-full inline-block mr-2"></span>
-                WALLOP!
-              </div>
-              <div className="space-y-8">
-                <h1 className="leading-tight">
-                  <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-2">
-                    Cloud Labs,
-                  </span>
-                  <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-2">
-                    Virtual Desktops
-                  </span>
-                  <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-4">
-                    & High-Performance VPS
-                  </span>
-                  <span className="bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent text-4xl lg:text-5xl font-bold block">
-                    All in One Platform
-                  </span>
+              <div className="space-y-6">
+                <h1 className="text-5xl lg:text-6xl font-bold text-black leading-tight">
+                  Cloud Labs,<br />
+                  Virtual Desktops<br />
+                  & High-Performance VPS
                 </h1>
-                <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-                  High-performance cloud built for training providers, remote teams, 
-                  and developers who demand more.
-                </p>
+                <div className="bg-lime-400 text-black px-4 py-2 rounded-lg inline-block text-sm font-medium">
+                  All in One Platform
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-red-500 to-purple-600 hover:from-red-600 hover:to-purple-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                  Book a demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+              
+              <div className="space-y-4">
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <p className="text-gray-700 font-medium">Your success</p>
+                  <p className="text-gray-700 font-medium">is our business</p>
+                </div>
+                
+                <div className="bg-lime-400 text-black px-6 py-3 rounded-lg inline-block font-medium">
+                  High-performance cloud built for training providers
+                </div>
+              </div>
+
+              <p className="text-gray-600 leading-relaxed">
+                High-performance cloud built for training providers, remote teams, 
+                and developers who demand more.
+              </p>
+
+              <div className="flex items-center space-x-4">
+                <div className="flex space-x-2">
+                  <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center">
+                    <span className="text-black font-bold">✓</span>
+                  </div>
+                  <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center">
+                    <span className="text-black font-bold">✓</span>
+                  </div>
+                  <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center">
+                    <span className="text-black font-bold">✓</span>
+                  </div>
+                  <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center">
+                    <span className="text-black font-bold">✓</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="relative">
-              <img src="/lovable-uploads/6df3b19a-2c57-45c8-89b1-a0f0e58db9ab.png" alt="3D illustration of a person with laptop and lightbulb idea" className="w-full max-w-lg mx-auto" />
+            
+            <div className="relative flex justify-center">
+              <div className="relative">
+                <img src="/lovable-uploads/6df3b19a-2c57-45c8-89b1-a0f0e58db9ab.png" alt="3D illustration of a person with laptop and lightbulb idea" className="w-full max-w-lg mx-auto relative z-10" />
+                
+                {/* Floating elements around the main image */}
+                <div className="absolute top-10 -left-10 bg-white p-3 rounded-lg shadow-lg">
+                  <div className="w-12 h-8 bg-green-400 rounded"></div>
+                </div>
+                
+                <div className="absolute top-20 -right-8 bg-white p-2 rounded-lg shadow-lg">
+                  <div className="w-8 h-6 bg-lime-400 rounded"></div>
+                </div>
+                
+                <div className="absolute bottom-20 -left-8 bg-white p-2 rounded-lg shadow-lg">
+                  <div className="w-6 h-6 bg-gray-800 rounded"></div>
+                </div>
+              </div>
+              
+              {/* Right side buttons */}
+              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 space-y-4">
+                <Button className="bg-lime-400 hover:bg-lime-500 text-black font-medium px-8 py-3 rounded-lg">
+                  LOGIN
+                </Button>
+                <Button className="bg-lime-400 hover:bg-lime-500 text-black font-medium px-8 py-3 rounded-lg">
+                  SIGN UP
+                </Button>
+              </div>
             </div>
           </div>
         </div>
