@@ -1,8 +1,11 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
@@ -70,7 +73,52 @@ const Index = () => {
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</a>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
+                      Solutions
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/training-labs"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Training Labs</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Provisioned lab environments for training companies
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/cloud-desktops"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Cloud Desktops</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Fast, secure desktops accessible from anywhere
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/vps"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">VPS Hosting</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              High-performance VPS with AMD EPYC processors
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
               <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</a>
               <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</a>
               <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</a>
@@ -87,32 +135,22 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section - SIMPLIFIED */}
+      {/* Hero Section - SIMPLIFIED AND BRIEF */}
       <section className="bg-white pt-16 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <h1 className="leading-tight">
-                  <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-4">
-                    Stop Fighting the Infra.
-                  </span>
-                  <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-4">
-                    Start Shipping the Work.
-                  </span>
-                  <span className="text-purple-600 text-3xl lg:text-4xl font-bold block">
-                    CloudAdda runs your Labs, Desktops & VPS — so your team doesn't have to.
-                  </span>
+                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Stop Fighting the Infra.<br />
+                  <span className="text-purple-600">Start Shipping Work.</span>
                 </h1>
-                <div className="space-y-4">
-                  <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-                    You've got a business to run. Customers to train. Products to build.
-                    Not time to wrestle VMs, flaky labs, and slow desktops.
-                  </p>
-                  <p className="text-md text-gray-800 font-semibold max-w-lg">
-                    No chaos. No cloud headaches. Just clean infra that does its damn job.
-                  </p>
-                </div>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  CloudAdda runs your Labs, Desktops & VPS — so your team doesn't have to.
+                </p>
+                <p className="text-lg text-gray-800 font-semibold">
+                  No chaos. No cloud headaches. Just clean infra that does its damn job.
+                </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
@@ -458,7 +496,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Switch You Didn't Know You Needed Section - REDESIGNED WITH BIGGER IMAGES */}
+      {/* The Switch You Didn't Know You Needed Section - CLEANER TABLE WITH BIGGER IMAGES */}
       <section className="py-32 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -475,31 +513,31 @@ const Index = () => {
           </div>
 
           <div className="grid lg:grid-cols-7 gap-8 items-center">
-            {/* Left Image - Confused Person - BIGGER */}
+            {/* Left Image - Confused Person - MUCH BIGGER */}
             <div className="lg:col-span-2 flex justify-center">
               <img 
                 src="/lovable-uploads/9b9e01c2-e3f9-4704-9bc8-59a73b35ce7d.png" 
                 alt="Confused person representing before state" 
-                className="w-full max-w-sm h-auto object-contain transform scale-150" 
+                className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" 
               />
             </div>
 
-            {/* Center Table - CLEANER DESIGN */}
+            {/* Center Table - MUCH CLEANER DESIGN */}
             <div className="lg:col-span-3">
               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="bg-gradient-to-r from-red-50 to-green-50">
-                        <th className="text-left p-6 text-lg font-bold text-red-600 border-r border-gray-200">
+                        <th className="text-left p-8 text-xl font-bold text-red-600 border-r border-gray-200">
                           ❌ Before CloudAdda
                         </th>
-                        <th className="text-left p-6 text-lg font-bold text-green-600">
+                        <th className="text-left p-8 text-xl font-bold text-green-600">
                           ✅ After CloudAdda
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-50">
+                    <tbody className="divide-y divide-gray-100">
                       {[
                         {
                           before: "Manual infra setup. Every time.",
@@ -527,10 +565,10 @@ const Index = () => {
                         }
                       ].map((row, index) => (
                         <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
-                          <td className="p-5 text-sm text-gray-700 border-r border-gray-100 bg-red-25">
+                          <td className="p-6 text-base text-gray-700 border-r border-gray-100 bg-red-25 leading-relaxed">
                             {row.before}
                           </td>
-                          <td className="p-5 text-sm text-gray-700 bg-green-25">
+                          <td className="p-6 text-base text-gray-700 bg-green-25 leading-relaxed">
                             {row.after}
                           </td>
                         </tr>
@@ -541,12 +579,12 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right Image - Happy Person - BIGGER */}
+            {/* Right Image - Happy Person - MUCH BIGGER */}
             <div className="lg:col-span-2 flex justify-center">
               <img 
                 src="/lovable-uploads/8a2d7816-a253-40ef-a846-db190a4798a5.png" 
                 alt="Happy person representing after state" 
-                className="w-full max-w-sm h-auto object-contain transform scale-150" 
+                className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" 
               />
             </div>
           </div>
@@ -829,7 +867,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Section - CLEANER DESIGN */}
+      {/* Pricing Section - CLEANER DESIGN WITH HIGHLIGHTED "NO HIDDEN GOTCHAS" */}
       <section className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -838,8 +876,8 @@ const Index = () => {
                 Transparent Pricing.
               </span>
               <br />
-              <div className="inline-flex items-center justify-center bg-gradient-to-r from-orange-100 to-red-100 border-2 border-orange-300 rounded-2xl px-8 py-4 mt-6">
-                <span className="text-3xl lg:text-4xl font-bold text-orange-600">
+              <div className="inline-flex items-center justify-center bg-gradient-to-r from-orange-100 to-red-100 border-4 border-orange-400 rounded-3xl px-12 py-6 mt-8 shadow-lg">
+                <span className="text-4xl lg:text-5xl font-bold text-orange-600">
                   No Hidden Gotchas. Ever.
                 </span>
               </div>
@@ -892,9 +930,9 @@ const Index = () => {
               }
             ].map((plan, index) => (
               <div key={index} className="group relative">
-                <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+                <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-200">
                   {/* Gradient top bar */}
-                  <div className={`h-2 bg-gradient-to-r ${plan.gradient}`}></div>
+                  <div className={`h-3 bg-gradient-to-r ${plan.gradient}`}></div>
                   
                   <div className="p-10">
                     {/* Header */}
@@ -902,21 +940,21 @@ const Index = () => {
                       <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.title}</h3>
                       <div className="space-y-2">
                         <div className="text-4xl font-bold text-gray-900">{plan.price}</div>
-                        <div className="text-gray-600">{plan.subtitle}</div>
+                        <div className="text-gray-600 text-lg">{plan.subtitle}</div>
                       </div>
                     </div>
                     
                     {/* Description */}
-                    <p className="text-gray-600 text-center mb-8 leading-relaxed">{plan.description}</p>
+                    <p className="text-gray-600 text-center mb-8 leading-relaxed text-lg">{plan.description}</p>
                     
                     {/* Features */}
                     <div className="space-y-4 mb-8">
                       {plan.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center space-x-3">
-                          <div className={`w-5 h-5 bg-gradient-to-r ${plan.gradient} rounded-full flex items-center justify-center flex-shrink-0`}>
-                            <CheckCircle className="w-3 h-3 text-white" />
+                          <div className={`w-6 h-6 bg-gradient-to-r ${plan.gradient} rounded-full flex items-center justify-center flex-shrink-0`}>
+                            <CheckCircle className="w-4 h-4 text-white" />
                           </div>
-                          <span className="text-gray-700 text-sm">{feature}</span>
+                          <span className="text-gray-700 text-base">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -933,7 +971,7 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-16">
-            <p className="text-gray-600 mb-6">Need something custom? We've got you covered.</p>
+            <p className="text-gray-600 mb-6 text-lg">Need something custom? We've got you covered.</p>
             <Button size="lg" variant="outline" className="text-orange-500 border-2 border-orange-500 hover:bg-orange-50 text-lg px-8 py-4 rounded-2xl">
               Talk to Our Team
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -942,7 +980,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Closer Section - SIMPLIFIED */}
+      {/* The Closer Section - SIMPLIFIED WITHOUT "DON'T LET THEM WIN" */}
       <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0">
