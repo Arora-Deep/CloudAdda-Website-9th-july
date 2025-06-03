@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -15,6 +16,7 @@ const Index = () => {
     "Your Success Is Our Mission."
   ];
 
+  // New sliding words for the "Cloud Company That Actually Cares" section
   const slidingWords = [
     { text: "A Cloud Company That Actually", highlight: "Cares" },
     { text: "Infrastructure That's", highlight: "Reliable" },
@@ -116,48 +118,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Pain Section - REDESIGNED */}
-      <section className="py-32 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <h2 className="text-6xl lg:text-8xl font-black mb-12 leading-tight">
-              <span className="block text-white mb-4">
-                You're Not a
-              </span>
-              <span className="block bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                Cloud Company.
-              </span>
-              <span className="block text-4xl lg:text-5xl font-bold text-purple-200 mt-8">
-                Why Are You Doing Cloud's Job?
-              </span>
+      {/* The Pain Section */}
+      <section className="py-20 bg-purple-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-8">
+              You're Not a Cloud Company. Why Are You Doing Cloud's Job?
             </h2>
-            
-            <div className="max-w-5xl mx-auto mt-16 space-y-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20 shadow-2xl">
-                <p className="text-2xl lg:text-3xl leading-relaxed font-medium text-white mb-8">
-                  You're not in business to <span className="text-orange-400 font-bold">manage servers.</span>
-                </p>
-                <p className="text-2xl lg:text-3xl leading-relaxed font-medium text-white mb-8">
-                  You're here to <span className="text-orange-400 font-bold">teach.</span> To <span className="text-orange-400 font-bold">launch.</span> To <span className="text-orange-400 font-bold">build.</span>
-                </p>
-                <p className="text-2xl lg:text-3xl leading-relaxed font-medium text-white">
-                  But you're stuck <span className="text-red-400 font-bold underline decoration-4">provisioning machines, babysitting desktops, firefighting downtime.</span>
-                </p>
-              </div>
-              
-              <div className="mt-20 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-3xl p-12 border-2 border-yellow-400/30">
-                <p className="text-4xl lg:text-5xl font-black text-center leading-tight">
-                  <span className="text-yellow-400">There's a</span>
-                  <span className="text-white"> Better </span>
-                  <span className="text-orange-400">Way.</span>
-                </p>
-              </div>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl leading-relaxed mb-6">
+                You're not in business to manage servers. You're here to teach. To launch. To build. But you're stuck provisioning machines, babysitting desktops, firefighting downtime.
+              </p>
+              <p className="text-xl leading-relaxed mb-6">
+                It's burning your time. Killing your margins. And making your team hate Mondays.
+              </p>
+              <p className="text-2xl font-semibold text-purple-200">
+                There's a better way.
+              </p>
             </div>
           </div>
         </div>
@@ -541,6 +518,7 @@ const Index = () => {
       {/* Why Us Section - REDESIGNED WITH CAROUSEL */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Horizontally Sliding Title */}
           <div className="text-center mb-20 relative">
             <div className="h-32 flex items-center justify-center overflow-hidden">
               <div className="relative w-full max-w-6xl mx-auto">
@@ -565,6 +543,7 @@ const Index = () => {
               </div>
             </div>
             
+            {/* Progress indicators */}
             <div className="flex justify-center mt-8 space-x-2">
               {slidingWords.map((_, index) => (
                 <div
@@ -577,6 +556,7 @@ const Index = () => {
             </div>
           </div>
           
+          {/* Trust Indicators */}
           <div className="grid md:grid-cols-4 gap-8 mb-16">
             {[
               { number: "99.9%", label: "Uptime SLA", icon: Shield },
@@ -594,6 +574,7 @@ const Index = () => {
             ))}
           </div>
           
+          {/* Premium Feature Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -627,10 +608,12 @@ const Index = () => {
             ].map((item, index) => (
               <div key={index} className="group relative">
                 <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden">
+                  {/* Badge */}
                   <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-semibold">
                     {item.badge}
                   </div>
                   
+                  {/* Gradient Background Effect */}
                   <div className={`absolute inset-0 ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
                   
                   <div className={`w-20 h-20 ${item.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
@@ -645,6 +628,7 @@ const Index = () => {
                     {item.description}
                   </p>
                   
+                  {/* Decorative element */}
                   <div className="mt-6">
                     <div className={`w-12 h-1 bg-gradient-to-r ${item.color.replace('bg-gradient-to-br', '')} rounded-full group-hover:w-20 transition-all duration-300`}></div>
                   </div>
@@ -653,6 +637,7 @@ const Index = () => {
             ))}
           </div>
           
+          {/* Premium CTA */}
           <div className="text-center mt-16">
             <div className="inline-flex items-center justify-center space-x-2 bg-purple-100 text-purple-600 px-6 py-3 rounded-full text-sm font-semibold mb-6">
               <HeartHandshake className="w-4 h-4" />
