@@ -9,7 +9,7 @@ const Index = () => {
   
   const headings = [
     "The Cloud Company That Actually Cares.",
-    "Premium Infrastructure. Human Touch.",
+    "Premium Infrastructure. Human Touch.", 
     "Where Performance Meets Compassion.",
     "Your Success Is Our Mission."
   ];
@@ -502,29 +502,24 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Carousel Heading */}
           <div className="text-center mb-20 relative">
-            <div className="h-32 flex items-center justify-center overflow-hidden">
-              <h2 className="text-6xl lg:text-8xl font-bold leading-tight transition-all duration-1000 ease-in-out transform">
-                <span 
-                  className="block"
+            <div className="h-20 flex items-center justify-center overflow-hidden">
+              <div className="relative w-full">
+                <div 
+                  className="flex transition-transform duration-1000 ease-in-out"
                   style={{
-                    transform: `translateY(${-currentHeading * 100}%)`,
-                    transition: 'transform 1s ease-in-out'
+                    transform: `translateX(-${currentHeading * 100}%)`
                   }}
                 >
                   {headings.map((heading, index) => (
-                    <span 
+                    <h2 
                       key={index}
-                      className={`block h-32 flex items-center justify-center ${
-                        index === currentHeading 
-                          ? 'text-purple-600' 
-                          : 'text-gray-200'
-                      }`}
+                      className="text-4xl lg:text-5xl font-bold text-purple-600 min-w-full text-center"
                     >
                       {heading}
-                    </span>
+                    </h2>
                   ))}
-                </span>
-              </h2>
+                </div>
+              </div>
             </div>
             
             {/* Progress indicators */}
