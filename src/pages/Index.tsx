@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
@@ -146,9 +145,9 @@ const Index = () => {
                   High-performance, secure desktops — Windows, Linux, or macOS — ready to power remote teams, call centers, dev shops, and full-scale organizations. Blazing fast, customizable, and easier than hiring IT admins.
                 </p>
                 <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">💸</span> Starts at ₹3,299/user/month</p>
-                  <p><span className="font-semibold">⚡</span> 2vCPU, 4GB RAM, SSD/NVMe, 100% SLA</p>
-                  <p><span className="font-semibold">🔐</span> Built-in snapshots, security policies, and remote access</p>
+                  <p><span className="font-semibold">Starts at ₹3,299/user/month</span></p>
+                  <p><span className="font-semibold">2vCPU, 4GB RAM, SSD/NVMe, 100% SLA</span></p>
+                  <p><span className="font-semibold">Built-in snapshots, security policies, and remote access</span></p>
                 </div>
                 <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
                   Launch a Desktop
@@ -168,9 +167,9 @@ const Index = () => {
                   Don't waste time on cheap, oversold VPS providers. CloudAdda gives you fast, isolated, NVMe-powered instances with real support and predictable performance.
                 </p>
                 <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">💸</span> Starts at ₹699/month</p>
-                  <p><span className="font-semibold">🔧</span> 1vCPU, 2GB RAM, full root access</p>
-                  <p><span className="font-semibold">🌍</span> Indian & global locations. Backups included.</p>
+                  <p><span className="font-semibold">Starts at ₹699/month</span></p>
+                  <p><span className="font-semibold">1vCPU, 2GB RAM, full root access</span></p>
+                  <p><span className="font-semibold">Indian & global locations. Backups included.</span></p>
                 </div>
                 <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
                   Get a VPS Now
@@ -186,11 +185,8 @@ const Index = () => {
       <section className="py-32 bg-gray-50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
-            <div className="inline-block mb-6">
-              <span className="text-6xl">🧠</span>
-            </div>
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              Not Everyone.
+              It's Not for Everyone.
               <br />
               <span className="text-purple-600">
                 Just the Smart Ones.
@@ -200,6 +196,10 @@ const Index = () => {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
+              <div className="text-4xl lg:text-5xl font-bold text-purple-600 mb-8">
+                If
+              </div>
+              
               {[
                 "You're tired of spending hours configuring labs.",
                 "You want your team to work — not wait for IT.",
@@ -217,18 +217,19 @@ const Index = () => {
                   </p>
                 </div>
               ))}
+              
+              <div className="text-4xl lg:text-5xl font-bold text-purple-600 mt-12">
+                Then you're our people.
+              </div>
+              <div className="w-24 h-1 bg-purple-600 rounded-full"></div>
             </div>
             
-            <div className="text-center lg:text-left">
-              <div className="relative">
-                <div className="text-8xl lg:text-9xl font-bold text-gray-100 absolute -top-16 -left-8 select-none">
-                  "
-                </div>
-                <p className="text-3xl lg:text-4xl font-bold text-purple-600 relative z-10 mb-8">
-                  Then you're our people.
-                </p>
-                <div className="w-24 h-1 bg-purple-600 rounded-full"></div>
-              </div>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/f690fdec-4d37-4062-af23-158e9b86a21e.png" 
+                alt="Professional man in business suit with welcoming gesture" 
+                className="w-full max-w-lg" 
+              />
             </div>
           </div>
         </div>
@@ -238,9 +239,6 @@ const Index = () => {
       <section className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-block mb-6">
-              <span className="text-6xl">🔥</span>
-            </div>
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
               The Cloud Company That
               <br />
@@ -299,9 +297,6 @@ const Index = () => {
       <section className="py-32 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-block mb-6">
-              <span className="text-6xl">📦</span>
-            </div>
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               Built to Power
               <br />
@@ -366,9 +361,6 @@ const Index = () => {
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
-            <div className="inline-block mb-6">
-              <span className="text-6xl">💬</span>
-            </div>
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               What Our Customers Say
               <br />
@@ -452,9 +444,6 @@ const Index = () => {
       <section className="py-32 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-block mb-6">
-              <span className="text-6xl">💸</span>
-            </div>
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               <span className="text-purple-600">
                 Transparent Pricing.
@@ -544,10 +533,6 @@ const Index = () => {
         <div className="absolute inset-0 bg-black opacity-20"></div>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-block mb-8">
-            <span className="text-6xl">👑</span>
-          </div>
-          
           <h2 className="text-5xl lg:text-7xl font-bold mb-12 leading-tight">
             You Can't Afford to Waste Time
             <br />
