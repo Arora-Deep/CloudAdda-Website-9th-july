@@ -58,7 +58,7 @@ const Index = () => {
                   <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-2">
                     Ends Here.
                   </span>
-                  <span className="bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent text-4xl lg:text-5xl font-bold block">
+                  <span className="text-purple-600 text-4xl lg:text-5xl font-bold block">
                     Labs. Desktops. VPS. Just Done.
                   </span>
                 </h1>
@@ -67,7 +67,7 @@ const Index = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                   Let's Fix Your Infra
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -84,7 +84,7 @@ const Index = () => {
       </section>
 
       {/* The Pain Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-purple-800 text-white">
+      <section className="py-20 bg-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-8">
@@ -183,13 +183,7 @@ const Index = () => {
       </section>
 
       {/* Who It's For Section - REDESIGNED */}
-      <section className="py-32 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
-        </div>
-        
+      <section className="py-32 bg-gray-50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
             <div className="inline-block mb-6">
@@ -198,7 +192,7 @@ const Index = () => {
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               Not Everyone.
               <br />
-              <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
+              <span className="text-purple-600">
                 Just the Smart Ones.
               </span>
             </h2>
@@ -214,7 +208,7 @@ const Index = () => {
               ].map((text, index) => (
                 <div key={index} className="flex items-start space-x-6 group">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-orange-500 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
                       {index + 1}
                     </div>
                   </div>
@@ -233,7 +227,7 @@ const Index = () => {
                 <p className="text-3xl lg:text-4xl font-bold text-purple-600 relative z-10 mb-8">
                   Then you're our people.
                 </p>
-                <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full"></div>
+                <div className="w-24 h-1 bg-purple-600 rounded-full"></div>
               </div>
             </div>
           </div>
@@ -250,7 +244,7 @@ const Index = () => {
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
               The Cloud Company That
               <br />
-              <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
+              <span className="text-purple-600">
                 Actually Cares.
               </span>
             </h2>
@@ -262,31 +256,30 @@ const Index = () => {
                 icon: Users,
                 title: "You Talk to Humans",
                 description: "Engineers, not bots. Every ticket. Every time.",
-                gradient: "from-blue-500 to-purple-600"
+                color: "bg-blue-500"
               },
               {
                 icon: Settings,
                 title: "We Customize Everything",
                 description: "No one-size-fits-all. We tailor setups to your use case.",
-                gradient: "from-purple-500 to-pink-600"
+                color: "bg-purple-500"
               },
               {
                 icon: Zap,
                 title: "We Move Fast",
                 description: "Environments provisioned in hours, not days.",
-                gradient: "from-yellow-500 to-orange-600"
+                color: "bg-orange-500"
               },
               {
                 icon: Shield,
                 title: "We Don't Oversell",
                 description: "When you pay for performance, you get performance.",
-                gradient: "from-green-500 to-blue-600"
+                color: "bg-green-500"
               }
             ].map((item, index) => (
               <div key={index} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-3xl blur-xl"></div>
                 <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
@@ -303,7 +296,7 @@ const Index = () => {
       </section>
 
       {/* Use Cases Section - REDESIGNED */}
-      <section className="py-32 bg-gradient-to-br from-gray-50 to-white relative">
+      <section className="py-32 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <div className="inline-block mb-6">
@@ -312,7 +305,7 @@ const Index = () => {
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               Built to Power
               <br />
-              <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
+              <span className="text-purple-600">
                 Real Work,
               </span>
               <br />
@@ -326,27 +319,27 @@ const Index = () => {
                 title: "Training Programs",
                 description: "Instructor-led or self-paced — we spin up stable, consistent lab environments. You send a config. We send you a URL.",
                 number: "01",
-                color: "from-blue-500 to-purple-600"
+                color: "bg-blue-500"
               },
               {
                 title: "Remote Product Teams", 
                 description: "Devs and QA running on underpowered laptops? We fix that. Secure desktops in the cloud, with real horsepower.",
                 number: "02",
-                color: "from-purple-500 to-pink-600"
+                color: "bg-purple-500"
               },
               {
                 title: "Bootstrapped Startups",
                 description: "Deploy backend systems, AI workloads, or POCs — fast and affordable. Get enterprise-grade VPS without paying AWS premiums.",
                 number: "03",
-                color: "from-orange-500 to-red-600"
+                color: "bg-orange-500"
               }
             ].map((useCase, index) => (
               <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-100">
-                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r rounded-t-3xl" style={{background: `linear-gradient(to right, ${useCase.color.includes('blue') ? '#3b82f6, #8b5cf6' : useCase.color.includes('purple') ? '#8b5cf6, #ec4899' : '#f97316, #ef4444'})`}}></div>
+                  <div className={`absolute top-0 left-0 w-full h-2 ${useCase.color} rounded-t-3xl`}></div>
                   
                   <div className="flex items-start justify-between mb-6">
-                    <div className={`text-6xl font-bold bg-gradient-to-r ${useCase.color} bg-clip-text text-transparent opacity-20`}>
+                    <div className={`text-6xl font-bold text-gray-100 opacity-20`}>
                       {useCase.number}
                     </div>
                   </div>
@@ -360,7 +353,7 @@ const Index = () => {
                   </p>
                   
                   <div className="mt-8">
-                    <div className={`w-12 h-1 bg-gradient-to-r ${useCase.color} rounded-full group-hover:w-20 transition-all duration-300`}></div>
+                    <div className={`w-12 h-1 ${useCase.color} rounded-full group-hover:w-20 transition-all duration-300`}></div>
                   </div>
                 </div>
               </div>
@@ -371,8 +364,6 @@ const Index = () => {
 
       {/* Testimonials Section - REDESIGNED */}
       <section className="py-32 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-orange-50 opacity-50"></div>
-        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
             <div className="inline-block mb-6">
@@ -409,8 +400,6 @@ const Index = () => {
               }
             ].map((testimonial, index) => (
               <div key={index} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-orange-500 rounded-3xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 blur-xl"></div>
-                
                 <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                   <div className="flex text-yellow-400 mb-6 justify-center">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -427,7 +416,7 @@ const Index = () => {
                   </div>
                   
                   <div className="text-center">
-                    <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full mx-auto mb-4"></div>
+                    <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
                     <p className="font-semibold text-gray-900 text-lg">
                       {testimonial.author}
                     </p>
@@ -440,7 +429,7 @@ const Index = () => {
       </section>
 
       {/* About CloudAdda Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-purple-800 text-white">
+      <section className="py-20 bg-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-8">
             CloudAdda is Born in India, Built for the World
@@ -460,14 +449,14 @@ const Index = () => {
       </section>
 
       {/* Pricing Section - REDESIGNED */}
-      <section className="py-32 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative">
+      <section className="py-32 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <div className="inline-block mb-6">
               <span className="text-6xl">💸</span>
             </div>
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
+              <span className="text-purple-600">
                 Transparent Pricing.
               </span>
               <br />
@@ -486,7 +475,7 @@ const Index = () => {
                 highlight: "Same-day delivery possible.",
                 cta: "Get Custom Quote",
                 popular: false,
-                gradient: "from-blue-500 to-purple-600"
+                color: "bg-blue-500"
               },
               {
                 title: "Virtual Desktops", 
@@ -495,7 +484,7 @@ const Index = () => {
                 highlight: "Fully scalable. Just add users.",
                 cta: "Launch Desktop",
                 popular: true,
-                gradient: "from-purple-500 to-orange-600"
+                color: "bg-purple-500"
               },
               {
                 title: "VPS",
@@ -504,20 +493,20 @@ const Index = () => {
                 highlight: "",
                 cta: "Get VPS Now",
                 popular: false,
-                gradient: "from-orange-500 to-red-600"
+                color: "bg-orange-500"
               }
             ].map((plan, index) => (
               <div key={index} className={`group relative ${plan.popular ? 'transform scale-105 lg:scale-110' : ''}`}>
                 {plan.popular && (
                   <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
-                    <span className="bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                    <span className="bg-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
                       Most Popular
                     </span>
                   </div>
                 )}
                 
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                  <div className={`h-2 bg-gradient-to-r ${plan.gradient}`}></div>
+                  <div className={`h-2 ${plan.color}`}></div>
                   
                   <div className="p-10">
                     <div className="text-center mb-8">
@@ -551,12 +540,8 @@ const Index = () => {
       </section>
 
       {/* The Closer Section - REDESIGNED */}
-      <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-orange-900 text-white relative overflow-hidden">
+      <section className="py-32 bg-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full opacity-10 blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl"></div>
-        </div>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="inline-block mb-8">
@@ -566,7 +551,7 @@ const Index = () => {
           <h2 className="text-5xl lg:text-7xl font-bold mb-12 leading-tight">
             You Can't Afford to Waste Time
             <br />
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+            <span className="text-purple-400">
               on Bad Infra.
             </span>
           </h2>
@@ -579,15 +564,14 @@ const Index = () => {
               CloudAdda is for those who can't afford to fail. And those who don't want to build infra teams just to stay online.
             </p>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-2xl blur-xl opacity-20"></div>
-              <p className="relative text-3xl lg:text-4xl font-bold text-white bg-gradient-to-r from-purple-900 to-orange-900 rounded-2xl p-8 border border-purple-500/30">
+              <p className="text-3xl lg:text-4xl font-bold text-white bg-purple-900 rounded-2xl p-8 border border-purple-500/30">
                 You bring the vision. We bring the horsepower. Let's go.
               </p>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
               Request Demo
             </Button>
             <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
