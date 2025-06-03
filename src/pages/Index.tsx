@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -87,17 +88,17 @@ const Index = () => {
               <div className="space-y-8">
                 <h1 className="leading-tight">
                   <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-2">
-                    Infrastructure Chaos
+                    High-Performance Labs,
                   </span>
                   <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-2">
-                    Ends Here.
+                    Cloud Desktops & VPS –
                   </span>
                   <span className="text-purple-600 text-4xl lg:text-5xl font-bold block">
-                    Labs. Desktops. VPS. Just Done.
+                    Provisioned Fast. Backed by Humans.
                   </span>
                 </h1>
                 <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-                  You've got customers to train. Teams to empower. Products to build. But your infra? It's slow. Messy. Unreliable. CloudAdda fixes that — with battle-tested Labs, blazing-fast Virtual Desktops, and no-nonsense VPS.
+                  No complexity. No guesswork. Just the perfect cloud environment for your training, teams, or business workloads – ready in hours, not days.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
