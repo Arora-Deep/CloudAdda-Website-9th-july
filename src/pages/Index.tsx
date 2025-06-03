@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -88,18 +87,15 @@ const Index = () => {
               <div className="space-y-8">
                 <h1 className="leading-tight">
                   <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-2">
-                    High-Performance Labs,
+                    Powerful Cloud.
                   </span>
                   <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-2">
-                    Cloud Desktops & VPS –
+                    Zero Headaches.
                   </span>
                   <span className="text-purple-600 text-4xl lg:text-5xl font-bold block">
-                    Provisioned Fast. Backed by Humans.
+                    Purpose-built infrastructure for Training Labs, Virtual Desktops, and High-Performance VPS. Engineered for speed, simplicity, and real business outcomes.
                   </span>
                 </h1>
-                <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-                  No complexity. No guesswork. Just the perfect cloud environment for your training, teams, or business workloads – ready in hours, not days.
-                </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
@@ -118,66 +114,54 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Pain Section - REDESIGNED */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-purple-800 text-white relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <h2 className="text-4xl lg:text-6xl font-bold mb-8 leading-tight">
-              <span className="block text-white mb-2">
-                You're Not a
-              </span>
-              <span className="block text-orange-500 mb-2">
-                Cloud Company.
-              </span>
-              <span className="block text-xl lg:text-2xl font-medium text-gray-300 mt-4">
+      {/* The Pain Section - Clean Design */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+              You're Not a <span className="text-orange-500">Cloud Company.</span>
+              <br />
+              <span className="text-2xl lg:text-3xl font-normal text-gray-600 mt-4">
                 Why Are You Doing Cloud's Job?
               </span>
             </h2>
             
-            <div className="max-w-4xl mx-auto mt-12 space-y-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <p className="text-lg lg:text-xl leading-relaxed font-medium text-white mb-4">
-                  You're not in business to <span className="text-orange-400 font-bold">manage servers.</span>
+            <div className="max-w-4xl mx-auto space-y-8">
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <p className="text-xl lg:text-2xl leading-relaxed text-gray-700 mb-6">
+                  You're not in business to <span className="text-orange-500 font-bold">manage servers.</span>
                 </p>
-                <p className="text-lg lg:text-xl leading-relaxed font-medium text-white mb-4">
-                  You're here to <span className="text-purple-400 font-bold">teach.</span> To <span className="text-purple-400 font-bold">launch.</span> To <span className="text-purple-400 font-bold">build.</span>
+                <p className="text-xl lg:text-2xl leading-relaxed text-gray-700 mb-6">
+                  You're here to <span className="text-purple-600 font-bold">teach.</span> To <span className="text-purple-600 font-bold">launch.</span> To <span className="text-purple-600 font-bold">build.</span>
                 </p>
-                <p className="text-lg lg:text-xl leading-relaxed font-medium text-white">
-                  But you're stuck <span className="text-orange-400 font-bold underline decoration-2">provisioning machines, babysitting desktops, firefighting downtime.</span>
+                <p className="text-xl lg:text-2xl leading-relaxed text-gray-700">
+                  But you're stuck <span className="text-orange-500 font-bold">provisioning machines, babysitting desktops, firefighting downtime.</span>
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-6 mt-12">
-                <div className="text-center group">
-                  <div className="bg-gray-700/50 rounded-xl p-6 group-hover:bg-gray-700/70 transition-all duration-300">
-                    <Clock className="w-12 h-12 text-orange-400 mx-auto mb-3" />
-                    <h3 className="text-lg font-bold text-white mb-2">Burning Your Time</h3>
-                    <p className="text-sm text-gray-300">Hours wasted on setup instead of core business</p>
-                  </div>
+              <div className="grid md:grid-cols-3 gap-8 mt-12">
+                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Clock className="w-12 h-12 text-orange-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Burning Your Time</h3>
+                  <p className="text-gray-600">Hours wasted on setup instead of core business</p>
                 </div>
                 
-                <div className="text-center group">
-                  <div className="bg-gray-700/50 rounded-xl p-6 group-hover:bg-gray-700/70 transition-all duration-300">
-                    <BarChart3 className="w-12 h-12 text-orange-400 mx-auto mb-3" />
-                    <h3 className="text-lg font-bold text-white mb-2">Killing Your Margins</h3>
-                    <p className="text-sm text-gray-300">Resources drained on infrastructure instead of growth</p>
-                  </div>
+                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <BarChart3 className="w-12 h-12 text-orange-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Killing Your Margins</h3>
+                  <p className="text-gray-600">Resources drained on infrastructure instead of growth</p>
                 </div>
                 
-                <div className="text-center group">
-                  <div className="bg-gray-700/50 rounded-xl p-6 group-hover:bg-gray-700/70 transition-all duration-300">
-                    <Users className="w-12 h-12 text-orange-400 mx-auto mb-3" />
-                    <h3 className="text-lg font-bold text-white mb-2">Team Burnout</h3>
-                    <p className="text-sm text-gray-300">Making your team hate Mondays</p>
-                  </div>
+                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Users className="w-12 h-12 text-orange-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Team Burnout</h3>
+                  <p className="text-gray-600">Making your team hate Mondays</p>
                 </div>
               </div>
               
-              <div className="mt-12 bg-gradient-to-r from-purple-600/20 to-orange-500/20 rounded-2xl p-8 border border-purple-400/30">
+              <div className="bg-purple-600 rounded-2xl p-8 text-white">
                 <p className="text-2xl lg:text-3xl font-bold text-center leading-tight">
-                  <span className="text-purple-400">There's a</span>
-                  <span className="text-white"> Better </span>
-                  <span className="text-orange-400">Way.</span>
+                  There's a <span className="text-orange-400">Better</span> Way.
                 </p>
               </div>
             </div>
