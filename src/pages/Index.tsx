@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -6,6 +7,7 @@ import { useEffect, useState } from "react";
 
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   
   const headings = [
     "The Cloud Company That Actually Cares.",
@@ -14,11 +16,27 @@ const Index = () => {
     "Your Success Is Our Mission."
   ];
 
+  // New sliding words for the "Cloud Company That Actually Cares" section
+  const slidingWords = [
+    { text: "Cloud Company That Actually", highlight: "Cares" },
+    { text: "Infrastructure That's", highlight: "Reliable" },
+    { text: "Support That's", highlight: "Human" },
+    { text: "Solutions That", highlight: "Scale" },
+    { text: "Performance That", highlight: "Delivers" }
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeading((prev) => (prev + 1) % headings.length);
     }, 3000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlideIndex((prev) => (prev + 1) % slidingWords.length);
+    }, 2500);
+    return () => clearInterval(slideInterval);
   }, []);
 
   return (
@@ -500,23 +518,26 @@ const Index = () => {
       {/* Why Us Section - REDESIGNED WITH CAROUSEL */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Carousel Heading */}
+          {/* Horizontally Sliding Title */}
           <div className="text-center mb-20 relative">
-            <div className="h-20 flex items-center justify-center overflow-hidden">
-              <div className="relative w-full">
+            <div className="h-24 flex items-center justify-center overflow-hidden">
+              <div className="relative w-full max-w-4xl">
                 <div 
-                  className="flex transition-transform duration-1000 ease-in-out"
+                  className="flex transition-transform duration-700 ease-in-out"
                   style={{
-                    transform: `translateX(-${currentHeading * 100}%)`
+                    transform: `translateX(-${currentSlideIndex * 100}%)`
                   }}
                 >
-                  {headings.map((heading, index) => (
-                    <h2 
+                  {slidingWords.map((slide, index) => (
+                    <div 
                       key={index}
-                      className="text-4xl lg:text-5xl font-bold text-purple-600 min-w-full text-center"
+                      className="min-w-full flex items-center justify-center"
                     >
-                      {heading}
-                    </h2>
+                      <h2 className="text-4xl lg:text-6xl font-bold text-center leading-tight">
+                        <span className="text-gray-900">{slide.text} </span>
+                        <span className="text-purple-600">{slide.highlight}</span>
+                      </h2>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -524,11 +545,11 @@ const Index = () => {
             
             {/* Progress indicators */}
             <div className="flex justify-center mt-8 space-x-2">
-              {headings.map((_, index) => (
+              {slidingWords.map((_, index) => (
                 <div
                   key={index}
                   className={`h-2 w-8 rounded-full transition-all duration-300 ${
-                    index === currentHeading ? 'bg-purple-600' : 'bg-gray-300'
+                    index === currentSlideIndex ? 'bg-purple-600' : 'bg-gray-300'
                   }`}
                 />
               ))}
