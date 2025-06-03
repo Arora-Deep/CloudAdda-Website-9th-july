@@ -3,13 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
 
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
@@ -22,7 +15,6 @@ const Index = () => {
     "Your Success Is Our Mission."
   ];
 
-  // New sliding words for the "Cloud Company That Actually Cares" section
   const slidingWords = [
     { text: "A Cloud Company That Actually", highlight: "Cares" },
     { text: "Infrastructure That's", highlight: "Reliable" },
@@ -126,7 +118,6 @@ const Index = () => {
 
       {/* The Pain Section - REDESIGNED */}
       <section className="py-32 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 text-white relative overflow-hidden">
-        {/* Background Elements */}
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -153,37 +144,11 @@ const Index = () => {
                   You're not in business to <span className="text-orange-400 font-bold">manage servers.</span>
                 </p>
                 <p className="text-2xl lg:text-3xl leading-relaxed font-medium text-white mb-8">
-                  You're here to <span className="text-yellow-400 font-bold">teach.</span> To <span className="text-blue-400 font-bold">launch.</span> To <span className="text-green-400 font-bold">build.</span>
+                  You're here to <span className="text-orange-400 font-bold">teach.</span> To <span className="text-orange-400 font-bold">launch.</span> To <span className="text-orange-400 font-bold">build.</span>
                 </p>
                 <p className="text-2xl lg:text-3xl leading-relaxed font-medium text-white">
                   But you're stuck <span className="text-red-400 font-bold underline decoration-4">provisioning machines, babysitting desktops, firefighting downtime.</span>
                 </p>
-              </div>
-              
-              <div className="grid md:grid-cols-3 gap-8 mt-16">
-                <div className="text-center group">
-                  <div className="bg-red-500/20 rounded-2xl p-8 mb-6 group-hover:bg-red-500/30 transition-all duration-300">
-                    <div className="text-5xl font-black text-red-400 mb-4">⏰</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Burning Your Time</h3>
-                    <p className="text-lg text-gray-200">Hours wasted on setup instead of core business</p>
-                  </div>
-                </div>
-                
-                <div className="text-center group">
-                  <div className="bg-orange-500/20 rounded-2xl p-8 mb-6 group-hover:bg-orange-500/30 transition-all duration-300">
-                    <div className="text-5xl font-black text-orange-400 mb-4">💸</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Killing Your Margins</h3>
-                    <p className="text-lg text-gray-200">Resources drained on infrastructure instead of growth</p>
-                  </div>
-                </div>
-                
-                <div className="text-center group">
-                  <div className="bg-purple-500/20 rounded-2xl p-8 mb-6 group-hover:bg-purple-500/30 transition-all duration-300">
-                    <div className="text-5xl font-black text-purple-400 mb-4">😤</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Team Burnout</h3>
-                    <p className="text-lg text-gray-200">Making your team hate Mondays</p>
-                  </div>
-                </div>
               </div>
               
               <div className="mt-20 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-3xl p-12 border-2 border-yellow-400/30">
@@ -576,7 +541,6 @@ const Index = () => {
       {/* Why Us Section - REDESIGNED WITH CAROUSEL */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Horizontally Sliding Title */}
           <div className="text-center mb-20 relative">
             <div className="h-32 flex items-center justify-center overflow-hidden">
               <div className="relative w-full max-w-6xl mx-auto">
@@ -601,7 +565,6 @@ const Index = () => {
               </div>
             </div>
             
-            {/* Progress indicators */}
             <div className="flex justify-center mt-8 space-x-2">
               {slidingWords.map((_, index) => (
                 <div
@@ -614,7 +577,6 @@ const Index = () => {
             </div>
           </div>
           
-          {/* Trust Indicators */}
           <div className="grid md:grid-cols-4 gap-8 mb-16">
             {[
               { number: "99.9%", label: "Uptime SLA", icon: Shield },
@@ -632,7 +594,6 @@ const Index = () => {
             ))}
           </div>
           
-          {/* Premium Feature Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -666,12 +627,10 @@ const Index = () => {
             ].map((item, index) => (
               <div key={index} className="group relative">
                 <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden">
-                  {/* Badge */}
                   <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-semibold">
                     {item.badge}
                   </div>
                   
-                  {/* Gradient Background Effect */}
                   <div className={`absolute inset-0 ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
                   
                   <div className={`w-20 h-20 ${item.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
@@ -686,7 +645,6 @@ const Index = () => {
                     {item.description}
                   </p>
                   
-                  {/* Decorative element */}
                   <div className="mt-6">
                     <div className={`w-12 h-1 bg-gradient-to-r ${item.color.replace('bg-gradient-to-br', '')} rounded-full group-hover:w-20 transition-all duration-300`}></div>
                   </div>
@@ -695,7 +653,6 @@ const Index = () => {
             ))}
           </div>
           
-          {/* Premium CTA */}
           <div className="text-center mt-16">
             <div className="inline-flex items-center justify-center space-x-2 bg-purple-100 text-purple-600 px-6 py-3 rounded-full text-sm font-semibold mb-6">
               <HeartHandshake className="w-4 h-4" />
