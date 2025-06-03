@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
@@ -15,27 +16,27 @@ const Index = () => {
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-red-500 transition-colors">Product</a>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Product</a>
               <div className="relative group">
-                <a href="#" className="text-gray-700 hover:text-red-500 transition-colors flex items-center">
+                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors flex items-center">
                   Solutions <span className="ml-1">▼</span>
                 </a>
               </div>
               <div className="relative group">
-                <a href="#" className="text-gray-700 hover:text-red-500 transition-colors flex items-center">
+                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors flex items-center">
                   Resources <span className="ml-1">▼</span>
                 </a>
               </div>
               <div className="relative group">
-                <a href="#" className="text-gray-700 hover:text-red-500 transition-colors flex items-center">
+                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors flex items-center">
                   About Us <span className="ml-1">▼</span>
                 </a>
               </div>
-              <a href="#" className="text-gray-700 hover:text-red-500 transition-colors">Pricing</a>
-              <Button variant="ghost" className="text-red-500 hover:text-red-600">
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</a>
+              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
-              <Button className="bg-red-500 hover:bg-red-600 text-white rounded-full px-6">
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
                 Start Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -66,11 +67,11 @@ const Index = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-red-500 to-purple-600 hover:from-red-600 hover:to-purple-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                   Let's Fix Your Infra
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-purple-600 text-purple-600 hover:bg-purple-50">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
                   See Pricing
                 </Button>
               </div>
@@ -127,7 +128,7 @@ const Index = () => {
                 <p className="text-gray-600">
                   We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.
                 </p>
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
                   Schedule a Lab Call
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -149,7 +150,7 @@ const Index = () => {
                   <p><span className="font-semibold">⚡</span> 2vCPU, 4GB RAM, SSD/NVMe, 100% SLA</p>
                   <p><span className="font-semibold">🔐</span> Built-in snapshots, security policies, and remote access</p>
                 </div>
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
                   Launch a Desktop
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -171,7 +172,7 @@ const Index = () => {
                   <p><span className="font-semibold">🔧</span> 1vCPU, 2GB RAM, full root access</p>
                   <p><span className="font-semibold">🌍</span> Indian & global locations. Backups included.</p>
                 </div>
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
                   Get a VPS Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -186,7 +187,7 @@ const Index = () => {
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -197,7 +198,7 @@ const Index = () => {
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               Not Everyone.
               <br />
-              <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
                 Just the Smart Ones.
               </span>
             </h2>
@@ -213,7 +214,7 @@ const Index = () => {
               ].map((text, index) => (
                 <div key={index} className="flex items-start space-x-6 group">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-red-500 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-orange-500 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
                       {index + 1}
                     </div>
                   </div>
@@ -232,7 +233,7 @@ const Index = () => {
                 <p className="text-3xl lg:text-4xl font-bold text-purple-600 relative z-10 mb-8">
                   Then you're our people.
                 </p>
-                <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-red-500 rounded-full"></div>
+                <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full"></div>
               </div>
             </div>
           </div>
@@ -249,7 +250,7 @@ const Index = () => {
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
               The Cloud Company That
               <br />
-              <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
                 Actually Cares.
               </span>
             </h2>
@@ -273,7 +274,7 @@ const Index = () => {
                 icon: Zap,
                 title: "We Move Fast",
                 description: "Environments provisioned in hours, not days.",
-                gradient: "from-yellow-500 to-red-600"
+                gradient: "from-yellow-500 to-orange-600"
               },
               {
                 icon: Shield,
@@ -311,7 +312,7 @@ const Index = () => {
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               Built to Power
               <br />
-              <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
                 Real Work,
               </span>
               <br />
@@ -337,12 +338,12 @@ const Index = () => {
                 title: "Bootstrapped Startups",
                 description: "Deploy backend systems, AI workloads, or POCs — fast and affordable. Get enterprise-grade VPS without paying AWS premiums.",
                 number: "03",
-                color: "from-red-500 to-orange-600"
+                color: "from-orange-500 to-red-600"
               }
             ].map((useCase, index) => (
               <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-100">
-                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r rounded-t-3xl" style={{background: `linear-gradient(to right, ${useCase.color.includes('blue') ? '#3b82f6, #8b5cf6' : useCase.color.includes('purple') ? '#8b5cf6, #ec4899' : '#ef4444, #f97316'})`}}></div>
+                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r rounded-t-3xl" style={{background: `linear-gradient(to right, ${useCase.color.includes('blue') ? '#3b82f6, #8b5cf6' : useCase.color.includes('purple') ? '#8b5cf6, #ec4899' : '#f97316, #ef4444'})`}}></div>
                   
                   <div className="flex items-start justify-between mb-6">
                     <div className={`text-6xl font-bold bg-gradient-to-r ${useCase.color} bg-clip-text text-transparent opacity-20`}>
@@ -370,7 +371,7 @@ const Index = () => {
 
       {/* Testimonials Section - REDESIGNED */}
       <section className="py-32 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-red-50 opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-orange-50 opacity-50"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
@@ -408,7 +409,7 @@ const Index = () => {
               }
             ].map((testimonial, index) => (
               <div key={index} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-red-500 rounded-3xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 blur-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-orange-500 rounded-3xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 blur-xl"></div>
                 
                 <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                   <div className="flex text-yellow-400 mb-6 justify-center">
@@ -426,7 +427,7 @@ const Index = () => {
                   </div>
                   
                   <div className="text-center">
-                    <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-red-500 rounded-full mx-auto mb-4"></div>
+                    <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full mx-auto mb-4"></div>
                     <p className="font-semibold text-gray-900 text-lg">
                       {testimonial.author}
                     </p>
@@ -466,7 +467,7 @@ const Index = () => {
               <span className="text-6xl">💸</span>
             </div>
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
                 Transparent Pricing.
               </span>
               <br />
@@ -494,7 +495,7 @@ const Index = () => {
                 highlight: "Fully scalable. Just add users.",
                 cta: "Launch Desktop",
                 popular: true,
-                gradient: "from-purple-500 to-pink-600"
+                gradient: "from-purple-500 to-orange-600"
               },
               {
                 title: "VPS",
@@ -503,13 +504,13 @@ const Index = () => {
                 highlight: "",
                 cta: "Get VPS Now",
                 popular: false,
-                gradient: "from-red-500 to-orange-600"
+                gradient: "from-orange-500 to-red-600"
               }
             ].map((plan, index) => (
               <div key={index} className={`group relative ${plan.popular ? 'transform scale-105 lg:scale-110' : ''}`}>
                 {plan.popular && (
                   <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
-                    <span className="bg-gradient-to-r from-purple-600 to-red-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                    <span className="bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
                       Most Popular
                     </span>
                   </div>
@@ -531,7 +532,7 @@ const Index = () => {
                       )}
                     </div>
                     
-                    <Button className={`w-full bg-gradient-to-r ${plan.gradient} hover:opacity-90 text-white py-3 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105`}>
+                    <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105">
                       {plan.cta}
                     </Button>
                   </div>
@@ -541,7 +542,7 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-16">
-            <Button size="lg" variant="outline" className="text-purple-600 border-2 border-purple-600 hover:bg-purple-50 text-lg px-8 py-4 rounded-2xl">
+            <Button size="lg" variant="outline" className="text-orange-500 border-2 border-orange-500 hover:bg-orange-50 text-lg px-8 py-4 rounded-2xl">
               View All Plans
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -550,11 +551,11 @@ const Index = () => {
       </section>
 
       {/* The Closer Section - REDESIGNED */}
-      <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-red-900 text-white relative overflow-hidden">
+      <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-orange-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full opacity-10 blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-red-500 rounded-full opacity-10 blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl"></div>
         </div>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -565,7 +566,7 @@ const Index = () => {
           <h2 className="text-5xl lg:text-7xl font-bold mb-12 leading-tight">
             You Can't Afford to Waste Time
             <br />
-            <span className="bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
               on Bad Infra.
             </span>
           </h2>
@@ -578,18 +579,18 @@ const Index = () => {
               CloudAdda is for those who can't afford to fail. And those who don't want to build infra teams just to stay online.
             </p>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-red-500 rounded-2xl blur-xl opacity-20"></div>
-              <p className="relative text-3xl lg:text-4xl font-bold text-white bg-gradient-to-r from-purple-900 to-red-900 rounded-2xl p-8 border border-purple-500/30">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-2xl blur-xl opacity-20"></div>
+              <p className="relative text-3xl lg:text-4xl font-bold text-white bg-gradient-to-r from-purple-900 to-orange-900 rounded-2xl p-8 border border-purple-500/30">
                 You bring the vision. We bring the horsepower. Let's go.
               </p>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-red-500 hover:from-yellow-600 hover:to-red-600 text-black font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
               Request Demo
             </Button>
-            <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
               Start Now
             </Button>
             <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white hover:text-black font-bold text-lg px-10 py-4 rounded-2xl transition-all duration-300">
