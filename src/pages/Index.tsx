@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -127,7 +126,7 @@ const Index = () => {
               </span>
             </h2>
             
-            <div className="max-w-4xl mx-auto space-y-8">
+            <div className="max-w-4xl mx-auto space-y-12">
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <p className="text-xl lg:text-2xl leading-relaxed text-gray-700 mb-6">
                   You're not in business to <span className="text-orange-500 font-bold">manage servers.</span>
@@ -135,34 +134,14 @@ const Index = () => {
                 <p className="text-xl lg:text-2xl leading-relaxed text-gray-700 mb-6">
                   You're here to <span className="text-purple-600 font-bold">teach.</span> To <span className="text-purple-600 font-bold">launch.</span> To <span className="text-purple-600 font-bold">build.</span>
                 </p>
-                <p className="text-xl lg:text-2xl leading-relaxed text-gray-700">
+                <p className="text-xl lg:text-2xl leading-relaxed text-gray-700 mb-8">
                   But you're stuck <span className="text-orange-500 font-bold">provisioning machines, babysitting desktops, firefighting downtime.</span>
                 </p>
-              </div>
-              
-              <div className="grid md:grid-cols-3 gap-8 mt-12">
-                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <Clock className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Burning Your Time</h3>
-                  <p className="text-gray-600">Hours wasted on setup instead of core business</p>
-                </div>
                 
-                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <BarChart3 className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Killing Your Margins</h3>
-                  <p className="text-gray-600">Resources drained on infrastructure instead of growth</p>
-                </div>
+                <div className="w-24 h-1 bg-orange-500 rounded-full mx-auto mb-8"></div>
                 
-                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <Users className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Team Burnout</h3>
-                  <p className="text-gray-600">Making your team hate Mondays</p>
-                </div>
-              </div>
-              
-              <div className="bg-purple-600 rounded-2xl p-8 text-white">
-                <p className="text-2xl lg:text-3xl font-bold text-center leading-tight">
-                  There's a <span className="text-orange-400">Better</span> Way.
+                <p className="text-2xl lg:text-3xl font-bold text-purple-600 leading-tight">
+                  There's a <span className="text-orange-500">Better</span> Way.
                 </p>
               </div>
             </div>
