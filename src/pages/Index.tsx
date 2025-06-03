@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -122,19 +121,17 @@ const Index = () => {
       <section className="py-20 bg-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-8">
-              You're Not a Cloud Company. Why Are You Doing Cloud's Job?
-            </h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-xl leading-relaxed mb-6">
-                You're not in business to manage servers. You're here to teach. To launch. To build. But you're stuck provisioning machines, babysitting desktops, firefighting downtime.
+                You're not in business to manage servers. You're here to <span className="text-orange-400 font-bold">teach</span>. To <span className="text-orange-400 font-bold">launch</span>. To <span className="text-orange-400 font-bold">build</span>. But you're stuck provisioning machines, babysitting desktops, firefighting downtime.
               </p>
-              <p className="text-xl leading-relaxed mb-6">
-                It's burning your time. Killing your margins. And making your team hate Mondays.
-              </p>
-              <p className="text-2xl font-semibold text-purple-200">
-                There's a better way.
-              </p>
+              <div className="mt-16 bg-gradient-to-r from-purple-700 to-purple-800 rounded-3xl p-12 border border-purple-400/30">
+                <p className="text-4xl lg:text-5xl font-bold text-center leading-tight">
+                  <span className="text-yellow-400">There's a</span>
+                  <span className="text-white"> Better </span>
+                  <span className="text-orange-400">Way.</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
