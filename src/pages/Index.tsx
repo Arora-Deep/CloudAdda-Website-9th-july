@@ -1,9 +1,15 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
 
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
@@ -118,23 +124,75 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Pain Section */}
-      <section className="py-20 bg-purple-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-8">
-              You're Not a Cloud Company. Why Are You Doing Cloud's Job?
+      {/* The Pain Section - REDESIGNED */}
+      <section className="py-32 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 text-white relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <h2 className="text-6xl lg:text-8xl font-black mb-12 leading-tight">
+              <span className="block text-white mb-4">
+                You're Not a
+              </span>
+              <span className="block bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                Cloud Company.
+              </span>
+              <span className="block text-4xl lg:text-5xl font-bold text-purple-200 mt-8">
+                Why Are You Doing Cloud's Job?
+              </span>
             </h2>
-            <div className="max-w-4xl mx-auto">
-              <p className="text-xl leading-relaxed mb-6">
-                You're not in business to manage servers. You're here to teach. To launch. To build. But you're stuck provisioning machines, babysitting desktops, firefighting downtime.
-              </p>
-              <p className="text-xl leading-relaxed mb-6">
-                It's burning your time. Killing your margins. And making your team hate Mondays.
-              </p>
-              <p className="text-2xl font-semibold text-purple-200">
-                There's a better way.
-              </p>
+            
+            <div className="max-w-5xl mx-auto mt-16 space-y-12">
+              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20 shadow-2xl">
+                <p className="text-2xl lg:text-3xl leading-relaxed font-medium text-white mb-8">
+                  You're not in business to <span className="text-orange-400 font-bold">manage servers.</span>
+                </p>
+                <p className="text-2xl lg:text-3xl leading-relaxed font-medium text-white mb-8">
+                  You're here to <span className="text-yellow-400 font-bold">teach.</span> To <span className="text-blue-400 font-bold">launch.</span> To <span className="text-green-400 font-bold">build.</span>
+                </p>
+                <p className="text-2xl lg:text-3xl leading-relaxed font-medium text-white">
+                  But you're stuck <span className="text-red-400 font-bold underline decoration-4">provisioning machines, babysitting desktops, firefighting downtime.</span>
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-8 mt-16">
+                <div className="text-center group">
+                  <div className="bg-red-500/20 rounded-2xl p-8 mb-6 group-hover:bg-red-500/30 transition-all duration-300">
+                    <div className="text-5xl font-black text-red-400 mb-4">⏰</div>
+                    <h3 className="text-2xl font-bold text-white mb-3">Burning Your Time</h3>
+                    <p className="text-lg text-gray-200">Hours wasted on setup instead of core business</p>
+                  </div>
+                </div>
+                
+                <div className="text-center group">
+                  <div className="bg-orange-500/20 rounded-2xl p-8 mb-6 group-hover:bg-orange-500/30 transition-all duration-300">
+                    <div className="text-5xl font-black text-orange-400 mb-4">💸</div>
+                    <h3 className="text-2xl font-bold text-white mb-3">Killing Your Margins</h3>
+                    <p className="text-lg text-gray-200">Resources drained on infrastructure instead of growth</p>
+                  </div>
+                </div>
+                
+                <div className="text-center group">
+                  <div className="bg-purple-500/20 rounded-2xl p-8 mb-6 group-hover:bg-purple-500/30 transition-all duration-300">
+                    <div className="text-5xl font-black text-purple-400 mb-4">😤</div>
+                    <h3 className="text-2xl font-bold text-white mb-3">Team Burnout</h3>
+                    <p className="text-lg text-gray-200">Making your team hate Mondays</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-20 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-3xl p-12 border-2 border-yellow-400/30">
+                <p className="text-4xl lg:text-5xl font-black text-center leading-tight">
+                  <span className="text-yellow-400">There's a</span>
+                  <span className="text-white"> Better </span>
+                  <span className="text-orange-400">Way.</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
