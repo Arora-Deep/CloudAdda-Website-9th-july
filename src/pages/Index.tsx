@@ -122,77 +122,178 @@ const Index = () => {
       {/* 3 Product Cards Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="space-y-16">
             {/* Training Labs */}
-            <div className="bg-white rounded-lg shadow-lg p-8 space-y-6">
-              <div className="relative">
-                <img src="/lovable-uploads/eb2c47ec-d601-4c75-b1fc-847f67a73aa6.png" alt="Training Labs illustration" className="w-full max-w-sm mx-auto" />
-              </div>
-              <div className="space-y-4">
-                <div className="text-2xl">🔬</div>
-                <h3 className="text-2xl font-bold text-gray-900">Training Labs</h3>
-                <p className="text-sm text-gray-600 uppercase tracking-wide">for Institutes & Corporates</p>
-                <h4 className="text-lg font-semibold text-gray-900">Custom Cloud Labs. Provisioned by Us, Ready for You.</h4>
-                <p className="text-gray-600">
-                  We don't give you buttons. We give you ready-to-go environments. Just tell us your training needs, and we'll spin up optimized virtual labs tailored for each course or workshop.
-                </p>
-                <p className="text-green-600 font-medium">✅ No Self-Setup. Just Results.</p>
-                <p className="text-gray-600 text-sm">
-                  <strong>Ideal for:</strong> Training companies, EdTech platforms, IT trainers, and corporate L&D teams.
-                </p>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-full">
-                  Request Labs Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="space-y-6">
+                    <div className="text-2xl">🔬</div>
+                    <h3 className="text-3xl font-bold text-gray-900">Training Labs</h3>
+                    <p className="text-sm text-red-600 uppercase tracking-wide font-semibold">for Institutes & Corporates</p>
+                    <h4 className="text-xl font-semibold text-gray-900">Custom Cloud Labs. Provisioned by Us, Ready for You.</h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      We don't give you buttons. We give you ready-to-go environments. Just tell us your training needs, and we'll spin up optimized virtual labs tailored for each course or workshop.
+                    </p>
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                      <p className="text-green-700 font-medium flex items-center">
+                        <CheckCircle className="w-5 h-5 mr-2" />
+                        No Self-Setup. Just Results.
+                      </p>
+                    </div>
+                    <p className="text-gray-600 text-sm">
+                      <strong>Ideal for:</strong> Training companies, EdTech platforms, IT trainers, and corporate L&D teams.
+                    </p>
+                    <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 py-3">
+                      Request Labs Now
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+                <div className="bg-gradient-to-br from-purple-600 to-purple-800 p-8 lg:p-12 flex items-center justify-center">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 w-full max-w-md">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                      </div>
+                      <div className="text-white font-semibold text-lg">Interactive Lab Environment</div>
+                      <div className="text-purple-200 text-sm">Ready-to-use development environments for your students</div>
+                      <div className="space-y-2 mt-6">
+                        <div className="bg-white/20 rounded h-4"></div>
+                        <div className="bg-white/30 rounded h-4 w-3/4"></div>
+                        <div className="bg-white/25 rounded h-4 w-5/6"></div>
+                      </div>
+                      <div className="mt-6 space-y-3">
+                        <div className="flex items-center text-white text-sm">
+                          <CheckCircle className="w-4 h-4 mr-2 text-green-400" />
+                          Fully isolated VMs for each student
+                        </div>
+                        <div className="flex items-center text-white text-sm">
+                          <CheckCircle className="w-4 h-4 mr-2 text-green-400" />
+                          Custom images, pre-installed dev tools
+                        </div>
+                        <div className="flex items-center text-white text-sm">
+                          <CheckCircle className="w-4 h-4 mr-2 text-green-400" />
+                          Admin dashboard for instructors
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* DaaS */}
-            <div className="bg-white rounded-lg shadow-lg p-8 space-y-6">
-              <div className="relative">
-                <img src="/lovable-uploads/5aab5b8e-c5b5-423b-a473-bcb996375d02.png" alt="Virtual Desktops illustration" className="w-full max-w-sm mx-auto" />
-              </div>
-              <div className="space-y-4">
-                <div className="text-2xl">💻</div>
-                <h3 className="text-2xl font-bold text-gray-900">DaaS</h3>
-                <p className="text-sm text-gray-600 uppercase tracking-wide">Desktop as a Service</p>
-                <h4 className="text-lg font-semibold text-gray-900">Cloud Desktops Built for Serious Work.</h4>
-                <p className="text-gray-600">
-                  Provide your teams with fast, secure, always-available desktops – perfect for remote work, developers, offshore teams, and data teams.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p className="text-purple-600 font-bold">2vCPU / 4GB RAM from ₹3,299/month per user</p>
-                  <p className="text-gray-600"><strong>Includes:</strong> Persistent storage, root access, secure logins, your preferred OS, and full control.</p>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="bg-gradient-to-br from-teal-500 to-teal-700 p-8 lg:p-12 flex items-center justify-center">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 w-full max-w-md">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                      </div>
+                      <div className="text-white font-semibold text-lg">Cloud Desktop Dashboard</div>
+                      <div className="text-teal-200 text-sm">Professional desktops that enable remote work</div>
+                      <div className="space-y-3 mt-6">
+                        <div className="bg-white/20 rounded-lg p-3">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-8 h-8 bg-blue-400 rounded"></div>
+                            <div className="text-white text-sm">Windows 11 Pro</div>
+                          </div>
+                        </div>
+                        <div className="bg-white/20 rounded-lg p-3">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-8 h-8 bg-orange-400 rounded"></div>
+                            <div className="text-white text-sm">Ubuntu 22.04 LTS</div>
+                          </div>
+                        </div>
+                        <div className="bg-white/20 rounded-lg p-3">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-8 h-8 bg-gray-400 rounded"></div>
+                            <div className="text-white text-sm">Custom OS Images</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-teal-600 rounded-lg p-3 mt-4">
+                        <div className="text-white text-xs">DaaS (Cloud Desktops)</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-full">
-                  See Plans
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="space-y-6">
+                    <div className="text-2xl">💻</div>
+                    <h3 className="text-3xl font-bold text-gray-900">DaaS</h3>
+                    <p className="text-sm text-red-600 uppercase tracking-wide font-semibold">Desktop as a Service</p>
+                    <h4 className="text-xl font-semibold text-gray-900">Cloud Desktops Built for Serious Work.</h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      Provide your teams with fast, secure, always-available desktops – perfect for remote work, developers, offshore teams, and data teams.
+                    </p>
+                    <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                      <p className="text-purple-700 font-bold text-lg">2vCPU / 4GB RAM from ₹3,299/month per user</p>
+                      <p className="text-gray-600 text-sm mt-2"><strong>Includes:</strong> Persistent storage, root access, secure logins, your preferred OS, and full control.</p>
+                    </div>
+                    <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 py-3">
+                      See Plans
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* VPS */}
-            <div className="bg-white rounded-lg shadow-lg p-8 space-y-6">
-              <div className="relative">
-                <img src="/lovable-uploads/0190e56d-e54b-4c1f-81b8-34e45bd41e84.png" alt="VPS illustration" className="w-full max-w-sm mx-auto" />
-              </div>
-              <div className="space-y-4">
-                <div className="text-2xl">🚀</div>
-                <h3 className="text-2xl font-bold text-gray-900">VPS Hosting</h3>
-                <h4 className="text-lg font-semibold text-gray-900">VPS That Doesn't Feel Like Shared Hosting.</h4>
-                <p className="text-gray-600">
-                  SSD? No thanks. We run on blazing-fast NVMe and AMD EPYC hardware — because quality isn't optional.
-                </p>
-                <p className="text-gray-600">
-                  Whether you're hosting apps, APIs, or your own clients — CloudAdda gives you raw power with responsive support.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p className="text-purple-600 font-bold">Starts at ₹799/month. Comes with love.</p>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="space-y-6">
+                    <div className="text-2xl">🚀</div>
+                    <h3 className="text-3xl font-bold text-gray-900">VPS Hosting</h3>
+                    <h4 className="text-xl font-semibold text-gray-900">VPS That Doesn't Feel Like Shared Hosting.</h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      SSD? No thanks. We run on blazing-fast NVMe and AMD EPYC hardware — because quality isn't optional.
+                    </p>
+                    <p className="text-gray-600 leading-relaxed">
+                      Whether you're hosting apps, APIs, or your own clients — CloudAdda gives you raw power with responsive support.
+                    </p>
+                    <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                      <p className="text-purple-700 font-bold text-lg">Starts at ₹799/month. Comes with love.</p>
+                    </div>
+                    <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 py-3">
+                      View VPS Plans
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
                 </div>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-full">
-                  View VPS Plans
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 lg:p-12 flex items-center justify-center text-green-400 font-mono">
+                  <div className="bg-black/50 backdrop-blur-sm rounded-xl p-8 w-full max-w-md border border-green-500/30">
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-2 mb-4">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span className="text-gray-400 text-sm ml-4">terminal</span>
+                      </div>
+                      <div className="text-green-400 text-sm">
+                        <div>$ sudo systemctl status nginx</div>
+                        <div className="text-green-300">● nginx.service - active (running)</div>
+                        <div className="mt-2">$ htop</div>
+                        <div className="text-yellow-400">CPU: EPYC 7763 [████████████] 100%</div>
+                        <div className="text-blue-400">MEM: 32GB NVMe Storage</div>
+                        <div className="mt-2">$ uptime</div>
+                        <div className="text-green-300">99.99% uptime, 0 users, load: 0.1</div>
+                      </div>
+                      <div className="mt-4 flex items-center text-green-400 text-xs">
+                        <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                        VPS Instance Running
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
