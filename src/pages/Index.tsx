@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -117,49 +118,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Pain Section - REDESIGNED WITH MORE IMPACT */}
-      <section className="py-32 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 text-white relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
-            <h2 className="text-7xl lg:text-9xl font-black mb-16 leading-tight">
-              <span className="block text-white mb-8 drop-shadow-2xl">
-                You're Not a
-              </span>
-              <span className="block bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl">
-                Cloud Company.
-              </span>
-              <span className="block text-5xl lg:text-7xl font-bold text-purple-200 mt-12 drop-shadow-xl">
-                Why Are You Doing Cloud's Job?
-              </span>
+      {/* The Pain Section */}
+      <section className="py-20 bg-purple-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-8">
+              You're Not a Cloud Company. Why Are You Doing Cloud's Job?
             </h2>
-            
-            <div className="max-w-6xl mx-auto mt-20">
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-16 border border-white/20 shadow-2xl">
-                <p className="text-3xl lg:text-4xl leading-relaxed font-bold text-white mb-8">
-                  You're not in business to <span className="text-red-400 bg-red-900/30 px-4 py-2 rounded-xl">manage servers.</span>
-                </p>
-                <p className="text-3xl lg:text-4xl leading-relaxed font-bold text-white mb-8">
-                  You're here to <span className="text-orange-400 bg-orange-900/30 px-4 py-2 rounded-xl font-black">TEACH.</span> To <span className="text-yellow-400 bg-yellow-900/30 px-4 py-2 rounded-xl font-black">LAUNCH.</span> To <span className="text-green-400 bg-green-900/30 px-4 py-2 rounded-xl font-black">BUILD.</span>
-                </p>
-                <p className="text-2xl lg:text-3xl leading-relaxed font-medium text-red-300 mt-12">
-                  But you're stuck <span className="text-red-400 font-black underline decoration-wavy decoration-4 decoration-red-500">provisioning machines, babysitting desktops, firefighting downtime.</span>
-                </p>
-              </div>
-              
-              <div className="mt-20 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-3xl p-16 border-4 border-yellow-400/40 shadow-2xl">
-                <p className="text-5xl lg:text-7xl font-black text-center leading-tight">
-                  <span className="text-yellow-400 drop-shadow-lg">There's a</span>
-                  <span className="text-white drop-shadow-lg"> Better </span>
-                  <span className="text-orange-400 drop-shadow-lg">Way.</span>
-                </p>
-              </div>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl leading-relaxed mb-6">
+                You're not in business to manage servers. You're here to teach. To launch. To build. But you're stuck provisioning machines, babysitting desktops, firefighting downtime.
+              </p>
+              <p className="text-xl leading-relaxed mb-6">
+                It's burning your time. Killing your margins. And making your team hate Mondays.
+              </p>
+              <p className="text-2xl font-semibold text-purple-200">
+                There's a better way.
+              </p>
             </div>
           </div>
         </div>
