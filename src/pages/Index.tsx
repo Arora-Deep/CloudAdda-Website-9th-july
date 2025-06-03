@@ -181,6 +181,250 @@ const Index = () => {
         </div>
       </section>
 
+      {/* The Switch You Didn't Know You Needed Section - REDESIGNED */}
+      <section className="py-32 bg-gray-50 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              The Switch You Didn't Know
+              <br />
+              <span className="text-purple-600">
+                You Needed.
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See what life's like on the other side — faster, simpler, happier.
+            </p>
+          </div>
+
+          {/* Images and Cards Layout */}
+          <div className="grid lg:grid-cols-5 gap-8 items-center">
+            {/* Left Image - Confused Person */}
+            <div className="lg:col-span-1 flex justify-center">
+              <img 
+                src="/lovable-uploads/582562124811-c09040d0a901.png" 
+                alt="Confused person representing before state" 
+                className="w-full max-w-xs" 
+              />
+            </div>
+
+            {/* Cards */}
+            <div className="lg:col-span-3 space-y-8">
+              {/* Card 1: Training Labs */}
+              <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                <div className="grid md:grid-cols-2">
+                  {/* Before */}
+                  <div className="bg-gray-100 p-8 relative">
+                    <div className="absolute top-4 right-4 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                      <span className="text-red-500 text-xl">❌</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">Before CloudAdda</h3>
+                    <div className="space-y-3 text-gray-700">
+                      <p className="flex items-start">
+                        <span className="text-red-500 mr-2">❌</span>
+                        Manual infra setup every time
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-red-500 mr-2">❌</span>
+                        Labs crash mid-session
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-red-500 mr-2">❌</span>
+                        Late starts, angry clients
+                      </p>
+                      <p className="italic text-gray-600 mt-4 text-sm">
+                        "We were losing credibility with every batch."
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Divider Arrow */}
+                  <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                      <ArrowRight className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+
+                  {/* After */}
+                  <div className="bg-blue-50 p-8 relative">
+                    <div className="absolute top-4 right-4 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-500 text-xl">✅</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">After CloudAdda</h3>
+                    <div className="space-y-3 text-gray-700">
+                      <p className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        You send a config, we deliver the lab
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        Environments provisioned in hours
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        Rock-solid infra, every time
+                      </p>
+                      <p className="italic text-gray-600 mt-4 text-sm">
+                        "We focus on training. CloudAdda handles the rest."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2: Cloud Workstations */}
+              <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                <div className="grid md:grid-cols-2">
+                  {/* Before */}
+                  <div className="bg-gray-100 p-8 relative">
+                    <div className="absolute top-4 right-4 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                      <span className="text-red-500 text-xl">❌</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">Before CloudAdda</h3>
+                    <div className="space-y-3 text-gray-700">
+                      <p className="flex items-start">
+                        <span className="text-red-500 mr-2">❌</span>
+                        Devs using laptops from 2019
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-red-500 mr-2">❌</span>
+                        Zoom + IDE = system freeze
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-red-500 mr-2">❌</span>
+                        No control over security
+                      </p>
+                      <p className="italic text-gray-600 mt-4 text-sm">
+                        "Work was slow, fragile, and risky."
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Divider Arrow */}
+                  <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                      <ArrowRight className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+
+                  {/* After */}
+                  <div className="bg-blue-50 p-8 relative">
+                    <div className="absolute top-4 right-4 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-500 text-xl">✅</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">After CloudAdda</h3>
+                    <div className="space-y-3 text-gray-700">
+                      <p className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        Scalable cloud desktops with serious power
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        Secure access, zero lag
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        Ideal for remote teams & fast dev cycles
+                      </p>
+                      <p className="italic text-gray-600 mt-4 text-sm">
+                        "We finally work like a real tech team should."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3: VPS */}
+              <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                <div className="grid md:grid-cols-2">
+                  {/* Before */}
+                  <div className="bg-gray-100 p-8 relative">
+                    <div className="absolute top-4 right-4 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                      <span className="text-red-500 text-xl">❌</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">Before CloudAdda</h3>
+                    <div className="space-y-3 text-gray-700">
+                      <p className="flex items-start">
+                        <span className="text-red-500 mr-2">❌</span>
+                        Paying AWS bills that don't make sense
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-red-500 mr-2">❌</span>
+                        CPUs throttled, support unhelpful
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-red-500 mr-2">❌</span>
+                        Complex dashboards, hidden limits
+                      </p>
+                      <p className="italic text-gray-600 mt-4 text-sm">
+                        "We paid more and got less."
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Divider Arrow */}
+                  <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                      <ArrowRight className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+
+                  {/* After */}
+                  <div className="bg-blue-50 p-8 relative">
+                    <div className="absolute top-4 right-4 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-500 text-xl">✅</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">After CloudAdda</h3>
+                    <div className="space-y-3 text-gray-700">
+                      <p className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        NVMe, AMD EPYC servers built for speed
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        Flat pricing. No surprises.
+                      </p>
+                      <p className="flex items-start">
+                        <span className="text-green-500 mr-2">✅</span>
+                        Friendly support, real help
+                      </p>
+                      <p className="italic text-gray-600 mt-4 text-sm">
+                        "It's cloud infra that finally makes sense."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Image - Happy Person */}
+            <div className="lg:col-span-1 flex justify-center">
+              <img 
+                src="/lovable-uploads/1581090464777-f3220bbe1b8b.png" 
+                alt="Happy person representing after state" 
+                className="w-full max-w-xs" 
+              />
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-20">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">
+              Tired of the "Before" life? Join the companies that made the switch to smart, scalable cloud.
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                Explore Our Platform
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
+                Talk to a Human
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Who It's For Section - REDESIGNED */}
       <section className="py-32 bg-gray-50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
