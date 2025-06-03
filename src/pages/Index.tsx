@@ -125,11 +125,9 @@ const Index = () => {
               <p className="text-xl leading-relaxed mb-6">
                 You're not in business to manage servers. You're here to <span className="text-orange-400 font-bold">teach</span>. To <span className="text-orange-400 font-bold">launch</span>. To <span className="text-orange-400 font-bold">build</span>. But you're stuck provisioning machines, babysitting desktops, firefighting downtime.
               </p>
-              <div className="mt-16 bg-gradient-to-r from-purple-700 to-purple-800 rounded-3xl p-12 border border-purple-400/30">
-                <p className="text-4xl lg:text-5xl font-bold text-center leading-tight">
-                  <span className="text-yellow-400">There's a</span>
-                  <span className="text-white"> Better </span>
-                  <span className="text-orange-400">Way.</span>
+              <div className="mt-16">
+                <p className="text-4xl lg:text-5xl font-bold text-center leading-tight text-white">
+                  There's a Better Way.
                 </p>
               </div>
             </div>
@@ -653,70 +651,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Use Cases Section - REDESIGNED */}
-      <section className="py-32 bg-gray-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              Built to Power
-              <br />
-              <span className="text-purple-600">
-                Real Work,
-              </span>
-              <br />
-              Not Just Slide Decks
-            </h2>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-12">
-            {[
-              {
-                title: "Training Programs",
-                description: "Instructor-led or self-paced — we spin up stable, consistent lab environments. You send a config. We send you a URL.",
-                number: "01",
-                color: "bg-blue-500"
-              },
-              {
-                title: "Remote Product Teams", 
-                description: "Devs and QA running on underpowered laptops? We fix that. Secure desktops in the cloud, with real horsepower.",
-                number: "02",
-                color: "bg-purple-500"
-              },
-              {
-                title: "Bootstrapped Startups",
-                description: "Deploy backend systems, AI workloads, or POCs — fast and affordable. Get enterprise-grade VPS without paying AWS premiums.",
-                number: "03",
-                color: "bg-orange-500"
-              }
-            ].map((useCase, index) => (
-              <div key={index} className="group relative">
-                <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-100">
-                  <div className={`absolute top-0 left-0 w-full h-2 ${useCase.color} rounded-t-3xl`}></div>
-                  
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`text-6xl font-bold text-gray-100 opacity-20`}>
-                      {useCase.number}
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-purple-600 transition-colors duration-300">
-                    {useCase.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed text-lg">
-                    {useCase.description}
-                  </p>
-                  
-                  <div className="mt-8">
-                    <div className={`w-12 h-1 ${useCase.color} rounded-full group-hover:w-20 transition-all duration-300`}></div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section - REDESIGNED */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -889,40 +823,38 @@ const Index = () => {
       </section>
 
       {/* The Closer Section - REDESIGNED */}
-      <section className="py-32 bg-gray-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-5xl lg:text-7xl font-bold mb-12 leading-tight">
+      <section className="py-32 bg-white relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-5xl lg:text-6xl font-bold mb-12 leading-tight text-gray-900">
             You Can't Afford to Waste Time
             <br />
-            <span className="text-purple-400">
+            <span className="text-purple-600">
               on Bad Infra.
             </span>
           </h2>
           
           <div className="max-w-4xl mx-auto space-y-8 mb-16 text-xl lg:text-2xl leading-relaxed">
-            <p className="text-gray-300">
+            <p className="text-gray-600">
               Bad infrastructure is invisible... until it costs you customers, kills your momentum, or ruins your launch.
             </p>
-            <p className="text-gray-300">
+            <p className="text-gray-600">
               CloudAdda is for those who can't afford to fail. And those who don't want to build infra teams just to stay online.
             </p>
-            <div className="relative">
-              <p className="text-3xl lg:text-4xl font-bold text-white bg-purple-900 rounded-2xl p-8 border border-purple-500/30">
+            <div className="bg-purple-50 rounded-3xl p-12 border border-purple-100">
+              <p className="text-3xl lg:text-4xl font-bold text-purple-600">
                 You bring the vision. We bring the horsepower. Let's go.
               </p>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
               Request Demo
             </Button>
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
               Start Now
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white hover:text-black font-bold text-lg px-10 py-4 rounded-2xl transition-all duration-300">
+            <Button size="lg" variant="outline" className="text-purple-600 border-2 border-purple-600 hover:bg-purple-50 font-bold text-lg px-10 py-4 rounded-2xl transition-all duration-300">
               Get Custom Quote
             </Button>
           </div>
