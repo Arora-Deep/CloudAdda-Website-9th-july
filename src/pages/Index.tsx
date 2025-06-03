@@ -1,7 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket } from "lucide-react";
+import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Index = () => {
@@ -147,65 +148,215 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-16 items-start">
-            <div className="space-y-8">
-              <div className="relative">
-                <img src="/lovable-uploads/eb2c47ec-d601-4c75-b1fc-847f67a73aa6.png" alt="Training Labs" className="w-full max-w-sm mx-auto" />
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-gray-900">Training Labs</h3>
-                <p className="text-sm text-purple-600 font-semibold">For Training Firms & Enterprises</p>
-                <p className="text-gray-600">
-                  We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.
-                </p>
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
+          <div className="space-y-24">
+            {/* Training Labs */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-bold text-gray-900">Training Labs</h3>
+                  <p className="text-sm text-purple-600 font-semibold">For Training Firms & Enterprises</p>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.
+                  </p>
+                </div>
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
                   Schedule a Lab Call
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
+              
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8">
+                <div className="bg-white rounded-2xl p-6 shadow-lg">
+                  <div className="flex items-center justify-between mb-6">
+                    <h4 className="text-lg font-semibold text-gray-900">Training Lab Dashboard</h4>
+                    <div className="flex space-x-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg border border-green-200">
+                      <div className="flex items-center space-x-3">
+                        <Monitor className="w-5 h-5 text-green-600" />
+                        <span className="text-sm font-medium text-gray-900">Windows Lab Environment</span>
+                      </div>
+                      <span className="text-xs bg-green-600 text-white px-2 py-1 rounded-full">Active</span>
+                    </div>
+                    
+                    <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <div className="flex items-center space-x-3">
+                        <Server className="w-5 h-5 text-blue-600" />
+                        <span className="text-sm font-medium text-gray-900">Linux Server Stack</span>
+                      </div>
+                      <span className="text-xs bg-blue-600 text-white px-2 py-1 rounded-full">Running</span>
+                    </div>
+                    
+                    <div className="flex items-center justify-between p-3 bg-purple-50 rounded-lg border border-purple-200">
+                      <div className="flex items-center space-x-3">
+                        <Database className="w-5 h-5 text-purple-600" />
+                        <span className="text-sm font-medium text-gray-900">Network Lab Setup</span>
+                      </div>
+                      <span className="text-xs bg-purple-600 text-white px-2 py-1 rounded-full">Ready</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 pt-4 border-t border-gray-200">
+                    <div className="text-sm text-gray-600">
+                      <span className="font-semibold">40 instances</span> • <span className="font-semibold">99.9% uptime</span> • <span className="font-semibold">2hr setup</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="space-y-8">
-              <div className="relative">
-                <img src="/lovable-uploads/5aab5b8e-c5b5-423b-a473-bcb996375d02.png" alt="Virtual Desktops" className="w-full max-w-sm mx-auto" />
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-gray-900">Virtual Desktops</h3>
-                <p className="text-sm text-purple-600 font-semibold">DaaS for Modern Teams</p>
-                <p className="text-gray-600 mb-4">
-                  High-performance, secure desktops — Windows, Linux, or macOS — ready to power remote teams, call centers, dev shops, and full-scale organizations. Blazing fast, customizable, and easier than hiring IT admins.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">Starts at ₹3,299/user/month</span></p>
-                  <p><span className="font-semibold">2vCPU, 4GB RAM, SSD/NVMe, 100% SLA</span></p>
-                  <p><span className="font-semibold">Built-in snapshots, security policies, and remote access</span></p>
+            {/* Virtual Desktops */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="lg:order-2 space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-bold text-gray-900">Virtual Desktops</h3>
+                  <p className="text-sm text-purple-600 font-semibold">DaaS for Modern Teams</p>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-4">
+                    High-performance, secure desktops — Windows, Linux, or macOS — ready to power remote teams, call centers, dev shops, and full-scale organizations. Blazing fast, customizable, and easier than hiring IT admins.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-semibold">Starts at ₹3,299/user/month</span></p>
+                    <p><span className="font-semibold">2vCPU, 4GB RAM, SSD/NVMe, 100% SLA</span></p>
+                    <p><span className="font-semibold">Built-in snapshots, security policies, and remote access</span></p>
+                  </div>
                 </div>
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
                   Launch a Desktop
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
+              
+              <div className="lg:order-1 bg-gradient-to-br from-purple-50 to-pink-100 rounded-3xl p-8">
+                <div className="bg-white rounded-2xl p-6 shadow-lg">
+                  <div className="flex items-center justify-between mb-6">
+                    <h4 className="text-lg font-semibold text-gray-900">Desktop Management</h4>
+                    <Activity className="w-5 h-5 text-purple-600" />
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-4 text-white">
+                        <div className="flex items-center justify-between">
+                          <Monitor className="w-6 h-6" />
+                          <span className="text-2xl font-bold">24</span>
+                        </div>
+                        <p className="text-sm opacity-90 mt-2">Active Desktops</p>
+                      </div>
+                      
+                      <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-4 text-white">
+                        <div className="flex items-center justify-between">
+                          <Cpu className="w-6 h-6" />
+                          <span className="text-2xl font-bold">89%</span>
+                        </div>
+                        <p className="text-sm opacity-90 mt-2">Performance</p>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-medium text-gray-700">Resource Usage</span>
+                        <span className="text-xs text-gray-500">Real-time</span>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-gray-600">CPU</span>
+                          <div className="w-24 bg-gray-200 rounded-full h-2">
+                            <div className="bg-blue-600 h-2 rounded-full" style={{ width: '75%' }}></div>
+                          </div>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-gray-600">RAM</span>
+                          <div className="w-24 bg-gray-200 rounded-full h-2">
+                            <div className="bg-green-600 h-2 rounded-full" style={{ width: '60%' }}></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="space-y-8">
-              <div className="relative">
-                <img src="/lovable-uploads/0190e56d-e54b-4c1f-81b8-34e45bd41e84.png" alt="VPS" className="w-full max-w-sm mx-auto" />
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-gray-900">Virtual Private Servers</h3>
-                <p className="text-sm text-purple-600 font-semibold">For Developers & Startups</p>
-                <p className="text-gray-600 mb-4">
-                  Don't waste time on cheap, oversold VPS providers. CloudAdda gives you fast, isolated, NVMe-powered instances with real support and predictable performance.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p><span className="font-semibold">Starts at ₹699/month</span></p>
-                  <p><span className="font-semibold">1vCPU, 2GB RAM, full root access</span></p>
-                  <p><span className="font-semibold">Indian & global locations. Backups included.</span></p>
+            {/* VPS */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-bold text-gray-900">Virtual Private Servers</h3>
+                  <p className="text-sm text-purple-600 font-semibold">For Developers & Startups</p>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-4">
+                    Don't waste time on cheap, oversold VPS providers. CloudAdda gives you fast, isolated, NVMe-powered instances with real support and predictable performance.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-semibold">Starts at ₹699/month</span></p>
+                    <p><span className="font-semibold">1vCPU, 2GB RAM, full root access</span></p>
+                    <p><span className="font-semibold">Indian & global locations. Backups included.</span></p>
+                  </div>
                 </div>
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
                   Get a VPS Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
+              </div>
+              
+              <div className="bg-gradient-to-br from-orange-50 to-red-100 rounded-3xl p-8">
+                <div className="bg-white rounded-2xl p-6 shadow-lg">
+                  <div className="flex items-center justify-between mb-6">
+                    <h4 className="text-lg font-semibold text-gray-900">Server Overview</h4>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-600 font-medium">Online</span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-3 gap-4">
+                      <div className="text-center p-3 bg-blue-50 rounded-lg">
+                        <Server className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                        <div className="text-lg font-bold text-gray-900">8</div>
+                        <div className="text-xs text-gray-600">vCPU</div>
+                      </div>
+                      
+                      <div className="text-center p-3 bg-green-50 rounded-lg">
+                        <Database className="w-6 h-6 text-green-600 mx-auto mb-2" />
+                        <div className="text-lg font-bold text-gray-900">16GB</div>
+                        <div className="text-xs text-gray-600">RAM</div>
+                      </div>
+                      
+                      <div className="text-center p-3 bg-purple-50 rounded-lg">
+                        <HardDrive className="w-6 h-6 text-purple-600 mx-auto mb-2" />
+                        <div className="text-lg font-bold text-gray-900">500GB</div>
+                        <div className="text-xs text-gray-600">NVMe</div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-sm font-medium text-gray-700">Server Locations</span>
+                        <Globe className="w-4 h-4 text-gray-500" />
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-gray-600">Mumbai, India</span>
+                          <span className="text-green-600 font-medium">12ms</span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-gray-600">Singapore</span>
+                          <span className="text-green-600 font-medium">45ms</span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-gray-600">Frankfurt</span>
+                          <span className="text-green-600 font-medium">120ms</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -823,9 +974,9 @@ const Index = () => {
       </section>
 
       {/* The Closer Section - REDESIGNED */}
-      <section className="py-32 bg-white relative">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl lg:text-6xl font-bold mb-12 leading-tight text-gray-900">
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight text-gray-900">
             You Can't Afford to Waste Time
             <br />
             <span className="text-purple-600">
@@ -833,28 +984,30 @@ const Index = () => {
             </span>
           </h2>
           
-          <div className="max-w-4xl mx-auto space-y-8 mb-16 text-xl lg:text-2xl leading-relaxed">
+          <div className="space-y-6 mb-12 text-lg lg:text-xl leading-relaxed">
             <p className="text-gray-600">
               Bad infrastructure is invisible... until it costs you customers, kills your momentum, or ruins your launch.
             </p>
             <p className="text-gray-600">
               CloudAdda is for those who can't afford to fail. And those who don't want to build infra teams just to stay online.
             </p>
-            <div className="bg-purple-50 rounded-3xl p-12 border border-purple-100">
-              <p className="text-3xl lg:text-4xl font-bold text-purple-600">
+            <div className="bg-purple-50 rounded-2xl p-8 border border-purple-100">
+              <p className="text-2xl lg:text-3xl font-bold text-purple-600">
                 You bring the vision. We bring the horsepower. Let's go.
               </p>
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
               Request Demo
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
               Start Now
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="text-purple-600 border-2 border-purple-600 hover:bg-purple-50 font-bold text-lg px-10 py-4 rounded-2xl transition-all duration-300">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
               Get Custom Quote
             </Button>
           </div>
