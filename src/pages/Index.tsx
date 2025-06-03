@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -118,26 +119,46 @@ const Index = () => {
       </section>
 
       {/* The Pain Section - UPDATED */}
-      <section className="py-20 bg-purple-600 text-white">
+      <section className="py-20 bg-purple-600 text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="max-w-4xl mx-auto">
-              <p className="text-xl leading-relaxed mb-8">
-                You're not in business to manage servers. You're here
-              </p>
-              <div className="mb-8">
-                <p className="text-4xl lg:text-5xl font-bold text-orange-400 leading-tight">
-                  to teach. To launch. To build.
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left side - Content */}
+            <div className="space-y-8">
+              <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight text-center lg:text-left">
+                You're Not a Cloud Company.<br />
+                So Why Are You Doing Cloud's Job?
+              </h2>
+              
+              <div className="space-y-6 text-center lg:text-left">
+                <p className="text-xl text-white leading-relaxed">
+                  You're not here to manage servers.
                 </p>
-              </div>
-              <p className="text-xl leading-relaxed mb-12">
-                But you're stuck provisioning machines, babysitting desktops, firefighting downtime.
-              </p>
-              <div className="mt-16">
-                <p className="text-4xl lg:text-5xl font-bold text-center leading-tight text-white">
-                  There's a Better Way.
+                <p className="text-2xl lg:text-3xl font-bold text-white leading-relaxed">
+                  You're here to teach. Build. Scale. Win.
                 </p>
+                <p className="text-xl text-white leading-relaxed">
+                  But you're stuck in cloud chaos — provisioning environments, babysitting infra, solving support tickets.
+                </p>
+                
+                <div className="mt-12 space-y-4">
+                  <div className="text-3xl lg:text-4xl font-bold text-orange-400">
+                    🔥 That's our job.
+                  </div>
+                  <p className="text-xl text-white leading-relaxed">
+                    We run your labs, your virtual desktops, your cloud infra.<br />
+                    You run your business. Simple.
+                  </p>
+                </div>
               </div>
+            </div>
+            
+            {/* Right side - Image */}
+            <div className="flex justify-center lg:justify-end">
+              <img 
+                src="/lovable-uploads/69230053-96f2-4f6a-ad77-9419979d6f8e.png" 
+                alt="Frustrated person at desk with laptop" 
+                className="w-full max-w-lg h-auto object-contain"
+              />
             </div>
           </div>
         </div>
