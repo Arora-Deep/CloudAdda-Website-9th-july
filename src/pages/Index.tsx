@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star } from "lucide-react";
@@ -182,174 +181,259 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Who It's For Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              Not Everyone. Just the Smart Ones.
-            </h2>
-            <div className="max-w-3xl mx-auto space-y-4">
-              <div className="flex items-start space-x-3 text-left">
-                <div className="w-2 h-2 bg-purple-600 rounded-full mt-3"></div>
-                <p className="text-lg text-gray-700">You're tired of spending hours configuring labs.</p>
-              </div>
-              <div className="flex items-start space-x-3 text-left">
-                <div className="w-2 h-2 bg-purple-600 rounded-full mt-3"></div>
-                <p className="text-lg text-gray-700">You want your team to work — not wait for IT.</p>
-              </div>
-              <div className="flex items-start space-x-3 text-left">
-                <div className="w-2 h-2 bg-purple-600 rounded-full mt-3"></div>
-                <p className="text-lg text-gray-700">You care about performance. But you care more about reliability.</p>
-              </div>
-              <div className="flex items-start space-x-3 text-left">
-                <div className="w-2 h-2 bg-purple-600 rounded-full mt-3"></div>
-                <p className="text-lg text-gray-700">You want to scale, without feeling like you're managing a data center.</p>
-              </div>
-            </div>
-            <p className="text-2xl font-semibold text-purple-600 mt-8">
-              Then you're our people.
-            </p>
-          </div>
+      {/* Who It's For Section - REDESIGNED */}
+      <section className="py-32 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
         </div>
-      </section>
-
-      {/* Why Us Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              The Cloud Company That Actually Cares.
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <div className="inline-block mb-6">
+              <span className="text-6xl">🧠</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              Not Everyone.
+              <br />
+              <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+                Just the Smart Ones.
+              </span>
             </h2>
           </div>
-          
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
-                <Users className="w-8 h-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">You Talk to Humans</h3>
-              <p className="text-gray-600">Engineers, not bots. Every ticket. Every time.</p>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              {[
+                "You're tired of spending hours configuring labs.",
+                "You want your team to work — not wait for IT.",
+                "You care about performance. But you care more about reliability.",
+                "You want to scale, without feeling like you're managing a data center."
+              ].map((text, index) => (
+                <div key={index} className="flex items-start space-x-6 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-red-500 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      {index + 1}
+                    </div>
+                  </div>
+                  <p className="text-xl text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
+                    {text}
+                  </p>
+                </div>
+              ))}
             </div>
             
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
-                <Settings className="w-8 h-8 text-purple-600" />
+            <div className="text-center lg:text-left">
+              <div className="relative">
+                <div className="text-8xl lg:text-9xl font-bold text-gray-100 absolute -top-16 -left-8 select-none">
+                  "
+                </div>
+                <p className="text-3xl lg:text-4xl font-bold text-purple-600 relative z-10 mb-8">
+                  Then you're our people.
+                </p>
+                <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-red-500 rounded-full"></div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">We Customize Everything</h3>
-              <p className="text-gray-600">No one-size-fits-all. We tailor setups to your use case.</p>
-            </div>
-            
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
-                <Zap className="w-8 h-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">We Move Fast</h3>
-              <p className="text-gray-600">Environments provisioned in hours, not days.</p>
-            </div>
-            
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
-                <Shield className="w-8 h-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">We Don't Oversell</h3>
-              <p className="text-gray-600">When you pay for performance, you get performance.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Why Us Section - REDESIGNED */}
+      <section className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              Built to Power Real Work, Not Just Slide Decks
+          <div className="text-center mb-20">
+            <div className="inline-block mb-6">
+              <span className="text-6xl">🔥</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
+              The Cloud Company That
+              <br />
+              <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+                Actually Cares.
+              </span>
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-xl">Training Programs</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Instructor-led or self-paced — we spin up stable, consistent lab environments. You send a config. We send you a URL.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-xl">Remote Product Teams</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Devs and QA running on underpowered laptops? We fix that. Secure desktops in the cloud, with real horsepower.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-xl">Bootstrapped Startups</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Deploy backend systems, AI workloads, or POCs — fast and affordable. Get enterprise-grade VPS without paying AWS premiums.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Users,
+                title: "You Talk to Humans",
+                description: "Engineers, not bots. Every ticket. Every time.",
+                gradient: "from-blue-500 to-purple-600"
+              },
+              {
+                icon: Settings,
+                title: "We Customize Everything",
+                description: "No one-size-fits-all. We tailor setups to your use case.",
+                gradient: "from-purple-500 to-pink-600"
+              },
+              {
+                icon: Zap,
+                title: "We Move Fast",
+                description: "Environments provisioned in hours, not days.",
+                gradient: "from-yellow-500 to-red-600"
+              },
+              {
+                icon: Shield,
+                title: "We Don't Oversell",
+                description: "When you pay for performance, you get performance.",
+                gradient: "from-green-500 to-blue-600"
+              }
+            ].map((item, index) => (
+              <div key={index} className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-3xl blur-xl"></div>
+                <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
+      {/* Use Cases Section - REDESIGNED */}
+      <section className="py-32 bg-gradient-to-br from-gray-50 to-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              What Our Customers Say (Before They Tell Their Friends)
+          <div className="text-center mb-20">
+            <div className="inline-block mb-6">
+              <span className="text-6xl">📦</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              Built to Power
+              <br />
+              <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+                Real Work,
+              </span>
+              <br />
+              Not Just Slide Decks
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+          <div className="grid lg:grid-cols-3 gap-12">
+            {[
+              {
+                title: "Training Programs",
+                description: "Instructor-led or self-paced — we spin up stable, consistent lab environments. You send a config. We send you a URL.",
+                number: "01",
+                color: "from-blue-500 to-purple-600"
+              },
+              {
+                title: "Remote Product Teams", 
+                description: "Devs and QA running on underpowered laptops? We fix that. Secure desktops in the cloud, with real horsepower.",
+                number: "02",
+                color: "from-purple-500 to-pink-600"
+              },
+              {
+                title: "Bootstrapped Startups",
+                description: "Deploy backend systems, AI workloads, or POCs — fast and affordable. Get enterprise-grade VPS without paying AWS premiums.",
+                number: "03",
+                color: "from-red-500 to-orange-600"
+              }
+            ].map((useCase, index) => (
+              <div key={index} className="group relative">
+                <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-100">
+                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r rounded-t-3xl" style={{background: `linear-gradient(to right, ${useCase.color.includes('blue') ? '#3b82f6, #8b5cf6' : useCase.color.includes('purple') ? '#8b5cf6, #ec4899' : '#ef4444, #f97316'})`}}></div>
+                  
+                  <div className="flex items-start justify-between mb-6">
+                    <div className={`text-6xl font-bold bg-gradient-to-r ${useCase.color} bg-clip-text text-transparent opacity-20`}>
+                      {useCase.number}
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-purple-600 transition-colors duration-300">
+                    {useCase.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed text-lg">
+                    {useCase.description}
+                  </p>
+                  
+                  <div className="mt-8">
+                    <div className={`w-12 h-1 bg-gradient-to-r ${useCase.color} rounded-full group-hover:w-20 transition-all duration-300`}></div>
+                  </div>
                 </div>
-                <p className="text-gray-600 mb-4">
-                  "It's like magic. I told them what we needed. Next morning, 40 labs were live. No bugs. No BS."
-                </p>
-                <p className="font-semibold text-gray-900">— Founder, Corporate Training Platform</p>
-              </CardContent>
-            </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+      {/* Testimonials Section - REDESIGNED */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-red-50 opacity-50"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <div className="inline-block mb-6">
+              <span className="text-6xl">💬</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              What Our Customers Say
+              <br />
+              <span className="text-2xl lg:text-3xl font-normal text-gray-600">
+                (Before They Tell Their Friends)
+              </span>
+            </h2>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-12">
+            {[
+              {
+                quote: "It's like magic. I told them what we needed. Next morning, 40 labs were live. No bugs. No BS.",
+                author: "Founder, Corporate Training Platform",
+                rating: 5,
+                highlight: "magic"
+              },
+              {
+                quote: "We switched from AWS Workspaces to CloudAdda. Better speeds. Better support. Better everything.",
+                author: "Head of IT, Fintech Startup", 
+                rating: 5,
+                highlight: "Better everything"
+              },
+              {
+                quote: "Honestly? They saved our training business.",
+                author: "CEO, EdTech Company",
+                rating: 5,
+                highlight: "saved our business"
+              }
+            ].map((testimonial, index) => (
+              <div key={index} className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-red-500 rounded-3xl opacity-0 group-hover:opacity-5 transition-opacity duration-300 blur-xl"></div>
+                
+                <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                  <div className="flex text-yellow-400 mb-6 justify-center">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-6 h-6 fill-current" />
+                    ))}
+                  </div>
+                  
+                  <div className="relative mb-8">
+                    <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
+                    <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
+                      {testimonial.quote}
+                    </p>
+                    <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-red-500 rounded-full mx-auto mb-4"></div>
+                    <p className="font-semibold text-gray-900 text-lg">
+                      {testimonial.author}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-gray-600 mb-4">
-                  "We switched from AWS Workspaces to CloudAdda. Better speeds. Better support. Better everything."
-                </p>
-                <p className="font-semibold text-gray-900">— Head of IT, Fintech Startup</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
-                </div>
-                <p className="text-gray-600 mb-4">
-                  "Honestly? They saved our training business."
-                </p>
-                <p className="font-semibold text-gray-900">— CEO, EdTech Company</p>
-              </CardContent>
-            </Card>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -374,57 +458,90 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20 bg-white">
+      {/* Pricing Section - REDESIGNED */}
+      <section className="py-32 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              Transparent Pricing. No Hidden Gotchas. Ever.
+          <div className="text-center mb-20">
+            <div className="inline-block mb-6">
+              <span className="text-6xl">💸</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-purple-600 to-red-500 bg-clip-text text-transparent">
+                Transparent Pricing.
+              </span>
+              <br />
+              <span className="text-3xl lg:text-4xl font-normal text-gray-600">
+                No Hidden Gotchas. Ever.
+              </span>
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-2 border-purple-200 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-2xl">Labs</CardTitle>
-                <CardDescription>Custom quote based on your spec</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">We'll ask you 3–5 questions, then send a complete lab setup.</p>
-                <p className="text-sm text-purple-600 font-semibold">Same-day delivery possible.</p>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">Get Custom Quote</Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-purple-600 shadow-lg relative">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                title: "Labs",
+                price: "Custom quote based on your spec",
+                description: "We'll ask you 3–5 questions, then send a complete lab setup.",
+                highlight: "Same-day delivery possible.",
+                cta: "Get Custom Quote",
+                popular: false,
+                gradient: "from-blue-500 to-purple-600"
+              },
+              {
+                title: "Virtual Desktops", 
+                price: "Starting ₹3,299/user/month",
+                description: "2vCPU, 4GB RAM, SSD.",
+                highlight: "Fully scalable. Just add users.",
+                cta: "Launch Desktop",
+                popular: true,
+                gradient: "from-purple-500 to-pink-600"
+              },
+              {
+                title: "VPS",
+                price: "Starting ₹1,499/month", 
+                description: "NVMe. AMD EPYC. Perfect isolation.",
+                highlight: "",
+                cta: "Get VPS Now",
+                popular: false,
+                gradient: "from-red-500 to-orange-600"
+              }
+            ].map((plan, index) => (
+              <div key={index} className={`group relative ${plan.popular ? 'transform scale-105 lg:scale-110' : ''}`}>
+                {plan.popular && (
+                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
+                    <span className="bg-gradient-to-r from-purple-600 to-red-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                
+                <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                  <div className={`h-2 bg-gradient-to-r ${plan.gradient}`}></div>
+                  
+                  <div className="p-10">
+                    <div className="text-center mb-8">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.title}</h3>
+                      <div className="text-3xl font-bold text-gray-900 mb-2">{plan.price}</div>
+                    </div>
+                    
+                    <div className="space-y-4 mb-8">
+                      <p className="text-gray-600">{plan.description}</p>
+                      {plan.highlight && (
+                        <p className="text-sm text-purple-600 font-semibold">{plan.highlight}</p>
+                      )}
+                    </div>
+                    
+                    <Button className={`w-full bg-gradient-to-r ${plan.gradient} hover:opacity-90 text-white py-3 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105`}>
+                      {plan.cta}
+                    </Button>
+                  </div>
+                </div>
               </div>
-              <CardHeader>
-                <CardTitle className="text-2xl">Virtual Desktops</CardTitle>
-                <CardDescription>Starting ₹3,299/user/month</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">2vCPU, 4GB RAM, SSD.</p>
-                <p className="text-sm text-purple-600 font-semibold">Fully scalable. Just add users.</p>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">Launch Desktop</Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-purple-200 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-2xl">VPS</CardTitle>
-                <CardDescription>Starting ₹1,499/month</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">NVMe. AMD EPYC. Perfect isolation.</p>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">Get VPS Now</Button>
-              </CardContent>
-            </Card>
+            ))}
           </div>
           
-          <div className="text-center mt-12">
-            <Button size="lg" variant="outline" className="text-purple-600 border-purple-600 hover:bg-purple-50">
+          <div className="text-center mt-16">
+            <Button size="lg" variant="outline" className="text-purple-600 border-2 border-purple-600 hover:bg-purple-50 text-lg px-8 py-4 rounded-2xl">
               View All Plans
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -432,32 +549,50 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Closer Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">
-            You Can't Afford to Waste Time on Bad Infra.
-          </h2>
-          <div className="max-w-4xl mx-auto space-y-6 mb-12">
-            <p className="text-xl text-gray-600">
-              Bad infrastructure is invisible... until it costs you customers, kills your momentum, or ruins your launch.
-            </p>
-            <p className="text-xl text-gray-600">
-              CloudAdda is for those who can't afford to fail. And those who don't want to build infra teams just to stay online.
-            </p>
-            <p className="text-2xl font-semibold text-gray-900">
-              You bring the vision. We bring the horsepower. Let's go.
-            </p>
+      {/* The Closer Section - REDESIGNED */}
+      <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-red-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-20"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full opacity-10 blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-red-500 rounded-full opacity-10 blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-block mb-8">
+            <span className="text-6xl">👑</span>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-red-500 to-purple-600 hover:from-red-600 hover:to-purple-700 text-white text-lg px-8 py-4 rounded-full">
+          <h2 className="text-5xl lg:text-7xl font-bold mb-12 leading-tight">
+            You Can't Afford to Waste Time
+            <br />
+            <span className="bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent">
+              on Bad Infra.
+            </span>
+          </h2>
+          
+          <div className="max-w-4xl mx-auto space-y-8 mb-16 text-xl lg:text-2xl leading-relaxed">
+            <p className="text-gray-300">
+              Bad infrastructure is invisible... until it costs you customers, kills your momentum, or ruins your launch.
+            </p>
+            <p className="text-gray-300">
+              CloudAdda is for those who can't afford to fail. And those who don't want to build infra teams just to stay online.
+            </p>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-red-500 rounded-2xl blur-xl opacity-20"></div>
+              <p className="relative text-3xl lg:text-4xl font-bold text-white bg-gradient-to-r from-purple-900 to-red-900 rounded-2xl p-8 border border-purple-500/30">
+                You bring the vision. We bring the horsepower. Let's go.
+              </p>
+            </div>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-red-500 hover:from-yellow-600 hover:to-red-600 text-black font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
               Request Demo
             </Button>
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-4 rounded-full">
+            <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
               Start Now
             </Button>
-            <Button size="lg" variant="outline" className="text-purple-600 border-purple-600 hover:bg-purple-50 text-lg px-8 py-4 rounded-full">
+            <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white hover:text-black font-bold text-lg px-10 py-4 rounded-2xl transition-all duration-300">
               Get Custom Quote
             </Button>
           </div>
