@@ -85,10 +85,12 @@ const Index = () => {
 
       {/* Premium Purple Section */}
       <section className="py-24 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%224%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center space-y-12">
+            {/* Main headline */}
             <div className="space-y-6">
               <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
                 CloudAdda is <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">Born in India</span>, 
@@ -100,6 +102,7 @@ const Index = () => {
               </p>
             </div>
 
+            {/* Three specializations */}
             <div className="space-y-8">
               <h3 className="text-2xl lg:text-3xl font-semibold text-white">
                 We specialize in three things, and we do them well:
@@ -138,6 +141,7 @@ const Index = () => {
               </div>
             </div>
 
+            {/* Bottom commitment text */}
             <div className="pt-8 border-t border-white/20">
               <p className="text-xl lg:text-2xl text-white font-medium">
                 All of it with <span className="text-yellow-300 font-bold">elite customer service</span>, 
@@ -148,6 +152,7 @@ const Index = () => {
           </div>
         </div>
 
+        {/* Floating elements for premium feel */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-yellow-300/10 rounded-full blur-xl"></div>
         <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-blue-300/10 rounded-full blur-xl"></div>
