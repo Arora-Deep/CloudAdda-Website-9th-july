@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -92,7 +93,7 @@ const Index = () => {
                   <span className="text-5xl lg:text-6xl font-bold text-gray-900 block mb-2">
                     Zero Headaches.
                   </span>
-                  <span className="text-purple-600 text-4xl lg:text-5xl font-bold block">
+                  <span className="text-xl lg:text-2xl text-gray-600 block mt-6 leading-relaxed">
                     Purpose-built infrastructure for Training Labs, Virtual Desktops, and High-Performance VPS. Engineered for speed, simplicity, and real business outcomes.
                   </span>
                 </h1>
