@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Rocket, Target, Clock, TrendingUp } from "lucide-react";
@@ -85,70 +84,28 @@ const Index = () => {
       </section>
 
       {/* Premium Purple Section */}
-      <section className="py-24 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="w-full h-full" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
-        </div>
-        
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center space-y-12">
-            {/* Main headline */}
-            <div className="space-y-6">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-                CloudAdda is <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">Born in India</span>, 
-                <br />Built for the World
-              </h2>
-              <p className="text-xl lg:text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
-                We're not a low-end provider. We're a new kind of cloud — built around your actual needs. 
-                No bloated control panels, no guessing, no jargon.
-              </p>
-            </div>
+      <section className="py-20 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-8">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+              CloudAdda is Born in India, Built for the World
+            </h2>
+            
+            <p className="text-xl lg:text-2xl text-purple-100 leading-relaxed">
+              We're not a low-end provider. We're a new kind of cloud — built around your actual needs. 
+              No bloated control panels, no guessing, no jargon.
+            </p>
 
-            {/* Three specializations */}
-            <div className="space-y-8">
-              <h3 className="text-2xl lg:text-3xl font-semibold text-white">
-                We specialize in three things, and we do them well:
-              </h3>
+            <div className="space-y-6 text-lg text-white leading-relaxed">
+              <p>We specialize in three things, and we do them well:</p>
               
-              <div className="grid md:grid-cols-3 gap-8 mt-12">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                    <Settings className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-2xl font-bold text-white mb-4">Training Infrastructure</h4>
-                  <p className="text-purple-100 leading-relaxed">
-                    Custom labs that work flawlessly for your courses and workshops
-                  </p>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                    <Users className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-2xl font-bold text-white mb-4">Desktops for Teams</h4>
-                  <p className="text-purple-100 leading-relaxed">
-                    Powerful cloud desktops that enable remote work without compromise
-                  </p>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                    <Rocket className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-2xl font-bold text-white mb-4">Fast VPS for People Who Care</h4>
-                  <p className="text-purple-100 leading-relaxed">
-                    Premium hosting infrastructure that delivers real performance
-                  </p>
-                </div>
+              <div className="space-y-4 text-purple-100">
+                <p><strong className="text-white">Training Infrastructure</strong> - Custom labs that work flawlessly for your courses and workshops</p>
+                <p><strong className="text-white">Desktops for Teams</strong> - Powerful cloud desktops that enable remote work without compromise</p>
+                <p><strong className="text-white">Fast VPS for People Who Care</strong> - Premium hosting infrastructure that delivers real performance</p>
               </div>
-            </div>
 
-            {/* Bottom commitment text */}
-            <div className="pt-8 border-t border-white/20">
-              <p className="text-xl lg:text-2xl text-white font-medium">
+              <p className="text-xl text-white font-medium pt-6">
                 All of it with <span className="text-yellow-300 font-bold">elite customer service</span>, 
                 <span className="text-yellow-300 font-bold"> clear pricing</span>, and a 
                 <span className="text-yellow-300 font-bold"> 100% commitment to reliability</span>.
@@ -156,11 +113,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-
-        {/* Floating elements for premium feel */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-yellow-300/10 rounded-full blur-xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-blue-300/10 rounded-full blur-xl"></div>
       </section>
 
       {/* Why CloudAdda - 3 Column Value Grid */}
