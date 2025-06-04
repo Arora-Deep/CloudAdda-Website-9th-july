@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Rocket, Brain, Shield, Zap, Code, BarChart3, TestTube, Play, Users, Server, Calculator, CheckCircle, AlertTriangle } from "lucide-react";
+import { ArrowRight, Rocket, Brain, Shield, Zap, Code, BarChart3, TestTube, Play, Users, Server, Calculator, CheckCircle, AlertTriangle, Clock, TrendingUp, Award, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CloudDesktops = () => {
@@ -173,64 +173,112 @@ const CloudDesktops = () => {
         </div>
       </section>
 
-      {/* Before vs After - Clean Table */}
-      <section className="py-32 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">Before vs After</h2>
+      {/* Before vs After - Super Cool Design */}
+      <section className="py-32 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">The Transformation</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">From struggling with outdated systems to thriving with cutting-edge cloud infrastructure</p>
           </div>
           
-          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-gradient-to-r from-gray-900 to-gray-800">
-                    <th className="py-6 px-8 text-left text-white text-xl font-semibold">Aspect</th>
-                    <th className="py-6 px-8 text-center text-white text-xl font-semibold">
-                      <div className="flex items-center justify-center">
-                        <AlertTriangle className="mr-2 h-6 w-6 text-red-400" />
-                        Before CloudAdda
+          {/* Transformation Layout */}
+          <div className="relative">
+            {/* Background Animation */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-red-100 to-green-100 rounded-full opacity-30 animate-pulse"></div>
+            </div>
+            
+            {/* Problem Side */}
+            <div className="relative mb-24 flex items-center">
+              <div className="flex-1 max-w-2xl">
+                <div className="group">
+                  <div className="flex items-center mb-8">
+                    <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center mr-8 shadow-xl">
+                      <AlertTriangle className="w-10 h-10 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-3xl font-bold text-red-600 mb-2">Before CloudAdda</h3>
+                      <p className="text-lg text-gray-600">The daily struggle with unreliable infrastructure</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6 pl-28">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-gray-900 mb-1">💻 Performance Issues</h4>
+                        <p className="text-gray-600">Laptops from 2019 struggling to run basic apps, constant crashes during important meetings</p>
                       </div>
-                    </th>
-                    <th className="py-6 px-8 text-center text-white text-xl font-semibold">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="mr-2 h-6 w-6 text-green-400" />
-                        After CloudAdda
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-gray-900 mb-1">🛠 Setup Chaos</h4>
+                        <p className="text-gray-600">Manual installs, configuration nightmares, and hours wasted on environment setup</p>
                       </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    {
-                      aspect: "💻 Performance",
-                      before: "Laptops from 2019 struggling to run basic apps",
-                      after: "High-powered desktops with real CPU/GPU strength"
-                    },
-                    {
-                      aspect: "🛠 Setup",
-                      before: "Manual installs, config chaos",
-                      after: "One-click desktops provisioned in minutes"
-                    },
-                    {
-                      aspect: "🔐 Security",
-                      before: "No VPN? No control. Data on local drives.",
-                      after: "Centralized, secure access. Zero local storage."
-                    },
-                    {
-                      aspect: "🧑‍💻 Experience",
-                      before: '"System froze on Zoom again."',
-                      after: '"My workflow is actually smooth now."'
-                    }
-                  ].map((row, index) => (
-                    <tr key={index} className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                      <td className="py-6 px-8 text-lg font-medium text-gray-900">{row.aspect}</td>
-                      <td className="py-6 px-8 text-center text-gray-600">{row.before}</td>
-                      <td className="py-6 px-8 text-center text-gray-900 font-medium">{row.after}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-gray-900 mb-1">🔐 Security Nightmares</h4>
+                        <p className="text-gray-600">No VPN control, sensitive data scattered across local drives, compliance headaches</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Arrow Transition */}
+            <div className="flex justify-center mb-24">
+              <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center shadow-xl animate-pulse">
+                <ArrowRight className="w-12 h-12 text-white" />
+              </div>
+            </div>
+
+            {/* Solution Side */}
+            <div className="relative flex items-center flex-row-reverse">
+              <div className="flex-1 max-w-2xl">
+                <div className="group">
+                  <div className="flex items-center mb-8 flex-row-reverse">
+                    <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center ml-8 shadow-xl">
+                      <CheckCircle className="w-10 h-10 text-white" />
+                    </div>
+                    <div className="text-right">
+                      <h3 className="text-3xl font-bold text-green-600 mb-2">After CloudAdda</h3>
+                      <p className="text-lg text-gray-600">Seamless productivity with enterprise-grade infrastructure</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6 pr-28">
+                    <div className="flex items-start space-x-4 flex-row-reverse text-right">
+                      <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-gray-900 mb-1">💻 High-Performance Computing</h4>
+                        <p className="text-gray-600">Dedicated CPU/GPU power, lightning-fast responses, and zero downtime during critical work</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4 flex-row-reverse text-right">
+                      <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-gray-900 mb-1">🛠 One-Click Simplicity</h4>
+                        <p className="text-gray-600">Pre-configured environments ready in minutes, automated deployments, and instant scaling</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4 flex-row-reverse text-right">
+                      <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-gray-900 mb-1">🔐 Enterprise Security</h4>
+                        <p className="text-gray-600">Centralized access control, encrypted data, isolated environments, and full compliance</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -349,29 +397,113 @@ const CloudDesktops = () => {
         </div>
       </section>
 
-      {/* What Makes CloudAdda Different - Purple Section */}
-      <section className="py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+      {/* What Makes CloudAdda Different - Fixed Purple Section */}
+      <section className="py-32 text-white" style={{ backgroundColor: '#8B5CF6' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-16">What Makes CloudAdda Different</h2>
           
           <div className="space-y-12">
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-white/90 leading-relaxed">
               <strong className="text-white">Blazing Fast Infrastructure.</strong> No shared CPU throttling. No noisy neighbors. 
               Just dedicated power — when you need it. Our high-throughput servers with NVMe storage and EPYC CPUs 
               ensure your applications run at peak performance.
             </p>
             
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-white/90 leading-relaxed">
               <strong className="text-white">Real Support. Not Scripts.</strong> Our engineers know what "ssh latency" 
               and "GPU passthrough" mean — and how to fix it. When you need help, you talk to humans who understand 
               your technical challenges.
             </p>
             
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-white/90 leading-relaxed">
               <strong className="text-white">Works with Your Stack.</strong> From Android Studio to Jupyter to VS Code — 
               our desktops run anything you do. No compromises, no workarounds. Just the tools you need, 
               running the way they should.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* New Customer Converting Section - ROI & Results */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+              The Numbers Don't Lie
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Companies switching to CloudAdda see immediate and measurable improvements across their entire operation
+            </p>
+          </div>
+          
+          {/* ROI Metrics in Creative Layout */}
+          <div className="relative">
+            {/* Background Elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-green-100 to-green-200 rounded-full opacity-40 animate-pulse delay-500"></div>
+              <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full opacity-40 animate-pulse delay-1000"></div>
+            </div>
+            
+            {/* Metric 1 - Productivity */}
+            <div className="relative mb-20">
+              <div className="flex items-center justify-center mb-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-xl">
+                  <TrendingUp className="w-10 h-10 text-white" />
+                </div>
+              </div>
+              <div className="text-center max-w-4xl mx-auto">
+                <div className="text-6xl lg:text-7xl font-bold text-green-600 mb-4">73%</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Productivity Increase</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Teams report dramatic improvements in workflow efficiency when they stop wrestling with slow hardware 
+                  and start focusing on what they do best. No more "waiting for the computer to catch up."
+                </p>
+              </div>
+            </div>
+
+            {/* Metric 2 - Time Savings */}
+            <div className="relative mb-20 flex items-center">
+              <div className="flex-1 text-center lg:text-right lg:pr-16">
+                <div className="text-5xl lg:text-6xl font-bold text-blue-600 mb-4">4.2 Hours</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Saved Per Developer Daily</h3>
+                <p className="text-lg text-gray-600 leading-relaxed max-w-xl lg:ml-auto">
+                  Eliminated setup time, reduced debugging, faster builds, and instant environment switching 
+                  adds up to real time savings that compound every single day.
+                </p>
+              </div>
+              <div className="hidden lg:flex justify-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-xl">
+                  <Clock className="w-10 h-10 text-white" />
+                </div>
+              </div>
+              <div className="flex-1"></div>
+            </div>
+
+            {/* Metric 3 - Cost Reduction */}
+            <div className="relative flex items-center flex-row-reverse">
+              <div className="flex-1 text-center lg:text-left lg:pl-16">
+                <div className="text-5xl lg:text-6xl font-bold text-purple-600 mb-4">₹4.8L</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Annual Savings Per Team</h3>
+                <p className="text-lg text-gray-600 leading-relaxed max-w-xl lg:mr-auto">
+                  Reduced hardware costs, eliminated IT maintenance overhead, lower security risks, 
+                  and decreased downtime create substantial cost savings that improve your bottom line.
+                </p>
+              </div>
+              <div className="hidden lg:flex justify-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl">
+                  <Award className="w-10 h-10 text-white" />
+                </div>
+              </div>
+              <div className="flex-1"></div>
+            </div>
+          </div>
+
+          {/* Trust Signals */}
+          <div className="mt-24 text-center">
+            <div className="inline-flex items-center space-x-2 bg-gray-50 rounded-full px-6 py-3 text-gray-600">
+              <Star className="w-5 h-5 text-yellow-500 fill-current" />
+              <span className="text-sm font-medium">Trusted by 200+ companies across 15+ countries</span>
+            </div>
           </div>
         </div>
       </section>
