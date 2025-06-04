@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -34,27 +33,26 @@ const CloudDesktops = () => {
         </div>
       </nav>
 
-      {/* Hero Section - Similar to Homepage */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-20 pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent"></div>
+      {/* Hero Section - White Background Like Homepage */}
+      <section className="relative bg-white pt-20 pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative z-10">
-              <h1 className="text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
                 The End of
-                <span className="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                   "It's Not Working"
                 </span>
               </h1>
-              <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
                 Laggy laptops. Fragile setups. Security nightmares. Your team deserves better — high-performance cloud desktops that just work.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white text-lg px-8 py-4 rounded-full shadow-xl">
+                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-lg px-8 py-4 rounded-full shadow-xl">
                   <Rocket className="mr-3 h-5 w-5" />
                   Launch Your First Desktop
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 text-lg px-8 py-4 rounded-full">
+                <Button size="lg" variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 text-lg px-8 py-4 rounded-full">
                   <Calculator className="mr-3 h-5 w-5" />
                   See Pricing
                 </Button>
@@ -63,9 +61,9 @@ const CloudDesktops = () => {
             
             {/* Space for 3D Person */}
             <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 backdrop-blur-sm flex items-center justify-center">
-                <div className="text-white/50 text-center">
-                  <div className="w-24 h-24 bg-white/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-full h-96 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border border-gray-200 flex items-center justify-center">
+                <div className="text-gray-400 text-center">
+                  <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <Users className="w-12 h-12" />
                   </div>
                   <p className="text-sm">3D Person Element Space</p>
@@ -173,112 +171,77 @@ const CloudDesktops = () => {
         </div>
       </section>
 
-      {/* Before vs After - Super Cool Design */}
-      <section className="py-32 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+      {/* The Transformation - Simplified Clean Design */}
+      <section className="py-32 bg-gray-50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">The Transformation</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">From struggling with outdated systems to thriving with cutting-edge cloud infrastructure</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">See how teams transform their productivity with CloudAdda</p>
           </div>
           
-          {/* Transformation Layout */}
-          <div className="relative">
-            {/* Background Animation */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-red-100 to-green-100 rounded-full opacity-30 animate-pulse"></div>
-            </div>
-            
-            {/* Problem Side */}
-            <div className="relative mb-24 flex items-center">
-              <div className="flex-1 max-w-2xl">
-                <div className="group">
-                  <div className="flex items-center mb-8">
-                    <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center mr-8 shadow-xl">
-                      <AlertTriangle className="w-10 h-10 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-3xl font-bold text-red-600 mb-2">Before CloudAdda</h3>
-                      <p className="text-lg text-gray-600">The daily struggle with unreliable infrastructure</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-6 pl-28">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <h4 className="text-xl font-semibold text-gray-900 mb-1">💻 Performance Issues</h4>
-                        <p className="text-gray-600">Laptops from 2019 struggling to run basic apps, constant crashes during important meetings</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-4">
-                      <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <h4 className="text-xl font-semibold text-gray-900 mb-1">🛠 Setup Chaos</h4>
-                        <p className="text-gray-600">Manual installs, configuration nightmares, and hours wasted on environment setup</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-4">
-                      <div className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <h4 className="text-xl font-semibold text-gray-900 mb-1">🔐 Security Nightmares</h4>
-                        <p className="text-gray-600">No VPN control, sensitive data scattered across local drives, compliance headaches</p>
-                      </div>
-                    </div>
-                  </div>
+          {/* Clean Before/After Layout */}
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Before Side */}
+            <div className="relative">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-red-100 rounded-full mb-4">
+                  <AlertTriangle className="w-10 h-10 text-red-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-red-600 mb-2">Before CloudAdda</h3>
+                <p className="text-gray-600">The daily struggle with unreliable infrastructure</p>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-red-100">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">💻 Performance Issues</h4>
+                  <p className="text-gray-600">Laptops from 2019 struggling to run basic apps, constant crashes during important meetings</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-red-100">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">🛠 Setup Chaos</h4>
+                  <p className="text-gray-600">Manual installs, configuration nightmares, and hours wasted on environment setup</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-red-100">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">🔐 Security Nightmares</h4>
+                  <p className="text-gray-600">No VPN control, sensitive data scattered across local drives, compliance headaches</p>
                 </div>
               </div>
             </div>
 
-            {/* Arrow Transition */}
-            <div className="flex justify-center mb-24">
-              <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center shadow-xl animate-pulse">
-                <ArrowRight className="w-12 h-12 text-white" />
+            {/* After Side */}
+            <div className="relative">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-4">
+                  <CheckCircle className="w-10 h-10 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-green-600 mb-2">After CloudAdda</h3>
+                <p className="text-gray-600">Seamless productivity with enterprise-grade infrastructure</p>
               </div>
-            </div>
-
-            {/* Solution Side */}
-            <div className="relative flex items-center flex-row-reverse">
-              <div className="flex-1 max-w-2xl">
-                <div className="group">
-                  <div className="flex items-center mb-8 flex-row-reverse">
-                    <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center ml-8 shadow-xl">
-                      <CheckCircle className="w-10 h-10 text-white" />
-                    </div>
-                    <div className="text-right">
-                      <h3 className="text-3xl font-bold text-green-600 mb-2">After CloudAdda</h3>
-                      <p className="text-lg text-gray-600">Seamless productivity with enterprise-grade infrastructure</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-6 pr-28">
-                    <div className="flex items-start space-x-4 flex-row-reverse text-right">
-                      <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <h4 className="text-xl font-semibold text-gray-900 mb-1">💻 High-Performance Computing</h4>
-                        <p className="text-gray-600">Dedicated CPU/GPU power, lightning-fast responses, and zero downtime during critical work</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-4 flex-row-reverse text-right">
-                      <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <h4 className="text-xl font-semibold text-gray-900 mb-1">🛠 One-Click Simplicity</h4>
-                        <p className="text-gray-600">Pre-configured environments ready in minutes, automated deployments, and instant scaling</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-4 flex-row-reverse text-right">
-                      <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <h4 className="text-xl font-semibold text-gray-900 mb-1">🔐 Enterprise Security</h4>
-                        <p className="text-gray-600">Centralized access control, encrypted data, isolated environments, and full compliance</p>
-                      </div>
-                    </div>
-                  </div>
+              
+              <div className="space-y-6">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-green-100">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">💻 High-Performance Computing</h4>
+                  <p className="text-gray-600">Dedicated CPU/GPU power, lightning-fast responses, and zero downtime during critical work</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-green-100">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">🛠 One-Click Simplicity</h4>
+                  <p className="text-gray-600">Pre-configured environments ready in minutes, automated deployments, and instant scaling</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-green-100">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">🔐 Enterprise Security</h4>
+                  <p className="text-gray-600">Centralized access control, encrypted data, isolated environments, and full compliance</p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Transformation Arrow */}
+          <div className="flex justify-center mt-16">
+            <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-green-500 rounded-full flex items-center justify-center shadow-lg">
+              <ArrowRight className="w-8 h-8 text-white" />
             </div>
           </div>
         </div>
@@ -436,65 +399,39 @@ const CloudDesktops = () => {
             </p>
           </div>
           
-          {/* ROI Metrics in Creative Layout */}
+          {/* ROI Metrics in Clean Layout */}
           <div className="relative">
-            {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-green-100 to-green-200 rounded-full opacity-40 animate-pulse delay-500"></div>
-              <div className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full opacity-40 animate-pulse delay-1000"></div>
-            </div>
-            
             {/* Metric 1 - Productivity */}
-            <div className="relative mb-20">
-              <div className="flex items-center justify-center mb-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-xl">
-                  <TrendingUp className="w-10 h-10 text-white" />
-                </div>
-              </div>
-              <div className="text-center max-w-4xl mx-auto">
-                <div className="text-6xl lg:text-7xl font-bold text-green-600 mb-4">73%</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Productivity Increase</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Teams report dramatic improvements in workflow efficiency when they stop wrestling with slow hardware 
-                  and start focusing on what they do best. No more "waiting for the computer to catch up."
-                </p>
-              </div>
+            <div className="relative mb-20 text-center">
+              <div className="text-6xl lg:text-7xl font-bold text-green-600 mb-4">73%</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Productivity Increase</h3>
+              <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                Teams report dramatic improvements in workflow efficiency when they stop wrestling with slow hardware 
+                and start focusing on what they do best. No more "waiting for the computer to catch up."
+              </p>
             </div>
 
-            {/* Metric 2 - Time Savings */}
-            <div className="relative mb-20 flex items-center">
-              <div className="flex-1 text-center lg:text-right lg:pr-16">
+            {/* Metrics 2 & 3 - Side by Side */}
+            <div className="grid lg:grid-cols-2 gap-16">
+              {/* Time Savings */}
+              <div className="text-center">
                 <div className="text-5xl lg:text-6xl font-bold text-blue-600 mb-4">4.2 Hours</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Saved Per Developer Daily</h3>
-                <p className="text-lg text-gray-600 leading-relaxed max-w-xl lg:ml-auto">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   Eliminated setup time, reduced debugging, faster builds, and instant environment switching 
                   adds up to real time savings that compound every single day.
                 </p>
               </div>
-              <div className="hidden lg:flex justify-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-xl">
-                  <Clock className="w-10 h-10 text-white" />
-                </div>
-              </div>
-              <div className="flex-1"></div>
-            </div>
 
-            {/* Metric 3 - Cost Reduction */}
-            <div className="relative flex items-center flex-row-reverse">
-              <div className="flex-1 text-center lg:text-left lg:pl-16">
+              {/* Cost Reduction */}
+              <div className="text-center">
                 <div className="text-5xl lg:text-6xl font-bold text-purple-600 mb-4">₹4.8L</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Annual Savings Per Team</h3>
-                <p className="text-lg text-gray-600 leading-relaxed max-w-xl lg:mr-auto">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   Reduced hardware costs, eliminated IT maintenance overhead, lower security risks, 
                   and decreased downtime create substantial cost savings that improve your bottom line.
                 </p>
               </div>
-              <div className="hidden lg:flex justify-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl">
-                  <Award className="w-10 h-10 text-white" />
-                </div>
-              </div>
-              <div className="flex-1"></div>
             </div>
           </div>
 
