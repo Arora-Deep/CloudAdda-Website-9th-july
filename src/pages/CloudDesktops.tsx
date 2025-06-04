@@ -37,7 +37,7 @@ const CloudDesktops = () => {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 pt-20 pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z"/%3E%3C/g%3E%3C/svg%3E')]"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z\"/%3E%3C/g%3E%3C/svg%3E')]"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
@@ -119,9 +119,11 @@ const CloudDesktops = () => {
                 <thead>
                   <tr className="bg-gradient-to-r from-gray-900 to-gray-800">
                     <th className="py-8 px-8 text-left text-white text-2xl font-bold">Aspect</th>
-                    <th className="py-8 px-8 text-center text-white text-2xl font-bold flex items-center justify-center">
-                      <AlertTriangle className="mr-3 h-8 w-8 text-red-400" />
-                      Before CloudAdda
+                    <th className="py-8 px-8 text-center text-white text-2xl font-bold">
+                      <div className="flex items-center justify-center">
+                        <AlertTriangle className="mr-3 h-8 w-8 text-red-400" />
+                        Before CloudAdda
+                      </div>
                     </th>
                     <th className="py-8 px-8 text-center text-white text-2xl font-bold">
                       <div className="flex items-center justify-center">
