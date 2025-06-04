@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Rocket, Cpu, Lock, TrendingUp, Users, Palette, TestTube, UserCheck, Calculator, Brain, Shield, Zap, Play, Monitor, Code, BarChart3, Layers3, CheckCircle, AlertTriangle, Server } from "lucide-react";
