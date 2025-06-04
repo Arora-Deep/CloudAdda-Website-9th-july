@@ -34,7 +34,7 @@ const CloudDesktops = () => {
         </div>
       </nav>
 
-      {/* Hero Section with 3D Person Space */}
+      {/* Hero Section - Similar to Homepage */}
       <section className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-20 pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,41 +76,98 @@ const CloudDesktops = () => {
         </div>
       </section>
 
-      {/* Built for Remote Teams - Simplified */}
-      <section className="py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-12">
-            Built for Remote Teams That Build Things
-          </h2>
-          <div className="grid lg:grid-cols-3 gap-12 mt-16">
-            <div className="group">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Brain className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Designed for Doers</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Whether it's developers, analysts, or product testers — CloudAdda desktops deliver speed, security, and uptime.
-              </p>
+      {/* Built for Remote Teams - Creative New Design */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+              Built for Remote Teams That Build Things
+            </h2>
+          </div>
+          
+          {/* Creative Flowing Layout */}
+          <div className="relative">
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-200 to-purple-300 rounded-full opacity-20 animate-pulse"></div>
+              <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full opacity-20 animate-pulse delay-1000"></div>
+              <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-gradient-to-br from-green-200 to-green-300 rounded-full opacity-20 animate-pulse delay-2000"></div>
             </div>
             
-            <div className="group">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Shield className="w-10 h-10 text-white" />
+            {/* Feature 1 - Left Aligned */}
+            <div className="relative mb-24 flex items-center">
+              <div className="flex-1 max-w-xl">
+                <div className="group cursor-pointer">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                      <Brain className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="w-full h-px bg-gradient-to-r from-purple-500 to-transparent"></div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
+                    Designed for Doers
+                  </h3>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Whether it's developers, analysts, or product testers — CloudAdda desktops deliver speed, security, and uptime that keeps your team productive.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Locked-Down, Not Locked-In</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Encrypted. Isolated. Role-based access. Your data stays safe — and portable.
-              </p>
+              <div className="flex-1 flex justify-end">
+                <div className="w-64 h-32 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl border border-purple-200 flex items-center justify-center opacity-80">
+                  <div className="text-purple-300 text-center">
+                    <Code className="w-12 h-12 mx-auto mb-2" />
+                    <p className="text-xs">Visual Element</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <div className="group">
-              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Zap className="w-10 h-10 text-white" />
+
+            {/* Feature 2 - Right Aligned */}
+            <div className="relative mb-24 flex items-center flex-row-reverse">
+              <div className="flex-1 max-w-xl">
+                <div className="group cursor-pointer text-right">
+                  <div className="flex items-center mb-6 flex-row-reverse">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center ml-6 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                      <Shield className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="w-full h-px bg-gradient-to-l from-green-500 to-transparent"></div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
+                    Locked-Down, Not Locked-In
+                  </h3>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Encrypted. Isolated. Role-based access. Your data stays safe — and portable. Complete security without sacrificing flexibility.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Zero Lag, Even on Bad Networks</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We use high-throughput servers with NVMe + EPYC CPUs — because your code, builds, and apps deserve better.
-              </p>
+              <div className="flex-1 flex justify-start">
+                <div className="w-64 h-32 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl border border-green-200 flex items-center justify-center opacity-80">
+                  <div className="text-green-300 text-center">
+                    <Shield className="w-12 h-12 mx-auto mb-2" />
+                    <p className="text-xs">Visual Element</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Feature 3 - Center Aligned */}
+            <div className="relative text-center">
+              <div className="group cursor-pointer max-w-3xl mx-auto">
+                <div className="flex items-center justify-center mb-8">
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
+                  <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl flex items-center justify-center mx-8 group-hover:scale-110 transition-transform duration-500 shadow-xl">
+                    <Zap className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="w-full h-px bg-gradient-to-l from-transparent via-orange-500 to-transparent"></div>
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-orange-600 transition-colors duration-300">
+                  Zero Lag, Even on Bad Networks
+                </h3>
+                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                  We use high-throughput servers with NVMe + EPYC CPUs — because your code, builds, and apps deserve better. 
+                  No compromises on performance.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -292,7 +349,7 @@ const CloudDesktops = () => {
         </div>
       </section>
 
-      {/* What Makes CloudAdda Different */}
+      {/* What Makes CloudAdda Different - Purple Section */}
       <section className="py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-16">What Makes CloudAdda Different</h2>
