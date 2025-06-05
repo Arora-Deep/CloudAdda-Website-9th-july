@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, Calculator, CheckCircle, Zap, Server, Database, Settings } from "lucide-react";
+import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, Calculator, CheckCircle, Zap, Server, Database, Settings, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const VPS = () => {
