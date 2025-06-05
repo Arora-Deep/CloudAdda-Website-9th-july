@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor } from "lucide-react";
+import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainingLabs = () => {
@@ -32,26 +32,26 @@ const TrainingLabs = () => {
         </div>
       </nav>
 
-      {/* Hero Section - Matching Homepage Style */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-white pt-16 pb-24">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium bg-purple-50 text-purple-700 border border-purple-200">
                 <Zap className="mr-2 h-4 w-4" />
                 Training Infrastructure That Actually Works
               </div>
               
-              <h1 className="mx-auto max-w-5xl text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl">
+              <h1 className="text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl">
                 Stop Fighting Infrastructure.
                 <span className="block text-purple-600">Start Teaching.</span>
               </h1>
               
-              <p className="mx-auto mt-6 max-w-3xl text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-gray-600 leading-relaxed">
                 You bring the training content. We deliver rock-solid lab environments that scale instantly, never crash mid-session, and let your students focus on learning.
               </p>
               
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+              <div className="flex flex-col sm:flex-row gap-6">
                 <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
                   Request Your Custom Lab
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -60,272 +60,458 @@ const TrainingLabs = () => {
                   See How It Works
                 </Button>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Flowing Timeline - The Problem Journey */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">The Journey Every Trainer Knows Too Well</h2>
-            <p className="text-xl text-gray-600">Sound familiar?</p>
-          </div>
-          
-          <div className="relative">
-            {/* Flowing Path */}
-            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
-              <path
-                d="M 100 200 Q 300 100 500 200 T 900 200 Q 1000 150 1100 200"
-                stroke="#e5e7eb"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="10,5"
-                className="animate-pulse"
-              />
-            </svg>
-            
-            <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
-              {[
-                { 
-                  step: "1", 
-                  title: "Setup Hell", 
-                  desc: "Hours wasted configuring VMs that should take minutes",
-                  icon: Clock,
-                  position: "top"
-                },
-                { 
-                  step: "2", 
-                  title: "Mid-Session Crashes", 
-                  desc: "Labs fail when you need them most, in front of paying students",
-                  icon: Shield,
-                  position: "bottom"
-                },
-                { 
-                  step: "3", 
-                  title: "Support Nightmare", 
-                  desc: "Ticket systems, bots, and endless waiting for real help",
-                  icon: MessageCircle,
-                  position: "top"
-                },
-                { 
-                  step: "4", 
-                  title: "Reputation Damage", 
-                  desc: "Students lose confidence, reviews suffer, business hurts",
-                  icon: Target,
-                  position: "bottom"
-                }
-              ].map((item, index) => (
-                <div 
-                  key={index} 
-                  className={`relative ${item.position === 'bottom' ? 'mt-20' : ''} group hover:scale-105 transition-all duration-500`}
-                >
-                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:border-red-200 transition-all duration-300 hover:shadow-xl">
-                    <div className="flex flex-col items-center text-center space-y-4">
-                      <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center group-hover:bg-red-100 transition-colors">
-                        <item.icon className="w-8 h-8 text-red-500" />
-                      </div>
-                      <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        {item.step}
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
+              <div className="grid grid-cols-3 gap-8 pt-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-600">60x</div>
+                  <div className="text-sm text-gray-600">Faster Setup</div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Transformation Reveal */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Then CloudAdda Changes Everything</h2>
-            <div className="w-32 h-1 bg-purple-500 mx-auto rounded-full"></div>
-          </div>
-          
-          <div className="relative">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-stretch">
-              {[
-                {
-                  title: "Hours → Minutes",
-                  subtitle: "Lab Provisioning",
-                  description: "Share your specs today. Training-ready environments tomorrow. No more weekend setup marathons.",
-                  icon: Clock,
-                  metric: "60x faster"
-                },
-                {
-                  title: "Crashes → Rock Solid",
-                  subtitle: "Reliability",
-                  description: "Purpose-built for training loads. Your labs stay up when it matters most.",
-                  icon: Shield,
-                  metric: "99.9% uptime"
-                },
-                {
-                  title: "Bots → Real Engineers",
-                  subtitle: "Support",
-                  description: "Every ticket gets an actual human who understands infrastructure. No templates, no delays.",
-                  icon: MessageCircle,
-                  metric: "< 2hr response"
-                }
-              ].map((item, index) => (
-                <div key={index} className="relative group">
-                  <div className="h-full bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-500 hover:shadow-2xl">
-                    <div className="flex flex-col h-full">
-                      <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
-                        <item.icon className="w-8 h-8 text-purple-600" />
-                      </div>
-                      
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                        <p className="text-purple-600 font-semibold mb-4">{item.subtitle}</p>
-                        <p className="text-gray-600 leading-relaxed mb-6">{item.description}</p>
-                      </div>
-                      
-                      <div className="bg-purple-50 rounded-xl p-4 text-center">
-                        <div className="text-2xl font-bold text-purple-600">{item.metric}</div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-600">99.9%</div>
+                  <div className="text-sm text-gray-600">Session Uptime</div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Interactive Feature Showcase */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Built for Every Type of Training</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              {[
-                {
-                  icon: Code,
-                  title: "Developer Bootcamps",
-                  description: "Full-stack environments with pre-configured toolchains, databases, and deployment pipelines."
-                },
-                {
-                  icon: Shield,
-                  title: "Cybersecurity Training",
-                  description: "Isolated attack/defense scenarios with realistic network topologies and vulnerable systems."
-                },
-                {
-                  icon: Users,
-                  title: "Corporate L&D",
-                  description: "Scalable environments for enterprise upskilling programs with SSO integration."
-                },
-                {
-                  icon: BookOpen,
-                  title: "Technical Certification",
-                  description: "Exam-ready labs that mirror real certification testing environments."
-                }
-              ].map((item, index) => (
-                <div key={index} className="flex items-start space-x-6 group cursor-pointer">
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
-                    <item.icon className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                  </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-600">< 2hr</div>
+                  <div className="text-sm text-gray-600">Support Response</div>
                 </div>
-              ))}
+              </div>
             </div>
             
             <div className="relative">
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-lg font-bold text-gray-900">Lab Environment Status</h4>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium text-green-600">All Systems Operational</span>
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { label: "Active Labs", value: "847", change: "+12%" },
-                      { label: "Students Online", value: "2,341", change: "+8%" },
-                      { label: "Avg Response Time", value: "23ms", change: "-5%" },
-                      { label: "Uptime", value: "99.98%", change: "+0.02%" }
-                    ].map((stat, index) => (
-                      <div key={index} className="bg-gray-50 rounded-xl p-4">
-                        <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-                        <div className="text-sm text-gray-600">{stat.label}</div>
-                        <div className="text-xs text-green-600 font-medium">{stat.change}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              {/* Space for 3D illustration of trainer teaching */}
+              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
+                [3D Illustration: Professional trainer presenting to engaged students with laptops]
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Proof & Testimonials - Floating Layout */}
+      {/* The Trainer's Nightmare Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Every Trainer's Worst Nightmare</h2>
+            <p className="text-xl text-gray-600">We've been there. The pain is real.</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              {/* Space for 3D illustration of frustrated trainer */}
+              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
+                [3D Illustration: Stressed trainer looking at crashed computers with confused students]
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              {[
+                {
+                  disaster: "The Friday Night Setup Marathon",
+                  reality: "You spend your entire weekend configuring 50 VMs that should have taken 30 minutes to deploy.",
+                  impact: "Your family asks why you hate them.",
+                  icon: Clock
+                },
+                {
+                  disaster: "The Mid-Session Crash Apocalypse",
+                  reality: "20 minutes into your $2,000/student bootcamp, half the labs crash. Students stare at you. Silence.",
+                  impact: "Your reputation dies in real-time.",
+                  icon: AlertTriangle
+                },
+                {
+                  disaster: "The Support Ticket Black Hole",
+                  reality: "Critical issue at 2 AM. You get a bot response asking if you've tried restarting. Your session is in 6 hours.",
+                  impact: "You contemplate career changes.",
+                  icon: MessageCircle
+                },
+                {
+                  disaster: "The Bill Shock Surprise",
+                  reality: "Your $500 cloud bill becomes $2,800 because students left instances running during a break.",
+                  impact: "Your CFO questions your sanity.",
+                  icon: DollarSign
+                }
+              ].map((nightmare, index) => (
+                <div key={index} className="group hover:scale-105 transition-all duration-300">
+                  <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-red-200 transition-all duration-300 hover:shadow-xl">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center group-hover:bg-red-200 transition-colors">
+                        <nightmare.icon className="w-6 h-6 text-red-600" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">{nightmare.disaster}</h3>
+                        <p className="text-gray-600 mb-2 leading-relaxed">{nightmare.reality}</p>
+                        <p className="text-sm text-red-600 font-semibold italic">{nightmare.impact}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Fix Everything Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Trainers Who Made the Switch</h2>
-            <p className="text-xl text-gray-600">Real stories from real training companies</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">How We End Your Infrastructure Nightmare</h2>
+            <div className="w-32 h-1 bg-purple-500 mx-auto rounded-full"></div>
           </div>
-          
-          <div className="relative min-h-96">
+
+          <div className="grid lg:grid-cols-3 gap-12">
             {[
               {
-                quote: "We went from 6-hour setup marathons to 15-minute lab deployments. Our trainers actually get to train now.",
-                author: "Tech Bootcamp Director",
-                company: "Major Training Company",
-                position: "left",
-                delay: "0s"
+                title: "Minutes, Not Marathons",
+                subtitle: "Lab Environment Creation",
+                description: "Share your requirements today. Get production-ready training labs tomorrow. Pre-configured, tested, and ready for 1000+ concurrent students.",
+                icon: Clock,
+                metric: "60x Faster",
+                proof: "From 8 hours to 8 minutes",
+                features: ["One-click deployment", "Auto-scaling", "Pre-installed toolchains", "Custom configurations"]
               },
               {
-                quote: "No more mid-session crashes. Our student satisfaction scores jumped 40% in the first month.",
-                author: "Lead Instructor",
-                company: "Cybersecurity Academy",
-                position: "right",
-                delay: "0.5s"
+                title: "Rock-Solid Reliability",
+                subtitle: "Built for Training Loads",
+                description: "Purpose-built infrastructure that handles the chaos of 100 students clicking 'run' simultaneously. No more mid-session crashes.",
+                icon: Shield,
+                metric: "99.9% Uptime",
+                proof: "During training sessions",
+                features: ["Dedicated resources", "Load balancing", "Auto-failover", "Real-time monitoring"]
               },
               {
-                quote: "CloudAdda's support team actually knows what they're talking about. It's refreshing.",
-                author: "Training Operations Manager",
-                company: "Enterprise L&D Team",
-                position: "center",
-                delay: "1s"
+                title: "Engineers, Not Bots",
+                subtitle: "Support That Actually Helps",
+                description: "Every ticket goes to an engineer who's managed training infrastructure. They understand your pain and fix problems, not create tickets.",
+                icon: Users,
+                metric: "< 2hr Response",
+                proof: "Even at 2 AM on weekends",
+                features: ["24/7 human support", "Training specialists", "Emergency hotline", "Proactive monitoring"]
               }
-            ].map((testimonial, index) => (
-              <div
-                key={index}
-                className={`absolute w-80 animate-fade-in opacity-0 hover:scale-105 transition-all duration-500 ${
-                  testimonial.position === 'left' ? 'left-0 top-0' :
-                  testimonial.position === 'right' ? 'right-0 top-20' :
-                  'left-1/2 bottom-0 transform -translate-x-1/2'
-                }`}
-                style={{ animationDelay: testimonial.delay, animationFillMode: 'forwards' }}
-              >
-                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:border-purple-200 transition-all duration-300 hover:shadow-xl">
-                  <div className="mb-6">
-                    <div className="text-4xl text-purple-500 mb-4">"</div>
-                    <p className="text-gray-700 leading-relaxed italic">{testimonial.quote}</p>
-                  </div>
-                  <div className="border-t border-gray-100 pt-4">
-                    <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                    <div className="text-sm text-gray-600">{testimonial.company}</div>
+            ].map((solution, index) => (
+              <div key={index} className="group hover:scale-105 transition-all duration-500">
+                <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl h-full">
+                  <div className="flex flex-col h-full">
+                    <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
+                      <solution.icon className="w-8 h-8 text-purple-600" />
+                    </div>
+                    
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{solution.title}</h3>
+                      <p className="text-purple-600 font-semibold mb-4">{solution.subtitle}</p>
+                      <p className="text-gray-600 leading-relaxed mb-6">{solution.description}</p>
+                      
+                      <ul className="space-y-2 mb-6">
+                        {solution.features.map((feature, fIndex) => (
+                          <li key={fIndex} className="flex items-center space-x-2 text-sm text-gray-600">
+                            <CheckCircle className="w-4 h-4 text-green-500" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <div className="bg-purple-50 rounded-xl p-4 text-center">
+                        <div className="text-2xl font-bold text-purple-600">{solution.metric}</div>
+                      </div>
+                      <div className="text-xs text-gray-500 text-center">{solution.proof}</div>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Training Types We Master Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Every Type of Training, Perfected</h2>
+            <p className="text-xl text-gray-600">From code bootcamps to cybersecurity war games</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              {[
+                {
+                  type: "Developer Bootcamps",
+                  description: "Full-stack environments with Docker, Kubernetes, CI/CD pipelines, and cloud integrations. Students get production-like setups from day one.",
+                  icon: Code,
+                  students: "5,000+ trained",
+                  specialties: ["React/Vue/Angular", "Node.js/Python/Java", "Docker & K8s", "AWS/Azure/GCP"]
+                },
+                {
+                  type: "Cybersecurity Training",
+                  description: "Isolated attack/defense scenarios with vulnerable systems, network monitoring, and forensics tools. Real hacking, safe environment.",
+                  icon: Shield,
+                  students: "2,000+ certified",
+                  specialties: ["Penetration testing", "Network security", "Digital forensics", "Incident response"]
+                },
+                {
+                  type: "Data Science & AI",
+                  description: "GPU-accelerated environments with Jupyter, TensorFlow, PyTorch, and massive datasets. Train ML models without laptop melting.",
+                  icon: Brain,
+                  students: "1,500+ graduates",
+                  specialties: ["Machine learning", "Deep learning", "Big data", "MLOps pipelines"]
+                },
+                {
+                  type: "Corporate Upskilling",
+                  description: "Enterprise-grade labs with SSO integration, compliance controls, and progress tracking. Scale from 10 to 10,000 employees.",
+                  icon: Users,
+                  students: "50,000+ employees",
+                  specialties: ["Cloud migration", "DevOps practices", "Security awareness", "Digital transformation"]
+                }
+              ].map((training, index) => (
+                <div key={index} className="group hover:scale-105 transition-all duration-300">
+                  <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-purple-200 transition-all duration-300 hover:shadow-xl">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                        <training.icon className="w-6 h-6 text-purple-600" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-xl font-bold text-gray-900">{training.type}</h3>
+                          <span className="text-xs text-purple-600 font-medium bg-purple-50 px-2 py-1 rounded">{training.students}</span>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed mb-4">{training.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {training.specialties.map((specialty, sIndex) => (
+                            <span key={sIndex} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                              {specialty}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="relative">
+              {/* Space for 3D illustration of different training environments */}
+              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
+                [3D Illustration: Split-screen showing coding bootcamp, cybersecurity lab, AI training, and corporate classroom]
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Success Stories Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Trainers Who Escaped Infrastructure Hell</h2>
+            <p className="text-xl text-gray-600">Real stories. Real pain relief. Real results.</p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {[
+              {
+                story: "From 6-hour setup marathons to 15-minute deployments. Our weekend lives are back.",
+                trainer: "Priya Sharma",
+                role: "Technical Training Director",
+                company: "Major Indian IT Training Company",
+                students: "2,000+ students/month",
+                improvement: "95% time savings on setup",
+                rating: 5,
+                details: "We run React, Node.js, and AWS certification programs. Before CloudAdda, I spent every Friday night setting up environments. Now? Click deploy, go home, enjoy family dinner."
+              },
+              {
+                story: "Zero crashes in 8 months. Our student satisfaction scores jumped from 3.2 to 4.8.",
+                trainer: "Marcus Johnson",
+                role: "Lead Cybersecurity Instructor",
+                company: "Cybersecurity Academy",
+                students: "500+ ethical hackers trained",
+                improvement: "100% session reliability",
+                rating: 5,
+                details: "Penetration testing labs need isolated networks and vulnerable systems. CloudAdda's cyber ranges are the real deal - students feel like they're in a real corporate environment."
+              },
+              {
+                story: "Their support team fixed our Docker orchestration issue at 11 PM on Sunday. I almost cried.",
+                trainer: "Sarah Kim",
+                role: "DevOps Training Manager",
+                company: "Enterprise L&D Team",
+                students: "10,000+ employees upskilled",
+                improvement: "24/7 real human support",
+                rating: 5,
+                details: "We're training developers across 15 time zones. When something breaks at midnight in Mumbai, CloudAdda engineers are online and fixing it. Not bots, real people who know infrastructure."
+              }
+            ].map((success, index) => (
+              <div key={index} className="group hover:scale-105 transition-all duration-300">
+                <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl h-full">
+                  <div className="flex flex-col h-full">
+                    <div className="flex items-center space-x-1 mb-4">
+                      {[...Array(success.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    
+                    <p className="text-gray-700 leading-relaxed mb-6 italic">"{success.story}"</p>
+                    
+                    <div className="flex-1">
+                      <p className="text-sm text-gray-600 leading-relaxed mb-4">{success.details}</p>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-2 gap-4 text-center">
+                        <div className="bg-purple-50 rounded-xl p-3">
+                          <div className="text-sm font-semibold text-purple-600">{success.students}</div>
+                        </div>
+                        <div className="bg-green-50 rounded-xl p-3">
+                          <div className="text-sm font-semibold text-green-600">{success.improvement}</div>
+                        </div>
+                      </div>
+                      
+                      <div className="border-t border-gray-100 pt-4">
+                        <div className="font-semibold text-gray-900">{success.trainer}</div>
+                        <div className="text-sm text-gray-600">{success.role}</div>
+                        <div className="text-xs text-gray-500">{success.company}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Live Demo Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">See It In Action</h2>
+            <p className="text-xl text-gray-600">Watch a real lab environment deploy in real-time</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              {/* Space for 3D illustration of live deployment */}
+              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
+                [3D Illustration: Animated deployment sequence with progress bars and success checkmarks]
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <h3 className="text-3xl font-bold text-gray-900">Full-Stack JavaScript Bootcamp Lab</h3>
+              <p className="text-lg text-gray-600">300 students, React + Node.js + PostgreSQL + Docker</p>
+
+              <div className="space-y-4">
+                {[
+                  { task: "Provisioning 300 Ubuntu instances", time: "00:45", status: "complete" },
+                  { task: "Installing Node.js, npm, and dependencies", time: "01:30", status: "complete" },
+                  { task: "Setting up PostgreSQL databases", time: "00:30", status: "complete" },
+                  { task: "Configuring Docker environments", time: "01:15", status: "complete" },
+                  { task: "Deploying VS Code Server instances", time: "02:00", status: "complete" },
+                  { task: "Running connectivity tests", time: "00:30", status: "complete" },
+                  { task: "Sending access credentials", time: "00:15", status: "complete" }
+                ].map((step, index) => (
+                  <div key={index} className="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                      <span className="text-gray-700">{step.task}</span>
+                    </div>
+                    <span className="text-sm text-gray-500">{step.time}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                <div className="flex items-center space-x-2 mb-2">
+                  <CheckCircle className="w-6 h-6 text-green-600" />
+                  <span className="text-lg font-semibold text-green-800">Lab Environment Ready!</span>
+                </div>
+                <p className="text-green-700">Total deployment time: 6 minutes 45 seconds</p>
+                <p className="text-sm text-green-600 mt-1">300 students can now access their personalized coding environments</p>
+              </div>
+
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+                Request Live Demo
+                <Activity className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Training Infrastructure That Pays for Itself</h2>
+            <p className="text-xl text-gray-600">Stop bleeding money on broken infrastructure</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h3 className="text-3xl font-bold text-gray-900">The Hidden Costs of DIY Training Infrastructure</h3>
+              
+              <div className="space-y-6">
+                {[
+                  { cost: "Weekend Setup Time", amount: "₹50,000/month", description: "Your time @ ₹2,000/hour × 25 hours/month" },
+                  { cost: "Failed Session Recovery", amount: "₹1,00,000/incident", description: "Refunds + reputation damage + re-training costs" },
+                  { cost: "Over-provisioned Resources", amount: "₹30,000/month", description: "Always buying 3x capacity 'just in case'" },
+                  { cost: "Support Ticket Delays", amount: "₹25,000/month", description: "Lost productivity waiting for vendor support" }
+                ].map((cost, index) => (
+                  <div key={index} className="flex justify-between items-center p-4 bg-red-50 rounded-xl border border-red-200">
+                    <div>
+                      <div className="font-semibold text-red-800">{cost.cost}</div>
+                      <div className="text-sm text-red-600">{cost.description}</div>
+                    </div>
+                    <div className="text-lg font-bold text-red-700">{cost.amount}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-red-100 border border-red-300 rounded-xl p-6">
+                <div className="text-2xl font-bold text-red-800 mb-2">Total Hidden Costs: ₹2,05,000/month</div>
+                <div className="text-red-700">And that's just for a small training company!</div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <h3 className="text-3xl font-bold text-gray-900">CloudAdda Training Labs</h3>
+              
+              <div className="bg-white border-2 border-purple-200 rounded-3xl p-8 shadow-2xl">
+                <div className="text-center mb-6">
+                  <div className="text-5xl font-bold text-purple-600 mb-2">₹15,000</div>
+                  <div className="text-gray-600">per 100 students/month</div>
+                  <div className="text-sm text-green-600 font-medium">Flat rate, all-inclusive</div>
+                </div>
+
+                <ul className="space-y-4 mb-8">
+                  {[
+                    "Unlimited lab deployments",
+                    "Auto-scaling infrastructure", 
+                    "24/7 human support",
+                    "Custom environment setup",
+                    "Student progress tracking",
+                    "SSO integration",
+                    "Free migrations",
+                    "99.9% uptime SLA"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-full py-4 text-lg font-semibold">
+                  Start Free Trial
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
+                <div className="text-2xl font-bold text-green-800 mb-2">You Save: ₹1,90,000/month</div>
+                <div className="text-green-700">ROI payback in less than 2 weeks</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -340,10 +526,30 @@ const TrainingLabs = () => {
             Stop wrestling with infrastructure. Start delivering exceptional training experiences.
           </p>
           
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-            Get Your Custom Lab Quote
-            <ArrowRight className="ml-3 h-6 w-6" />
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              Get Your Custom Lab Quote
+              <ArrowRight className="ml-3 h-6 w-6" />
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-full px-16 py-6 text-xl border-gray-300 hover:bg-gray-50">
+              Watch Live Demo
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-600">15,000+</div>
+              <div className="text-gray-600">Students Trained Weekly</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-600">500+</div>
+              <div className="text-gray-600">Training Companies</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-600">99.9%</div>
+              <div className="text-gray-600">Session Success Rate</div>
+            </div>
+          </div>
         </div>
       </section>
 
