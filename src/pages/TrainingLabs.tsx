@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Play, Settings, Zap, Lock, GraduationCap, Building2, Users, MessageCircle, Target, Rocket, CheckCircle, AlertTriangle, Quote } from "lucide-react";
+import { ArrowRight, Play, Settings, Zap, Lock, GraduationCap, Building2, Users, MessageCircle, Target, Rocket, CheckCircle, AlertTriangle, Quote, Clock, Shield, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainingLabs = () => {
@@ -34,124 +34,271 @@ const TrainingLabs = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 pt-20 pb-32 text-white">
+      <section className="bg-white pt-16 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-              Training Infrastructure That
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"> Never Lets You Down.</span>
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              <span className="text-purple-600">Training Labs That Just Work.</span>
             </h1>
-            <p className="text-2xl text-gray-200 mb-12 max-w-5xl mx-auto leading-relaxed">
-              Give your learners a seamless, crash-proof experience — every time. You send the requirements. We deliver stable, pre-configured labs in hours.
+            <p className="text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+              You bring the training. We handle the infrastructure — fast, stable, and tailored to your exact needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-xl px-12 py-6 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105">
-                <ArrowRight className="mr-3 h-6 w-6" />
-                Get a Custom Quote
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-900 text-xl px-12 py-6 rounded-full backdrop-blur-sm">
-                <Play className="mr-3 h-6 w-6" />
-                See How It Works
-              </Button>
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              Request Your Lab
+              <ArrowRight className="ml-3 h-6 w-6" />
+            </Button>
+            <p className="text-lg text-gray-500 mt-4">Let's Get You Set Up</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 1: You're Not an Infra Company */}
+      <section className="py-20 bg-gradient-to-br from-purple-600 to-purple-800 text-white overflow-hidden relative">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-12">You're Not an Infra Company — So Stop Acting Like One.</h2>
+            <div className="max-w-4xl mx-auto space-y-8 text-xl leading-relaxed">
+              <p>You're here to teach. Not configure virtual networks. Not debug port forwarding. Not pray your lab doesn't crash mid-session.</p>
+              <p>Every minute spent wrestling infrastructure is a minute lost with your learners. CloudAdda flips that.</p>
+              <p className="text-2xl font-semibold text-yellow-300">We handle everything — fast setup, deep customization, zero downtime — so your only job is delivering a great experience.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Training Labs Fail Section */}
+      {/* Section 2: The Problems We Kill */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">Why Training Labs Fail — And Why Yours Won't</h2>
+            <h2 className="text-5xl font-bold text-gray-900 mb-8">The Problems We Kill</h2>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Before CloudAdda */}
-            <div className="space-y-8">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-bold text-red-600 mb-6 flex items-center justify-center">
-                  <AlertTriangle className="mr-3 h-8 w-8" />
-                  Before CloudAdda
-                </h3>
-              </div>
-              <div className="space-y-6">
-                {[
-                  "Manual infra setup every session",
-                  "Environments crash mid-training", 
-                  "Late starts, annoyed learners",
-                  "Trainers firefighting instead of teaching"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4 p-6 bg-red-50 border border-red-200 rounded-xl opacity-75">
-                    <div className="text-red-500 text-2xl">⚠️</div>
-                    <p className="text-gray-700 text-lg">{item}</p>
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-red-400 to-green-400 hidden lg:block"></div>
+            
+            <div className="space-y-12">
+              {[
+                {
+                  old: "☠️ Hours wasted spinning up VMs",
+                  new: "⚡ Labs provisioned in hours — not days",
+                  oldBg: "bg-red-50 border-red-200",
+                  newBg: "bg-green-50 border-green-200"
+                },
+                {
+                  old: "😫 Labs crash mid-session",
+                  new: "✅ Rock-solid environments, always",
+                  oldBg: "bg-red-50 border-red-200",
+                  newBg: "bg-green-50 border-green-200"
+                },
+                {
+                  old: "🤯 Trainees struggle to log in",
+                  new: "🔒 One-click access, no confusion",
+                  oldBg: "bg-red-50 border-red-200",
+                  newBg: "bg-green-50 border-green-200"
+                },
+                {
+                  old: "🤝 Poor support, no real help",
+                  new: "❤️ Engineers on call, always human",
+                  oldBg: "bg-red-50 border-red-200",
+                  newBg: "bg-green-50 border-green-200"
+                },
+                {
+                  old: "🔁 One-size-fits-all setups",
+                  new: "🧬 Tailored labs for your curriculum",
+                  oldBg: "bg-red-50 border-red-200",
+                  newBg: "bg-green-50 border-green-200"
+                }
+              ].map((item, index) => (
+                <div key={index} className={`grid lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                  <div className={`p-6 rounded-2xl border-2 ${item.oldBg} transform hover:scale-105 transition-all duration-300`}>
+                    <h3 className="text-xl font-bold text-red-700 mb-2">The Old Way</h3>
+                    <p className="text-lg text-gray-700">{item.old}</p>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* With CloudAdda */}
-            <div className="space-y-8">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-bold text-green-600 mb-6 flex items-center justify-center">
-                  <CheckCircle className="mr-3 h-8 w-8" />
-                  With CloudAdda
-                </h3>
-              </div>
-              <div className="space-y-6">
-                {[
-                  "Labs provisioned in hours",
-                  "Stable, pre-configured infra — no crashes",
-                  "Zero setup delay, sessions start on time", 
-                  "You focus on teaching, we handle the tech"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4 p-6 bg-green-50 border border-green-200 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
-                    <div className="text-green-500 text-2xl">✅</div>
-                    <p className="text-gray-700 text-lg font-medium">{item}</p>
+                  
+                  <div className="hidden lg:flex justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-green-500 rounded-full flex items-center justify-center">
+                      <ArrowRight className="w-6 h-6 text-white" />
+                    </div>
                   </div>
-                ))}
-              </div>
+                  
+                  <div className={`p-6 rounded-2xl border-2 ${item.newBg} transform hover:scale-105 transition-all duration-300 shadow-lg`}>
+                    <h3 className="text-xl font-bold text-green-700 mb-2">The CloudAdda Way</h3>
+                    <p className="text-lg text-gray-700">{item.new}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Built for Real Training Programs */}
+      {/* Section 3: How It Works */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">Built for People Who Run Real Training Programs</h2>
+            <h2 className="text-5xl font-bold text-gray-900 mb-8">How It Works</h2>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: Settings,
-                title: "Fully Customized Environments",
-                description: "Every setup tailored to your course content — OS, apps, network configs, firewall rules. We don't do \"templates.\"",
-                emoji: "🛠",
+                step: "1",
+                title: "Share Requirements",
+                description: "You share your course requirements (specs, tools, OS, network config).",
                 color: "from-blue-500 to-blue-600"
               },
               {
-                icon: Zap,
-                title: "Provisioned in Hours, Not Days", 
-                description: "You send a config. We handle the rest. Your lab link is ready before your coffee gets cold.",
-                emoji: "⚡️",
-                color: "from-yellow-500 to-orange-500"
+                step: "2", 
+                title: "We Provision",
+                description: "We provision the full environment — secure, stable, and customized — in hours.",
+                color: "from-purple-500 to-purple-600"
               },
               {
-                icon: Lock,
-                title: "Enterprise-Grade Reliability & Security",
-                description: "Isolated user access, usage tracking, high-availability infrastructure. Your reputation stays protected.",
-                emoji: "🔒",
+                step: "3",
+                title: "Get Your Link",
+                description: "You get a link. Trainees click, log in, and everything just works.",
+                color: "from-orange-500 to-orange-600"
+              },
+              {
+                step: "4",
+                title: "Focus on Teaching",
+                description: "Done. You focus on the teaching. We handle the rest.",
                 color: "from-green-500 to-green-600"
+              }
+            ].map((item, index) => (
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border-0 shadow-lg bg-white rounded-3xl overflow-hidden">
+                <CardHeader className="text-center pb-6">
+                  <div className={`w-20 h-20 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="text-2xl font-bold text-white">{item.step}</span>
+                  </div>
+                  <CardTitle className="text-xl text-gray-900 group-hover:text-purple-600 transition-colors">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-gray-600 text-lg leading-relaxed">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Who This Is For */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold text-gray-900 mb-8">Who This Is For</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              "Training Companies running instructor-led or self-paced courses",
+              "Corporate L&D teams delivering hands-on tech upskilling", 
+              "Bootcamps and academies needing high-availability lab infra",
+              "Freelance trainers tired of DIY setups and flaky cloud platforms"
+            ].map((item, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-white rounded-3xl overflow-hidden">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <CheckCircle className="w-8 h-8 text-white" />
+                  </div>
+                  <p className="text-gray-700 text-lg leading-relaxed">{item}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-2xl font-bold text-purple-600">If you train with tech, we've got you covered.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Real Talk */}
+      <section className="py-24 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold mb-8">Real Talk — Why Trainers Switch to CloudAdda</h2>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {[
+              "🧠 \"We were spending more time on infra than training.\"",
+              "💬 \"Trainees couldn't log in. My reputation was suffering.\"", 
+              "🛑 \"Other providers were slow, robotic, and couldn't customize anything.\""
+            ].map((quote, index) => (
+              <Card key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border-0 hover:bg-white/20 transition-all duration-300">
+                <CardContent className="p-0 text-center">
+                  <p className="text-xl italic">{quote}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <h3 className="text-3xl font-bold mb-8 text-yellow-300">💡 With CloudAdda:</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                "Labs are ready in hours, not days.",
+                "Environments are stable, secure, and tailored to your stack.",
+                "Support is fast, human, and technical — not sales reps."
+              ].map((benefit, index) => (
+                <div key={index} className="p-6 bg-white/10 backdrop-blur-sm rounded-2xl">
+                  <p className="text-lg">{benefit}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-2xl font-bold mt-8">You're not renting cloud VMs. You're getting a real partner.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Why CloudAdda Beats Everyone Else */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold text-gray-900 mb-8">Why CloudAdda Beats Everyone Else</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Target,
+                title: "Built for Trainers",
+                description: "Not generic cloud — this is purpose-built for training.",
+                color: "from-blue-500 to-blue-600"
+              },
+              {
+                icon: Shield,
+                title: "Zero Downtime Labs",
+                description: "Stability is baked in. Mid-session crashes? Not here.",
+                color: "from-green-500 to-green-600"
+              },
+              {
+                icon: Settings,
+                title: "Tailored, Not Templated",
+                description: "We don't force you to fit into our platform — we fit to your course.",
+                color: "from-purple-500 to-purple-600"
+              },
+              {
+                icon: MessageCircle,
+                title: "Infra Experts on Call",
+                description: "Every support ticket is handled by an engineer. No bots. Ever.",
+                color: "from-orange-500 to-orange-600"
+              },
+              {
+                icon: Zap,
+                title: "Rapid Turnaround",
+                description: "Share your specs today. Start training tomorrow.",
+                color: "from-yellow-500 to-orange-500"
               }
             ].map((feature, index) => (
               <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border-0 shadow-lg bg-white rounded-3xl overflow-hidden">
                 <CardHeader className="text-center pb-6">
-                  <div className={`w-24 h-24 bg-gradient-to-br ${feature.color} rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <span className="text-4xl">{feature.emoji}</span>
+                  <div className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <feature.icon className="w-10 h-10 text-white" />
                   </div>
-                  <CardTitle className="text-2xl text-gray-900 group-hover:text-purple-600 transition-colors mb-4">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl text-gray-900 group-hover:text-purple-600 transition-colors">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
                   <p className="text-gray-600 text-lg leading-relaxed">{feature.description}</p>
@@ -162,210 +309,38 @@ const TrainingLabs = () => {
         </div>
       </section>
 
-      {/* Who This Is For */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">Trusted by Those Who Can't Afford Downtime</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: GraduationCap,
-                title: "Training Companies",
-                description: "Run instructor-led or self-paced courses with confidence — even for hundreds of users.",
-                emoji: "👩‍🏫",
-                color: "from-purple-500 to-purple-600"
-              },
-              {
-                icon: Building2,
-                title: "Corporate L&D Teams",
-                description: "Deliver internal IT training at scale — Windows, Linux, DevOps, Cybersecurity and more.",
-                emoji: "🏢", 
-                color: "from-blue-500 to-blue-600"
-              },
-              {
-                icon: Users,
-                title: "EdTech Platforms",
-                description: "Want to offer hands-on labs without building infra from scratch? Use ours.",
-                emoji: "🎓",
-                color: "from-green-500 to-green-600"
-              }
-            ].map((profile, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-white rounded-3xl overflow-hidden">
-                <CardHeader className="text-center pb-6">
-                  <div className={`w-20 h-20 bg-gradient-to-br ${profile.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <span className="text-3xl">{profile.emoji}</span>
-                  </div>
-                  <CardTitle className="text-xl text-gray-900 group-hover:text-purple-600 transition-colors">{profile.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-gray-600 text-lg leading-relaxed">{profile.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-24 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">How It Works</h2>
-          </div>
-          
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full hidden lg:block"></div>
-            
-            <div className="space-y-16">
-              {[
-                {
-                  step: "1",
-                  title: "You Send Us Your Setup Requirements",
-                  description: "OS, applications, number of VMs, user limits, custom scripts — whatever you need."
-                },
-                {
-                  step: "2",
-                  title: "We Build and Test the Lab", 
-                  description: "No bots. Our engineers spin up, configure, and QA every instance."
-                },
-                {
-                  step: "3",
-                  title: "You Get a Link to Share with Students",
-                  description: "One-click access, no confusing dashboards. Labs are ready and waiting."
-                },
-                {
-                  step: "4",
-                  title: "Need Edits? We Move Fast",
-                  description: "New batch next week? Change configs? Add storage? Just message us."
-                }
-              ].map((item, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                  <div className="flex-1 lg:max-w-lg">
-                    <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white rounded-3xl overflow-hidden">
-                      <CardHeader className="pb-6">
-                        <div className="flex items-center space-x-4 mb-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center text-white text-xl font-bold">
-                            {item.step}
-                          </div>
-                          <CardTitle className="text-2xl text-gray-900">{item.title}</CardTitle>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-gray-600 text-lg leading-relaxed">{item.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                  
-                  <div className="hidden lg:flex w-24 justify-center">
-                    <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                      {item.step}
-                    </div>
-                  </div>
-                  
-                  <div className="flex-1 lg:max-w-lg"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose CloudAdda */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">Why Choose CloudAdda?</h2>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-12">
-            {[
-              {
-                icon: MessageCircle,
-                title: "Talk to Real Engineers",
-                description: "No chatbots. No \"support tiers.\" Just smart humans who know infra.",
-                emoji: "💬",
-                color: "from-blue-500 to-blue-600"
-              },
-              {
-                icon: Target,
-                title: "Built Only for Training Use Cases",
-                description: "We're not trying to be AWS. We're here for trainers. That's it.",
-                emoji: "🎯",
-                color: "from-purple-500 to-purple-600"
-              },
-              {
-                icon: Rocket,
-                title: "Fast Response, Even Faster Delivery",
-                description: "Need 100-user labs in 24 hours? We've done it. We'll do it again.",
-                emoji: "🚀",
-                color: "from-orange-500 to-orange-600"
-              }
-            ].map((reason, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border-0 shadow-lg bg-white rounded-3xl overflow-hidden">
-                <CardHeader className="text-center pb-6">
-                  <div className={`w-24 h-24 bg-gradient-to-br ${reason.color} rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <span className="text-4xl">{reason.emoji}</span>
-                  </div>
-                  <CardTitle className="text-2xl text-gray-900 group-hover:text-purple-600 transition-colors mb-4">{reason.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-gray-600 text-lg leading-relaxed">{reason.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
+      {/* Section 7: Pricing */}
       <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {[
-              {
-                quote: "Before CloudAdda, we'd lose 20 minutes per session to setup problems. Now our instructors just click and start.",
-                author: "Head of Delivery, TechTrainingCo"
-              },
-              {
-                quote: "We needed 75 labs across 3 geographies in 12 hours. CloudAdda pulled it off like it was nothing.",
-                author: "Program Manager, Enterprise Learning Division"
-              }
-            ].map((testimonial, index) => (
-              <Card key={index} className="bg-white p-8 rounded-3xl shadow-xl border-0 hover:shadow-2xl transition-all duration-300">
-                <CardContent className="p-0">
-                  <Quote className="w-12 h-12 text-purple-500 mb-6" />
-                  <p className="text-xl text-gray-700 mb-6 leading-relaxed italic">"{testimonial.quote}"</p>
-                  <p className="text-lg font-semibold text-gray-900">– {testimonial.author}</p>
-                </CardContent>
-              </Card>
-            ))}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white rounded-3xl shadow-2xl p-12 border-4 border-purple-100">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Pricing That Makes Sense</h2>
+            <p className="text-xl text-gray-600 mb-8">
+              We don't do per-minute billing or surprise charges. You get transparent, flat-rate pricing that scales with your batch size — not your headaches.
+            </p>
+            
+            <Button size="lg" className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white text-xl px-12 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              Let's Discuss Pricing
+            </Button>
+            <p className="text-lg text-gray-500 mt-4">We'll send you a custom quote based on your course needs.</p>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-            Ready to Deliver Better Labs, Faster?
+            Your Students Deserve Better Labs. So Do You.
           </h2>
           <p className="text-2xl text-gray-200 mb-12">
-            Talk to us. We'll handle your infra so you can handle your learners.
+            You train. We take care of everything else — with blazing speed, unbeatable support, and no compromises.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-xl px-12 py-6 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105">
-              <ArrowRight className="mr-3 h-6 w-6" />
-              Get a Custom Quote
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-900 text-xl px-12 py-6 rounded-full backdrop-blur-sm">
-              <Play className="mr-3 h-6 w-6" />
-              Schedule a Demo
-            </Button>
-          </div>
+          <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-xl px-12 py-6 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <ArrowRight className="mr-3 h-6 w-6" />
+            Request Your Lab Now
+          </Button>
+          <p className="text-lg text-gray-300 mt-4">Instant response. Zero friction.</p>
         </div>
       </section>
 
