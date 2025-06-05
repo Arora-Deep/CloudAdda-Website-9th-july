@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, Calculator, CheckCircle, Zap, Server, Database, Settings, Rocket } from "lucide-react";
@@ -34,249 +33,89 @@ const VPS = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-white pt-16 pb-20">
+      <section className="pt-20 pb-32 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="mb-6">
-              <span className="text-2xl">🚀</span>
-              <span className="text-3xl font-bold text-purple-600 ml-2">CloudAdda VPS — The VPS Built for Builders</span>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="inline-flex items-center px-4 py-2 bg-purple-50 rounded-full text-purple-600 text-sm font-medium">
+                  🚀 CloudAdda VPS — The VPS Built for Builders
+                </div>
+                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Finally — VPS Hosting That's
+                  <span className="text-purple-600"> Fast, Fair, and Freakishly Reliable</span>
+                </h1>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Engineered for speed. Priced for reality. We deliver NVMe + AMD EPYC power at half the cost of AWS — without the complexity, surprises, or slow support.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Server className="mr-3 h-5 w-5" />
+                  Deploy Your VPS Now
+                </Button>
+                <Button size="lg" variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 rounded-full px-8 py-6 text-lg font-semibold">
+                  View Pricing
+                </Button>
+              </div>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              Finally — VPS Hosting That's
-              <span className="text-purple-600"> Fast, Fair, and Freakishly Reliable</span>
-            </h1>
-            <p className="text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Engineered for speed. Priced for reality. We deliver NVMe + AMD EPYC power at half the cost of AWS — without the complexity, surprises, or slow support.
-            </p>
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-              <Server className="mr-3 h-6 w-6" />
-              Deploy Your VPS Now
-            </Button>
+            <div className="relative">
+              <div className="relative z-10">
+                <img src="/lovable-uploads/8a2d7816-a253-40ef-a846-db190a4798a5.png" alt="VPS Infrastructure" className="w-full h-auto rounded-2xl shadow-2xl" />
+              </div>
+              <div className="absolute -top-4 -right-4 w-72 h-72 bg-purple-100 rounded-full blur-3xl opacity-70"></div>
+              <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-orange-100 rounded-full blur-3xl opacity-70"></div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Section 1: Who This Is For */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">You Don't Need a Cloud PhD. You Just Need Power.</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              {
-                title: "Startups & Founders",
-                description: "Deploy fast. Pivot faster. No lock-in, no nonsense.",
-                icon: Rocket,
-                color: "from-blue-500 to-blue-600"
-              },
-              {
-                title: "Developers & DevOps",
-                description: "SSH in, scale up, build cool stuff. You're in full control.",
-                icon: Settings,
-                color: "from-purple-500 to-purple-600"
-              },
-              {
-                title: "Growing Teams",
-                description: "Spin up backend infra, VDI, or containers — reliably and affordably.",
-                icon: TrendingUp,
-                color: "from-green-500 to-green-600"
-              }
-            ].map((item, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border-0 shadow-lg bg-white rounded-3xl overflow-hidden">
-                <CardHeader className="text-center pb-6">
-                  <div className={`w-24 h-24 bg-gradient-to-br ${item.color} rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <item.icon className="w-12 h-12 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl text-gray-900 group-hover:text-purple-600 transition-colors mb-4">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-gray-600 text-lg leading-relaxed">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2: Why CloudAdda VPS */}
-      <section className="py-24 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold mb-8">The VPS You'd Build Yourself — If You Had the Time</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "NVMe SSD + AMD EPYC Cores",
-                description: "Performance that embarrasses shared cloud.",
-                emoji: "⚡"
-              },
-              {
-                title: "Instant Scalability",
-                description: "Need more power? Click, done. No migration drama.",
-                emoji: "🚀"
-              },
-              {
-                title: "Full Root Access",
-                description: "No gatekeeping. No artificial limits.",
-                emoji: "🔓"
-              },
-              {
-                title: "Zero Throttling",
-                description: "Get every vCPU cycle you pay for — no tricks.",
-                emoji: "💪"
-              },
-              {
-                title: "Pay Less. Get More.",
-                description: "We cost half of AWS. And we're faster.",
-                emoji: "💰"
-              }
-            ].map((item, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border-0 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-                <CardContent className="p-0 text-center">
-                  <div className="text-4xl mb-6">{item.emoji}</div>
-                  <h3 className="text-xl font-bold mb-4 text-white">{item.title}</h3>
-                  <p className="text-gray-200">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3: What You Can Run */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">Run Anything. Scale Everything.</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { name: "Web Apps", icon: Globe, color: "from-blue-500 to-blue-600" },
-              { name: "Game Servers", icon: Monitor, color: "from-purple-500 to-purple-600" },
-              { name: "Developer Environments", icon: Settings, color: "from-green-500 to-green-600" },
-              { name: "AI/ML Tools", icon: Brain, color: "from-orange-500 to-orange-600" },
-              { name: "Backend APIs", icon: Server, color: "from-red-500 to-red-600" },
-              { name: "Databases", icon: Database, color: "from-yellow-500 to-orange-500" }
-            ].map((item, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-white rounded-3xl overflow-hidden">
-                <CardHeader className="text-center pb-6">
-                  <div className={`w-20 h-20 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <CardTitle className="text-xl text-gray-900 group-hover:text-purple-600 transition-colors">{item.name}</CardTitle>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <p className="text-2xl font-bold text-purple-600">If it needs power and uptime, it belongs on CloudAdda.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: How It Works */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">You Spin It. You Scale It. You Rule It.</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              {
-                step: "1",
-                title: "Choose Your Specs",
-                description: "vCPU, RAM, storage — all yours to define.",
-                color: "from-blue-500 to-blue-600"
-              },
-              {
-                step: "2",
-                title: "Deploy in Seconds",
-                description: "Provisioned in under 60 seconds.",
-                color: "from-purple-500 to-purple-600"
-              },
-              {
-                step: "3",
-                title: "Manage Easily",
-                description: "Simple panel, full root, APIs — no fluff, no friction.",
-                color: "from-green-500 to-green-600"
-              }
-            ].map((item, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border-0 shadow-lg bg-white rounded-3xl overflow-hidden">
-                <CardHeader className="text-center pb-6">
-                  <div className={`w-24 h-24 bg-gradient-to-br ${item.color} rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <span className="text-3xl font-bold text-white">{item.step}</span>
-                  </div>
-                  <CardTitle className="text-2xl text-gray-900 group-hover:text-purple-600 transition-colors mb-4">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-gray-600 text-lg leading-relaxed">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5: Before vs After */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">What Happens When You Leave the "Big Clouds"</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">You Don't Need a Cloud PhD. You Just Need Power.</h2>
           </div>
           
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-red-400 to-green-400 hidden lg:block"></div>
+            {/* Animated connecting lines */}
+            <div className="absolute top-1/2 left-1/4 w-1/2 h-px bg-gradient-to-r from-purple-300 to-orange-300 transform -translate-y-1/2 hidden lg:block"></div>
             
-            <div className="space-y-12">
+            <div className="grid md:grid-cols-3 gap-12 relative">
               {[
                 {
-                  category: "Performance",
-                  before: "Throttled, oversold CPUs",
-                  after: "NVMe + EPYC at full speed"
+                  title: "Startups & Founders",
+                  description: "Deploy fast. Pivot faster. No lock-in, no nonsense.",
+                  icon: Rocket,
+                  delay: "0s"
                 },
                 {
-                  category: "Pricing",
-                  before: "Confusing bills, surprise fees",
-                  after: "Transparent. Flat. Fair."
+                  title: "Developers & DevOps", 
+                  description: "SSH in, scale up, build cool stuff. You're in full control.",
+                  icon: Settings,
+                  delay: "0.2s"
                 },
                 {
-                  category: "Support",
-                  before: "Wait days, get templated replies",
-                  after: "Engineers, not bots. Always."
-                },
-                {
-                  category: "Simplicity",
-                  before: "Bloated dashboards",
-                  after: "Fast, focused control panel"
-                },
-                {
-                  category: "Setup Time",
-                  before: "Hours or days",
-                  after: "60 seconds or less"
+                  title: "Growing Teams",
+                  description: "Spin up backend infra, VDI, or containers — reliably and affordably.",
+                  icon: TrendingUp,
+                  delay: "0.4s"
                 }
               ].map((item, index) => (
-                <div key={index} className="grid lg:grid-cols-2 gap-8 items-center">
-                  <div className="p-8 rounded-3xl border-2 border-red-200 bg-red-50 transform hover:scale-105 transition-all duration-300">
-                    <h3 className="text-xl font-bold text-red-700 mb-2">{item.category} - Before CloudAdda</h3>
-                    <p className="text-lg text-gray-700">{item.before}</p>
-                  </div>
-                  
-                  <div className="hidden lg:flex justify-center">
-                    <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-green-500 rounded-full flex items-center justify-center">
-                      <ArrowRight className="w-6 h-6 text-white" />
+                <div 
+                  key={index} 
+                  className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                  style={{ animationDelay: item.delay }}
+                >
+                  <div className="flex flex-col items-center text-center space-y-6">
+                    <div className="relative">
+                      <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-orange-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <item.icon className="w-10 h-10 text-white" />
+                      </div>
+                      <div className="absolute -inset-2 bg-gradient-to-br from-purple-500 to-orange-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
                     </div>
-                  </div>
-                  
-                  <div className="p-8 rounded-3xl border-2 border-green-200 bg-green-50 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                    <h3 className="text-xl font-bold text-green-700 mb-2">{item.category} - After CloudAdda</h3>
-                    <p className="text-lg text-gray-700">{item.after}</p>
+                    <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -285,117 +124,230 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Section 6: Plans & Pricing */}
-      <section className="py-24 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
+      {/* Section 2: Why CloudAdda VPS */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold mb-8">Crazy Fast. Surprisingly Affordable.</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">The VPS You'd Build Yourself — If You Had the Time</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { title: "NVMe SSD + AMD EPYC Cores", description: "Performance that embarrasses shared cloud.", emoji: "⚡" },
+              { title: "Instant Scalability", description: "Need more power? Click, done. No migration drama.", emoji: "🚀" },
+              { title: "Full Root Access", description: "No gatekeeping. No artificial limits.", emoji: "🔓" },
+              { title: "Zero Throttling", description: "Get every vCPU cycle you pay for — no tricks.", emoji: "💪" },
+              { title: "Pay Less. Get More.", description: "We cost half of AWS. And we're faster.", emoji: "💰" }
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className="group relative overflow-hidden bg-gray-50 rounded-2xl p-6 hover:bg-white border border-gray-100 hover:border-purple-200 transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="relative z-10">
+                  <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">{item.emoji}</div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: What You Can Run */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Run Anything. Scale Everything.</h2>
+          </div>
+          
+          <div className="relative">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {[
+                { name: "Web Apps", icon: Globe },
+                { name: "Game Servers", icon: Monitor },
+                { name: "Developer Environments", icon: Settings },
+                { name: "AI/ML Tools", icon: Brain },
+                { name: "Backend APIs", icon: Server },
+                { name: "Databases", icon: Database }
+              ].map((item, index) => (
+                <div 
+                  key={index} 
+                  className="group flex items-center space-x-4 bg-white rounded-xl p-4 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-purple-200"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="font-semibold text-gray-900">{item.name}</span>
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center">
+              <p className="text-xl font-bold text-purple-600">If it needs power and uptime, it belongs on CloudAdda.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: How It Works */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">You Spin It. You Scale It. You Rule It.</h2>
+          </div>
+          
+          <div className="relative">
+            <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8">
+              {[
+                { step: "1", title: "Choose Your Specs", description: "vCPU, RAM, storage — all yours to define." },
+                { step: "2", title: "Deploy in Seconds", description: "Provisioned in under 60 seconds." },
+                { step: "3", title: "Manage Easily", description: "Simple panel, full root, APIs — no fluff, no friction." }
+              ].map((item, index) => (
+                <div key={index} className="flex-1 text-center group">
+                  <div className="relative mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-orange-500 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-2xl font-bold text-white">{item.step}</span>
+                    </div>
+                    {index < 2 && (
+                      <div className="hidden lg:block absolute top-8 left-full w-8 h-px bg-gradient-to-r from-purple-300 to-orange-300"></div>
+                    )}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Before vs After */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">What Happens When You Leave the "Big Clouds"</h2>
+          </div>
+          
+          <div className="space-y-8">
+            {[
+              { category: "Performance", before: "Throttled, oversold CPUs", after: "NVMe + EPYC at full speed" },
+              { category: "Pricing", before: "Confusing bills, surprise fees", after: "Transparent. Flat. Fair." },
+              { category: "Support", before: "Wait days, get templated replies", after: "Engineers, not bots. Always." },
+              { category: "Simplicity", before: "Bloated dashboards", after: "Fast, focused control panel" },
+              { category: "Setup Time", before: "Hours or days", after: "60 seconds or less" }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                <div className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-purple-200 transition-all duration-300 hover:shadow-lg">
+                  <div className="grid md:grid-cols-3 gap-6 items-center">
+                    <div className="text-center md:text-left">
+                      <h3 className="text-lg font-bold text-gray-900 mb-2">{item.category}</h3>
+                    </div>
+                    <div className="text-center">
+                      <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                        <p className="text-sm text-red-700 font-medium">Before</p>
+                        <p className="text-red-900">{item.before}</p>
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                        <p className="text-sm text-green-700 font-medium">After</p>
+                        <p className="text-green-900">{item.after}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Plans & Pricing */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Crazy Fast. Surprisingly Affordable.</h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
-              {
-                name: "Starter",
-                price: "₹799/mo",
-                specs: "2vCPU / 4GB RAM / 50GB NVMe",
-                color: "from-blue-500 to-blue-600"
-              },
-              {
-                name: "Pro",
-                price: "₹1399/mo", 
-                specs: "4vCPU / 8GB RAM / 100GB NVMe",
-                color: "from-purple-500 to-purple-600",
-                popular: true
-              },
-              {
-                name: "Elite",
-                price: "₹2799/mo",
-                specs: "8vCPU / 16GB RAM / 200GB NVMe",
-                color: "from-orange-500 to-orange-600"
-              }
+              { name: "Starter", price: "₹799/mo", specs: "2vCPU / 4GB RAM / 50GB NVMe", popular: false },
+              { name: "Pro", price: "₹1399/mo", specs: "4vCPU / 8GB RAM / 100GB NVMe", popular: true },
+              { name: "Elite", price: "₹2799/mo", specs: "8vCPU / 16GB RAM / 200GB NVMe", popular: false }
             ].map((plan, index) => (
-              <Card key={index} className={`bg-white/10 backdrop-blur-sm rounded-3xl border-0 transform hover:scale-105 transition-all duration-300 ${plan.popular ? 'ring-4 ring-yellow-400' : ''}`}>
+              <div 
+                key={index} 
+                className={`relative bg-white rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
+                  plan.popular ? 'border-purple-500 shadow-lg' : 'border-gray-200 hover:border-purple-300'
+                }`}
+              >
                 {plan.popular && (
-                  <div className="bg-yellow-400 text-purple-900 text-center py-2 rounded-t-3xl font-bold">
-                    Most Popular
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium">Most Popular</span>
                   </div>
                 )}
-                <CardHeader className="text-center pb-6">
-                  <div className={`w-20 h-20 bg-gradient-to-br ${plan.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                    <Server className="w-10 h-10 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl text-white mb-2">{plan.name}</CardTitle>
-                  <div className="text-3xl font-bold text-yellow-300">{plan.price}</div>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-gray-200 text-lg">{plan.specs}</p>
-                </CardContent>
-              </Card>
+                <div className="text-center">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                  <div className="text-3xl font-bold text-purple-600 mb-4">{plan.price}</div>
+                  <p className="text-gray-600 mb-6">{plan.specs}</p>
+                  <Button 
+                    className={`w-full rounded-full ${
+                      plan.popular 
+                        ? 'bg-purple-500 hover:bg-purple-600 text-white' 
+                        : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
+                    }`}
+                  >
+                    Get Started
+                  </Button>
+                </div>
+              </div>
             ))}
           </div>
           
-          <div className="text-center">
-            <p className="text-xl mb-8">Add-ons: Extra storage, bandwidth, backups — scale anytime.</p>
-            <p className="text-lg text-gray-300">All plans come with full root access, instant provisioning, and 24/7 real engineer support.</p>
+          <div className="text-center space-y-4">
+            <p className="text-lg text-gray-600">Add-ons: Extra storage, bandwidth, backups — scale anytime.</p>
+            <p className="text-sm text-gray-500">All plans come with full root access, instant provisioning, and 24/7 real engineer support.</p>
           </div>
         </div>
       </section>
 
       {/* Section 7: Why We're Different */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">This Is How VPS Should Be</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">This Is How VPS Should Be</h2>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                title: "We Build for Speed",
-                description: "Every VM gets dedicated resources. Period.",
-                emoji: "⚡"
-              },
-              {
-                title: "We Speak Human",
-                description: "Support is fast, real, and ridiculously helpful.",
-                emoji: "💬"
-              },
-              {
-                title: "We Don't Lock You In",
-                description: "No contracts. No BS. Just scalable compute.",
-                emoji: "🔓"
-              },
-              {
-                title: "Made in India. Optimized for the World.",
-                description: "Low-latency infra designed for real workloads.",
-                emoji: "🌍"
-              }
+              { title: "We Build for Speed", description: "Every VM gets dedicated resources. Period.", emoji: "⚡" },
+              { title: "We Speak Human", description: "Support is fast, real, and ridiculously helpful.", emoji: "💬" },
+              { title: "We Don't Lock You In", description: "No contracts. No BS. Just scalable compute.", emoji: "🔓" },
+              { title: "Made in India. Optimized for the World.", description: "Low-latency infra designed for real workloads.", emoji: "🌍" }
             ].map((item, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-white rounded-3xl overflow-hidden">
-                <CardHeader className="text-center pb-6">
-                  <div className="text-4xl mb-6">{item.emoji}</div>
-                  <CardTitle className="text-xl text-gray-900 group-hover:text-purple-600 transition-colors mb-4">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className="text-center bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-purple-200">
+                <div className="text-3xl mb-4">{item.emoji}</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Section 8: Final CTA */}
-      <section className="py-32 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Try the VPS That's Actually Worth the Price
           </h2>
-          <p className="text-2xl text-gray-200 mb-12">
+          <p className="text-xl text-gray-600 mb-8">
             No throttling. No asterisks. No regrets.
           </p>
           
-          <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-xl px-12 py-6 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105">
+          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
             <Server className="mr-3 h-6 w-6" />
             Launch Your VPS Now
           </Button>
