@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -67,7 +66,7 @@ const VPS = () => {
                   <div className="text-sm text-gray-600">Uptime SLA</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">< 2hr</div>
+                  <div className="text-3xl font-bold text-purple-600">&lt; 2hr</div>
                   <div className="text-sm text-gray-600">Support Response</div>
                 </div>
                 <div className="text-center">
@@ -78,7 +77,6 @@ const VPS = () => {
             </div>
             
             <div className="relative">
-              {/* Space for 3D illustration of developer working on laptop */}
               <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
                 [3D Illustration: Developer working on modern laptop with server connections]
               </div>
@@ -132,7 +130,6 @@ const VPS = () => {
             </div>
 
             <div className="relative">
-              {/* Space for 3D illustration of frustrated developer */}
               <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
                 [3D Illustration: Frustrated developer pulling hair looking at crashed server dashboard]
               </div>
@@ -253,7 +250,6 @@ const VPS = () => {
             </div>
 
             <div className="relative">
-              {/* Space for 3D illustration of server infrastructure */}
               <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
                 [3D Illustration: Modern server racks with glowing connections and data flow]
               </div>
@@ -504,7 +500,6 @@ const VPS = () => {
             </div>
 
             <div className="relative">
-              {/* Space for 3D illustration of happy customers */}
               <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
                 [3D Illustration: Diverse group of happy developers giving thumbs up]
               </div>

@@ -1,6 +1,5 @@
-
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3 } from "lucide-react";
+import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3, Building, Lightbulb, FileCheck, Headphones, Gauge, Laptop } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainingLabs = () => {
@@ -71,14 +70,13 @@ const TrainingLabs = () => {
                   <div className="text-sm text-gray-600">Session Uptime</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">< 2hr</div>
+                  <div className="text-3xl font-bold text-purple-600">&lt; 2hr</div>
                   <div className="text-sm text-gray-600">Support Response</div>
                 </div>
               </div>
             </div>
             
             <div className="relative">
-              {/* Space for 3D illustration of trainer teaching */}
               <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
                 [3D Illustration: Professional trainer presenting to engaged students with laptops]
               </div>
@@ -97,7 +95,6 @@ const TrainingLabs = () => {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              {/* Space for 3D illustration of frustrated trainer */}
               <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
                 [3D Illustration: Stressed trainer looking at crashed computers with confused students]
               </div>
@@ -291,7 +288,6 @@ const TrainingLabs = () => {
             </div>
 
             <div className="relative">
-              {/* Space for 3D illustration of different training environments */}
               <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
                 [3D Illustration: Split-screen showing coding bootcamp, cybersecurity lab, AI training, and corporate classroom]
               </div>
@@ -390,7 +386,6 @@ const TrainingLabs = () => {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              {/* Space for 3D illustration of live deployment */}
               <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
                 [3D Illustration: Animated deployment sequence with progress bars and success checkmarks]
               </div>
