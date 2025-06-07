@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3, Building, Lightbulb, FileCheck, Headphones, Gauge, Laptop, Timer, TrendingDown, X, ChevronRight, ThumbsUp, Play } from "lucide-react";
+import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3, Building, Lightbulb, FileCheck, Headphones, Gauge, Laptop, Timer, TrendingDown, X, ChevronRight, ThumbsUp, Play, Eye, UserCheck, Activity as ActivityIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainingLabs = () => {
@@ -195,38 +195,125 @@ const TrainingLabs = () => {
         </div>
       </section>
 
-      {/* Before vs After Grid */}
-      <section className="py-24 bg-gradient-to-br from-red-50 to-green-50">
+      {/* Dashboard Showcase Section */}
+      <section className="py-24 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">What Happens When You Stop Fighting Infrastructure</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Simple Dashboard. Powerful Control.</h2>
+            <p className="text-xl text-gray-600">Manage hundreds of students and labs from one intuitive interface</p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-3xl shadow-2xl border border-gray-200">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left p-6 font-semibold text-gray-900">Metric</th>
-                  <th className="text-center p-6 bg-red-50 font-bold text-red-600">Before CloudAdda</th>
-                  <th className="text-center p-6 bg-green-50 font-bold text-green-600 rounded-tr-3xl">After CloudAdda</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { metric: "Lab Setup Time", before: "8-12 hours/weekend", after: "8 minutes flat" },
-                  { metric: "Uptime", before: "70–90%, constant crashes", after: "99.9%, stress-free" },
-                  { metric: "Support SLA", before: "2–5 days or never", after: "<47 minutes avg." },
-                  { metric: "Trainer Stress", before: "Burnout", after: "Focused & in control" },
-                  { metric: "Student Reviews", before: "2.8/5", after: "4.8/5" }
-                ].map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                    <td className="p-6 font-semibold text-gray-900">{row.metric}</td>
-                    <td className="p-6 text-center bg-red-50 text-red-600">{row.before}</td>
-                    <td className="p-6 text-center bg-green-50 text-green-600">{row.after}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="space-y-24">
+            {/* Feature 1: Easy Management */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <div className="inline-flex items-center space-x-2 bg-purple-100 rounded-full px-4 py-2">
+                  <Gauge className="w-5 h-5 text-purple-600" />
+                  <span className="text-purple-700 font-semibold">Easy Management</span>
+                </div>
+                
+                <h3 className="text-3xl font-bold text-gray-900">Monitor All Labs at a Glance</h3>
+                
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  See real-time status of every student's environment. CPU usage, memory consumption, 
+                  network activity — all in one clean dashboard. No more guessing if labs are working.
+                </p>
+                
+                <ul className="space-y-4">
+                  {[
+                    "Real-time resource monitoring",
+                    "Instant lab status updates", 
+                    "Performance analytics",
+                    "One-click environment controls"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-500" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="relative">
+                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 h-96 flex items-center justify-center text-gray-400">
+                  [Dashboard Screenshot: Overview screen showing multiple lab environments with status indicators, resource usage charts, and student activity]
+                </div>
+              </div>
+            </div>
+
+            {/* Feature 2: Student Access Control */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="relative order-2 lg:order-1">
+                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 h-96 flex items-center justify-center text-gray-400">
+                  [Dashboard Screenshot: Student management interface showing remote access controls, screen sharing, and assistance tools]
+                </div>
+              </div>
+              
+              <div className="space-y-8 order-1 lg:order-2">
+                <div className="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2">
+                  <UserCheck className="w-5 h-5 text-blue-600" />
+                  <span className="text-blue-700 font-semibold">Remote Access</span>
+                </div>
+                
+                <h3 className="text-3xl font-bold text-gray-900">Help Students Without Leaving Your Seat</h3>
+                
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  View student screens, take control when needed, and provide instant help. 
+                  No more walking around the classroom or dealing with "it's not working" complaints.
+                </p>
+                
+                <ul className="space-y-4">
+                  {[
+                    "Remote screen viewing",
+                    "Take control assistance",
+                    "File sharing & transfers",
+                    "Real-time chat support"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-500" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Feature 3: Lab Deployment */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <div className="inline-flex items-center space-x-2 bg-green-100 rounded-full px-4 py-2">
+                  <Rocket className="w-5 h-5 text-green-600" />
+                  <span className="text-green-700 font-semibold">Instant Deployment</span>
+                </div>
+                
+                <h3 className="text-3xl font-bold text-gray-900">Deploy Labs in Seconds, Not Hours</h3>
+                
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Pre-configured templates for every training scenario. Just select your curriculum type, 
+                  set the number of students, and click deploy. Your entire class is ready in minutes.
+                </p>
+                
+                <ul className="space-y-4">
+                  {[
+                    "Pre-built curriculum templates",
+                    "Auto-scaling based on enrollment",
+                    "Custom environment configuration",
+                    "Bulk student onboarding"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-500" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="relative">
+                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 h-96 flex items-center justify-center text-gray-400">
+                  [Dashboard Screenshot: Lab deployment interface with template selection, scaling options, and deployment progress]
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
