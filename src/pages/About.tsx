@@ -1,7 +1,9 @@
 
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Users, Globe, Award, Heart, Target, Zap, Shield, Rocket, Star } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Target, Users, Globe, Award, Heart, Zap, ArrowRight, Star, Lightbulb, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -16,6 +18,7 @@ const About = () => {
             </Link>
             <div className="flex items-center space-x-4">
               <Link to="/" className="text-gray-700 hover:text-orange-500 transition-colors">Home</Link>
+              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
             </div>
           </div>
@@ -23,186 +26,163 @@ const About = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              Born in India,
-              <br />
-              <span className="text-purple-600">Built for the World</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're not just another cloud company. We're the infrastructure partner that actually understands what businesses need to succeed in the modern world.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { number: "500+", label: "Global Customers", icon: Users },
-              { number: "99.9%", label: "Uptime SLA", icon: Shield },
-              { number: "24/7", label: "Human Support", icon: Heart }
-            ].map((stat, index) => (
-              <div key={index} className="text-center bg-white rounded-2xl p-8 shadow-lg">
-                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-purple-600" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+      <section className="py-20 bg-gradient-to-br from-purple-600 via-blue-600 to-orange-500 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge className="bg-white/20 text-white border-white/30 mb-6">
+                Born in India 🇮🇳 Built for the World 🌍
+              </Badge>
+              <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                We're Revolutionizing
+                <br />
+                <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+                  Cloud Infrastructure
+                </span>
+              </h1>
+              <p className="text-xl text-white/90 mb-8 leading-relaxed">
+                CloudAdda started with a simple belief: infrastructure shouldn't be complicated. 
+                We're on a mission to make powerful cloud solutions accessible to everyone, everywhere.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
+                  <Heart className="w-5 h-5 mr-2" />
+                  Join Our Mission
+                </Button>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  <Users className="w-5 h-5 mr-2" />
+                  Meet the Team
+                </Button>
               </div>
-            ))}
+            </div>
+            <div className="relative">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                <div className="grid grid-cols-2 gap-6">
+                  {[
+                    { icon: Users, number: "10K+", label: "Happy Users" },
+                    { icon: Globe, number: "25+", label: "Countries" },
+                    { icon: Zap, number: "99.9%", label: "Uptime" },
+                    { icon: Award, number: "50+", label: "Awards" }
+                  ].map((stat, index) => (
+                    <div key={index} className="text-center">
+                      <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                        <stat.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-2xl font-bold mb-1">{stat.number}</div>
+                      <div className="text-white/80 text-sm">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Story Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Story</h2>
-              <div className="space-y-6 text-lg text-gray-700">
+              <div className="inline-flex items-center space-x-2 bg-purple-100 rounded-full px-4 py-2 mb-6">
+                <Lightbulb className="w-5 h-5 text-purple-600" />
+                <span className="text-purple-600 font-medium">Our Story</span>
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                From Frustration to Innovation
+              </h2>
+              <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
                 <p>
-                  CloudAdda was born from frustration. Our founders, seasoned engineers and entrepreneurs, 
-                  were tired of fighting with overcomplicated cloud platforms that promised simplicity but 
-                  delivered chaos.
+                  CloudAdda was born out of frustration. Our founders, experienced engineers from top tech companies, 
+                  were tired of dealing with complex, overpriced cloud solutions that took weeks to set up.
                 </p>
                 <p>
-                  <strong>The problem was clear:</strong> Businesses needed reliable infrastructure, 
-                  not another dashboard to babysit. They needed solutions that worked, not platforms 
-                  that required a PhD to operate.
+                  "Why does infrastructure have to be so complicated?" This simple question sparked the creation of CloudAdda. 
+                  We envisioned a world where spinning up training labs, virtual desktops, and VPS instances was as easy as 
+                  ordering your favorite coffee.
                 </p>
                 <p>
-                  So we built CloudAdda differently. We focus on three things: Training Labs that deploy 
-                  in minutes, Virtual Desktops that scale effortlessly, and VPS hosting that just works. 
-                  All backed by support from real engineers who actually care about your success.
-                </p>
-                <p>
-                  <strong>Today,</strong> we're proud to serve 500+ companies worldwide, from startups 
-                  in Bangalore to enterprises in Silicon Valley. But our mission remains the same: 
-                  make infrastructure invisible so you can focus on what matters.
+                  Today, CloudAdda powers thousands of businesses across the globe, from startups in Bangalore to 
+                  enterprises in Silicon Valley. We've made infrastructure simple, accessible, and affordable for everyone.
                 </p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl p-8">
-              <img 
-                src="/lovable-uploads/f690fdec-4d37-4062-af23-158e9b86a21e.png" 
-                alt="Professional team illustration" 
-                className="w-full max-w-md mx-auto"
-              />
+            <div className="relative">
+              <div className="bg-gradient-to-br from-purple-100 to-orange-100 rounded-2xl p-8 h-96 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-24 h-24 bg-gradient-to-r from-purple-600 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Zap className="w-12 h-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">2019</h3>
+                  <p className="text-gray-600">CloudAdda was founded with a vision to simplify cloud infrastructure</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Mission & Values */}
+      {/* Values Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Mission & Values</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything we do is guided by these core principles that shape how we build products and serve customers.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            {[
-              {
-                icon: Target,
-                title: "Customer Success First",
-                description: "Your success is our success. We measure ourselves not by features shipped, but by problems solved and goals achieved."
-              },
-              {
-                icon: Heart,
-                title: "Human-Centered Support",
-                description: "Real engineers, real conversations, real solutions. No bots, no scripts, no 'please restart your computer' responses."
-              },
-              {
-                icon: Zap,
-                title: "Simplicity by Design",
-                description: "Complex infrastructure should have simple interfaces. We believe powerful doesn't have to mean complicated."
-              },
-              {
-                icon: Shield,
-                title: "Reliability Above All",
-                description: "Your business depends on us, so we never compromise on uptime, performance, or security. 99.9% isn't just a number—it's a promise."
-              },
-              {
-                icon: Globe,
-                title: "Global Scale, Personal Touch",
-                description: "Whether you're our first customer or our thousandth, you get the same level of attention and care."
-              },
-              {
-                icon: Rocket,
-                title: "Innovation with Purpose",
-                description: "We innovate to solve real problems, not just to add features. Every update makes your life easier."
-              }
-            ].map((value, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                    <value.icon className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <CardTitle className="text-xl">{value.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Mission Statement */}
-          <div className="bg-purple-600 rounded-3xl p-12 text-center text-white">
-            <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
-            <p className="text-xl max-w-4xl mx-auto leading-relaxed">
-              To make world-class infrastructure accessible to every business, from the smallest startup 
-              to the largest enterprise. We believe that great technology should empower people, not overwhelm them.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Team */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">Leadership Team</h2>
-            <p className="text-xl text-gray-600">
-              Meet the experienced leaders driving CloudAdda's vision forward.
+              These principles guide everything we do and shape the culture we're building
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "Rajesh Kumar",
-                title: "CEO & Co-Founder",
-                bio: "15+ years in cloud infrastructure. Former engineering leader at top tech companies. Passionate about making complex technology simple.",
-                image: "/placeholder.svg"
+                icon: Lightbulb,
+                title: "Innovation First",
+                description: "We constantly push boundaries to create solutions that don't just work—they delight.",
+                color: "from-yellow-400 to-orange-500"
               },
               {
-                name: "Priya Sharma",
-                title: "CTO & Co-Founder",
-                bio: "Former lead architect at major cloud providers. Expert in scalable systems and enterprise infrastructure. Drives our technical excellence.",
-                image: "/placeholder.svg"
+                icon: Heart,
+                title: "Customer Obsession",
+                description: "Every decision we make starts with one question: How does this help our customers succeed?",
+                color: "from-pink-400 to-red-500"
               },
               {
-                name: "Michael Chen",
-                title: "VP of Customer Success",
-                bio: "10+ years helping businesses succeed with cloud adoption. Previously at leading SaaS companies. Champions customer-first culture.",
-                image: "/placeholder.svg"
+                icon: Shield,
+                title: "Trust & Transparency",
+                description: "We build relationships on honesty, reliability, and clear communication. No hidden agendas.",
+                color: "from-blue-400 to-purple-500"
+              },
+              {
+                icon: Zap,
+                title: "Speed & Simplicity",
+                description: "Complex problems deserve simple solutions. We make powerful technology effortlessly easy.",
+                color: "from-green-400 to-blue-500"
+              },
+              {
+                icon: Globe,
+                title: "Global Impact",
+                description: "Born in India, built for the world. We create solutions that transcend borders and cultures.",
+                color: "from-purple-400 to-pink-500"
+              },
+              {
+                icon: Users,
+                title: "Team Excellence",
+                description: "We hire the best, trust them completely, and create an environment where they can do their life's best work.",
+                color: "from-orange-400 to-red-500"
               }
-            ].map((member, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="w-24 h-24 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Users className="w-12 h-12 text-purple-600" />
+            ].map((value, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 bg-white">
+                <CardHeader className="text-center pb-4">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <value.icon className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl">{member.name}</CardTitle>
-                  <CardDescription className="text-purple-600 font-semibold">{member.title}</CardDescription>
+                  <CardTitle className="text-xl font-bold text-gray-900">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">{member.bio}</p>
+                  <CardDescription className="text-gray-600 text-center leading-relaxed">
+                    {value.description}
+                  </CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -210,127 +190,78 @@ const About = () => {
         </div>
       </section>
 
-      {/* Company Culture */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">Why We're Different</h2>
-              <div className="space-y-6">
-                {[
-                  {
-                    title: "Engineering Excellence",
-                    description: "We hire the best engineers and give them the freedom to build amazing things. Quality code, robust architecture, and thoughtful design are non-negotiable."
-                  },
-                  {
-                    title: "Customer Obsession",
-                    description: "Every decision starts with: 'How does this help our customers?' We're not building features—we're solving problems that matter."
-                  },
-                  {
-                    title: "Transparency Always",
-                    description: "No hidden fees, no surprise bills, no complex pricing. We believe honest business practices build lasting relationships."
-                  },
-                  {
-                    title: "Global, Remote-First",
-                    description: "Our team spans continents but shares one vision. Remote work isn't just our policy—it's proof that great technology connects people."
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                      <p className="text-gray-600">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="bg-white rounded-3xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">By the Numbers</h3>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { stat: "2020", label: "Founded" },
-                  { stat: "50+", label: "Team Members" },
-                  { stat: "12", label: "Countries Served" },
-                  { stat: "99.9%", label: "Customer Satisfaction" }
-                ].map((item, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-2xl font-bold text-purple-600 mb-1">{item.stat}</div>
-                    <div className="text-gray-600 text-sm">{item.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Customer Testimonials */}
+      {/* Team Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">What Our Customers Say</h2>
-            <p className="text-xl text-gray-600">
-              Don't just take our word for it—hear from the companies that trust CloudAdda.
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet Our Incredible Team</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              The passionate minds behind CloudAdda's success
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {[
               {
-                quote: "CloudAdda transformed our training business. What used to take days now takes hours. Our students are happier, our trainers are less stressed, and our business is growing faster than ever.",
-                author: "Sarah Johnson",
-                title: "CEO, TechEd Solutions",
-                rating: 5
+                name: "Rajesh Kumar",
+                role: "CEO & Co-Founder",
+                bio: "Former AWS Principal Engineer with 15+ years building scalable infrastructure",
+                image: "👨‍💼"
               },
               {
-                quote: "Finally, a cloud provider that understands what we actually need. No complexity, no surprises, just infrastructure that works. Their support team feels like an extension of our own team.",
-                author: "Marcus Rodriguez",
-                title: "CTO, DevCorp",
-                rating: 5
+                name: "Priya Sharma",
+                role: "CTO & Co-Founder",
+                bio: "Ex-Google Cloud architect passionate about making complex tech simple",
+                image: "👩‍💻"
               },
               {
-                quote: "We switched from AWS to CloudAdda and never looked back. Better performance, clearer pricing, and support that actually helps. It's been transformational for our operations.",
-                author: "Amanda Chen",
-                title: "Head of Infrastructure, StartupXYZ",
-                rating: 5
+                name: "Amit Patel",
+                role: "Head of Product",
+                bio: "Design thinking expert focused on creating delightful user experiences",
+                image: "👨‍🎨"
               }
-            ].map((testimonial, index) => (
-              <Card key={index} className="h-full">
-                <CardHeader>
-                  <div className="flex text-yellow-400 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-current" />
-                    ))}
+            ].map((member, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <CardHeader className="text-center">
+                  <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+                    {member.image}
                   </div>
-                  <CardDescription className="text-lg italic">
-                    "{testimonial.quote}"
-                  </CardDescription>
+                  <CardTitle className="text-xl font-bold">{member.name}</CardTitle>
+                  <CardDescription className="text-purple-600 font-medium">{member.role}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                  <div className="text-gray-600">{testimonial.title}</div>
+                  <p className="text-gray-600 text-center">{member.bio}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          <div className="text-center">
+            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:opacity-90">
+              <Users className="w-5 h-5 mr-2" />
+              Join Our Team
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-purple-600 text-white">
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-orange-500 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Experience the CloudAdda Difference?</h2>
-          <p className="text-xl mb-8">
-            Join the 500+ companies that have made the smart switch to infrastructure that just works.
+          <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-8">
+            <Star className="w-8 h-8 text-white" />
+          </div>
+          <h2 className="text-4xl font-bold mb-6">Ready to Be Part of Our Story?</h2>
+          <p className="text-xl text-white/90 mb-8">
+            Join thousands of companies already using CloudAdda to power their future
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full">
+            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
               Start Your Journey
-              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white hover:text-purple-600 text-lg px-8 py-4 rounded-full">
-              Talk to Our Team
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              Get in Touch
             </Button>
           </div>
         </div>

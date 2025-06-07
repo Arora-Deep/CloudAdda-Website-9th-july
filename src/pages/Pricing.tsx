@@ -1,7 +1,9 @@
 
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, ArrowRight, Star, Shield, Zap, Users, Globe, HeartHandshake, Award } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Check, Star, Zap, Users, Shield, ArrowRight, Sparkles, Crown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Pricing = () => {
@@ -16,206 +18,214 @@ const Pricing = () => {
             </Link>
             <div className="flex items-center space-x-4">
               <Link to="/" className="text-gray-700 hover:text-orange-500 transition-colors">Home</Link>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
+              <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-            <span className="text-purple-600">Transparent Pricing.</span>
-            <br />
-            No Hidden Gotchas. Ever.
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-            Choose the plan that fits your needs. All plans include 24/7 support, 99.9% uptime SLA, and our commitment to your success.
-          </p>
-        </div>
-      </section>
-
-      {/* Pricing Cards */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            {/* Training Labs */}
-            <div className="group relative">
-              <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-200">
-                <div className="h-3 bg-gradient-to-r from-blue-500 to-blue-600"></div>
-                <div className="p-10">
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Training Labs</h3>
-                    <div className="space-y-2">
-                      <div className="text-4xl font-bold text-gray-900">Custom Quote</div>
-                      <div className="text-gray-600 text-lg">Based on your exact requirements</div>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 text-center mb-8 leading-relaxed text-lg">
-                    We ask 3-5 questions about your training needs, then deliver a complete lab environment.
-                  </p>
-                  <div className="space-y-4 mb-8">
-                    {[
-                      "Same-day delivery possible",
-                      "Fully customized environments",
-                      "Windows, Linux, or mixed stacks",
-                      "Scalable to any number of users",
-                      "24/7 monitoring and support",
-                      "Pre-configured tools and software"
-                    ].map((feature, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                          <CheckCircle className="w-4 h-4 text-white" />
-                        </div>
-                        <span className="text-gray-700 text-base">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:opacity-90 text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 shadow-lg">
-                    Get Custom Quote
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Virtual Desktops */}
-            <div className="group relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
-                Most Popular
-              </div>
-              <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-purple-200">
-                <div className="h-3 bg-gradient-to-r from-purple-500 to-purple-600"></div>
-                <div className="p-10">
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Virtual Desktops</h3>
-                    <div className="space-y-2">
-                      <div className="text-4xl font-bold text-gray-900">₹3,299</div>
-                      <div className="text-gray-600 text-lg">per user/month</div>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 text-center mb-8 leading-relaxed text-lg">
-                    High-performance cloud desktops with 2vCPU, 4GB RAM, and enterprise-grade security.
-                  </p>
-                  <div className="space-y-4 mb-8">
-                    {[
-                      "2vCPU, 4GB RAM, SSD storage",
-                      "99.9% uptime guarantee",
-                      "Built-in security & compliance",
-                      "Instant scaling",
-                      "Multi-device access",
-                      "Automated backups"
-                    ].map((feature, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
-                          <CheckCircle className="w-4 h-4 text-white" />
-                        </div>
-                        <span className="text-gray-700 text-base">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:opacity-90 text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 shadow-lg">
-                    Launch Desktop
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* VPS Hosting */}
-            <div className="group relative">
-              <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-200">
-                <div className="h-3 bg-gradient-to-r from-orange-500 to-orange-600"></div>
-                <div className="p-10">
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">VPS Hosting</h3>
-                    <div className="space-y-2">
-                      <div className="text-4xl font-bold text-gray-900">₹1,499</div>
-                      <div className="text-gray-600 text-lg">per month</div>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 text-center mb-8 leading-relaxed text-lg">
-                    NVMe-powered virtual servers with AMD EPYC processors and dedicated resources.
-                  </p>
-                  <div className="space-y-4 mb-8">
-                    {[
-                      "NVMe SSD storage",
-                      "AMD EPYC processors",
-                      "Full root access",
-                      "Multiple data center locations",
-                      "DDoS protection included",
-                      "Weekly automated backups"
-                    ].map((feature, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <div className="w-6 h-6 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
-                          <CheckCircle className="w-4 h-4 text-white" />
-                        </div>
-                        <span className="text-gray-700 text-base">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:opacity-90 text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 shadow-lg">
-                    Get VPS Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
-            </div>
+      <section className="py-20 bg-gradient-to-br from-purple-600 via-blue-600 to-orange-500 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
+            <Sparkles className="w-5 h-5 text-yellow-300" />
+            <span className="text-sm font-medium">Simple, Transparent Pricing</span>
           </div>
-        </div>
-      </section>
+          <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+            Choose Your
+            <br />
+            <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">Perfect Plan</span>
+          </h1>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-12">
+            Start free, scale infinitely. No hidden fees, no surprises. Just powerful infrastructure that grows with you.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
+              <Zap className="w-5 h-5 mr-2" />
+              Start Free Trial
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Users className="w-5 h-5 mr-2" />
+              Schedule Demo
+            </Button>
+          </div>
 
-      {/* Trust Indicators */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
+          {/* Trust Indicators */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { number: "99.9%", label: "Uptime SLA", icon: Shield },
-              { number: "24/7", label: "Human Support", icon: Users },
-              { number: "< 2hrs", label: "Setup Time", icon: Zap },
-              { number: "500+", label: "Happy Clients", icon: Award }
-            ].map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4 group-hover:bg-purple-600 transition-colors duration-300">
-                  <stat.icon className="w-8 h-8 text-purple-600 group-hover:text-white transition-colors duration-300" />
+              { icon: Shield, label: "99.9% Uptime SLA", value: "Guaranteed" },
+              { icon: Users, label: "Happy Customers", value: "10,000+" },
+              { icon: Star, label: "Customer Rating", value: "4.9/5" }
+            ].map((item, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-2xl font-bold mb-1">{item.value}</div>
+                <div className="text-white/80">{item.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-8">
+      {/* Pricing Plans */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Plans That Scale With You</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From startups to enterprises, we have the perfect plan for your needs
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {[
               {
-                question: "Can I customize my plan based on specific requirements?",
-                answer: "Absolutely! We specialize in custom solutions. Contact our team to discuss your specific needs and get a tailored quote."
+                name: "Starter",
+                price: "₹999",
+                period: "/month",
+                description: "Perfect for individuals and small teams",
+                features: [
+                  "5 Training Labs",
+                  "Basic Virtual Desktops",
+                  "Email Support",
+                  "99.9% Uptime",
+                  "Basic Monitoring",
+                  "Community Access"
+                ],
+                popular: false,
+                color: "from-blue-500 to-purple-500",
+                buttonText: "Start Free Trial"
               },
               {
-                question: "What's included in the 24/7 support?",
-                answer: "Real engineers, not bots. Emergency hotline, live chat, and email support with <2 hour average response time."
+                name: "Professional",
+                price: "₹2,999",
+                period: "/month",
+                description: "For growing teams and businesses",
+                features: [
+                  "25 Training Labs",
+                  "Advanced Virtual Desktops",
+                  "Priority Support",
+                  "99.9% Uptime SLA",
+                  "Advanced Monitoring",
+                  "Custom Integrations",
+                  "Team Management",
+                  "API Access"
+                ],
+                popular: true,
+                color: "from-orange-500 to-pink-500",
+                buttonText: "Start Professional"
               },
               {
-                question: "Do you offer trial periods?",
-                answer: "Yes! We offer demo sessions and trial periods for all our services. Contact us to schedule your personalized demo."
+                name: "Enterprise",
+                price: "Custom",
+                period: "pricing",
+                description: "For large organizations with specific needs",
+                features: [
+                  "Unlimited Labs",
+                  "Enterprise Virtual Desktops",
+                  "24/7 Dedicated Support",
+                  "99.99% Uptime SLA",
+                  "White-label Solutions",
+                  "On-premise Deployment",
+                  "Custom Development",
+                  "Dedicated Account Manager"
+                ],
+                popular: false,
+                color: "from-purple-600 to-indigo-600",
+                buttonText: "Contact Sales"
+              }
+            ].map((plan, index) => (
+              <Card key={index} className={`relative overflow-hidden transform hover:scale-105 transition-all duration-300 ${plan.popular ? 'ring-4 ring-orange-400 shadow-2xl' : 'hover:shadow-xl'}`}>
+                {plan.popular && (
+                  <div className="absolute top-0 left-0 right-0">
+                    <div className={`bg-gradient-to-r ${plan.color} text-white text-center py-3 px-4`}>
+                      <div className="flex items-center justify-center space-x-2">
+                        <Crown className="w-5 h-5" />
+                        <span className="font-semibold">Most Popular</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <CardHeader className={`${plan.popular ? 'pt-16' : 'pt-8'} pb-4`}>
+                  <div className="text-center">
+                    <CardTitle className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</CardTitle>
+                    <CardDescription className="text-gray-600 mb-6">{plan.description}</CardDescription>
+                    <div className="flex items-end justify-center space-x-1">
+                      <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                      <span className="text-gray-600 pb-1">{plan.period}</span>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center space-x-3">
+                        <div className={`w-5 h-5 bg-gradient-to-r ${plan.color} rounded-full flex items-center justify-center flex-shrink-0`}>
+                          <Check className="w-3 h-3 text-white" />
+                        </div>
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    className={`w-full ${plan.popular ? `bg-gradient-to-r ${plan.color} hover:opacity-90 text-white` : 'bg-gray-900 hover:bg-gray-800 text-white'}`}
+                    size="lg"
+                  >
+                    {plan.buttonText}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Money Back Guarantee */}
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Shield className="w-8 h-8 text-green-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">30-Day Money-Back Guarantee</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Try CloudAdda risk-free. If you're not completely satisfied within 30 days, we'll refund your money, no questions asked.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600">Everything you need to know about our pricing</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                question: "Can I change plans anytime?",
+                answer: "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately and we'll prorate the billing."
               },
               {
-                question: "What about data security and compliance?",
-                answer: "Enterprise-grade security with ISO 27001 compliance, encrypted data transfer, and secure data centers in multiple locations."
+                question: "Is there a free trial?",
+                answer: "Absolutely! We offer a 14-day free trial with full access to all features. No credit card required to start."
+              },
+              {
+                question: "What payment methods do you accept?",
+                answer: "We accept all major credit cards, UPI, net banking, and can arrange invoicing for enterprise customers."
+              },
+              {
+                question: "Do you offer discounts?",
+                answer: "Yes! We offer discounts for annual billing, non-profits, and educational institutions. Contact us for details."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+              <div key={index} className="bg-gray-50 rounded-xl p-6">
+                <h4 className="font-bold text-gray-900 mb-3">{faq.question}</h4>
                 <p className="text-gray-600">{faq.answer}</p>
               </div>
             ))}
@@ -223,18 +233,19 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 bg-purple-600 text-white">
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-orange-500 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-8">Join 500+ companies who've made the smart switch to CloudAdda.</p>
+          <p className="text-xl text-white/90 mb-8">
+            Join thousands of companies already using CloudAdda to power their infrastructure
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full">
-              Start Your Trial
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
+              Start Your Free Trial
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-2 border-white hover:bg-white hover:text-purple-600 text-lg px-8 py-4 rounded-full">
-              Talk to Our Team
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              Talk to Sales
             </Button>
           </div>
         </div>

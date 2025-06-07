@@ -1,4 +1,5 @@
 
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -6,9 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Phone, Mail, MapPin, Clock, MessageSquare, Users, Zap } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare, Users, Zap, Send, Star, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -61,15 +61,22 @@ const Contact = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-purple-600 via-blue-600 to-orange-500 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
+              <Heart className="w-5 h-5 text-pink-300" />
+              <span className="text-sm font-medium">Let's Create Something Amazing</span>
+            </div>
+            <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
               Let's Build Something
               <br />
-              <span className="text-purple-600">Amazing Together</span>
+              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+                Amazing Together
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Ready to transform your infrastructure? Our team is here to understand your needs and craft the perfect solution.
             </p>
           </div>
@@ -81,33 +88,33 @@ const Contact = () => {
                 title: "Talk to Sales",
                 description: "Get a custom quote tailored to your needs",
                 action: "Schedule a call",
-                color: "bg-blue-500"
+                color: "from-blue-400 to-blue-600"
               },
               {
                 icon: MessageSquare,
                 title: "Book a Demo",
                 description: "See our platform in action with your use case",
                 action: "Watch demo",
-                color: "bg-purple-500"
+                color: "from-purple-400 to-purple-600"
               },
               {
                 icon: Users,
                 title: "Technical Support",
                 description: "Get help from our engineering team",
                 action: "Contact support",
-                color: "bg-orange-500"
+                color: "from-orange-400 to-orange-600"
               }
             ].map((item, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white/10 backdrop-blur-sm border-white/20">
                 <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 bg-gradient-to-r ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl">{item.title}</CardTitle>
-                  <CardDescription className="text-gray-600">{item.description}</CardDescription>
+                  <CardTitle className="text-xl text-white">{item.title}</CardTitle>
+                  <CardDescription className="text-white/80">{item.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <Button variant="outline" className="w-full">
+                  <Button className="w-full bg-white text-gray-900 hover:bg-gray-100">
                     {item.action}
                   </Button>
                 </CardContent>
@@ -118,11 +125,11 @@ const Contact = () => {
       </section>
 
       {/* Contact Form and Info */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div>
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Tell Us About Your Project</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
@@ -134,6 +141,7 @@ const Contact = () => {
                       value={formData.firstName}
                       onChange={(e) => handleInputChange("firstName", e.target.value)}
                       required
+                      className="mt-1"
                     />
                   </div>
                   <div>
@@ -143,6 +151,7 @@ const Contact = () => {
                       value={formData.lastName}
                       onChange={(e) => handleInputChange("lastName", e.target.value)}
                       required
+                      className="mt-1"
                     />
                   </div>
                 </div>
@@ -156,6 +165,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={(e) => handleInputChange("email", e.target.value)}
                       required
+                      className="mt-1"
                     />
                   </div>
                   <div>
@@ -164,6 +174,7 @@ const Contact = () => {
                       id="phone"
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
+                      className="mt-1"
                     />
                   </div>
                 </div>
@@ -176,6 +187,7 @@ const Contact = () => {
                       value={formData.company}
                       onChange={(e) => handleInputChange("company", e.target.value)}
                       required
+                      className="mt-1"
                     />
                   </div>
                   <div>
@@ -184,6 +196,7 @@ const Contact = () => {
                       id="jobTitle"
                       value={formData.jobTitle}
                       onChange={(e) => handleInputChange("jobTitle", e.target.value)}
+                      className="mt-1"
                     />
                   </div>
                 </div>
@@ -192,7 +205,7 @@ const Contact = () => {
                 <div>
                   <Label htmlFor="inquiryType">Type of Inquiry *</Label>
                   <Select value={formData.inquiryType} onValueChange={(value) => handleInputChange("inquiryType", value)}>
-                    <SelectTrigger>
+                    <SelectTrigger className="mt-1">
                       <SelectValue placeholder="Select inquiry type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -209,7 +222,7 @@ const Contact = () => {
                 <div>
                   <Label htmlFor="serviceInterest">Primary Service Interest *</Label>
                   <Select value={formData.serviceInterest} onValueChange={(value) => handleInputChange("serviceInterest", value)}>
-                    <SelectTrigger>
+                    <SelectTrigger className="mt-1">
                       <SelectValue placeholder="Select service" />
                     </SelectTrigger>
                     <SelectContent>
@@ -222,94 +235,15 @@ const Contact = () => {
                   </Select>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="projectTimeline">Project Timeline</Label>
-                    <Select value={formData.projectTimeline} onValueChange={(value) => handleInputChange("projectTimeline", value)}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select timeline" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="immediate">Immediate (Within 1 week)</SelectItem>
-                        <SelectItem value="short">Short-term (1-4 weeks)</SelectItem>
-                        <SelectItem value="medium">Medium-term (1-3 months)</SelectItem>
-                        <SelectItem value="long">Long-term (3+ months)</SelectItem>
-                        <SelectItem value="exploring">Just exploring options</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <Label htmlFor="budget">Estimated Budget Range</Label>
-                    <Select value={formData.budget} onValueChange={(value) => handleInputChange("budget", value)}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select budget range" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="under-10k">Under ₹10,000/month</SelectItem>
-                        <SelectItem value="10k-50k">₹10,000 - ₹50,000/month</SelectItem>
-                        <SelectItem value="50k-100k">₹50,000 - ₹1,00,000/month</SelectItem>
-                        <SelectItem value="100k-500k">₹1,00,000 - ₹5,00,000/month</SelectItem>
-                        <SelectItem value="over-500k">₹5,00,000+/month</SelectItem>
-                        <SelectItem value="not-sure">Not sure yet</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="currentInfrastructure">Current Infrastructure</Label>
-                    <Select value={formData.currentInfrastructure} onValueChange={(value) => handleInputChange("currentInfrastructure", value)}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select current setup" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="none">No current setup</SelectItem>
-                        <SelectItem value="on-premise">On-premise servers</SelectItem>
-                        <SelectItem value="aws">AWS</SelectItem>
-                        <SelectItem value="azure">Microsoft Azure</SelectItem>
-                        <SelectItem value="gcp">Google Cloud</SelectItem>
-                        <SelectItem value="other-cloud">Other cloud provider</SelectItem>
-                        <SelectItem value="hybrid">Hybrid setup</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <Label htmlFor="teamSize">Team Size</Label>
-                    <Select value={formData.teamSize} onValueChange={(value) => handleInputChange("teamSize", value)}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select team size" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="1-10">1-10 users</SelectItem>
-                        <SelectItem value="11-50">11-50 users</SelectItem>
-                        <SelectItem value="51-100">51-100 users</SelectItem>
-                        <SelectItem value="101-500">101-500 users</SelectItem>
-                        <SelectItem value="500+">500+ users</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
                 <div>
-                  <Label htmlFor="specificRequirements">Specific Requirements or Use Case</Label>
-                  <Textarea
-                    id="specificRequirements"
-                    value={formData.specificRequirements}
-                    onChange={(e) => handleInputChange("specificRequirements", e.target.value)}
-                    placeholder="Tell us about your specific needs, compliance requirements, or any technical constraints..."
-                    rows={3}
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="message">Additional Message</Label>
+                  <Label htmlFor="message">Tell us about your project</Label>
                   <Textarea
                     id="message"
                     value={formData.message}
                     onChange={(e) => handleInputChange("message", e.target.value)}
-                    placeholder="Any additional information you'd like to share..."
+                    placeholder="Describe your requirements, challenges, or questions..."
                     rows={4}
+                    className="mt-1"
                   />
                 </div>
 
@@ -337,7 +271,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:opacity-90">
+                  <Send className="w-5 h-5 mr-2" />
                   Send Message
                 </Button>
               </form>
@@ -346,41 +281,41 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
-                <p className="text-gray-600 mb-8">
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+                <p className="text-lg text-gray-600 mb-8">
                   We're here to help you succeed. Whether you need a quick answer or want to discuss a complex project, our team is ready to assist.
                 </p>
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-purple-600" />
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Email Us</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Email Us</h4>
                     <p className="text-gray-600">sales@cloudadda.com</p>
                     <p className="text-gray-600">support@cloudadda.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-purple-600" />
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Call Us</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Call Us</h4>
                     <p className="text-gray-600">+91 99999 99999</p>
                     <p className="text-sm text-gray-500">Mon-Fri, 9 AM - 7 PM IST</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-purple-600" />
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Visit Us</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Visit Us</h4>
                     <p className="text-gray-600">
                       CloudAdda Technologies Pvt Ltd<br />
                       Bangalore, Karnataka<br />
@@ -389,30 +324,33 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-purple-600" />
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg">
+                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Response Time</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Response Time</h4>
                     <p className="text-gray-600">Sales: Within 4 hours</p>
                     <p className="text-gray-600">Support: Within 2 hours</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8">
-                <h4 className="font-bold text-gray-900 mb-4">Need Immediate Help?</h4>
+              <div className="bg-gradient-to-br from-purple-50 to-orange-50 rounded-2xl p-8 border border-purple-100">
+                <div className="flex items-center space-x-3 mb-4">
+                  <Star className="w-6 h-6 text-yellow-500" />
+                  <h4 className="font-bold text-gray-900">Need Immediate Help?</h4>
+                </div>
                 <p className="text-gray-600 mb-6">
                   For urgent technical issues or sales inquiries, use our priority channels:
                 </p>
                 <div className="space-y-3">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Zap className="w-4 h-4 mr-2" />
+                  <Button variant="outline" className="w-full justify-start bg-white hover:bg-gray-50">
+                    <Zap className="w-4 h-4 mr-2 text-yellow-500" />
                     Emergency Hotline: +91 88888 88888
                   </Button>
-                  <Button variant="outline" className="w-full justify-start">
-                    <MessageSquare className="w-4 h-4 mr-2" />
+                  <Button variant="outline" className="w-full justify-start bg-white hover:bg-gray-50">
+                    <MessageSquare className="w-4 h-4 mr-2 text-blue-500" />
                     Live Chat (24/7)
                   </Button>
                 </div>
