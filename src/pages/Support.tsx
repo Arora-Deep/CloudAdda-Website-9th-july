@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -276,7 +277,7 @@ const Support = () => {
                 </li>
                 <li className="flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                  <span>< 2 hour response time SLA</span>
+                  <span>Less than 2 hour response time SLA</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
