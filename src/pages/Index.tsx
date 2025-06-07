@@ -119,10 +119,10 @@ const Index = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Support</a>
+              <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
+              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
+              <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
+              <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
