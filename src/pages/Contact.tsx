@@ -44,39 +44,36 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <nav className="bg-background border-b border-border sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <Link to="/" className="flex items-center space-x-2">
               <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
             </Link>
             <div className="flex items-center space-x-4">
-              <Link to="/" className="text-gray-700 hover:text-orange-500 transition-colors">Home</Link>
-              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
+              <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
+              <Link to="/pricing" className="text-foreground hover:text-primary transition-colors">Pricing</Link>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-600 via-blue-600 to-orange-500 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
-              <Heart className="w-5 h-5 text-pink-300" />
+            <div className="inline-flex items-center space-x-2 bg-muted rounded-full px-6 py-3 mb-8">
+              <Heart className="w-5 h-5 text-primary" />
               <span className="text-sm font-medium">Let's Create Something Amazing</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight text-foreground">
               Let's Build Something
               <br />
-              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-                Amazing Together
-              </span>
+              Amazing Together
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Ready to transform your infrastructure? Our team is here to understand your needs and craft the perfect solution.
             </p>
           </div>
@@ -87,34 +84,31 @@ const Contact = () => {
                 icon: Phone,
                 title: "Talk to Sales",
                 description: "Get a custom quote tailored to your needs",
-                action: "Schedule a call",
-                color: "from-blue-400 to-blue-600"
+                action: "Schedule a call"
               },
               {
                 icon: MessageSquare,
                 title: "Book a Demo",
                 description: "See our platform in action with your use case",
-                action: "Watch demo",
-                color: "from-purple-400 to-purple-600"
+                action: "Watch demo"
               },
               {
                 icon: Users,
                 title: "Technical Support",
                 description: "Get help from our engineering team",
-                action: "Contact support",
-                color: "from-orange-400 to-orange-600"
+                action: "Contact support"
               }
             ].map((item, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white/10 backdrop-blur-sm border-white/20">
+              <Card key={index}>
                 <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <CardTitle className="text-xl text-white">{item.title}</CardTitle>
-                  <CardDescription className="text-white/80">{item.description}</CardDescription>
+                  <CardTitle className="text-xl">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <Button className="w-full bg-white text-gray-900 hover:bg-gray-100">
+                  <Button className="w-full">
                     {item.action}
                   </Button>
                 </CardContent>
@@ -125,12 +119,12 @@ const Contact = () => {
       </section>
 
       {/* Contact Form and Info */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Tell Us About Your Project</h2>
+            <div className="bg-card rounded-lg p-8 border border-border">
+              <h2 className="text-3xl font-bold text-foreground mb-8">Tell Us About Your Project</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
                 <div className="grid md:grid-cols-2 gap-4">
@@ -271,7 +265,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:opacity-90">
+                <Button type="submit" size="lg" className="w-full">
                   <Send className="w-5 h-5 mr-2" />
                   Send Message
                 </Button>
@@ -281,42 +275,42 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h3>
-                <p className="text-lg text-gray-600 mb-8">
+                <h3 className="text-3xl font-bold text-foreground mb-6">Get in Touch</h3>
+                <p className="text-lg text-muted-foreground mb-8">
                   We're here to help you succeed. Whether you need a quick answer or want to discuss a complex project, our team is ready to assist.
                 </p>
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-white" />
+                <div className="flex items-start space-x-4 p-6 bg-card rounded-lg border border-border">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Email Us</h4>
-                    <p className="text-gray-600">sales@cloudadda.com</p>
-                    <p className="text-gray-600">support@cloudadda.com</p>
+                    <h4 className="font-semibold text-foreground mb-2">Email Us</h4>
+                    <p className="text-muted-foreground">sales@cloudadda.com</p>
+                    <p className="text-muted-foreground">support@cloudadda.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-white" />
+                <div className="flex items-start space-x-4 p-6 bg-card rounded-lg border border-border">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Call Us</h4>
-                    <p className="text-gray-600">+91 99999 99999</p>
-                    <p className="text-sm text-gray-500">Mon-Fri, 9 AM - 7 PM IST</p>
+                    <h4 className="font-semibold text-foreground mb-2">Call Us</h4>
+                    <p className="text-muted-foreground">+91 99999 99999</p>
+                    <p className="text-sm text-muted-foreground">Mon-Fri, 9 AM - 7 PM IST</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-white" />
+                <div className="flex items-start space-x-4 p-6 bg-card rounded-lg border border-border">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Visit Us</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-semibold text-foreground mb-2">Visit Us</h4>
+                    <p className="text-muted-foreground">
                       CloudAdda Technologies Pvt Ltd<br />
                       Bangalore, Karnataka<br />
                       India
@@ -324,33 +318,33 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-white" />
+                <div className="flex items-start space-x-4 p-6 bg-card rounded-lg border border-border">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Response Time</h4>
-                    <p className="text-gray-600">Sales: Within 4 hours</p>
-                    <p className="text-gray-600">Support: Within 2 hours</p>
+                    <h4 className="font-semibold text-foreground mb-2">Response Time</h4>
+                    <p className="text-muted-foreground">Sales: Within 4 hours</p>
+                    <p className="text-muted-foreground">Support: Within 2 hours</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-50 to-orange-50 rounded-2xl p-8 border border-purple-100">
+              <div className="bg-card rounded-lg p-8 border border-border">
                 <div className="flex items-center space-x-3 mb-4">
-                  <Star className="w-6 h-6 text-yellow-500" />
-                  <h4 className="font-bold text-gray-900">Need Immediate Help?</h4>
+                  <Star className="w-6 h-6 text-primary" />
+                  <h4 className="font-bold text-foreground">Need Immediate Help?</h4>
                 </div>
-                <p className="text-gray-600 mb-6">
+                <p className="text-muted-foreground mb-6">
                   For urgent technical issues or sales inquiries, use our priority channels:
                 </p>
                 <div className="space-y-3">
-                  <Button variant="outline" className="w-full justify-start bg-white hover:bg-gray-50">
-                    <Zap className="w-4 h-4 mr-2 text-yellow-500" />
+                  <Button variant="outline" className="w-full justify-start">
+                    <Zap className="w-4 h-4 mr-2 text-primary" />
                     Emergency Hotline: +91 88888 88888
                   </Button>
-                  <Button variant="outline" className="w-full justify-start bg-white hover:bg-gray-50">
-                    <MessageSquare className="w-4 h-4 mr-2 text-blue-500" />
+                  <Button variant="outline" className="w-full justify-start">
+                    <MessageSquare className="w-4 h-4 mr-2 text-primary" />
                     Live Chat (24/7)
                   </Button>
                 </div>
@@ -361,40 +355,40 @@ const Contact = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-background border-t border-border py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl">CloudAdda</span>
+                <span className="font-bold text-xl text-foreground">CloudAdda</span>
               </Link>
-              <p className="text-gray-400">
+              <p className="text-muted-foreground">
                 Born in India, Built for the World. Infrastructure that just works.
               </p>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Solutions</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" className="hover:text-white transition-colors">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" className="hover:text-white transition-colors">Virtual Desktops</Link></li>
-                <li><Link to="/vps" className="hover:text-white transition-colors">VPS</Link></li>
+              <h3 className="font-semibold mb-4 text-foreground">Solutions</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/training-labs" className="hover:text-foreground transition-colors">Training Labs</Link></li>
+                <li><Link to="/cloud-desktops" className="hover:text-foreground transition-colors">Virtual Desktops</Link></li>
+                <li><Link to="/vps" className="hover:text-foreground transition-colors">VPS</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              <h3 className="font-semibold mb-4 text-foreground">Company</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/about" className="hover:text-foreground transition-colors">About Us</Link></li>
+                <li><Link to="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
+                <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/support" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
+              <h3 className="font-semibold mb-4 text-foreground">Support</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/support" className="hover:text-foreground transition-colors">Help Center</Link></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Documentation</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Status</a></li>
               </ul>
             </div>
           </div>
