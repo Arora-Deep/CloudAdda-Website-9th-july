@@ -74,9 +74,11 @@ const TrainingLabs = () => {
             </div>
             
             <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [3D-style illustration: A confident trainer guiding a focused class with laptops open — a sense of energy, simplicity, and joy]
-              </div>
+              <img 
+                src="/lovable-uploads/1b5b0878-680c-4c0d-af54-5373b66a92fc.png" 
+                alt="Training session illustration"
+                className="w-full h-auto rounded-3xl"
+              />
             </div>
           </div>
         </div>
@@ -91,9 +93,11 @@ const TrainingLabs = () => {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [Frustrated trainer, broken laptops, confused students]
-              </div>
+              <img 
+                src="/lovable-uploads/90db8078-ac2f-4f7a-915e-72846bad7fdf.png" 
+                alt="Frustrated trainer with technical problems"
+                className="w-full h-auto rounded-3xl"
+              />
             </div>
 
             <div className="space-y-8">
@@ -431,9 +435,11 @@ const TrainingLabs = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-purple-500 rounded-3xl h-96 flex items-center justify-center text-purple-300">
-                [A zen-like trainer calmly conducting a session while a storm of servers, config files, and tech chaos is shielded away by a glowing CloudAdda force field]
-              </div>
+              <img 
+                src="/lovable-uploads/002bd955-500b-4161-945a-cdd484ff0c25.png" 
+                alt="Zen-like trainer in peaceful state"
+                className="w-full h-auto rounded-3xl"
+              />
             </div>
           </div>
         </div>
@@ -577,9 +583,11 @@ const TrainingLabs = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [Timeline visualization with checkmarks and happy team celebrating successful deployment]
-              </div>
+              <img 
+                src="/lovable-uploads/da1c17cc-16bf-47be-834a-68e473782db8.png" 
+                alt="Support representative helping with setup"
+                className="w-full h-auto rounded-3xl"
+              />
             </div>
           </div>
         </div>
