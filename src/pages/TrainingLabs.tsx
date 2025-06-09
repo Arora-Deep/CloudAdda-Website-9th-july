@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3, Building, Lightbulb, FileCheck, Headphones, Gauge, Laptop, Timer, TrendingDown, X, ChevronRight, ThumbsUp, Play, Eye, UserCheck, Activity as ActivityIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const TrainingLabs = () => {
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -71,7 +72,7 @@ const TrainingLabs = () => {
             </div>
             
             <div className="relative">
-              <img alt="Training session illustration" src="/lovable-uploads/63e60b29-e645-4c00-a107-edd3132bd9be.png" className="w-full h-auto rounded-3xl object-fill" />
+              <img alt="Training session illustration" src="/lovable-uploads/1b5b0878-680c-4c0d-af54-5373b66a92fc.png" className="w-full h-auto object-cover" />
             </div>
           </div>
         </div>
@@ -626,4 +627,5 @@ const TrainingLabs = () => {
       </footer>
     </div>;
 };
+
 export default TrainingLabs;
