@@ -71,7 +71,7 @@ const TrainingLabs = () => {
             </div>
             
             <div className="relative h-[600px]">
-              <img alt="Training session illustration" className="w-full h-full object-cover rounded-2xl shadow-2xl" src="/lovable-uploads/1b5b0878-680c-4c0d-af54-5373b66a92fc.png" />
+              <img alt="Training session illustration" className="w-full h-full object-cover rounded-2xl shadow-2xl" src="/lovable-uploads/a8a51abd-4fef-48b8-bbe6-a9676f9add65.png" />
             </div>
           </div>
         </div>
