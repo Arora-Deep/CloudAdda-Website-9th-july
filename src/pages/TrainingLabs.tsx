@@ -70,8 +70,8 @@ const TrainingLabs = () => {
               </div>
             </div>
             
-            <div className="relative">
-              <img alt="Training session illustration" className="w-full h-auto object-cover" src="/lovable-uploads/a8a51abd-4fef-48b8-bbe6-a9676f9add65.png" />
+            <div className="relative h-[600px]">
+              <img alt="Training session illustration" className="w-full h-full object-cover rounded-2xl shadow-2xl" src="/lovable-uploads/1b5b0878-680c-4c0d-af54-5373b66a92fc.png" />
             </div>
           </div>
         </div>
