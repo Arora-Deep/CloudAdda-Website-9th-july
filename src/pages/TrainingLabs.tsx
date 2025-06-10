@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3, Building, Lightbulb, FileCheck, Headphones, Gauge, Laptop, Timer, TrendingDown, X, ChevronRight, ThumbsUp, Play, Eye, UserCheck, Activity as ActivityIcon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -73,11 +72,11 @@ const TrainingLabs = () => {
               </div>
             </div>
             
-            <div className="relative flex justify-center items-center h-full min-h-[500px]">
+            <div className="relative flex justify-center items-center h-full min-h-[700px]">
               <img 
                 src="/lovable-uploads/20d7ef7d-10ca-4015-9a31-37c2ec2b2b0b.png" 
                 alt="Training session illustration with instructor and student"
-                className="w-full max-w-none h-auto object-contain scale-110"
+                className="w-full max-w-none h-auto object-contain scale-150 transform"
               />
             </div>
           </div>
