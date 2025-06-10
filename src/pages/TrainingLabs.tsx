@@ -1,8 +1,11 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3, Building, Lightbulb, FileCheck, Headphones, Gauge, Laptop, Timer, TrendingDown, X, ChevronRight, ThumbsUp, Play, Eye, UserCheck, Activity as ActivityIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const TrainingLabs = () => {
-  return <div className="min-h-screen bg-white">
+  return (
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,8 +73,12 @@ const TrainingLabs = () => {
               </div>
             </div>
             
-            <div className="relative h-[600px]">
-              <img alt="Training session illustration" className="w-full h-full object-cover rounded-2xl shadow-2xl" src="/lovable-uploads/a8a51abd-4fef-48b8-bbe6-a9676f9add65.png" />
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/1b5b0878-680c-4c0d-af54-5373b66a92fc.png" 
+                alt="Training session illustration"
+                className="w-full h-auto rounded-3xl"
+              />
             </div>
           </div>
         </div>
@@ -86,27 +93,37 @@ const TrainingLabs = () => {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <img src="/lovable-uploads/90db8078-ac2f-4f7a-915e-72846bad7fdf.png" alt="Frustrated trainer with technical problems" className="w-full h-auto rounded-3xl" />
+              <img 
+                src="/lovable-uploads/90db8078-ac2f-4f7a-915e-72846bad7fdf.png" 
+                alt="Frustrated trainer with technical problems"
+                className="w-full h-auto rounded-3xl"
+              />
             </div>
 
             <div className="space-y-8">
-              {[{
-              title: "Weekend VM Config Hell",
-              description: "You spend your Friday nights setting up 50 VMs for Monday. Your family wonders if you hate them.",
-              icon: Clock
-            }, {
-              title: "Mid-Session Meltdown",
-              description: "15 minutes into a bootcamp, labs crash. Students stare. You sweat.",
-              icon: AlertTriangle
-            }, {
-              title: "Support Black Hole",
-              description: "2 AM panic. A bot replies: \"Try restarting.\" Your session's in 5 hours.",
-              icon: MessageCircle
-            }, {
-              title: "Cost Bomb",
-              description: "You forget to turn off instances. ₹500 becomes ₹5,000. Again.",
-              icon: DollarSign
-            }].map((pain, index) => <div key={index} className="group hover:scale-105 transition-all duration-300">
+              {[
+                {
+                  title: "Weekend VM Config Hell",
+                  description: "You spend your Friday nights setting up 50 VMs for Monday. Your family wonders if you hate them.",
+                  icon: Clock
+                },
+                {
+                  title: "Mid-Session Meltdown",
+                  description: "15 minutes into a bootcamp, labs crash. Students stare. You sweat.",
+                  icon: AlertTriangle
+                },
+                {
+                  title: "Support Black Hole",
+                  description: "2 AM panic. A bot replies: \"Try restarting.\" Your session's in 5 hours.",
+                  icon: MessageCircle
+                },
+                {
+                  title: "Cost Bomb",
+                  description: "You forget to turn off instances. ₹500 becomes ₹5,000. Again.",
+                  icon: DollarSign
+                }
+              ].map((pain, index) => (
+                <div key={index} className="group hover:scale-105 transition-all duration-300">
                   <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-red-200 transition-all duration-300 hover:shadow-xl">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center group-hover:bg-red-200 transition-colors">
@@ -118,7 +135,8 @@ const TrainingLabs = () => {
                       </div>
                     </div>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -133,22 +151,27 @@ const TrainingLabs = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
-            {[{
-            title: "Setup in Minutes",
-            description: "Share your curriculum → We configure everything. Pre-installed tools, auto-scaling, and ready-to-teach labs. Deploy to 10 or 10,000 with zero effort.",
-            icon: Clock,
-            features: ["Pre-installed tools", "Auto-scaling", "Zero effort deployment", "Custom configurations"]
-          }, {
-            title: "Engineered for Session Reliability",
-            description: "Handles peak student activity without crashing. Real-time monitoring + auto-failover. 99.9% uptime across 5,000+ sessions.",
-            icon: Shield,
-            features: ["Peak activity handling", "Real-time monitoring", "Auto-failover", "99.9% uptime"]
-          }, {
-            title: "Support That Actually Helps",
-            description: "24/7 engineers with training infra experience. Emergency hotline. <2 hour SLA. No bots — ever.",
-            icon: Users,
-            features: ["24/7 engineers", "Emergency hotline", "<2 hour SLA", "No bots ever"]
-          }].map((solution, index) => <div key={index} className="group hover:scale-105 transition-all duration-500">
+            {[
+              {
+                title: "Setup in Minutes",
+                description: "Share your curriculum → We configure everything. Pre-installed tools, auto-scaling, and ready-to-teach labs. Deploy to 10 or 10,000 with zero effort.",
+                icon: Clock,
+                features: ["Pre-installed tools", "Auto-scaling", "Zero effort deployment", "Custom configurations"]
+              },
+              {
+                title: "Engineered for Session Reliability", 
+                description: "Handles peak student activity without crashing. Real-time monitoring + auto-failover. 99.9% uptime across 5,000+ sessions.",
+                icon: Shield,
+                features: ["Peak activity handling", "Real-time monitoring", "Auto-failover", "99.9% uptime"]
+              },
+              {
+                title: "Support That Actually Helps",
+                description: "24/7 engineers with training infra experience. Emergency hotline. <2 hour SLA. No bots — ever.",
+                icon: Users,
+                features: ["24/7 engineers", "Emergency hotline", "<2 hour SLA", "No bots ever"]
+              }
+            ].map((solution, index) => (
+              <div key={index} className="group hover:scale-105 transition-all duration-500">
                 <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl h-full">
                   <div className="flex flex-col h-full">
                     <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
@@ -160,15 +183,18 @@ const TrainingLabs = () => {
                       <p className="text-gray-600 leading-relaxed mb-6">{solution.description}</p>
                       
                       <ul className="space-y-2">
-                        {solution.features.map((feature, fIndex) => <li key={fIndex} className="flex items-center space-x-2 text-sm text-gray-600">
+                        {solution.features.map((feature, fIndex) => (
+                          <li key={fIndex} className="flex items-center space-x-2 text-sm text-gray-600">
                             <CheckCircle className="w-4 h-4 text-green-500" />
                             <span>{feature}</span>
-                          </li>)}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -198,10 +224,17 @@ const TrainingLabs = () => {
                 </p>
                 
                 <ul className="space-y-4">
-                  {["Real-time resource monitoring", "Instant lab status updates", "Performance analytics", "One-click environment controls"].map((feature, index) => <li key={index} className="flex items-center space-x-3">
+                  {[
+                    "Real-time resource monitoring",
+                    "Instant lab status updates", 
+                    "Performance analytics",
+                    "One-click environment controls"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-500" />
                       <span className="text-gray-700">{feature}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
               
@@ -234,10 +267,17 @@ const TrainingLabs = () => {
                 </p>
                 
                 <ul className="space-y-4">
-                  {["Remote screen viewing", "Take control assistance", "File sharing & transfers", "Real-time chat support"].map((feature, index) => <li key={index} className="flex items-center space-x-3">
+                  {[
+                    "Remote screen viewing",
+                    "Take control assistance",
+                    "File sharing & transfers",
+                    "Real-time chat support"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-500" />
                       <span className="text-gray-700">{feature}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -258,10 +298,17 @@ const TrainingLabs = () => {
                 </p>
                 
                 <ul className="space-y-4">
-                  {["Pre-built curriculum templates", "Auto-scaling based on enrollment", "Custom environment configuration", "Bulk student onboarding"].map((feature, index) => <li key={index} className="flex items-center space-x-3">
+                  {[
+                    "Pre-built curriculum templates",
+                    "Auto-scaling based on enrollment",
+                    "Custom environment configuration",
+                    "Bulk student onboarding"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-500" />
                       <span className="text-gray-700">{feature}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
               
@@ -290,23 +337,29 @@ const TrainingLabs = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[{
-              title: "Coding Bootcamps",
-              description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs, version control.",
-              icon: Code
-            }, {
-              title: "Cybersecurity Ranges",
-              description: "Isolated labs with vulnerable VMs, network sniffers, incident response simulators.",
-              icon: Shield
-            }, {
-              title: "AI/ML & Data Science",
-              description: "GPU-ready labs with Jupyter, TensorFlow, PyTorch, huge datasets.",
-              icon: Brain
-            }, {
-              title: "Corporate Upskilling",
-              description: "Compliance-ready labs, scalable to 10,000+ users.",
-              icon: Users
-            }].map((useCase, index) => <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+              {[
+                {
+                  title: "Coding Bootcamps",
+                  description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs, version control.",
+                  icon: Code
+                },
+                {
+                  title: "Cybersecurity Ranges",
+                  description: "Isolated labs with vulnerable VMs, network sniffers, incident response simulators.",
+                  icon: Shield
+                },
+                {
+                  title: "AI/ML & Data Science",
+                  description: "GPU-ready labs with Jupyter, TensorFlow, PyTorch, huge datasets.",
+                  icon: Brain
+                },
+                {
+                  title: "Corporate Upskilling",
+                  description: "Compliance-ready labs, scalable to 10,000+ users.",
+                  icon: Users
+                }
+              ].map((useCase, index) => (
+                <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
                   <div className="flex items-start space-x-3">
                     <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
                       <useCase.icon className="w-5 h-5 text-purple-600" />
@@ -316,38 +369,47 @@ const TrainingLabs = () => {
                       <p className="text-sm text-gray-600">{useCase.description}</p>
                     </div>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[{
-            title: "Networking & Systems Training",
-            description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.",
-            icon: Server
-          }, {
-            title: "Hackathons & Workshops",
-            description: "On-demand environments for 100s of participants. Instant provisioning, no local setup, perfect for time-boxed events.",
-            icon: Rocket
-          }, {
-            title: "Networking Labs",
-            description: "Simulated enterprise network environments for training on routing, switching, and troubleshooting at scale.",
-            icon: Globe
-          }, {
-            title: "Capture the Flag (CTF) Competitions",
-            description: "Realistic attack-defense setups for cybersecurity contests, team-based or individual.",
-            icon: Target
-          }, {
-            title: "Certification Prep Labs",
-            description: "Practice environments preloaded with the exact tools and configs needed for cert exams (e.g., RHCE, OSCP, CEH).",
-            icon: Award
-          }].map((useCase, index) => <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+            {[
+              {
+                title: "Networking & Systems Training",
+                description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.",
+                icon: Server
+              },
+              {
+                title: "Hackathons & Workshops",
+                description: "On-demand environments for 100s of participants. Instant provisioning, no local setup, perfect for time-boxed events.",
+                icon: Rocket
+              },
+              {
+                title: "Networking Labs",
+                description: "Simulated enterprise network environments for training on routing, switching, and troubleshooting at scale.",
+                icon: Globe
+              },
+              {
+                title: "Capture the Flag (CTF) Competitions",
+                description: "Realistic attack-defense setups for cybersecurity contests, team-based or individual.",
+                icon: Target
+              },
+              {
+                title: "Certification Prep Labs",
+                description: "Practice environments preloaded with the exact tools and configs needed for cert exams (e.g., RHCE, OSCP, CEH).",
+                icon: Award
+              }
+            ].map((useCase, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                   <useCase.icon className="w-6 h-6 text-purple-600" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-3">{useCase.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -373,7 +435,11 @@ const TrainingLabs = () => {
             </div>
 
             <div className="relative">
-              <img src="/lovable-uploads/002bd955-500b-4161-945a-cdd484ff0c25.png" alt="Zen-like trainer in peaceful state" className="w-full h-auto rounded-3xl" />
+              <img 
+                src="/lovable-uploads/002bd955-500b-4161-945a-cdd484ff0c25.png" 
+                alt="Zen-like trainer in peaceful state"
+                className="w-full h-auto rounded-3xl"
+              />
             </div>
           </div>
         </div>
@@ -387,28 +453,37 @@ const TrainingLabs = () => {
           </div>
 
           <div className="space-y-6">
-            {[{
-            question: "What if this won't match our unique training format?",
-            answer: "We custom-build labs to your exact curriculum. You get a say in every detail."
-          }, {
-            question: "What if we need changes mid-course?",
-            answer: "No problem — instant tweaks, mid-session scaling, and live config support."
-          }, {
-            question: "What if things break during class?",
-            answer: "Real engineers. 24/7. <2hr average response. No bots. No \"please wait.\""
-          }, {
-            question: "What if we're not technical enough to explain what we need?",
-            answer: "Our onboarding team speaks fluent training. Just tell us what you teach — we handle the rest."
-          }, {
-            question: "What if it's too complicated to manage?",
-            answer: "You get a simple dashboard. We manage everything else."
-          }, {
-            question: "What if this is too good to be true?",
-            answer: "Ask our customers. Or better — try it and see for yourself."
-          }].map((item, index) => <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+            {[
+              {
+                question: "What if this won't match our unique training format?",
+                answer: "We custom-build labs to your exact curriculum. You get a say in every detail."
+              },
+              {
+                question: "What if we need changes mid-course?",
+                answer: "No problem — instant tweaks, mid-session scaling, and live config support."
+              },
+              {
+                question: "What if things break during class?",
+                answer: "Real engineers. 24/7. <2hr average response. No bots. No \"please wait.\""
+              },
+              {
+                question: "What if we're not technical enough to explain what we need?",
+                answer: "Our onboarding team speaks fluent training. Just tell us what you teach — we handle the rest."
+              },
+              {
+                question: "What if it's too complicated to manage?",
+                answer: "You get a simple dashboard. We manage everything else."
+              },
+              {
+                question: "What if this is too good to be true?",
+                answer: "Ask our customers. Or better — try it and see for yourself."
+              }
+            ].map((item, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
                 <h3 className="font-bold text-gray-900 mb-3">{item.question}</h3>
                 <p className="text-gray-600">{item.answer}</p>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -421,24 +496,31 @@ const TrainingLabs = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {[{
-            name: "Priya Sharma",
-            role: "Technical Training Director",
-            quote: "From 6-hour Friday setups to 15-minute deploys. Students happier. Trainers free.",
-            stats: "2,000+ students/month, 95% time savings"
-          }, {
-            name: "Marcus Johnson",
-            role: "Cybersecurity Instructor",
-            quote: "Zero crashes in 8 months. Feels like a real corporate red team lab.",
-            stats: "100% uptime, 500+ certified hackers"
-          }, {
-            name: "Sarah Kim",
-            role: "DevOps Training Manager",
-            quote: "11 PM issue fixed by a real engineer. I cried.",
-            stats: "24/7 support, 15 time zones supported"
-          }].map((story, index) => <div key={index} className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-xl">
+            {[
+              {
+                name: "Priya Sharma",
+                role: "Technical Training Director",
+                quote: "From 6-hour Friday setups to 15-minute deploys. Students happier. Trainers free.",
+                stats: "2,000+ students/month, 95% time savings"
+              },
+              {
+                name: "Marcus Johnson",
+                role: "Cybersecurity Instructor", 
+                quote: "Zero crashes in 8 months. Feels like a real corporate red team lab.",
+                stats: "100% uptime, 500+ certified hackers"
+              },
+              {
+                name: "Sarah Kim",
+                role: "DevOps Training Manager",
+                quote: "11 PM issue fixed by a real engineer. I cried.",
+                stats: "24/7 support, 15 time zones supported"
+              }
+            ].map((story, index) => (
+              <div key={index} className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-xl">
                 <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />)}
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
                 </div>
                 
                 <p className="text-gray-700 leading-relaxed mb-6 italic">"{story.quote}"</p>
@@ -448,7 +530,8 @@ const TrainingLabs = () => {
                   <div className="text-sm text-gray-600 mb-2">{story.role}</div>
                   <div className="text-xs text-purple-600 font-medium">{story.stats}</div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -462,23 +545,29 @@ const TrainingLabs = () => {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              {[{
-              hour: "Hour 1",
-              task: "Requirements call & infra design",
-              description: "We understand your curriculum and design the perfect lab environment."
-            }, {
-              hour: "Hour 2",
-              task: "Provisioning, config, and performance check",
-              description: "Your labs are built, tested, and optimized for your specific needs."
-            }, {
-              hour: "Hour 3",
-              task: "Team onboarding & lab access",
-              description: "Your team gets trained and receives access to the management dashboard."
-            }, {
-              hour: "Go Time",
-              task: "Labs go live. Monitored. Ready to teach",
-              description: "Everything is live, monitored, and ready for your first training session."
-            }].map((step, index) => <div key={index} className="flex items-start space-x-4">
+              {[
+                {
+                  hour: "Hour 1",
+                  task: "Requirements call & infra design",
+                  description: "We understand your curriculum and design the perfect lab environment."
+                },
+                {
+                  hour: "Hour 2", 
+                  task: "Provisioning, config, and performance check",
+                  description: "Your labs are built, tested, and optimized for your specific needs."
+                },
+                {
+                  hour: "Hour 3",
+                  task: "Team onboarding & lab access",
+                  description: "Your team gets trained and receives access to the management dashboard."
+                },
+                {
+                  hour: "Go Time",
+                  task: "Labs go live. Monitored. Ready to teach",
+                  description: "Everything is live, monitored, and ready for your first training session."
+                }
+              ].map((step, index) => (
+                <div key={index} className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-6 h-6 text-purple-600" />
                   </div>
@@ -489,11 +578,16 @@ const TrainingLabs = () => {
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{step.task}</h3>
                     <p className="text-gray-600 leading-relaxed">{step.description}</p>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
 
             <div className="relative">
-              <img src="/lovable-uploads/da1c17cc-16bf-47be-834a-68e473782db8.png" alt="Support representative helping with setup" className="w-full h-auto rounded-3xl" />
+              <img 
+                src="/lovable-uploads/da1c17cc-16bf-47be-834a-68e473782db8.png" 
+                alt="Support representative helping with setup"
+                className="w-full h-auto rounded-3xl"
+              />
             </div>
           </div>
         </div>
@@ -511,10 +605,17 @@ const TrainingLabs = () => {
               <h3 className="text-3xl font-bold text-gray-900">What You Get In Your Demo:</h3>
               
               <ul className="space-y-4">
-                {["A 15-minute walkthrough of how we provision, customize, and monitor labs", "Live view of a real training environment tailored to your topic (DevOps, Cybersecurity, AI, etc.)", "Sneak peek into student login flow, admin dashboard, and performance monitoring tools", "A short discovery call to understand your curriculum and challenges"].map((item, index) => <li key={index} className="flex items-start space-x-3">
+                {[
+                  "A 15-minute walkthrough of how we provision, customize, and monitor labs",
+                  "Live view of a real training environment tailored to your topic (DevOps, Cybersecurity, AI, etc.)",
+                  "Sneak peek into student login flow, admin dashboard, and performance monitoring tools",
+                  "A short discovery call to understand your curriculum and challenges"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start space-x-3">
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{item}</span>
-                  </li>)}
+                  </li>
+                ))}
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -624,6 +725,8 @@ const TrainingLabs = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default TrainingLabs;
