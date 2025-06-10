@@ -1,57 +1,73 @@
 
-import { AlertTriangle, Clock, Shield, TrendingDown } from "lucide-react";
+import { Zap, Wrench, Shield, DollarSign, CheckCircle } from "lucide-react";
 
 const CloudDesktopsPainPoints = () => {
-  const painPoints = [
+  const localPainPoints = [
     {
-      pain: "Laptop Performance Hell",
-      reality: "Your local machine crawls with Docker, VS Code, and Chrome open. Compilation takes forever while your laptop sounds like a jet engine.",
-      icon: AlertTriangle
+      pain: "Performance Bottlenecks",
+      reality: "Crashes. Freezes. Lag. You're stuck with the specs you bought — and they age fast.",
+      icon: Zap
     },
     {
-      pain: "Environment Setup Nightmare",
-      reality: "New developer onboarding takes 3 days of 'it works on my machine' debugging and environment configuration.",
-      icon: Clock
+      pain: "IT Headaches Everywhere", 
+      reality: "Installing apps, managing updates, onboarding users — it's a nightmare at scale.",
+      icon: Wrench
     },
     {
-      pain: "Security Compliance Chaos",
-      reality: "Sensitive code on personal laptops, VPN hassles, and IT teams panicking about data scattered across devices.",
+      pain: "Gaping Security Holes",
+      reality: "Your data scattered across laptops is a breach waiting to happen.",
       icon: Shield
     },
     {
-      pain: "Hardware Dependency Prison",
-      reality: "Team productivity dies when laptops break, get stolen, or just can't handle the workload anymore.",
-      icon: TrendingDown
+      pain: "Expensive, Inflexible, Fragile",
+      reality: "You're paying more for machines that deliver less — and break often.",
+      icon: DollarSign
     }
+  ];
+
+  const cloudAddaBenefits = [
+    "No setup drama",
+    "No hardware failures", 
+    "No data risk",
+    "Just pure, seamless productivity"
   ];
 
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">The Painful Reality of Remote Work</h2>
-          <p className="text-xl text-gray-600">Every developer's nightmare, solved once and for all</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            {painPoints.map((item, index) => (
-              <div key={index} className="flex items-start space-x-6 group">
-                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center group-hover:bg-red-200 transition-colors">
-                  <item.icon className="w-6 h-6 text-red-600" />
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Say Goodbye to Local Machines. Forever.</h2>
+          <p className="text-xl text-gray-600 mb-8">Your device shouldn't dictate your performance. With CloudAdda, your desktop lives in the cloud — not your hardware — and it's always on, always powerful, always ready.</p>
+          
+          <div className="bg-white rounded-2xl p-8 max-w-2xl mx-auto shadow-lg">
+            <div className="grid grid-cols-2 gap-6">
+              {cloudAddaBenefits.map((benefit, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-700 font-medium">{benefit}</span>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.pain}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.reality}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          <div className="relative">
-            <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-              [3D Illustration: Frustrated developer with crashed laptop, broken setup, security alerts popping up]
-            </div>
+          <p className="text-lg text-gray-600 mt-8 max-w-4xl mx-auto">
+            Whether you're answering support calls, editing massive video files, managing hospital data, or running your entire business — CloudAdda gives you a desktop that never slows down, never crashes, and never holds you back.
+          </p>
+        </div>
+
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">Why Local Desktops Are Holding You Hostage</h3>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {localPainPoints.map((item, index) => (
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-red-600" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">{item.pain}</h4>
+                <p className="text-gray-600 leading-relaxed text-sm">{item.reality}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

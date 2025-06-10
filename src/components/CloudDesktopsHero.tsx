@@ -14,21 +14,29 @@ const CloudDesktopsHero = () => {
             </div>
             
             <h1 className="text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl">
-              The End of
-              <span className="block text-blue-600">"It's Not Working"</span>
+              Your Next Desktop Isn't a Laptop.
+              <span className="block text-blue-600">It's in the Cloud.</span>
             </h1>
             
             <p className="text-xl text-gray-600 leading-relaxed">
-              Laggy laptops. Fragile setups. Security nightmares. Your team deserves better — high-performance cloud desktops that just work.
+              It's fast. It's secure. It's always with you.
+            </p>
+
+            <p className="text-lg text-gray-600 leading-relaxed">
+              No more sluggish laptops, fragile setups, or IT bottlenecks. CloudAdda gives you high-performance, cloud-native desktops that run from anywhere — on any device — powered by raw AMD EPYC muscle and blazing-fast NVMe storage.
+            </p>
+
+            <p className="text-lg font-semibold text-gray-700">
+              Boot up in seconds. Work without limits. Scale effortlessly.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6">
               <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                Launch Your Desktop
+                Try Free for 7 Days
                 <Monitor className="ml-2 h-5 w-5" />
               </Button>
               <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                View Live Demo
+                Launch a Desktop Now
               </Button>
             </div>
 

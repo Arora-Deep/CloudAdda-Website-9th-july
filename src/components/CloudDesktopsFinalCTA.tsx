@@ -1,25 +1,26 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Monitor } from "lucide-react";
+import { Monitor, Play } from "lucide-react";
 
 const CloudDesktopsFinalCTA = () => {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-8">
-          Ready to Transform Your Development Experience?
+          The Future of Work Isn't on Your Laptop.
         </h2>
         <p className="text-xl text-gray-600 mb-12">
-          Launch in 90 seconds. Scale instantly. Support that cares.
+          It's in the cloud. It's fast. It's beautiful. It's ready.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-            Launch Your Desktop Now
+            Start Your Free Trial
             <Monitor className="ml-3 h-6 w-6" />
           </Button>
           <Button size="lg" variant="outline" className="rounded-full px-16 py-6 text-xl border-gray-300 hover:bg-gray-50">
-            Schedule a Demo
+            See a Live Demo
+            <Play className="ml-3 h-6 w-6" />
           </Button>
         </div>
 

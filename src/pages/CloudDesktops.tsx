@@ -5,14 +5,11 @@ import { Link } from "react-router-dom";
 import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
 import CloudDesktopsSolutions from "@/components/CloudDesktopsSolutions";
-import CloudDesktopsRealityCheck from "@/components/CloudDesktopsRealityCheck";
-import CloudDesktopsComparison from "@/components/CloudDesktopsComparison";
-import CloudDesktopsTechnical from "@/components/CloudDesktopsTechnical";
-import CloudDesktopsSuccessStories from "@/components/CloudDesktopsSuccessStories";
 import CloudDesktopsUseCases from "@/components/CloudDesktopsUseCases";
-import CloudDesktopsMigration from "@/components/CloudDesktopsMigration";
+import CloudDesktopsComparison from "@/components/CloudDesktopsComparison";
+import CloudDesktopsTeamBenefits from "@/components/CloudDesktopsTeamBenefits";
 import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
-import CloudDesktopsSocialProof from "@/components/CloudDesktopsSocialProof";
+import CloudDesktopsMigration from "@/components/CloudDesktopsMigration";
 import CloudDesktopsFinalCTA from "@/components/CloudDesktopsFinalCTA";
 import CloudDesktopsFooter from "@/components/CloudDesktopsFooter";
 
@@ -49,14 +46,11 @@ const CloudDesktops = () => {
       <CloudDesktopsHero />
       <CloudDesktopsPainPoints />
       <CloudDesktopsSolutions />
-      <CloudDesktopsRealityCheck />
-      <CloudDesktopsComparison />
-      <CloudDesktopsTechnical />
-      <CloudDesktopsSuccessStories />
       <CloudDesktopsUseCases />
-      <CloudDesktopsMigration />
+      <CloudDesktopsComparison />
+      <CloudDesktopsTeamBenefits />
       <CloudDesktopsPricing />
-      <CloudDesktopsSocialProof />
+      <CloudDesktopsMigration />
       <CloudDesktopsFinalCTA />
       <CloudDesktopsFooter />
     </div>
