@@ -73,11 +73,11 @@ const TrainingLabs = () => {
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative flex justify-center items-center h-full min-h-[500px]">
               <img 
-                src="/lovable-uploads/1b5b0878-680c-4c0d-af54-5373b66a92fc.png" 
-                alt="Training session illustration"
-                className="w-full h-auto rounded-3xl"
+                src="/lovable-uploads/20d7ef7d-10ca-4015-9a31-37c2ec2b2b0b.png" 
+                alt="Training session illustration with instructor and student"
+                className="w-full max-w-none h-auto object-contain scale-110"
               />
             </div>
           </div>
