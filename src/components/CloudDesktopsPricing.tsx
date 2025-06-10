@@ -73,7 +73,7 @@ const CloudDesktopsPricing = () => {
                 <Button 
                   className={`w-full rounded-full py-3 text-lg font-semibold ${
                     plan.popular 
-                      ? 'bg-blue-500 hover:bg-blue-600 text-white' 
+                      ? 'bg-orange-500 hover:bg-orange-600 text-white' 
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
                   }`}
                 >

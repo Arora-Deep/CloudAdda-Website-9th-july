@@ -5,33 +5,33 @@ const CloudDesktopsComparison = () => {
   const comparisonData = [
     {
       feature: "Speed",
-      cloudAdda: "⚡ Instant, server-grade",
-      traditional: "🐢 Slow, aging hardware"
+      cloudAdda: "Instant, server-grade",
+      traditional: "Slow, aging hardware"
     },
     {
       feature: "Setup Time",
-      cloudAdda: "🚀 Pre-configured, zero setup",
-      traditional: "⏳ Manual installs, delays"
+      cloudAdda: "Pre-configured, zero setup",
+      traditional: "Manual installs, delays"
     },
     {
       feature: "Security",
-      cloudAdda: "🔒 Centralized, no local data",
-      traditional: "❗ Risky, fragmented data"
+      cloudAdda: "Centralized, no local data",
+      traditional: "Risky, fragmented data"
     },
     {
       feature: "Portability",
-      cloudAdda: "🌐 Log in anywhere",
-      traditional: "💼 Tied to one machine"
+      cloudAdda: "Log in anywhere",
+      traditional: "Tied to one machine"
     },
     {
       feature: "Maintenance",
-      cloudAdda: "🧩 We manage it all",
-      traditional: "🔧 You manage everything"
+      cloudAdda: "We manage it all",
+      traditional: "You manage everything"
     },
     {
       feature: "Scaling",
-      cloudAdda: "📈 Add/remove in clicks",
-      traditional: "🛑 Buy, image, deploy"
+      cloudAdda: "Add/remove in clicks",
+      traditional: "Buy, image, deploy"
     }
   ];
 
