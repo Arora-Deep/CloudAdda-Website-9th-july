@@ -29,17 +29,19 @@ const CloudDesktopsSolutions = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">The CloudAdda Way: Desktops That Actually Work</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            The <span className="text-blue-600">CloudAdda Way</span>: Desktops That Actually Work
+          </h2>
           <p className="text-xl text-gray-600">We took everything frustrating about local machines and eliminated it. Then we supercharged what was left.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {solutions.map((solution, index) => (
             <div key={index} className="group hover:scale-105 transition-all duration-300">
-              <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-blue-200 transition-all duration-300 hover:shadow-2xl h-full">
+              <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-orange-200 transition-all duration-300 hover:shadow-2xl h-full">
                 <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center group-hover:bg-blue-200 transition-colors flex-shrink-0">
-                    <solution.icon className="w-8 h-8 text-blue-600" />
+                  <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center group-hover:bg-orange-200 transition-colors flex-shrink-0">
+                    <solution.icon className="w-8 h-8 text-orange-600" />
                   </div>
                   
                   <div className="flex-1">

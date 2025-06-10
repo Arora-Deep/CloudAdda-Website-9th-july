@@ -39,7 +39,9 @@ const CloudDesktopsComparison = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Old World vs CloudAdda: See the Difference</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <span className="text-orange-500">Old World</span> vs <span className="text-blue-600">CloudAdda</span>: See the Difference
+          </h2>
         </div>
 
         <div className="overflow-x-auto">

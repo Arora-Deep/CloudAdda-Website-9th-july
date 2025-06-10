@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Monitor } from "lucide-react";
+import { Monitor } from "lucide-react";
 
 const CloudDesktopsHero = () => {
   return (
@@ -15,10 +15,10 @@ const CloudDesktopsHero = () => {
             
             <h1 className="text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl">
               Your Next Desktop Isn't a Laptop.
-              <span className="block text-blue-600">It's in the Cloud.</span>
+              <span className="block text-orange-500">It's in the Cloud.</span>
             </h1>
             
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-orange-600 leading-relaxed font-medium">
               It's fast. It's secure. It's always with you.
             </p>
 
@@ -26,7 +26,7 @@ const CloudDesktopsHero = () => {
               No more sluggish laptops, fragile setups, or IT bottlenecks. CloudAdda gives you high-performance, cloud-native desktops that run from anywhere — on any device — powered by raw AMD EPYC muscle and blazing-fast NVMe storage.
             </p>
 
-            <p className="text-lg font-semibold text-gray-700">
+            <p className="text-lg font-semibold text-blue-600">
               Boot up in seconds. Work without limits. Scale effortlessly.
             </p>
             
@@ -35,30 +35,30 @@ const CloudDesktopsHero = () => {
                 Try Free for 7 Days
                 <Monitor className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
+              <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-orange-300 text-orange-600 hover:bg-orange-50">
                 Launch a Desktop Now
               </Button>
             </div>
 
             <div className="grid grid-cols-3 gap-8 pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">99.98%</div>
+                <div className="text-3xl font-bold text-orange-600">99.98%</div>
                 <div className="text-sm text-gray-600">Uptime SLA</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">&lt; 2min</div>
+                <div className="text-3xl font-bold text-orange-600">&lt; 2min</div>
                 <div className="text-sm text-gray-600">Desktop Ready</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">73%</div>
+                <div className="text-3xl font-bold text-orange-600">73%</div>
                 <div className="text-sm text-gray-600">Productivity Boost</div>
               </div>
             </div>
           </div>
           
           <div className="relative">
-            <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-              [3D Illustration: Developer working on cloud desktop with multiple screens and seamless connectivity]
+            <div className="bg-gradient-to-br from-orange-100 to-blue-100 rounded-3xl h-96 flex items-center justify-center text-gray-400 shadow-xl">
+              [Cloud Desktop Interface Preview]
             </div>
           </div>
         </div>

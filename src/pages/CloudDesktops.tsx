@@ -6,8 +6,12 @@ import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
 import CloudDesktopsSolutions from "@/components/CloudDesktopsSolutions";
 import CloudDesktopsUseCases from "@/components/CloudDesktopsUseCases";
+import CloudDesktopsPerformanceProof from "@/components/CloudDesktopsPerformanceProof";
 import CloudDesktopsComparison from "@/components/CloudDesktopsComparison";
+import CloudDesktopsSecurityCompliance from "@/components/CloudDesktopsSecurityCompliance";
 import CloudDesktopsTeamBenefits from "@/components/CloudDesktopsTeamBenefits";
+import CloudDesktopsROICalculator from "@/components/CloudDesktopsROICalculator";
+import CloudDesktopsTrustSignals from "@/components/CloudDesktopsTrustSignals";
 import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 import CloudDesktopsMigration from "@/components/CloudDesktopsMigration";
 import CloudDesktopsFinalCTA from "@/components/CloudDesktopsFinalCTA";
@@ -46,9 +50,13 @@ const CloudDesktops = () => {
       <CloudDesktopsHero />
       <CloudDesktopsPainPoints />
       <CloudDesktopsSolutions />
+      <CloudDesktopsPerformanceProof />
       <CloudDesktopsUseCases />
+      <CloudDesktopsSecurityCompliance />
       <CloudDesktopsComparison />
       <CloudDesktopsTeamBenefits />
+      <CloudDesktopsROICalculator />
+      <CloudDesktopsTrustSignals />
       <CloudDesktopsPricing />
       <CloudDesktopsMigration />
       <CloudDesktopsFinalCTA />
