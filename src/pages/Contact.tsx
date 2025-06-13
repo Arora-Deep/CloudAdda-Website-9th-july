@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -29,63 +30,67 @@ const Contact = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-background to-orange-500/5" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <Badge className="mb-6 bg-purple-100 text-purple-800 border-purple-200">
-                <MessageCircle className="w-4 h-4 mr-2" />
-                We're Here to Help
-              </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-                Let's Build Something
-                <br />
-                <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
-                  Amazing Together
-                </span>
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Have questions? Need a custom solution? Or just want to say hello? 
-                We're real humans who love talking about cloud infrastructure and helping you succeed.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                <div className="flex items-center space-x-2 text-sm">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Response in 2 hours</span>
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="mb-8 bg-purple-100 text-purple-800 border-purple-200">
+              <MessageCircle className="w-4 h-4 mr-2" />
+              We're Here to Help
+            </Badge>
+            <h1 className="text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+              Let's Build Something
+              <br />
+              <span className="text-purple-600">
+                Amazing Together
+              </span>
+            </h1>
+            <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
+              Got questions? Need a custom solution? Or just want to say hello? 
+              We're real humans who love talking about cloud infrastructure and helping you succeed.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+              <div className="flex flex-col items-center space-y-3 p-6 bg-muted/30 rounded-lg">
+                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-white" />
                 </div>
-                <div className="flex items-center space-x-2 text-sm">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Expert technical team</span>
-                </div>
-                <div className="flex items-center space-x-2 text-sm">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Custom solutions</span>
-                </div>
+                <span className="font-medium text-foreground">Response in 2 hours</span>
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  Start a Conversation
-                </Button>
-                <Button size="lg" variant="outline" className="border-orange-500 text-orange-600 hover:bg-orange-50">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Schedule a Call
-                </Button>
+              <div className="flex flex-col items-center space-y-3 p-6 bg-muted/30 rounded-lg">
+                <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <span className="font-medium text-foreground">Expert technical team</span>
+              </div>
+              <div className="flex flex-col items-center space-y-3 p-6 bg-muted/30 rounded-lg">
+                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <span className="font-medium text-foreground">Custom solutions</span>
               </div>
             </div>
-            <div className="relative">
-              {/* Space for 3D illustration */}
-              <div className="bg-gradient-to-br from-purple-50 to-orange-50 rounded-2xl p-8 h-96 flex items-center justify-center border border-purple-100">
-                <div className="text-center text-muted-foreground">
-                  <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-orange-500 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                    <MessageCircle className="w-12 h-12 text-white" />
-                  </div>
-                  <p className="text-sm">3D Illustration Space</p>
-                  <p className="text-xs text-muted-foreground/60">Customer Support Visual</p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Start a Conversation
+              </Button>
+              <Button size="lg" variant="outline" className="border-orange-500 text-orange-600 hover:bg-orange-50">
+                <Phone className="w-5 h-5 mr-2" />
+                Schedule a Call
+              </Button>
+            </div>
+          </div>
+
+          {/* 3D Illustration space */}
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-purple-50 rounded-2xl p-12 h-80 flex items-center justify-center border border-purple-100">
+              <div className="text-center text-muted-foreground">
+                <div className="w-24 h-24 bg-purple-500 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                  <MessageCircle className="w-12 h-12 text-white" />
                 </div>
+                <p className="text-sm">3D Illustration Space</p>
+                <p className="text-xs text-muted-foreground/60">Customer Support Visual</p>
               </div>
             </div>
           </div>
@@ -244,7 +249,7 @@ const Contact = () => {
                   />
                 </div>
                 
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600">
+                <Button className="w-full bg-purple-600 hover:bg-purple-700">
                   Send Message
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
@@ -333,34 +338,34 @@ const Contact = () => {
             <div className="space-y-4">
               <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl">CloudAdda</span>
+                <span className="font-bold text-xl text-foreground">CloudAdda</span>
               </Link>
-              <p className="text-gray-400">
+              <p className="text-muted-foreground">
                 Born in India, Built for the World. Infrastructure that just works.
               </p>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Solutions</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" className="hover:text-white transition-colors">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" className="hover:text-white transition-colors">Virtual Desktops</Link></li>
-                <li><Link to="/vps" className="hover:text-white transition-colors">VPS</Link></li>
+              <h3 className="font-semibold mb-4 text-foreground">Solutions</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/training-labs" className="hover:text-foreground transition-colors">Training Labs</Link></li>
+                <li><Link to="/cloud-desktops" className="hover:text-foreground transition-colors">Virtual Desktops</Link></li>
+                <li><Link to="/vps" className="hover:text-foreground transition-colors">VPS</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              <h3 className="font-semibold mb-4 text-foreground">Company</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/about" className="hover:text-foreground transition-colors">About Us</Link></li>
+                <li><Link to="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
+                <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/support" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
+              <h3 className="font-semibold mb-4 text-foreground">Support</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/support" className="hover:text-foreground transition-colors">Help Center</Link></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Documentation</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Status</a></li>
               </ul>
             </div>
           </div>
