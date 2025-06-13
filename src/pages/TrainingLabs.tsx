@@ -1,5 +1,27 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Zap, Shield, Gauge } from "lucide-react";
+import { 
+  ArrowRight, 
+  Users, 
+  Zap, 
+  Shield, 
+  Gauge, 
+  Play, 
+  Clock, 
+  AlertTriangle, 
+  MessageCircle, 
+  DollarSign, 
+  CheckCircle, 
+  UserCheck, 
+  Rocket, 
+  Code, 
+  Brain, 
+  Server, 
+  Globe, 
+  Target, 
+  Award, 
+  Star, 
+  FileCheck 
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import TrainingTestimonials from "@/components/TrainingTestimonials";
 
