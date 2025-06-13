@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -205,63 +204,81 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Developer Reality Check - Cleaned up */}
+      {/* Developer Reality Check - Updated to be cleaner */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">The Developer's Daily Reality Check</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">The Developer's Daily Reality</h2>
             <p className="text-xl text-gray-600">Stop us when this sounds familiar...</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* The Horror Stories */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-red-200">
-              <h3 className="text-2xl font-bold text-red-800 mb-8 flex items-center">
-                <AlertTriangle className="w-8 h-8 mr-3" />
-                Your Current VPS Nightmare
-              </h3>
-
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Current VPS Problems */}
               <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Your Current VPS Experience</h3>
+                
                 {[
-                  "The 3 AM Production Crash - Your side project that became your main income source just went down. Support ticket response: 'Have you tried restarting?'",
-                  "The Mysterious Throttling - Your API was responding in 200ms yesterday, today it's 3 seconds. Nobody can tell you why.",
-                  "The Bill Shock Monday - Your $20/month VPS bill is now $180 because you forgot to set up billing alerts.",
-                  "The Documentation Lie - The setup guide was written in 2019, half the commands don't work."
-                ].map((horror, index) => (
-                  <div key={index} className="bg-red-50 rounded-xl p-6 border border-red-200">
-                    <p className="text-gray-700">{horror}</p>
+                  {
+                    title: "The 3 AM Production Crash",
+                    description: "Your side project that became your main income source just went down. Support ticket response: 'Have you tried restarting?'"
+                  },
+                  {
+                    title: "The Mysterious Throttling",
+                    description: "Your API was responding in 200ms yesterday, today it's 3 seconds. Nobody can tell you why."
+                  },
+                  {
+                    title: "The Bill Shock Monday",
+                    description: "Your $20/month VPS bill is now $180 because you forgot to set up billing alerts."
+                  },
+                  {
+                    title: "The Documentation Lie",
+                    description: "The setup guide was written in 2019, half the commands don't work."
+                  }
+                ].map((problem, index) => (
+                  <div key={index} className="bg-white rounded-xl p-6 border-l-4 border-red-500 shadow-sm">
+                    <h4 className="font-bold text-gray-900 mb-2">{problem.title}</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">{problem.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* CloudAdda Experience */}
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Your CloudAdda Experience</h3>
+                
+                {[
+                  {
+                    title: "The 3 AM Peace of Mind",
+                    description: "Your app hasn't gone down in 8 months. When you had a question at 2 AM, a real engineer responded in 23 minutes."
+                  },
+                  {
+                    title: "The Consistent Performance",
+                    description: "Your API responds in 180-220ms consistently. Every day. Every month."
+                  },
+                  {
+                    title: "The Predictable Bill",
+                    description: "Your bill is exactly ₹1,399 every month. No surprises. No hidden fees."
+                  },
+                  {
+                    title: "The Documentation That Works",
+                    description: "Copy-paste the commands from our docs. They work. First try. Every time."
+                  }
+                ].map((solution, index) => (
+                  <div key={index} className="bg-white rounded-xl p-6 border-l-4 border-green-500 shadow-sm">
+                    <h4 className="font-bold text-gray-900 mb-2">{solution.title}</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">{solution.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* The CloudAdda Solution */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-green-200">
-              <h3 className="text-2xl font-bold text-green-800 mb-8 flex items-center">
-                <CheckCircle className="w-8 h-8 mr-3" />
-                Your CloudAdda Reality
-              </h3>
-
-              <div className="space-y-6">
-                {[
-                  "The 3 AM Peace of Mind - Your app hasn't gone down in 8 months. When you had a question at 2 AM, a real engineer responded in 23 minutes.",
-                  "The Consistent Performance - Your API responds in 180-220ms consistently. Every day. Every month.",
-                  "The Predictable Bill - Your bill is exactly ₹1,399 every month. No surprises. No hidden fees.",
-                  "The Documentation That Works - Copy-paste the commands from our docs. They work. First try. Every time."
-                ].map((joy, index) => (
-                  <div key={index} className="bg-green-50 rounded-xl p-6 border border-green-200">
-                    <p className="text-gray-700">{joy}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="text-center mt-16">
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+                End Your VPS Nightmare Today
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
-          </div>
-
-          <div className="text-center mt-16">
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-              End Your VPS Nightmare Today
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
           </div>
         </div>
       </section>

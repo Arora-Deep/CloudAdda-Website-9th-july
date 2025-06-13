@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star, Zap, Users, Shield, ArrowRight } from "lucide-react";
+import { Check, Star, Zap, Users, Shield, ArrowRight, Monitor, Code, Server, BookOpen, Settings, Cpu, HardDrive, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Pricing = () => {
@@ -27,206 +27,318 @@ const Pricing = () => {
 
       {/* Hero Section */}
       <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight text-foreground">
-            Simple, Transparent Pricing
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-            Start free, scale infinitely. No hidden fees, no surprises. Just powerful infrastructure that grows with you.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg">
-              <Zap className="w-5 h-5 mr-2" />
-              Start Free Trial
-            </Button>
-            <Button size="lg" variant="outline">
-              <Users className="w-5 h-5 mr-2" />
-              Schedule Demo
-            </Button>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { icon: Shield, label: "99.9% Uptime SLA", value: "Guaranteed" },
-              { icon: Users, label: "Happy Customers", value: "10,000+" },
-              { icon: Star, label: "Customer Rating", value: "4.9/5" }
-            ].map((item, index) => (
-              <div key={index} className="text-center p-6 border border-border rounded-lg bg-card">
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-8 h-8 text-primary" />
-                </div>
-                <div className="text-2xl font-bold mb-1 text-foreground">{item.value}</div>
-                <div className="text-muted-foreground">{item.label}</div>
-              </div>
-            ))}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight text-foreground">
+                ⚡️ Pricing That Makes Even CFOs Smile
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                Zero waste. Full performance. Built to scale.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                At CloudAdda, we don't just offer pricing — we offer clarity. Whether you're running training labs, deploying virtual desktops, or spinning up servers, every rupee delivers real-world value. No waste. No surprises. Just beautifully efficient cloud infrastructure that works.
+              </p>
+            </div>
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/9e31bb09-d2d6-473d-bc00-74afc2886708.png" 
+                alt="CFO Pricing Illustration" 
+                className="w-full h-96 object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Plans */}
+      {/* Training Labs Section */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Plans That Scale With You</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">🎓 Training Labs — Custom Infra, Zero Hassle</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From startups to enterprises, we have the perfect plan for your needs
+              We handle all the infra. You just show up and train.
+            </p>
+            <p className="text-lg text-muted-foreground mt-4 max-w-4xl mx-auto">
+              Fully managed lab environments tailored to your exact training requirements — spun up quickly, with enterprise-grade reliability and support.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          <div className="max-w-4xl mx-auto">
+            <Card className="mb-8">
+              <CardHeader>
+                <CardTitle className="text-2xl">What's Included</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {[
+                    "100% infra management & fast provisioning",
+                    "India-hosted servers with static IPs",
+                    "Full root or restricted-user access",
+                    "OS-level customization, VPN access, routing, DNS, etc.",
+                    "Optional snapshotting, user access controls, monitoring tools"
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="bg-card rounded-lg p-6 mb-8 border border-border">
+              <p className="text-muted-foreground mb-4">
+                <strong>Perfect for:</strong> Corporate L&D, upskilling programs, virtual tech bootcamps, internal IT training, and more.
+              </p>
+            </div>
+
+            <div className="text-center bg-primary/10 rounded-lg p-8">
+              <h3 className="text-2xl font-bold text-foreground mb-4">💬 Pricing? Built Around Your Curriculum.</h3>
+              <p className="text-muted-foreground mb-6">
+                There's no fixed plan — and that's the point. We design the right setup based on your toolchain, user count, access level, and duration.
+              </p>
+              <Button size="lg" className="bg-primary text-primary-foreground">
+                Request Custom Quote
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cloud Desktops Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">🖥️ Cloud Desktops (DaaS) — Role-Based Plans</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Not every employee needs the same desktop. So why pay like they do?
+            </p>
+            <p className="text-lg text-muted-foreground mt-4">
+              With CloudAdda, you can match compute power to roles — save on costs where you can, and boost performance where you must.
+            </p>
+          </div>
+
+          {/* Light Users Plans */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-foreground mb-8">👩‍💼 For Admins, Operations, and Light Users</h3>
+            <p className="text-muted-foreground mb-8">Lean, secure, always-on desktops for general office use.</p>
+            
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Admin Lite</CardTitle>
+                  <CardDescription>2 vCPU • 4GB RAM • 50GB SSD</CardDescription>
+                  <div className="text-3xl font-bold text-primary">₹1,499<span className="text-lg text-muted-foreground">/month</span></div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">Ideal For: Admins, HR, Ops, Finance</p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Standard</CardTitle>
+                  <CardDescription>4 vCPU • 8GB RAM • 100GB SSD</CardDescription>
+                  <div className="text-3xl font-bold text-primary">₹2,599<span className="text-lg text-muted-foreground">/month</span></div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">Ideal For: CRM, browser-heavy tasks</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                "Fast login access",
+                "Browser + RDP ready",
+                "Secure backups included",
+                "24/7 support"
+              ].map((feature, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-foreground">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Power Users Plans */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-foreground mb-8">👨‍💻 For Developers, Creators, and Power Users</h3>
+            <p className="text-muted-foreground mb-8">Raw power for code, design, and production workloads.</p>
+            
+            <div className="grid lg:grid-cols-3 gap-8 mb-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Dev Pro</CardTitle>
+                  <CardDescription>6 vCPU • 16GB RAM • 200GB NVMe</CardDescription>
+                  <div className="text-3xl font-bold text-primary">₹4,399<span className="text-lg text-muted-foreground">/month</span></div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">Ideal For: Full-stack devs, designers</p>
+                </CardContent>
+              </Card>
+
+              <Card className="ring-2 ring-primary">
+                <CardHeader>
+                  <Badge className="w-fit mb-2">Most Popular</Badge>
+                  <CardTitle>Team Lead</CardTitle>
+                  <CardDescription>8 vCPU • 32GB RAM • 300GB NVMe</CardDescription>
+                  <div className="text-3xl font-bold text-primary">₹6,599<span className="text-lg text-muted-foreground">/month</span></div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">Ideal For: Heavy IDEs, builds, multitasking</p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Dev Max (GPU)</CardTitle>
+                  <CardDescription>+ GPU Access • 8 vCPU • 64GB RAM</CardDescription>
+                  <div className="text-3xl font-bold text-primary">On Request</div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">Ideal For: ML/AI, video, 3D, render</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              {[
+                "Comes pre-installed with your stack",
+                "Access anywhere — even on weak laptops",
+                "High-security, isolated VMs",
+                "Optional VPN, SSO, and IAM integration"
+              ].map((feature, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-foreground">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center bg-muted/50 rounded-lg p-6">
+              <p className="text-muted-foreground mb-4">
+                💡 <strong>Mix and match user roles inside your team.</strong><br />
+                Give finance a ₹1.5K plan. Give devs ₹6.5K power rigs.
+              </p>
+              <Button variant="outline" className="mr-4">We'll make it work</Button>
+              <Button>Start Free for 7 Days</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VPS Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">🔧 High-Performance VPS Hosting — Made Simple</h2>
+            <p className="text-xl text-muted-foreground">
+              Blazing speed. Full control. Built on AMD EPYC + NVMe.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-12">
             {[
               {
-                name: "Starter",
+                name: "Starter VPS",
+                specs: "2 vCPU • 4GB RAM • 50GB NVMe",
                 price: "₹999",
-                period: "/month",
-                description: "Perfect for individuals and small teams",
-                features: [
-                  "5 Training Labs",
-                  "Basic Virtual Desktops",
-                  "Email Support",
-                  "99.9% Uptime",
-                  "Basic Monitoring",
-                  "Community Access"
-                ],
-                popular: false,
-                buttonText: "Start Free Trial"
+                description: "Lightweight apps, testing, devops"
               },
               {
-                name: "Professional",
-                price: "₹2,999",
-                period: "/month",
-                description: "For growing teams and businesses",
-                features: [
-                  "25 Training Labs",
-                  "Advanced Virtual Desktops",
-                  "Priority Support",
-                  "99.9% Uptime SLA",
-                  "Advanced Monitoring",
-                  "Custom Integrations",
-                  "Team Management",
-                  "API Access"
-                ],
-                popular: true,
-                buttonText: "Start Professional"
+                name: "Growth VPS",
+                specs: "4 vCPU • 8GB RAM • 100GB NVMe",
+                price: "₹1,999",
+                description: "Production apps, e-commerce, APIs"
               },
               {
-                name: "Enterprise",
-                price: "Custom",
-                period: "pricing",
-                description: "For large organizations with specific needs",
-                features: [
-                  "Unlimited Labs",
-                  "Enterprise Virtual Desktops",
-                  "24/7 Dedicated Support",
-                  "99.99% Uptime SLA",
-                  "White-label Solutions",
-                  "On-premise Deployment",
-                  "Custom Development",
-                  "Dedicated Account Manager"
-                ],
-                popular: false,
-                buttonText: "Contact Sales"
+                name: "Pro VPS",
+                specs: "8 vCPU • 16GB RAM • 200GB NVMe",
+                price: "₹3,599",
+                description: "SaaS apps, databases, backend infra"
+              },
+              {
+                name: "Power VPS",
+                specs: "12 vCPU • 32GB RAM • 500GB NVMe",
+                price: "₹5,999",
+                description: "High-load services, private cloud"
               }
             ].map((plan, index) => (
-              <Card key={index} className={`relative ${plan.popular ? 'ring-2 ring-primary' : ''}`}>
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-primary text-primary-foreground">Most Popular</Badge>
-                  </div>
-                )}
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
-                  <CardDescription className="mb-6">{plan.description}</CardDescription>
-                  <div className="flex items-end justify-center space-x-1">
-                    <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-                    <span className="text-muted-foreground pb-1">{plan.period}</span>
-                  </div>
+              <Card key={index}>
+                <CardHeader>
+                  <CardTitle>{plan.name}</CardTitle>
+                  <CardDescription>{plan.specs}</CardDescription>
+                  <div className="text-3xl font-bold text-primary">{plan.price}<span className="text-lg text-muted-foreground">/month</span></div>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3">
-                        <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                          <Check className="w-3 h-3 text-primary-foreground" />
-                        </div>
-                        <span className="text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="w-full" variant={plan.popular ? "default" : "outline"}>
-                    {plan.buttonText}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">{plan.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Money Back Guarantee */}
-          <div className="bg-card rounded-lg p-8 text-center border border-border">
-            <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-8 h-8 text-primary" />
-            </div>
-            <h3 className="text-2xl font-bold text-foreground mb-4">30-Day Money-Back Guarantee</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Try CloudAdda risk-free. If you're not completely satisfied within 30 days, we'll refund your money, no questions asked.
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {[
+              "Full root access",
+              "Choice of Linux OS",
+              "Static IP, DNS config",
+              "Free migration support",
+              "Monitoring & reboot tools built in"
+            ].map((feature, index) => (
+              <div key={index} className="flex items-center space-x-3">
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                <span className="text-foreground">{feature}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <p className="text-muted-foreground mb-4">
+              Need clustering, HA, or something wild? <Button variant="link" className="p-0 h-auto">Let's talk custom setups.</Button>
             </p>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Billing Section */}
       <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-muted-foreground">Everything you need to know about our pricing</p>
+            <h2 className="text-4xl font-bold text-foreground mb-6">📋 Billing Made Beautiful</h2>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
+
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             {[
-              {
-                question: "Can I change plans anytime?",
-                answer: "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately and we'll prorate the billing."
-              },
-              {
-                question: "Is there a free trial?",
-                answer: "Absolutely! We offer a 14-day free trial with full access to all features. No credit card required to start."
-              },
-              {
-                question: "What payment methods do you accept?",
-                answer: "We accept all major credit cards, UPI, net banking, and can arrange invoicing for enterprise customers."
-              },
-              {
-                question: "Do you offer discounts?",
-                answer: "Yes! We offer discounts for annual billing, non-profits, and educational institutions. Contact us for details."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-card rounded-lg p-6 border border-border">
-                <h4 className="font-bold text-foreground mb-3">{faq.question}</h4>
-                <p className="text-muted-foreground">{faq.answer}</p>
+              "GST invoices for all plans",
+              "Pay monthly, quarterly, or yearly",
+              "Zero lock-ins — cancel anytime",
+              "Scale up or down whenever needed",
+              "Dedicated account manager on enterprise plans"
+            ].map((feature, index) => (
+              <div key={index} className="flex items-center space-x-3">
+                <Check className="w-6 h-6 text-green-500 flex-shrink-0" />
+                <span className="text-foreground text-lg">{feature}</span>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-primary-foreground/80 mb-8">
-            Join thousands of companies already using CloudAdda to power their infrastructure
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-background text-foreground hover:bg-background/90">
-              Start Your Free Trial
-            </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-              Talk to Sales
-            </Button>
+          <div className="text-center bg-primary rounded-lg p-12 text-primary-foreground">
+            <h3 className="text-3xl font-bold mb-6">🙌 Need Help Choosing?</h3>
+            <p className="text-xl mb-8 opacity-90">
+              Not sure what plan is right? Or want help creating a perfect bundle for your team?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-background text-foreground hover:bg-background/90">
+                Talk to an Expert
+              </Button>
+              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+                View Demo
+              </Button>
+            </div>
           </div>
         </div>
       </section>
