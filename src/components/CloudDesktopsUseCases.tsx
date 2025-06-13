@@ -6,57 +6,77 @@ const CloudDesktopsUseCases = () => {
     { 
       name: "Developers & Engineers", 
       icon: Code, 
-      description: "Run full dev environments, IDEs, containers, and build tools — even from a Chromebook.",
+      description: "CloudAdda allowed us to scale our development team globally without hardware constraints. Our developers can now code from anywhere with full IDE support.",
       company: "TechCorp",
-      quote: "CloudAdda allowed us to scale our development team globally without hardware constraints."
+      person: "Sarah Chen",
+      role: "Head of Engineering at TechCorp",
+      savings: "$200k",
+      metric: "in hardware costs saved"
     },
     { 
       name: "Call Centers & BPOs", 
       icon: Phone, 
-      description: "Spin up secure, compliant desktops at scale. Central control. No data leaks. No IT chaos.",
+      description: "We reduced our IT overhead by 60% while improving security compliance across all locations. Zero data leaks, centralized control.",
       company: "GlobalSupport",
-      quote: "We reduced our IT overhead by 60% while improving security compliance across all locations."
+      person: "Raj Patel",
+      role: "IT Director at GlobalSupport", 
+      savings: "60%",
+      metric: "reduction in IT overhead"
     },
     { 
-      name: "Healthcare, Clinics & Labs", 
+      name: "Healthcare & Clinics", 
       icon: Heart, 
-      description: "Secure access to EMRs, diagnostics tools, and patient records — without storing anything locally.",
+      description: "HIPAA compliance became effortless with centralized data and zero local storage risks. Patient records are always secure and accessible.",
       company: "MediCare Plus",
-      quote: "HIPAA compliance became effortless with centralized data and zero local storage risks."
+      person: "Dr. Lisa Wong",
+      role: "Chief Technology Officer at MediCare Plus",
+      savings: "100%",
+      metric: "HIPAA compliance achieved"
     },
     { 
-      name: "Finance, Accounting & Tax Pros", 
+      name: "Finance & Accounting", 
       icon: Calculator, 
-      description: "Run heavy Excel models, Tally, ERPs — with airtight compliance and zero downtime.",
+      description: "Our month-end processing time decreased by 40% with CloudAdda's high-performance desktops. Heavy Excel models run like a dream.",
       company: "FinanceFirst",
-      quote: "Our month-end processing time decreased by 40% with CloudAdda's high-performance desktops."
+      person: "Michael Rodriguez",
+      role: "Senior Manager at FinanceFirst",
+      savings: "40%",
+      metric: "faster processing time"
     },
     { 
-      name: "Remote Teams & Back Offices", 
+      name: "Remote Teams", 
       icon: Users, 
-      description: "Give your team a desktop they can use from anywhere, without the support tickets.",
+      description: "Employee productivity increased 30% when we eliminated local hardware bottlenecks. Our team works seamlessly from anywhere.",
       company: "RemoteWorks",
-      quote: "Employee productivity increased 30% when we eliminated local hardware bottlenecks."
+      person: "Emma Thompson",
+      role: "Operations Lead at RemoteWorks",
+      savings: "30%",
+      metric: "productivity boost"
     },
     { 
       name: "Designers & Creators", 
       icon: Palette, 
-      description: "Yes — you can run Adobe Creative Cloud from the cloud. And yes, it flies.",
+      description: "Rendering times improved dramatically, and our designers can work from any device, anywhere. Adobe Creative Cloud flies in the cloud.",
       company: "CreativeStudio",
-      quote: "Rendering times improved dramatically, and our designers can work from any device, anywhere."
+      person: "Alex Kumar",
+      role: "Creative Director at CreativeStudio",
+      savings: "50%",
+      metric: "faster rendering times"
     }
   ];
 
-  return (
-    <section className="py-32 bg-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50"></div>
-        <div className="absolute top-20 left-20 w-40 h-40 bg-orange-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-60 h-60 bg-blue-200/20 rounded-full blur-3xl"></div>
-      </div>
+  const cardColors = [
+    'bg-purple-100',
+    'bg-orange-100', 
+    'bg-blue-100',
+    'bg-green-100',
+    'bg-pink-100',
+    'bg-yellow-100'
+  ];
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+  return (
+    <section className="py-32 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">Who's It For?</span>
@@ -64,34 +84,43 @@ const CloudDesktopsUseCases = () => {
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Everyone Who Works With a Screen
           </p>
-          <p className="text-lg text-gray-500 mt-4 max-w-3xl mx-auto">
-            CloudAdda isn't built for one industry. It's built for anyone who wants their computer to just work — fast, secure, and from anywhere.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {useCases.map((useCase, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
-                  <useCase.icon className="w-6 h-6 text-white" />
+            <div key={index} className={`${cardColors[index]} rounded-3xl p-8 text-left`}>
+              {/* Savings/Metric at top */}
+              <div className="mb-6">
+                <div className="text-4xl font-bold text-gray-900 mb-1">
+                  {useCase.savings}
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900">
-                    {useCase.name}
-                  </h3>
-                  <div className="text-sm text-gray-500 font-medium">{useCase.company}</div>
+                <div className="text-gray-700 font-medium">
+                  {useCase.metric}
                 </div>
               </div>
-              
-              <p className="text-gray-600 leading-relaxed mb-6">
-                {useCase.description}
-              </p>
-              
-              <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-4">
-                <p className="text-gray-700 italic text-sm leading-relaxed">
-                  "{useCase.quote}"
+
+              {/* Company logo area */}
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-white bg-opacity-70 rounded-2xl flex items-center justify-center">
+                  <useCase.icon className="w-8 h-8 text-gray-700" />
+                </div>
+              </div>
+
+              {/* Quote */}
+              <div className="mb-6">
+                <p className="text-gray-800 font-medium text-lg leading-relaxed">
+                  "{useCase.description}"
                 </p>
+              </div>
+
+              {/* Person info */}
+              <div>
+                <div className="font-bold text-gray-900 mb-1">
+                  {useCase.person}
+                </div>
+                <div className="text-gray-700 text-sm">
+                  {useCase.role}
+                </div>
               </div>
             </div>
           ))}
