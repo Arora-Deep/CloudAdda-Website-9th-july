@@ -218,11 +218,11 @@ const Contact = () => {
           <h2 className="text-4xl font-bold mb-6">Our Response Time Promise</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <div className="text-3xl font-bold mb-2">< 2 Hours</div>
+              <div className="text-3xl font-bold mb-2">&lt; 2 Hours</div>
               <div className="opacity-90">Email Response</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">< 15 Minutes</div>
+              <div className="text-3xl font-bold mb-2">&lt; 15 Minutes</div>
               <div className="opacity-90">Live Chat</div>
             </div>
             <div>
