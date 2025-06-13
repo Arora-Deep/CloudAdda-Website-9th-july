@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -17,7 +18,7 @@ const VPS = () => {
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/" className="text-gray-700 hover:text-orange-500 transition-colors">Home</Link>
               <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</a>
+              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</a>
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
@@ -77,9 +78,11 @@ const VPS = () => {
             </div>
             
             <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [3D Illustration: Developer working on modern laptop with server connections]
-              </div>
+              <img 
+                src="/lovable-uploads/a6ac61e1-af55-42c2-9e72-95b2baa9e4dc.png" 
+                alt="Powerful VPS Performance" 
+                className="w-full h-96 object-contain"
+              />
             </div>
           </div>
         </div>
@@ -130,9 +133,11 @@ const VPS = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [3D Illustration: Frustrated developer pulling hair looking at crashed server dashboard]
-              </div>
+              <img 
+                src="/lovable-uploads/e253469c-57a6-42bb-bb9a-c74dc734846a.png" 
+                alt="Server Error Frustration" 
+                className="w-full h-96 object-contain"
+              />
             </div>
           </div>
         </div>
@@ -200,17 +205,17 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Developer Reality Check */}
-      <section className="py-24 bg-gradient-to-br from-red-50 to-green-50">
+      {/* Developer Reality Check - Cleaned up */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">The Developer's Daily Reality Check</h2>
             <p className="text-xl text-gray-600">Stop us when this sounds familiar...</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-12">
             {/* The Horror Stories */}
-            <div className="bg-red-50 border-2 border-red-200 rounded-3xl p-8">
+            <div className="bg-white rounded-3xl p-8 shadow-lg border border-red-200">
               <h3 className="text-2xl font-bold text-red-800 mb-8 flex items-center">
                 <AlertTriangle className="w-8 h-8 mr-3" />
                 Your Current VPS Nightmare
@@ -218,38 +223,20 @@ const VPS = () => {
 
               <div className="space-y-6">
                 {[
-                  {
-                    scenario: "The 3 AM Production Crash",
-                    reality: "Your side project that became your main income source just went down. Support ticket response: 'Have you tried restarting?'",
-                    pain: "Your users are tweeting complaints while you panic-Google solutions"
-                  },
-                  {
-                    scenario: "The Mysterious Throttling",
-                    reality: "Your API was responding in 200ms yesterday, today it's 3 seconds. Nobody can tell you why. 'Network congestion' they say.",
-                    pain: "Your biggest client threatens to leave"
-                  },
-                  {
-                    scenario: "The Bill Shock Monday",
-                    reality: "Your $20/month VPS bill is now $180 because you forgot to set up billing alerts and they count every byte.",
-                    pain: "There goes your coffee budget for the month"
-                  },
-                  {
-                    scenario: "The Documentation Lie",
-                    reality: "The setup guide was written in 2019, half the commands don't work, and the Discord community ghosted you.",
-                    pain: "You've spent 6 hours on something that should take 10 minutes"
-                  }
+                  "The 3 AM Production Crash - Your side project that became your main income source just went down. Support ticket response: 'Have you tried restarting?'",
+                  "The Mysterious Throttling - Your API was responding in 200ms yesterday, today it's 3 seconds. Nobody can tell you why.",
+                  "The Bill Shock Monday - Your $20/month VPS bill is now $180 because you forgot to set up billing alerts.",
+                  "The Documentation Lie - The setup guide was written in 2019, half the commands don't work."
                 ].map((horror, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 border border-red-200">
-                    <h4 className="font-bold text-red-800 mb-2">{horror.scenario}</h4>
-                    <p className="text-gray-700 mb-3">{horror.reality}</p>
-                    <p className="text-sm text-red-600 italic font-semibold">{horror.pain}</p>
+                  <div key={index} className="bg-red-50 rounded-xl p-6 border border-red-200">
+                    <p className="text-gray-700">{horror}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* The CloudAdda Solution */}
-            <div className="bg-green-50 border-2 border-green-200 rounded-3xl p-8">
+            <div className="bg-white rounded-3xl p-8 shadow-lg border border-green-200">
               <h3 className="text-2xl font-bold text-green-800 mb-8 flex items-center">
                 <CheckCircle className="w-8 h-8 mr-3" />
                 Your CloudAdda Reality
@@ -257,31 +244,13 @@ const VPS = () => {
 
               <div className="space-y-6">
                 {[
-                  {
-                    scenario: "The 3 AM Peace of Mind",
-                    reality: "Your app hasn't gone down in 8 months. When you had a question at 2 AM, a real engineer responded in 23 minutes.",
-                    joy: "You sleep through the night knowing your infrastructure is bulletproof"
-                  },
-                  {
-                    scenario: "The Consistent Performance",
-                    reality: "Your API responds in 180-220ms consistently. Every day. Every month. The performance graphs are boringly stable.",
-                    joy: "Your biggest client just signed a 3-year contract"
-                  },
-                  {
-                    scenario: "The Predictable Bill",
-                    reality: "Your bill is exactly ₹1,399 every month. No surprises. No hidden fees. No 'network utilization charges' nonsense.",
-                    joy: "You can actually budget for your infrastructure"
-                  },
-                  {
-                    scenario: "The Documentation That Works",
-                    reality: "Copy-paste the commands from our docs. They work. First try. Every time. Recent screenshots included.",
-                    joy: "You deployed your app in 12 minutes and went back to coding"
-                  }
+                  "The 3 AM Peace of Mind - Your app hasn't gone down in 8 months. When you had a question at 2 AM, a real engineer responded in 23 minutes.",
+                  "The Consistent Performance - Your API responds in 180-220ms consistently. Every day. Every month.",
+                  "The Predictable Bill - Your bill is exactly ₹1,399 every month. No surprises. No hidden fees.",
+                  "The Documentation That Works - Copy-paste the commands from our docs. They work. First try. Every time."
                 ].map((joy, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 border border-green-200">
-                    <h4 className="font-bold text-green-800 mb-2">{joy.scenario}</h4>
-                    <p className="text-gray-700 mb-3">{joy.reality}</p>
-                    <p className="text-sm text-green-600 italic font-semibold">{joy.joy}</p>
+                  <div key={index} className="bg-green-50 rounded-xl p-6 border border-green-200">
+                    <p className="text-gray-700">{joy}</p>
                   </div>
                 ))}
               </div>
@@ -289,19 +258,15 @@ const VPS = () => {
           </div>
 
           <div className="text-center mt-16">
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200 inline-block">
-              <div className="text-3xl font-bold text-purple-600 mb-2">Join 10,000+ Happy Developers</div>
-              <div className="text-gray-600 mb-4">Who stopped fighting infrastructure and started building</div>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-                End Your VPS Nightmare Today
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+              End Your VPS Nightmare Today
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Real vs Marketing Specs */}
+      {/* Real vs Marketing Specs - Updated Table */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -344,13 +309,6 @@ const VPS = () => {
                     linode: "25,000 (NVMe)"
                   },
                   {
-                    spec: "Network Speed (Real World)",
-                    cloudAdda: "950 Mbps consistent",
-                    aws: "450 Mbps (throttled)",
-                    do: "600 Mbps (varies)",
-                    linode: "700 Mbps (peak)"
-                  },
-                  {
                     spec: "Monthly Cost (No Hidden Fees)",
                     cloudAdda: "₹1,399 (All included)",
                     aws: "₹2,200+ (After data transfer)",
@@ -370,13 +328,6 @@ const VPS = () => {
                     aws: "4-24 hours",
                     do: "2-8 hours",
                     linode: "1-4 hours"
-                  },
-                  {
-                    spec: "DDoS Protection",
-                    cloudAdda: "Included (No extra cost)",
-                    aws: "₹3,000+/month extra",
-                    do: "₹1,200+/month extra",
-                    linode: "₹800+/month extra"
                   }
                 ].map((row, index) => (
                   <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
@@ -404,7 +355,7 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Technical Superiority Section */}
+      {/* Technical Superiority Section - Updated with new image */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -454,120 +405,11 @@ const VPS = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [3D Illustration: Modern server racks with glowing connections and data flow]
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Developer Success Stories */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Developers Who Switched & Never Looked Back</h2>
-            <p className="text-xl text-gray-600">Real stories from real developers building real products</p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {[
-              {
-                developer: "Arjun Patel",
-                title: "Full-Stack Developer",
-                company: "SaaS Startup Founder",
-                project: "Customer analytics platform",
-                problem: "Was paying ₹8,000/month on AWS for unpredictable performance",
-                solution: "Migrated to CloudAdda Professional plan",
-                result: "Cut costs by 75%, doubled performance, deployed 3 new features",
-                quote: "My app went from slow and expensive to fast and affordable. I can finally focus on features instead of infrastructure costs.",
-                savings: "₹6,600/month saved",
-                rating: 5,
-                timeOnPlatform: "14 months"
-              },
-              {
-                developer: "Priya Sharma", 
-                title: "DevOps Engineer",
-                company: "E-commerce Startup",
-                project: "Microservices architecture",
-                problem: "Managing 12 different VPS instances across 3 providers",
-                solution: "Consolidated to CloudAdda with auto-scaling",
-                result: "Reduced from 12 instances to 4, eliminated 90% of downtime",
-                quote: "CloudAdda's auto-scaling saved my sanity. Black Friday used to be a nightmare, now it's just another day.",
-                savings: "₹15,000/month saved",
-                rating: 5,
-                timeOnPlatform: "8 months"
-              },
-              {
-                developer: "Rahul Kumar",
-                title: "AI/ML Engineer", 
-                company: "Freelance Consultant",
-                project: "Computer vision APIs",
-                problem: "GPU instances too expensive, CPU instances too slow",
-                solution: "CloudAdda GPU-optimized VPS",
-                result: "10x faster training, 60% cost reduction, happy clients",
-                quote: "I was spending more on infrastructure than I was making. CloudAdda turned my side project into my main income.",
-                savings: "₹12,000/month saved",
-                rating: 5,
-                timeOnPlatform: "11 months"
-              }
-            ].map((story, index) => (
-              <div key={index} className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl">
-                <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(story.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                  <span className="text-sm text-gray-500 ml-2">({story.timeOnPlatform})</span>
-                </div>
-
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{story.developer}</h3>
-                  <p className="text-purple-600 font-semibold">{story.title}</p>
-                  <p className="text-sm text-gray-600">{story.company}</p>
-                </div>
-
-                <div className="space-y-4 mb-6">
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Project:</h4>
-                    <p className="text-sm text-gray-600">{story.project}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-red-700 mb-1">Problem:</h4>
-                    <p className="text-sm text-gray-600">{story.problem}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-blue-700 mb-1">Solution:</h4>
-                    <p className="text-sm text-gray-600">{story.solution}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-green-700 mb-1">Result:</h4>
-                    <p className="text-sm text-gray-600">{story.result}</p>
-                  </div>
-                </div>
-
-                <blockquote className="italic text-gray-700 border-l-4 border-purple-300 pl-4 mb-6">
-                  "{story.quote}"
-                </blockquote>
-
-                <div className="bg-green-50 rounded-xl p-4 text-center">
-                  <div className="text-lg font-bold text-green-600">{story.savings}</div>
-                  <div className="text-sm text-green-700">Monthly savings achieved</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-16">
-            <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Want to Share Your Success Story?</h3>
-              <p className="text-gray-600 mb-6">We love featuring developers who've transformed their projects with CloudAdda</p>
-              <Button variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 rounded-full px-8 py-3">
-                Submit Your Story
-                <ThumbsUp className="ml-2 h-4 w-4" />
-              </Button>
+              <img 
+                src="/lovable-uploads/d79d4d0f-d833-4a83-b822-c8d2899c8870.png" 
+                alt="Modern Data Center Infrastructure" 
+                className="w-full h-96 object-contain"
+              />
             </div>
           </div>
         </div>
@@ -649,67 +491,34 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Migration Success Rate */}
-      <section className="py-24 bg-white">
+      {/* Migration Success Rate - Simplified */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Migration Success That Speaks Volumes</h2>
-            <p className="text-xl text-gray-600">The numbers don't lie: everyone who switches, stays</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Migration Made Simple</h2>
+            <p className="text-xl text-gray-600">We handle everything, you keep building</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [3D Illustration: Migration success visualization with happy developers and upward trending graphs]
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+              {[
+                { metric: "Migration Success Rate", value: "100%", description: "Not a single failed migration in 3 years" },
+                { metric: "Zero Downtime", value: "98.7%", description: "Your users won't even notice the switch" },
+                { metric: "Customer Retention", value: "99.1%", description: "Once they switch, they never leave" },
+                { metric: "Performance Boost", value: "187%", description: "Average speed increase post-migration" }
+              ].map((stat, index) => (
+                <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
+                  <div className="text-3xl font-bold text-purple-600 mb-2">{stat.value}</div>
+                  <div className="font-semibold text-gray-900 mb-2">{stat.metric}</div>
+                  <div className="text-sm text-gray-600">{stat.description}</div>
+                </div>
+              ))}
             </div>
 
-            <div className="space-y-8">
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { metric: "Migration Success Rate", value: "100%", description: "Not a single failed migration in 3 years" },
-                  { metric: "Zero Downtime Migrations", value: "98.7%", description: "Your users won't even notice the switch" },
-                  { metric: "Customer Retention", value: "99.1%", description: "Once they switch, they never leave" },
-                  { metric: "Performance Improvement", value: "187%", description: "Average speed increase post-migration" }
-                ].map((stat, index) => (
-                  <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">{stat.value}</div>
-                    <div className="font-semibold text-gray-900 mb-2">{stat.metric}</div>
-                    <div className="text-sm text-gray-600">{stat.description}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 border border-purple-200">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Why Migrations Succeed</h3>
-                <ul className="space-y-3">
-                  {[
-                    "Dedicated migration engineer assigned to your project",
-                    "Complete infrastructure audit before we start",
-                    "Parallel environment setup (old system stays live)",
-                    "DNS cutover during lowest traffic hours",
-                    "24-hour monitoring post-migration",
-                    "Free rollback guarantee if anything goes wrong"
-                  ].map((reason, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-700">{reason}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                <h4 className="font-bold text-gray-900 mb-4">Recent Migration Testimonial</h4>
-                <blockquote className="italic text-gray-700 mb-4">
-                  "I was terrified of migrating my production API that serves 50,000 requests/day. CloudAdda's team handled everything flawlessly. Zero downtime, 40% performance boost, and my users actually thanked me for the speed improvement."
-                </blockquote>
-                <div className="text-sm text-gray-600">
-                  <strong>Vikash Singh</strong> - Backend Developer, FinTech Startup
-                </div>
-              </div>
-
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-4 w-full">
+            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Migrate?</h3>
+              <p className="text-gray-600 mb-6">Our engineers handle everything - from DNS to databases. Zero downtime guaranteed.</p>
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-4">
                 Get Free Migration Assessment
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -718,230 +527,96 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Pricing That Makes CFOs Smile</h2>
-            <p className="text-xl text-gray-600">No hidden fees. No surprise bills. No BS.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { 
-                name: "Starter", 
-                price: "₹799", 
-                period: "/month",
-                originalPrice: "₹1,599",
-                specs: ["2 vCPU (AMD EPYC)", "4GB ECC RAM", "50GB NVMe SSD", "1TB Transfer", "Full Root Access", "24/7 Human Support"],
-                popular: false,
-                description: "Perfect for small projects and APIs",
-                savings: "50% off vs competition"
-              },
-              { 
-                name: "Professional", 
-                price: "₹1,399", 
-                period: "/month",
-                originalPrice: "₹2,799",
-                specs: ["4 vCPU (AMD EPYC)", "8GB ECC RAM", "100GB NVMe SSD", "2TB Transfer", "Free Backups", "Priority Support", "DDoS Protection"],
-                popular: true,
-                description: "Ideal for production applications",
-                savings: "50% off vs AWS equivalent"
-              },
-              { 
-                name: "Performance", 
-                price: "₹2,799", 
-                period: "/month",
-                originalPrice: "₹5,599",
-                specs: ["8 vCPU (AMD EPYC)", "16GB ECC RAM", "200GB NVMe SSD", "4TB Transfer", "Load Balancer", "Managed Backups", "White-glove Migration"],
-                popular: false,
-                description: "For high-traffic, demanding workloads",
-                savings: "50% off vs enterprise hosting"
-              }
-            ].map((plan, index) => (
-              <div 
-                key={index}
-                className={`relative rounded-3xl p-8 transition-all duration-300 hover:scale-105 ${
-                  plan.popular 
-                    ? 'bg-purple-50 border-2 border-purple-500 shadow-2xl scale-105' 
-                    : 'bg-white border-2 border-gray-200 hover:border-purple-300 shadow-lg'
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-6 py-2 bg-purple-500 text-white rounded-full text-sm font-semibold">
-                    Most Popular
-                  </div>
-                )}
-
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <p className="text-gray-600 mb-4">{plan.description}</p>
-
-                  <div className="mb-6">
-                    <div className="flex items-center justify-center space-x-2 mb-2">
-                      <span className="text-lg text-gray-400 line-through">{plan.originalPrice}</span>
-                      <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
-                    </div>
-                    <span className="text-gray-600">{plan.period}</span>
-                    <div className="text-sm text-green-600 font-medium mt-1">{plan.savings}</div>
-                  </div>
-
-                  <ul className="space-y-3 mb-8 text-left">
-                    {plan.specs.map((spec, specIndex) => (
-                      <li key={specIndex} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-700">{spec}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button 
-                    className={`w-full rounded-full py-3 text-lg font-semibold ${
-                      plan.popular 
-                        ? 'bg-purple-500 hover:bg-purple-600 text-white' 
-                        : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
-                    }`}
-                  >
-                    Deploy in 60 Seconds
-                  </Button>
-                </div>
+      {/* Simplified Pricing Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">Simple, Transparent Pricing</h2>
+          
+          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl p-12 border border-purple-200">
+            <div className="text-6xl font-bold text-purple-600 mb-4">₹799</div>
+            <div className="text-xl text-gray-600 mb-2">Starting from</div>
+            <div className="text-gray-500 mb-8">per month</div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 text-sm">
+              <div className="flex items-center justify-center space-x-2">
+                <CheckCircle className="w-4 h-4 text-green-500" />
+                <span>2-8 vCPU</span>
               </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12 space-y-4">
-            <p className="text-gray-600">All plans include instant setup, free migrations, and 30-day money-back guarantee</p>
-            <div className="flex items-center justify-center space-x-8 text-sm text-gray-500">
-              <div className="flex items-center space-x-2">
-                <Shield className="w-4 h-4" />
-                <span>99.98% SLA</span>
+              <div className="flex items-center justify-center space-x-2">
+                <CheckCircle className="w-4 h-4 text-green-500" />
+                <span>4-16GB RAM</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="w-4 h-4" />
-                <span>60s Deployment</span>
+              <div className="flex items-center justify-center space-x-2">
+                <CheckCircle className="w-4 h-4 text-green-500" />
+                <span>NVMe Storage</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Users className="w-4 h-4" />
-                <span>Human Support</span>
+              <div className="flex items-center justify-center space-x-2">
+                <CheckCircle className="w-4 h-4 text-green-500" />
+                <span>24/7 Support</span>
               </div>
             </div>
+            
+            <Link to="/pricing">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-12 py-4 text-lg">
+                View All Plans & Pricing
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Social Proof Section */}
-      <section className="py-24 bg-white">
+      {/* Simplified Social Proof Section */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Trusted by 10,000+ Developers</h2>
             <p className="text-xl text-gray-600">From weekend warriors to unicorn CTOs</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              {[
-                {
-                  quote: "We migrated from AWS and cut our hosting costs by 60%. Same performance, better support, zero downtime migration.",
-                  author: "Rajesh Kumar",
-                  title: "CTO, TechStartup",
-                  company: "Series A Startup",
-                  rating: 5
-                },
-                {
-                  quote: "Their support team actually knows what they're talking about. Fixed our Redis clustering issue in 20 minutes.",
-                  author: "Sarah Chen",
-                  title: "Lead DevOps Engineer",
-                  company: "E-commerce Platform",
-                  rating: 5
-                },
-                {
-                  quote: "Been running our ML training pipelines here for 8 months. Never had a single outage during our critical batch jobs.",
-                  author: "David Rodriguez",
-                  title: "ML Engineering Manager",
-                  company: "AI Company",
-                  rating: 5
-                }
-              ].map((testimonial, index) => (
-                <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                      <span className="text-purple-600 font-semibold">{testimonial.author.charAt(0)}</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                      <div className="text-sm text-gray-600">{testimonial.title}</div>
-                      <div className="text-xs text-gray-500">{testimonial.company}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [3D Illustration: Diverse group of happy developers giving thumbs up]
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Migration Assistance Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">We'll Move Your Stuff (For Free)</h2>
-            <p className="text-xl text-gray-600">Zero-downtime migration from any provider</p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                step: "1",
-                title: "Free Migration Assessment",
-                description: "Our engineers audit your current setup and plan the perfect migration strategy. No obligation, completely free.",
-                icon: Activity
+                quote: "We migrated from AWS and cut our hosting costs by 60%. Same performance, better support, zero downtime migration.",
+                author: "Rajesh Kumar",
+                title: "CTO, TechStartup",
+                company: "Series A Startup",
+                rating: 5
               },
               {
-                step: "2", 
-                title: "Zero-Downtime Transfer",
-                description: "We handle everything - DNS, databases, SSL certs, configurations. Your users won't notice a thing.",
-                icon: Wrench
+                quote: "Their support team actually knows what they're talking about. Fixed our Redis clustering issue in 20 minutes.",
+                author: "Sarah Chen",
+                title: "Lead DevOps Engineer",
+                company: "E-commerce Platform",
+                rating: 5
               },
               {
-                step: "3",
-                title: "30-Day Safety Net",
-                description: "Don't like it? We'll migrate you back for free. But in 3 years, nobody has asked for a rollback.",
-                icon: Shield
+                quote: "Been running our ML training pipelines here for 8 months. Never had a single outage during our critical batch jobs.",
+                author: "David Rodriguez",
+                title: "ML Engineering Manager",
+                company: "AI Company",
+                rating: 5
               }
-            ].map((step, index) => (
-              <div key={index} className="text-center group hover:scale-105 transition-all duration-300">
-                <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:border-purple-200 transition-all duration-300 hover:shadow-xl">
-                  <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-                    <step.icon className="w-8 h-8 text-purple-600" />
+            ].map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                <div className="flex items-center space-x-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                    <span className="text-purple-600 font-semibold">{testimonial.author.charAt(0)}</span>
                   </div>
-                  <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
-                    {step.step}
+                  <div>
+                    <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                    <div className="text-sm text-gray-600">{testimonial.title}</div>
+                    <div className="text-xs text-gray-500">{testimonial.company}</div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="text-center mt-16">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-12 py-4 text-lg">
-              Get Free Migration Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <p className="text-gray-600 mt-4">Usually takes 2-4 hours, always free, zero risk</p>
           </div>
         </div>
       </section>
