@@ -6,28 +6,16 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Phone, Mail, MapPin, Clock, MessageSquare, Users, Zap, Send, Star, Heart } from "lucide-react";
+import { Phone, Mail, Clock, Send, Users, Heart, ArrowRight, Play, CreditCard } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     phone: "",
-    company: "",
-    jobTitle: "",
     inquiryType: "",
-    serviceInterest: "",
-    projectTimeline: "",
-    budget: "",
-    currentInfrastructure: "",
-    teamSize: "",
-    specificRequirements: "",
-    message: "",
-    newsletter: false,
-    updates: false
+    message: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -36,7 +24,7 @@ const Contact = () => {
     // Handle form submission here
   };
 
-  const handleInputChange = (field: string, value: string | boolean) => {
+  const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
@@ -62,97 +50,48 @@ const Contact = () => {
 
       {/* Hero Section */}
       <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-muted rounded-full px-6 py-3 mb-8">
-              <Heart className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium">Let's Create Something Amazing</span>
-            </div>
-            <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight text-foreground">
-              Let's Build Something
-              <br />
-              Amazing Together
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to transform your infrastructure? Our team is here to understand your needs and craft the perfect solution.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            {[
-              {
-                icon: Phone,
-                title: "Talk to Sales",
-                description: "Get a custom quote tailored to your needs",
-                action: "Schedule a call"
-              },
-              {
-                icon: MessageSquare,
-                title: "Book a Demo",
-                description: "See our platform in action with your use case",
-                action: "Watch demo"
-              },
-              {
-                icon: Users,
-                title: "Technical Support",
-                description: "Get help from our engineering team",
-                action: "Contact support"
-              }
-            ].map((item, index) => (
-              <Card key={index}>
-                <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{item.title}</CardTitle>
-                  <CardDescription>{item.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <Button className="w-full">
-                    {item.action}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight text-foreground">
+            🌤️ Start the Conversation. <br />We're All Ears.
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8">
+            We're not some faceless SaaS company. We're people — friendly, fast, and ready to help you unlock the power of the cloud.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+            Whether you're a startup exploring your first remote setup, an enterprise planning a migration, or just curious how it all works — we'd love to talk. No pressure. No sales fluff. Just straight answers and helpful guidance.
+          </p>
         </div>
       </section>
 
-      {/* Contact Form and Info */}
+      {/* Contact Form Section */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">📮 Let's Get You to the Right Team</h2>
+            <p className="text-xl text-muted-foreground">We reply in under 24 hours — usually much faster.</p>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div className="bg-card rounded-lg p-8 border border-border">
-              <h2 className="text-3xl font-bold text-foreground mb-8">Tell Us About Your Project</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Personal Information */}
-                <div className="grid md:grid-cols-2 gap-4">
+            <Card className="border-2 border-border">
+              <CardHeader>
+                <CardTitle className="text-2xl">📝 Contact Form</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <Label htmlFor="firstName">First Name *</Label>
+                    <Label htmlFor="fullName">Full Name</Label>
                     <Input
-                      id="firstName"
-                      value={formData.firstName}
-                      onChange={(e) => handleInputChange("firstName", e.target.value)}
+                      id="fullName"
+                      value={formData.fullName}
+                      onChange={(e) => handleInputChange("fullName", e.target.value)}
                       required
                       className="mt-1"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="lastName">Last Name *</Label>
-                    <Input
-                      id="lastName"
-                      value={formData.lastName}
-                      onChange={(e) => handleInputChange("lastName", e.target.value)}
-                      required
-                      className="mt-1"
-                    />
-                  </div>
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="email">Work Email *</Label>
+                    <Label htmlFor="email">Work Email</Label>
                     <Input
                       id="email"
                       type="email"
@@ -162,8 +101,9 @@ const Contact = () => {
                       className="mt-1"
                     />
                   </div>
+
                   <div>
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone">Phone (Optional)</Label>
                     <Input
                       id="phone"
                       value={formData.phone}
@@ -171,186 +111,166 @@ const Contact = () => {
                       className="mt-1"
                     />
                   </div>
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="company">Company Name *</Label>
-                    <Input
-                      id="company"
-                      value={formData.company}
-                      onChange={(e) => handleInputChange("company", e.target.value)}
-                      required
+                    <Label htmlFor="inquiryType">What can we help you with?</Label>
+                    <Select value={formData.inquiryType} onValueChange={(value) => handleInputChange("inquiryType", value)}>
+                      <SelectTrigger className="mt-1">
+                        <SelectValue placeholder="Select an option" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="training-labs">I want to explore Training Labs</SelectItem>
+                        <SelectItem value="cloud-desktops">I'm interested in Cloud Desktops (DaaS)</SelectItem>
+                        <SelectItem value="vps">I'm looking for high-performance VPS</SelectItem>
+                        <SelectItem value="custom-pricing">I need custom pricing for a project</SelectItem>
+                        <SelectItem value="other">Something else</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      value={formData.message}
+                      onChange={(e) => handleInputChange("message", e.target.value)}
+                      rows={4}
                       className="mt-1"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="jobTitle">Job Title</Label>
-                    <Input
-                      id="jobTitle"
-                      value={formData.jobTitle}
-                      onChange={(e) => handleInputChange("jobTitle", e.target.value)}
-                      className="mt-1"
-                    />
-                  </div>
-                </div>
 
-                {/* Inquiry Details */}
-                <div>
-                  <Label htmlFor="inquiryType">Type of Inquiry *</Label>
-                  <Select value={formData.inquiryType} onValueChange={(value) => handleInputChange("inquiryType", value)}>
-                    <SelectTrigger className="mt-1">
-                      <SelectValue placeholder="Select inquiry type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="demo">Request a Demo</SelectItem>
-                      <SelectItem value="sales">Sales Inquiry</SelectItem>
-                      <SelectItem value="technical">Technical Questions</SelectItem>
-                      <SelectItem value="partnership">Partnership Opportunity</SelectItem>
-                      <SelectItem value="support">Support Request</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="serviceInterest">Primary Service Interest *</Label>
-                  <Select value={formData.serviceInterest} onValueChange={(value) => handleInputChange("serviceInterest", value)}>
-                    <SelectTrigger className="mt-1">
-                      <SelectValue placeholder="Select service" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="training-labs">Training Labs</SelectItem>
-                      <SelectItem value="virtual-desktops">Virtual Desktops</SelectItem>
-                      <SelectItem value="vps">VPS Hosting</SelectItem>
-                      <SelectItem value="custom">Custom Solution</SelectItem>
-                      <SelectItem value="multiple">Multiple Services</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="message">Tell us about your project</Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => handleInputChange("message", e.target.value)}
-                    placeholder="Describe your requirements, challenges, or questions..."
-                    rows={4}
-                    className="mt-1"
-                  />
-                </div>
-
-                {/* Checkboxes */}
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="newsletter"
-                      checked={formData.newsletter}
-                      onCheckedChange={(checked) => handleInputChange("newsletter", checked)}
-                    />
-                    <Label htmlFor="newsletter" className="text-sm">
-                      Subscribe to our newsletter for cloud infrastructure tips and updates
-                    </Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="updates"
-                      checked={formData.updates}
-                      onCheckedChange={(checked) => handleInputChange("updates", checked)}
-                    />
-                    <Label htmlFor="updates" className="text-sm">
-                      I'd like to receive product updates and special offers
-                    </Label>
-                  </div>
-                </div>
-
-                <Button type="submit" size="lg" className="w-full">
-                  <Send className="w-5 h-5 mr-2" />
-                  Send Message
-                </Button>
-              </form>
-            </div>
+                  <Button type="submit" size="lg" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                    <Send className="w-5 h-5 mr-2" />
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
 
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-3xl font-bold text-foreground mb-6">Get in Touch</h3>
-                <p className="text-lg text-muted-foreground mb-8">
-                  We're here to help you succeed. Whether you need a quick answer or want to discuss a complex project, our team is ready to assist.
-                </p>
+                <h3 className="text-3xl font-bold text-foreground mb-6">🧭 Or Just Reach Out Directly</h3>
               </div>
 
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4 p-6 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
+              <Card className="border-2 border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl">Sales & General Inquiries</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-orange-500" />
+                    <span>hello@cloudadda.in</span>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Email Us</h4>
-                    <p className="text-muted-foreground">sales@cloudadda.com</p>
-                    <p className="text-muted-foreground">support@cloudadda.com</p>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-5 h-5 text-orange-500" />
+                    <span>+91-XXXXXXXXXX (Call or WhatsApp)</span>
                   </div>
-                </div>
+                  <div className="flex items-center space-x-3">
+                    <Clock className="w-5 h-5 text-orange-500" />
+                    <span>Mon–Sat, 10 AM to 7 PM IST</span>
+                  </div>
+                </CardContent>
+              </Card>
 
-                <div className="flex items-start space-x-4 p-6 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
+              <Card className="border-2 border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl">Support</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-purple-600" />
+                    <span>support@cloudadda.in</span>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Call Us</h4>
-                    <p className="text-muted-foreground">+91 99999 99999</p>
-                    <p className="text-sm text-muted-foreground">Mon-Fri, 9 AM - 7 PM IST</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4 p-6 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Visit Us</h4>
-                    <p className="text-muted-foreground">
-                      CloudAdda Technologies Pvt Ltd<br />
-                      Bangalore, Karnataka<br />
-                      India
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4 p-6 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Response Time</h4>
-                    <p className="text-muted-foreground">Sales: Within 4 hours</p>
-                    <p className="text-muted-foreground">Support: Within 2 hours</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-card rounded-lg p-8 border border-border">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Star className="w-6 h-6 text-primary" />
-                  <h4 className="font-bold text-foreground">Need Immediate Help?</h4>
-                </div>
-                <p className="text-muted-foreground mb-6">
-                  For urgent technical issues or sales inquiries, use our priority channels:
-                </p>
-                <div className="space-y-3">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Zap className="w-4 h-4 mr-2 text-primary" />
-                    Emergency Hotline: +91 88888 88888
-                  </Button>
-                  <Button variant="outline" className="w-full justify-start">
-                    <MessageSquare className="w-4 h-4 mr-2 text-primary" />
-                    Live Chat (24/7)
-                  </Button>
-                </div>
-              </div>
+                  <p className="text-muted-foreground">🛠️ Fast, human help — no ticket black hole.</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Human Support Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-12">
+            <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+              <Heart className="w-8 h-8 text-purple-600" />
+            </div>
+            <h2 className="text-4xl font-bold text-foreground mb-6">🫶 Human. Helpful. Here for You.</h2>
+            <p className="text-xl text-muted-foreground mb-4">
+              We believe support should feel like a team extension — not a hassle.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              So go ahead, ask us the big stuff or the small stuff.
+            </p>
+            <p className="text-lg text-muted-foreground font-medium mt-4">
+              There's no such thing as a stupid question. Only slow support. And we don't do slow.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Actions Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-6">✨ Not Ready Yet?</h2>
+            <p className="text-xl text-muted-foreground">No worries. You can:</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="text-center border-2 border-border hover:border-orange-500 transition-colors">
+              <CardContent className="pt-6">
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-orange-500" />
+                </div>
+                <h3 className="font-semibold mb-2">Schedule a Demo Call</h3>
+                <Button variant="outline" className="w-full">
+                  Book Now
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-2 border-border hover:border-purple-600 transition-colors">
+              <CardContent className="pt-6">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Play className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="font-semibold mb-2">Watch the Product in Action</h3>
+                <Button variant="outline" className="w-full">
+                  View Demo
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-2 border-border hover:border-orange-500 transition-colors">
+              <CardContent className="pt-6">
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <CreditCard className="w-6 h-6 text-orange-500" />
+                </div>
+                <h3 className="font-semibold mb-2">Explore Our Pricing</h3>
+                <Link to="/pricing">
+                  <Button variant="outline" className="w-full">
+                    View Pricing
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Message */}
+      <section className="py-16 bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-2xl font-bold text-foreground mb-4">🌍 Proudly Built in India. Trusted Everywhere.</h3>
+          <p className="text-lg text-muted-foreground">
+            From Bangalore to Dubai, from solo devs to 500-seat enterprises — CloudAdda powers teams across Asia, the Middle East, and beyond.
+          </p>
         </div>
       </section>
 

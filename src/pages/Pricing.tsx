@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star, Zap, Users, Shield, ArrowRight, Monitor, Code, Server, BookOpen, Settings, Cpu, HardDrive, Globe } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Pricing = () => {
@@ -65,7 +65,7 @@ const Pricing = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="mb-8">
+            <Card className="mb-8 border-2 border-border">
               <CardHeader>
                 <CardTitle className="text-2xl">What's Included</CardTitle>
               </CardHeader>
@@ -87,18 +87,18 @@ const Pricing = () => {
               </CardContent>
             </Card>
 
-            <div className="bg-card rounded-lg p-6 mb-8 border border-border">
+            <div className="bg-card rounded-lg p-6 mb-8 border-2 border-border">
               <p className="text-muted-foreground mb-4">
                 <strong>Perfect for:</strong> Corporate L&D, upskilling programs, virtual tech bootcamps, internal IT training, and more.
               </p>
             </div>
 
-            <div className="text-center bg-primary/10 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-4">💬 Pricing? Built Around Your Curriculum.</h3>
-              <p className="text-muted-foreground mb-6">
+            <div className="text-center bg-orange-500 rounded-lg p-8 text-white">
+              <h3 className="text-2xl font-bold mb-4">💬 Pricing? Built Around Your Curriculum.</h3>
+              <p className="mb-6 opacity-90">
                 There's no fixed plan — and that's the point. We design the right setup based on your toolchain, user count, access level, and duration.
               </p>
-              <Button size="lg" className="bg-primary text-primary-foreground">
+              <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100">
                 Request Custom Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -126,22 +126,22 @@ const Pricing = () => {
             <p className="text-muted-foreground mb-8">Lean, secure, always-on desktops for general office use.</p>
             
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card>
+              <Card className="border-2 border-border">
                 <CardHeader>
                   <CardTitle>Admin Lite</CardTitle>
                   <CardDescription>2 vCPU • 4GB RAM • 50GB SSD</CardDescription>
-                  <div className="text-3xl font-bold text-primary">₹1,499<span className="text-lg text-muted-foreground">/month</span></div>
+                  <div className="text-3xl font-bold text-foreground">₹1,499<span className="text-lg text-muted-foreground">/month</span></div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-4">Ideal For: Admins, HR, Ops, Finance</p>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-2 border-border">
                 <CardHeader>
                   <CardTitle>Standard</CardTitle>
                   <CardDescription>4 vCPU • 8GB RAM • 100GB SSD</CardDescription>
-                  <div className="text-3xl font-bold text-primary">₹2,599<span className="text-lg text-muted-foreground">/month</span></div>
+                  <div className="text-3xl font-bold text-foreground">₹2,599<span className="text-lg text-muted-foreground">/month</span></div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-4">Ideal For: CRM, browser-heavy tasks</p>
@@ -170,34 +170,34 @@ const Pricing = () => {
             <p className="text-muted-foreground mb-8">Raw power for code, design, and production workloads.</p>
             
             <div className="grid lg:grid-cols-3 gap-8 mb-8">
-              <Card>
+              <Card className="border-2 border-border">
                 <CardHeader>
                   <CardTitle>Dev Pro</CardTitle>
                   <CardDescription>6 vCPU • 16GB RAM • 200GB NVMe</CardDescription>
-                  <div className="text-3xl font-bold text-primary">₹4,399<span className="text-lg text-muted-foreground">/month</span></div>
+                  <div className="text-3xl font-bold text-foreground">₹4,399<span className="text-lg text-muted-foreground">/month</span></div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">Ideal For: Full-stack devs, designers</p>
                 </CardContent>
               </Card>
 
-              <Card className="ring-2 ring-primary">
+              <Card className="border-2 border-orange-500 bg-orange-50">
                 <CardHeader>
-                  <Badge className="w-fit mb-2">Most Popular</Badge>
+                  <Badge className="w-fit mb-2 bg-orange-500 text-white">Most Popular</Badge>
                   <CardTitle>Team Lead</CardTitle>
                   <CardDescription>8 vCPU • 32GB RAM • 300GB NVMe</CardDescription>
-                  <div className="text-3xl font-bold text-primary">₹6,599<span className="text-lg text-muted-foreground">/month</span></div>
+                  <div className="text-3xl font-bold text-foreground">₹6,599<span className="text-lg text-muted-foreground">/month</span></div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">Ideal For: Heavy IDEs, builds, multitasking</p>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-2 border-border">
                 <CardHeader>
                   <CardTitle>Dev Max (GPU)</CardTitle>
                   <CardDescription>+ GPU Access • 8 vCPU • 64GB RAM</CardDescription>
-                  <div className="text-3xl font-bold text-primary">On Request</div>
+                  <div className="text-3xl font-bold text-foreground">On Request</div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">Ideal For: ML/AI, video, 3D, render</p>
@@ -219,13 +219,15 @@ const Pricing = () => {
               ))}
             </div>
 
-            <div className="text-center bg-muted/50 rounded-lg p-6">
-              <p className="text-muted-foreground mb-4">
+            <div className="text-center bg-purple-600 rounded-lg p-6 text-white">
+              <p className="mb-4 opacity-90">
                 💡 <strong>Mix and match user roles inside your team.</strong><br />
                 Give finance a ₹1.5K plan. Give devs ₹6.5K power rigs.
               </p>
-              <Button variant="outline" className="mr-4">We'll make it work</Button>
-              <Button>Start Free for 7 Days</Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button className="bg-white text-purple-600 hover:bg-gray-100">We'll make it work</Button>
+                <Button variant="outline" className="border-white text-white hover:bg-white/10">Start Free for 7 Days</Button>
+              </div>
             </div>
           </div>
         </div>
@@ -268,11 +270,11 @@ const Pricing = () => {
                 description: "High-load services, private cloud"
               }
             ].map((plan, index) => (
-              <Card key={index}>
+              <Card key={index} className="border-2 border-border">
                 <CardHeader>
                   <CardTitle>{plan.name}</CardTitle>
                   <CardDescription>{plan.specs}</CardDescription>
-                  <div className="text-3xl font-bold text-primary">{plan.price}<span className="text-lg text-muted-foreground">/month</span></div>
+                  <div className="text-3xl font-bold text-foreground">{plan.price}<span className="text-lg text-muted-foreground">/month</span></div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">{plan.description}</p>
@@ -298,7 +300,7 @@ const Pricing = () => {
 
           <div className="text-center">
             <p className="text-muted-foreground mb-4">
-              Need clustering, HA, or something wild? <Button variant="link" className="p-0 h-auto">Let's talk custom setups.</Button>
+              Need clustering, HA, or something wild? <Button variant="link" className="p-0 h-auto text-orange-500">Let's talk custom setups.</Button>
             </p>
           </div>
         </div>
@@ -326,16 +328,16 @@ const Pricing = () => {
             ))}
           </div>
 
-          <div className="text-center bg-primary rounded-lg p-12 text-primary-foreground">
+          <div className="text-center bg-orange-500 rounded-lg p-12 text-white">
             <h3 className="text-3xl font-bold mb-6">🙌 Need Help Choosing?</h3>
             <p className="text-xl mb-8 opacity-90">
               Not sure what plan is right? Or want help creating a perfect bundle for your team?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-background text-foreground hover:bg-background/90">
+              <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100">
                 Talk to an Expert
               </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 View Demo
               </Button>
             </div>
