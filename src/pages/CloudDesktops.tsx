@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
 import CloudDesktopsSolutions from "@/components/CloudDesktopsSolutions";
+import CloudDesktopsConfiguration from "@/components/CloudDesktopsConfiguration";
 import CloudDesktopsUseCases from "@/components/CloudDesktopsUseCases";
 import CloudDesktopsComparison from "@/components/CloudDesktopsComparison";
 import CloudDesktopsTeamBenefits from "@/components/CloudDesktopsTeamBenefits";
@@ -47,6 +48,7 @@ const CloudDesktops = () => {
       <CloudDesktopsHero />
       <CloudDesktopsPainPoints />
       <CloudDesktopsSolutions />
+      <CloudDesktopsConfiguration />
       <CloudDesktopsUseCases />
       <CloudDesktopsComparison />
       <CloudDesktopsTeamBenefits />
