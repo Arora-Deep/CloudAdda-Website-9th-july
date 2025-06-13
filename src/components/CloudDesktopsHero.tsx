@@ -1,10 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Monitor } from "lucide-react";
-
 const CloudDesktopsHero = () => {
-  return (
-    <section className="relative overflow-hidden bg-white pt-16 pb-24">
+  return <section className="relative overflow-hidden bg-white pt-16 pb-24">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
@@ -57,16 +54,10 @@ const CloudDesktopsHero = () => {
           </div>
           
           <div className="relative">
-            <img 
-              src="/lovable-uploads/0190e56d-e54b-4c1f-81b8-34e45bd41e84.png" 
-              alt="Cloud Desktop Interface" 
-              className="w-full h-auto rounded-3xl shadow-xl"
-            />
+            <img alt="Cloud Desktop Interface" className="w-full h-auto rounded-3xl shadow-xl" src="/lovable-uploads/967ed3a4-84ec-495d-a09d-6acd43dccc98.png" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CloudDesktopsHero;
