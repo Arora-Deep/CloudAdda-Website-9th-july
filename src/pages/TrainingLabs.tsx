@@ -1,29 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { 
-  ArrowRight, 
-  Users, 
-  Zap, 
-  Shield, 
-  Gauge, 
-  Play, 
-  Clock, 
-  AlertTriangle, 
-  MessageCircle, 
-  DollarSign, 
-  CheckCircle, 
-  UserCheck, 
-  Rocket, 
-  Code, 
-  Brain, 
-  Server, 
-  Globe, 
-  Target, 
-  Award, 
-  Star, 
-  FileCheck 
-} from "lucide-react";
+import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3, Building, Lightbulb, FileCheck, Headphones, Gauge, Laptop, Timer, TrendingDown, X, ChevronRight, ThumbsUp, Play, Eye, UserCheck, Activity as ActivityIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import TrainingTestimonials from "@/components/TrainingTestimonials";
 
 const TrainingLabs = () => {
   return (

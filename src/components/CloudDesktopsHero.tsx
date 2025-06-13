@@ -1,11 +1,14 @@
+
 import { Button } from "@/components/ui/button";
 import { Monitor } from "lucide-react";
+
 const CloudDesktopsHero = () => {
-  return <section className="relative overflow-hidden bg-white pt-16 pb-24">
+  return (
+    <section className="relative overflow-hidden bg-white pt-16 pb-24">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <div className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium bg-purple-50 text-purple-700 border border-purple-200">
+            <div className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium bg-blue-50 text-blue-700 border border-blue-200">
               <Monitor className="mr-2 h-4 w-4" />
               High-Performance Cloud Desktops
             </div>
@@ -15,7 +18,7 @@ const CloudDesktopsHero = () => {
               <span className="block text-orange-500">It's in the Cloud.</span>
             </h1>
             
-            <p className="text-xl leading-relaxed font-medium text-orange-500">
+            <p className="text-xl text-orange-600 leading-relaxed font-medium">
               It's fast. It's secure. It's always with you.
             </p>
 
@@ -23,12 +26,12 @@ const CloudDesktopsHero = () => {
               No more sluggish laptops, fragile setups, or IT bottlenecks. CloudAdda gives you high-performance, cloud-native desktops that run from anywhere — on any device — powered by raw AMD EPYC muscle and blazing-fast NVMe storage.
             </p>
 
-            <p className="text-lg font-semibold text-purple-600">
+            <p className="text-lg font-semibold text-blue-600">
               Boot up in seconds. Work without limits. Scale effortlessly.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
                 Try Free for 7 Days
                 <Monitor className="ml-2 h-5 w-5" />
               </Button>
@@ -54,10 +57,14 @@ const CloudDesktopsHero = () => {
           </div>
           
           <div className="relative">
-            <img src="/lovable-uploads/d796985e-a14b-41f5-8324-9704a9fdd3a5.png" alt="Cloud Desktop Interface" className="w-full h-auto rounded-3xl" />
+            <div className="bg-gradient-to-br from-orange-100 to-blue-100 rounded-3xl h-96 flex items-center justify-center text-gray-400 shadow-xl">
+              [Cloud Desktop Interface Preview]
+            </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default CloudDesktopsHero;

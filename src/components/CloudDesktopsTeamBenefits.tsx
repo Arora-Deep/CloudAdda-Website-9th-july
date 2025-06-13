@@ -1,6 +1,5 @@
 
-import { Clock, Shield, Settings, Users, Unlock, Headphones } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Clock, Shield, Settings, Users, Unlock } from "lucide-react";
 
 const CloudDesktopsTeamBenefits = () => {
   const benefits = [
@@ -38,13 +37,6 @@ const CloudDesktopsTeamBenefits = () => {
       icon: Unlock,
       stat: "0",
       statLabel: "Contracts required"
-    },
-    {
-      title: "Priority Assistance",
-      description: "Get dedicated support channels and faster response times for your critical workloads.",
-      icon: Headphones,
-      stat: "< 15 min",
-      statLabel: "Response time"
     }
   ];
 
@@ -85,9 +77,9 @@ const CloudDesktopsTeamBenefits = () => {
           <div className="bg-orange-500 rounded-2xl p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Team?</h3>
             <p className="text-xl mb-8 opacity-90">Join thousands of teams already working smarter, not harder.</p>
-            <Button className="bg-white text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100">
+            <button className="bg-white text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100">
               Start Your Free Trial
-            </Button>
+            </button>
           </div>
         </div>
       </div>
