@@ -58,9 +58,9 @@ const CloudDesktopsHero = () => {
           
           <div className="relative">
             <img 
-              src="/lovable-uploads/502aed3d-54af-4ea2-ba06-532e4b32334f.png" 
+              src="/lovable-uploads/d796985e-a14b-41f5-8324-9704a9fdd3a5.png" 
               alt="Cloud Desktop Interface" 
-              className="w-full h-auto rounded-3xl shadow-xl"
+              className="w-full h-auto rounded-3xl"
             />
           </div>
         </div>

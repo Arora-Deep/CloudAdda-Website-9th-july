@@ -7,37 +7,43 @@ const CloudDesktopsUseCases = () => {
       name: "Developers & Engineers", 
       icon: Code, 
       description: "Run full dev environments, IDEs, containers, and build tools — even from a Chromebook.",
-      color: "from-blue-500 to-cyan-500"
+      company: "TechCorp",
+      quote: "CloudAdda allowed us to scale our development team globally without hardware constraints."
     },
     { 
       name: "Call Centers & BPOs", 
       icon: Phone, 
       description: "Spin up secure, compliant desktops at scale. Central control. No data leaks. No IT chaos.",
-      color: "from-green-500 to-emerald-500"
+      company: "GlobalSupport",
+      quote: "We reduced our IT overhead by 60% while improving security compliance across all locations."
     },
     { 
       name: "Healthcare, Clinics & Labs", 
       icon: Heart, 
       description: "Secure access to EMRs, diagnostics tools, and patient records — without storing anything locally.",
-      color: "from-red-500 to-pink-500"
+      company: "MediCare Plus",
+      quote: "HIPAA compliance became effortless with centralized data and zero local storage risks."
     },
     { 
       name: "Finance, Accounting & Tax Pros", 
       icon: Calculator, 
       description: "Run heavy Excel models, Tally, ERPs — with airtight compliance and zero downtime.",
-      color: "from-purple-500 to-violet-500"
+      company: "FinanceFirst",
+      quote: "Our month-end processing time decreased by 40% with CloudAdda's high-performance desktops."
     },
     { 
       name: "Remote Teams & Back Offices", 
       icon: Users, 
       description: "Give your team a desktop they can use from anywhere, without the support tickets.",
-      color: "from-orange-500 to-yellow-500"
+      company: "RemoteWorks",
+      quote: "Employee productivity increased 30% when we eliminated local hardware bottlenecks."
     },
     { 
       name: "Designers & Creators", 
       icon: Palette, 
       description: "Yes — you can run Adobe Creative Cloud from the cloud. And yes, it flies.",
-      color: "from-indigo-500 to-purple-500"
+      company: "CreativeStudio",
+      quote: "Rendering times improved dramatically, and our designers can work from any device, anywhere."
     }
   ];
 
@@ -63,97 +69,36 @@ const CloudDesktopsUseCases = () => {
           </p>
         </div>
 
-        {/* Hexagonal Grid Layout */}
-        <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {useCases.slice(0, 3).map((useCase, index) => (
-              <div key={index} className="group relative">
-                <div className="relative overflow-hidden rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${useCase.color} opacity-5 group-hover:opacity-10 transition-opacity`}></div>
-                  
-                  <div className="relative p-8">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${useCase.color} rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform`}>
-                      <useCase.icon className="w-8 h-8 text-white" />
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      {useCase.name}
-                    </h3>
-                    
-                    <p className="text-gray-600 leading-relaxed">
-                      {useCase.description}
-                    </p>
-                    
-                    <div className="mt-6 flex items-center space-x-2">
-                      <div className={`w-2 h-2 bg-gradient-to-r ${useCase.color} rounded-full`}></div>
-                      <div className="w-8 h-0.5 bg-gray-200 rounded-full"></div>
-                    </div>
-                  </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {useCases.map((useCase, index) => (
+            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
+                  <useCase.icon className="w-6 h-6 text-white" />
                 </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Offset row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-16">
-            {useCases.slice(3).map((useCase, index) => (
-              <div key={index + 3} className="group relative">
-                <div className="relative overflow-hidden rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${useCase.color} opacity-5 group-hover:opacity-10 transition-opacity`}></div>
-                  
-                  <div className="relative p-8">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${useCase.color} rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform`}>
-                      <useCase.icon className="w-8 h-8 text-white" />
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      {useCase.name}
-                    </h3>
-                    
-                    <p className="text-gray-600 leading-relaxed">
-                      {useCase.description}
-                    </p>
-                    
-                    <div className="mt-6 flex items-center space-x-2">
-                      <div className={`w-2 h-2 bg-gradient-to-r ${useCase.color} rounded-full`}></div>
-                      <div className="w-8 h-0.5 bg-gray-200 rounded-full"></div>
-                    </div>
-                  </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {useCase.name}
+                  </h3>
+                  <div className="text-sm text-gray-500 font-medium">{useCase.company}</div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* 3D Illustration Space */}
-        <div className="mt-20 text-center">
-          <div className="max-w-4xl mx-auto">
-            <div className="aspect-video bg-gradient-to-br from-gray-100 to-blue-100 rounded-3xl flex items-center justify-center relative overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
-              <div className="text-center z-10">
-                <Users className="w-20 h-20 text-blue-600 mx-auto mb-6 opacity-20" />
-                <p className="text-gray-500 text-xl">
-                  [3D Illustration: Diverse professionals using cloud desktops across industries]
-                </p>
               </div>
               
-              {/* Floating industry icons */}
-              <div className="absolute top-8 left-8 opacity-20">
-                <Code className="w-8 h-8 text-blue-500" />
-              </div>
-              <div className="absolute top-12 right-12 opacity-20">
-                <Heart className="w-8 h-8 text-red-500" />
-              </div>
-              <div className="absolute bottom-8 left-12 opacity-20">
-                <Palette className="w-8 h-8 text-purple-500" />
-              </div>
-              <div className="absolute bottom-12 right-8 opacity-20">
-                <Calculator className="w-8 h-8 text-green-500" />
+              <p className="text-gray-600 leading-relaxed mb-6">
+                {useCase.description}
+              </p>
+              
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-4">
+                <p className="text-gray-700 italic text-sm leading-relaxed">
+                  "{useCase.quote}"
+                </p>
               </div>
             </div>
-          </div>
-          
-          <p className="text-lg text-gray-600 mt-12">
+          ))}
+        </div>
+
+        <div className="text-center mt-20">
+          <p className="text-lg text-gray-600">
             Not sure if it fits your workflow? 
             <a href="#" className="text-blue-600 hover:text-blue-700 font-semibold ml-2 underline decoration-2 underline-offset-4">
               Talk to us →
