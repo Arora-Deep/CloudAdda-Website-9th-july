@@ -32,9 +32,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <nav className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <Link to="/" className="flex items-center space-x-2">
@@ -52,53 +52,86 @@ const Contact = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center px-4 py-2 bg-orange-50 rounded-full text-orange-600 text-sm font-medium mb-6">
-                <MessageCircle className="w-4 h-4 mr-2" />
+      <section className="relative py-32 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-2000"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="text-center lg:text-left">
+              {/* Badge */}
+              <div className="inline-flex items-center px-6 py-3 bg-white/70 backdrop-blur-sm rounded-full border border-orange-200 text-orange-600 text-sm font-medium mb-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="w-2 h-2 bg-orange-500 rounded-full mr-3 animate-pulse"></div>
                 We're here to help
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
-                Start the Conversation.
+
+              {/* Main Headline */}
+              <h1 className="text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+                <span className="text-gray-900">Let's Build</span>
                 <br />
-                <span className="text-orange-500">We're All Ears.</span>
+                <span className="text-transparent bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text">
+                  Something Amazing
+                </span>
+                <br />
+                <span className="text-gray-900">Together</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                We're not some faceless SaaS company. We're people — friendly, fast, and ready to help you unlock the power of the cloud.
+
+              {/* Subheadline */}
+              <p className="text-2xl text-gray-600 mb-10 leading-relaxed max-w-2xl">
+                Ready to transform your infrastructure? We're not just another tech company — we're your cloud partners who actually care about your success.
               </p>
-              <p className="text-lg text-gray-600 mb-10">
-                Whether you're a startup exploring your first remote setup, an enterprise planning a migration, or just curious how it all works — we'd love to talk. No pressure. No sales fluff. Just straight answers and helpful guidance.
-              </p>
-              
-              {/* What You Get */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-gray-900">What you get when you contact us:</h3>
-                <div className="grid grid-cols-1 gap-3">
-                  {[
-                    "Free consultation & custom solution design",
-                    "24-hour response guarantee",
-                    "Direct access to our technical experts",
-                    "No sales pressure, just honest advice"
-                  ].map((benefit, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                        <CheckCircle className="w-4 h-4 text-green-600" />
-                      </div>
-                      <span className="text-gray-700">{benefit}</span>
-                    </div>
-                  ))}
+
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mb-12">
+                <div className="flex items-center space-x-2 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 shadow-md">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-gray-700">24h Response</span>
+                </div>
+                <div className="flex items-center space-x-2 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 shadow-md">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-gray-700">Free Consultation</span>
+                </div>
+                <div className="flex items-center space-x-2 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 shadow-md">
+                  <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-gray-700">No Sales Pressure</span>
                 </div>
               </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Start Conversation
+                </Button>
+                <Button size="lg" variant="outline" className="border-2 border-gray-300 hover:border-orange-500 text-gray-700 hover:text-orange-600 px-8 py-4 rounded-xl text-lg font-semibold bg-white/70 backdrop-blur-sm hover:bg-white transition-all duration-300">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Schedule Call
+                </Button>
+              </div>
             </div>
+
+            {/* 3D Illustration Space */}
             <div className="flex justify-center lg:justify-end">
-              <div className="w-96 h-96 bg-gradient-to-br from-orange-50 to-purple-50 rounded-3xl flex items-center justify-center border border-gray-100 shadow-lg">
-                <div className="text-center text-gray-600">
-                  <MessageCircle className="w-32 h-32 mx-auto mb-6 text-orange-500" />
-                  <p className="text-lg font-medium">3D Illustration Space</p>
-                  <p className="text-sm text-gray-500">Friendly support team helping customers</p>
+              <div className="relative">
+                {/* Main Card */}
+                <div className="w-[400px] h-[400px] bg-gradient-to-br from-white via-orange-50 to-purple-50 rounded-3xl shadow-2xl border border-white/50 backdrop-blur-sm flex items-center justify-center transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <div className="text-center">
+                    <div className="w-32 h-32 bg-gradient-to-br from-orange-100 to-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                      <MessageCircle className="w-16 h-16 text-orange-500" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">3D Illustration Space</h3>
+                    <p className="text-gray-600">Friendly team ready to help</p>
+                  </div>
                 </div>
+
+                {/* Floating Elements */}
+                <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl shadow-lg transform rotate-12 animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-500 rounded-xl shadow-lg transform -rotate-12 animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 -left-8 w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-500 rounded-lg shadow-lg transform rotate-45 animate-pulse delay-2000"></div>
               </div>
             </div>
           </div>
