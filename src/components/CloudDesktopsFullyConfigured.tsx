@@ -1,5 +1,5 @@
 
-import { Settings, CheckCircle } from "lucide-react";
+import { Settings, CheckCircle, Zap, Shield, Wand2 } from "lucide-react";
 
 const CloudDesktopsFullyConfigured = () => {
   const features = [
@@ -11,24 +11,63 @@ const CloudDesktopsFullyConfigured = () => {
     "Backup and recovery systems"
   ];
 
+  const cloudAddaWayPoints = [
+    {
+      title: "Feels Instant. Because It Is.",
+      description: "Blistering-fast performance powered by AMD EPYC CPUs and NVMe storage — with latency so low, it feels local.",
+      icon: Zap,
+      highlight: "AMD EPYC + NVMe"
+    },
+    {
+      title: "Security That Travels With You",
+      description: "Zero local storage. Full encryption. Centralized control. Sleep easy knowing every desktop is protected by default.",
+      icon: Shield,
+      highlight: "Zero Trust Architecture"
+    },
+    {
+      title: "Runs Anywhere. Looks Beautiful Everywhere.",
+      description: "Access your desktop from a Mac, PC, tablet, or browser. It's always there — pixel-perfect, fast, and reliable.",
+      icon: Wand2,
+      highlight: "Multi-device Access"
+    }
+  ];
+
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="inline-flex items-center space-x-3 bg-orange-100 rounded-full px-6 py-3 mb-8">
-              <Settings className="w-6 h-6 text-orange-600" />
-              <span className="text-orange-700 font-semibold">Pre-configured Templates</span>
-            </div>
-            
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Fully Configured, Ready to Go
-            </h2>
-            
-            <p className="text-xl text-gray-600 mb-8">
-              Need Photoshop? Tally? Postgres? VSCode? We pre-install and fine-tune it all to your exact workflow.
-            </p>
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-3 bg-orange-100 rounded-full px-6 py-3 mb-8">
+            <Settings className="w-6 h-6 text-orange-600" />
+            <span className="text-orange-700 font-semibold">Pre-configured Templates</span>
+          </div>
+          
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            Fully Configured, Ready to Go
+          </h2>
+          
+          <p className="text-xl text-gray-600 mb-12">
+            Need Photoshop? Tally? Postgres? VSCode? We pre-install and fine-tune it all to your exact workflow.
+          </p>
 
+          {/* Video Section */}
+          <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
+            <div className="aspect-video bg-gray-200 rounded-xl flex items-center justify-center mb-4">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <p className="text-gray-600 font-medium">Watch CloudAdda in Action</p>
+                <p className="text-sm text-gray-500">See how we configure your perfect desktop environment</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">What's Included</h3>
             <div className="space-y-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-3">
@@ -73,6 +112,40 @@ const CloudDesktopsFullyConfigured = () => {
                 <div className="text-sm text-gray-600">Average setup time</div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Integrated CloudAdda Way Points */}
+        <div className="bg-white rounded-2xl p-12 shadow-lg">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              The <span className="text-orange-500">CloudAdda</span> Advantage
+            </h3>
+            <p className="text-xl text-gray-600">Why our configured desktops are different</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {cloudAddaWayPoints.map((point, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <point.icon className="w-8 h-8 text-orange-600" />
+                </div>
+                
+                <div className="mb-4">
+                  <span className="inline-block bg-orange-50 text-orange-700 text-sm font-medium px-3 py-1 rounded-full">
+                    {point.highlight}
+                  </span>
+                </div>
+                
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  {point.title}
+                </h4>
+                
+                <p className="text-gray-600 leading-relaxed">
+                  {point.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
