@@ -1,5 +1,5 @@
 
-import { Clock, Shield, Settings, Users, Unlock } from "lucide-react";
+import { Clock, Shield, Settings, Users, Unlock, Zap } from "lucide-react";
 
 const CloudDesktopsTeamBenefits = () => {
   const benefits = [
@@ -37,6 +37,13 @@ const CloudDesktopsTeamBenefits = () => {
       icon: Unlock,
       stat: "0",
       statLabel: "Contracts required"
+    },
+    {
+      title: "Lightning Performance",
+      description: "AMD EPYC processors and NVMe storage deliver desktop performance that beats most laptops.",
+      icon: Zap,
+      stat: "10x",
+      statLabel: "Faster than typical VDI"
     }
   ];
 

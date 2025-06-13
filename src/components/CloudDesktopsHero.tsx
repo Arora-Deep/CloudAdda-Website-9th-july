@@ -57,9 +57,11 @@ const CloudDesktopsHero = () => {
           </div>
           
           <div className="relative">
-            <div className="bg-gradient-to-br from-orange-100 to-blue-100 rounded-3xl h-96 flex items-center justify-center text-gray-400 shadow-xl">
-              [Cloud Desktop Interface Preview]
-            </div>
+            <img 
+              src="/lovable-uploads/0190e56d-e54b-4c1f-81b8-34e45bd41e84.png" 
+              alt="Cloud Desktop Interface" 
+              className="w-full h-auto rounded-3xl shadow-xl"
+            />
           </div>
         </div>
       </div>
