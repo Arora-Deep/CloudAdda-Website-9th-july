@@ -12,6 +12,8 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Support from "./pages/Support";
 import About from "./pages/About";
+import TrainerAdda from "./pages/TrainerAdda";
+import Guides from "./pages/Guides";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +33,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/support" element={<Support />} />
           <Route path="/about" element={<About />} />
+          <Route path="/trainer-adda" element={<TrainerAdda />} />
+          <Route path="/guides" element={<Guides />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

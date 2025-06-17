@@ -11,7 +11,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 const Navigation = () => {
   return (
@@ -82,6 +81,39 @@ const Navigation = () => {
                           <div className="text-sm font-medium leading-none">VPS</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             Scalable virtual private servers
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-6 md:w-[300px]">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/trainer-adda"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Trainer Adda</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Blogs, case studies, and trainer playbooks
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/guides"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">Guides & Docs</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Documentation and how-to guides
                           </p>
                         </Link>
                       </NavigationMenuLink>

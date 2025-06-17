@@ -39,7 +39,6 @@ const Pricing = () => {
                 <span className="text-orange-600">CFOs Smile</span>
               </h1>
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-px bg-orange-600"></div>
                 <div className="text-2xl font-bold text-foreground">Zero waste. Full performance. Built to scale.</div>
               </div>
               <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
@@ -62,7 +61,7 @@ const Pricing = () => {
                 <img 
                   src="/lovable-uploads/c219099e-0e5b-49c8-83b1-e799238baebd.png" 
                   alt="Business person with tablet sitting on piggy bank - cost savings" 
-                  className="w-80 h-80 object-contain rounded-3xl transform hover:scale-105 transition-transform duration-300"
+                  className="w-full h-auto max-w-lg object-contain rounded-3xl transform hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
