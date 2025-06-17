@@ -19,134 +19,329 @@ import {
   ArrowRight,
   Shield,
   Headphones,
-  BookOpen
+  BookOpen,
+  Sparkles,
+  Coffee,
+  Rocket
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/shared/Navigation";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-8 bg-purple-100 text-purple-800 border-purple-200">
-              <MessageCircle className="w-4 h-4 mr-2" />
-              We're Here to Help
-            </Badge>
-            <h1 className="text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-              Let's Build Something
-              <br />
-              <span className="text-purple-600">
-                Amazing Together
-              </span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
-              Got questions? Need a custom solution? Or just want to say hello? 
-              We're real humans who love talking about cloud infrastructure and helping you succeed.
-            </p>
+      {/* Hero Section with Asymmetric Layout */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7">
+              <div className="inline-block mb-8">
+                <Badge className="mb-4 bg-purple-100 text-purple-800 border-purple-200 text-sm font-medium px-4 py-2">
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Always Here for You
+                </Badge>
+              </div>
+              <h1 className="text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
+                <span className="text-purple-600">Let's</span>
+                <br />
+                <span className="text-gray-900">Build</span>
+                <br />
+                <span className="text-orange-600">Together</span>
+              </h1>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-px bg-purple-600"></div>
+                <div className="text-2xl font-bold text-foreground">Real humans. Real solutions. Real fast.</div>
+              </div>
+              <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
+                Got questions? Need a custom solution? Or just want to say hello? 
+                We're real humans who love talking about cloud infrastructure and helping you succeed.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 group">
+                  <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  Start a Conversation
+                </Button>
+                <Button size="lg" variant="outline" className="border-orange-500 text-orange-600 hover:bg-orange-50 group">
+                  <Phone className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                  Schedule a Call
+                </Button>
+              </div>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-              <div className="flex flex-col items-center space-y-3 p-6 bg-muted/30 rounded-lg">
-                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-white" />
+            <div className="lg:col-span-5">
+              <div className="relative">
+                <div className="w-80 h-80 bg-purple-50 rounded-3xl border border-purple-100 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute top-8 right-8 w-4 h-4 bg-orange-500 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-8 left-8 w-6 h-6 bg-purple-500 rounded-full animate-pulse delay-1000"></div>
+                  <div className="text-center">
+                    <div className="w-24 h-24 bg-purple-500 rounded-2xl mx-auto mb-6 flex items-center justify-center transform hover:rotate-6 transition-transform duration-300">
+                      <MessageCircle className="w-12 h-12 text-white" />
+                    </div>
+                    <div className="text-sm text-muted-foreground">3D Illustration Space</div>
+                    <div className="text-xs text-muted-foreground/60">Customer Support Visual</div>
+                  </div>
                 </div>
-                <span className="font-medium text-foreground">Response in 2 hours</span>
-              </div>
-              <div className="flex flex-col items-center space-y-3 p-6 bg-muted/30 rounded-lg">
-                <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
-                  <Users className="w-6 h-6 text-white" />
-                </div>
-                <span className="font-medium text-foreground">Expert technical team</span>
-              </div>
-              <div className="flex flex-col items-center space-y-3 p-6 bg-muted/30 rounded-lg">
-                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
-                <span className="font-medium text-foreground">Custom solutions</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Start a Conversation
-              </Button>
-              <Button size="lg" variant="outline" className="border-orange-500 text-orange-600 hover:bg-orange-50">
-                <Phone className="w-5 h-5 mr-2" />
-                Schedule a Call
-              </Button>
-            </div>
-          </div>
-
-          {/* 3D Illustration space */}
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-purple-50 rounded-2xl p-12 h-80 flex items-center justify-center border border-purple-100">
-              <div className="text-center text-muted-foreground">
-                <div className="w-24 h-24 bg-purple-500 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                  <MessageCircle className="w-12 h-12 text-white" />
-                </div>
-                <p className="text-sm">3D Illustration Space</p>
-                <p className="text-xs text-muted-foreground/60">Customer Support Visual</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What You Get Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Response Promise Section */}
+      <section className="py-20 bg-orange-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500 rounded-full opacity-10 transform translate-x-16 -translate-y-16"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">What You Get When You Contact Us</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We're not just another support team. We're your cloud infrastructure partners.
-            </p>
+            <h2 className="text-5xl font-bold text-foreground mb-8">Our Promise to You</h2>
+            <div className="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {[
               {
                 icon: Clock,
-                title: "Lightning Fast Response",
-                description: "Get expert responses within 2 hours, not 2 days. Our team is standing by.",
-                color: "purple"
+                title: "2 Hour Response",
+                description: "We don't do 'we'll get back to you.' We actually get back to you. Within 2 hours.",
+                color: "purple",
+                delay: "0ms"
               },
               {
                 icon: Users,
-                title: "Direct Access to Engineers",
-                description: "Talk directly to the people who build our platform. No middlemen, no confusion.",
-                color: "orange"
+                title: "Real Engineers",
+                description: "Talk directly to the people who build our platform. No scripts, no confusion.",
+                color: "orange", 
+                delay: "100ms"
               },
               {
-                icon: Shield,
-                title: "Custom Security Review",
-                description: "Enterprise-grade security assessment tailored to your specific requirements.",
-                color: "purple"
-              },
+                icon: Heart,
+                title: "We Actually Care",
+                description: "Your success is our success. We're invested in making your cloud journey smooth.",
+                color: "purple",
+                delay: "200ms"
+              }
+            ].map((promise, index) => (
+              <div 
+                key={index} 
+                className="transform hover:-translate-y-2 transition-all duration-300"
+                style={{ animationDelay: promise.delay }}
+              >
+                <Card className="text-center border-none shadow-lg hover:shadow-xl h-full">
+                  <CardHeader>
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform duration-300 ${
+                      promise.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'
+                    }`}>
+                      <promise.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <CardTitle className="text-xl text-foreground">{promise.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="leading-relaxed text-base">
+                      {promise.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Methods with Staggered Layout */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-4xl font-bold text-foreground mb-8">Multiple Ways to Reach Us</h2>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Choose whatever works best for you. We're available through all these channels.
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: Mail,
+                    title: "Email Us",
+                    subtitle: "hello@cloudadda.com",
+                    description: "We typically respond within 2 hours",
+                    color: "purple"
+                  },
+                  {
+                    icon: Phone,
+                    title: "Call Us",
+                    subtitle: "+1 (555) 123-4567",
+                    description: "Monday to Friday, 9 AM - 6 PM EST",
+                    color: "orange"
+                  },
+                  {
+                    icon: Headphones,
+                    title: "Live Support",
+                    subtitle: "24/7 chat support",
+                    description: "Available in your dashboard",
+                    color: "purple"
+                  }
+                ].map((method, index) => (
+                  <div 
+                    key={index} 
+                    className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200"
+                  >
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                      method.color === 'purple' ? 'bg-purple-100' : 'bg-orange-100'
+                    }`}>
+                      <method.icon className={`w-6 h-6 ${
+                        method.color === 'purple' ? 'text-purple-600' : 'text-orange-600'
+                      }`} />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">{method.title}</h3>
+                      <p className="text-muted-foreground font-medium">{method.subtitle}</p>
+                      <p className="text-sm text-muted-foreground">{method.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="order-1 lg:order-2">
+              <div className="relative">
+                <div className="w-full h-96 bg-orange-50 rounded-3xl border border-orange-100 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute top-8 right-8 w-4 h-4 bg-purple-500 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-8 left-8 w-6 h-6 bg-orange-500 rounded-full animate-pulse delay-1000"></div>
+                  <div className="text-center">
+                    <div className="w-24 h-24 bg-orange-500 rounded-2xl mx-auto mb-6 flex items-center justify-center transform hover:rotate-6 transition-transform duration-300">
+                      <Coffee className="w-12 h-12 text-white" />
+                    </div>
+                    <div className="text-sm text-muted-foreground">3D Illustration Space</div>
+                    <div className="text-xs text-muted-foreground/60">Communication Methods Visual</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section with Modern Design */}
+      <section className="py-20 bg-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Send Us a Message</h2>
+            <div className="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Fill out the form below and we'll get back to you within 2 hours. Promise.
+            </p>
+          </div>
+          
+          <Card className="max-w-2xl mx-auto shadow-xl border-none">
+            <CardContent className="p-8 space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="firstName">First Name</Label>
+                  <Input id="firstName" placeholder="John" className="mt-2" />
+                </div>
+                <div>
+                  <Label htmlFor="lastName">Last Name</Label>
+                  <Input id="lastName" placeholder="Doe" className="mt-2" />
+                </div>
+              </div>
+              
+              <div>
+                <Label htmlFor="email">Work Email</Label>
+                <Input id="email" type="email" placeholder="john@company.com" className="mt-2" />
+              </div>
+              
+              <div>
+                <Label htmlFor="company">Company</Label>
+                <Input id="company" placeholder="Your Company" className="mt-2" />
+              </div>
+              
+              <div>
+                <Label htmlFor="subject">How can we help?</Label>
+                <select className="w-full p-3 border border-input rounded-md bg-background mt-2">
+                  <option>General Inquiry</option>
+                  <option>Technical Support</option>
+                  <option>Enterprise Sales</option>
+                  <option>Partnership</option>
+                  <option>Migration Assistance</option>
+                </select>
+              </div>
+              
+              <div>
+                <Label htmlFor="message">Message</Label>
+                <Textarea 
+                  id="message" 
+                  placeholder="Tell us about your project, timeline, and any specific requirements..."
+                  rows={5}
+                  className="mt-2"
+                />
+              </div>
+              
+              <Button className="w-full bg-purple-600 hover:bg-purple-700 text-lg py-3">
+                Send Message
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              
+              <p className="text-sm text-muted-foreground text-center">
+                By submitting this form, you agree to our privacy policy and terms of service.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Alternative Resources */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Other Ways to Get Help</h2>
+            <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
+            <p className="text-lg text-muted-foreground">
+              Sometimes you just need to figure things out yourself. We get it.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
               {
                 icon: BookOpen,
-                title: "Implementation Roadmap",
-                description: "Step-by-step migration plan designed specifically for your infrastructure needs.",
-                color: "orange"
+                title: "Documentation",
+                description: "Comprehensive guides and API documentation to get you started quickly.",
+                color: "purple",
+                cta: "Browse Docs"
+              },
+              {
+                icon: Users,
+                title: "Community",
+                description: "Join our Discord community and connect with other CloudAdda users.",
+                color: "orange",
+                cta: "Join Community"
+              },
+              {
+                icon: Zap,
+                title: "Status Page",
+                description: "Real-time status updates and incident reports for all our services.",
+                color: "purple",
+                cta: "Check Status"
               }
-            ].map((benefit, index) => (
-              <Card key={index} className="text-center border-none shadow-lg hover:shadow-xl transition-shadow">
+            ].map((resource, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-none">
                 <CardHeader>
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 ${
-                    benefit.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform duration-300 ${
+                    resource.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'
                   }`}>
-                    <benefit.icon className="w-8 h-8 text-white" />
+                    <resource.icon className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-lg">{benefit.title}</CardTitle>
+                  <CardTitle className="text-xl">{resource.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="leading-relaxed text-base">
-                    {benefit.description}
+                  <CardDescription className="mb-6 text-base leading-relaxed">
+                    {resource.description}
                   </CardDescription>
+                  <Button variant="outline" className="w-full group">
+                    {resource.cta}
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -154,185 +349,8 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div>
-              <h2 className="text-3xl font-bold text-foreground mb-6">Ready to Get Started?</h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Tell us about your project and we'll get back to you with a custom solution.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
-                    <p className="text-muted-foreground">hello@cloudadda.com</p>
-                    <p className="text-sm text-muted-foreground">We typically respond within 2 hours</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-orange-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                    <p className="text-sm text-muted-foreground">Monday to Friday, 9 AM - 6 PM EST</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Headphones className="w-5 h-5 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Live Support</h3>
-                    <p className="text-muted-foreground">24/7 chat support for existing customers</p>
-                    <p className="text-sm text-muted-foreground">Available in your dashboard</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <Card className="shadow-lg border-none">
-              <CardHeader>
-                <CardTitle className="text-2xl">Send us a message</CardTitle>
-                <CardDescription>
-                  Fill out the form below and we'll get back to you within 2 hours.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" />
-                  </div>
-                  <div>
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" />
-                  </div>
-                </div>
-                
-                <div>
-                  <Label htmlFor="email">Work Email</Label>
-                  <Input id="email" type="email" placeholder="john@company.com" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="company">Company</Label>
-                  <Input id="company" placeholder="Your Company" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="subject">How can we help?</Label>
-                  <select className="w-full p-2 border border-input rounded-md bg-background">
-                    <option>General Inquiry</option>
-                    <option>Technical Support</option>
-                    <option>Enterprise Sales</option>
-                    <option>Partnership</option>
-                    <option>Migration Assistance</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell us about your project, timeline, and any specific requirements..."
-                    rows={5}
-                  />
-                </div>
-                
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">
-                  Send Message
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-                
-                <p className="text-sm text-muted-foreground text-center">
-                  By submitting this form, you agree to our privacy policy and terms of service.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Alternative Contact Methods */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Other Ways to Connect</h2>
-            <p className="text-lg text-muted-foreground">
-              Choose the communication method that works best for you
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow border-none">
-              <CardHeader>
-                <div className="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <BookOpen className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle>Documentation</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="mb-4">
-                  Comprehensive guides and API documentation to get you started quickly.
-                </CardDescription>
-                <Button variant="outline" className="w-full">
-                  Browse Docs
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center hover:shadow-lg transition-shadow border-none">
-              <CardHeader>
-                <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle>Community</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="mb-4">
-                  Join our Discord community and connect with other CloudAdda users.
-                </CardDescription>
-                <Button variant="outline" className="w-full">
-                  Join Community
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center hover:shadow-lg transition-shadow border-none">
-              <CardHeader>
-                <div className="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle>Status Page</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="mb-4">
-                  Real-time status updates and incident reports for all our services.
-                </CardDescription>
-                <Button variant="outline" className="w-full">
-                  Check Status
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="bg-background border-t border-border py-16">
+      <footer className="bg-white border-t border-border py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -31,14 +30,11 @@ const Pricing = () => {
                 </Badge>
               </div>
               <h1 className="text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
-                Pricing
+                <span className="text-purple-600">Pricing</span>
                 <br />
-                <span className="text-orange-600 relative">
-                  That Makes
-                  <div className="absolute -bottom-4 left-0 w-full h-1 bg-purple-500 transform -rotate-1"></div>
-                </span>
+                <span className="text-gray-900">That Makes</span>
                 <br />
-                CFOs Smile
+                <span className="text-orange-600">CFOs Smile</span>
               </h1>
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-px bg-orange-600"></div>
@@ -61,17 +57,11 @@ const Pricing = () => {
             </div>
             <div className="lg:col-span-5">
               <div className="relative">
-                <div className="w-80 h-80 bg-orange-50 rounded-3xl border border-orange-100 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute top-8 right-8 w-4 h-4 bg-purple-500 rounded-full animate-pulse"></div>
-                  <div className="absolute bottom-8 left-8 w-6 h-6 bg-orange-500 rounded-full animate-pulse delay-1000"></div>
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-orange-500 rounded-2xl mx-auto mb-6 flex items-center justify-center transform hover:rotate-6 transition-transform duration-300">
-                      <TrendingUp className="w-12 h-12 text-white" />
-                    </div>
-                    <div className="text-6xl font-black text-orange-600 mb-2">73%</div>
-                    <div className="text-sm text-muted-foreground">Cost Savings</div>
-                  </div>
-                </div>
+                <img 
+                  src="/lovable-uploads/f690fdec-4d37-4062-af23-158e9b86a21e.png" 
+                  alt="Person with piggy bank - cost savings" 
+                  className="w-80 h-80 object-contain rounded-3xl transform hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>
