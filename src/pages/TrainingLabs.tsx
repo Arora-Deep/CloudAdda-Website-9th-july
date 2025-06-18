@@ -1,725 +1,631 @@
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3, Building, Lightbulb, FileCheck, Headphones, Gauge, Laptop, Timer, TrendingDown, X, ChevronRight, ThumbsUp, Play, Eye, UserCheck, Activity as ActivityIcon } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { 
+  GraduationCap, 
+  Users, 
+  Zap, 
+  Shield, 
+  CheckCircle, 
+  ArrowRight, 
+  Clock, 
+  Star,
+  Code,
+  Database,
+  Cloud,
+  Settings,
+  BarChart3,
+  HeartHandshake,
+  Target,
+  Lightbulb,
+  TrendingUp,
+  Award,
+  Globe
+} from "lucide-react";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
+import Navigation from "@/components/Navigation";
 
 const TrainingLabs = () => {
+  const [demoForm, setDemoForm] = useState({
+    name: "",
+    email: "",
+    company: "",
+    participants: "",
+    duration: "",
+    requirements: ""
+  });
+  const { toast } = useToast();
+
+  const handleDemoSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Demo Request Submitted! 🎉",
+      description: "Our team will contact you within 24 hours to schedule your personalized demo.",
+    });
+    setDemoForm({
+      name: "",
+      email: "",
+      company: "",
+      participants: "",
+      duration: "",
+      requirements: ""
+    });
+  };
+
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center">
-              <Link to="/" className="flex items-center space-x-2">
-                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
-              </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-gray-700 hover:text-orange-500 transition-colors">Home</Link>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</a>
-              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
-                Log In
-              </Button>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                Start Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23e2e8f0' fillOpacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
+        }}></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-6 py-3 mb-8 animate-bounce">
+            <GraduationCap className="w-5 h-5 text-primary" />
+            <span className="font-semibold text-primary">Training Labs That Actually Work</span>
+          </div>
+          
+          <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+            <span className="text-orange-500">Stop</span>{" "}
+            <span className="text-foreground">Fighting</span>{" "}
+            <span className="text-purple-600">Infrastructure</span>
+          </h1>
+          
+          <p className="text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
+            Focus on teaching. We'll handle the servers, networks, and all the technical nightmares 
+            that keep you up at night. 🚀
+          </p>
+          
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
+            Whether you're running a coding bootcamp, corporate training, or university courses—our 
+            custom-built training environments scale instantly and work flawlessly every time.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <Button size="lg" className="h-14 px-8 text-lg">
+              <Zap className="w-6 h-6 mr-2" />
+              Get Custom Quote
+            </Button>
+            <Button size="lg" variant="outline" className="h-14 px-8 text-lg">
+              <Clock className="w-6 h-6 mr-2" />
+              See Live Demo
+            </Button>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              { icon: Clock, stat: "< 24hrs", label: "Setup Time", color: "text-blue-500" },
+              { icon: Users, stat: "1000+", label: "Students Supported", color: "text-green-500" },
+              { icon: CheckCircle, stat: "99.9%", label: "Uptime SLA", color: "text-purple-500" }
+            ].map((item, index) => (
+              <div key={index} className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 border border-border/50 hover:shadow-xl transition-all duration-300 group">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className={`w-8 h-8 ${item.color}`} />
+                </div>
+                <div className="text-3xl font-bold mb-2 text-foreground">{item.stat}</div>
+                <div className="text-muted-foreground font-medium">{item.label}</div>
+              </div>
+            ))}
           </div>
         </div>
-      </nav>
+      </section>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-16 pb-24">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* Pain Points Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="mb-6">
+              <Shield className="w-4 h-4 mr-2" />
+              The Real Problems We Solve
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Tired of <span className="text-primary">Infrastructure Headaches?</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              We get it. Managing training infrastructure shouldn't be harder than the actual training.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <h1 className="text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl">
-                Stop Fighting Infrastructure.
-                <span className="block text-purple-600">Start Teaching.</span>
-              </h1>
-              
-              <p className="text-xl text-gray-600 leading-relaxed">
-                You bring the training content. We deliver ready-to-run lab environments that launch in minutes, scale effortlessly, and never crash mid-session.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                  Request Your Custom Lab
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch a Live Demo
-                </Button>
-              </div>
-
-              <div className="grid grid-cols-3 gap-8 pt-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">60x</div>
-                  <div className="text-sm text-gray-600">Faster Setup</div>
+              {[
+                {
+                  problem: "Spending weeks setting up environments instead of teaching",
+                  solution: "Pre-built environments ready in hours, not weeks"
+                },
+                {
+                  problem: "Students can't access labs from home or different locations",
+                  solution: "Cloud-based access from anywhere, any device"
+                },
+                {
+                  problem: "Running out of resources during peak training sessions",
+                  solution: "Auto-scaling infrastructure that grows with demand"
+                },
+                {
+                  problem: "Dealing with software conflicts and compatibility issues",
+                  solution: "Isolated environments with pre-tested software stacks"
+                }
+              ].map((item, index) => (
+                <div key={index} className="bg-card p-6 rounded-xl border border-destructive/20 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-6 h-6 bg-destructive/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-destructive font-bold text-sm">✗</span>
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-destructive mb-2">{item.problem}</p>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <p className="text-muted-foreground">{item.solution}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">99.9%</div>
-                  <div className="text-sm text-gray-600">Session Uptime</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">&lt;2hr</div>
-                  <div className="text-sm text-gray-600">Avg. Support Response</div>
-                </div>
-              </div>
+              ))}
             </div>
             
-            <div className="relative flex justify-center items-center h-full min-h-[700px]">
-              <img 
-                src="/lovable-uploads/20d7ef7d-10ca-4015-9a31-37c2ec2b2b0b.png" 
-                alt="Training session illustration with instructor and student"
-                className="w-full max-w-none h-auto object-contain scale-150 transform"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pain Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Every Trainer's Worst Nightmare</h2>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <img 
-                src="/lovable-uploads/90db8078-ac2f-4f7a-915e-72846bad7fdf.png" 
-                alt="Frustrated trainer with technical problems"
-                className="w-full h-auto rounded-3xl"
+                src="/lovable-uploads/5aab5b8e-c5b5-423b-a473-bcb996375d02.png" 
+                alt="Training environment setup visualization" 
+                className="w-full h-auto rounded-2xl shadow-2xl"
               />
-            </div>
-
-            <div className="space-y-8">
-              {[
-                {
-                  title: "Weekend VM Config Hell",
-                  description: "You spend your Friday nights setting up 50 VMs for Monday. Your family wonders if you hate them.",
-                  icon: Clock
-                },
-                {
-                  title: "Mid-Session Meltdown",
-                  description: "15 minutes into a bootcamp, labs crash. Students stare. You sweat.",
-                  icon: AlertTriangle
-                },
-                {
-                  title: "Support Black Hole",
-                  description: "2 AM panic. A bot replies: \"Try restarting.\" Your session's in 5 hours.",
-                  icon: MessageCircle
-                },
-                {
-                  title: "Cost Bomb",
-                  description: "You forget to turn off instances. ₹500 becomes ₹5,000. Again.",
-                  icon: DollarSign
-                }
-              ].map((pain, index) => (
-                <div key={index} className="group hover:scale-105 transition-all duration-300">
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-red-200 transition-all duration-300 hover:shadow-xl">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center group-hover:bg-red-200 transition-colors">
-                        <pain.icon className="w-6 h-6 text-red-600" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">{pain.title}</h3>
-                        <p className="text-gray-600 leading-relaxed">{pain.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section className="py-24 bg-white">
+      {/* Solutions Deep Dive */}
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Infrastructure Built Only For Trainers</h2>
-            <div className="w-32 h-1 bg-purple-500 mx-auto rounded-full"></div>
+          <div className="text-center mb-16">
+            <Badge className="mb-6">
+              <Code className="w-4 h-4 mr-2" />
+              Comprehensive Training Solutions
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Everything You Need for <span className="text-primary">Successful Training</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              From basic coding environments to complex enterprise simulations—we've got it all covered
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-12">
-            {[
-              {
-                title: "Setup in Minutes",
-                description: "Share your curriculum → We configure everything. Pre-installed tools, auto-scaling, and ready-to-teach labs. Deploy to 10 or 10,000 with zero effort.",
-                icon: Clock,
-                features: ["Pre-installed tools", "Auto-scaling", "Zero effort deployment", "Custom configurations"]
-              },
-              {
-                title: "Engineered for Session Reliability", 
-                description: "Handles peak student activity without crashing. Real-time monitoring + auto-failover. 99.9% uptime across 5,000+ sessions.",
-                icon: Shield,
-                features: ["Peak activity handling", "Real-time monitoring", "Auto-failover", "99.9% uptime"]
-              },
-              {
-                title: "Support That Actually Helps",
-                description: "24/7 engineers with training infra experience. Emergency hotline. <2 hour SLA. No bots — ever.",
-                icon: Users,
-                features: ["24/7 engineers", "Emergency hotline", "<2 hour SLA", "No bots ever"]
-              }
-            ].map((solution, index) => (
-              <div key={index} className="group hover:scale-105 transition-all duration-500">
-                <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl h-full">
-                  <div className="flex flex-col h-full">
-                    <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
-                      <solution.icon className="w-8 h-8 text-purple-600" />
-                    </div>
-                    
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{solution.title}</h3>
-                      <p className="text-gray-600 leading-relaxed mb-6">{solution.description}</p>
-                      
-                      <ul className="space-y-2">
-                        {solution.features.map((feature, fIndex) => (
-                          <li key={fIndex} className="flex items-center space-x-2 text-sm text-gray-600">
+          <Tabs defaultValue="environments" className="w-full">
+            <TabsList className="grid w-full grid-cols-4 mb-12">
+              <TabsTrigger value="environments" className="text-sm">Environments</TabsTrigger>
+              <TabsTrigger value="management" className="text-sm">Management</TabsTrigger>
+              <TabsTrigger value="analytics" className="text-sm">Analytics</TabsTrigger>
+              <TabsTrigger value="support" className="text-sm">Support</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="environments" className="space-y-8">
+              <div className="grid lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    icon: Code,
+                    title: "Development Environments",
+                    description: "Pre-configured IDEs, compilers, and development tools for any programming language",
+                    features: ["Visual Studio Code", "IntelliJ IDEA", "Git repositories", "Docker containers"]
+                  },
+                  {
+                    icon: Database,
+                    title: "Database Labs",
+                    description: "Complete database environments with sample data and practice scenarios",
+                    features: ["MySQL, PostgreSQL", "MongoDB, Redis", "Sample datasets", "Query optimization tools"]
+                  },
+                  {
+                    icon: Cloud,
+                    title: "Cloud Platforms",
+                    description: "Real cloud environments for hands-on AWS, Azure, and GCP training",
+                    features: ["Live cloud accounts", "Practice scenarios", "Cost monitoring", "Sandbox environments"]
+                  }
+                ].map((env, index) => (
+                  <Card key={index} className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+                    <CardHeader>
+                      <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center mb-4">
+                        <env.icon className="w-7 h-7 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl mb-2">{env.title}</CardTitle>
+                      <CardDescription className="text-base">{env.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        {env.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-center space-x-2">
                             <CheckCircle className="w-4 h-4 text-green-500" />
-                            <span>{feature}</span>
-                          </li>
+                            <span className="text-sm text-muted-foreground">{feature}</span>
+                          </div>
                         ))}
-                      </ul>
-                    </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="management" className="space-y-8">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h3 className="text-3xl font-bold text-foreground mb-6">Effortless User Management</h3>
+                  <div className="space-y-4">
+                    {[
+                      "Bulk user creation and management",
+                      "Role-based access control",
+                      "Single sign-on (SSO) integration",
+                      "Automated environment provisioning",
+                      "Resource usage monitoring",
+                      "Automated cleanup and reset"
+                    ].map((feature, index) => (
+                      <div key={index} className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-green-500" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="relative">
+                  <img 
+                    src="/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png" 
+                    alt="User management dashboard" 
+                    className="w-full h-auto rounded-2xl shadow-2xl"
+                  />
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="analytics" className="space-y-8">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="relative">
+                  <img 
+                    src="/lovable-uploads/967ed3a4-84ec-495d-a09d-6acd43dccc98.png" 
+                    alt="Analytics dashboard" 
+                    className="w-full h-auto rounded-2xl shadow-2xl"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-foreground mb-6">Detailed Training Analytics</h3>
+                  <div className="space-y-4">
+                    {[
+                      "Real-time usage monitoring",
+                      "Student progress tracking",
+                      "Resource utilization reports",
+                      "Performance bottleneck identification",
+                      "Cost optimization insights",
+                      "Custom reporting and exports"
+                    ].map((feature, index) => (
+                      <div key={index} className="flex items-center space-x-3">
+                        <BarChart3 className="w-5 h-5 text-primary" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </TabsContent>
 
-      {/* Dashboard Showcase Section */}
-      <section className="py-24 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Simple Dashboard. Powerful Control.</h2>
-            <p className="text-xl text-gray-600">Manage hundreds of students and labs from one intuitive interface</p>
-          </div>
-
-          <div className="space-y-24">
-            {/* Feature 1: Easy Management */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-8">
-                <div className="inline-flex items-center space-x-2 bg-purple-100 rounded-full px-4 py-2">
-                  <Gauge className="w-5 h-5 text-purple-600" />
-                  <span className="text-purple-700 font-semibold">Easy Management</span>
-                </div>
-                
-                <h3 className="text-3xl font-bold text-gray-900">Monitor All Labs at a Glance</h3>
-                
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  See real-time status of every student's environment. CPU usage, memory consumption, 
-                  network activity — all in one clean dashboard. No more guessing if labs are working.
-                </p>
-                
-                <ul className="space-y-4">
+            <TabsContent value="support" className="space-y-8">
+              <div className="text-center">
+                <h3 className="text-3xl font-bold text-foreground mb-8">24/7 Support That Actually Helps</h3>
+                <div className="grid md:grid-cols-3 gap-8">
                   {[
-                    "Real-time resource monitoring",
-                    "Instant lab status updates", 
-                    "Performance analytics",
-                    "One-click environment controls"
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-green-500" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
+                    {
+                      icon: HeartHandshake,
+                      title: "Dedicated Success Manager",
+                      description: "Your personal CloudAdda expert who knows your training needs inside out"
+                    },
+                    {
+                      icon: Clock,
+                      title: "Real-time Monitoring",
+                      description: "We monitor your training environments 24/7 and fix issues before you notice them"
+                    },
+                    {
+                      icon: Users,
+                      title: "Training Workshops",
+                      description: "Free workshops to help your team get the most out of your training infrastructure"
+                    }
+                  ].map((support, index) => (
+                    <Card key={index} className="text-center p-8 hover:shadow-xl transition-all duration-300">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <support.icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl mb-4">{support.title}</CardTitle>
+                      <CardDescription className="text-base">{support.description}</CardDescription>
+                    </Card>
                   ))}
-                </ul>
-              </div>
-              
-              <div className="relative">
-                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 h-96 flex items-center justify-center text-gray-400">
-                  [Dashboard Screenshot: Overview screen showing multiple lab environments with status indicators, resource usage charts, and student activity]
                 </div>
               </div>
-            </div>
-
-            {/* Feature 2: Student Access Control */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="relative order-2 lg:order-1">
-                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 h-96 flex items-center justify-center text-gray-400">
-                  [Dashboard Screenshot: Student management interface showing remote access controls, screen sharing, and assistance tools]
-                </div>
-              </div>
-              
-              <div className="space-y-8 order-1 lg:order-2">
-                <div className="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2">
-                  <UserCheck className="w-5 h-5 text-blue-600" />
-                  <span className="text-blue-700 font-semibold">Remote Access</span>
-                </div>
-                
-                <h3 className="text-3xl font-bold text-gray-900">Help Students Without Leaving Your Seat</h3>
-                
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  View student screens, take control when needed, and provide instant help. 
-                  No more walking around the classroom or dealing with "it's not working" complaints.
-                </p>
-                
-                <ul className="space-y-4">
-                  {[
-                    "Remote screen viewing",
-                    "Take control assistance",
-                    "File sharing & transfers",
-                    "Real-time chat support"
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-green-500" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Feature 3: Lab Deployment */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-8">
-                <div className="inline-flex items-center space-x-2 bg-green-100 rounded-full px-4 py-2">
-                  <Rocket className="w-5 h-5 text-green-600" />
-                  <span className="text-green-700 font-semibold">Instant Deployment</span>
-                </div>
-                
-                <h3 className="text-3xl font-bold text-gray-900">Deploy Labs in Seconds, Not Hours</h3>
-                
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Pre-configured templates for every training scenario. Just select your curriculum type, 
-                  set the number of students, and click deploy. Your entire class is ready in minutes.
-                </p>
-                
-                <ul className="space-y-4">
-                  {[
-                    "Pre-built curriculum templates",
-                    "Auto-scaling based on enrollment",
-                    "Custom environment configuration",
-                    "Bulk student onboarding"
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-green-500" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div className="relative">
-                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 h-96 flex items-center justify-center text-gray-400">
-                  [Dashboard Screenshot: Lab deployment interface with template selection, scaling options, and deployment progress]
-                </div>
-              </div>
-            </div>
-          </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
-      {/* Trainer-Specific Use Cases */}
-      <section className="py-24 bg-white">
+      {/* Use Cases */}
+      <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Purpose-Built for Every Kind of Training</h2>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [Split-screen showing 6 types of training environments]
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: "Coding Bootcamps",
-                  description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs, version control.",
-                  icon: Code
-                },
-                {
-                  title: "Cybersecurity Ranges",
-                  description: "Isolated labs with vulnerable VMs, network sniffers, incident response simulators.",
-                  icon: Shield
-                },
-                {
-                  title: "AI/ML & Data Science",
-                  description: "GPU-ready labs with Jupyter, TensorFlow, PyTorch, huge datasets.",
-                  icon: Brain
-                },
-                {
-                  title: "Corporate Upskilling",
-                  description: "Compliance-ready labs, scalable to 10,000+ users.",
-                  icon: Users
-                }
-              ].map((useCase, index) => (
-                <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <useCase.icon className="w-5 h-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900 mb-2">{useCase.title}</h3>
-                      <p className="text-sm text-gray-600">{useCase.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Networking & Systems Training",
-                description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.",
-                icon: Server
-              },
-              {
-                title: "Hackathons & Workshops",
-                description: "On-demand environments for 100s of participants. Instant provisioning, no local setup, perfect for time-boxed events.",
-                icon: Rocket
-              },
-              {
-                title: "Networking Labs",
-                description: "Simulated enterprise network environments for training on routing, switching, and troubleshooting at scale.",
-                icon: Globe
-              },
-              {
-                title: "Capture the Flag (CTF) Competitions",
-                description: "Realistic attack-defense setups for cybersecurity contests, team-based or individual.",
-                icon: Target
-              },
-              {
-                title: "Certification Prep Labs",
-                description: "Practice environments preloaded with the exact tools and configs needed for cert exams (e.g., RHCE, OSCP, CEH).",
-                icon: Award
-              }
-            ].map((useCase, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                  <useCase.icon className="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-3">{useCase.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Real Win Section */}
-      <section className="py-24 bg-purple-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-4xl font-bold">Your Focus Belongs on Teaching. We Handle the Chaos.</h2>
-              
-              <div className="space-y-6 text-lg">
-                <p>You didn't become a trainer to debug VMs, babysit uptime, or fight network configs.</p>
-                <p>Your magic is in the teaching — helping people grow, switch careers, get certified, master hard things.</p>
-                <p>That's where your time should go. That's what we protect.</p>
-                <p>With CloudAdda, infrastructure fades into the background. You get total peace of mind, super-fast setup, and labs that just work — every single time.</p>
-              </div>
-
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg">
-                Experience Effortless Training
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/002bd955-500b-4161-945a-cdd484ff0c25.png" 
-                alt="Zen-like trainer in peaceful state"
-                className="w-full h-auto rounded-3xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Objection Busters */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">What If You're Still Not Sure?</h2>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                question: "What if this won't match our unique training format?",
-                answer: "We custom-build labs to your exact curriculum. You get a say in every detail."
-              },
-              {
-                question: "What if we need changes mid-course?",
-                answer: "No problem — instant tweaks, mid-session scaling, and live config support."
-              },
-              {
-                question: "What if things break during class?",
-                answer: "Real engineers. 24/7. <2hr average response. No bots. No \"please wait.\""
-              },
-              {
-                question: "What if we're not technical enough to explain what we need?",
-                answer: "Our onboarding team speaks fluent training. Just tell us what you teach — we handle the rest."
-              },
-              {
-                question: "What if it's too complicated to manage?",
-                answer: "You get a simple dashboard. We manage everything else."
-              },
-              {
-                question: "What if this is too good to be true?",
-                answer: "Ask our customers. Or better — try it and see for yourself."
-              }
-            ].map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                <h3 className="font-bold text-gray-900 mb-3">{item.question}</h3>
-                <p className="text-gray-600">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Customer Success Stories */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Trainers Who Escaped Infrastructure Hell</h2>
+          <div className="text-center mb-16">
+            <Badge className="mb-6">
+              <Target className="w-4 h-4 mr-2" />
+              Perfect For Every Training Scenario
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Built for <span className="text-primary">Real Training Needs</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              From bootcamps to enterprise training—see how CloudAdda adapts to your unique requirements
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Priya Sharma",
-                role: "Technical Training Director",
-                quote: "From 6-hour Friday setups to 15-minute deploys. Students happier. Trainers free.",
-                stats: "2,000+ students/month, 95% time savings"
+                icon: Lightbulb,
+                title: "Coding Bootcamps",
+                description: "Intensive programming courses with hands-on projects",
+                stats: "500+ students per batch",
+                features: ["Full-stack environments", "Project repositories", "Code review tools", "Deployment pipelines"],
+                testimonial: "CloudAdda helped us scale from 50 to 500 students seamlessly. Setup time went from weeks to hours."
               },
               {
-                name: "Marcus Johnson",
-                role: "Cybersecurity Instructor", 
-                quote: "Zero crashes in 8 months. Feels like a real corporate red team lab.",
-                stats: "100% uptime, 500+ certified hackers"
+                icon: TrendingUp,
+                title: "Corporate Training",
+                description: "Professional development and skill enhancement programs",
+                stats: "Enterprise-grade security",
+                features: ["Custom curricula", "Progress tracking", "Compliance reporting", "Integration with LMS"],
+                testimonial: "Our developers love the realistic environments. It's like having a production setup for learning."
               },
               {
-                name: "Sarah Kim",
-                role: "DevOps Training Manager",
-                quote: "11 PM issue fixed by a real engineer. I cried.",
-                stats: "24/7 support, 15 time zones supported"
+                icon: Award,
+                title: "University Courses",
+                description: "Academic computer science and engineering programs",
+                stats: "1000+ concurrent users",
+                features: ["Multi-semester projects", "Research environments", "Collaborative workspaces", "Academic licensing"],
+                testimonial: "Finally, our students can access labs 24/7 from anywhere. No more crowded computer labs."
               }
-            ].map((story, index) => (
-              <div key={index} className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-xl">
-                <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                
-                <p className="text-gray-700 leading-relaxed mb-6 italic">"{story.quote}"</p>
-                
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="font-semibold text-gray-900">{story.name}</div>
-                  <div className="text-sm text-gray-600 mb-2">{story.role}</div>
-                  <div className="text-xs text-purple-600 font-medium">{story.stats}</div>
-                </div>
-              </div>
+            ].map((useCase, index) => (
+              <Card key={index} className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+                <CardHeader>
+                  <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center mb-4">
+                    <useCase.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl mb-2">{useCase.title}</CardTitle>
+                  <CardDescription className="text-base mb-4">{useCase.description}</CardDescription>
+                  <Badge variant="secondary" className="w-fit">{useCase.stats}</Badge>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-2">
+                    {useCase.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <span className="text-sm text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-sm italic text-muted-foreground">"{useCase.testimonial}"</p>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works Timeline */}
-      <section className="py-24 bg-gray-50">
+      {/* Social Proof */}
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">From Signup to Live Training in 3 Hours</h2>
+          <div className="text-center mb-16">
+            <Badge className="mb-6">
+              <Globe className="w-4 h-4 mr-2" />
+              Trusted by Leading Organizations
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Join <span className="text-primary">1000+ Training Programs</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              From startups to Fortune 500 companies—organizations worldwide trust CloudAdda for their training infrastructure
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              {[
-                {
-                  hour: "Hour 1",
-                  task: "Requirements call & infra design",
-                  description: "We understand your curriculum and design the perfect lab environment."
-                },
-                {
-                  hour: "Hour 2", 
-                  task: "Provisioning, config, and performance check",
-                  description: "Your labs are built, tested, and optimized for your specific needs."
-                },
-                {
-                  hour: "Hour 3",
-                  task: "Team onboarding & lab access",
-                  description: "Your team gets trained and receives access to the management dashboard."
-                },
-                {
-                  hour: "Go Time",
-                  task: "Labs go live. Monitored. Ready to teach",
-                  description: "Everything is live, monitored, and ready for your first training session."
-                }
-              ].map((step, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">{step.hour}</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                company: "TechCorp University",
+                logo: "/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png",
+                testimonial: "CloudAdda transformed our training programs. Setup time reduced by 90%, and our students love the 24/7 access to realistic environments.",
+                author: "Dr. Sarah Johnson",
+                role: "Head of Computer Science"
+              },
+              {
+                company: "DevBootcamp Pro",
+                logo: "/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png",
+                testimonial: "We scaled from 50 to 500 students without any infrastructure headaches. CloudAdda handles everything so we can focus on teaching.",
+                author: "Mike Chen",
+                role: "Founder & Lead Instructor"
+              },
+              {
+                company: "Enterprise Solutions Inc",
+                logo: "/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png",
+                testimonial: "The enterprise-grade security and compliance features make CloudAdda perfect for our corporate training programs.",
+                author: "Lisa Rodriguez",
+                role: "VP of Learning & Development"
+              }
+            ].map((testimonial, index) => (
+              <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+                <div className="flex items-center space-x-4 mb-6">
+                  <img src={testimonial.logo} alt={testimonial.company} className="w-12 h-12 rounded-full" />
+                  <div>
+                    <h4 className="font-semibold text-foreground">{testimonial.company}</h4>
+                    <div className="flex text-yellow-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-current" />
+                      ))}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{step.task}</h3>
-                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+                <p className="text-muted-foreground mb-6 italic">"{testimonial.testimonial}"</p>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center">
+                    <span className="text-primary font-semibold text-sm">{testimonial.author.split(' ').map(n => n[0]).join('')}</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">{testimonial.author}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
 
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/da1c17cc-16bf-47be-834a-68e473782db8.png" 
-                alt="Support representative helping with setup"
-                className="w-full h-auto rounded-3xl"
-              />
-            </div>
+          <div className="text-center">
+            <p className="text-2xl font-semibold text-foreground mb-8">Ready to transform your training programs?</p>
+            <Button size="lg" className="h-14 px-8 text-lg">
+              <Clock className="w-6 h-6 mr-2" />
+              Schedule Your Demo Today
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Get a Demo Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Want to See It In Action?</h2>
+      {/* Demo Request Form */}
+      <section className="py-20 bg-gradient-to-r from-primary to-purple-600 text-primary-foreground">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Get Your Custom Demo</h2>
+            <p className="text-xl opacity-90">
+              See exactly how CloudAdda can transform your training programs. 
+              We'll build a sample environment based on your specific needs.
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h3 className="text-3xl font-bold text-gray-900">What You Get In Your Demo:</h3>
-              
-              <ul className="space-y-4">
-                {[
-                  "A 15-minute walkthrough of how we provision, customize, and monitor labs",
-                  "Live view of a real training environment tailored to your topic (DevOps, Cybersecurity, AI, etc.)",
-                  "Sneak peek into student login flow, admin dashboard, and performance monitoring tools",
-                  "A short discovery call to understand your curriculum and challenges"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-                  Book Your Demo
-                  <Play className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-8 py-3 border-gray-300 hover:bg-gray-50">
-                  Share Your Curriculum
-                  <FileCheck className="ml-2 h-5 w-5" />
-                </Button>
+          <Card className="p-8 bg-background text-foreground">
+            <form onSubmit={handleDemoSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold">Your Name *</label>
+                  <Input
+                    placeholder="John Smith"
+                    value={demoForm.name}
+                    onChange={(e) => setDemoForm({...demoForm, name: e.target.value})}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold">Work Email *</label>
+                  <Input
+                    type="email"
+                    placeholder="john@company.com"
+                    value={demoForm.email}
+                    onChange={(e) => setDemoForm({...demoForm, email: e.target.value})}
+                    required
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [Demo interface showing live training environment setup]
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold">Organization *</label>
+                  <Input
+                    placeholder="Your company or institution"
+                    value={demoForm.company}
+                    onChange={(e) => setDemoForm({...demoForm, company: e.target.value})}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold">Expected Participants</label>
+                  <Select value={demoForm.participants} onValueChange={(value) => setDemoForm({...demoForm, participants: value})}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select range" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="1-25">1-25 students</SelectItem>
+                      <SelectItem value="26-100">26-100 students</SelectItem>
+                      <SelectItem value="101-500">101-500 students</SelectItem>
+                      <SelectItem value="500+">500+ students</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Final CTA Banner */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">
-            Ready to Train Without Limits?
-          </h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Skip the stress. Delight your students. Reclaim your weekends.
-          </p>
-          
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-            Get Your Custom Lab Setup
-            <ArrowRight className="ml-3 h-6 w-6" />
-          </Button>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold">Training Duration</label>
+                <Select value={demoForm.duration} onValueChange={(value) => setDemoForm({...demoForm, duration: value})}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select duration" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="workshop">1-3 day workshop</SelectItem>
+                    <SelectItem value="short">1-4 week course</SelectItem>
+                    <SelectItem value="medium">1-3 month program</SelectItem>
+                    <SelectItem value="long">3+ month program</SelectItem>
+                    <SelectItem value="ongoing">Ongoing/semester-based</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">15,000+</div>
-              <div className="text-gray-600">Students Trained Weekly</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">500+</div>
-              <div className="text-gray-600">Training Companies</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">99.9%</div>
-              <div className="text-gray-600">Session Success Rate</div>
-            </div>
-          </div>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold">Technical Requirements</label>
+                <Textarea
+                  placeholder="Tell us about your training curriculum, required software, programming languages, cloud platforms, etc. The more details, the better we can customize your demo."
+                  value={demoForm.requirements}
+                  onChange={(e) => setDemoForm({...demoForm, requirements: e.target.value})}
+                  className="min-h-24"
+                />
+              </div>
+
+              <Button type="submit" size="lg" className="w-full h-12 text-lg bg-primary hover:bg-primary/90">
+                <Zap className="w-5 h-5 mr-2" />
+                Get My Custom Demo
+              </Button>
+            </form>
+          </Card>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-background border-t border-border py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <div className="flex items-center space-x-2">
+              <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl">CloudAdda</span>
-              </div>
-              <p className="text-gray-400">
+                <span className="font-bold text-xl text-foreground">CloudAdda</span>
+              </Link>
+              <p className="text-muted-foreground">
                 Born in India, Built for the World. Infrastructure that just works.
               </p>
             </div>
-            
             <div>
-              <h3 className="font-semibold mb-4">Solutions</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" className="hover:text-white transition-colors">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" className="hover:text-white transition-colors">Virtual Desktops</Link></li>
-                <li><Link to="/vps" className="hover:text-white transition-colors">VPS</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">Custom Solutions</a></li>
+              <h3 className="font-semibold mb-4 text-foreground">Solutions</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/training-labs" className="hover:text-foreground transition-colors">Training Labs</Link></li>
+                <li><Link to="/cloud-desktops" className="hover:text-foreground transition-colors">Virtual Desktops</Link></li>
+                <li><Link to="/vps" className="hover:text-foreground transition-colors">VPS</Link></li>
               </ul>
             </div>
-            
             <div>
-              <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <h3 className="font-semibold mb-4 text-foreground">Company</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/about" className="hover:text-foreground transition-colors">About Us</Link></li>
+                <li><Link to="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
+                <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
               </ul>
             </div>
-            
             <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Community</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
+              <h3 className="font-semibold mb-4 text-foreground">Support</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/support" className="hover:text-foreground transition-colors">Help Center</Link></li>
+                <li><Link to="/trainer-adda" className="hover:text-foreground transition-colors">Trainer Adda</Link></li>
+                <li><Link to="/guides" className="hover:text-foreground transition-colors">Documentation</Link></li>
               </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">© 2024 CloudAdda. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
