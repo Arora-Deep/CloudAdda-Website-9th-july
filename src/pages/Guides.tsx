@@ -1,11 +1,9 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, FileText, Video, Download, Search, Filter, Star, Clock, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import Navigation from "@/components/shared/Navigation";
 
 const Guides = () => {
   const guides = [
@@ -93,8 +91,6 @@ const Guides = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
-
       {/* Hero Section */}
       <section className="py-32 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
