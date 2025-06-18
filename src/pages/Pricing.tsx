@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Check, ArrowRight, DollarSign, Zap, Users, Target, Globe, Award, Calculator, Sparkles, TrendingUp, Shield, Server, Monitor, GraduationCap, Building, Cpu, HardDrive, Network } from "lucide-react";
 import { Link } from "react-router-dom";
-import Navigation from "@/components/shared/Navigation";
 
 const Pricing = () => {
   const scrollToSection = (sectionId: string) => {
@@ -18,8 +16,6 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
-
       {/* Hero Section */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
