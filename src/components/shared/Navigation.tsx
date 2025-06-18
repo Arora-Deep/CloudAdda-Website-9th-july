@@ -136,14 +136,21 @@ const Navigation = () => {
                   Contact
                 </Link>
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link to="/support" className={navigationMenuTriggerStyle()}>
+                  Support
+                </Link>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
           <div className="flex items-center space-x-4">
-            <Link to="/support">
-              <Button variant="ghost">Support</Button>
+            <Link to="/login" className="text-foreground hover:text-primary transition-colors">
+              Log In
             </Link>
-            <Button>Get Started</Button>
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+              Start Now →
+            </Button>
           </div>
         </div>
       </div>
