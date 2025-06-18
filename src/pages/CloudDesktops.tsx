@@ -11,13 +11,10 @@ import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 import CloudDesktopsMigration from "@/components/CloudDesktopsMigration";
 import CloudDesktopsFinalCTA from "@/components/CloudDesktopsFinalCTA";
 import CloudDesktopsFooter from "@/components/CloudDesktopsFooter";
-import Navigation from "@/components/shared/Navigation";
 
 const CloudDesktops = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
-
       {/* Page sections */}
       <CloudDesktopsHero />
       <CloudDesktopsPainPoints />
