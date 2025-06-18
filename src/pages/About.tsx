@@ -1,15 +1,34 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Target, Users, Globe, Award, Heart, Zap, ArrowRight, Star, Lightbulb, Shield, Building, Handshake, Eye } from "lucide-react";
+import { 
+  Users, 
+  MapPin, 
+  Calendar, 
+  Target, 
+  Heart, 
+  Star, 
+  Globe, 
+  Award,
+  TrendingUp,
+  Shield,
+  Clock,
+  CheckCircle,
+  Zap,
+  Building,
+  Coffee,
+  Lightbulb
+} from "lucide-react";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section with Asymmetric Layout */}
-      <section className="py-32 bg-white relative overflow-hidden">
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">

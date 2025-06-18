@@ -2,8 +2,34 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, FileText, Video, Download, Search, Filter, Star, Clock, Users } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { 
+  BookOpen, 
+  Search, 
+  Filter, 
+  Clock, 
+  User, 
+  ArrowRight, 
+  Star, 
+  Download,
+  Play,
+  FileText,
+  Video,
+  Code,
+  Terminal,
+  Settings,
+  Zap,
+  Shield,
+  Users,
+  Target,
+  Globe,
+  Award,
+  CheckCircle,
+  Lightbulb,
+  Heart
+} from "lucide-react";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 
 const Guides = () => {
   const guides = [
@@ -90,9 +116,10 @@ const Guides = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
+      <Navigation />
       {/* Hero Section */}
-      <section className="py-32 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
             <Badge className="mb-8 bg-blue-100 text-blue-800 border-blue-200 text-lg font-medium px-6 py-3">

@@ -1,41 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { 
-  MessageCircle, 
+  Mail, 
+  Phone, 
+  MapPin, 
   Clock, 
-  CheckCircle, 
+  Send, 
+  MessageSquare, 
   Users, 
-  Zap, 
+  Target,
+  Building,
+  Briefcase,
+  GraduationCap,
+  Server,
+  CheckCircle,
   Heart,
-  Mail,
-  Phone,
-  MapPin,
+  Globe,
   ArrowRight,
-  Shield,
-  Headphones,
-  BookOpen,
-  Sparkles,
-  Coffee,
-  Rocket
+  Calendar,
+  Coffee
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
+import Navigation from "@/components/Navigation";
 
 const Contact = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [company, setCompany] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const { toast } = useToast();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast({
+      title: "Message Sent!",
+      description: "We'll get back to you within 2 hours.",
+      variant: "success",
+    });
+  };
+
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section with Asymmetric Layout */}
-      <section className="py-32 bg-white relative overflow-hidden">
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
               <div className="inline-block mb-8">
                 <Badge className="mb-4 bg-purple-100 text-purple-800 border-purple-200 text-sm font-medium px-4 py-2">
-                  <MessageCircle className="w-4 h-4 mr-2" />
+                  <MessageSquare className="w-4 h-4 mr-2" />
                   Always Here for You
                 </Badge>
               </div>
@@ -56,7 +78,7 @@ const Contact = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <Button size="lg" className="bg-purple-600 hover:bg-purple-700 group">
-                  <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  <MessageSquare className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Start a Conversation
                 </Button>
                 <Button size="lg" variant="outline" className="border-orange-500 text-orange-600 hover:bg-orange-50 group">
@@ -73,7 +95,7 @@ const Contact = () => {
                   <div className="absolute bottom-8 left-8 w-6 h-6 bg-purple-500 rounded-full animate-pulse delay-1000"></div>
                   <div className="text-center">
                     <div className="w-24 h-24 bg-purple-500 rounded-2xl mx-auto mb-6 flex items-center justify-center transform hover:rotate-6 transition-transform duration-300">
-                      <MessageCircle className="w-12 h-12 text-white" />
+                      <MessageSquare className="w-12 h-12 text-white" />
                     </div>
                     <div className="text-sm text-muted-foreground">3D Illustration Space</div>
                     <div className="text-xs text-muted-foreground/60">Customer Support Visual</div>
