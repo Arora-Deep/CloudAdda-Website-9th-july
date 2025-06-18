@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,7 +19,10 @@ import {
   Zap,
   Building,
   Coffee,
-  Lightbulb
+  Lightbulb,
+  ArrowRight,
+  Handshake,
+  Eye
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
