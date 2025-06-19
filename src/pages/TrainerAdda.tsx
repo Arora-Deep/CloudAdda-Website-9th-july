@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { Search, BookOpen, Users, Target, Calendar, ArrowRight, Filter, Star, Clock, ChevronDown, Menu, X } from "lucide-react";
+import { BookOpen, Users, Target, ArrowRight, Star, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainerAdda = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const blogPosts = [{
     title: "Building Effective Cloud Training Programs",
     description: "A comprehensive guide to designing and implementing cloud training curricula that drive real results.",
@@ -34,6 +33,7 @@ const TrainerAdda = () => {
     author: "Anjali Mehta",
     featured: false
   }];
+
   const caseStudies = [{
     title: "TechCorp's Digital Transformation Journey",
     description: "How TechCorp trained 500+ developers on cloud technologies in 6 months",
@@ -47,6 +47,7 @@ const TrainerAdda = () => {
     results: "50 startups, 200+ participants, 95% satisfaction",
     category: "Bootcamp"
   }];
+
   const playbooks = [{
     title: "AWS Certification Training Playbook",
     description: "Complete curriculum and lab setup for AWS certification preparation",
@@ -130,75 +131,45 @@ const TrainerAdda = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-32 bg-gradient-to-br from-orange-50 to-purple-50 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            <Badge className="mb-8 bg-orange-100 text-orange-800 border-orange-200 text-lg font-medium px-6 py-3">
-              <BookOpen className="w-5 h-5 mr-2" />
-              Knowledge Hub for Training Excellence
-            </Badge>
-            <h1 className="text-6xl lg:text-7xl font-black mb-8 leading-[0.9] tracking-tight">
-              <span className="text-orange-600">Trainer</span>
-              <br />
-              <span className="text-purple-600">Adda</span>
-            </h1>
-            <p className="text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto font-light">
-              Your go-to resource for training insights, best practices, and proven strategies
-            </p>
-            <p className="text-lg text-muted-foreground mb-12 max-w-4xl mx-auto">
-              Discover expert guides, real-world case studies, and ready-to-use playbooks that help you 
-              deliver exceptional training experiences. From infrastructure setup to curriculum design, 
-              we've got you covered.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <div className="relative max-w-md">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input type="text" placeholder="Search articles, guides, case studies..." className="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" />
-              </div>
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700 rounded-full px-8 py-4 text-lg">
-                <Filter className="w-5 h-5 mr-2" />
-                Browse Categories
-              </Button>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-orange-600 mb-2">150+</div>
-                <div className="text-muted-foreground">Articles & Guides</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-purple-600 mb-2">50+</div>
-                <div className="text-muted-foreground">Case Studies</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-orange-600 mb-2">25+</div>
-                <div className="text-muted-foreground">Training Playbooks</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-purple-600 mb-2">10K+</div>
-                <div className="text-muted-foreground">Monthly Readers</div>
-              </div>
-            </div>
-          </div>
+      <section className="py-24 bg-gradient-to-br from-orange-50 to-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Badge className="mb-8 bg-orange-100 text-orange-800 border-orange-200 text-lg font-medium px-6 py-3">
+            <BookOpen className="w-5 h-5 mr-2" />
+            Training Resources & Insights
+          </Badge>
+          <h1 className="text-5xl lg:text-6xl font-black mb-8 leading-tight">
+            <span className="text-orange-600">Trainer</span>{" "}
+            <span className="text-purple-600">Adda</span>
+          </h1>
+          <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+            Expert guides, real-world case studies, and ready-to-use playbooks to help you 
+            deliver exceptional training experiences.
+          </p>
         </div>
       </section>
 
-      {/* Featured Content */}
-      <section className="py-24 bg-white">
+      {/* Training Guides */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Featured This Week</h2>
-            <p className="text-xl text-muted-foreground">Hand-picked content from our training experts</p>
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
+                <BookOpen className="w-6 h-6" />
+              </div>
+            </div>
+            <h2 className="text-3xl font-bold text-foreground mb-4">Training Guides</h2>
+            <p className="text-lg text-muted-foreground">Expert insights and proven strategies for training success</p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => <Card key={index} className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${post.featured ? 'border-2 border-orange-500 lg:scale-105' : ''}`}>
-                {post.featured && <Badge className="absolute -top-3 left-4 bg-orange-500 text-white">
+            {blogPosts.map((post, index) => 
+              <Card key={index} className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${post.featured ? 'border-2 border-orange-500' : ''}`}>
+                {post.featured && 
+                  <Badge className="absolute -top-3 left-4 bg-orange-500 text-white">
                     <Star className="w-3 h-3 mr-1" />
                     Featured
-                  </Badge>}
+                  </Badge>
+                }
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="outline" className="text-xs">
@@ -223,68 +194,28 @@ const TrainerAdda = () => {
                     </Button>
                   </div>
                 </CardContent>
-              </Card>)}
+              </Card>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="py-24 bg-gray-50">
+      {/* Success Stories */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Explore by Category</h2>
-            <p className="text-xl text-muted-foreground">Find exactly what you're looking for</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[{
-            icon: BookOpen,
-            title: "Training Guides",
-            count: "45 articles",
-            description: "Comprehensive guides for effective training delivery",
-            color: "bg-blue-100 text-blue-600"
-          }, {
-            icon: Users,
-            title: "Case Studies",
-            count: "32 stories",
-            description: "Real success stories from our training partners",
-            color: "bg-green-100 text-green-600"
-          }, {
-            icon: Target,
-            title: "Best Practices",
-            count: "28 insights",
-            description: "Proven strategies and methodologies",
-            color: "bg-purple-100 text-purple-600"
-          }, {
-            icon: Calendar,
-            title: "Playbooks",
-            count: "25 resources",
-            description: "Ready-to-use training curricula and setups",
-            color: "bg-orange-100 text-orange-600"
-          }].map((category, index) => <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                <CardHeader>
-                  <div className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <category.icon className="w-8 h-8" />
-                  </div>
-                  <CardTitle className="text-xl">{category.title}</CardTitle>
-                  <CardDescription className="text-sm text-muted-foreground mb-2">{category.count}</CardDescription>
-                  <CardDescription>{category.description}</CardDescription>
-                </CardHeader>
-              </Card>)}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Success Stories</h2>
-            <p className="text-xl text-muted-foreground">Learn from real-world training implementations</p>
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center">
+                <Users className="w-6 h-6" />
+              </div>
+            </div>
+            <h2 className="text-3xl font-bold text-foreground mb-4">Success Stories</h2>
+            <p className="text-lg text-muted-foreground">Real-world implementations and their results</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => <Card key={index} className="hover:shadow-xl transition-all duration-300">
+            {caseStudies.map((study, index) => 
+              <Card key={index} className="hover:shadow-xl transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
                     <Badge variant="outline">{study.category}</Badge>
@@ -303,21 +234,28 @@ const TrainerAdda = () => {
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </CardContent>
-              </Card>)}
+              </Card>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Training Playbooks Section */}
-      <section className="py-24 bg-purple-50">
+      {/* Training Playbooks */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Training Playbooks</h2>
-            <p className="text-xl text-muted-foreground">Ready-to-use curricula and lab setups</p>
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center">
+                <Target className="w-6 h-6" />
+              </div>
+            </div>
+            <h2 className="text-3xl font-bold text-foreground mb-4">Training Playbooks</h2>
+            <p className="text-lg text-muted-foreground">Ready-to-use curricula and lab setups</p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {playbooks.map((playbook, index) => <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            {playbooks.map((playbook, index) => 
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge className="bg-purple-100 text-purple-800">{playbook.type}</Badge>
@@ -332,21 +270,26 @@ const TrainerAdda = () => {
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </CardContent>
-              </Card>)}
+              </Card>
+            )}
           </div>
         </div>
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-24 bg-gradient-to-r from-orange-500 to-purple-600">
+      <section className="py-20 bg-gradient-to-r from-orange-500 to-purple-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Stay Updated</h2>
-          <p className="text-xl text-white/90 mb-8">
-            Get the latest training insights, case studies, and playbooks delivered to your inbox
+          <h2 className="text-3xl font-bold text-white mb-6">Stay Updated</h2>
+          <p className="text-lg text-white/90 mb-8">
+            Get the latest training insights and resources delivered to your inbox
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input type="email" placeholder="Enter your email" className="flex-1 px-6 py-4 rounded-full text-lg focus:outline-none focus:ring-2 focus:ring-white/50" />
-            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 rounded-full px-8 py-4">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              className="flex-1 px-6 py-3 rounded-full text-base focus:outline-none focus:ring-2 focus:ring-white/50" 
+            />
+            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 rounded-full px-8">
               Subscribe
             </Button>
           </div>
