@@ -7,37 +7,30 @@ import { BookOpen, Users, Target, ArrowRight, Star, Clock, GraduationCap, Award,
 import { Link } from "react-router-dom";
 
 const TrainerAdda = () => {
-  const [activeSection, setActiveSection] = useState("trainer-playbook");
-
   const resourceSections = [
     {
       id: "trainer-playbook",
       label: "Trainer Playbook",
-      description: "Guides, lab templates, and classroom infra tips for training companies.",
       icon: BookOpen
     },
     {
       id: "adda-insights",
       label: "Adda Insights", 
-      description: "Tutorials, comparisons, and technical deep dives on Cloud Desktops & VPS.",
       icon: Lightbulb
     },
     {
       id: "customer-stories",
       label: "Customer Stories",
-      description: "Real-world case studies from trainers, dev teams, and infra users.",
       icon: Heart
     },
     {
       id: "downloads",
       label: "Downloads",
-      description: "Free PDFs, checklists, lab calculators, and planning tools.",
       icon: Download
     },
     {
       id: "adda-dispatch",
       label: "The Adda Dispatch",
-      description: "Monthly product updates, tips, and behind-the-scenes from the CloudAdda team.",
       icon: Calendar
     }
   ];
@@ -116,6 +109,13 @@ const TrainerAdda = () => {
     size: "850 KB"
   }];
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Enhanced Navigation */}
@@ -130,42 +130,47 @@ const TrainerAdda = () => {
             <div className="hidden md:flex items-center space-x-8">
               {/* Solutions Dropdown */}
               <div className="relative group">
-                <button className="text-gray-700 hover:text-orange-500 transition-colors py-2 flex items-center">
+                <button className="text-gray-700 hover:text-orange-500 transition-all duration-300 py-2 flex items-center font-medium">
                   Solutions
                 </button>
-                <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
-                  <div className="p-6">
-                    <div className="space-y-4">
-                      <Link to="/training-labs" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group/item">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                            <GraduationCap className="w-5 h-5 text-orange-600" />
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-96 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 z-50 overflow-hidden">
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
+                  <div className="p-8">
+                    <div className="text-center mb-6">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">Our Solutions</h3>
+                      <p className="text-sm text-gray-600">Powerful infrastructure for every need</p>
+                    </div>
+                    <div className="space-y-6">
+                      <Link to="/training-labs" className="block p-5 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-orange-200 hover:shadow-lg">
+                        <div className="flex items-center space-x-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <GraduationCap className="w-6 h-6 text-white" />
                           </div>
-                          <div>
-                            <div className="font-semibold text-gray-900 group-hover/item:text-orange-600">Training Labs</div>
-                            <p className="text-sm text-gray-600">Provisioned lab environments for training companies</p>
-                          </div>
-                        </div>
-                      </Link>
-                      <Link to="/cloud-desktops" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group/item">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                            <Users className="w-5 h-5 text-purple-600" />
-                          </div>
-                          <div>
-                            <div className="font-semibold text-gray-900 group-hover/item:text-purple-600">Cloud Desktops</div>
-                            <p className="text-sm text-gray-600">Fast, secure desktops accessible from anywhere</p>
+                          <div className="flex-1">
+                            <div className="font-bold text-gray-900 group-hover/item:text-orange-600 transition-colors text-lg mb-1">Training Labs</div>
+                            <p className="text-sm text-gray-600 leading-relaxed">Provisioned lab environments for training companies</p>
                           </div>
                         </div>
                       </Link>
-                      <Link to="/vps" className="block p-4 rounded-lg hover:bg-gray-50 transition-colors group/item">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                            <Target className="w-5 h-5 text-blue-600" />
+                      <Link to="/cloud-desktops" className="block p-5 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-purple-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-purple-200 hover:shadow-lg">
+                        <div className="flex items-center space-x-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <Users className="w-6 h-6 text-white" />
                           </div>
-                          <div>
-                            <div className="font-semibold text-gray-900 group-hover/item:text-blue-600">VPS Hosting</div>
-                            <p className="text-sm text-gray-600">High-performance VPS with AMD EPYC processors</p>
+                          <div className="flex-1">
+                            <div className="font-bold text-gray-900 group-hover/item:text-purple-600 transition-colors text-lg mb-1">Cloud Desktops</div>
+                            <p className="text-sm text-gray-600 leading-relaxed">Fast, secure desktops accessible from anywhere</p>
+                          </div>
+                        </div>
+                      </Link>
+                      <Link to="/vps" className="block p-5 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-blue-200 hover:shadow-lg">
+                        <div className="flex items-center space-x-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <Target className="w-6 h-6 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-bold text-gray-900 group-hover/item:text-blue-600 transition-colors text-lg mb-1">VPS Hosting</div>
+                            <p className="text-sm text-gray-600 leading-relaxed">High-performance VPS with AMD EPYC processors</p>
                           </div>
                         </div>
                       </Link>
@@ -176,23 +181,27 @@ const TrainerAdda = () => {
 
               {/* Resources Dropdown */}
               <div className="relative group">
-                <button className="text-gray-700 hover:text-orange-500 transition-colors py-2 flex items-center">
+                <button className="text-gray-700 hover:text-orange-500 transition-all duration-300 py-2 flex items-center font-medium">
                   Resources
                 </button>
-                <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 z-50 overflow-hidden">
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
                   <div className="p-6">
+                    <div className="text-center mb-6">
+                      <h3 className="text-lg font-bold text-gray-900 mb-2">Resources Hub</h3>
+                      <p className="text-xs text-gray-600">Everything you need for training success</p>
+                    </div>
                     <div className="space-y-3">
                       {resourceSections.map((section) => {
                         const IconComponent = section.icon;
                         return (
-                          <Link key={section.id} to="/trainer-adda" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                          <Link key={section.id} to="/trainer-adda" className="block p-4 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-orange-200 hover:shadow-md">
                             <div className="flex items-center space-x-3">
-                              <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                                <IconComponent className="w-4 h-4 text-orange-600" />
+                              <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center shadow-md">
+                                <IconComponent className="w-5 h-5 text-white" />
                               </div>
-                              <div>
-                                <div className="font-medium text-gray-900 text-sm group-hover/item:text-orange-600">{section.label}</div>
-                                <p className="text-xs text-gray-600 leading-tight">{section.description}</p>
+                              <div className="flex-1">
+                                <div className="font-semibold text-gray-900 text-sm group-hover/item:text-orange-600 transition-colors">{section.label}</div>
                               </div>
                             </div>
                           </Link>
@@ -220,51 +229,19 @@ const TrainerAdda = () => {
       </nav>
 
       <div className="flex min-h-screen">
-        {/* Sleeker Left Sidebar */}
-        <div className="w-72 bg-white/80 backdrop-blur-sm border-r border-gray-100 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto">
-          <div className="p-6">
-            <div className="mb-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-2">CloudAdda Resources Hub</h2>
-              <p className="text-sm text-gray-600">Everything you need for training success</p>
-            </div>
-            
-            <nav className="space-y-1">
-              {resourceSections.map((section) => {
-                const IconComponent = section.icon;
-                return (
-                  <button
-                    key={section.id}
-                    onClick={() => setActiveSection(section.id)}
-                    className={`w-full text-left p-3 rounded-xl transition-all duration-200 group ${
-                      activeSection === section.id
-                        ? 'bg-orange-50 border border-orange-200 shadow-sm'
-                        : 'hover:bg-gray-50 border border-transparent'
-                    }`}
-                  >
-                    <div className="flex items-start space-x-3">
-                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                        activeSection === section.id ? 'bg-orange-100' : 'bg-gray-100 group-hover:bg-orange-100'
-                      }`}>
-                        <IconComponent className={`w-4 h-4 ${
-                          activeSection === section.id ? 'text-orange-600' : 'text-gray-500 group-hover:text-orange-600'
-                        }`} />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className={`font-semibold text-sm mb-1 ${
-                          activeSection === section.id ? 'text-orange-900' : 'text-gray-900'
-                        }`}>
-                          {section.label}
-                        </h3>
-                        <p className={`text-xs leading-relaxed ${
-                          activeSection === section.id ? 'text-orange-700' : 'text-gray-600'
-                        }`}>
-                          {section.description}
-                        </p>
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
+        {/* Minimalistic Left Sidebar */}
+        <div className="w-48 bg-white border-r border-gray-100 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="p-4">
+            <nav className="space-y-2">
+              {resourceSections.map((section) => (
+                <button
+                  key={section.id}
+                  onClick={() => scrollToSection(section.id)}
+                  className="w-full text-left text-sm font-medium text-gray-600 hover:text-orange-600 transition-colors py-2 px-3 rounded-lg hover:bg-orange-50"
+                >
+                  {section.label}
+                </button>
+              ))}
             </nav>
           </div>
         </div>
@@ -300,238 +277,238 @@ const TrainerAdda = () => {
             </div>
           </section>
 
-          {/* Dynamic Content Sections */}
-          <section className="px-8 pb-16">
+          {/* Trainer Playbook Section */}
+          <section id="trainer-playbook" className="px-8 pb-16">
             <div className="max-w-6xl mx-auto">
-              {activeSection === "trainer-playbook" && (
-                <div>
-                  <div className="text-center mb-12">
-                    <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
-                      <BookOpen className="w-4 h-4 mr-2" />
-                      Trainer Playbooks
-                    </Badge>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Training Playbooks</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                      Complete curricula and lab setups, ready to deploy for your training programs.
-                    </p>
-                  </div>
-                  <div className="grid lg:grid-cols-3 gap-6">
-                    {playbooks.map((playbook, index) => (
-                      <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md">
-                        <CardHeader>
-                          <div className="flex items-center justify-between mb-2">
-                            <Badge className="bg-purple-100 text-purple-800">{playbook.type}</Badge>
-                            <div className="text-sm text-gray-500 flex items-center">
-                              <Clock className="w-3 h-3 mr-1" />
-                              {playbook.duration}
-                            </div>
-                          </div>
-                          <CardTitle className="text-lg">{playbook.title}</CardTitle>
-                          <CardDescription>{playbook.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="space-y-2 mb-4">
-                            {[
-                              "Complete curriculum guide",
-                              "Lab setup instructions",
-                              "Assessment materials",
-                              "Instructor resources"
-                            ].map((feature, idx) => (
-                              <div key={idx} className="flex items-center space-x-2">
-                                <CheckCircle className="w-4 h-4 text-purple-500" />
-                                <span className="text-sm text-gray-600">{feature}</span>
-                              </div>
-                            ))}
-                          </div>
-                          <Button className="w-full bg-purple-600 hover:bg-purple-700">
-                            Download Playbook
-                            <Download className="w-4 h-4 ml-2" />
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {activeSection === "adda-insights" && (
-                <div>
-                  <div className="text-center mb-12">
-                    <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
-                      <Lightbulb className="w-4 h-4 mr-2" />
-                      Adda Insights
-                    </Badge>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Technical Insights</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                      Tutorials, comparisons, and technical deep dives on Cloud Desktops & VPS.
-                    </p>
-                  </div>
-                  <div className="grid lg:grid-cols-3 gap-6">
-                    {blogPosts.map((post, index) => (
-                      <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md ${post.featured ? 'ring-2 ring-orange-200' : ''}`}>
-                        {post.featured && (
-                          <Badge className="absolute -top-2 -right-2 bg-orange-500 text-white">
-                            <Star className="w-3 h-3 mr-1" />
-                            Featured
-                          </Badge>
-                        )}
-                        <CardHeader>
-                          <div className="flex items-center justify-between mb-2">
-                            <Badge variant="outline" className="text-xs">
-                              {post.category}
-                            </Badge>
-                            <div className="flex items-center text-sm text-gray-500">
-                              <Clock className="w-4 h-4 mr-1" />
-                              {post.readTime}
-                            </div>
-                          </div>
-                          <CardTitle className="text-lg leading-tight">{post.title}</CardTitle>
-                          <CardDescription>{post.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="flex items-center justify-between">
-                            <div className="text-sm text-gray-500">
-                              By {post.author} • {post.date}
-                            </div>
-                            <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700">
-                              Read More
-                              <ArrowRight className="w-4 h-4 ml-1" />
-                            </Button>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {activeSection === "customer-stories" && (
-                <div>
-                  <div className="text-center mb-12">
-                    <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
-                      <Heart className="w-4 h-4 mr-2" />
-                      Customer Stories
-                    </Badge>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Success Stories</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                      Real-world case studies from trainers, dev teams, and infrastructure users.
-                    </p>
-                  </div>
-                  <div className="grid lg:grid-cols-2 gap-8">
-                    {caseStudies.map((study, index) => (
-                      <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md">
-                        <CardHeader>
-                          <div className="flex items-center justify-between mb-4">
-                            <Badge variant="outline">{study.category}</Badge>
-                            <div className="text-sm font-medium text-green-600">{study.company}</div>
-                          </div>
-                          <CardTitle className="text-xl">{study.title}</CardTitle>
-                          <CardDescription className="text-base">{study.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="bg-green-50 rounded-lg p-4 mb-4">
-                            <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                              <Award className="w-4 h-4 mr-2 text-green-600" />
-                              Key Results:
-                            </h4>
-                            <p className="text-gray-700">{study.results}</p>
-                          </div>
-                          <Button className="w-full bg-green-600 hover:bg-green-700">
-                            Read Full Case Study
-                            <ArrowRight className="w-4 h-4 ml-2" />
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {activeSection === "downloads" && (
-                <div>
-                  <div className="text-center mb-12">
-                    <Badge className="mb-4 bg-indigo-100 text-indigo-800 border-indigo-200">
-                      <Download className="w-4 h-4 mr-2" />
-                      Downloads
-                    </Badge>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Free Resources</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                      Free PDFs, checklists, lab calculators, and planning tools.
-                    </p>
-                  </div>
-                  <div className="grid lg:grid-cols-3 gap-6">
-                    {downloads.map((download, index) => (
-                      <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md">
-                        <CardHeader>
-                          <div className="flex items-center justify-between mb-2">
-                            <Badge className="bg-indigo-100 text-indigo-800">{download.type}</Badge>
-                            <div className="text-sm text-gray-500">{download.size}</div>
-                          </div>
-                          <CardTitle className="text-lg">{download.title}</CardTitle>
-                          <CardDescription>{download.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <Button className="w-full bg-indigo-600 hover:bg-indigo-700">
-                            <Download className="w-4 h-4 mr-2" />
-                            Download Free
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {activeSection === "adda-dispatch" && (
-                <div>
-                  <div className="text-center mb-12">
-                    <Badge className="mb-4 bg-purple-100 text-purple-800 border-purple-200">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      The Adda Dispatch
-                    </Badge>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Monthly Newsletter</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                      Monthly product updates, tips, and behind-the-scenes from the CloudAdda team.
-                    </p>
-                  </div>
-                  <div className="max-w-2xl mx-auto">
-                    <Card className="border-0 shadow-lg">
-                      <CardHeader className="text-center">
-                        <CardTitle className="text-2xl">Stay Updated</CardTitle>
-                        <CardDescription className="text-base">
-                          Get the latest insights, product updates, and exclusive content delivered to your inbox
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-6">
-                        <div className="flex flex-col sm:flex-row gap-4">
-                          <input 
-                            type="email" 
-                            placeholder="Enter your email address" 
-                            className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
-                          />
-                          <Button className="bg-purple-600 hover:bg-purple-700 px-8">
-                            Subscribe
-                          </Button>
+              <div className="text-center mb-12">
+                <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  Trainer Playbooks
+                </Badge>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Training Playbooks</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Complete curricula and lab setups, ready to deploy for your training programs.
+                </p>
+              </div>
+              <div className="grid lg:grid-cols-3 gap-6">
+                {playbooks.map((playbook, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md">
+                    <CardHeader>
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge className="bg-purple-100 text-purple-800">{playbook.type}</Badge>
+                        <div className="text-sm text-gray-500 flex items-center">
+                          <Clock className="w-3 h-3 mr-1" />
+                          {playbook.duration}
                         </div>
-                        <div className="grid grid-cols-3 gap-4 text-center">
-                          <div>
-                            <div className="font-semibold text-2xl text-purple-600">500+</div>
-                            <div className="text-sm text-gray-600">Subscribers</div>
+                      </div>
+                      <CardTitle className="text-lg">{playbook.title}</CardTitle>
+                      <CardDescription>{playbook.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2 mb-4">
+                        {[
+                          "Complete curriculum guide",
+                          "Lab setup instructions",
+                          "Assessment materials",
+                          "Instructor resources"
+                        ].map((feature, idx) => (
+                          <div key={idx} className="flex items-center space-x-2">
+                            <CheckCircle className="w-4 h-4 text-purple-500" />
+                            <span className="text-sm text-gray-600">{feature}</span>
                           </div>
-                          <div>
-                            <div className="font-semibold text-2xl text-purple-600">Monthly</div>
-                            <div className="text-sm text-gray-600">Updates</div>
-                          </div>
-                          <div>
-                            <div className="font-semibold text-2xl text-purple-600">0</div>
-                            <div className="text-sm text-gray-600">Spam</div>
-                          </div>
+                        ))}
+                      </div>
+                      <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                        Download Playbook
+                        <Download className="w-4 h-4 ml-2" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Adda Insights Section */}
+          <section id="adda-insights" className="px-8 pb-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+                  <Lightbulb className="w-4 h-4 mr-2" />
+                  Adda Insights
+                </Badge>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Technical Insights</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Tutorials, comparisons, and technical deep dives on Cloud Desktops & VPS.
+                </p>
+              </div>
+              <div className="grid lg:grid-cols-3 gap-6">
+                {blogPosts.map((post, index) => (
+                  <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md ${post.featured ? 'ring-2 ring-orange-200' : ''}`}>
+                    {post.featured && (
+                      <Badge className="absolute -top-2 -right-2 bg-orange-500 text-white">
+                        <Star className="w-3 h-3 mr-1" />
+                        Featured
+                      </Badge>
+                    )}
+                    <CardHeader>
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge variant="outline" className="text-xs">
+                          {post.category}
+                        </Badge>
+                        <div className="flex items-center text-sm text-gray-500">
+                          <Clock className="w-4 h-4 mr-1" />
+                          {post.readTime}
                         </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              )}
+                      </div>
+                      <CardTitle className="text-lg leading-tight">{post.title}</CardTitle>
+                      <CardDescription>{post.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm text-gray-500">
+                          By {post.author} • {post.date}
+                        </div>
+                        <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700">
+                          Read More
+                          <ArrowRight className="w-4 h-4 ml-1" />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Customer Stories Section */}
+          <section id="customer-stories" className="px-8 pb-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
+                  <Heart className="w-4 h-4 mr-2" />
+                  Customer Stories
+                </Badge>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Success Stories</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Real-world case studies from trainers, dev teams, and infrastructure users.
+                </p>
+              </div>
+              <div className="grid lg:grid-cols-2 gap-8">
+                {caseStudies.map((study, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md">
+                    <CardHeader>
+                      <div className="flex items-center justify-between mb-4">
+                        <Badge variant="outline">{study.category}</Badge>
+                        <div className="text-sm font-medium text-green-600">{study.company}</div>
+                      </div>
+                      <CardTitle className="text-xl">{study.title}</CardTitle>
+                      <CardDescription className="text-base">{study.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="bg-green-50 rounded-lg p-4 mb-4">
+                        <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
+                          <Award className="w-4 h-4 mr-2 text-green-600" />
+                          Key Results:
+                        </h4>
+                        <p className="text-gray-700">{study.results}</p>
+                      </div>
+                      <Button className="w-full bg-green-600 hover:bg-green-700">
+                        Read Full Case Study
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Downloads Section */}
+          <section id="downloads" className="px-8 pb-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <Badge className="mb-4 bg-indigo-100 text-indigo-800 border-indigo-200">
+                  <Download className="w-4 h-4 mr-2" />
+                  Downloads
+                </Badge>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Free Resources</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Free PDFs, checklists, lab calculators, and planning tools.
+                </p>
+              </div>
+              <div className="grid lg:grid-cols-3 gap-6">
+                {downloads.map((download, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md">
+                    <CardHeader>
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge className="bg-indigo-100 text-indigo-800">{download.type}</Badge>
+                        <div className="text-sm text-gray-500">{download.size}</div>
+                      </div>
+                      <CardTitle className="text-lg">{download.title}</CardTitle>
+                      <CardDescription>{download.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button className="w-full bg-indigo-600 hover:bg-indigo-700">
+                        <Download className="w-4 h-4 mr-2" />
+                        Download Free
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* The Adda Dispatch Section */}
+          <section id="adda-dispatch" className="px-8 pb-16">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <Badge className="mb-4 bg-purple-100 text-purple-800 border-purple-200">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  The Adda Dispatch
+                </Badge>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Monthly Newsletter</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Monthly product updates, tips, and behind-the-scenes from the CloudAdda team.
+                </p>
+              </div>
+              <div className="max-w-2xl mx-auto">
+                <Card className="border-0 shadow-lg">
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-2xl">Stay Updated</CardTitle>
+                    <CardDescription className="text-base">
+                      Get the latest insights, product updates, and exclusive content delivered to your inbox
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <input 
+                        type="email" 
+                        placeholder="Enter your email address" 
+                        className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
+                      />
+                      <Button className="bg-purple-600 hover:bg-purple-700 px-8">
+                        Subscribe
+                      </Button>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 text-center">
+                      <div>
+                        <div className="font-semibold text-2xl text-purple-600">500+</div>
+                        <div className="text-sm text-gray-600">Subscribers</div>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-2xl text-purple-600">Monthly</div>
+                        <div className="text-sm text-gray-600">Updates</div>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-2xl text-purple-600">0</div>
+                        <div className="text-sm text-gray-600">Spam</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </section>
 
