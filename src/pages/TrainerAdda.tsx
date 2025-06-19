@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Search, BookOpen, Users, Target, Calendar, ArrowRight, Filter, Star, Clock } from "lucide-react";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { Search, BookOpen, Users, Target, Calendar, ArrowRight, Filter, Star, Clock, ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainerAdda = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const blogPosts = [
     {
       title: "Building Effective Cloud Training Programs",
@@ -76,6 +79,131 @@ const TrainerAdda = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link to="/" className="flex items-center space-x-2">
+                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
+                <span className="font-bold text-xl text-gray-900">CloudAdda</span>
+              </Link>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-8">
+                <NavigationMenu>
+                  <NavigationMenuList>
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger className="text-gray-700 hover:text-orange-600 font-medium">
+                        Solutions
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                          <li className="row-span-3">
+                            <NavigationMenuLink asChild>
+                              <a
+                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-orange-500/20 to-orange-600/20 p-6 no-underline outline-none focus:shadow-md"
+                                href="/training-labs"
+                              >
+                                <div className="mb-2 mt-4 text-lg font-medium text-gray-900">
+                                  Training Labs
+                                </div>
+                                <p className="text-sm leading-tight text-gray-600">
+                                  Spin up isolated environments for hands-on learning
+                                </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <Link
+                                to="/cloud-desktops"
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              >
+                                <div className="text-sm font-medium leading-none text-gray-900">Virtual Desktops</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-gray-600">
+                                  Full desktop experience in the cloud
+                                </p>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <Link
+                                to="/vps"
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              >
+                                <div className="text-sm font-medium leading-none text-gray-900">VPS</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-gray-600">
+                                  Scalable virtual private servers
+                                </p>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+                <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-600 font-medium">Resources</Link>
+                <Link to="/pricing" className="text-gray-700 hover:text-orange-600 font-medium">Pricing</Link>
+                <Link to="/about" className="text-gray-700 hover:text-orange-600 font-medium">About</Link>
+                <Link to="/contact" className="text-gray-700 hover:text-orange-600 font-medium">Contact</Link>
+                <Link to="/support" className="text-gray-700 hover:text-orange-600 font-medium">Support</Link>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="hidden md:flex items-center space-x-4">
+              <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">
+                Log In
+              </Button>
+              <Button className="bg-orange-600 hover:bg-orange-700 text-white">
+                Start Now
+              </Button>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+              <Link to="/training-labs" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">Training Labs</Link>
+              <Link to="/cloud-desktops" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">Virtual Desktops</Link>
+              <Link to="/vps" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">VPS</Link>
+              <Link to="/trainer-adda" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">Resources</Link>
+              <Link to="/pricing" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">Pricing</Link>
+              <Link to="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">About</Link>
+              <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">Contact</Link>
+              <Link to="/support" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">Support</Link>
+              <div className="px-3 py-2 space-y-2">
+                <Button variant="outline" className="w-full border-gray-300 text-gray-700 hover:bg-gray-50">
+                  Log In
+                </Button>
+                <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
+                  Start Now
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
+
       {/* Hero Section */}
       <section className="py-32 bg-gradient-to-br from-orange-50 to-purple-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
