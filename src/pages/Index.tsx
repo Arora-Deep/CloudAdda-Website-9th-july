@@ -1,8 +1,9 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, GraduationCap, Users, Target, BookOpen, Lightbulb, Heart, Download, Calendar, CheckCircle, Star, Clock, Zap, Shield, Globe, Award, TrendingUp, BarChart, Cpu, Database, Cloud, Settings, MessageSquare, Phone } from "lucide-react";
+import { ArrowRight, GraduationCap, Users, Target, BookOpen, Lightbulb, Heart, Download, Calendar, CheckCircle, Star, Clock, Zap, Shield, Globe, Award, TrendingUp, BarChart, Cpu, Database, Cloud, Settings, MessageSquare, Phone, Monitor, Server, Activity, HardDrive, HeartHandshake, Rocket, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
