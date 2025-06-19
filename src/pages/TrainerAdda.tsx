@@ -5,8 +5,10 @@ import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Search, BookOpen, Users, Target, Calendar, ArrowRight, Filter, Star, Clock, ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const TrainerAdda = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const blogPosts = [{
     title: "Building Effective Cloud Training Programs",
     description: "A comprehensive guide to designing and implementing cloud training curricula that drive real results.",
@@ -61,15 +63,16 @@ const TrainerAdda = () => {
     type: "Container Orchestration",
     duration: "3 weeks"
   }];
+
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <div className="flex items-center space-x-2">
+              <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
-              </div>
+              </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <NavigationMenu>
@@ -114,7 +117,7 @@ const TrainerAdda = () => {
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-purple-600">
+              <Button variant="ghost" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
                 Log In
               </Button>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
@@ -390,4 +393,5 @@ const TrainerAdda = () => {
       </footer>
     </div>;
 };
+
 export default TrainerAdda;
