@@ -1,8 +1,10 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { 
   Check, 
   X, 
@@ -22,7 +24,16 @@ import {
   Clock,
   Coffee,
   Headphones,
-  Code
+  Code,
+  DollarSign,
+  Calculator,
+  Sparkles,
+  GraduationCap,
+  Monitor,
+  Server,
+  Cpu,
+  HardDrive,
+  Network
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
