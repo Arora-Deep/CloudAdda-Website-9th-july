@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Settings, Zap, MessageCircle, Target, CheckCircle, Clock, Shield, Wrench, Users, BookOpen, Code, Monitor, Star, Award, TrendingUp, AlertTriangle, DollarSign, Activity, Rocket, Globe, Server, Database, Brain, BarChart3, Building, Lightbulb, FileCheck, Headphones, Gauge, Laptop, Timer, TrendingDown, X, ChevronRight, ThumbsUp, Play, Eye, UserCheck, Activity as ActivityIcon } from "lucide-react";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainingLabs = () => {
@@ -15,10 +16,57 @@ const TrainingLabs = () => {
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-gray-700 hover:text-orange-500 transition-colors">Home</Link>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</a>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
+                      Solutions
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/training-labs"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Training Labs</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Provisioned lab environments for training companies
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/cloud-desktops"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Cloud Desktops</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Fast, secure desktops accessible from anywhere
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/vps"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">VPS Hosting</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              High-performance VPS with AMD EPYC processors
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+              <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
+              <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
+              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
+              <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
+              <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
@@ -378,7 +426,7 @@ const TrainingLabs = () => {
               {
                 title: "Networking & Systems Training",
                 description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.",
-                icon: Server
+                icon: Users
               },
               {
                 title: "Hackathons & Workshops",
@@ -388,17 +436,17 @@ const TrainingLabs = () => {
               {
                 title: "Networking Labs",
                 description: "Simulated enterprise network environments for training on routing, switching, and troubleshooting at scale.",
-                icon: Globe
+                icon: Users
               },
               {
                 title: "Capture the Flag (CTF) Competitions",
                 description: "Realistic attack-defense setups for cybersecurity contests, team-based or individual.",
-                icon: Target
+                icon: Shield
               },
               {
                 title: "Certification Prep Labs",
                 description: "Practice environments preloaded with the exact tools and configs needed for cert exams (e.g., RHCE, OSCP, CEH).",
-                icon: Award
+                icon: Star
               }
             ].map((useCase, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
