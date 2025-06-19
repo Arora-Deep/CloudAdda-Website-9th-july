@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { BookOpen, Users, Target, ArrowRight, Star, Clock } from "lucide-react";
+import { BookOpen, Users, Target, ArrowRight, Star, Clock, GraduationCap, Award, CheckCircle, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainerAdda = () => {
@@ -65,7 +65,8 @@ const TrainerAdda = () => {
     duration: "3 weeks"
   }];
 
-  return <div className="min-h-screen bg-white">
+  return (
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,46 +131,83 @@ const TrainerAdda = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-orange-50 to-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-8 bg-orange-100 text-orange-800 border-orange-200 text-lg font-medium px-6 py-3">
-            <BookOpen className="w-5 h-5 mr-2" />
-            Training Resources & Insights
-          </Badge>
-          <h1 className="text-5xl lg:text-6xl font-black mb-8 leading-tight">
-            <span className="text-orange-600">Trainer</span>{" "}
-            <span className="text-purple-600">Adda</span>
-          </h1>
-          <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Expert guides, real-world case studies, and ready-to-use playbooks to help you 
-            deliver exceptional training experiences.
-          </p>
+      {/* Hero Section - Similar to Pricing page */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
+              <div className="inline-block mb-8">
+                <Badge className="mb-4 bg-orange-100 text-orange-800 border-orange-200 text-sm font-medium px-4 py-2">
+                  <GraduationCap className="w-4 h-4 mr-2" />
+                  Expert Training Resources
+                </Badge>
+              </div>
+              <h1 className="text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
+                <span className="text-orange-600">Trainer</span>
+                <br />
+                <span className="text-gray-900">Resources</span>
+                <br />
+                <span className="text-purple-600">Hub</span>
+              </h1>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="text-2xl font-bold text-foreground">Expert guides. Real success stories. Ready-to-use playbooks.</div>
+              </div>
+              <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
+                Everything you need to deliver world-class training experiences. From proven methodologies 
+                to ready-made curricula, we've got your training success covered.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 group">
+                  <BookOpen className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  Explore Resources
+                </Button>
+                <Button size="lg" variant="outline" className="border-purple-500 text-purple-600 hover:bg-purple-50 group">
+                  <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  Download Playbooks
+                </Button>
+              </div>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/c219099e-0e5b-49c8-83b1-e799238baebd.png" 
+                  alt="Training resources and education" 
+                  className="w-full h-auto max-w-lg object-contain rounded-3xl transform hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Training Guides */}
+      {/* Training Guides Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
-                <BookOpen className="w-6 h-6" />
-              </div>
-            </div>
-            <h2 className="text-3xl font-bold text-foreground mb-4">Training Guides</h2>
-            <p className="text-lg text-muted-foreground">Expert insights and proven strategies for training success</p>
+            <Badge className="mb-6 bg-blue-100 text-blue-800 border-blue-200">
+              <BookOpen className="w-4 h-4 mr-2" />
+              Expert Training Guides
+            </Badge>
+            <h2 className="text-5xl font-bold text-foreground mb-8 leading-tight">
+              Training Guides —
+              <br />
+              <span className="text-blue-600">Expert Insights for Training Success</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed">
+              Proven strategies and methodologies from industry experts to help you deliver 
+              exceptional training experiences that drive real results.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => 
-              <Card key={index} className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${post.featured ? 'border-2 border-orange-500' : ''}`}>
-                {post.featured && 
-                  <Badge className="absolute -top-3 left-4 bg-orange-500 text-white">
+            {blogPosts.map((post, index) => (
+              <Card key={index} className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${post.featured ? 'border-2 border-orange-500 scale-105' : 'shadow-lg'}`}>
+                {post.featured && (
+                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white">
                     <Star className="w-3 h-3 mr-1" />
                     Featured
                   </Badge>
-                }
+                )}
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="outline" className="text-xs">
@@ -195,83 +233,112 @@ const TrainerAdda = () => {
                   </div>
                 </CardContent>
               </Card>
-            )}
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Success Stories */}
+      {/* Success Stories Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center">
-                <Users className="w-6 h-6" />
-              </div>
-            </div>
-            <h2 className="text-3xl font-bold text-foreground mb-4">Success Stories</h2>
-            <p className="text-lg text-muted-foreground">Real-world implementations and their results</p>
+            <Badge className="mb-6 bg-green-100 text-green-800 border-green-200">
+              <Users className="w-4 h-4 mr-2" />
+              Real Success Stories
+            </Badge>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Success Stories</h2>
+            <p className="text-2xl text-muted-foreground max-w-4xl mx-auto font-light mb-8">
+              Real-world implementations and their remarkable results.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Learn from organizations that have successfully transformed their training programs 
+              and achieved outstanding outcomes using our methodologies and infrastructure.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => 
-              <Card key={index} className="hover:shadow-xl transition-all duration-300">
+            {caseStudies.map((study, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1 shadow-lg">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
                     <Badge variant="outline">{study.category}</Badge>
-                    <div className="text-sm font-medium text-orange-600">{study.company}</div>
+                    <div className="text-sm font-medium text-green-600">{study.company}</div>
                   </div>
                   <CardTitle className="text-2xl">{study.title}</CardTitle>
                   <CardDescription className="text-lg">{study.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-orange-50 rounded-lg p-4 mb-4">
-                    <h4 className="font-semibold text-foreground mb-2">Key Results:</h4>
+                  <div className="bg-green-50 rounded-lg p-4 mb-4">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center">
+                      <Award className="w-4 h-4 mr-2 text-green-600" />
+                      Key Results:
+                    </h4>
                     <p className="text-muted-foreground">{study.results}</p>
                   </div>
-                  <Button className="w-full bg-orange-600 hover:bg-orange-700">
+                  <Button className="w-full bg-green-600 hover:bg-green-700">
                     Read Full Case Study
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </CardContent>
               </Card>
-            )}
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Training Playbooks */}
+      {/* Training Playbooks Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center">
-                <Target className="w-6 h-6" />
-              </div>
-            </div>
-            <h2 className="text-3xl font-bold text-foreground mb-4">Training Playbooks</h2>
-            <p className="text-lg text-muted-foreground">Ready-to-use curricula and lab setups</p>
+            <Badge className="mb-6 bg-purple-100 text-purple-800 border-purple-200">
+              <Target className="w-4 h-4 mr-2" />
+              Ready-to-Use Playbooks
+            </Badge>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Training Playbooks</h2>
+            <p className="text-2xl text-muted-foreground font-light mb-8">
+              Complete curricula and lab setups, ready to deploy.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+              Skip the planning phase and jump straight to delivery with our battle-tested training 
+              playbooks. Each includes detailed curricula, lab configurations, and assessment materials.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {playbooks.map((playbook, index) => 
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            {playbooks.map((playbook, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 shadow-lg">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge className="bg-purple-100 text-purple-800">{playbook.type}</Badge>
-                    <div className="text-sm text-muted-foreground">{playbook.duration}</div>
+                    <div className="text-sm text-muted-foreground flex items-center">
+                      <Clock className="w-3 h-3 mr-1" />
+                      {playbook.duration}
+                    </div>
                   </div>
                   <CardTitle className="text-xl">{playbook.title}</CardTitle>
                   <CardDescription>{playbook.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <div className="space-y-3 mb-6">
+                    {[
+                      "Complete curriculum guide",
+                      "Lab setup instructions",
+                      "Assessment materials",
+                      "Instructor resources"
+                    ].map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-purple-500" />
+                        <span className="text-sm text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
                   <Button className="w-full bg-purple-600 hover:bg-purple-700">
                     Download Playbook
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <Download className="w-4 h-4 ml-2" />
                   </Button>
                 </CardContent>
               </Card>
-            )}
+            ))}
           </div>
         </div>
       </section>
@@ -279,9 +346,9 @@ const TrainerAdda = () => {
       {/* Newsletter CTA */}
       <section className="py-20 bg-gradient-to-r from-orange-500 to-purple-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Stay Updated</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">Stay Updated with Latest Resources</h2>
           <p className="text-lg text-white/90 mb-8">
-            Get the latest training insights and resources delivered to your inbox
+            Get the latest training insights, playbooks, and success stories delivered to your inbox
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input 
@@ -334,7 +401,8 @@ const TrainerAdda = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
 
 export default TrainerAdda;
