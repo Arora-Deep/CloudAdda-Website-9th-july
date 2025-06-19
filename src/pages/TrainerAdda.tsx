@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -163,9 +162,9 @@ const TrainerAdda = () => {
   }];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white/90 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
@@ -228,9 +227,9 @@ const TrainerAdda = () => {
         </div>
       </nav>
 
-      {/* Floating Sidebar */}
+      {/* Floating Sidebar - Cleaner and simpler */}
       <div className="fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
-        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200 p-2 max-w-xs">
+        <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-2 max-w-xs">
           <div className="space-y-1">
             {resourceSections.map((section) => {
               const IconComponent = section.icon;
@@ -238,15 +237,15 @@ const TrainerAdda = () => {
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className={`w-full text-left p-3 rounded-xl transition-all duration-300 group relative overflow-hidden ${
+                  className={`w-full text-left p-3 rounded-lg transition-colors ${
                     activeSection === section.id
-                      ? 'bg-gradient-to-r ' + section.color + ' text-white shadow-lg scale-105'
+                      ? 'bg-orange-500 text-white shadow-md'
                       : 'hover:bg-gray-50 text-gray-700'
                   }`}
                 >
-                  <div className="flex items-center space-x-3 relative z-10">
+                  <div className="flex items-center space-x-3">
                     <IconComponent className={`w-5 h-5 flex-shrink-0 ${
-                      activeSection === section.id ? 'text-white' : 'text-gray-400 group-hover:text-gray-600'
+                      activeSection === section.id ? 'text-white' : 'text-gray-400'
                     }`} />
                     <div className="min-w-0">
                       <h3 className={`font-semibold text-sm mb-1 truncate ${
@@ -261,11 +260,6 @@ const TrainerAdda = () => {
                       </p>
                     </div>
                   </div>
-                  {activeSection === section.id && (
-                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                      <ChevronRight className="w-4 h-4 text-white" />
-                    </div>
-                  )}
                 </button>
               );
             })}
@@ -274,13 +268,12 @@ const TrainerAdda = () => {
       </div>
 
       <div className="lg:ml-80">
-        {/* Hero Section */}
-        <section className="py-32 bg-gradient-to-br from-white via-blue-50 to-purple-100 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-orange-600/5"></div>
+        {/* Hero Section - Lighter background */}
+        <section className="py-32 bg-gray-50 relative overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center">
               <div className="inline-block mb-8">
-                <Badge className="mb-4 bg-gradient-to-r from-orange-500 to-red-500 text-white border-0 text-sm font-medium px-6 py-3 shadow-lg">
+                <Badge className="mb-4 bg-orange-500 text-white border-0 text-sm font-medium px-6 py-3 shadow-lg">
                   <Sparkles className="w-4 h-4 mr-2" />
                   Expert Training Resources
                 </Badge>
@@ -297,12 +290,12 @@ const TrainerAdda = () => {
                 to ready-made curricula, we've got your training success covered.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button size="lg" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white shadow-xl group transform hover:scale-105 transition-all duration-300">
-                  <BookOpen className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <Button size="lg" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white shadow-xl">
+                  <BookOpen className="w-5 h-5 mr-2" />
                   Explore Resources
                 </Button>
-                <Button size="lg" variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-50 group shadow-lg transform hover:scale-105 transition-all duration-300">
-                  <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <Button size="lg" variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-50 shadow-lg">
+                  <Download className="w-5 h-5 mr-2" />
                   Download Playbooks
                 </Button>
               </div>
@@ -366,7 +359,7 @@ const TrainerAdda = () => {
         </section>
 
         {/* Adda Insights Section */}
-        <section id="adda-insights" className="py-24 bg-gradient-to-br from-orange-50 to-red-50 relative">
+        <section id="adda-insights" className="py-24 bg-gray-50 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
               <Badge className="mb-6 bg-gradient-to-r from-orange-500 to-red-500 text-white border-0 shadow-lg">
@@ -422,7 +415,7 @@ const TrainerAdda = () => {
         </section>
 
         {/* Customer Stories Section */}
-        <section id="customer-stories" className="py-24 bg-gradient-to-br from-green-50 to-emerald-50 relative">
+        <section id="customer-stories" className="py-24 bg-gray-50 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
               <Badge className="mb-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white border-0 shadow-lg">
@@ -437,7 +430,7 @@ const TrainerAdda = () => {
 
             <div className="grid lg:grid-cols-2 gap-10">
               {caseStudies.map((study, index) => (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-white/90 backdrop-blur-sm overflow-hidden">
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
                   <div className={`h-3 bg-gradient-to-r ${study.gradient}`}></div>
                   <CardHeader className="pb-6">
                     <div className="flex items-center justify-between mb-6">
@@ -467,7 +460,7 @@ const TrainerAdda = () => {
         </section>
 
         {/* Downloads Section */}
-        <section id="downloads" className="py-24 bg-gradient-to-br from-purple-50 to-pink-50 relative">
+        <section id="downloads" className="py-24 bg-gray-50 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
               <Badge className="mb-6 bg-gradient-to-r from-purple-500 to-pink-600 text-white border-0 shadow-lg">
@@ -512,7 +505,7 @@ const TrainerAdda = () => {
         </section>
 
         {/* The Adda Dispatch Section */}
-        <section id="adda-dispatch" className="py-24 bg-gradient-to-br from-cyan-50 to-blue-50 relative">
+        <section id="adda-dispatch" className="py-24 bg-gray-50 relative">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
               <Badge className="mb-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 shadow-lg">
