@@ -2,37 +2,9 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, Users, Target, BookOpen, Lightbulb, Heart, Download, Calendar } from "lucide-react";
+import { ArrowRight, GraduationCap, Users, Target } from "lucide-react";
 
 const Navigation = () => {
-  const resourceSections = [
-    {
-      id: "trainer-playbook",
-      label: "Trainer Playbook",
-      icon: BookOpen
-    },
-    {
-      id: "adda-insights",
-      label: "Adda Insights", 
-      icon: Lightbulb
-    },
-    {
-      id: "customer-stories",
-      label: "Customer Stories",
-      icon: Heart
-    },
-    {
-      id: "downloads",
-      label: "Downloads",
-      icon: Download
-    },
-    {
-      id: "adda-dispatch",
-      label: "The Adda Dispatch",
-      icon: Calendar
-    }
-  ];
-
   return (
     <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,90 +15,45 @@ const Navigation = () => {
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            {/* Solutions Dropdown */}
+            {/* Solutions Horizontal Dropdown */}
             <div className="relative group">
-              <button className="text-gray-700 hover:text-orange-500 transition-all duration-300 py-2 flex items-center font-medium">
+              <button className="text-gray-700 hover:text-orange-500 transition-colors py-2 flex items-center font-medium">
                 Solutions
               </button>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-96 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 z-50 overflow-hidden">
-                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
-                <div className="p-8">
-                  <div className="text-center mb-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Our Solutions</h3>
-                    <p className="text-sm text-gray-600">Powerful infrastructure for every need</p>
-                  </div>
-                  <div className="space-y-6">
-                    <Link to="/training-labs" className="block p-5 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-orange-200 hover:shadow-lg">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
-                          <GraduationCap className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-bold text-gray-900 group-hover/item:text-orange-600 transition-colors text-lg mb-1">Training Labs</div>
-                          <p className="text-sm text-gray-600 leading-relaxed">Provisioned lab environments for training companies</p>
-                        </div>
-                      </div>
-                    </Link>
-                    <Link to="/cloud-desktops" className="block p-5 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-purple-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-purple-200 hover:shadow-lg">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                          <Users className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-bold text-gray-900 group-hover/item:text-purple-600 transition-colors text-lg mb-1">Cloud Desktops</div>
-                          <p className="text-sm text-gray-600 leading-relaxed">Fast, secure desktops accessible from anywhere</p>
-                        </div>
-                      </div>
-                    </Link>
-                    <Link to="/vps" className="block p-5 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-blue-200 hover:shadow-lg">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                          <Target className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-bold text-gray-900 group-hover/item:text-blue-600 transition-colors text-lg mb-1">VPS Hosting</div>
-                          <p className="text-sm text-gray-600 leading-relaxed">High-performance VPS with AMD EPYC processors</p>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-4 flex space-x-6 w-max">
+                  <Link to="/training-labs" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-orange-50 transition-colors group/item">
+                    <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                      <GraduationCap className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 group-hover/item:text-orange-600">Training Labs</div>
+                      <div className="text-sm text-gray-600">Provisioned lab environments</div>
+                    </div>
+                  </Link>
+                  <Link to="/cloud-desktops" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-50 transition-colors group/item">
+                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                      <Users className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 group-hover/item:text-purple-600">Cloud Desktops</div>
+                      <div className="text-sm text-gray-600">Fast, secure desktops</div>
+                    </div>
+                  </Link>
+                  <Link to="/vps" className="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-50 transition-colors group/item">
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <Target className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 group-hover/item:text-blue-600">VPS Hosting</div>
+                      <div className="text-sm text-gray-600">High-performance VPS</div>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            {/* Resources Dropdown */}
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-orange-500 transition-all duration-300 py-2 flex items-center font-medium">
-                Resources
-              </button>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 z-50 overflow-hidden">
-                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
-                <div className="p-6">
-                  <div className="text-center mb-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Resources Hub</h3>
-                    <p className="text-xs text-gray-600">Everything you need for training success</p>
-                  </div>
-                  <div className="space-y-3">
-                    {resourceSections.map((section) => {
-                      const IconComponent = section.icon;
-                      return (
-                        <Link key={section.id} to="/trainer-adda" className="block p-4 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-orange-200 hover:shadow-md">
-                          <div className="flex items-center space-x-3">
-                            <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center shadow-md">
-                              <IconComponent className="w-5 h-5 text-white" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="font-semibold text-gray-900 text-sm group-hover/item:text-orange-600 transition-colors">{section.label}</div>
-                            </div>
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
             <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About</Link>
             <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
             <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
