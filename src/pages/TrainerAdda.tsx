@@ -5,80 +5,63 @@ import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Search, BookOpen, Users, Target, Calendar, ArrowRight, Filter, Star, Clock, ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const TrainerAdda = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const blogPosts = [
-    {
-      title: "Building Effective Cloud Training Programs",
-      description: "A comprehensive guide to designing and implementing cloud training curricula that drive real results.",
-      category: "Training Strategy",
-      readTime: "8 min read",
-      date: "Dec 15, 2024",
-      author: "Priya Sharma",
-      featured: true
-    },
-    {
-      title: "Remote Lab Management Best Practices",
-      description: "Tips and tricks for managing virtual training environments across distributed teams.",
-      category: "Technical Guide",
-      readTime: "12 min read",
-      date: "Dec 12, 2024",
-      author: "Rajesh Kumar",
-      featured: false
-    },
-    {
-      title: "Cost Optimization for Training Infrastructure",
-      description: "How to reduce training costs by 40% without compromising on quality or performance.",
-      category: "Cost Management",
-      readTime: "6 min read",
-      date: "Dec 10, 2024",
-      author: "Anjali Mehta",
-      featured: false
-    }
-  ];
-
-  const caseStudies = [
-    {
-      title: "TechCorp's Digital Transformation Journey",
-      description: "How TechCorp trained 500+ developers on cloud technologies in 6 months",
-      company: "TechCorp",
-      results: "500+ developers trained, 85% certification rate",
-      category: "Enterprise Training"
-    },
-    {
-      title: "StartupAccelerator's Bootcamp Success",
-      description: "Scaling technical education for 50 startups simultaneously",
-      company: "StartupAccelerator",
-      results: "50 startups, 200+ participants, 95% satisfaction",
-      category: "Bootcamp"
-    }
-  ];
-
-  const playbooks = [
-    {
-      title: "AWS Certification Training Playbook",
-      description: "Complete curriculum and lab setup for AWS certification preparation",
-      type: "Cloud Platform",
-      duration: "4 weeks"
-    },
-    {
-      title: "DevOps Fundamentals Workshop",
-      description: "Hands-on DevOps training with real-world scenarios and tools",
-      type: "DevOps",
-      duration: "2 weeks"
-    },
-    {
-      title: "Kubernetes Mastery Program",
-      description: "Advanced Kubernetes training with practical deployment scenarios",
-      type: "Container Orchestration",
-      duration: "3 weeks"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-white">
+  const blogPosts = [{
+    title: "Building Effective Cloud Training Programs",
+    description: "A comprehensive guide to designing and implementing cloud training curricula that drive real results.",
+    category: "Training Strategy",
+    readTime: "8 min read",
+    date: "Dec 15, 2024",
+    author: "Priya Sharma",
+    featured: true
+  }, {
+    title: "Remote Lab Management Best Practices",
+    description: "Tips and tricks for managing virtual training environments across distributed teams.",
+    category: "Technical Guide",
+    readTime: "12 min read",
+    date: "Dec 12, 2024",
+    author: "Rajesh Kumar",
+    featured: false
+  }, {
+    title: "Cost Optimization for Training Infrastructure",
+    description: "How to reduce training costs by 40% without compromising on quality or performance.",
+    category: "Cost Management",
+    readTime: "6 min read",
+    date: "Dec 10, 2024",
+    author: "Anjali Mehta",
+    featured: false
+  }];
+  const caseStudies = [{
+    title: "TechCorp's Digital Transformation Journey",
+    description: "How TechCorp trained 500+ developers on cloud technologies in 6 months",
+    company: "TechCorp",
+    results: "500+ developers trained, 85% certification rate",
+    category: "Enterprise Training"
+  }, {
+    title: "StartupAccelerator's Bootcamp Success",
+    description: "Scaling technical education for 50 startups simultaneously",
+    company: "StartupAccelerator",
+    results: "50 startups, 200+ participants, 95% satisfaction",
+    category: "Bootcamp"
+  }];
+  const playbooks = [{
+    title: "AWS Certification Training Playbook",
+    description: "Complete curriculum and lab setup for AWS certification preparation",
+    type: "Cloud Platform",
+    duration: "4 weeks"
+  }, {
+    title: "DevOps Fundamentals Workshop",
+    description: "Hands-on DevOps training with real-world scenarios and tools",
+    type: "DevOps",
+    duration: "2 weeks"
+  }, {
+    title: "Kubernetes Mastery Program",
+    description: "Advanced Kubernetes training with practical deployment scenarios",
+    type: "Container Orchestration",
+    duration: "3 weeks"
+  }];
+  return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,10 +81,7 @@ const TrainerAdda = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/training-labs"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/training-labs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Training Labs</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Provisioned lab environments for training companies
@@ -109,10 +89,7 @@ const TrainerAdda = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/cloud-desktops"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Fast, secure desktops accessible from anywhere
@@ -120,10 +97,7 @@ const TrainerAdda = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/vps"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/vps" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">VPS Hosting</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               High-performance VPS with AMD EPYC processors
@@ -140,7 +114,7 @@ const TrainerAdda = () => {
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+              <Button variant="ghost" className="text-purple-600">
                 Log In
               </Button>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
@@ -177,11 +151,7 @@ const TrainerAdda = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <div className="relative max-w-md">
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input 
-                  type="text" 
-                  placeholder="Search articles, guides, case studies..." 
-                  className="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                />
+                <input type="text" placeholder="Search articles, guides, case studies..." className="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" />
               </div>
               <Button size="lg" className="bg-orange-600 hover:bg-orange-700 rounded-full px-8 py-4 text-lg">
                 <Filter className="w-5 h-5 mr-2" />
@@ -221,16 +191,11 @@ const TrainerAdda = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <Card key={index} className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${
-                post.featured ? 'border-2 border-orange-500 lg:scale-105' : ''
-              }`}>
-                {post.featured && (
-                  <Badge className="absolute -top-3 left-4 bg-orange-500 text-white">
+            {blogPosts.map((post, index) => <Card key={index} className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${post.featured ? 'border-2 border-orange-500 lg:scale-105' : ''}`}>
+                {post.featured && <Badge className="absolute -top-3 left-4 bg-orange-500 text-white">
                     <Star className="w-3 h-3 mr-1" />
                     Featured
-                  </Badge>
-                )}
+                  </Badge>}
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="outline" className="text-xs">
@@ -255,8 +220,7 @@ const TrainerAdda = () => {
                     </Button>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -270,37 +234,31 @@ const TrainerAdda = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { 
-                icon: BookOpen, 
-                title: "Training Guides", 
-                count: "45 articles",
-                description: "Comprehensive guides for effective training delivery",
-                color: "bg-blue-100 text-blue-600"
-              },
-              { 
-                icon: Users, 
-                title: "Case Studies", 
-                count: "32 stories",
-                description: "Real success stories from our training partners",
-                color: "bg-green-100 text-green-600"
-              },
-              { 
-                icon: Target, 
-                title: "Best Practices", 
-                count: "28 insights",
-                description: "Proven strategies and methodologies",
-                color: "bg-purple-100 text-purple-600"
-              },
-              { 
-                icon: Calendar, 
-                title: "Playbooks", 
-                count: "25 resources",
-                description: "Ready-to-use training curricula and setups",
-                color: "bg-orange-100 text-orange-600"
-              }
-            ].map((category, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+            {[{
+            icon: BookOpen,
+            title: "Training Guides",
+            count: "45 articles",
+            description: "Comprehensive guides for effective training delivery",
+            color: "bg-blue-100 text-blue-600"
+          }, {
+            icon: Users,
+            title: "Case Studies",
+            count: "32 stories",
+            description: "Real success stories from our training partners",
+            color: "bg-green-100 text-green-600"
+          }, {
+            icon: Target,
+            title: "Best Practices",
+            count: "28 insights",
+            description: "Proven strategies and methodologies",
+            color: "bg-purple-100 text-purple-600"
+          }, {
+            icon: Calendar,
+            title: "Playbooks",
+            count: "25 resources",
+            description: "Ready-to-use training curricula and setups",
+            color: "bg-orange-100 text-orange-600"
+          }].map((category, index) => <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                 <CardHeader>
                   <div className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                     <category.icon className="w-8 h-8" />
@@ -309,8 +267,7 @@ const TrainerAdda = () => {
                   <CardDescription className="text-sm text-muted-foreground mb-2">{category.count}</CardDescription>
                   <CardDescription>{category.description}</CardDescription>
                 </CardHeader>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -324,8 +281,7 @@ const TrainerAdda = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300">
+            {caseStudies.map((study, index) => <Card key={index} className="hover:shadow-xl transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
                     <Badge variant="outline">{study.category}</Badge>
@@ -344,8 +300,7 @@ const TrainerAdda = () => {
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -359,8 +314,7 @@ const TrainerAdda = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {playbooks.map((playbook, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            {playbooks.map((playbook, index) => <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge className="bg-purple-100 text-purple-800">{playbook.type}</Badge>
@@ -375,8 +329,7 @@ const TrainerAdda = () => {
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -389,11 +342,7 @@ const TrainerAdda = () => {
             Get the latest training insights, case studies, and playbooks delivered to your inbox
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="flex-1 px-6 py-4 rounded-full text-lg focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
+            <input type="email" placeholder="Enter your email" className="flex-1 px-6 py-4 rounded-full text-lg focus:outline-none focus:ring-2 focus:ring-white/50" />
             <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 rounded-full px-8 py-4">
               Subscribe
             </Button>
@@ -439,8 +388,6 @@ const TrainerAdda = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default TrainerAdda;
