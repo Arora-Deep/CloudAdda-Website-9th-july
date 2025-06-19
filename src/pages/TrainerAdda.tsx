@@ -1,10 +1,11 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Users, Target, ArrowRight, Star, Clock, GraduationCap, Award, CheckCircle, Download, FileText, Lightbulb, Heart, Calendar, ChevronDown } from "lucide-react";
+import { BookOpen, Users, Target, ArrowRight, Star, Clock, GraduationCap, Award, CheckCircle, Download, FileText, Lightbulb, Heart, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 
 const TrainerAdda = () => {
   const resourceSections = [
@@ -117,129 +118,23 @@ const TrainerAdda = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Enhanced Navigation */}
-      <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link to="/" className="flex items-center space-x-2">
-                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-12 w-auto object-contain" />
-              </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              {/* Solutions Dropdown */}
-              <div className="relative group">
-                <button className="text-gray-700 hover:text-orange-500 transition-all duration-300 py-2 flex items-center font-medium">
-                  Solutions
-                </button>
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-96 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 z-50 overflow-hidden">
-                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
-                  <div className="p-8">
-                    <div className="text-center mb-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Our Solutions</h3>
-                      <p className="text-sm text-gray-600">Powerful infrastructure for every need</p>
-                    </div>
-                    <div className="space-y-6">
-                      <Link to="/training-labs" className="block p-5 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-orange-200 hover:shadow-lg">
-                        <div className="flex items-center space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
-                            <GraduationCap className="w-6 h-6 text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="font-bold text-gray-900 group-hover/item:text-orange-600 transition-colors text-lg mb-1">Training Labs</div>
-                            <p className="text-sm text-gray-600 leading-relaxed">Provisioned lab environments for training companies</p>
-                          </div>
-                        </div>
-                      </Link>
-                      <Link to="/cloud-desktops" className="block p-5 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-purple-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-purple-200 hover:shadow-lg">
-                        <div className="flex items-center space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                            <Users className="w-6 h-6 text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="font-bold text-gray-900 group-hover/item:text-purple-600 transition-colors text-lg mb-1">Cloud Desktops</div>
-                            <p className="text-sm text-gray-600 leading-relaxed">Fast, secure desktops accessible from anywhere</p>
-                          </div>
-                        </div>
-                      </Link>
-                      <Link to="/vps" className="block p-5 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-blue-200 hover:shadow-lg">
-                        <div className="flex items-center space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                            <Target className="w-6 h-6 text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="font-bold text-gray-900 group-hover/item:text-blue-600 transition-colors text-lg mb-1">VPS Hosting</div>
-                            <p className="text-sm text-gray-600 leading-relaxed">High-performance VPS with AMD EPYC processors</p>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <div className="min-h-screen bg-white">
+      <Navigation />
 
-              {/* Resources Dropdown */}
-              <div className="relative group">
-                <button className="text-gray-700 hover:text-orange-500 transition-all duration-300 py-2 flex items-center font-medium">
-                  Resources
-                </button>
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 z-50 overflow-hidden">
-                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
-                  <div className="p-6">
-                    <div className="text-center mb-6">
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">Resources Hub</h3>
-                      <p className="text-xs text-gray-600">Everything you need for training success</p>
-                    </div>
-                    <div className="space-y-3">
-                      {resourceSections.map((section) => {
-                        const IconComponent = section.icon;
-                        return (
-                          <Link key={section.id} to="/trainer-adda" className="block p-4 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 transition-all duration-300 transform hover:scale-105 group/item border border-transparent hover:border-orange-200 hover:shadow-md">
-                            <div className="flex items-center space-x-3">
-                              <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center shadow-md">
-                                <IconComponent className="w-5 h-5 text-white" />
-                              </div>
-                              <div className="flex-1">
-                                <div className="font-semibold text-gray-900 text-sm group-hover/item:text-orange-600 transition-colors">{section.label}</div>
-                              </div>
-                            </div>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About</Link>
-              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
-              <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
-                Log In
-              </Button>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                Start Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <div className="flex min-h-screen">
-        {/* Minimalistic Left Sidebar */}
-        <div className="w-48 bg-white border-r border-gray-100 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto">
-          <div className="p-4">
-            <nav className="space-y-2">
+      <div className="flex min-h-screen relative">
+        {/* Compact Sidebar */}
+        <div className="fixed top-24 left-6 z-40">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 p-4 w-48">
+            <h3 className="text-sm font-semibold text-gray-900 mb-4">Jump to Section</h3>
+            <nav className="space-y-1">
               {resourceSections.map((section) => (
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className="w-full text-left text-sm font-medium text-gray-600 hover:text-orange-600 transition-colors py-2 px-3 rounded-lg hover:bg-orange-50"
+                  className="w-full text-left text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 px-3 rounded-lg hover:bg-orange-50 flex items-center space-x-2"
                 >
-                  {section.label}
+                  <section.icon className="w-4 h-4" />
+                  <span>{section.label}</span>
                 </button>
               ))}
             </nav>
@@ -247,30 +142,28 @@ const TrainerAdda = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 bg-gradient-to-br from-gray-50 to-white">
+        <div className="flex-1 pl-64">
           {/* Hero Section */}
-          <section className="py-24 px-8">
+          <section className="py-20 px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge className="mb-6 bg-orange-100 text-orange-800 border-orange-200 text-sm font-medium px-4 py-2">
+              <Badge className="mb-6 bg-orange-50 text-orange-700 border-orange-200 text-sm font-medium px-4 py-2">
                 <GraduationCap className="w-4 h-4 mr-2" />
                 Expert Training Resources
               </Badge>
-              <h1 className="text-5xl font-black mb-6 leading-tight tracking-tight">
-                <span className="text-orange-600">CloudAdda</span>
-                <br />
-                <span className="text-gray-900">Resources Hub</span>
+              <h1 className="text-5xl font-bold mb-6 leading-tight text-gray-900">
+                CloudAdda Resources Hub
               </h1>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
                 Everything you need to deliver world-class training experiences. From proven methodologies 
                 to ready-made curricula.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 group">
-                  <BookOpen className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
+                  <BookOpen className="w-5 h-5 mr-2" />
                   Explore Resources
                 </Button>
-                <Button size="lg" variant="outline" className="border-purple-500 text-purple-600 hover:bg-purple-50 group">
-                  <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <Button size="lg" variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
+                  <Download className="w-5 h-5 mr-2" />
                   Download Playbooks
                 </Button>
               </div>
@@ -281,7 +174,7 @@ const TrainerAdda = () => {
           <section id="trainer-playbook" className="px-8 pb-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+                <Badge className="mb-4 bg-blue-50 text-blue-700 border-blue-200">
                   <BookOpen className="w-4 h-4 mr-2" />
                   Trainer Playbooks
                 </Badge>
@@ -292,17 +185,17 @@ const TrainerAdda = () => {
               </div>
               <div className="grid lg:grid-cols-3 gap-6">
                 {playbooks.map((playbook, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md">
+                  <Card key={index} className="hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-200">
                     <CardHeader>
                       <div className="flex items-center justify-between mb-2">
-                        <Badge className="bg-purple-100 text-purple-800">{playbook.type}</Badge>
+                        <Badge className="bg-purple-50 text-purple-700 border-purple-200">{playbook.type}</Badge>
                         <div className="text-sm text-gray-500 flex items-center">
                           <Clock className="w-3 h-3 mr-1" />
                           {playbook.duration}
                         </div>
                       </div>
-                      <CardTitle className="text-lg">{playbook.title}</CardTitle>
-                      <CardDescription>{playbook.description}</CardDescription>
+                      <CardTitle className="text-lg text-gray-900">{playbook.title}</CardTitle>
+                      <CardDescription className="text-gray-600">{playbook.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-2 mb-4">
@@ -313,7 +206,7 @@ const TrainerAdda = () => {
                           "Instructor resources"
                         ].map((feature, idx) => (
                           <div key={idx} className="flex items-center space-x-2">
-                            <CheckCircle className="w-4 h-4 text-purple-500" />
+                            <CheckCircle className="w-4 h-4 text-green-500" />
                             <span className="text-sm text-gray-600">{feature}</span>
                           </div>
                         ))}
@@ -330,10 +223,10 @@ const TrainerAdda = () => {
           </section>
 
           {/* Adda Insights Section */}
-          <section id="adda-insights" className="px-8 pb-16">
+          <section id="adda-insights" className="px-8 pb-16 bg-gray-50">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+                <Badge className="mb-4 bg-blue-50 text-blue-700 border-blue-200">
                   <Lightbulb className="w-4 h-4 mr-2" />
                   Adda Insights
                 </Badge>
@@ -344,7 +237,7 @@ const TrainerAdda = () => {
               </div>
               <div className="grid lg:grid-cols-3 gap-6">
                 {blogPosts.map((post, index) => (
-                  <Card key={index} className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md ${post.featured ? 'ring-2 ring-orange-200' : ''}`}>
+                  <Card key={index} className={`hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-200 ${post.featured ? 'ring-2 ring-orange-200' : ''}`}>
                     {post.featured && (
                       <Badge className="absolute -top-2 -right-2 bg-orange-500 text-white">
                         <Star className="w-3 h-3 mr-1" />
@@ -353,7 +246,7 @@ const TrainerAdda = () => {
                     )}
                     <CardHeader>
                       <div className="flex items-center justify-between mb-2">
-                        <Badge variant="outline" className="text-xs">
+                        <Badge variant="outline" className="text-xs border-gray-300">
                           {post.category}
                         </Badge>
                         <div className="flex items-center text-sm text-gray-500">
@@ -361,15 +254,15 @@ const TrainerAdda = () => {
                           {post.readTime}
                         </div>
                       </div>
-                      <CardTitle className="text-lg leading-tight">{post.title}</CardTitle>
-                      <CardDescription>{post.description}</CardDescription>
+                      <CardTitle className="text-lg leading-tight text-gray-900">{post.title}</CardTitle>
+                      <CardDescription className="text-gray-600">{post.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="flex items-center justify-between">
                         <div className="text-sm text-gray-500">
                           By {post.author} • {post.date}
                         </div>
-                        <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700">
+                        <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700 hover:bg-orange-50">
                           Read More
                           <ArrowRight className="w-4 h-4 ml-1" />
                         </Button>
@@ -385,7 +278,7 @@ const TrainerAdda = () => {
           <section id="customer-stories" className="px-8 pb-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
+                <Badge className="mb-4 bg-green-50 text-green-700 border-green-200">
                   <Heart className="w-4 h-4 mr-2" />
                   Customer Stories
                 </Badge>
@@ -396,17 +289,17 @@ const TrainerAdda = () => {
               </div>
               <div className="grid lg:grid-cols-2 gap-8">
                 {caseStudies.map((study, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md">
+                  <Card key={index} className="hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-200">
                     <CardHeader>
                       <div className="flex items-center justify-between mb-4">
-                        <Badge variant="outline">{study.category}</Badge>
+                        <Badge variant="outline" className="border-gray-300">{study.category}</Badge>
                         <div className="text-sm font-medium text-green-600">{study.company}</div>
                       </div>
-                      <CardTitle className="text-xl">{study.title}</CardTitle>
-                      <CardDescription className="text-base">{study.description}</CardDescription>
+                      <CardTitle className="text-xl text-gray-900">{study.title}</CardTitle>
+                      <CardDescription className="text-base text-gray-600">{study.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <div className="bg-green-50 rounded-lg p-4 mb-4">
+                      <div className="bg-green-50 rounded-lg p-4 mb-4 border border-green-100">
                         <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
                           <Award className="w-4 h-4 mr-2 text-green-600" />
                           Key Results:
@@ -425,10 +318,10 @@ const TrainerAdda = () => {
           </section>
 
           {/* Downloads Section */}
-          <section id="downloads" className="px-8 pb-16">
+          <section id="downloads" className="px-8 pb-16 bg-gray-50">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <Badge className="mb-4 bg-indigo-100 text-indigo-800 border-indigo-200">
+                <Badge className="mb-4 bg-indigo-50 text-indigo-700 border-indigo-200">
                   <Download className="w-4 h-4 mr-2" />
                   Downloads
                 </Badge>
@@ -439,14 +332,14 @@ const TrainerAdda = () => {
               </div>
               <div className="grid lg:grid-cols-3 gap-6">
                 {downloads.map((download, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md">
+                  <Card key={index} className="hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-200">
                     <CardHeader>
                       <div className="flex items-center justify-between mb-2">
-                        <Badge className="bg-indigo-100 text-indigo-800">{download.type}</Badge>
+                        <Badge className="bg-indigo-50 text-indigo-700 border-indigo-200">{download.type}</Badge>
                         <div className="text-sm text-gray-500">{download.size}</div>
                       </div>
-                      <CardTitle className="text-lg">{download.title}</CardTitle>
-                      <CardDescription>{download.description}</CardDescription>
+                      <CardTitle className="text-lg text-gray-900">{download.title}</CardTitle>
+                      <CardDescription className="text-gray-600">{download.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <Button className="w-full bg-indigo-600 hover:bg-indigo-700">
@@ -464,7 +357,7 @@ const TrainerAdda = () => {
           <section id="adda-dispatch" className="px-8 pb-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <Badge className="mb-4 bg-purple-100 text-purple-800 border-purple-200">
+                <Badge className="mb-4 bg-purple-50 text-purple-700 border-purple-200">
                   <Calendar className="w-4 h-4 mr-2" />
                   The Adda Dispatch
                 </Badge>
@@ -474,10 +367,10 @@ const TrainerAdda = () => {
                 </p>
               </div>
               <div className="max-w-2xl mx-auto">
-                <Card className="border-0 shadow-lg">
+                <Card className="border border-gray-100 shadow-lg">
                   <CardHeader className="text-center">
-                    <CardTitle className="text-2xl">Stay Updated</CardTitle>
-                    <CardDescription className="text-base">
+                    <CardTitle className="text-2xl text-gray-900">Stay Updated</CardTitle>
+                    <CardDescription className="text-base text-gray-600">
                       Get the latest insights, product updates, and exclusive content delivered to your inbox
                     </CardDescription>
                   </CardHeader>
@@ -513,38 +406,38 @@ const TrainerAdda = () => {
           </section>
 
           {/* Footer */}
-          <footer className="bg-gray-50 border-t border-gray-200 py-12">
+          <footer className="bg-gray-900 text-white py-12">
             <div className="max-w-6xl mx-auto px-8">
               <div className="grid md:grid-cols-4 gap-8">
                 <div className="space-y-4">
                   <Link to="/" className="flex items-center space-x-2">
                     <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                    <span className="font-bold text-xl text-gray-900">CloudAdda</span>
+                    <span className="font-bold text-xl">CloudAdda</span>
                   </Link>
-                  <p className="text-gray-600">
+                  <p className="text-gray-300">
                     Simple. Scalable. Human. Infrastructure that just works.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-4 text-gray-900">Solutions</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li><Link to="/training-labs" className="hover:text-gray-900 transition-colors">Training Labs</Link></li>
-                    <li><Link to="/cloud-desktops" className="hover:text-gray-900 transition-colors">Cloud Desktops</Link></li>
-                    <li><Link to="/vps" className="hover:text-gray-900 transition-colors">VPS</Link></li>
+                  <h3 className="font-semibold mb-4">Solutions</h3>
+                  <ul className="space-y-2 text-gray-300">
+                    <li><Link to="/training-labs" className="hover:text-white transition-colors">Training Labs</Link></li>
+                    <li><Link to="/cloud-desktops" className="hover:text-white transition-colors">Cloud Desktops</Link></li>
+                    <li><Link to="/vps" className="hover:text-white transition-colors">VPS</Link></li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-4 text-gray-900">Resources</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li><Link to="/trainer-adda" className="hover:text-gray-900 transition-colors">Trainer Adda</Link></li>
-                    <li><Link to="/guides" className="hover:text-gray-900 transition-colors">Guides & Docs</Link></li>
+                  <h3 className="font-semibold mb-4">Resources</h3>
+                  <ul className="space-y-2 text-gray-300">
+                    <li><Link to="/trainer-adda" className="hover:text-white transition-colors">Trainer Adda</Link></li>
+                    <li><Link to="/guides" className="hover:text-white transition-colors">Guides & Docs</Link></li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-4 text-gray-900">Support</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li><Link to="/support" className="hover:text-gray-900 transition-colors">Help Center</Link></li>
-                    <li><Link to="/contact" className="hover:text-gray-900 transition-colors">Contact</Link></li>
+                  <h3 className="font-semibold mb-4">Support</h3>
+                  <ul className="space-y-2 text-gray-300">
+                    <li><Link to="/support" className="hover:text-white transition-colors">Help Center</Link></li>
+                    <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
                   </ul>
                 </div>
               </div>
