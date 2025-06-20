@@ -1,49 +1,15 @@
-
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { 
-  Check, 
-  X, 
-  Star, 
-  ArrowRight, 
-  Users, 
-  Zap, 
-  Shield, 
-  Heart,
-  Building,
-  Rocket,
-  Crown,
-  Target,
-  Globe,
-  Award,
-  CheckCircle,
-  Clock,
-  Coffee,
-  Headphones,
-  Code,
-  DollarSign,
-  Calculator,
-  Sparkles,
-  GraduationCap,
-  Monitor,
-  Server,
-  Cpu,
-  HardDrive,
-  Network
-} from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { ArrowRight, CheckCircle, Zap, Shield, Users, Heart, Star, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
+import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 
 const Pricing = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [isAnnual, setIsAnnual] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -52,9 +18,9 @@ const Pricing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <div className="flex items-center space-x-2">
+              <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
-              </div>
+              </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <NavigationMenu>
@@ -105,7 +71,7 @@ const Pricing = () => {
               </NavigationMenu>
               <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
               <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
-              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
+              <Link to="/pricing" className="text-orange-500 font-medium">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
@@ -294,7 +260,7 @@ const Pricing = () => {
                 Virtual Desktop Infrastructure
               </Badge>
               <h2 className="text-5xl font-bold text-foreground mb-6">Cloud Desktops (DaaS)</h2>
-              <p className="text-2xl text-muted-foreground max-w-4xl mx-auto font-light mb-8">
+              <p className="text-2xl text-muted-foreground font-light mb-8">
                 Access your work environment from anywhere. Secure, scalable, and always up-to-date.
               </p>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

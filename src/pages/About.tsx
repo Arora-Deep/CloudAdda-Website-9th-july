@@ -3,27 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { 
-  Users, 
-  MapPin, 
-  Calendar, 
-  Target, 
-  Heart, 
-  Star, 
-  Globe, 
-  Award,
-  TrendingUp,
-  Shield,
-  Clock,
-  CheckCircle,
-  Zap,
-  Building,
-  Coffee,
-  Lightbulb,
-  ArrowRight,
-  Handshake,
-  Eye
-} from "lucide-react";
+import { ArrowRight, Users, Target, Award, Heart, Shield, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -34,9 +14,9 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <div className="flex items-center space-x-2">
+              <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
-              </div>
+              </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <NavigationMenu>
@@ -86,7 +66,7 @@ const About = () => {
                 </NavigationMenuList>
               </NavigationMenu>
               <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
-              <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
+              <Link to="/about" className="text-orange-500 font-medium">About Us</Link>
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
@@ -315,8 +295,8 @@ const About = () => {
               <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader className="text-center pb-4">
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-300 ${
-                    value.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'
-                  }`}>
+                  value.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'
+                }`}>
                     <value.icon className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-xl font-bold">{value.title}</CardTitle>
