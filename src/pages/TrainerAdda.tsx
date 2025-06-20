@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -216,23 +215,23 @@ const TrainerAdda = () => {
       </nav>
 
       {/* Fixed Sidebar */}
-      <div className="fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
-        <div className="bg-white rounded-lg shadow-md border border-gray-200 p-3 w-48">
-          <div className="space-y-2">
+      <div className="fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden xl:block">
+        <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-4 w-52">
+          <div className="space-y-3">
             {resourceSections.map((section) => {
               const IconComponent = section.icon;
               return (
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className={`w-full text-left p-2 rounded-md transition-colors ${
+                  className={`w-full text-left p-3 rounded-lg transition-colors ${
                     activeSection === section.id
-                      ? 'bg-orange-500 text-white'
-                      : 'hover:bg-gray-100 text-gray-700'
+                      ? 'bg-orange-500 text-white shadow-md'
+                      : 'hover:bg-gray-50 text-gray-700'
                   }`}
                 >
-                  <div className="flex items-center space-x-2">
-                    <IconComponent className="w-4 h-4 flex-shrink-0" />
+                  <div className="flex items-center space-x-3">
+                    <IconComponent className="w-5 h-5 flex-shrink-0" />
                     <div>
                       <h3 className="font-medium text-sm">{section.label}</h3>
                       <p className="text-xs opacity-70">{section.description}</p>
@@ -245,9 +244,9 @@ const TrainerAdda = () => {
         </div>
       </div>
 
-      <div className="lg:ml-64">
+      <div className="xl:ml-64">
         {/* Hero Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Badge className="mb-4 bg-orange-500 text-white">
               <Sparkles className="w-4 h-4 mr-2" />
@@ -274,7 +273,7 @@ const TrainerAdda = () => {
         </section>
 
         {/* Trainer Playbook Section */}
-        <section id="trainer-playbook" className="py-16 bg-white">
+        <section id="trainer-playbook" className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-blue-500 text-white">
@@ -327,7 +326,7 @@ const TrainerAdda = () => {
         </section>
 
         {/* Adda Insights Section */}
-        <section id="adda-insights" className="py-16 bg-gray-50">
+        <section id="adda-insights" className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-orange-500 text-white">
@@ -380,7 +379,7 @@ const TrainerAdda = () => {
         </section>
 
         {/* Customer Stories Section */}
-        <section id="customer-stories" className="py-16 bg-white">
+        <section id="customer-stories" className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-green-500 text-white">
@@ -424,7 +423,7 @@ const TrainerAdda = () => {
         </section>
 
         {/* Downloads Section */}
-        <section id="downloads" className="py-16 bg-gray-50">
+        <section id="downloads" className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-purple-500 text-white">
@@ -565,7 +564,7 @@ const TrainerAdda = () => {
               <p>&copy; 2024 CloudAdda. All rights reserved.</p>
             </div>
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   );
