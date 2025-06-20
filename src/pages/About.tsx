@@ -1,9 +1,10 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Users, Target, Award, Heart, Shield, Globe } from "lucide-react";
+import { ArrowRight, Users, Target, Award, Heart, Shield, Globe, Zap, Lightbulb, Handshake, Building, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {

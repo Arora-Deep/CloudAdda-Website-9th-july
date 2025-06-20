@@ -4,12 +4,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Switch } from "@/components/ui/switch";
-import { ArrowRight, CheckCircle, Zap, Shield, Users, Heart, Star, Globe } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { ArrowRight, CheckCircle, Zap, Shield, Users, Heart, Star, Globe, DollarSign, Calculator, Sparkles, GraduationCap, Monitor, Server, Check, Building, Target, Cpu, HardDrive, Network } from "lucide-react";
 import { Link } from "react-router-dom";
 import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">

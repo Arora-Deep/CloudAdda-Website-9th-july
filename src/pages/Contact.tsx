@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Mail, Phone, MapPin, Clock, Send, MessageCircle, Users, Headphones } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin, Clock, Send, MessageCircle, Users, Headphones, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
