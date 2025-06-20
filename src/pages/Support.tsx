@@ -1,90 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { Search, MessageCircle, Book, Video, Users, ArrowRight, Phone, Mail, Clock, CheckCircle, AlertCircle, Lightbulb } from "lucide-react";
+import { ArrowRight, Phone, Mail, Clock, CheckCircle, Shield, Zap, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Support = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const supportCategories = [
-    {
-      title: "Account Management",
-      description: "Managing your account settings, billing, and subscriptions.",
-      icon: Users,
-      color: "bg-blue-100 text-blue-600",
-      link: "/account-management"
-    },
-    {
-      title: "Troubleshooting",
-      description: "Common issues and their solutions.",
-      icon: AlertCircle,
-      color: "bg-red-100 text-red-600",
-      link: "/troubleshooting"
-    },
-    {
-      title: "Getting Started",
-      description: "New to our platform? Start here.",
-      icon: Lightbulb,
-      color: "bg-green-100 text-green-600",
-      link: "/getting-started"
-    },
-    {
-      title: "Training Resources",
-      description: "Guides, videos, and tutorials to help you succeed.",
-      icon: Book,
-      color: "bg-purple-100 text-purple-600",
-      link: "/training-resources"
-    }
-  ];
-
-  const recentArticles = [
-    {
-      title: "How to Reset Your Password",
-      description: "Step-by-step guide to resetting your account password.",
-      date: "Dec 15, 2024",
-      status: "Published",
-      icon: CheckCircle
-    },
-    {
-      title: "Understanding Billing Cycles",
-      description: "Explanation of our billing policies and cycles.",
-      date: "Dec 12, 2024",
-      status: "Updated",
-      icon: Clock
-    },
-    {
-      title: "Setting Up Two-Factor Authentication",
-      description: "Secure your account with two-factor authentication.",
-      date: "Dec 10, 2024",
-      status: "Published",
-      icon: CheckCircle
-    }
-  ];
-
-  const popularArticles = [
-    {
-      title: "Troubleshooting Common Errors",
-      views: "1.2K Views",
-      category: "Troubleshooting",
-      icon: AlertCircle
-    },
-    {
-      title: "Best Practices for Account Security",
-      views: "950 Views",
-      category: "Account Management",
-      icon: Users
-    },
-    {
-      title: "Introduction to Our Platform",
-      views: "800 Views",
-      category: "Getting Started",
-      icon: Lightbulb
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -114,7 +39,7 @@ const Support = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Fast, secure desktops accessible from anywhere
@@ -138,8 +63,8 @@ const Support = () => {
               <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
-              <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50">
+              <Link to="/support" className="text-orange-500 font-medium">Support</Link>
+              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
@@ -152,174 +77,173 @@ const Support = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-32 bg-gradient-to-br from-orange-50 to-purple-50 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            <Badge className="mb-8 bg-orange-100 text-orange-800 border-orange-200 text-lg font-medium px-6 py-3">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              We're Here to Help
-            </Badge>
-            <h1 className="text-6xl lg:text-7xl font-black mb-8 leading-[0.9] tracking-tight">
-              <span className="text-orange-600">Support</span>
-              <br />
-              <span className="text-purple-600">Center</span>
-            </h1>
-            <p className="text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto font-light">
-              Find answers, guides, and resources to help you get the most out of our platform
-            </p>
-
-            <div className="relative max-w-2xl mx-auto mb-16">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Search for articles, guides, and more..."
-                className="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Support Categories */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">How Can We Help?</h2>
-            <p className="text-xl text-muted-foreground">Browse our most popular support categories</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {supportCategories.map((category, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                <CardHeader>
-                  <div className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <category.icon className="w-8 h-8" />
-                  </div>
-                  <CardTitle className="text-xl">{category.title}</CardTitle>
-                  <CardDescription className="text-sm text-muted-foreground">{category.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button variant="link" className="text-orange-600 hover:text-orange-700">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Recent Articles */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Recent Articles</h2>
-            <p className="text-xl text-muted-foreground">Stay up-to-date with the latest guides and tutorials</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {recentArticles.map((article, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <article.icon className="w-4 h-4 mr-1" />
-                      {article.status}
-                    </div>
-                    <div className="text-sm text-muted-foreground">{article.date}</div>
-                  </div>
-                  <CardTitle className="text-xl">{article.title}</CardTitle>
-                  <CardDescription className="text-base">{article.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700">
-                    Read More
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Articles */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Popular Articles</h2>
-            <p className="text-xl text-muted-foreground">Most viewed articles this month</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {popularArticles.map((article, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <Badge variant="outline">{article.category}</Badge>
-                    <div className="text-sm font-medium text-muted-foreground">{article.views}</div>
-                  </div>
-                  <CardTitle className="text-xl">{article.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Button variant="ghost" size="sm" className="text-orange-600 hover:text-orange-700">
-                    Read Article
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Us Section */}
-      <section className="py-24 bg-gradient-to-r from-orange-500 to-purple-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Still Need Help?</h2>
-          <p className="text-xl text-white/90 mb-8">
-            Contact our support team for personalized assistance
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-blue-50 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight text-gray-900">
+            Need Help? We've Got You.
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our support team is made of real engineers, not bots.<br />
+            Whether it's a lab glitch, a desktop issue, or a billing question — we're here for you 24/7.
           </p>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-white hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-8 h-8" />
+      {/* Support Form */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="bg-white shadow-lg border border-gray-200">
+            <CardHeader className="text-center">
+              <CardTitle className="text-3xl font-bold text-gray-900">Submit a Support Request</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Full Name *</label>
+                  <Input placeholder="Your full name" />
                 </div>
-                <CardTitle className="text-xl text-center">Call Us</CardTitle>
-                <CardDescription className="text-sm text-muted-foreground text-center">Available 24/7</CardDescription>
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Work Email *</label>
+                  <Input type="email" placeholder="you@company.com" />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Phone Number</label>
+                  <Input placeholder="+91-XXXXX-XXXXX" />
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Company Name / Org Name</label>
+                  <Input placeholder="Your organization" />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">What can we help you with?</label>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Choose an option" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="lab-issue">Issue with Lab Environment</SelectItem>
+                      <SelectItem value="desktop-problem">Cloud Desktop Problem</SelectItem>
+                      <SelectItem value="vps-performance">VPS Performance/Access</SelectItem>
+                      <SelectItem value="billing">Billing/Invoice Question</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Priority Level</label>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select priority" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="low">Low (Not urgent)</SelectItem>
+                      <SelectItem value="medium">Medium (Needs resolution soon)</SelectItem>
+                      <SelectItem value="high">High (Training/live session impacted)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-700 mb-2 block">Description *</label>
+                <Textarea 
+                  rows={6} 
+                  placeholder="Please describe the issue in as much detail as possible. Screenshots or error messages help a lot." 
+                />
+              </div>
+              <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-full py-3 text-lg">
+                Create Support Ticket
+              </Button>
+              <p className="text-center text-sm text-gray-500 italic">
+                "Tried turning it off and on? Good. Now tell us what's really going on."
+              </p>
+              <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                <p className="text-center text-blue-800">
+                  💬 We usually respond within 2 hours. For critical issues during a live session, call us directly at <strong>+91-98765-43210</strong>.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Support Commitment */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">What You Can Expect</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-white shadow-lg border-0 text-center">
+              <CardHeader>
+                <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8" />
+                </div>
+                <CardTitle className="text-xl text-gray-900">Fast Human Support</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg text-center text-foreground mb-4">
-                  +1 (555) 123-4567
+                <p className="text-gray-600">
+                  You'll never deal with a chatbot. All tickets go directly to our infrastructure support engineers.
                 </p>
-                <Button className="w-full bg-orange-600 hover:bg-orange-700">
-                  Call Support
-                </Button>
               </CardContent>
             </Card>
 
-            <Card className="bg-white hover:shadow-lg transition-all duration-300">
+            <Card className="bg-white shadow-lg border-0 text-center">
               <CardHeader>
-                <div className="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-8 h-8" />
+                <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8" />
                 </div>
-                <CardTitle className="text-xl text-center">Email Us</CardTitle>
-                <CardDescription className="text-sm text-muted-foreground text-center">Response within 24 hours</CardDescription>
+                <CardTitle className="text-xl text-gray-900">Transparency</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg text-center text-foreground mb-4">
-                  support@cloudadda.com
+                <p className="text-gray-600">
+                  You'll get clear updates, not vague excuses. If something's wrong, we'll tell you — and fix it.
                 </p>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">
-                  Send Email
-                </Button>
               </CardContent>
             </Card>
+
+            <Card className="bg-white shadow-lg border-0 text-center">
+              <CardHeader>
+                <div className="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="w-8 h-8" />
+                </div>
+                <CardTitle className="text-xl text-gray-900">Reliability First</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Our team monitors issues proactively. Many times, we're already fixing things before you even ask.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Existing Tickets */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Need to Check Existing Tickets?</h2>
+          <div className="bg-gray-50 rounded-lg p-8 border border-gray-200">
+            <p className="text-lg text-gray-700 mb-6">
+              You can check your ticket status or reply to an existing ticket via the email thread we sent after submission.
+            </p>
+            <p className="text-gray-600 mb-6">
+              Still stuck? Email us directly at <strong>support@cloudadda.com</strong> or call <strong>+91-98765-43210</strong>.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
+                <Mail className="w-4 h-4 mr-2" />
+                Email Support
+              </Button>
+              <Button variant="outline" className="border-orange-300 text-orange-600 hover: bg-orange-50">
+                <Phone className="w-4 h-4 mr-2" />
+                Call Support
+              </Button>
+            </div>
           </div>
         </div>
       </section>

@@ -4,14 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Mail, Phone, MapPin, Clock, Send, MessageCircle, Users, Headphones, BookOpen } from "lucide-react";
+import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,158 +87,160 @@ const Contact = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            <Badge className="mb-8 bg-blue-100 text-blue-800 border-blue-200 text-lg font-medium px-6 py-3">
-              <Mail className="w-5 h-5 mr-2" />
-              Contact Our Team
-            </Badge>
-            <h1 className="text-5xl lg:text-6xl font-black mb-8 leading-tight tracking-tight">
-              Get in Touch
-            </h1>
-            <p className="text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto font-light">
-              We're here to help. Reach out and let us know how we can assist you.
-            </p>
-          </div>
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-blue-50 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight text-gray-900">
+            Let's Talk Cloud. Or Just Say Hi.
+          </h1>
+          <p className="text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
+            We're real humans. We love infrastructure. We reply fast.
+          </p>
+          <p className="text-lg text-gray-500">
+            Questions, quotes, confusion — throw it all at us.
+          </p>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-12 mt-16">
-            {/* Contact Form */}
-            <Card className="bg-white shadow-lg rounded-2xl">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl font-semibold">Send us a Message</CardTitle>
-                <CardDescription className="text-muted-foreground">We'll get back to you as soon as possible.</CardDescription>
-              </CardHeader>
-              <CardContent className="p-8">
-                <div className="grid gap-6">
-                  <div>
-                    <Input type="text" placeholder="Your Name" />
+      {/* Main Content */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Left Side - Message & Contact Info */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Here's What Happens When You Reach Out:</h2>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+                    <p className="text-lg text-gray-700">We'll understand what you're trying to achieve — no jargon needed.</p>
                   </div>
-                  <div>
-                    <Input type="email" placeholder="Your Email" />
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+                    <p className="text-lg text-gray-700">You'll get actionable advice, not a sales pitch.</p>
                   </div>
-                  <div>
-                    <Textarea placeholder="Your Message" rows={4} />
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+                    <p className="text-lg text-gray-700">If needed, we'll set up a quick call or demo.</p>
                   </div>
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full">
-                    Send Message
-                    <Send className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Contact Information */}
-            <Card className="bg-white shadow-lg rounded-2xl">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl font-semibold">Contact Information</CardTitle>
-                <CardDescription className="text-muted-foreground">Ways to reach our team.</CardDescription>
-              </CardHeader>
-              <CardContent className="p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <Mail className="w-6 h-6 text-blue-500" />
-                    <div>
-                      <div className="font-medium">Email</div>
-                      <div className="text-muted-foreground">support@cloudadda.com</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <Phone className="w-6 h-6 text-blue-500" />
-                    <div>
-                      <div className="font-medium">Phone</div>
-                      <div className="text-muted-foreground">+91 9876543210</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <MapPin className="w-6 h-6 text-blue-500" />
-                    <div>
-                      <div className="font-medium">Address</div>
-                      <div className="text-muted-foreground">
-                        123 CloudAdda HQ, Tech Park
-                        <br />
-                        Bangalore, India
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <Clock className="w-6 h-6 text-blue-500" />
-                    <div>
-                      <div className="font-medium">Business Hours</div>
-                      <div className="text-muted-foreground">
-                        Mon - Fri: 9am to 6pm
-                        <br />
-                        Sat: 10am to 2pm
-                      </div>
-                    </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+                    <p className="text-lg text-gray-700">You'll walk away knowing exactly what your next step is.</p>
                   </div>
                 </div>
+                <p className="text-lg text-gray-700 mt-6">
+                  Whether it's a training lab for 300 students, virtual desktops for your remote team, or blazing-fast VPS — we've got you.
+                </p>
+              </div>
+
+              <Card className="bg-gray-50 border-0">
+                <CardHeader>
+                  <CardTitle className="text-xl text-gray-900">Prefer Email or Phone?</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-orange-500" />
+                    <div>
+                      <div className="font-medium text-gray-900">Email</div>
+                      <div className="text-gray-600">hello@cloudadda.com</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-5 h-5 text-orange-500" />
+                    <div>
+                      <div className="font-medium text-gray-900">Phone</div>
+                      <div className="text-gray-600">+91-98765-43210</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Clock className="w-5 h-5 text-orange-500" />
+                    <div>
+                      <div className="font-medium text-gray-900">Availability</div>
+                      <div className="text-gray-600">Mon–Sat, 10 AM – 7 PM IST</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="bg-blue-50 rounded-lg p-6 border border-blue-100">
+                <h3 className="font-semibold text-blue-900 mb-2">Bonus:</h3>
+                <p className="text-blue-800">We've been known to answer emails embarrassingly fast. Try us.</p>
+              </div>
+            </div>
+
+            {/* Right Side - Form */}
+            <Card className="bg-white shadow-lg border border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-gray-900">Talk to Us</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-gray-700 mb-2 block">Full Name *</label>
+                    <Input placeholder="Your full name" />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-700 mb-2 block">Work Email *</label>
+                    <Input type="email" placeholder="you@company.com" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-gray-700 mb-2 block">Phone Number</label>
+                    <Input placeholder="+91-XXXXX-XXXXX" />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-700 mb-2 block">Company Name</label>
+                    <Input placeholder="Your company" />
+                  </div>
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">What do you need help with?</label>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Choose an option" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="training-labs">Training Labs</SelectItem>
+                      <SelectItem value="cloud-desktops">Cloud Desktops (DaaS)</SelectItem>
+                      <SelectItem value="vps">VPS</SelectItem>
+                      <SelectItem value="not-sure">Not Sure Yet</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Message *</label>
+                  <Textarea rows={4} placeholder="Tell us about your requirements..." />
+                </div>
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-full py-3 text-lg">
+                  → Get in Touch
+                  <Send className="ml-2 h-5 w-5" />
+                </Button>
+                <p className="text-center text-sm text-gray-500">
+                  🧃 No spam. No cold calls. Just genuinely helpful humans.
+                </p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Customer Support Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-purple-100 text-purple-800 border-purple-200 text-lg font-medium px-6 py-3">
-              <Headphones className="w-5 h-5 mr-2" />
-              Customer Support
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">How Can We Help?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our dedicated support team is here to assist you with any questions or issues you may have.
-            </p>
+      {/* Final Encouragement Banner */}
+      <section className="py-16 bg-gradient-to-r from-gray-900 to-gray-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Not Sure What to Say?</h2>
+          <p className="text-xl text-gray-300 mb-8">Just tell us what you're trying to do —</p>
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-gray-700 rounded-lg p-4">
+              <p className="text-white italic">"Run a hackathon for 500 people."</p>
+            </div>
+            <div className="bg-gray-700 rounded-lg p-4">
+              <p className="text-white italic">"Give my team better desktops."</p>
+            </div>
+            <div className="bg-gray-700 rounded-lg p-4">
+              <p className="text-white italic">"Move away from a broken cloud setup."</p>
+            </div>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* FAQ Card */}
-            <Card className="bg-white shadow-lg rounded-2xl hover:scale-105 transition-transform duration-300">
-              <CardHeader className="text-center">
-                <MessageCircle className="w-10 h-10 text-purple-500 mx-auto mb-4" />
-                <CardTitle className="text-xl font-semibold">Frequently Asked Questions</CardTitle>
-                <CardDescription className="text-muted-foreground">Find answers to common questions.</CardDescription>
-              </CardHeader>
-              <CardContent className="p-6">
-                <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-full">
-                  Browse FAQs
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Knowledge Base Card */}
-            <Card className="bg-white shadow-lg rounded-2xl hover:scale-105 transition-transform duration-300">
-              <CardHeader className="text-center">
-                <BookOpen className="w-10 h-10 text-purple-500 mx-auto mb-4" />
-                <CardTitle className="text-xl font-semibold">Knowledge Base</CardTitle>
-                <CardDescription className="text-muted-foreground">Explore our in-depth guides and tutorials.</CardDescription>
-              </CardHeader>
-              <CardContent className="p-6">
-                <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-full">
-                  Visit Knowledge Base
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Contact Support Card */}
-            <Card className="bg-white shadow-lg rounded-2xl hover:scale-105 transition-transform duration-300">
-              <CardHeader className="text-center">
-                <Users className="w-10 h-10 text-purple-500 mx-auto mb-4" />
-                <CardTitle className="text-xl font-semibold">Contact Support</CardTitle>
-                <CardDescription className="text-muted-foreground">Get in touch with our support team directly.</CardDescription>
-              </CardHeader>
-              <CardContent className="p-6">
-                <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-full">
-                  Contact Support
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          <p className="text-lg text-gray-300">We'll take it from there.</p>
         </div>
       </section>
 
