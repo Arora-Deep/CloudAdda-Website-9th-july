@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -82,7 +83,7 @@ const About = () => {
         </div>
       </nav>
 
-      {/* Hero Section with New Image */}
+      {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
@@ -123,13 +124,17 @@ const About = () => {
             </div>
             <div className="lg:col-span-5">
               <div className="relative">
-                <img 
-                  src="/lovable-uploads/003fba5b-e3c7-4bce-98c1-6f97304c9b53.png" 
-                  alt="CloudAdda Innovation - Person using VR technology with cloud infrastructure" 
-                  className="w-full h-auto rounded-3xl shadow-2xl"
-                />
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-orange-500 rounded-full animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full animate-pulse delay-1000"></div>
+                <div className="w-80 h-80 bg-purple-50 rounded-3xl border border-purple-100 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute top-8 right-8 w-4 h-4 bg-orange-500 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-8 left-8 w-6 h-6 bg-purple-500 rounded-full animate-pulse delay-1000"></div>
+                  <div className="text-center">
+                    <div className="w-24 h-24 bg-purple-500 rounded-2xl mx-auto mb-6 flex items-center justify-center transform hover:rotate-6 transition-transform duration-300">
+                      <Zap className="w-12 h-12 text-white" />
+                    </div>
+                    <div className="text-6xl font-black text-purple-600 mb-2">2025</div>
+                    <div className="text-sm text-muted-foreground">Infrastructure Reimagined</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
