@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, BookOpen, Users, Award, TrendingUp, Target, Download, Play, FileText, Lightbulb, Star, Globe, Heart, Shield, CheckCircle, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Award, TrendingUp, Target, Download, Play, FileText, Lightbulb, Star, Globe, Heart, Shield, CheckCircle, Zap, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainerAdda = () => {
