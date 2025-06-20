@@ -14,6 +14,9 @@ import Support from "./pages/Support";
 import About from "./pages/About";
 import TrainerAdda from "./pages/TrainerAdda";
 import Guides from "./pages/Guides";
+import PlaybookView from "./pages/PlaybookView";
+import BlogView from "./pages/BlogView";
+import CaseStudyView from "./pages/CaseStudyView";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +38,9 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/trainer-adda" element={<TrainerAdda />} />
           <Route path="/guides" element={<Guides />} />
+          <Route path="/playbook/:id" element={<PlaybookView />} />
+          <Route path="/blog/:id" element={<BlogView />} />
+          <Route path="/case-study/:id" element={<CaseStudyView />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
