@@ -1,9 +1,10 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, Calendar, User, Share2, BookOpen, Lightbulb, Eye, Heart } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import BlogSidebar from "@/components/BlogSidebar";
 
 const BlogView = () => {
   const { id } = useParams();
@@ -27,14 +28,14 @@ const BlogView = () => {
           <p class="text-xl leading-relaxed text-gray-700 mb-8">In today's rapidly evolving technology landscape, cloud computing has become the backbone of modern business operations. Organizations worldwide are racing to adopt cloud technologies, creating an unprecedented demand for skilled cloud professionals.</p>
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">The Challenge of Cloud Training</h2>
+        <h2 id="heading-0" class="text-3xl font-bold text-gray-900 mt-12 mb-6">The Challenge of Cloud Training</h2>
         <p class="text-lg leading-relaxed text-gray-700 mb-6">Training teams face unique challenges when designing cloud curricula. Unlike traditional IT training, cloud technologies are constantly evolving, require hands-on practice, and demand both theoretical knowledge and practical skills.</p>
 
         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg">
           <p class="text-blue-900 font-medium text-lg italic">"The most effective cloud training programs combine theoretical foundations with intensive hands-on practice in real-world scenarios."</p>
         </div>
 
-        <h3 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">Key Success Factors</h3>
+        <h3 id="heading-1" class="text-2xl font-semibold text-gray-900 mt-10 mb-4">Key Success Factors</h3>
         <p class="text-lg leading-relaxed text-gray-700 mb-6">After working with hundreds of training organizations, we've identified several critical success factors:</p>
         
         <ul class="space-y-4 mb-8">
@@ -73,11 +74,11 @@ const BlogView = () => {
           <p class="text-center text-gray-500 text-sm mt-4 italic">Modern cloud training requires sophisticated infrastructure and real-world practice environments</p>
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-16 mb-8">Designing Your Curriculum</h2>
+        <h2 id="heading-2" class="text-3xl font-bold text-gray-900 mt-16 mb-8">Designing Your Curriculum</h2>
         <p class="text-lg leading-relaxed text-gray-700 mb-8">A well-designed cloud training curriculum should follow a structured approach that builds competency progressively while maintaining student engagement through practical applications.</p>
 
         <div class="bg-gradient-to-r from-orange-50 to-blue-50 p-8 rounded-2xl my-10">
-          <h3 class="text-2xl font-semibold text-gray-900 mb-6">1. Foundation Phase (Week 1-2)</h3>
+          <h3 id="heading-3" class="text-2xl font-semibold text-gray-900 mb-6">1. Foundation Phase (Week 1-2)</h3>
           <p class="text-lg text-gray-700 mb-4">Begin with cloud fundamentals, basic concepts, and terminology. Students should understand:</p>
           <div class="grid md:grid-cols-2 gap-4">
             <ul class="space-y-2">
@@ -104,7 +105,7 @@ const BlogView = () => {
         </div>
 
         <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl my-10">
-          <h3 class="text-2xl font-semibold text-gray-900 mb-6">2. Core Services Phase (Week 3-6)</h3>
+          <h3 id="heading-4" class="text-2xl font-semibold text-gray-900 mb-6">2. Core Services Phase (Week 3-6)</h3>
           <p class="text-lg text-gray-700 mb-4">Dive deep into core cloud services with extensive hands-on labs:</p>
           <div class="grid md:grid-cols-2 gap-4">
             <ul class="space-y-2">
@@ -130,9 +131,9 @@ const BlogView = () => {
           </div>
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-16 mb-8">Best Practices for Implementation</h2>
+        <h2 id="heading-5" class="text-3xl font-bold text-gray-900 mt-16 mb-8">Best Practices for Implementation</h2>
 
-        <h3 class="text-2xl font-semibold text-gray-900 mt-10 mb-6">Infrastructure Requirements</h3>
+        <h3 id="heading-6" class="text-2xl font-semibold text-gray-900 mt-10 mb-6">Infrastructure Requirements</h3>
         <p class="text-lg leading-relaxed text-gray-700 mb-6">Successful cloud training requires reliable, scalable infrastructure. Consider these requirements:</p>
         <div class="bg-gray-50 p-6 rounded-xl mb-8">
           <ul class="space-y-3">
@@ -155,7 +156,7 @@ const BlogView = () => {
           </ul>
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-900 mt-16 mb-8">Measuring Success</h2>
+        <h2 id="heading-7" class="text-3xl font-bold text-gray-900 mt-16 mb-8">Measuring Success</h2>
         <p class="text-lg leading-relaxed text-gray-700 mb-6">Track these key metrics to ensure your program's effectiveness:</p>
         
         <div class="grid md:grid-cols-2 gap-6 my-8">
@@ -178,7 +179,7 @@ const BlogView = () => {
         </div>
 
         <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl my-12">
-          <h2 class="text-2xl font-bold mb-4">Conclusion</h2>
+          <h2 id="heading-8" class="text-2xl font-bold mb-4">Conclusion</h2>
           <p class="text-lg leading-relaxed text-blue-100">Building effective cloud training programs requires careful planning, the right infrastructure, and continuous iteration based on student feedback and industry trends. By following these guidelines and focusing on hands-on learning, you can create programs that truly prepare students for successful cloud careers.</p>
         </div>
 
@@ -189,8 +190,25 @@ const BlogView = () => {
 
   const post = posts[id as keyof typeof posts] || posts["building-effective-cloud-training"];
 
+  useEffect(() => {
+    // Smooth scroll behavior for anchor links
+    const handleAnchorClick = (e: Event) => {
+      const target = e.target as HTMLAnchorElement;
+      if (target.hash) {
+        e.preventDefault();
+        const element = document.querySelector(target.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,7 +234,7 @@ const BlogView = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
       </div>
 
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
         {/* Header Card */}
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
           <div className="flex flex-wrap items-center gap-4 mb-6">
@@ -266,31 +284,39 @@ const BlogView = () => {
           </div>
         </div>
 
-        {/* Content */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
-          <div 
-            className="prose prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-        </div>
+        {/* Main Content with Sidebar */}
+        <div className="flex gap-12 pb-12">
+          {/* Content */}
+          <article className="flex-1">
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <div 
+                className="prose prose-lg max-w-none"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            </div>
 
-        {/* CTA Footer */}
-        <footer className="bg-gradient-to-r from-orange-500 to-blue-600 rounded-2xl p-12 text-white text-center">
-          <BookOpen className="w-12 h-12 text-white mx-auto mb-4" />
-          <h3 className="text-3xl font-bold mb-4">Ready to Build Your Training Program?</h3>
-          <p className="text-xl mb-8 opacity-90">
-            Get the infrastructure and resources you need to deliver world-class training.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 font-semibold">
-              Start Free Trial
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              Explore More Resources
-            </Button>
-          </div>
-        </footer>
-      </article>
+            {/* CTA Footer */}
+            <footer className="bg-gradient-to-r from-orange-500 to-blue-600 rounded-2xl p-12 text-white text-center mt-12">
+              <BookOpen className="w-12 h-12 text-white mx-auto mb-4"  />
+              <h3 className="text-3xl font-bold mb-4">Ready to Build Your Training Program?</h3>
+              <p className="text-xl mb-8 opacity-90">
+                Get the infrastructure and resources you need to deliver world-class training.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 font-semibold">
+                  Start Free Trial
+                </Button>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  Explore More Resources
+                </Button>
+              </div>
+            </footer>
+          </article>
+
+          {/* Sidebar */}
+          <BlogSidebar content={post.content} />
+        </div>
+      </div>
     </div>
   );
 };

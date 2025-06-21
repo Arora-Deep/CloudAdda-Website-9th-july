@@ -1,7 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from "@radix-ui/react-navigation-menu";
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from "@/components/ui/navigation-menu";
 
 const VPS = () => {
   return (
@@ -22,15 +23,15 @@ const VPS = () => {
                     <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
                       Solutions
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="bg-white border border-gray-200 shadow-lg z-50">
-                      <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
+                    <NavigationMenuContent className="min-w-[400px] p-0 bg-white border border-gray-200 shadow-lg rounded-lg z-50">
+                      <div className="grid gap-0 p-0 w-[400px] lg:w-[500px] lg:grid-cols-1">
                         <NavigationMenuLink asChild>
                           <Link
                             to="/training-labs"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100"
                           >
-                            <div className="text-sm font-medium leading-none">Training Labs</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            <div className="text-sm font-medium leading-none text-gray-900">Training Labs</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-gray-600">
                               Provisioned lab environments for training companies
                             </p>
                           </Link>
@@ -38,10 +39,10 @@ const VPS = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/cloud-desktops"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100"
                           >
-                            <div className="text-sm font-medium leading-none">Cloud Desktops</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            <div className="text-sm font-medium leading-none text-gray-900">Cloud Desktops</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-gray-600">
                               Fast, secure desktops accessible from anywhere
                             </p>
                           </Link>
@@ -49,10 +50,10 @@ const VPS = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/vps"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50"
                           >
-                            <div className="text-sm font-medium leading-none">VPS Hosting</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            <div className="text-sm font-medium leading-none text-gray-900">VPS Hosting</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-gray-600">
                               High-performance VPS with AMD EPYC processors
                             </p>
                           </Link>
