@@ -332,7 +332,7 @@ const Index = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="lg:order-2 space-y-6">
                 <div className="space-y-4">
-                  <h3 className="text-3xl font-bold text-gray-900">Virtual Desktops</h3>
+                  <h3 className="text-3xl font-bold text-gray-900">Cloud Desktops</h3>
                   <p className="text-sm text-purple-600 font-semibold">DaaS for Modern Teams</p>
                   <p className="text-lg text-gray-600 leading-relaxed mb-4">High-performance, secure virtual desktops — ready to power remote teams, call centers, dev shops, and full-scale organizations. Blazing fast, customizable, and easier than hiring IT admins.</p>
                   <div className="space-y-2 text-sm">
@@ -1035,7 +1035,7 @@ const Index = () => {
               <h3 className="font-semibold mb-4">Solutions</h3>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Training Labs</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Virtual Desktops</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Cloud Desktops</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">VPS</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Custom Solutions</a></li>
               </ul>
