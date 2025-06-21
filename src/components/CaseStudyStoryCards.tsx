@@ -3,184 +3,218 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, ChevronRight, Building, Users, Target, TrendingUp, Quote, CheckCircle } from "lucide-react";
+import { ChevronLeft, ChevronRight, Building, Users, Target, TrendingUp, Quote, CheckCircle, Lightbulb, Award } from "lucide-react";
+
+interface CaseStudySlide {
+  title: string;
+  content: string;
+  icon: React.ElementType;
+  color: string;
+}
 
 interface CaseStudy {
   id: string;
   company: string;
   industry: string;
-  challenge: string;
-  solution: string;
-  results: string[];
-  testimonial: string;
-  author: string;
-  role: string;
-  image: string;
+  logo: string;
+  slides: CaseStudySlide[];
 }
 
-const caseStudies: CaseStudy[] = [
-  {
-    id: "techcorp-transformation",
-    company: "TechCorp",
-    industry: "Technology",
-    challenge: "TechCorp needed to rapidly upskill their entire development team of 500+ developers on modern cloud technologies across 15 global offices.",
-    solution: "CloudAdda provided comprehensive training infrastructure with dedicated lab environments, allowing developers to learn while continuing their regular work responsibilities.",
-    results: ["500+ developers trained", "85% certification rate", "40% faster time to productivity", "$2.3M annual cost savings"],
-    testimonial: "CloudAdda's platform transformed how we approach technical training. The hands-on labs were incredible.",
-    author: "Sarah Johnson",
-    role: "VP of Engineering, TechCorp",
-    image: "/lovable-uploads/2c2c88a8-7220-4594-bca2-cc4e5f6d6780.png"
-  },
-  {
-    id: "edutech-scale",
-    company: "EduTech Solutions",
-    industry: "Education",
-    challenge: "A growing EdTech company needed to scale their virtual classroom infrastructure to support 10,000+ concurrent students during peak hours.",
-    solution: "CloudAdda deployed auto-scaling cloud desktop environments with optimized performance for educational applications and real-time collaboration tools.",
-    results: ["10,000+ concurrent users", "99.9% uptime achieved", "50% cost reduction", "Zero student complaints"],
-    testimonial: "The reliability and performance exceeded our expectations. Our students now have seamless learning experiences.",
-    author: "Michael Chen",
-    role: "CTO, EduTech Solutions",
-    image: "/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png"
-  },
-  {
-    id: "fintech-security",
-    company: "SecureFinance",
-    industry: "Financial Services",
-    challenge: "A fintech startup required ultra-secure, compliant infrastructure for their trading platform while maintaining high performance and scalability.",
-    solution: "CloudAdda implemented enterprise-grade security with dedicated VPS instances, compliance monitoring, and 24/7 security support.",
-    results: ["100% compliance maintained", "Sub-10ms latency", "Zero security incidents", "300% user growth supported"],
-    testimonial: "Security and performance in one package. CloudAdda made our regulatory compliance seamless.",
-    author: "Amanda Rodriguez",
-    role: "Head of Infrastructure, SecureFinance",
-    image: "/lovable-uploads/c219099e-0e5b-49c8-83b1-e799238baebd.png"
-  }
-];
+const caseStudyData: CaseStudy = {
+  id: "techcorp-transformation",
+  company: "TechCorp Solutions",
+  industry: "Technology & Software",
+  logo: "/lovable-uploads/2c2c88a8-7220-4594-bca2-cc4e5f6d6780.png",
+  slides: [
+    {
+      title: "The Challenge",
+      content: "TechCorp needed to rapidly upskill their entire development team of 500+ developers on modern cloud technologies across 15 global offices. Traditional training methods were too slow and expensive, creating bottlenecks in their digital transformation initiative.",
+      icon: Target,
+      color: "from-red-500 to-orange-500"
+    },
+    {
+      title: "The Solution",
+      content: "CloudAdda provided comprehensive training infrastructure with dedicated lab environments, allowing developers to learn while continuing their regular work responsibilities. Custom learning paths were created for different skill levels and departments.",
+      icon: Lightbulb,
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "Implementation",
+      content: "The rollout was phased over 6 months, starting with team leads and senior developers. Each developer received access to personal cloud environments with pre-configured scenarios matching their daily work challenges.",
+      icon: Building,
+      color: "from-purple-500 to-indigo-500"
+    },
+    {
+      title: "Results Achieved",
+      content: "500+ developers trained with an 85% certification rate. Time to productivity for new cloud projects decreased by 40%, resulting in $2.3M annual cost savings. Developer satisfaction scores increased by 60%.",
+      icon: TrendingUp,
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      title: "Client Testimonial",
+      content: "\"CloudAdda's platform transformed how we approach technical training. The hands-on labs were incredible, and our team's confidence in cloud technologies skyrocketed. We've never seen such engagement in a training program.\" - Sarah Johnson, VP of Engineering",
+      icon: Quote,
+      color: "from-orange-500 to-pink-500"
+    }
+  ]
+};
 
 const CaseStudyStoryCards = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % caseStudies.length);
+    setCurrentSlide((prev) => (prev + 1) % caseStudyData.slides.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
+    setCurrentSlide((prev) => (prev - 1 + caseStudyData.slides.length) % caseStudyData.slides.length);
   };
 
-  const currentStudy = caseStudies[currentIndex];
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  const currentSlideData = caseStudyData.slides[currentSlide];
+  const IconComponent = currentSlideData.icon;
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Navigation */}
-        <div className="flex justify-between items-center mb-12">
-          <div className="flex items-center space-x-4">
-            <Badge className="bg-green-500 text-white">
-              <Building className="w-3 h-3 mr-1" />
-              Case Study {currentIndex + 1} of {caseStudies.length}
-            </Badge>
-            <h1 className="text-2xl font-bold text-gray-900">{currentStudy.company} Success Story</h1>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center p-8">
+      <div className="max-w-6xl mx-auto w-full">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center mb-6">
+            <img 
+              src={caseStudyData.logo} 
+              alt={caseStudyData.company}
+              className="h-16 w-auto object-contain mr-4"
+            />
+            <div className="text-left">
+              <h1 className="text-4xl font-bold text-gray-900">{caseStudyData.company}</h1>
+              <Badge className="bg-blue-500 text-white mt-2">
+                <Building className="w-3 h-3 mr-1" />
+                {caseStudyData.industry}
+              </Badge>
+            </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <Button variant="outline" size="sm" onClick={prevSlide} disabled={currentIndex === 0}>
-              <ChevronLeft className="w-4 h-4 mr-1" />
-              Previous
-            </Button>
-            <Button variant="outline" size="sm" onClick={nextSlide} disabled={currentIndex === caseStudies.length - 1}>
-              Next
-              <ChevronRight className="w-4 h-4 ml-1" />
-            </Button>
+          <p className="text-xl text-gray-600">A comprehensive case study of digital transformation success</p>
+        </div>
+
+        {/* Navigation Pills */}
+        <div className="flex justify-center mb-8">
+          <div className="bg-white rounded-full p-2 shadow-lg border border-gray-200">
+            <div className="flex space-x-2">
+              {caseStudyData.slides.map((slide, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    index === currentSlide
+                      ? 'bg-orange-500 text-white shadow-md'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  }`}
+                >
+                  {slide.title}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Main Story Card */}
-        <Card className="overflow-hidden shadow-2xl">
-          <div className="grid lg:grid-cols-2 gap-0">
-            {/* Left Side - Image and Company Info */}
-            <div className="relative bg-gradient-to-br from-orange-500 to-purple-600 p-12 flex flex-col justify-center">
-              <div className="text-white">
-                <Badge className="bg-white/20 text-white mb-4">{currentStudy.industry}</Badge>
-                <h2 className="text-4xl font-bold mb-4">{currentStudy.company}</h2>
-                <div className="space-y-4">
-                  {currentStudy.results.map((result, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5" />
-                      </div>
-                      <span className="text-lg">{result}</span>
-                    </div>
-                  ))}
+        {/* Main Slide Card */}
+        <Card className="overflow-hidden shadow-2xl border-0">
+          <div className={`bg-gradient-to-r ${currentSlideData.color} p-2`}>
+            <CardContent className="bg-white m-2 rounded-lg p-12">
+              <div className="flex items-center justify-center mb-8">
+                <div className={`w-20 h-20 bg-gradient-to-r ${currentSlideData.color} rounded-full flex items-center justify-center shadow-lg`}>
+                  <IconComponent className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <img 
-                src={currentStudy.image} 
-                alt={currentStudy.company}
-                className="absolute bottom-0 right-0 w-32 h-32 object-cover rounded-tl-3xl opacity-20"
-              />
-            </div>
+              
+              <div className="text-center max-w-4xl mx-auto">
+                <h2 className="text-4xl font-bold text-gray-900 mb-8">{currentSlideData.title}</h2>
+                <p className="text-xl leading-relaxed text-gray-700 mb-12">
+                  {currentSlideData.content}
+                </p>
+              </div>
 
-            {/* Right Side - Story Content */}
-            <CardContent className="p-12">
-              <div className="space-y-8">
-                {/* Challenge */}
-                <div>
-                  <div className="flex items-center mb-4">
-                    <Target className="w-6 h-6 text-red-500 mr-2" />
-                    <h3 className="text-2xl font-bold text-gray-900">The Challenge</h3>
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed">{currentStudy.challenge}</p>
+              {/* Progress Bar */}
+              <div className="mt-12">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-sm font-medium text-gray-600">
+                    Slide {currentSlide + 1} of {caseStudyData.slides.length}
+                  </span>
+                  <span className="text-sm font-medium text-gray-600">
+                    {Math.round(((currentSlide + 1) / caseStudyData.slides.length) * 100)}% Complete
+                  </span>
                 </div>
-
-                {/* Solution */}
-                <div>
-                  <div className="flex items-center mb-4">
-                    <CheckCircle className="w-6 h-6 text-blue-500 mr-2" />
-                    <h3 className="text-2xl font-bold text-gray-900">The Solution</h3>
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed">{currentStudy.solution}</p>
-                </div>
-
-                {/* Testimonial */}
-                <div className="bg-gray-50 rounded-2xl p-8">
-                  <Quote className="w-12 h-12 text-gray-400 mb-4" />
-                  <blockquote className="text-xl text-gray-800 mb-6 italic">
-                    "{currentStudy.testimonial}"
-                  </blockquote>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
-                      <Users className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">{currentStudy.author}</div>
-                      <div className="text-gray-600">{currentStudy.role}</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <div className="text-center pt-8">
-                  <Button size="lg" className="bg-gradient-to-r from-orange-500 to-purple-600 text-white">
-                    Get Similar Results
-                  </Button>
+                <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div 
+                    className={`bg-gradient-to-r ${currentSlideData.color} h-2 rounded-full transition-all duration-500`}
+                    style={{ width: `${((currentSlide + 1) / caseStudyData.slides.length) * 100}%` }}
+                  ></div>
                 </div>
               </div>
             </CardContent>
           </div>
         </Card>
 
-        {/* Progress Indicators */}
-        <div className="flex justify-center space-x-2 mt-8">
-          {caseStudies.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentIndex ? 'bg-orange-500' : 'bg-gray-300'
-              }`}
-            />
-          ))}
+        {/* Navigation Controls */}
+        <div className="flex justify-between items-center mt-8">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            onClick={prevSlide} 
+            disabled={currentSlide === 0}
+            className="flex items-center space-x-2"
+          >
+            <ChevronLeft className="w-5 h-5" />
+            <span>Previous</span>
+          </Button>
+
+          <div className="flex space-x-2">
+            {caseStudyData.slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentSlide ? 'bg-orange-500' : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
+            ))}
+          </div>
+
+          <Button 
+            variant="outline" 
+            size="lg" 
+            onClick={nextSlide} 
+            disabled={currentSlide === caseStudyData.slides.length - 1}
+            className="flex items-center space-x-2"
+          >
+            <span>Next</span>
+            <ChevronRight className="w-5 h-5" />
+          </Button>
         </div>
+
+        {/* CTA Section */}
+        {currentSlide === caseStudyData.slides.length - 1 && (
+          <div className="mt-12 text-center">
+            <div className="bg-gradient-to-r from-orange-500 to-purple-600 rounded-2xl p-8 text-white">
+              <Award className="w-12 h-12 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold mb-4">Ready to Achieve Similar Results?</h3>
+              <p className="text-lg mb-6 opacity-90">
+                Join hundreds of companies that have transformed their teams with CloudAdda
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 font-semibold">
+                  Start Your Transformation
+                </Button>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  View More Case Studies
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

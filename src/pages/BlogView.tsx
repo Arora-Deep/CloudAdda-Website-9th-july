@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -285,17 +284,17 @@ const BlogView = () => {
         </div>
 
         {/* Main Content with Sidebar */}
-        <div className="flex gap-12 pb-12">
+        <div className="flex gap-8 pb-12">
           {/* Left Sidebar - Table of Contents */}
-          <div className="w-80 flex-shrink-0">
+          <div className="w-64 flex-shrink-0">
             <div className="sticky top-24">
               <BlogSidebar content={post.content} showOnlyTOC={true} />
             </div>
           </div>
 
-          {/* Content */}
-          <article className="flex-1">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+          {/* Content - Much Wider */}
+          <article className="flex-1 max-w-4xl">
+            <div className="bg-white rounded-2xl shadow-lg p-12">
               <div 
                 className="prose prose-lg max-w-none"
                 dangerouslySetInnerHTML={{ __html: post.content }}
@@ -321,7 +320,7 @@ const BlogView = () => {
           </article>
 
           {/* Right Sidebar - Social & CTA */}
-          <div className="w-80 flex-shrink-0">
+          <div className="w-64 flex-shrink-0">
             <div className="sticky top-24">
               <BlogSidebar content={post.content} showOnlyActions={true} />
             </div>
