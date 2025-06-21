@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -6,63 +5,75 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
-  
-  const headings = [
-    "The Cloud Company That Actually Cares.",
-    "Premium Infrastructure. Human Touch.", 
-    "Where Performance Meets Compassion.",
-    "Your Success Is Our Mission."
-  ];
+  const headings = ["The Cloud Company That Actually Cares.", "Premium Infrastructure. Human Touch.", "Where Performance Meets Compassion.", "Your Success Is Our Mission."];
 
   // New sliding words for the "Cloud Company That Actually Cares" section
-  const slidingWords = [
-    { text: "A Cloud Company That Actually", highlight: "Cares" },
-    { text: "Infrastructure That's", highlight: "Reliable" },
-    { text: "Support That's", highlight: "Human" },
-    { text: "Solutions That", highlight: "Scale" },
-    { text: "Performance That", highlight: "Delivers" }
-  ];
+  const slidingWords = [{
+    text: "A Cloud Company That Actually",
+    highlight: "Cares"
+  }, {
+    text: "Infrastructure That's",
+    highlight: "Reliable"
+  }, {
+    text: "Support That's",
+    highlight: "Human"
+  }, {
+    text: "Solutions That",
+    highlight: "Scale"
+  }, {
+    text: "Performance That",
+    highlight: "Delivers"
+  }];
 
   // Customer logos for carousel
-  const customerLogos = [
-    { name: "Company 1", logo: "/placeholder.svg" },
-    { name: "Company 2", logo: "/placeholder.svg" },
-    { name: "Company 3", logo: "/placeholder.svg" },
-    { name: "Company 4", logo: "/placeholder.svg" },
-    { name: "Company 5", logo: "/placeholder.svg" },
-    { name: "Company 6", logo: "/placeholder.svg" },
-    { name: "Company 7", logo: "/placeholder.svg" },
-    { name: "Company 8", logo: "/placeholder.svg" }
-  ];
-
+  const customerLogos = [{
+    name: "Company 1",
+    logo: "/placeholder.svg"
+  }, {
+    name: "Company 2",
+    logo: "/placeholder.svg"
+  }, {
+    name: "Company 3",
+    logo: "/placeholder.svg"
+  }, {
+    name: "Company 4",
+    logo: "/placeholder.svg"
+  }, {
+    name: "Company 5",
+    logo: "/placeholder.svg"
+  }, {
+    name: "Company 6",
+    logo: "/placeholder.svg"
+  }, {
+    name: "Company 7",
+    logo: "/placeholder.svg"
+  }, {
+    name: "Company 8",
+    logo: "/placeholder.svg"
+  }];
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentHeading((prev) => (prev + 1) % headings.length);
+      setCurrentHeading(prev => (prev + 1) % headings.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      setCurrentSlideIndex((prev) => (prev + 1) % slidingWords.length);
+      setCurrentSlideIndex(prev => (prev + 1) % slidingWords.length);
     }, 2500);
     return () => clearInterval(slideInterval);
   }, []);
-
   useEffect(() => {
     const logoInterval = setInterval(() => {
-      setCurrentLogoIndex((prev) => (prev + 1) % customerLogos.length);
+      setCurrentLogoIndex(prev => (prev + 1) % customerLogos.length);
     }, 2000);
     return () => clearInterval(logoInterval);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,10 +93,7 @@ const Index = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/training-labs"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/training-labs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Training Labs</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Provisioned lab environments for training companies
@@ -93,10 +101,7 @@ const Index = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/cloud-desktops"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Fast, secure desktops accessible from anywhere
@@ -104,10 +109,7 @@ const Index = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/vps"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/vps" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">VPS Hosting</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               High-performance VPS with AMD EPYC processors
@@ -146,9 +148,7 @@ const Index = () => {
                   Stop Fighting the Infra.<br />
                   <span className="text-purple-600">Start Shipping Work.</span>
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  CloudAdda runs your Labs, Desktops & VPS — so your team doesn't have to.
-                </p>
+                <p className="text-xl text-gray-600 leading-relaxed">CloudAdda runs your Virtual Training Labs, Cloud Desktops & VPS — so your team doesn't have to.</p>
                 <p className="text-lg text-gray-800 font-semibold">
                   No chaos. No cloud headaches. Just clean infra that does its damn job.
                 </p>
@@ -206,11 +206,7 @@ const Index = () => {
             
             {/* Right side - Image */}
             <div className="flex justify-center lg:justify-end">
-              <img 
-                src="/lovable-uploads/69230053-96f2-4f6a-ad77-9419979d6f8e.png" 
-                alt="Frustrated person at desk with laptop" 
-                className="w-full max-w-lg h-auto object-contain"
-              />
+              <img src="/lovable-uploads/69230053-96f2-4f6a-ad77-9419979d6f8e.png" alt="Frustrated person at desk with laptop" className="w-full max-w-lg h-auto object-contain" />
             </div>
           </div>
         </div>
@@ -235,13 +231,7 @@ const Index = () => {
                 If
               </div>
               
-              {[
-                "You're tired of spending hours configuring labs.",
-                "You want your team to work — not wait for IT.",
-                "You care about performance. But you care more about reliability.",
-                "You want to scale, without feeling like you're managing a data center."
-              ].map((text, index) => (
-                <div key={index} className="flex items-start space-x-6 group">
+              {["You're tired of spending hours configuring labs.", "You want your team to work — not wait for IT.", "You care about performance. But you care more about reliability.", "You want to scale, without feeling like you're managing a data center."].map((text, index) => <div key={index} className="flex items-start space-x-6 group">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
                       {index + 1}
@@ -250,8 +240,7 @@ const Index = () => {
                   <p className="text-xl text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
                     {text}
                   </p>
-                </div>
-              ))}
+                </div>)}
               
               <div className="text-4xl lg:text-5xl font-bold text-purple-600 mt-12">
                 Then you're our people.
@@ -260,11 +249,7 @@ const Index = () => {
             </div>
             
             <div className="flex justify-center">
-              <img 
-                src="/lovable-uploads/f690fdec-4d37-4062-af23-158e9b86a21e.png" 
-                alt="Professional man in business suit with welcoming gesture" 
-                className="w-full max-w-lg" 
-              />
+              <img src="/lovable-uploads/f690fdec-4d37-4062-af23-158e9b86a21e.png" alt="Professional man in business suit with welcoming gesture" className="w-full max-w-lg" />
             </div>
           </div>
         </div>
@@ -401,13 +386,17 @@ const Index = () => {
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-600">CPU</span>
                           <div className="w-24 bg-gray-200 rounded-full h-2">
-                            <div className="bg-blue-600 h-2 rounded-full" style={{ width: '75%' }}></div>
+                            <div className="bg-blue-600 h-2 rounded-full" style={{
+                            width: '75%'
+                          }}></div>
                           </div>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-600">RAM</span>
                           <div className="w-24 bg-gray-200 rounded-full h-2">
-                            <div className="bg-green-600 h-2 rounded-full" style={{ width: '60%' }}></div>
+                            <div className="bg-green-600 h-2 rounded-full" style={{
+                            width: '60%'
+                          }}></div>
                           </div>
                         </div>
                       </div>
@@ -516,11 +505,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-7 gap-8 items-center">
             {/* Left Image - Confused Person - MUCH BIGGER */}
             <div className="lg:col-span-2 flex justify-center">
-              <img 
-                src="/lovable-uploads/9b9e01c2-e3f9-4704-9bc8-59a73b35ce7d.png" 
-                alt="Confused person representing before state" 
-                className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" 
-              />
+              <img src="/lovable-uploads/9b9e01c2-e3f9-4704-9bc8-59a73b35ce7d.png" alt="Confused person representing before state" className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" />
             </div>
 
             {/* Center Table - MUCH CLEANER DESIGN */}
@@ -539,41 +524,32 @@ const Index = () => {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
-                      {[
-                        {
-                          before: "Manual infra setup. Every time.",
-                          after: "Labs provisioned in hours — just send a config."
-                        },
-                        {
-                          before: "Labs crash mid-session. Chaos.",
-                          after: "Rock-solid infra, every session."
-                        },
-                        {
-                          before: "Devs on slow laptops. Lag everywhere.",
-                          after: "Fast cloud desktops built to scale."
-                        },
-                        {
-                          before: "Zoom + IDE = system freeze.",
-                          after: "Secure, lag-free access — even for remote teams."
-                        },
-                        {
-                          before: "AWS bills with no logic.",
-                          after: "Flat pricing. No surprises."
-                        },
-                        {
-                          before: "Confusing dashboards. No support.",
-                          after: "Friendly support that actually helps."
-                        }
-                      ].map((row, index) => (
-                        <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
+                      {[{
+                      before: "Manual infra setup. Every time.",
+                      after: "Labs provisioned in hours — just send a config."
+                    }, {
+                      before: "Labs crash mid-session. Chaos.",
+                      after: "Rock-solid infra, every session."
+                    }, {
+                      before: "Devs on slow laptops. Lag everywhere.",
+                      after: "Fast cloud desktops built to scale."
+                    }, {
+                      before: "Zoom + IDE = system freeze.",
+                      after: "Secure, lag-free access — even for remote teams."
+                    }, {
+                      before: "AWS bills with no logic.",
+                      after: "Flat pricing. No surprises."
+                    }, {
+                      before: "Confusing dashboards. No support.",
+                      after: "Friendly support that actually helps."
+                    }].map((row, index) => <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
                           <td className="p-6 text-base text-gray-700 border-r border-gray-100 bg-red-25 leading-relaxed">
                             {row.before}
                           </td>
                           <td className="p-6 text-base text-gray-700 bg-green-25 leading-relaxed">
                             {row.after}
                           </td>
-                        </tr>
-                      ))}
+                        </tr>)}
                     </tbody>
                   </table>
                 </div>
@@ -582,11 +558,7 @@ const Index = () => {
 
             {/* Right Image - Happy Person - MUCH BIGGER */}
             <div className="lg:col-span-2 flex justify-center">
-              <img 
-                src="/lovable-uploads/8a2d7816-a253-40ef-a846-db190a4798a5.png" 
-                alt="Happy person representing after state" 
-                className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" 
-              />
+              <img src="/lovable-uploads/8a2d7816-a253-40ef-a846-db190a4798a5.png" alt="Happy person representing after state" className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" />
             </div>
           </div>
 
@@ -615,91 +587,79 @@ const Index = () => {
           <div className="text-center mb-20 relative">
             <div className="h-32 flex items-center justify-center overflow-hidden">
               <div className="relative w-full max-w-6xl mx-auto">
-                <div 
-                  className="flex transition-transform duration-700 ease-in-out"
-                  style={{
-                    transform: `translateX(-${currentSlideIndex * 100}%)`
-                  }}
-                >
-                  {slidingWords.map((slide, index) => (
-                    <div 
-                      key={index}
-                      className="min-w-full flex items-center justify-center px-8"
-                    >
+                <div className="flex transition-transform duration-700 ease-in-out" style={{
+                transform: `translateX(-${currentSlideIndex * 100}%)`
+              }}>
+                  {slidingWords.map((slide, index) => <div key={index} className="min-w-full flex items-center justify-center px-8">
                       <h2 className="text-4xl lg:text-6xl font-bold text-center leading-tight whitespace-nowrap">
                         <span className="text-gray-900">{slide.text} </span>
                         <span className="text-purple-600">{slide.highlight}</span>
                       </h2>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
             
             {/* Progress indicators */}
             <div className="flex justify-center mt-8 space-x-2">
-              {slidingWords.map((_, index) => (
-                <div
-                  key={index}
-                  className={`h-2 w-8 rounded-full transition-all duration-300 ${
-                    index === currentSlideIndex ? 'bg-purple-600' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
+              {slidingWords.map((_, index) => <div key={index} className={`h-2 w-8 rounded-full transition-all duration-300 ${index === currentSlideIndex ? 'bg-purple-600' : 'bg-gray-300'}`} />)}
             </div>
           </div>
           
           {/* Trust Indicators */}
           <div className="grid md:grid-cols-4 gap-8 mb-16">
-            {[
-              { number: "99.9%", label: "Uptime SLA", icon: Shield },
-              { number: "24/7", label: "Human Support", icon: Users },
-              { number: "< 2hrs", label: "Setup Time", icon: Clock },
-              { number: "500+", label: "Happy Clients", icon: Award }
-            ].map((stat, index) => (
-              <div key={index} className="text-center group">
+            {[{
+            number: "99.9%",
+            label: "Uptime SLA",
+            icon: Shield
+          }, {
+            number: "24/7",
+            label: "Human Support",
+            icon: Users
+          }, {
+            number: "< 2hrs",
+            label: "Setup Time",
+            icon: Clock
+          }, {
+            number: "500+",
+            label: "Happy Clients",
+            icon: Award
+          }].map((stat, index) => <div key={index} className="text-center group">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4 group-hover:bg-purple-600 transition-colors duration-300">
                   <stat.icon className="w-8 h-8 text-purple-600 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           {/* Premium Feature Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Users,
-                title: "You Talk to Humans",
-                description: "Engineers, not bots. Every ticket. Every time. Real people who understand your problems.",
-                color: "bg-gradient-to-br from-blue-500 to-blue-600",
-                badge: "Human Touch"
-              },
-              {
-                icon: Settings,
-                title: "We Customize Everything",
-                description: "No one-size-fits-all. We tailor setups to your exact use case and requirements.",
-                color: "bg-gradient-to-br from-purple-500 to-purple-600",
-                badge: "Bespoke Solutions"
-              },
-              {
-                icon: Zap,
-                title: "We Move Fast",
-                description: "Environments provisioned in hours, not days. Speed without compromising quality.",
-                color: "bg-gradient-to-br from-orange-500 to-orange-600",
-                badge: "Lightning Speed"
-              },
-              {
-                icon: Shield,
-                title: "We Don't Oversell",
-                description: "When you pay for performance, you get performance. Guaranteed resources, always.",
-                color: "bg-gradient-to-br from-green-500 to-green-600",
-                badge: "Guaranteed Performance"
-              }
-            ].map((item, index) => (
-              <div key={index} className="group relative">
+            {[{
+            icon: Users,
+            title: "You Talk to Humans",
+            description: "Engineers, not bots. Every ticket. Every time. Real people who understand your problems.",
+            color: "bg-gradient-to-br from-blue-500 to-blue-600",
+            badge: "Human Touch"
+          }, {
+            icon: Settings,
+            title: "We Customize Everything",
+            description: "No one-size-fits-all. We tailor setups to your exact use case and requirements.",
+            color: "bg-gradient-to-br from-purple-500 to-purple-600",
+            badge: "Bespoke Solutions"
+          }, {
+            icon: Zap,
+            title: "We Move Fast",
+            description: "Environments provisioned in hours, not days. Speed without compromising quality.",
+            color: "bg-gradient-to-br from-orange-500 to-orange-600",
+            badge: "Lightning Speed"
+          }, {
+            icon: Shield,
+            title: "We Don't Oversell",
+            description: "When you pay for performance, you get performance. Guaranteed resources, always.",
+            color: "bg-gradient-to-br from-green-500 to-green-600",
+            badge: "Guaranteed Performance"
+          }].map((item, index) => <div key={index} className="group relative">
                 <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden">
                   {/* Badge */}
                   <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-semibold">
@@ -726,8 +686,7 @@ const Index = () => {
                     <div className={`w-12 h-1 bg-gradient-to-r ${item.color.replace('bg-gradient-to-br', '')} rounded-full group-hover:w-20 transition-all duration-300`}></div>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           {/* Premium CTA */}
@@ -763,32 +722,25 @@ const Index = () => {
           </div>
           
           <div className="grid lg:grid-cols-3 gap-12">
-            {[
-              {
-                quote: "It's like magic. I told them what we needed. Next morning, 40 labs were live. No bugs. No BS.",
-                author: "Founder, Corporate Training Platform",
-                rating: 5,
-                highlight: "magic"
-              },
-              {
-                quote: "We switched from AWS Workspaces to CloudAdda. Better speeds. Better support. Better everything.",
-                author: "Head of IT, Fintech Startup", 
-                rating: 5,
-                highlight: "Better everything"
-              },
-              {
-                quote: "Honestly? They saved our training business.",
-                author: "CEO, EdTech Company",
-                rating: 5,
-                highlight: "saved our business"
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="group relative">
+            {[{
+            quote: "It's like magic. I told them what we needed. Next morning, 40 labs were live. No bugs. No BS.",
+            author: "Founder, Corporate Training Platform",
+            rating: 5,
+            highlight: "magic"
+          }, {
+            quote: "We switched from AWS Workspaces to CloudAdda. Better speeds. Better support. Better everything.",
+            author: "Head of IT, Fintech Startup",
+            rating: 5,
+            highlight: "Better everything"
+          }, {
+            quote: "Honestly? They saved our training business.",
+            author: "CEO, EdTech Company",
+            rating: 5,
+            highlight: "saved our business"
+          }].map((testimonial, index) => <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                   <div className="flex text-yellow-400 mb-6 justify-center">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-6 h-6 fill-current" />
-                    ))}
+                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-6 h-6 fill-current" />)}
                   </div>
                   
                   <div className="relative mb-8">
@@ -806,8 +758,7 @@ const Index = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -822,26 +773,14 @@ const Index = () => {
           
           <div className="relative">
             <div className="flex justify-center items-center overflow-hidden">
-              <div 
-                className="flex transition-transform duration-1000 ease-in-out"
-                style={{
-                  transform: `translateX(-${currentLogoIndex * (100 / 4)}%)`
-                }}
-              >
-                {customerLogos.concat(customerLogos).map((logo, index) => (
-                  <div 
-                    key={index}
-                    className="flex-shrink-0 w-1/4 px-8 flex items-center justify-center"
-                  >
+              <div className="flex transition-transform duration-1000 ease-in-out" style={{
+              transform: `translateX(-${currentLogoIndex * (100 / 4)}%)`
+            }}>
+                {customerLogos.concat(customerLogos).map((logo, index) => <div key={index} className="flex-shrink-0 w-1/4 px-8 flex items-center justify-center">
                     <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 w-full max-w-[200px] h-20 flex items-center justify-center">
-                      <img 
-                        src={logo.logo} 
-                        alt={logo.name}
-                        className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-                      />
+                      <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -886,51 +825,31 @@ const Index = () => {
           </div>
           
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            {[
-              {
-                title: "Training Labs",
-                price: "Custom Quote",
-                subtitle: "Based on your exact requirements",
-                description: "We ask 3-5 questions about your training needs, then deliver a complete lab environment.",
-                features: [
-                  "Same-day delivery possible",
-                  "Fully customized environments",
-                  "Windows, Linux, or mixed stacks",
-                  "Scalable to any number of users"
-                ],
-                cta: "Get Custom Quote",
-                gradient: "from-blue-500 to-blue-600"
-              },
-              {
-                title: "Virtual Desktops",
-                price: "₹3,299",
-                subtitle: "per user/month",
-                description: "High-performance cloud desktops with 2vCPU, 4GB RAM, and enterprise-grade security.",
-                features: [
-                  "2vCPU, 4GB RAM, SSD storage",
-                  "99.9% uptime guarantee",
-                  "Built-in security & compliance",
-                  "Instant scaling"
-                ],
-                cta: "Launch Desktop",
-                gradient: "from-purple-500 to-purple-600"
-              },
-              {
-                title: "VPS Hosting",
-                price: "₹1,499",
-                subtitle: "per month",
-                description: "NVMe-powered virtual servers with AMD EPYC processors and dedicated resources.",
-                features: [
-                  "NVMe SSD storage",
-                  "AMD EPYC processors",
-                  "Full root access",
-                  "Multiple data center locations"
-                ],
-                cta: "Get VPS Now",
-                gradient: "from-orange-500 to-orange-600"
-              }
-            ].map((plan, index) => (
-              <div key={index} className="group relative">
+            {[{
+            title: "Training Labs",
+            price: "Custom Quote",
+            subtitle: "Based on your exact requirements",
+            description: "We ask 3-5 questions about your training needs, then deliver a complete lab environment.",
+            features: ["Same-day delivery possible", "Fully customized environments", "Windows, Linux, or mixed stacks", "Scalable to any number of users"],
+            cta: "Get Custom Quote",
+            gradient: "from-blue-500 to-blue-600"
+          }, {
+            title: "Virtual Desktops",
+            price: "₹3,299",
+            subtitle: "per user/month",
+            description: "High-performance cloud desktops with 2vCPU, 4GB RAM, and enterprise-grade security.",
+            features: ["2vCPU, 4GB RAM, SSD storage", "99.9% uptime guarantee", "Built-in security & compliance", "Instant scaling"],
+            cta: "Launch Desktop",
+            gradient: "from-purple-500 to-purple-600"
+          }, {
+            title: "VPS Hosting",
+            price: "₹1,499",
+            subtitle: "per month",
+            description: "NVMe-powered virtual servers with AMD EPYC processors and dedicated resources.",
+            features: ["NVMe SSD storage", "AMD EPYC processors", "Full root access", "Multiple data center locations"],
+            cta: "Get VPS Now",
+            gradient: "from-orange-500 to-orange-600"
+          }].map((plan, index) => <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-200">
                   {/* Gradient top bar */}
                   <div className={`h-3 bg-gradient-to-r ${plan.gradient}`}></div>
@@ -950,14 +869,12 @@ const Index = () => {
                     
                     {/* Features */}
                     <div className="space-y-4 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-3">
+                      {plan.features.map((feature, featureIndex) => <div key={featureIndex} className="flex items-center space-x-3">
                           <div className={`w-6 h-6 bg-gradient-to-r ${plan.gradient} rounded-full flex items-center justify-center flex-shrink-0`}>
                             <CheckCircle className="w-4 h-4 text-white" />
                           </div>
                           <span className="text-gray-700 text-base">{feature}</span>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                     
                     {/* CTA Button */}
@@ -967,8 +884,7 @@ const Index = () => {
                     </Button>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <div className="text-center mt-16">
@@ -1159,8 +1075,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
