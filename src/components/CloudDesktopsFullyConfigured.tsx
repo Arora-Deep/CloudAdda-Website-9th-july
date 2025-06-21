@@ -48,21 +48,6 @@ const CloudDesktopsFullyConfigured = () => {
           <p className="text-xl text-gray-600 mb-12">
             Need Photoshop? Tally? Postgres? VSCode? We pre-install and fine-tune it all to your exact workflow.
           </p>
-
-          {/* Video Section */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
-            <div className="aspect-video bg-gray-200 rounded-xl flex items-center justify-center mb-4">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <p className="text-gray-600 font-medium">Watch CloudAdda in Action</p>
-                <p className="text-sm text-gray-500">See how we configure your perfect desktop environment</p>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">

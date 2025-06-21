@@ -1,108 +1,107 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, AlertTriangle, CheckCircle } from "lucide-react";
+import { ArrowRight, Zap, Users, Shield, Clock } from "lucide-react";
 
 const CloudDesktopsRealityCheck = () => {
-  const horrorStories = [
+  const transformations = [
     {
-      scenario: "The Monday Morning Laptop Crash",
-      reality: "Your laptop died over the weekend. You're debugging hardware instead of writing code. The client demo is in 2 hours.",
-      pain: "Your entire development environment is trapped on a broken machine"
+      problem: "Hardware Failures",
+      description: "Laptop crashes, lost work, missed deadlines",
+      solution: "Cloud Continuity",
+      benefit: "Work from any device, anytime, anywhere",
+      icon: Zap,
+      color: "blue"
     },
     {
-      scenario: "The 'Works on My Machine' Debug",
-      reality: "Your code works perfectly locally but breaks in production. 6 hours later, you discover it's a version mismatch.",
-      pain: "Different environments mean endless compatibility issues"
+      problem: "Environment Inconsistencies", 
+      description: "\"Works on my machine\" debugging nightmares",
+      solution: "Standardized Environments",
+      benefit: "Same setup for everyone, every time",
+      icon: Users,
+      color: "green"
     },
     {
-      scenario: "The New Developer Onboarding Week",
-      reality: "New hire spends 3 days setting up local environment. Half the team helps troubleshoot weird installation errors.",
-      pain: "Productivity lost while fighting with environment setup"
+      problem: "Security Vulnerabilities",
+      description: "Data scattered across personal devices",
+      solution: "Centralized Security",
+      benefit: "All data secure in the cloud",
+      icon: Shield,
+      color: "purple"
     },
     {
-      scenario: "The Security Audit Panic",
-      reality: "IT discovers sensitive code on personal laptops. Emergency security review shuts down development for days.",
-      pain: "Compliance nightmares and productivity grinding to a halt"
+      problem: "Slow Onboarding",
+      description: "Days spent setting up new team members",
+      solution: "Instant Access",
+      benefit: "New hires productive from day one",
+      icon: Clock,
+      color: "orange"
     }
   ];
 
-  const joyStories = [
-    {
-      scenario: "The Monday Morning Peace of Mind",
-      reality: "Your laptop died? No problem. Log in from any device and your entire development environment is exactly as you left it.",
-      joy: "Hardware failures become minor inconveniences instead of disasters"
-    },
-    {
-      scenario: "The Consistent Environment Victory",
-      reality: "Dev, staging, and production run identical environments. If it works in dev, it works everywhere. Every time.",
-      joy: "No more 'works on my machine' mysteries"
-    },
-    {
-      scenario: "The 10-Minute Onboarding Miracle",
-      reality: "New hire gets full access to configured environment in minutes. They're committing code the same day.",
-      joy: "New team members productive from day one"
-    },
-    {
-      scenario: "The Security Compliance Win",
-      reality: "All code stays in secure cloud infrastructure. Zero data on personal devices. IT teams sleep peacefully.",
-      joy: "Security compliance becomes automatic, not painful"
-    }
-  ];
+  const getColorClasses = (color: string) => {
+    const colors = {
+      blue: "bg-blue-50 border-blue-200 text-blue-800",
+      green: "bg-green-50 border-green-200 text-green-800", 
+      purple: "bg-purple-50 border-purple-200 text-purple-800",
+      orange: "bg-orange-50 border-orange-200 text-orange-800"
+    };
+    return colors[color as keyof typeof colors] || colors.blue;
+  };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-red-50 to-green-50">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">The Developer's Daily Reality Check</h2>
-          <p className="text-xl text-gray-600">Stop us when this sounds familiar...</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Transform Your Team's Reality</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Stop managing infrastructure problems. Start empowering your team with cloud desktops that just work.
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* The Horror Stories */}
-          <div className="bg-red-50 border-2 border-red-200 rounded-3xl p-8">
-            <h3 className="text-2xl font-bold text-red-800 mb-8 flex items-center">
-              <AlertTriangle className="w-8 h-8 mr-3" />
-              Your Current Remote Work Nightmare
-            </h3>
-
-            <div className="space-y-6">
-              {horrorStories.map((horror, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 border border-red-200">
-                  <h4 className="font-bold text-red-800 mb-2">{horror.scenario}</h4>
-                  <p className="text-gray-700 mb-3">{horror.reality}</p>
-                  <p className="text-sm text-red-600 italic font-semibold">{horror.pain}</p>
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {transformations.map((item, index) => (
+            <div key={index} className="group">
+              <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-gray-200 transition-all duration-300 hover:shadow-xl h-full">
+                <div className="flex items-start space-x-6">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${getColorClasses(item.color)}`}>
+                    <item.icon className="w-8 h-8" />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <div className="mb-6">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{item.problem}</h3>
+                      <p className="text-gray-600 text-sm">{item.description}</p>
+                    </div>
+                    
+                    <div className="border-t border-gray-100 pt-6">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <ArrowRight className="w-4 h-4 text-orange-500" />
+                        <span className="font-semibold text-orange-600">{item.solution}</span>
+                      </div>
+                      <p className="text-gray-700 font-medium">{item.benefit}</p>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-
-          {/* The CloudAdda Solution */}
-          <div className="bg-green-50 border-2 border-green-200 rounded-3xl p-8">
-            <h3 className="text-2xl font-bold text-green-800 mb-8 flex items-center">
-              <CheckCircle className="w-8 h-8 mr-3" />
-              Your CloudAdda Reality
-            </h3>
-
-            <div className="space-y-6">
-              {joyStories.map((joy, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 border border-green-200">
-                  <h4 className="font-bold text-green-800 mb-2">{joy.scenario}</h4>
-                  <p className="text-gray-700 mb-3">{joy.reality}</p>
-                  <p className="text-sm text-green-600 italic font-semibold">{joy.joy}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
 
-        <div className="text-center mt-16">
-          <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200 inline-block">
-            <div className="text-3xl font-bold text-blue-600 mb-2">Join 5,000+ Happy Development Teams</div>
-            <div className="text-gray-600 mb-4">Who stopped fighting infrastructure and started building</div>
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-              End Your Desktop Nightmare Today
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-orange-500 to-purple-600 rounded-3xl p-12 text-white">
+            <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Workflow?</h3>
+            <p className="text-xl mb-8 text-orange-100">
+              Join thousands of teams who've made the switch to cloud desktops
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 rounded-full px-8 py-3">
+                Get Started Today
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600 rounded-full px-8 py-3">
+                See Live Demo
+              </Button>
+            </div>
           </div>
         </div>
       </div>

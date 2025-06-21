@@ -178,7 +178,7 @@ const TrainingLabs = () => {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-lg font-bold text-gray-900 mb-2">{pain.title}</h3>
-                        <p className="text-gray-600 leading-relaxed">{pain.description}</p>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{pain.description}</p>
                       </div>
                     </div>
                   </div>
@@ -511,7 +511,7 @@ const TrainingLabs = () => {
               },
               {
                 question: "What if things break during class?",
-                answer: "Real engineers. 24/7. <2hr average response. No bots. No \"please wait.\""
+                answer: "Real engineers. 24/7. <2 hour SLA. No bots. No \"please wait.\""
               },
               {
                 question: "What if we're not technical enough to explain what we need?",
@@ -644,19 +644,20 @@ const TrainingLabs = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Want to See It In Action?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">See CloudAdda in Action</h2>
+            <p className="text-xl text-gray-600">Watch how we deliver production-ready training environments</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h3 className="text-3xl font-bold text-gray-900">What You Get In Your Demo:</h3>
+              <h3 className="text-3xl font-bold text-gray-900">Live Training Environment Demo</h3>
               
               <ul className="space-y-4">
                 {[
-                  "A 15-minute walkthrough of how we provision, customize, and monitor labs",
-                  "Live view of a real training environment tailored to your topic (DevOps, Cybersecurity, AI, etc.)",
-                  "Sneak peek into student login flow, admin dashboard, and performance monitoring tools",
-                  "A short discovery call to understand your curriculum and challenges"
+                  "Real-time lab provisioning and student access management",
+                  "Live instructor dashboard with full remote control capabilities", 
+                  "Multi-student environment monitoring and assistance tools",
+                  "Instant scaling and resource allocation during peak usage"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start space-x-3">
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -678,8 +679,72 @@ const TrainingLabs = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [Demo interface showing live training environment setup]
+              <div className="bg-gray-900 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden">
+                {/* Demo Interface Header */}
+                <div className="bg-gray-800 px-6 py-4 border-b border-gray-700">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex space-x-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div className="text-white text-sm font-medium">CloudAdda Training Dashboard</div>
+                  </div>
+                </div>
+                
+                {/* Demo Interface Content */}
+                <div className="p-6">
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-blue-900 rounded-lg p-4">
+                      <div className="text-blue-300 text-xs font-medium mb-1">Active Labs</div>
+                      <div className="text-white text-2xl font-bold">24</div>
+                    </div>
+                    <div className="bg-green-900 rounded-lg p-4">
+                      <div className="text-green-300 text-xs font-medium mb-1">Students Online</div>
+                      <div className="text-white text-2xl font-bold">156</div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div className="bg-gray-800 rounded-lg p-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          <div className="text-white text-sm">DevOps Bootcamp - Session 1</div>
+                        </div>
+                        <div className="text-gray-400 text-xs">12 students</div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-800 rounded-lg p-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          <div className="text-white text-sm">Cybersecurity Lab - Ethical Hacking</div>
+                        </div>
+                        <div className="text-gray-400 text-xs">8 students</div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-800 rounded-lg p-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                          <div className="text-white text-sm">AI/ML Workshop - TensorFlow</div>
+                        </div>
+                        <div className="text-gray-400 text-xs">15 students</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 pt-4 border-t border-gray-700">
+                    <div className="text-gray-400 text-xs mb-2">System Status</div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="text-green-400 text-sm">All systems operational</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
