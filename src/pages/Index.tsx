@@ -272,11 +272,9 @@ const Index = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <div className="space-y-4">
-                  <h3 className="text-3xl font-bold text-gray-900">Training Labs</h3>
+                  <h3 className="text-3xl font-bold text-gray-900">Virtual Training Labs</h3>
                   <p className="text-sm text-purple-600 font-semibold">For Training Firms & Enterprises</p>
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.
-                  </p>
+                  <p className="text-lg text-gray-600 leading-relaxed">We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole hands-on cloud lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.</p>
                 </div>
                 <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
                   Schedule a Lab Call
@@ -336,9 +334,7 @@ const Index = () => {
                 <div className="space-y-4">
                   <h3 className="text-3xl font-bold text-gray-900">Virtual Desktops</h3>
                   <p className="text-sm text-purple-600 font-semibold">DaaS for Modern Teams</p>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-4">
-                    High-performance, secure desktops — Windows, Linux, or macOS — ready to power remote teams, call centers, dev shops, and full-scale organizations. Blazing fast, customizable, and easier than hiring IT admins.
-                  </p>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-4">High-performance, secure virtual desktops — ready to power remote teams, call centers, dev shops, and full-scale organizations. Blazing fast, customizable, and easier than hiring IT admins.</p>
                   <div className="space-y-2 text-sm">
                     <p><span className="font-semibold">Starts at ₹3,299/user/month</span></p>
                     <p><span className="font-semibold">2vCPU, 4GB RAM, SSD/NVMe, 100% SLA</span></p>
