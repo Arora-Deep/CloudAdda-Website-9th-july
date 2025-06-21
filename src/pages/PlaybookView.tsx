@@ -265,17 +265,10 @@ const PlaybookView = () => {
           </div>
         </div>
 
-        {/* Main Content with Sidebar */}
+        {/* Main Content - Full Width */}
         <div className="flex gap-12 pb-12">
-          {/* Left Sidebar - Table of Contents */}
-          <div className="w-80 flex-shrink-0">
-            <div className="sticky top-24">
-              <BlogSidebar content={playbook.content} showOnlyTOC={true} />
-            </div>
-          </div>
-
-          {/* Content */}
-          <article className="flex-1">
+          {/* Content - Now takes full width */}
+          <article className="flex-1 max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <div 
                 className="prose prose-lg max-w-none"
@@ -300,7 +293,7 @@ const PlaybookView = () => {
             </footer>
           </article>
 
-          {/* Right Sidebar - Social & CTA */}
+          {/* Right Sidebar Only - Actions */}
           <div className="w-80 flex-shrink-0">
             <div className="sticky top-24">
               <BlogSidebar content={playbook.content} showOnlyActions={true} />
