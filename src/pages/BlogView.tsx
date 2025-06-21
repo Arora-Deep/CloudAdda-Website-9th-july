@@ -286,6 +286,13 @@ const BlogView = () => {
 
         {/* Main Content with Sidebar */}
         <div className="flex gap-12 pb-12">
+          {/* Left Sidebar - Table of Contents */}
+          <div className="w-80 flex-shrink-0">
+            <div className="sticky top-24">
+              <BlogSidebar content={post.content} showOnlyTOC={true} />
+            </div>
+          </div>
+
           {/* Content */}
           <article className="flex-1">
             <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -313,8 +320,12 @@ const BlogView = () => {
             </footer>
           </article>
 
-          {/* Sidebar */}
-          <BlogSidebar content={post.content} />
+          {/* Right Sidebar - Social & CTA */}
+          <div className="w-80 flex-shrink-0">
+            <div className="sticky top-24">
+              <BlogSidebar content={post.content} showOnlyActions={true} />
+            </div>
+          </div>
         </div>
       </div>
     </div>

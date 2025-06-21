@@ -11,12 +11,22 @@ import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const [vpsBilling, setVpsBilling] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const getVpsPrice = (basePrice: number) => {
+    const multipliers = {
+      monthly: 1,
+      quarterly: 0.9, // 10% discount
+      yearly: 0.8, // 20% discount
+    };
+    return Math.round(basePrice * multipliers[vpsBilling]);
   };
 
   return (
@@ -435,9 +445,36 @@ const Pricing = () => {
               </p>
             </div>
 
+            {/* Billing Toggle */}
+            <div className="flex justify-center mb-8">
+              <div className="bg-white rounded-xl p-2 shadow-lg border border-gray-200">
+                <div className="flex space-x-2">
+                  {[
+                    { key: 'monthly', label: 'Monthly' },
+                    { key: 'quarterly', label: 'Quarterly' },
+                    { key: 'yearly', label: 'Yearly' }
+                  ].map((option) => (
+                    <button
+                      key={option.key}
+                      onClick={() => setVpsBilling(option.key as typeof vpsBilling)}
+                      className={`px-6 py-3 rounded-lg font-medium transition-all ${
+                        vpsBilling === option.key
+                          ? 'bg-orange-500 text-white shadow-md'
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                      }`}
+                    >
+                      {option.label}
+                      {option.key === 'quarterly' && <span className="ml-1 text-xs">(10% off)</span>}
+                      {option.key === 'yearly' && <span className="ml-1 text-xs">(20% off)</span>}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* VPS Pricing Table */}
             <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden mb-12">
-              <div className="p-8 bg-gradient-to-r from-green-500 to-blue-600 text-white text-center">
+              <div className="p-8 bg-orange-500 text-white text-center">
                 <h3 className="text-2xl font-bold mb-2">VPS Plans Comparison</h3>
                 <p className="opacity-90">Choose the perfect configuration for your needs</p>
               </div>
@@ -450,9 +487,7 @@ const Pricing = () => {
                       <TableHead className="font-bold text-foreground">vCPU</TableHead>
                       <TableHead className="font-bold text-foreground">RAM</TableHead>
                       <TableHead className="font-bold text-foreground">Storage</TableHead>
-                      <TableHead className="font-bold text-foreground">Bandwidth</TableHead>
-                      <TableHead className="font-bold text-foreground">Price/Month</TableHead>
-                      <TableHead className="font-bold text-foreground">Best For</TableHead>
+                      <TableHead className="font-bold text-foreground">Price/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
                       <TableHead className="font-bold text-foreground">Action</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -463,9 +498,7 @@ const Pricing = () => {
                         vcpu: "2",
                         ram: "4GB",
                         storage: "50GB NVMe",
-                        bandwidth: "2TB",
-                        price: "₹999",
-                        bestFor: "Small websites, testing",
+                        basePrice: 999,
                         popular: false
                       },
                       {
@@ -473,9 +506,7 @@ const Pricing = () => {
                         vcpu: "4",
                         ram: "8GB",
                         storage: "100GB NVMe",
-                        bandwidth: "4TB",
-                        price: "₹1,999",
-                        bestFor: "Business websites, APIs",
+                        basePrice: 1999,
                         popular: true
                       },
                       {
@@ -483,9 +514,7 @@ const Pricing = () => {
                         vcpu: "8",
                         ram: "16GB",
                         storage: "200GB NVMe",
-                        bandwidth: "6TB",
-                        price: "₹3,599",
-                        bestFor: "SaaS apps, databases",
+                        basePrice: 3599,
                         popular: false
                       },
                       {
@@ -493,9 +522,7 @@ const Pricing = () => {
                         vcpu: "12",
                         ram: "32GB",
                         storage: "500GB NVMe",
-                        bandwidth: "10TB",
-                        price: "₹5,999",
-                        bestFor: "Enterprise applications",
+                        basePrice: 5999,
                         popular: false
                       },
                       {
@@ -503,9 +530,7 @@ const Pricing = () => {
                         vcpu: "16",
                         ram: "64GB",
                         storage: "1TB NVMe",
-                        bandwidth: "15TB",
-                        price: "₹9,999",
-                        bestFor: "High-traffic platforms",
+                        basePrice: 9999,
                         popular: false
                       },
                       {
@@ -513,27 +538,27 @@ const Pricing = () => {
                         vcpu: "24",
                         ram: "128GB",
                         storage: "2TB NVMe",
-                        bandwidth: "20TB",
-                        price: "₹15,999",
-                        bestFor: "Heavy computational work",
+                        basePrice: 15999,
                         popular: false
                       }
                     ].map((plan, index) => (
-                      <TableRow key={index} className={plan.popular ? "bg-green-50 border-l-4 border-l-green-500" : ""}>
+                      <TableRow key={index} className={plan.popular ? "bg-orange-50 border-l-4 border-l-orange-500" : ""}>
                         <TableCell className="font-semibold">
                           <div className="flex items-center space-x-2">
                             <span>{plan.name}</span>
-                            {plan.popular && <Badge className="bg-green-500 text-white text-xs">Popular</Badge>}
+                            {plan.popular && <Badge className="bg-orange-500 text-white text-xs">Popular</Badge>}
                           </div>
                         </TableCell>
                         <TableCell>{plan.vcpu}</TableCell>
                         <TableCell>{plan.ram}</TableCell>
                         <TableCell>{plan.storage}</TableCell>
-                        <TableCell>{plan.bandwidth}</TableCell>
-                        <TableCell className="font-bold text-green-600">{plan.price}</TableCell>
-                        <TableCell className="text-sm text-muted-foreground">{plan.bestFor}</TableCell>
+                        <TableCell className="font-bold text-orange-600">
+                          ₹{getVpsPrice(plan.basePrice).toLocaleString()}
+                          {vpsBilling === 'quarterly' && <span className="text-xs text-gray-500 block">/quarter</span>}
+                          {vpsBilling === 'yearly' && <span className="text-xs text-gray-500 block">/year</span>}
+                        </TableCell>
                         <TableCell>
-                          <Button size="sm" className={plan.popular ? "bg-green-500 hover:bg-green-600" : "bg-gray-100 hover:bg-gray-200 text-gray-900"}>
+                          <Button size="sm" className={plan.popular ? "bg-orange-500 hover:bg-orange-600 text-white" : "bg-purple-500 hover:bg-purple-600 text-white"}>
                             Deploy Now
                           </Button>
                         </TableCell>
