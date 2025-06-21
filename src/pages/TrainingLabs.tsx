@@ -640,6 +640,117 @@ const TrainingLabs = () => {
         </div>
       </section>
 
+      {/* Get a Demo Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">See CloudAdda in Action</h2>
+            <p className="text-xl text-gray-600">Watch how we deliver production-ready training environments</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h3 className="text-3xl font-bold text-gray-900">Live Training Environment Demo</h3>
+              
+              <ul className="space-y-4">
+                {[
+                  "Real-time lab provisioning and student access management",
+                  "Live instructor dashboard with full remote control capabilities", 
+                  "Multi-student environment monitoring and assistance tools",
+                  "Instant scaling and resource allocation during peak usage"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+                  Book Your Demo
+                  <Play className="ml-2 h-5 w-5" />
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full px-8 py-3 border-gray-300 hover:bg-gray-50">
+                  Share Your Curriculum
+                  <FileCheck className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gray-900 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden">
+                {/* Demo Interface Header */}
+                <div className="bg-gray-800 px-6 py-4 border-b border-gray-700">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex space-x-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div className="text-white text-sm font-medium">CloudAdda Training Dashboard</div>
+                  </div>
+                </div>
+                
+                {/* Demo Interface Content */}
+                <div className="p-6">
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-blue-900 rounded-lg p-4">
+                      <div className="text-blue-300 text-xs font-medium mb-1">Active Labs</div>
+                      <div className="text-white text-2xl font-bold">24</div>
+                    </div>
+                    <div className="bg-green-900 rounded-lg p-4">
+                      <div className="text-green-300 text-xs font-medium mb-1">Students Online</div>
+                      <div className="text-white text-2xl font-bold">156</div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div className="bg-gray-800 rounded-lg p-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          <div className="text-white text-sm">DevOps Bootcamp - Session 1</div>
+                        </div>
+                        <div className="text-gray-400 text-xs">12 students</div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-800 rounded-lg p-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          <div className="text-white text-sm">Cybersecurity Lab - Ethical Hacking</div>
+                        </div>
+                        <div className="text-gray-400 text-xs">8 students</div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-800 rounded-lg p-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                          <div className="text-white text-sm">AI/ML Workshop - TensorFlow</div>
+                        </div>
+                        <div className="text-gray-400 text-xs">15 students</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 pt-4 border-t border-gray-700">
+                    <div className="text-gray-400 text-xs mb-2">System Status</div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="text-green-400 text-sm">All systems operational</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Banner */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
