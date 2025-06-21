@@ -1,6 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play, Clock, AlertTriangle, MessageCircle, DollarSign, Shield, Users, CheckCircle, Gauge, UserCheck, Rocket, Code, Brain, Star, FileCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import TrainingLabsDemo from "@/components/TrainingLabsDemo";
 
