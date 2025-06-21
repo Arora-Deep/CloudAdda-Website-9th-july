@@ -1,13 +1,13 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle } from "lucide-react";
+import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -87,116 +87,142 @@ const Contact = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-blue-50 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight text-gray-900">
-            Let's Talk Cloud. Or Just Say Hi.
+      <section className="py-20 bg-gradient-to-br from-purple-50 via-orange-50 to-blue-50 relative overflow-hidden">
+        <div className="absolute top-10 right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <Badge className="mb-8 bg-purple-100 text-purple-800 border-purple-200 text-sm font-medium px-4 py-2">
+            <MessageCircle className="w-4 h-4 mr-2" />
+            Let's Connect
+          </Badge>
+          <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-tight tracking-tight text-gray-900">
+            Let's Talk Cloud.
+            <br />
+            <span className="text-orange-600">Or Just Say Hi.</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-12 h-px bg-purple-600"></div>
+            <Heart className="w-6 h-6 text-orange-500" />
+            <div className="w-12 h-px bg-orange-600"></div>
+          </div>
+          <p className="text-2xl text-gray-600 mb-4 max-w-2xl mx-auto font-light">
             We're real humans. We love infrastructure. We reply fast.
           </p>
-          <p className="text-lg text-gray-500">
+          <p className="text-lg text-gray-500 max-w-xl mx-auto">
             Questions, quotes, confusion — throw it all at us.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-20">
             {/* Left Side - Message & Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-12">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Here's What Happens When You Reach Out:</h2>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg text-gray-700">We'll understand what you're trying to achieve — no jargon needed.</p>
+                <h2 className="text-4xl font-bold text-gray-900 mb-8 leading-tight">
+                  Here's What Happens When You Reach Out:
+                </h2>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
+                    <CheckCircle className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
+                    <p className="text-lg text-gray-700 font-medium">We'll understand what you're trying to achieve — no jargon needed.</p>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg text-gray-700">You'll get actionable advice, not a sales pitch.</p>
+                  <div className="flex items-start space-x-4 p-4 bg-orange-50 rounded-xl border border-orange-100">
+                    <CheckCircle className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
+                    <p className="text-lg text-gray-700 font-medium">You'll get actionable advice, not a sales pitch.</p>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg text-gray-700">If needed, we'll set up a quick call or demo.</p>
+                  <div className="flex items-start space-x-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
+                    <CheckCircle className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
+                    <p className="text-lg text-gray-700 font-medium">If needed, we'll set up a quick call or demo.</p>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg text-gray-700">You'll walk away knowing exactly what your next step is.</p>
+                  <div className="flex items-start space-x-4 p-4 bg-orange-50 rounded-xl border border-orange-100">
+                    <CheckCircle className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
+                    <p className="text-lg text-gray-700 font-medium">You'll walk away knowing exactly what your next step is.</p>
                   </div>
                 </div>
-                <p className="text-lg text-gray-700 mt-6">
-                  Whether it's a training lab for 300 students, virtual desktops for your remote team, or blazing-fast VPS — we've got you.
-                </p>
+                <div className="mt-8 p-6 bg-gradient-to-r from-purple-600 to-orange-600 rounded-2xl text-white">
+                  <p className="text-lg font-medium leading-relaxed">
+                    Whether it's a training lab for 300 students, virtual desktops for your remote team, or blazing-fast VPS — we've got you.
+                  </p>
+                </div>
               </div>
 
-              <Card className="bg-gray-50 border-0">
+              <Card className="bg-gray-50 border-0 shadow-lg">
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-900">Prefer Email or Phone?</CardTitle>
+                  <CardTitle className="text-2xl text-gray-900 flex items-center">
+                    <Phone className="w-6 h-6 mr-3 text-purple-600" />
+                    Prefer Email or Phone?
+                  </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-orange-500" />
+                <CardContent className="space-y-6">
+                  <div className="flex items-center space-x-4 p-4 bg-white rounded-lg">
+                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-purple-600" />
+                    </div>
                     <div>
-                      <div className="font-medium text-gray-900">Email</div>
+                      <div className="font-semibold text-gray-900">Email</div>
                       <div className="text-gray-600">hello@cloudadda.com</div>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-orange-500" />
+                  <div className="flex items-center space-x-4 p-4 bg-white rounded-lg">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-orange-600" />
+                    </div>
                     <div>
-                      <div className="font-medium text-gray-900">Phone</div>
+                      <div className="font-semibold text-gray-900">Phone</div>
                       <div className="text-gray-600">+91-98765-43210</div>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <Clock className="w-5 h-5 text-orange-500" />
+                  <div className="flex items-center space-x-4 p-4 bg-white rounded-lg">
+                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                      <Clock className="w-6 h-6 text-purple-600" />
+                    </div>
                     <div>
-                      <div className="font-medium text-gray-900">Availability</div>
+                      <div className="font-semibold text-gray-900">Availability</div>
                       <div className="text-gray-600">Mon–Sat, 10 AM – 7 PM IST</div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <div className="bg-blue-50 rounded-lg p-6 border border-blue-100">
-                <h3 className="font-semibold text-blue-900 mb-2">Bonus:</h3>
-                <p className="text-blue-800">We've been known to answer emails embarrassingly fast. Try us.</p>
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
+                <h3 className="font-bold text-blue-900 mb-3 text-xl">Bonus:</h3>
+                <p className="text-blue-800 text-lg">We've been known to answer emails embarrassingly fast. Try us.</p>
               </div>
             </div>
 
             {/* Right Side - Form */}
-            <Card className="bg-white shadow-lg border border-gray-200">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold text-gray-900">Talk to Us</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
+            <Card className="bg-white shadow-2xl border-0 rounded-3xl overflow-hidden">
+              <div className="bg-gradient-to-r from-purple-600 to-orange-600 p-8">
+                <CardTitle className="text-3xl font-bold text-white text-center">Talk to Us</CardTitle>
+              </div>
+              <CardContent className="p-8 space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-gray-700 mb-2 block">Full Name *</label>
-                    <Input placeholder="Your full name" />
+                    <label className="text-sm font-semibold text-gray-700 mb-2 block">Full Name *</label>
+                    <Input placeholder="Your full name" className="border-gray-200 focus:border-purple-500" />
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-700 mb-2 block">Work Email *</label>
-                    <Input type="email" placeholder="you@company.com" />
+                    <label className="text-sm font-semibold text-gray-700 mb-2 block">Work Email *</label>
+                    <Input type="email" placeholder="you@company.com" className="border-gray-200 focus:border-purple-500" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-gray-700 mb-2 block">Phone Number</label>
-                    <Input placeholder="+91-XXXXX-XXXXX" />
+                    <label className="text-sm font-semibold text-gray-700 mb-2 block">Phone Number</label>
+                    <Input placeholder="+91-XXXXX-XXXXX" className="border-gray-200 focus:border-purple-500" />
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-700 mb-2 block">Company Name</label>
-                    <Input placeholder="Your company" />
+                    <label className="text-sm font-semibold text-gray-700 mb-2 block">Company Name</label>
+                    <Input placeholder="Your company" className="border-gray-200 focus:border-purple-500" />
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">What do you need help with?</label>
+                  <label className="text-sm font-semibold text-gray-700 mb-2 block">What do you need help with?</label>
                   <Select>
-                    <SelectTrigger>
+                    <SelectTrigger className="border-gray-200 focus:border-purple-500">
                       <SelectValue placeholder="Choose an option" />
                     </SelectTrigger>
                     <SelectContent>
@@ -208,14 +234,14 @@ const Contact = () => {
                   </Select>
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">Message *</label>
-                  <Textarea rows={4} placeholder="Tell us about your requirements..." />
+                  <label className="text-sm font-semibold text-gray-700 mb-2 block">Message *</label>
+                  <Textarea rows={4} placeholder="Tell us about your requirements..." className="border-gray-200 focus:border-purple-500" />
                 </div>
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-full py-3 text-lg">
+                <Button className="w-full bg-gradient-to-r from-purple-600 to-orange-600 hover:from-purple-700 hover:to-orange-700 text-white rounded-full py-4 text-lg font-semibold">
                   → Get in Touch
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
-                <p className="text-center text-sm text-gray-500">
+                <p className="text-center text-sm text-gray-500 italic">
                   🧃 No spam. No cold calls. Just genuinely helpful humans.
                 </p>
               </CardContent>
@@ -225,19 +251,19 @@ const Contact = () => {
       </section>
 
       {/* Final Encouragement Banner */}
-      <section className="py-16 bg-gradient-to-r from-gray-900 to-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Not Sure What to Say?</h2>
-          <p className="text-xl text-gray-300 mb-8">Just tell us what you're trying to do —</p>
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-gray-700 rounded-lg p-4">
-              <p className="text-white italic">"Run a hackathon for 500 people."</p>
+      <section className="py-20 bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-8">Not Sure What to Say?</h2>
+          <p className="text-xl text-gray-300 mb-12">Just tell us what you're trying to do —</p>
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <p className="text-white text-lg italic">"Run a hackathon for 500 people."</p>
             </div>
-            <div className="bg-gray-700 rounded-lg p-4">
-              <p className="text-white italic">"Give my team better desktops."</p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <p className="text-white text-lg italic">"Give my team better desktops."</p>
             </div>
-            <div className="bg-gray-700 rounded-lg p-4">
-              <p className="text-white italic">"Move away from a broken cloud setup."</p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <p className="text-white text-lg italic">"Move away from a broken cloud setup."</p>
             </div>
           </div>
           <p className="text-lg text-gray-300">We'll take it from there.</p>

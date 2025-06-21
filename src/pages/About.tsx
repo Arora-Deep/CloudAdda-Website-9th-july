@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ArrowRight, Users, Target, Award, Heart, Shield, Globe, Zap, Lightbulb, Handshake, Building, Eye } from "lucide-react";
@@ -123,18 +122,12 @@ const About = () => {
               </div>
             </div>
             <div className="lg:col-span-5">
-              <div className="relative">
-                <div className="w-80 h-80 bg-purple-50 rounded-3xl border border-purple-100 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute top-8 right-8 w-4 h-4 bg-orange-500 rounded-full animate-pulse"></div>
-                  <div className="absolute bottom-8 left-8 w-6 h-6 bg-purple-500 rounded-full animate-pulse delay-1000"></div>
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-purple-500 rounded-2xl mx-auto mb-6 flex items-center justify-center transform hover:rotate-6 transition-transform duration-300">
-                      <Zap className="w-12 h-12 text-white" />
-                    </div>
-                    <div className="text-6xl font-black text-purple-600 mb-2">2025</div>
-                    <div className="text-sm text-muted-foreground">Infrastructure Reimagined</div>
-                  </div>
-                </div>
+              <div className="relative flex justify-center">
+                <img 
+                  src="/lovable-uploads/dc9c54ab-5975-48cf-93e2-b4f1f2327553.png" 
+                  alt="CloudAdda Hero - VR Tech Innovation" 
+                  className="w-full max-w-md h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>

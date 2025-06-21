@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Clock, Calendar, User, Share2, BookOpen, Lightbulb } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, User, Share2, BookOpen, Lightbulb, Eye, Heart } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 
 const BlogView = () => {
@@ -18,93 +18,171 @@ const BlogView = () => {
       date: "Dec 15, 2024",
       author: "Priya Sharma",
       authorBio: "Senior Training Architect at CloudAdda with 10+ years in enterprise training",
+      heroImage: "/lovable-uploads/2c2c88a8-7220-4594-bca2-cc4e5f6d6780.png",
+      contentImage: "/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png",
+      views: "2.4k",
+      likes: "156",
       content: `
-        <p>In today's rapidly evolving technology landscape, cloud computing has become the backbone of modern business operations. Organizations worldwide are racing to adopt cloud technologies, creating an unprecedented demand for skilled cloud professionals.</p>
+        <div class="prose-intro">
+          <p class="text-xl leading-relaxed text-gray-700 mb-8">In today's rapidly evolving technology landscape, cloud computing has become the backbone of modern business operations. Organizations worldwide are racing to adopt cloud technologies, creating an unprecedented demand for skilled cloud professionals.</p>
+        </div>
 
-        <h2>The Challenge of Cloud Training</h2>
-        <p>Training teams face unique challenges when designing cloud curricula. Unlike traditional IT training, cloud technologies are constantly evolving, require hands-on practice, and demand both theoretical knowledge and practical skills.</p>
+        <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">The Challenge of Cloud Training</h2>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">Training teams face unique challenges when designing cloud curricula. Unlike traditional IT training, cloud technologies are constantly evolving, require hands-on practice, and demand both theoretical knowledge and practical skills.</p>
 
-        <h3>Key Success Factors</h3>
-        <p>After working with hundreds of training organizations, we've identified several critical success factors:</p>
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg">
+          <p class="text-blue-900 font-medium text-lg italic">"The most effective cloud training programs combine theoretical foundations with intensive hands-on practice in real-world scenarios."</p>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">Key Success Factors</h3>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">After working with hundreds of training organizations, we've identified several critical success factors:</p>
         
-        <ul>
-          <li><strong>Hands-on Practice:</strong> Students learn best by doing. Theoretical knowledge alone isn't sufficient in cloud training.</li>
-          <li><strong>Real-world Scenarios:</strong> Use actual business cases and problems that students will encounter in their careers.</li>
-          <li><strong>Progressive Complexity:</strong> Start with basics and gradually introduce advanced concepts.</li>
-          <li><strong>Industry Alignment:</strong> Ensure curriculum matches current industry demands and certification requirements.</li>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
+            <div>
+              <strong class="text-gray-900">Hands-on Practice:</strong>
+              <span class="text-gray-700"> Students learn best by doing. Theoretical knowledge alone isn't sufficient in cloud training.</span>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
+            <div>
+              <strong class="text-gray-900">Real-world Scenarios:</strong>
+              <span class="text-gray-700"> Use actual business cases and problems that students will encounter in their careers.</span>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
+            <div>
+              <strong class="text-gray-900">Progressive Complexity:</strong>
+              <span class="text-gray-700"> Start with basics and gradually introduce advanced concepts.</span>
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
+            <div>
+              <strong class="text-gray-900">Industry Alignment:</strong>
+              <span class="text-gray-700"> Ensure curriculum matches current industry demands and certification requirements.</span>
+            </div>
+          </li>
         </ul>
 
-        <h2>Designing Your Curriculum</h2>
-        <p>A well-designed cloud training curriculum should follow a structured approach:</p>
+        <div class="my-12">
+          <img src="/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png" alt="Cloud Training Infrastructure" class="w-full rounded-2xl shadow-lg" />
+          <p class="text-center text-gray-500 text-sm mt-4 italic">Modern cloud training requires sophisticated infrastructure and real-world practice environments</p>
+        </div>
 
-        <h3>1. Foundation Phase (Week 1-2)</h3>
-        <p>Begin with cloud fundamentals, basic concepts, and terminology. Students should understand:</p>
-        <ul>
-          <li>What cloud computing is and its benefits</li>
-          <li>Different service models (IaaS, PaaS, SaaS)</li>
-          <li>Major cloud providers and their offerings</li>
-          <li>Basic security and compliance concepts</li>
-        </ul>
+        <h2 class="text-3xl font-bold text-gray-900 mt-16 mb-8">Designing Your Curriculum</h2>
+        <p class="text-lg leading-relaxed text-gray-700 mb-8">A well-designed cloud training curriculum should follow a structured approach that builds competency progressively while maintaining student engagement through practical applications.</p>
 
-        <h3>2. Core Services Phase (Week 3-6)</h3>
-        <p>Dive deep into core cloud services with extensive hands-on labs:</p>
-        <ul>
-          <li>Compute services and virtual machines</li>
-          <li>Storage solutions and data management</li>
-          <li>Networking and connectivity</li>
-          <li>Identity and access management</li>
-        </ul>
+        <div class="bg-gradient-to-r from-orange-50 to-blue-50 p-8 rounded-2xl my-10">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">1. Foundation Phase (Week 1-2)</h3>
+          <p class="text-lg text-gray-700 mb-4">Begin with cloud fundamentals, basic concepts, and terminology. Students should understand:</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <ul class="space-y-2">
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                <span class="text-gray-700">What cloud computing is and its benefits</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                <span class="text-gray-700">Different service models (IaaS, PaaS, SaaS)</span>
+              </li>
+            </ul>
+            <ul class="space-y-2">
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                <span class="text-gray-700">Major cloud providers and their offerings</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                <span class="text-gray-700">Basic security and compliance concepts</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        <h3>3. Advanced Topics Phase (Week 7-10)</h3>
-        <p>Cover advanced concepts and specialized services:</p>
-        <ul>
-          <li>Serverless computing and microservices</li>
-          <li>DevOps and CI/CD pipelines</li>
-          <li>Monitoring, logging, and optimization</li>
-          <li>Advanced security and compliance</li>
-        </ul>
+        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl my-10">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">2. Core Services Phase (Week 3-6)</h3>
+          <p class="text-lg text-gray-700 mb-4">Dive deep into core cloud services with extensive hands-on labs:</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <ul class="space-y-2">
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                <span class="text-gray-700">Compute services and virtual machines</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                <span class="text-gray-700">Storage solutions and data management</span>
+              </li>
+            </ul>
+            <ul class="space-y-2">
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-pink-500 rounded-full"></div>
+                <span class="text-gray-700">Networking and connectivity</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-pink-500 rounded-full"></div>
+                <span class="text-gray-700">Identity and access management</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        <h3>4. Capstone Project Phase (Week 11-12)</h3>
-        <p>Students work on real-world projects that demonstrate their skills:</p>
-        <ul>
-          <li>Design and implement a complete cloud solution</li>
-          <li>Present to industry professionals</li>
-          <li>Receive feedback and iterate</li>
-        </ul>
+        <h2 class="text-3xl font-bold text-gray-900 mt-16 mb-8">Best Practices for Implementation</h2>
 
-        <h2>Best Practices for Implementation</h2>
+        <h3 class="text-2xl font-semibold text-gray-900 mt-10 mb-6">Infrastructure Requirements</h3>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">Successful cloud training requires reliable, scalable infrastructure. Consider these requirements:</p>
+        <div class="bg-gray-50 p-6 rounded-xl mb-8">
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
+              <span class="text-gray-700">Individual lab environments for each student</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
+              <span class="text-gray-700">Pre-configured templates and scenarios</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
+              <span class="text-gray-700">Automated setup and teardown processes</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
+              <span class="text-gray-700">Cost monitoring and budget controls</span>
+            </li>
+          </ul>
+        </div>
 
-        <h3>Infrastructure Requirements</h3>
-        <p>Successful cloud training requires reliable, scalable infrastructure. Consider these requirements:</p>
-        <ul>
-          <li>Individual lab environments for each student</li>
-          <li>Pre-configured templates and scenarios</li>
-          <li>Automated setup and teardown processes</li>
-          <li>Cost monitoring and budget controls</li>
-        </ul>
+        <h2 class="text-3xl font-bold text-gray-900 mt-16 mb-8">Measuring Success</h2>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">Track these key metrics to ensure your program's effectiveness:</p>
+        
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-blue-50 p-6 rounded-xl">
+            <h4 class="font-semibold text-blue-900 mb-3">Completion Rate</h4>
+            <p class="text-blue-800">Percentage of students who complete the program</p>
+          </div>
+          <div class="bg-green-50 p-6 rounded-xl">
+            <h4 class="font-semibold text-green-900 mb-3">Certification Pass Rate</h4>
+            <p class="text-green-800">Success rate on industry certifications</p>
+          </div>
+          <div class="bg-purple-50 p-6 rounded-xl">
+            <h4 class="font-semibold text-purple-900 mb-3">Job Placement Rate</h4>
+            <p class="text-purple-800">Employment success within 6 months</p>
+          </div>
+          <div class="bg-orange-50 p-6 rounded-xl">
+            <h4 class="font-semibold text-orange-900 mb-3">Student Satisfaction</h4>
+            <p class="text-orange-800">Feedback scores and testimonials</p>
+          </div>
+        </div>
 
-        <h3>Assessment and Feedback</h3>
-        <p>Regular assessment ensures students are progressing effectively:</p>
-        <ul>
-          <li>Weekly practical assessments</li>
-          <li>Peer review sessions</li>
-          <li>Industry mentor feedback</li>
-          <li>Mock certification exams</li>
-        </ul>
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl my-12">
+          <h2 class="text-2xl font-bold mb-4">Conclusion</h2>
+          <p class="text-lg leading-relaxed text-blue-100">Building effective cloud training programs requires careful planning, the right infrastructure, and continuous iteration based on student feedback and industry trends. By following these guidelines and focusing on hands-on learning, you can create programs that truly prepare students for successful cloud careers.</p>
+        </div>
 
-        <h2>Measuring Success</h2>
-        <p>Track these key metrics to ensure your program's effectiveness:</p>
-        <ul>
-          <li><strong>Completion Rate:</strong> Percentage of students who complete the program</li>
-          <li><strong>Certification Pass Rate:</strong> Success rate on industry certifications</li>
-          <li><strong>Job Placement Rate:</strong> Employment success within 6 months</li>
-          <li><strong>Student Satisfaction:</strong> Feedback scores and testimonials</li>
-        </ul>
-
-        <h2>Conclusion</h2>
-        <p>Building effective cloud training programs requires careful planning, the right infrastructure, and continuous iteration based on student feedback and industry trends. By following these guidelines and focusing on hands-on learning, you can create programs that truly prepare students for successful cloud careers.</p>
-
-        <p>Remember, the cloud landscape evolves rapidly. Stay connected with industry professionals, update your curriculum regularly, and always prioritize practical, hands-on learning experiences.</p>
+        <p class="text-lg leading-relaxed text-gray-700 mt-8">Remember, the cloud landscape evolves rapidly. Stay connected with industry professionals, update your curriculum regularly, and always prioritize practical, hands-on learning experiences.</p>
       `
     }
   };
@@ -114,13 +192,13 @@ const BlogView = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200">
+      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <Link to="/" className="flex items-center space-x-2">
               <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
             </Link>
-            <Link to="/trainer-adda" className="flex items-center space-x-2 text-orange-500 hover:text-orange-600">
+            <Link to="/trainer-adda" className="flex items-center space-x-2 text-orange-500 hover:text-orange-600 transition-colors">
               <ArrowLeft className="w-4 h-4" />
               Back to Resources
             </Link>
@@ -128,30 +206,50 @@ const BlogView = () => {
         </div>
       </nav>
 
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
-        <header className="mb-12">
-          <div className="flex items-center space-x-4 mb-6">
-            <Badge className="bg-orange-500 text-white">
+      {/* Hero Image */}
+      <div className="w-full h-96 relative overflow-hidden">
+        <img 
+          src={post.heroImage} 
+          alt={post.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      </div>
+
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
+        {/* Header Card */}
+        <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+          <div className="flex flex-wrap items-center gap-4 mb-6">
+            <Badge className="bg-orange-500 text-white px-4 py-2 text-sm font-medium">
               <Lightbulb className="w-3 h-3 mr-1" />
               {post.category}
             </Badge>
-            <div className="flex items-center text-gray-600">
-              <Clock className="w-4 h-4 mr-1" />
-              {post.readTime}
+            <div className="flex items-center text-gray-600 space-x-4">
+              <div className="flex items-center">
+                <Clock className="w-4 h-4 mr-1" />
+                {post.readTime}
+              </div>
+              <div className="flex items-center">
+                <Eye className="w-4 h-4 mr-1" />
+                {post.views} views
+              </div>
+              <div className="flex items-center">
+                <Heart className="w-4 h-4 mr-1" />
+                {post.likes} likes
+              </div>
             </div>
           </div>
           
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
-          <p className="text-xl text-gray-600 mb-8">{post.description}</p>
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">{post.title}</h1>
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">{post.description}</p>
           
-          <div className="flex items-center justify-between border-t border-b border-gray-200 py-6">
+          <div className="flex items-center justify-between border-t border-gray-200 pt-6">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                <User className="w-6 h-6 text-white" />
+              <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full flex items-center justify-center">
+                <User className="w-7 h-7 text-white" />
               </div>
               <div>
-                <div className="font-semibold text-gray-900">{post.author}</div>
+                <div className="font-semibold text-gray-900 text-lg">{post.author}</div>
                 <div className="text-sm text-gray-600">{post.authorBio}</div>
               </div>
             </div>
@@ -166,32 +264,30 @@ const BlogView = () => {
               </Button>
             </div>
           </div>
-        </header>
+        </div>
 
         {/* Content */}
-        <div 
-          className="prose prose-lg max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-          style={{
-            lineHeight: '1.7',
-            fontSize: '18px'
-          }}
-        />
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
+          <div 
+            className="prose prose-lg max-w-none"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+        </div>
 
-        {/* Footer */}
-        <footer className="mt-12 pt-8 border-t border-gray-200">
-          <div className="bg-gray-50 rounded-lg p-8 text-center">
-            <BookOpen className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Build Your Training Program?</h3>
-            <p className="text-gray-600 mb-6">Get the infrastructure and resources you need to deliver world-class training.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-                Start Free Trial
-              </Button>
-              <Button size="lg" variant="outline">
-                Explore More Resources
-              </Button>
-            </div>
+        {/* CTA Footer */}
+        <footer className="bg-gradient-to-r from-orange-500 to-blue-600 rounded-2xl p-12 text-white text-center">
+          <BookOpen className="w-12 h-12 text-white mx-auto mb-4" />
+          <h3 className="text-3xl font-bold mb-4">Ready to Build Your Training Program?</h3>
+          <p className="text-xl mb-8 opacity-90">
+            Get the infrastructure and resources you need to deliver world-class training.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 font-semibold">
+              Start Free Trial
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              Explore More Resources
+            </Button>
           </div>
         </footer>
       </article>
