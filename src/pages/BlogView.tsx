@@ -283,10 +283,17 @@ const BlogView = () => {
           </div>
         </div>
 
-        {/* Main Content - Single column, wider */}
+        {/* Main Content with Sidebar */}
         <div className="flex gap-8 pb-12">
+          {/* Left Sidebar - Table of Contents */}
+          <div className="w-64 flex-shrink-0">
+            <div className="sticky top-24">
+              <BlogSidebar content={post.content} showOnlyTOC={true} />
+            </div>
+          </div>
+
           {/* Content - Much Wider */}
-          <article className="flex-1 max-w-none">
+          <article className="flex-1 max-w-4xl">
             <div className="bg-white rounded-2xl shadow-lg p-12">
               <div 
                 className="prose prose-lg max-w-none"

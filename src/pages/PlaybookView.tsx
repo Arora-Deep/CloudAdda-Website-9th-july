@@ -265,10 +265,17 @@ const PlaybookView = () => {
           </div>
         </div>
 
-        {/* Main Content - Single column, wider */}
+        {/* Main Content with Sidebar */}
         <div className="flex gap-12 pb-12">
+          {/* Left Sidebar - Table of Contents */}
+          <div className="w-80 flex-shrink-0">
+            <div className="sticky top-24">
+              <BlogSidebar content={playbook.content} showOnlyTOC={true} />
+            </div>
+          </div>
+
           {/* Content */}
-          <article className="flex-1 max-w-none">
+          <article className="flex-1">
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <div 
                 className="prose prose-lg max-w-none"

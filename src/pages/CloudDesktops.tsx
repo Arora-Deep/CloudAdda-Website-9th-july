@@ -2,7 +2,7 @@
 import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
 import CloudDesktopsSolutions from "@/components/CloudDesktopsSolutions";
-import CloudDesktopsFullyConfiguredSimple from "@/components/CloudDesktopsFullyConfiguredSimple";
+import CloudDesktopsFullyConfigured from "@/components/CloudDesktopsFullyConfigured";
 import CloudDesktopsUseCases from "@/components/CloudDesktopsUseCases";
 import CloudDesktopsComparison from "@/components/CloudDesktopsComparison";
 import CloudDesktopsTeamBenefits from "@/components/CloudDesktopsTeamBenefits";
@@ -80,7 +80,7 @@ const CloudDesktops = () => {
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-orange-500 hover:text-orange-600 hover:bg-orange-50">
+              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
@@ -96,7 +96,7 @@ const CloudDesktops = () => {
       <CloudDesktopsHero />
       <CloudDesktopsPainPoints />
       <CloudDesktopsSolutions />
-      <CloudDesktopsFullyConfiguredSimple />
+      <CloudDesktopsFullyConfigured />
       <CloudDesktopsUseCases />
       <CloudDesktopsComparison />
       <CloudDesktopsTeamBenefits />
