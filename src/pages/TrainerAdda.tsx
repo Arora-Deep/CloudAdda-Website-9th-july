@@ -1,221 +1,84 @@
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { BookOpen, Users, Target, ArrowRight, Star, Clock, GraduationCap, Award, CheckCircle, Download, FileText, Lightbulb, Heart, Calendar, ChevronRight, Sparkles, TrendingUp, Eye } from "lucide-react";
+import { BookOpen, FileText, Video, Users, Calendar, Clock, ArrowRight, Download, Eye, Heart, Play, Lightbulb, Target, Award, Star, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import CustomerLogosShowcase from "@/components/CustomerLogosShowcase";
+import AddaDispatchSection from "@/components/AddaDispatchSection";
 
 const TrainerAdda = () => {
-  const [activeSection, setActiveSection] = useState("trainer-playbook");
-
-  const resourceSections = [
+  const blogPosts = [
     {
-      id: "trainer-playbook",
-      label: "Trainer Playbook",
-      description: "Complete curricula and lab setups",
-      icon: BookOpen,
-    },
-    {
-      id: "adda-insights",
-      label: "Adda Insights", 
-      description: "Technical tutorials and guides",
-      icon: Lightbulb,
-    },
-    {
-      id: "customer-stories",
-      label: "Success Stories",
-      description: "Real-world case studies",
-      icon: Heart,
-    },
-    {
-      id: "downloads",
-      label: "Downloads",
-      description: "Free resources and tools",
-      icon: Download,
-    },
-    {
-      id: "adda-dispatch",
-      label: "The Adda Dispatch",
-      description: "Monthly updates and tips",
-      icon: Calendar,
+      id: "building-effective-cloud-training",
+      title: "Building Effective Cloud Training Programs",
+      excerpt: "A comprehensive guide to designing and implementing cloud training curricula that drive real results.",
+      category: "Training Strategy",
+      readTime: "8 min read",
+      date: "Dec 15, 2024",
+      author: "Priya Sharma",
+      views: "2.4k",
+      likes: "156",
+      thumbnail: "/lovable-uploads/2c2c88a8-7220-4594-bca2-cc4e5f6d6780.png"
     }
   ];
 
-  const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const playbooks = [
+    {
+      id: "effective-lab-management",
+      title: "Effective Lab Management Playbook",
+      description: "Best practices for managing cloud training labs at scale",
+      category: "Training Operations",
+      readTime: "12 min read",
+      downloads: "1.2k",
+      thumbnail: "/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png",
+      featured: true
     }
-  };
+  ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = resourceSections.map(section => section.id);
-      const scrollPosition = window.scrollY + 200;
+  const caseStudies = [
+    {
+      id: "techcorp-transformation",
+      company: "TechCorp Solutions",
+      title: "500+ Developers Trained in 6 Months",
+      excerpt: "How TechCorp transformed their entire development team with CloudAdda's training infrastructure.",
+      industry: "Technology & Software",
+      results: "85% certification rate, $2.3M cost savings",
+      thumbnail: "/lovable-uploads/2c2c88a8-7220-4594-bca2-cc4e5f6d6780.png",
+      featured: true
+    }
+  ];
 
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const blogPosts = [{
-    id: "building-effective-cloud-training",
-    title: "Building Effective Cloud Training Programs",
-    description: "A comprehensive guide to designing and implementing cloud training curricula that drive real results.",
-    category: "Training Strategy",
-    readTime: "8 min read",
-    date: "Dec 15, 2024",
-    author: "Priya Sharma",
-    featured: true,
-  }, {
-    id: "remote-lab-management",
-    title: "Remote Lab Management Best Practices",
-    description: "Tips and tricks for managing virtual training environments across distributed teams.",
-    category: "Technical Guide",
-    readTime: "12 min read",
-    date: "Dec 12, 2024",
-    author: "Rajesh Kumar",
-    featured: false,
-  }, {
-    id: "cost-optimization-training",
-    title: "Cost Optimization for Training Infrastructure",
-    description: "How to reduce training costs by 40% without compromising on quality or performance.",
-    category: "Cost Management",
-    readTime: "6 min read",
-    date: "Dec 10, 2024",
-    author: "Anjali Mehta",
-    featured: false,
-  }];
-
-  const caseStudies = [{
-    id: "techcorp-transformation",
-    title: "TechCorp's Digital Transformation Journey",
-    description: "How TechCorp trained 500+ developers on cloud technologies in 6 months",
-    company: "TechCorp",
-    results: "500+ developers trained, 85% certification rate",
-    category: "Enterprise Training",
-  }, {
-    id: "startup-accelerator-bootcamp",
-    title: "StartupAccelerator's Bootcamp Success",
-    description: "Scaling technical education for 50 startups simultaneously",
-    company: "StartupAccelerator",
-    results: "50 startups, 200+ participants, 95% satisfaction",
-    category: "Bootcamp",
-  }];
-
-  const playbooks = [{
-    id: "aws-certification",
-    title: "AWS Certification Training Playbook",
-    description: "Complete curriculum and lab setup for AWS certification preparation",
-    type: "Cloud Platform",
-    duration: "4 weeks",
-  }, {
-    id: "devops-fundamentals",
-    title: "DevOps Fundamentals Workshop",
-    description: "Hands-on DevOps training with real-world scenarios and tools",
-    type: "DevOps",
-    duration: "2 weeks",
-  }, {
-    id: "kubernetes-mastery",
-    title: "Kubernetes Mastery Program",
-    description: "Advanced Kubernetes training with practical deployment scenarios",
-    type: "Container Orchestration",
-    duration: "3 weeks",
-  }];
-
-  const downloads = [{
-    title: "Training ROI Calculator",
-    description: "Calculate the return on investment for your training programs",
-    type: "Excel Template",
-    size: "2.5 MB",
-    downloads: "1.2k"
-  }, {
-    title: "Lab Setup Checklist",
-    description: "Complete checklist for setting up virtual training environments",
-    type: "PDF Guide",
-    size: "850 KB",
-    downloads: "3.4k"
-  }, {
-    title: "Curriculum Planning Template",
-    description: "Professional template for designing training curricula",
-    type: "PowerPoint",
-    size: "1.8 MB",
-    downloads: "2.1k"
-  }];
+  const webinars = [
+    {
+      id: "scaling-training-infrastructure",
+      title: "Scaling Training Infrastructure for Enterprise Teams",
+      description: "Learn how to build training programs that scale with your organization's growth.",
+      date: "Jan 30, 2025",
+      time: "2:00 PM EST",
+      duration: "45 min",
+      speaker: "Rahul Mehta, Cloud Architect",
+      registrations: "240+",
+      thumbnail: "/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png",
+      isUpcoming: true
+    }
+  ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="flex items-center">
-              <Link to="/" className="flex items-center space-x-2">
-                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
-              </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
-                      Solutions
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
-                        <NavigationMenuLink asChild>
-                          <Link to="/training-labs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Training Labs</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Provisioned lab environments for training companies
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Cloud Desktops</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Fast, secure desktops accessible from anywhere
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link to="/vps" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">VPS Hosting</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              High-performance VPS with AMD EPYC processors
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-              <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
-              <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
-              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
-              <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
+            <Link to="/" className="flex items-center space-x-2">
+              <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
+            </Link>
+            <div className="flex items-center space-x-4">
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                Start Now
+                Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -223,252 +86,337 @@ const TrainerAdda = () => {
         </div>
       </nav>
 
-      {/* Small Navigation Bar for Sections */}
-      <div className="bg-gray-50 border-b border-gray-200 sticky top-20 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto py-4 space-x-6">
-            {resourceSections.map((section) => {
-              const IconComponent = section.icon;
-              return (
-                <button
-                  key={section.id}
-                  onClick={() => scrollToSection(section.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${
-                    activeSection === section.id
-                      ? 'bg-orange-500 text-white shadow-sm'
-                      : 'text-gray-600 hover:text-orange-500 hover:bg-white'
-                  }`}
-                >
-                  <IconComponent className="w-4 h-4" />
-                  <span className="text-sm font-medium">{section.label}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
       {/* Hero Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-4 bg-orange-500 text-white">
-            <Sparkles className="w-4 h-4 mr-2" />
-            Expert Training Resources
-          </Badge>
-          <h1 className="text-5xl font-bold mb-6 text-gray-900">
-            CloudAdda Resources Hub
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Everything you need to deliver world-class training experiences. From proven methodologies 
-            to ready-made curricula, we've got your training success covered.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-              <BookOpen className="w-5 h-5 mr-2" />
-              Explore Resources
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
+              Trainer <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-purple-600">Adda</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
+              Your one-stop resource hub for cloud training excellence. Get expert insights, practical guides, 
+              and proven strategies to elevate your training programs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg">
+                Explore Resources
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50 px-8 py-4 rounded-full text-lg">
+                Subscribe to Newsletter
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resource Categories */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <BookOpen className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-orange-700">Blog Posts</CardTitle>
+                <CardDescription>Expert insights and best practices</CardDescription>
+              </CardHeader>
+              <CardContent className="text-center">
+                <div className="text-2xl font-bold text-orange-600 mb-2">25+</div>
+                <div className="text-sm text-orange-600">Articles Published</div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <FileText className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-purple-700">Playbooks</CardTitle>
+                <CardDescription>Step-by-step implementation guides</CardDescription>
+              </CardHeader>
+              <CardContent className="text-center">
+                <div className="text-2xl font-bold text-purple-600 mb-2">12</div>
+                <div className="text-sm text-purple-600">Downloadable Guides</div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-blue-700">Case Studies</CardTitle>
+                <CardDescription>Real success stories and results</CardDescription>
+              </CardHeader>
+              <CardContent className="text-center">
+                <div className="text-2xl font-bold text-blue-600 mb-2">8</div>
+                <div className="text-sm text-blue-600">Success Stories</div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Video className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-green-700">Webinars</CardTitle>
+                <CardDescription>Live sessions with experts</CardDescription>
+              </CardHeader>
+              <CardContent className="text-center">
+                <div className="text-2xl font-bold text-green-600 mb-2">15</div>
+                <div className="text-sm text-green-600">Sessions Available</div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Blog Posts */}
+      <section className="py-16 bg-white/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-12">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest Blog Posts</h2>
+              <p className="text-gray-600">Expert insights and practical advice for training professionals</p>
+            </div>
+            <Button variant="outline" className="hidden md:flex items-center text-orange-500 border-orange-500 hover:bg-orange-50">
+              View All Posts
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50">
-              <Download className="w-5 h-5 mr-2" />
-              Download Tools
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Trainer Playbook Section */}
-      <section id="trainer-playbook" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-blue-500 text-white">
-              <BookOpen className="w-4 h-4 mr-2" />
-              Trainer Playbooks
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Complete Training Playbooks</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore detailed curricula and methodologies that guarantee training success.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {playbooks.map((playbook, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border border-gray-200">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <Badge className="bg-blue-500 text-white">{playbook.type}</Badge>
-                    <div className="text-sm text-gray-500 flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {playbook.duration}
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl">{playbook.title}</CardTitle>
-                  <CardDescription>{playbook.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3 mb-6">
-                    {[
-                      "Complete curriculum guide",
-                      "Lab setup instructions",
-                      "Assessment materials",
-                      "Instructor resources"
-                    ].map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-green-500" />
-                        <span className="text-sm text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Link to={`/playbook/${playbook.id}`}>
-                    <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
-                      View Playbook
-                      <Eye className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Adda Insights Section */}
-      <section id="adda-insights" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-orange-500 text-white">
-              <Lightbulb className="w-4 h-4 mr-2" />
-              Adda Insights
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Technical Insights & Tutorials</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Deep dives, comparisons, and practical guides to master cloud infrastructure.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <Card key={index} className={`hover:shadow-lg transition-shadow ${post.featured ? 'border-orange-500 border-2' : 'border-gray-200'}`}>
-                {post.featured && (
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-orange-500 text-white">
-                      <Star className="w-3 h-3 mr-1" />
-                      Featured
-                    </Badge>
-                  </div>
-                )}
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <Badge variant="outline">{post.category}</Badge>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {post.readTime}
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl">{post.title}</CardTitle>
-                  <CardDescription>{post.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <div className="text-sm text-gray-500">
-                      By {post.author} • {post.date}
-                    </div>
-                    <Link to={`/blog/${post.id}`}>
-                      <Button variant="ghost" size="sm" className="text-orange-500 hover:text-orange-600">
-                        Read More
-                        <ArrowRight className="w-4 h-4 ml-1" />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Customer Stories Section */}
-      <section id="customer-stories" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-green-500 text-white">
-              <Heart className="w-4 h-4 mr-2" />
-              Success Stories
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Real Success Stories</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              See how organizations transform their training with CloudAdda.
-            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border border-gray-200">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <Badge variant="outline">{study.category}</Badge>
-                    <div className="text-sm font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">{study.company}</div>
+            {blogPosts.map((post) => (
+              <Link key={post.id} to={`/blog/${post.id}`} className="group">
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white">
+                  <div className="aspect-video overflow-hidden">
+                    <img 
+                      src={post.thumbnail} 
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <CardTitle className="text-xl">{study.title}</CardTitle>
-                  <CardDescription>{study.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="bg-green-50 rounded-lg p-4 mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                      <TrendingUp className="w-5 h-5 mr-2 text-green-600" />
-                      Key Results:
-                    </h4>
-                    <p className="text-gray-700">{study.results}</p>
-                  </div>
-                  <Link to={`/case-study/${study.id}`}>
-                    <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-                      Read Full Case Study
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-8">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <Badge className="bg-orange-100 text-orange-700 px-3 py-1">
+                        <Lightbulb className="w-3 h-3 mr-1" />
+                        {post.category}
+                      </Badge>
+                      <span className="text-sm text-gray-500">{post.date}</span>
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{post.excerpt}</p>
+                    
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center space-x-4 text-sm text-gray-500">
+                        <div className="flex items-center">
+                          <Clock className="w-4 h-4 mr-1" />
+                          {post.readTime}
+                        </div>
+                        <div className="flex items-center">
+                          <Eye className="w-4 h-4 mr-1" />
+                          {post.views}
+                        </div>
+                        <div className="flex items-center">
+                          <Heart className="w-4 h-4 mr-1" />
+                          {post.likes}
+                        </div>
+                      </div>
+                      <ChevronRight className="w-5 h-5 text-orange-500 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Downloads Section */}
-      <section id="downloads" className="py-16 bg-white">
+      {/* Playbooks Section */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-purple-500 text-white">
-              <Download className="w-4 h-4 mr-2" />
-              Free Downloads
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Essential Resources</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Professional templates, calculators, and guides to accelerate your training programs.
-            </p>
+          <div className="flex justify-between items-center mb-12">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Training Playbooks</h2>
+              <p className="text-gray-600">Downloadable guides with actionable strategies</p>
+            </div>
+            <Button variant="outline" className="hidden md:flex items-center text-purple-500 border-purple-500 hover:bg-purple-50">
+              Browse All Playbooks
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {downloads.map((download, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border border-gray-200">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <FileText className="w-8 h-8 text-white" />
+          <div className="grid lg:grid-cols-2 gap-8">
+            {playbooks.map((playbook) => (
+              <Link key={playbook.id} to={`/playbook/${playbook.id}`} className="group">
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-indigo-50">
+                  <CardContent className="p-8">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
+                          <Target className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                            {playbook.title}
+                          </h3>
+                          <Badge className="bg-purple-100 text-purple-700 text-xs px-2 py-1 mt-1">
+                            {playbook.category}
+                          </Badge>
+                        </div>
+                      </div>
+                      {playbook.featured && (
+                        <Badge className="bg-yellow-100 text-yellow-700 text-xs px-2 py-1">
+                          <Star className="w-3 h-3 mr-1" />
+                          Featured
+                        </Badge>
+                      )}
+                    </div>
+                    
+                    <p className="text-gray-600 mb-6 leading-relaxed">{playbook.description}</p>
+                    
+                    <div className="flex items-center justify-between pt-4 border-t border-purple-100">
+                      <div className="flex items-center space-x-4 text-sm text-gray-500">
+                        <div className="flex items-center">
+                          <Clock className="w-4 h-4 mr-1" />
+                          {playbook.readTime}
+                        </div>
+                        <div className="flex items-center">
+                          <Download className="w-4 h-4 mr-1" />
+                          {playbook.downloads}
+                        </div>
+                      </div>
+                      <Button size="sm" className="bg-purple-500 hover:bg-purple-600 text-white">
+                        Get Playbook
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies */}
+      <section className="py-16 bg-white/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-12">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Success Stories</h2>
+              <p className="text-gray-600">Real results from training organizations like yours</p>
+            </div>
+            <Button variant="outline" className="hidden md:flex items-center text-blue-500 border-blue-500 hover:bg-blue-50">
+              View All Case Studies
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {caseStudies.map((study) => (
+              <Link key={study.id} to={`/case-study/${study.id}`} className="group">
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white">
+                  <CardContent className="p-8">
+                    <div className="flex items-start justify-between mb-6">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                          {study.company}
+                        </h3>
+                        <Badge className="bg-blue-100 text-blue-700 text-xs px-2 py-1 mb-3">
+                          {study.industry}
+                        </Badge>
+                        <h4 className="text-lg font-semibold text-gray-800">{study.title}</h4>
+                      </div>
+                      {study.featured && (
+                        <Badge className="bg-green-100 text-green-700 text-xs px-2 py-1">
+                          <Award className="w-3 h-3 mr-1" />
+                          Featured
+                        </Badge>
+                      )}
+                    </div>
+                    
+                    <p className="text-gray-600 mb-6 leading-relaxed">{study.excerpt}</p>
+                    
+                    <div className="bg-green-50 rounded-lg p-4 mb-6">
+                      <div className="font-semibold text-green-800 text-sm mb-1">Key Results:</div>
+                      <div className="text-green-700">{study.results}</div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <span className="text-sm font-medium text-blue-600">Read Success Story</span>
+                      <ChevronRight className="w-5 h-5 text-blue-500 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Webinars */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-12">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Upcoming Webinars</h2>
+              <p className="text-gray-600">Live sessions with cloud training experts</p>
+            </div>
+            <Button variant="outline" className="hidden md:flex items-center text-green-500 border-green-500 hover:bg-green-50">
+              View All Webinars
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {webinars.map((webinar) => (
+              <Card key={webinar.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-emerald-50">
+                <CardContent className="p-8">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
+                        <Video className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        {webinar.isUpcoming && (
+                          <Badge className="bg-red-100 text-red-700 text-xs px-2 py-1 mb-2">
+                            Live Soon
+                          </Badge>
+                        )}
+                      </div>
+                    </div>
+                    <div className="text-right text-sm text-gray-500">
+                      <div>{webinar.date}</div>
+                      <div>{webinar.time}</div>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl">{download.title}</CardTitle>
-                  <CardDescription>{download.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="flex justify-between items-center mb-4 text-sm text-gray-500">
-                    <span>{download.type}</span>
-                    <span>{download.size}</span>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-green-600 transition-colors">
+                    {webinar.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{webinar.description}</p>
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-green-100">
+                    <div className="flex items-center space-x-4 text-sm text-gray-500">
+                      <div className="flex items-center">
+                        <Clock className="w-4 h-4 mr-1" />
+                        {webinar.duration}
+                      </div>
+                      <div className="flex items-center">
+                        <Users className="w-4 h-4 mr-1" />
+                        {webinar.registrations} registered
+                      </div>
+                    </div>
+                    <Button size="sm" className="bg-green-500 hover:bg-green-600 text-white">
+                      <Play className="w-4 h-4 mr-2" />
+                      Register
+                    </Button>
                   </div>
-                  <div className="mb-4">
-                    <Badge variant="outline" className="text-green-600 border-green-200">
-                      {download.downloads} downloads
-                    </Badge>
-                  </div>
-                  <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white">
-                    Download Free
-                    <Download className="w-4 h-4 ml-2" />
-                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -476,131 +424,29 @@ const TrainerAdda = () => {
         </div>
       </section>
 
-      {/* The Adda Dispatch Section */}
-      <section id="adda-dispatch" className="py-16 bg-gradient-to-br from-cyan-50 to-blue-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-cyan-500 text-white">
-              <Calendar className="w-4 h-4 mr-2" />
-              The Adda Dispatch
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Coming Soon</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Monthly insights, industry best practices, and behind-the-scenes from the CloudAdda team. 
-              Get ready for the most comprehensive resource in cloud training.
-            </p>
-          </div>
+      {/* Customer Logos */}
+      <CustomerLogosShowcase />
 
-          <div className="bg-white rounded-lg p-8 text-center shadow-lg border border-cyan-100">
-            <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Sparkles className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Industry-Leading Insights</h3>
-            <p className="text-lg text-gray-600 mb-6 max-w-xl mx-auto">
-              We're crafting something special - a monthly newsletter packed with cutting-edge training methodologies, 
-              industry trends, expert interviews, and exclusive insights from top training professionals.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Lightbulb className="w-6 h-6 text-cyan-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Expert Insights</h4>
-                <p className="text-sm text-gray-600">Best practices from industry leaders</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <TrendingUp className="w-6 h-6 text-blue-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Market Trends</h4>
-                <p className="text-sm text-gray-600">Latest developments in cloud training</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Target className="w-6 h-6 text-purple-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Actionable Tips</h4>
-                <p className="text-sm text-gray-600">Practical strategies you can implement</p>
-              </div>
-            </div>
+      {/* Newsletter Section */}
+      <AddaDispatchSection />
 
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Get notified when we launch" 
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500" 
-              />
-              <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white">
-                Notify Me
-              </Button>
-            </div>
-            <p className="text-sm text-gray-500 mt-4">Be the first to know when The Adda Dispatch launches</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="py-16 bg-orange-500">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-orange-500 to-purple-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Training?</h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Join thousands of training professionals who trust CloudAdda for their infrastructure needs.
+          <p className="text-xl text-orange-100 mb-8">
+            Join thousands of training professionals who rely on CloudAdda's resources and infrastructure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100">
-              <Users className="w-5 h-5 mr-2" />
+            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 font-semibold px-8 py-4 text-lg">
               Start Free Trial
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-500">
-              <Calendar className="w-5 h-5 mr-2" />
-              Book Demo
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg">
+              Schedule Demo
             </Button>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <Link to="/" className="flex items-center space-x-2">
-                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl">CloudAdda</span>
-              </Link>
-              <p className="text-gray-400">
-                Simple. Scalable. Human. Infrastructure that just works.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Solutions</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" className="hover:text-white">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" className="hover:text-white">Cloud Desktops</Link></li>
-                <li><Link to="/vps" className="hover:text-white">VPS</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/trainer-adda" className="hover:text-white">Trainer Adda</Link></li>
-                <li><Link to="/guides" className="hover:text-white">Guides & Docs</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/support" className="hover:text-white">Help Center</Link></li>
-                <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 CloudAdda. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

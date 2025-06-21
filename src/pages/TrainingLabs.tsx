@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import TrainingLabsDemo from "@/components/TrainingLabsDemo";
 
 const TrainingLabs = () => {
   return (
@@ -67,7 +68,7 @@ const TrainingLabs = () => {
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+              <Button variant="ghost" className="text-orange-500 hover:text-orange-600 hover:bg-orange-50">
                 Log In
               </Button>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
@@ -78,6 +79,9 @@ const TrainingLabs = () => {
           </div>
         </div>
       </nav>
+
+      {/* Demo Section - Simplified */}
+      <TrainingLabsDemo />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white pt-16 pb-24">
@@ -178,7 +182,7 @@ const TrainingLabs = () => {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-lg font-bold text-gray-900 mb-2">{pain.title}</h3>
-                        <p className="text-gray-600 leading-relaxed">{pain.description}</p>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{pain.description}</p>
                       </div>
                     </div>
                   </div>

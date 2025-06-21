@@ -1,10 +1,104 @@
 
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown } from "lucide-react";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { ArrowRight, Check, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from "@/components/ui/navigation-menu";
+import VPSDeveloperReality from "@/components/VPSDeveloperReality";
+import VPSPricingDifferentiator from "@/components/VPSPricingDifferentiator";
 
 const VPS = () => {
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
+
+  const plans = [
+    {
+      name: "Starter",
+      monthlyPrice: 29,
+      quarterlyPrice: 78, // 10% discount
+      yearlyPrice: 290, // 17% discount
+      popular: false,
+      features: [
+        "2 vCPU AMD EPYC 7713",
+        "4 GB RAM",
+        "80 GB NVMe SSD",
+        "2 TB Transfer",
+        "1 IPv4 Address",
+        "Linux & Windows",
+        "24/7 Support"
+      ]
+    },
+    {
+      name: "Growth",
+      monthlyPrice: 59,
+      quarterlyPrice: 159, // 10% discount
+      yearlyPrice: 590, // 17% discount
+      popular: true,
+      features: [
+        "4 vCPU AMD EPYC 7713",
+        "8 GB RAM",
+        "160 GB NVMe SSD",
+        "4 TB Transfer",
+        "1 IPv4 Address",
+        "Linux & Windows",
+        "24/7 Support"
+      ]
+    },
+    {
+      name: "Pro",
+      monthlyPrice: 119,
+      quarterlyPrice: 321, // 10% discount
+      yearlyPrice: 1190, // 17% discount
+      popular: false,
+      features: [
+        "8 vCPU AMD EPYC 7713",
+        "16 GB RAM",
+        "320 GB NVMe SSD",
+        "8 TB Transfer",
+        "1 IPv4 Address",
+        "Linux & Windows",
+        "24/7 Support"
+      ]
+    },
+    {
+      name: "Enterprise",
+      monthlyPrice: 239,
+      quarterlyPrice: 645, // 10% discount
+      yearlyPrice: 2390, // 17% discount
+      popular: false,
+      features: [
+        "16 vCPU AMD EPYC 7713",
+        "32 GB RAM",
+        "640 GB NVMe SSD",
+        "16 TB Transfer",
+        "1 IPv4 Address",
+        "Linux & Windows",
+        "Priority Support"
+      ]
+    }
+  ];
+
+  const getPrice = (plan: typeof plans[0]) => {
+    switch (billingCycle) {
+      case 'quarterly':
+        return plan.quarterlyPrice;
+      case 'yearly':
+        return plan.yearlyPrice;
+      default:
+        return plan.monthlyPrice;
+    }
+  };
+
+  const getPriceLabel = () => {
+    switch (billingCycle) {
+      case 'quarterly':
+        return '/quarter';
+      case 'yearly':
+        return '/year';
+      default:
+        return '/month';
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -20,15 +114,15 @@ const VPS = () => {
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
+                    <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent data-[state=open]:bg-gray-50">
                       Solutions
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="min-w-[400px] p-0 bg-white border border-gray-200 shadow-lg rounded-lg z-50">
-                      <div className="grid gap-0 p-0 w-[400px] lg:w-[500px] lg:grid-cols-1">
+                    <NavigationMenuContent className="bg-white border border-gray-200 shadow-lg rounded-lg z-50">
+                      <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1 bg-white">
                         <NavigationMenuLink asChild>
                           <Link
                             to="/training-labs"
-                            className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-accent-foreground focus:bg-gray-50 focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none text-gray-900">Training Labs</div>
                             <p className="line-clamp-2 text-sm leading-snug text-gray-600">
@@ -39,7 +133,7 @@ const VPS = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/cloud-desktops"
-                            className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-accent-foreground focus:bg-gray-50 focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none text-gray-900">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-gray-600">
@@ -50,7 +144,7 @@ const VPS = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/vps"
-                            className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-accent-foreground focus:bg-gray-50 focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none text-gray-900">VPS Hosting</div>
                             <p className="line-clamp-2 text-sm leading-snug text-gray-600">
@@ -68,7 +162,7 @@ const VPS = () => {
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+              <Button variant="ghost" className="text-orange-500 hover:text-orange-600 hover:bg-orange-50">
                 Log In
               </Button>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
@@ -80,476 +174,96 @@ const VPS = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-16 pb-24">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium bg-purple-50 text-purple-700 border border-purple-200">
-                <Server className="mr-2 h-4 w-4" />
-                VPS Hosting That Actually Delivers
-              </div>
-              
-              <h1 className="text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl">
-                Power Without
-                <span className="block text-purple-600">The BS.</span>
-              </h1>
-              
-              <p className="text-xl text-gray-600 leading-relaxed">
-                NVMe speed, AMD EPYC cores, and real human support at half the price of AWS. No throttling, no surprises, no regrets.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                  Deploy Your VPS Now
-                  <Server className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                  View Live Benchmarks
-                </Button>
-              </div>
+      {/* Developer Reality Section */}
+      <VPSDeveloperReality />
 
-              <div className="grid grid-cols-3 gap-8 pt-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">99.98%</div>
-                  <div className="text-sm text-gray-600">Uptime SLA</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">&lt; 2hr</div>
-                  <div className="text-sm text-gray-600">Support Response</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">50%</div>
-                  <div className="text-sm text-gray-600">Cost Savings</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/a6ac61e1-af55-42c2-9e72-95b2baa9e4dc.png" 
-                alt="Powerful VPS Performance" 
-                className="w-full h-96 object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Painful Reality Section */}
+      {/* Pricing Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">The Painful Reality of VPS Shopping</h2>
-            <p className="text-xl text-gray-600">Every developer's nightmare, solved once and for all</p>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">VPS Plans</h2>
+            <p className="text-xl text-gray-600">Choose the perfect plan for your needs</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              {[
-                {
-                  pain: "Shared Resources Lie",
-                  reality: "Your 'dedicated' 4GB RAM becomes 1GB when the neighbor's Bitcoin miner starts up",
-                  icon: AlertTriangle
-                },
-                {
-                  pain: "Support Ticket Hell",
-                  reality: "48 hours to get a copy-paste response that doesn't solve your midnight server crash",
-                  icon: Clock
-                },
-                {
-                  pain: "Bill Shock Syndrome",
-                  reality: "Your $20/month VPS becomes $200 because they count every byte of bandwidth",
-                  icon: DollarSign
-                },
-                {
-                  pain: "Performance Roulette",
-                  reality: "Some days your API responds in 50ms, other days it's 5 seconds. Nobody knows why.",
-                  icon: TrendingUp
-                }
-              ].map((item, index) => (
-                <div key={index} className="flex items-start space-x-6 group">
-                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center group-hover:bg-red-200 transition-colors">
-                    <item.icon className="w-6 h-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.pain}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.reality}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/e253469c-57a6-42bb-bb9a-c74dc734846a.png" 
-                alt="Server Error Frustration" 
-                className="w-full h-96 object-contain"
-              />
+          {/* Billing Toggle */}
+          <div className="flex justify-center mb-12">
+            <div className="bg-white rounded-full p-1 shadow-lg border border-gray-200">
+              <button
+                onClick={() => setBillingCycle('monthly')}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
+                  billingCycle === 'monthly'
+                    ? 'bg-orange-500 text-white shadow-md'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Monthly
+              </button>
+              <button
+                onClick={() => setBillingCycle('quarterly')}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
+                  billingCycle === 'quarterly'
+                    ? 'bg-orange-500 text-white shadow-md'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Quarterly
+                <span className="ml-1 text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">10% OFF</span>
+              </button>
+              <button
+                onClick={() => setBillingCycle('yearly')}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
+                  billingCycle === 'yearly'
+                    ? 'bg-orange-500 text-white shadow-md'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Yearly
+                <span className="ml-1 text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">17% OFF</span>
+              </button>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Our Solution Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">How We Fix Every Single Pain Point</h2>
-            <div className="w-32 h-1 bg-purple-500 mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-12">
-            {[
-              {
-                title: "True Dedicated Resources",
-                subtitle: "Your cores are YOURS",
-                description: "When we say 4 vCPUs, you get 4 full AMD EPYC cores. No sharing, no throttling, no lies. We partition hardware at the hypervisor level.",
-                icon: Cpu,
-                metric: "100% Dedicated",
-                proof: "Live resource monitor shows real allocation"
-              },
-              {
-                title: "Human-First Support",
-                subtitle: "Engineers, not bots",
-                description: "Every ticket goes to a real engineer who's built production systems. No chatbots, no scripts, no 'have you tried turning it off and on again?'",
-                icon: Users,
-                metric: "< 2hr Response",
-                proof: "Average first response: 47 minutes"
-              },
-              {
-                title: "Transparent Pricing",
-                subtitle: "No surprise bills",
-                description: "Flat monthly rate includes everything. Unlimited bandwidth, free backups, no hidden fees. Your bill will be exactly what we quote.",
-                icon: DollarSign,
-                metric: "50% Less Cost",
-                proof: "vs AWS/Azure/GCP equivalent specs"
-              }
-            ].map((solution, index) => (
-              <div key={index} className="group hover:scale-105 transition-all duration-500">
-                <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl h-full">
-                  <div className="flex flex-col h-full">
-                    <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
-                      <solution.icon className="w-8 h-8 text-purple-600" />
-                    </div>
-                    
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{solution.title}</h3>
-                      <p className="text-purple-600 font-semibold mb-4">{solution.subtitle}</p>
-                      <p className="text-gray-600 leading-relaxed mb-6">{solution.description}</p>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <div className="bg-purple-50 rounded-xl p-4 text-center">
-                        <div className="text-2xl font-bold text-purple-600">{solution.metric}</div>
-                      </div>
-                      <div className="text-xs text-gray-500 text-center">{solution.proof}</div>
-                    </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {plans.map((plan, index) => (
+              <div
+                key={index}
+                className={`rounded-2xl shadow-lg overflow-hidden border-2 transition-all duration-300 hover:shadow-xl ${
+                  plan.popular
+                    ? 'border-orange-500 bg-white transform scale-105'
+                    : 'border-gray-200 bg-white'
+                }`}
+              >
+                {plan.popular && (
+                  <div className="bg-orange-500 text-white text-center py-2 text-sm font-medium">
+                    Most Popular
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Developer Reality Check - Updated to be cleaner */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">The Developer's Daily Reality</h2>
-            <p className="text-xl text-gray-600">Stop us when this sounds familiar...</p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Current VPS Problems */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Your Current VPS Experience</h3>
+                )}
                 
-                {[
-                  {
-                    title: "The 3 AM Production Crash",
-                    description: "Your side project that became your main income source just went down. Support ticket response: 'Have you tried restarting?'"
-                  },
-                  {
-                    title: "The Mysterious Throttling",
-                    description: "Your API was responding in 200ms yesterday, today it's 3 seconds. Nobody can tell you why."
-                  },
-                  {
-                    title: "The Bill Shock Monday",
-                    description: "Your $20/month VPS bill is now $180 because you forgot to set up billing alerts."
-                  },
-                  {
-                    title: "The Documentation Lie",
-                    description: "The setup guide was written in 2019, half the commands don't work."
-                  }
-                ].map((problem, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 border-l-4 border-red-500 shadow-sm">
-                    <h4 className="font-bold text-gray-900 mb-2">{problem.title}</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">{problem.description}</p>
+                <div className="p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold text-gray-900">${getPrice(plan)}</span>
+                    <span className="text-gray-600">{getPriceLabel()}</span>
                   </div>
-                ))}
-              </div>
-
-              {/* CloudAdda Experience */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Your CloudAdda Experience</h3>
-                
-                {[
-                  {
-                    title: "The 3 AM Peace of Mind",
-                    description: "Your app hasn't gone down in 8 months. When you had a question at 2 AM, a real engineer responded in 23 minutes."
-                  },
-                  {
-                    title: "The Consistent Performance",
-                    description: "Your API responds in 180-220ms consistently. Every day. Every month."
-                  },
-                  {
-                    title: "The Predictable Bill",
-                    description: "Your bill is exactly ₹1,399 every month. No surprises. No hidden fees."
-                  },
-                  {
-                    title: "The Documentation That Works",
-                    description: "Copy-paste the commands from our docs. They work. First try. Every time."
-                  }
-                ].map((solution, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 border-l-4 border-green-500 shadow-sm">
-                    <h4 className="font-bold text-gray-900 mb-2">{solution.title}</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">{solution.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="text-center mt-16">
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-                End Your VPS Nightmare Today
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Real vs Marketing Specs - Updated Table */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Marketing Specs vs Reality</h2>
-            <p className="text-xl text-gray-600">What they promise vs what you actually get</p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-3xl shadow-2xl border border-gray-200">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left p-6 font-semibold text-gray-900">What You Get</th>
-                  <th className="text-center p-6 bg-purple-50 font-bold text-purple-600">CloudAdda VPS</th>
-                  <th className="text-center p-6 font-semibold text-gray-600">AWS t3.medium</th>
-                  <th className="text-center p-6 font-semibold text-gray-600">DigitalOcean</th>
-                  <th className="text-center p-6 font-semibold text-gray-600">Linode</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  {
-                    spec: "Advertised RAM",
-                    cloudAdda: "4GB (Actually 4GB)",
-                    aws: "4GB (2.8GB usable)",
-                    do: "4GB (3.2GB usable)",
-                    linode: "4GB (3.4GB usable)"
-                  },
-                  {
-                    spec: "CPU Performance (PassMark)",
-                    cloudAdda: "AMD EPYC (12,400)",
-                    aws: "Intel Xeon (6,200)",
-                    do: "Intel Xeon (7,100)",
-                    linode: "AMD EPYC (9,800)"
-                  },
-                  {
-                    spec: "Storage IOPS",
-                    cloudAdda: "50,000+ (Real NVMe)",
-                    aws: "3,000 (EBS gp3)",
-                    do: "7,000 (SSD)",
-                    linode: "25,000 (NVMe)"
-                  },
-                  {
-                    spec: "Monthly Cost (No Hidden Fees)",
-                    cloudAdda: "₹1,399 (All included)",
-                    aws: "₹2,200+ (After data transfer)",
-                    do: "₹1,800+ (After bandwidth)",
-                    linode: "₹1,600+ (After backups)"
-                  },
-                  {
-                    spec: "Setup Time",
-                    cloudAdda: "60 seconds",
-                    aws: "10+ minutes",
-                    do: "3-5 minutes",
-                    linode: "2-4 minutes"
-                  },
-                  {
-                    spec: "Support Response (Real Human)",
-                    cloudAdda: "47 minutes average",
-                    aws: "4-24 hours",
-                    do: "2-8 hours",
-                    linode: "1-4 hours"
-                  }
-                ].map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                    <td className="p-6 font-semibold text-gray-900">{row.spec}</td>
-                    <td className="p-6 text-center bg-purple-50 font-bold text-purple-600">{row.cloudAdda}</td>
-                    <td className="p-6 text-center text-gray-600">{row.aws}</td>
-                    <td className="p-6 text-center text-gray-600">{row.do}</td>
-                    <td className="p-6 text-center text-gray-600">{row.linode}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="text-center mt-12">
-            <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6 inline-block">
-              <div className="text-lg font-bold text-purple-800 mb-2">Transparency Promise</div>
-              <div className="text-purple-600 mb-4">What we advertise is what you get. No fine print, no gotchas.</div>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-                See Live Benchmarks
-                <Activity className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Technical Superiority Section - Updated with new image */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-4xl font-bold text-gray-900">Built Different From The Ground Up</h2>
-              <p className="text-xl text-gray-600">While others cut corners, we invested in the infrastructure you actually need.</p>
-
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { label: "NVMe Storage", value: "100%", desc: "Pure NVMe, no hybrid nonsense" },
-                  { label: "AMD EPYC", value: "Latest Gen", desc: "64-core server processors" },
-                  { label: "DDR4 RAM", value: "ECC", desc: "Error-correcting memory" },
-                  { label: "Network", value: "10Gbps", desc: "Backbone connectivity" }
-                ].map((spec, index) => (
-                  <div key={index} className="bg-white rounded-2xl p-6 shadow-lg">
-                    <div className="text-2xl font-bold text-purple-600">{spec.value}</div>
-                    <div className="font-semibold text-gray-900">{spec.label}</div>
-                    <div className="text-sm text-gray-600">{spec.desc}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h4 className="font-bold text-gray-900 mb-4">Live Performance Comparison</h4>
-                <div className="space-y-3">
-                  {[
-                    { provider: "CloudAdda VPS", speed: "1,247 MB/s", bar: 100 },
-                    { provider: "AWS t3.medium", speed: "387 MB/s", bar: 31 },
-                    { provider: "DigitalOcean", speed: "445 MB/s", bar: 36 },
-                    { provider: "Linode", speed: "523 MB/s", bar: 42 }
-                  ].map((bench, index) => (
-                    <div key={index} className="space-y-1">
-                      <div className="flex justify-between text-sm">
-                        <span className={index === 0 ? "font-bold text-purple-600" : "text-gray-600"}>{bench.provider}</span>
-                        <span className={index === 0 ? "font-bold text-purple-600" : "text-gray-600"}>{bench.speed}</span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
-                          className={`h-2 rounded-full ${index === 0 ? "bg-purple-500" : "bg-gray-400"}`}
-                          style={{ width: `${bench.bar}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/d79d4d0f-d833-4a83-b822-c8d2899c8870.png" 
-                alt="Modern Data Center Infrastructure" 
-                className="w-full h-96 object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Perfect For Every Workload</h2>
-            <p className="text-xl text-gray-600">From weekend projects to unicorn startups</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { 
-                name: "Web Applications", 
-                icon: Globe, 
-                description: "React, Vue, Django, Rails - your framework runs faster here",
-                customers: "2,400+ apps hosted"
-              },
-              { 
-                name: "AI/ML Workloads", 
-                icon: Brain, 
-                description: "GPU instances for training, inference APIs that actually scale",
-                customers: "150+ AI startups"
-              },
-              { 
-                name: "Game Servers", 
-                icon: Monitor, 
-                description: "Sub-20ms latency, DDoS protection, automatic scaling",
-                customers: "500+ game servers"
-              },
-              { 
-                name: "Development", 
-                icon: Settings, 
-                description: "Staging environments that mirror production perfectly",
-                customers: "1,200+ dev teams"
-              },
-              { 
-                name: "E-commerce", 
-                icon: BarChart3, 
-                description: "Black Friday ready, PCI compliant, always-on monitoring",
-                customers: "800+ online stores"
-              },
-              { 
-                name: "Databases", 
-                icon: Database, 
-                description: "PostgreSQL, MongoDB, Redis - optimized storage layers",
-                customers: "3,000+ databases"
-              },
-              { 
-                name: "APIs", 
-                icon: Server, 
-                description: "REST, GraphQL, microservices with auto-scaling",
-                customers: "5,000+ APIs"
-              },
-              { 
-                name: "Startups", 
-                icon: Rocket, 
-                description: "MVP to IPO, we scale with your growth story",
-                customers: "400+ funded startups"
-              }
-            ].map((useCase, index) => (
-              <div key={index} className="group hover:scale-105 transition-all duration-300">
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-purple-200 transition-all duration-300 hover:shadow-xl h-full">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
-                      <useCase.icon className="w-6 h-6 text-purple-600" />
-                    </div>
-                    <h3 className="font-bold text-gray-900 mb-2">{useCase.name}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{useCase.description}</p>
-                    <div className="text-xs text-purple-600 font-medium">{useCase.customers}</div>
-                  </div>
+                  
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm">
+                        <Check className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Button 
+                    className={`w-full rounded-full font-semibold py-3 ${
+                      plan.popular
+                        ? 'bg-orange-500 hover:bg-orange-600 text-white'
+                        : 'bg-purple-500 hover:bg-purple-600 text-white'
+                    }`}
+                  >
+                    Get Started
+                  </Button>
                 </div>
               </div>
             ))}
@@ -557,227 +271,8 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Migration Success Rate - Simplified */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Migration Made Simple</h2>
-            <p className="text-xl text-gray-600">We handle everything, you keep building</p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-              {[
-                { metric: "Migration Success Rate", value: "100%", description: "Not a single failed migration in 3 years" },
-                { metric: "Zero Downtime", value: "98.7%", description: "Your users won't even notice the switch" },
-                { metric: "Customer Retention", value: "99.1%", description: "Once they switch, they never leave" },
-                { metric: "Performance Boost", value: "187%", description: "Average speed increase post-migration" }
-              ].map((stat, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">{stat.value}</div>
-                  <div className="font-semibold text-gray-900 mb-2">{stat.metric}</div>
-                  <div className="text-sm text-gray-600">{stat.description}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 text-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Migrate?</h3>
-              <p className="text-gray-600 mb-6">Our engineers handle everything - from DNS to databases. Zero downtime guaranteed.</p>
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-4">
-                Get Free Migration Assessment
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Simplified Pricing Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Simple, Transparent Pricing</h2>
-          
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl p-12 border border-purple-200">
-            <div className="text-6xl font-bold text-purple-600 mb-4">₹799</div>
-            <div className="text-xl text-gray-600 mb-2">Starting from</div>
-            <div className="text-gray-500 mb-8">per month</div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 text-sm">
-              <div className="flex items-center justify-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>2-8 vCPU</span>
-              </div>
-              <div className="flex items-center justify-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>4-16GB RAM</span>
-              </div>
-              <div className="flex items-center justify-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>NVMe Storage</span>
-              </div>
-              <div className="flex items-center justify-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>24/7 Support</span>
-              </div>
-            </div>
-            
-            <Link to="/pricing">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-12 py-4 text-lg">
-                View All Plans & Pricing
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Simplified Social Proof Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Trusted by 10,000+ Developers</h2>
-            <p className="text-xl text-gray-600">From weekend warriors to unicorn CTOs</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "We migrated from AWS and cut our hosting costs by 60%. Same performance, better support, zero downtime migration.",
-                author: "Rajesh Kumar",
-                title: "CTO, TechStartup",
-                company: "Series A Startup",
-                rating: 5
-              },
-              {
-                quote: "Their support team actually knows what they're talking about. Fixed our Redis clustering issue in 20 minutes.",
-                author: "Sarah Chen",
-                title: "Lead DevOps Engineer",
-                company: "E-commerce Platform",
-                rating: 5
-              },
-              {
-                quote: "Been running our ML training pipelines here for 8 months. Never had a single outage during our critical batch jobs.",
-                author: "David Rodriguez",
-                title: "ML Engineering Manager",
-                company: "AI Company",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                    <span className="text-purple-600 font-semibold">{testimonial.author.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                    <div className="text-sm text-gray-600">{testimonial.title}</div>
-                    <div className="text-xs text-gray-500">{testimonial.company}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">
-            Ready for VPS That Actually Works?
-          </h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Deploy in 60 seconds. Scale in real-time. Support that cares.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-              Deploy Your VPS Now
-              <Server className="ml-3 h-6 w-6" />
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-16 py-6 text-xl border-gray-300 hover:bg-gray-50">
-              Talk to an Engineer
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">10,000+</div>
-              <div className="text-gray-600">Happy Developers</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">99.98%</div>
-              <div className="text-gray-600">Uptime SLA</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">47min</div>
-              <div className="text-gray-600">Avg Support Response</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl">CloudAdda</span>
-              </div>
-              <p className="text-gray-400">
-                Born in India, Built for the World. Infrastructure that just works.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Solutions</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" className="hover:text-white transition-colors">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" className="hover:text-white transition-colors">Virtual Desktops</Link></li>
-                <li><Link to="/vps" className="hover:text-white transition-colors">VPS</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">Custom Solutions</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Community</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">© 2024 CloudAdda. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {/* Pricing Differentiator */}
+      <VPSPricingDifferentiator />
     </div>
   );
 };

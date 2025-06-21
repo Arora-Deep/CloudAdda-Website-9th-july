@@ -7,10 +7,10 @@ const CloudDesktopsFooter = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
+            <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+              <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-10 w-auto object-contain" />
               <span className="font-bold text-xl">CloudAdda</span>
-            </div>
+            </Link>
             <p className="text-gray-400">
               Born in India, Built for the World. Infrastructure that just works.
             </p>
