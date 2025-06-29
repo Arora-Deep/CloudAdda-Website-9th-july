@@ -10,7 +10,7 @@ const CloudDesktopsFinalCTA = () => {
           The Future of Work Isn't on Your Laptop.
         </h2>
         <p className="text-xl text-gray-600 mb-12">
-          It's in the cloud. It's fast. It's beautiful. It's ready.
+          It's in the cloud. It's fast. It's always available anytime anywhere.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">

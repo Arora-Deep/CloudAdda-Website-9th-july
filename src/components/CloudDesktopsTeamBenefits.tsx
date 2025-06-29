@@ -7,7 +7,7 @@ const CloudDesktopsTeamBenefits = () => {
       title: "Always-On Workspaces",
       description: "No boot-up delays, no lost progress, no waiting around for your computer to start.",
       icon: Clock,
-      stat: "0 sec",
+      stat: "10 sec",
       statLabel: "Boot time"
     },
     {
@@ -21,15 +21,15 @@ const CloudDesktopsTeamBenefits = () => {
       title: "Custom Templates",
       description: "We build your development environment exactly how your team needs it configured.",
       icon: Settings,
-      stat: "< 5 min",
+      stat: "10 min",
       statLabel: "Setup time"
     },
     {
       title: "Human Support",
       description: "Real people, real engineers providing real fast help when you need it most.",
       icon: Users,
-      stat: "24/7",
-      statLabel: "Live support"
+      stat: "20 min",
+      statLabel: "Human support"
     },
     {
       title: "No Lock-In",
@@ -39,11 +39,11 @@ const CloudDesktopsTeamBenefits = () => {
       statLabel: "Contracts required"
     },
     {
-      title: "Lightning Performance",
-      description: "AMD EPYC processors and NVMe storage deliver desktop performance that beats most laptops.",
+      title: "Optimized Performance",
+      description: "AMD EPYC processors and NVMe storage deliver consistent desktop performance.",
       icon: Zap,
-      stat: "10x",
-      statLabel: "Faster than typical VDI"
+      stat: "High",
+      statLabel: "Performance rating"
     }
   ];
 

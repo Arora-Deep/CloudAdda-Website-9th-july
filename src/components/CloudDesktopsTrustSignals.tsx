@@ -1,11 +1,11 @@
 
-import { Award, Users, Globe, Zap } from "lucide-react";
+import { Award, Users, Zap } from "lucide-react";
 
 const CloudDesktopsTrustSignals = () => {
   const achievements = [
     {
-      number: "5,000+",
-      label: "Happy Development Teams",
+      number: "500+",
+      label: "Development Teams",
       icon: Users
     },
     {
@@ -14,13 +14,8 @@ const CloudDesktopsTrustSignals = () => {
       icon: Zap
     },
     {
-      number: "50+",
-      label: "Countries Served",
-      icon: Globe
-    },
-    {
-      number: "SOC 2",
-      label: "Type II Certified",
+      number: "ISO",
+      label: "Certification",
       icon: Award
     }
   ];
@@ -39,7 +34,7 @@ const CloudDesktopsTrustSignals = () => {
           <p className="text-xl text-gray-600">Join thousands of companies who've already made the switch</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {achievements.map((achievement, index) => (
             <div key={index} className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">

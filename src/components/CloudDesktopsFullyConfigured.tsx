@@ -90,13 +90,6 @@ const CloudDesktopsFullyConfigured = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="mt-8 p-4 bg-gray-50 rounded-lg">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600">&lt; 5 min</div>
-                <div className="text-sm text-gray-600">Average setup time</div>
-              </div>
-            </div>
           </div>
         </div>
 

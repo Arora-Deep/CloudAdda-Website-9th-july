@@ -7,7 +7,7 @@ const CloudDesktopsComparison = () => {
     {
       feature: "Speed",
       cloudAdda: "Instant, server-grade performance",
-      traditional: "Slow, aging hardware"
+      traditional: "Slow due to ageing hardware"
     },
     {
       feature: "Setup Time",

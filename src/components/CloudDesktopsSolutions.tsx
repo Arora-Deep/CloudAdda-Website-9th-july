@@ -16,8 +16,8 @@ const CloudDesktopsSolutions = () => {
       highlight: "Zero Trust Architecture"
     },
     {
-      title: "Runs Anywhere. Looks Beautiful Everywhere.",
-      description: "Access your desktop from a Mac, PC, tablet, or browser. It's always there — pixel-perfect, fast, and reliable.",
+      title: "Enterprise-Grade Accessibility",
+      description: "Access your desktop from a Mac, PC, tablet, or browser. It's always there — consistent, fast, and reliable.",
       icon: Wand2,
       highlight: "Multi-device Access"
     }
