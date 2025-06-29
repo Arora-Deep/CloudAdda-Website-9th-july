@@ -2,7 +2,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from "@/components/ui/navigation-menu";
+import { useState } from "react";
+
 const VPS = () => {
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -84,7 +88,7 @@ const VPS = () => {
               </h1>
               
               <p className="text-xl text-gray-600 leading-relaxed">
-                NVMe speed, AMD EPYC cores, and real human support at half the price of AWS. No throttling, no surprises, no regrets.
+                Latest gen processors and blazing fast storage with real human support at less than half the price of AWS. No throttling, no surprises, no regrets.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
@@ -264,7 +268,7 @@ const VPS = () => {
                 description: "Your API responds in 180-220ms consistently. Every day. Every month."
               }, {
                 title: "The Predictable Bill",
-                description: "Your bill is exactly ₹1,399 every month. No surprises. No hidden fees."
+                description: "Your bill is exactly what you choose. No surprises. No hidden fees."
               }, {
                 title: "The Documentation That Works",
                 description: "Copy-paste the commands from our docs. They work. First try. Every time."
@@ -306,12 +310,6 @@ const VPS = () => {
               </thead>
               <tbody>
                 {[{
-                spec: "Advertised RAM",
-                cloudAdda: "4GB (Actually 4GB)",
-                aws: "4GB (2.8GB usable)",
-                do: "4GB (3.2GB usable)",
-                linode: "4GB (3.4GB usable)"
-              }, {
                 spec: "CPU Performance (PassMark)",
                 cloudAdda: "AMD EPYC (12,400)",
                 aws: "Intel Xeon (6,200)",
@@ -319,7 +317,7 @@ const VPS = () => {
                 linode: "AMD EPYC (9,800)"
               }, {
                 spec: "Storage IOPS",
-                cloudAdda: "50,000+ (Real NVMe)",
+                cloudAdda: "25,000 (Real NVMe)",
                 aws: "3,000 (EBS gp3)",
                 do: "7,000 (SSD)",
                 linode: "25,000 (NVMe)"
@@ -331,13 +329,13 @@ const VPS = () => {
                 linode: "₹1,600+ (After backups)"
               }, {
                 spec: "Setup Time",
-                cloudAdda: "60 seconds",
+                cloudAdda: "2-4 minutes",
                 aws: "10+ minutes",
                 do: "3-5 minutes",
                 linode: "2-4 minutes"
               }, {
                 spec: "Support Response (Real Human)",
-                cloudAdda: "47 minutes average",
+                cloudAdda: "10-15 minutes",
                 aws: "4-24 hours",
                 do: "2-8 hours",
                 linode: "1-4 hours"
@@ -398,7 +396,22 @@ const VPS = () => {
               </div>
 
               <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h4 className="font-bold text-gray-900 mb-4">Live Performance Comparison</h4>
+                <div className="flex justify-between items-center mb-4">
+                  <h4 className="font-bold text-gray-900">Live Performance Comparison</h4>
+                  <Button 
+                    onClick={() => setShowComingSoon(true)}
+                    variant="outline" 
+                    size="sm"
+                    className="text-purple-600 border-purple-600 hover:bg-purple-50"
+                  >
+                    View
+                  </Button>
+                </div>
+                {showComingSoon && (
+                  <div className="text-center py-4 text-purple-600 font-semibold">
+                    Coming Soon!
+                  </div>
+                )}
                 <div className="space-y-3">
                   {[{
                   provider: "CloudAdda VPS",
