@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const TrainingLabs = () => {
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -511,9 +510,7 @@ const TrainingLabs = () => {
           <h2 className="text-4xl font-bold text-gray-900 mb-8">
             Ready to Train Without Limits?
           </h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Skip the stress. Delight your students. Reclaim your weekends.
-          </p>
+          <p className="text-xl text-gray-600 mb-12">Skip the stress. Delight your participants. Reclaim your weekends.</p>
           
           <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
             Get Your Custom Lab Setup
@@ -593,5 +590,4 @@ const TrainingLabs = () => {
       </footer>
     </div>;
 };
-
 export default TrainingLabs;
