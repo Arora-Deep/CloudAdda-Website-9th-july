@@ -1,12 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from "@/components/ui/navigation-menu";
-
 const VPS = () => {
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,10 +23,7 @@ const VPS = () => {
                     <NavigationMenuContent className="min-w-[400px] p-0 bg-white border border-gray-200 shadow-lg rounded-lg z-50">
                       <div className="grid gap-0 p-0 w-[400px] lg:w-[500px] lg:grid-cols-1">
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/training-labs"
-                            className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100"
-                          >
+                          <Link to="/training-labs" className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100">
                             <div className="text-sm font-medium leading-none text-gray-900">Training Labs</div>
                             <p className="line-clamp-2 text-sm leading-snug text-gray-600">
                               Provisioned lab environments for training companies
@@ -37,10 +31,7 @@ const VPS = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/cloud-desktops"
-                            className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100"
-                          >
+                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100">
                             <div className="text-sm font-medium leading-none text-gray-900">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-gray-600">
                               Fast, secure desktops accessible from anywhere
@@ -48,10 +39,7 @@ const VPS = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/vps"
-                            className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50"
-                          >
+                          <Link to="/vps" className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50">
                             <div className="text-sm font-medium leading-none text-gray-900">VPS Hosting</div>
                             <p className="line-clamp-2 text-sm leading-snug text-gray-600">
                               High-performance VPS with AMD EPYC processors
@@ -126,11 +114,7 @@ const VPS = () => {
             </div>
             
             <div className="relative">
-              <img 
-                src="/lovable-uploads/a6ac61e1-af55-42c2-9e72-95b2baa9e4dc.png" 
-                alt="Powerful VPS Performance" 
-                className="w-full h-96 object-contain"
-              />
+              <img src="/lovable-uploads/a6ac61e1-af55-42c2-9e72-95b2baa9e4dc.png" alt="Powerful VPS Performance" className="w-full h-96 object-contain" />
             </div>
           </div>
         </div>
@@ -146,29 +130,23 @@ const VPS = () => {
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              {[
-                {
-                  pain: "Shared Resources Lie",
-                  reality: "Your 'dedicated' 4GB RAM becomes 1GB when the neighbor's Bitcoin miner starts up",
-                  icon: AlertTriangle
-                },
-                {
-                  pain: "Support Ticket Hell",
-                  reality: "48 hours to get a copy-paste response that doesn't solve your midnight server crash",
-                  icon: Clock
-                },
-                {
-                  pain: "Bill Shock Syndrome",
-                  reality: "Your $20/month VPS becomes $200 because they count every byte of bandwidth",
-                  icon: DollarSign
-                },
-                {
-                  pain: "Performance Roulette",
-                  reality: "Some days your API responds in 50ms, other days it's 5 seconds. Nobody knows why.",
-                  icon: TrendingUp
-                }
-              ].map((item, index) => (
-                <div key={index} className="flex items-start space-x-6 group">
+              {[{
+              pain: "Shared Resources Lie",
+              reality: "Your 'dedicated' 4GB RAM becomes 1GB when the neighbor's Bitcoin miner starts up",
+              icon: AlertTriangle
+            }, {
+              pain: "Support Ticket Hell",
+              reality: "48 hours to get a copy-paste response that doesn't solve your midnight server crash",
+              icon: Clock
+            }, {
+              pain: "Bill Shock Syndrome",
+              reality: "Your $20/month VPS becomes $200 because they count every byte of bandwidth",
+              icon: DollarSign
+            }, {
+              pain: "Performance Roulette",
+              reality: "Some days your API responds in 50ms, other days it's 5 seconds. Nobody knows why.",
+              icon: TrendingUp
+            }].map((item, index) => <div key={index} className="flex items-start space-x-6 group">
                   <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center group-hover:bg-red-200 transition-colors">
                     <item.icon className="w-6 h-6 text-red-600" />
                   </div>
@@ -176,16 +154,11 @@ const VPS = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{item.pain}</h3>
                     <p className="text-gray-600 leading-relaxed">{item.reality}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="relative">
-              <img 
-                src="/lovable-uploads/e253469c-57a6-42bb-bb9a-c74dc734846a.png" 
-                alt="Server Error Frustration" 
-                className="w-full h-96 object-contain"
-              />
+              <img src="/lovable-uploads/e253469c-57a6-42bb-bb9a-c74dc734846a.png" alt="Server Error Frustration" className="w-full h-96 object-contain" />
             </div>
           </div>
         </div>
@@ -200,33 +173,28 @@ const VPS = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
-            {[
-              {
-                title: "True Dedicated Resources",
-                subtitle: "Your cores are YOURS",
-                description: "When we say 4 vCPUs, you get 4 full AMD EPYC cores. No sharing, no throttling, no lies. We partition hardware at the hypervisor level.",
-                icon: Cpu,
-                metric: "100% Dedicated",
-                proof: "Live resource monitor shows real allocation"
-              },
-              {
-                title: "Human-First Support",
-                subtitle: "Engineers, not bots",
-                description: "Every ticket goes to a real engineer who's built production systems. No chatbots, no scripts, no 'have you tried turning it off and on again?'",
-                icon: Users,
-                metric: "< 2hr Response",
-                proof: "Average first response: 47 minutes"
-              },
-              {
-                title: "Transparent Pricing",
-                subtitle: "No surprise bills",
-                description: "Flat monthly rate includes everything. Unlimited bandwidth, free backups, no hidden fees. Your bill will be exactly what we quote.",
-                icon: DollarSign,
-                metric: "50% Less Cost",
-                proof: "vs AWS/Azure/GCP equivalent specs"
-              }
-            ].map((solution, index) => (
-              <div key={index} className="group hover:scale-105 transition-all duration-500">
+            {[{
+            title: "True Dedicated Resources",
+            subtitle: "Your cores are YOURS",
+            description: "When we say 4 vCPUs, you get 4 full AMD EPYC cores. No sharing, no throttling, no lies. We partition hardware at the hypervisor level.",
+            icon: Cpu,
+            metric: "100% Dedicated",
+            proof: "Live resource monitor shows real allocation"
+          }, {
+            title: "Human-First Support",
+            subtitle: "Engineers, not bots",
+            description: "Every ticket goes to a real engineer who's built production systems. No chatbots, no scripts, no 'have you tried turning it off and on again?'",
+            icon: Users,
+            metric: "< 2hr Response",
+            proof: "Average first response: 47 minutes"
+          }, {
+            title: "Transparent Pricing",
+            subtitle: "No surprise bills",
+            description: "Flat monthly rate includes everything. Unlimited bandwidth, free backups, no hidden fees. Your bill will be exactly what we quote.",
+            icon: DollarSign,
+            metric: "50% Less Cost",
+            proof: "vs AWS/Azure/GCP equivalent specs"
+          }].map((solution, index) => <div key={index} className="group hover:scale-105 transition-all duration-500">
                 <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl h-full">
                   <div className="flex flex-col h-full">
                     <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
@@ -247,8 +215,7 @@ const VPS = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -267,58 +234,44 @@ const VPS = () => {
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Your Current VPS Experience</h3>
                 
-                {[
-                  {
-                    title: "The 3 AM Production Crash",
-                    description: "Your side project that became your main income source just went down. Support ticket response: 'Have you tried restarting?'"
-                  },
-                  {
-                    title: "The Mysterious Throttling",
-                    description: "Your API was responding in 200ms yesterday, today it's 3 seconds. Nobody can tell you why."
-                  },
-                  {
-                    title: "The Bill Shock Monday",
-                    description: "Your $20/month VPS bill is now $180 because you forgot to set up billing alerts."
-                  },
-                  {
-                    title: "The Documentation Lie",
-                    description: "The setup guide was written in 2019, half the commands don't work."
-                  }
-                ].map((problem, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 border-l-4 border-red-500 shadow-sm">
+                {[{
+                title: "The 3 AM Production Crash",
+                description: "Your side project that became your main income source just went down. Support ticket response: 'Have you tried restarting?'"
+              }, {
+                title: "The Mysterious Throttling",
+                description: "Your API was responding in 200ms yesterday, today it's 3 seconds. Nobody can tell you why."
+              }, {
+                title: "The Bill Shock Monday",
+                description: "Your $20/month VPS bill is now $180 because you forgot to set up billing alerts."
+              }, {
+                title: "The Documentation Lie",
+                description: "The setup guide was written in 2019, half the commands don't work."
+              }].map((problem, index) => <div key={index} className="bg-white rounded-xl p-6 border-l-4 border-red-500 shadow-sm">
                     <h4 className="font-bold text-gray-900 mb-2">{problem.title}</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">{problem.description}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               {/* CloudAdda Experience */}
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Your CloudAdda Experience</h3>
                 
-                {[
-                  {
-                    title: "The 3 AM Peace of Mind",
-                    description: "Your app hasn't gone down in 8 months. When you had a question at 2 AM, a real engineer responded in 23 minutes."
-                  },
-                  {
-                    title: "The Consistent Performance",
-                    description: "Your API responds in 180-220ms consistently. Every day. Every month."
-                  },
-                  {
-                    title: "The Predictable Bill",
-                    description: "Your bill is exactly ₹1,399 every month. No surprises. No hidden fees."
-                  },
-                  {
-                    title: "The Documentation That Works",
-                    description: "Copy-paste the commands from our docs. They work. First try. Every time."
-                  }
-                ].map((solution, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 border-l-4 border-green-500 shadow-sm">
+                {[{
+                title: "The 3 AM Peace of Mind",
+                description: "Your app hasn't gone down in 8 months. When you had a question at 2 AM, a real engineer responded in 23 minutes."
+              }, {
+                title: "The Consistent Performance",
+                description: "Your API responds in 180-220ms consistently. Every day. Every month."
+              }, {
+                title: "The Predictable Bill",
+                description: "Your bill is exactly ₹1,399 every month. No surprises. No hidden fees."
+              }, {
+                title: "The Documentation That Works",
+                description: "Copy-paste the commands from our docs. They work. First try. Every time."
+              }].map((solution, index) => <div key={index} className="bg-white rounded-xl p-6 border-l-4 border-green-500 shadow-sm">
                     <h4 className="font-bold text-gray-900 mb-2">{solution.title}</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">{solution.description}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
@@ -352,58 +305,49 @@ const VPS = () => {
                 </tr>
               </thead>
               <tbody>
-                {[
-                  {
-                    spec: "Advertised RAM",
-                    cloudAdda: "4GB (Actually 4GB)",
-                    aws: "4GB (2.8GB usable)",
-                    do: "4GB (3.2GB usable)",
-                    linode: "4GB (3.4GB usable)"
-                  },
-                  {
-                    spec: "CPU Performance (PassMark)",
-                    cloudAdda: "AMD EPYC (12,400)",
-                    aws: "Intel Xeon (6,200)",
-                    do: "Intel Xeon (7,100)",
-                    linode: "AMD EPYC (9,800)"
-                  },
-                  {
-                    spec: "Storage IOPS",
-                    cloudAdda: "50,000+ (Real NVMe)",
-                    aws: "3,000 (EBS gp3)",
-                    do: "7,000 (SSD)",
-                    linode: "25,000 (NVMe)"
-                  },
-                  {
-                    spec: "Monthly Cost (No Hidden Fees)",
-                    cloudAdda: "₹1,399 (All included)",
-                    aws: "₹2,200+ (After data transfer)",
-                    do: "₹1,800+ (After bandwidth)",
-                    linode: "₹1,600+ (After backups)"
-                  },
-                  {
-                    spec: "Setup Time",
-                    cloudAdda: "60 seconds",
-                    aws: "10+ minutes",
-                    do: "3-5 minutes",
-                    linode: "2-4 minutes"
-                  },
-                  {
-                    spec: "Support Response (Real Human)",
-                    cloudAdda: "47 minutes average",
-                    aws: "4-24 hours",
-                    do: "2-8 hours",
-                    linode: "1-4 hours"
-                  }
-                ].map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                {[{
+                spec: "Advertised RAM",
+                cloudAdda: "4GB (Actually 4GB)",
+                aws: "4GB (2.8GB usable)",
+                do: "4GB (3.2GB usable)",
+                linode: "4GB (3.4GB usable)"
+              }, {
+                spec: "CPU Performance (PassMark)",
+                cloudAdda: "AMD EPYC (12,400)",
+                aws: "Intel Xeon (6,200)",
+                do: "Intel Xeon (7,100)",
+                linode: "AMD EPYC (9,800)"
+              }, {
+                spec: "Storage IOPS",
+                cloudAdda: "50,000+ (Real NVMe)",
+                aws: "3,000 (EBS gp3)",
+                do: "7,000 (SSD)",
+                linode: "25,000 (NVMe)"
+              }, {
+                spec: "Monthly Cost (No Hidden Fees)",
+                cloudAdda: "₹1,399 (All included)",
+                aws: "₹2,200+ (After data transfer)",
+                do: "₹1,800+ (After bandwidth)",
+                linode: "₹1,600+ (After backups)"
+              }, {
+                spec: "Setup Time",
+                cloudAdda: "60 seconds",
+                aws: "10+ minutes",
+                do: "3-5 minutes",
+                linode: "2-4 minutes"
+              }, {
+                spec: "Support Response (Real Human)",
+                cloudAdda: "47 minutes average",
+                aws: "4-24 hours",
+                do: "2-8 hours",
+                linode: "1-4 hours"
+              }].map((row, index) => <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
                     <td className="p-6 font-semibold text-gray-900">{row.spec}</td>
                     <td className="p-6 text-center bg-purple-50 font-bold text-purple-600">{row.cloudAdda}</td>
                     <td className="p-6 text-center text-gray-600">{row.aws}</td>
                     <td className="p-6 text-center text-gray-600">{row.do}</td>
                     <td className="p-6 text-center text-gray-600">{row.linode}</td>
-                  </tr>
-                ))}
+                  </tr>)}
               </tbody>
             </table>
           </div>
@@ -430,52 +374,65 @@ const VPS = () => {
               <p className="text-xl text-gray-600">While others cut corners, we invested in the infrastructure you actually need.</p>
 
               <div className="grid grid-cols-2 gap-6">
-                {[
-                  { label: "NVMe Storage", value: "100%", desc: "Pure NVMe, no hybrid nonsense" },
-                  { label: "AMD EPYC", value: "Latest Gen", desc: "64-core server processors" },
-                  { label: "DDR4 RAM", value: "ECC", desc: "Error-correcting memory" },
-                  { label: "Network", value: "10Gbps", desc: "Backbone connectivity" }
-                ].map((spec, index) => (
-                  <div key={index} className="bg-white rounded-2xl p-6 shadow-lg">
+                {[{
+                label: "NVMe Storage",
+                value: "100%",
+                desc: "Pure NVMe, no hybrid nonsense"
+              }, {
+                label: "AMD EPYC",
+                value: "Latest Gen",
+                desc: "64-core server processors"
+              }, {
+                label: "DDR4 RAM",
+                value: "ECC",
+                desc: "Error-correcting memory"
+              }, {
+                label: "Network",
+                value: "10Gbps",
+                desc: "Backbone connectivity"
+              }].map((spec, index) => <div key={index} className="bg-white rounded-2xl p-6 shadow-lg">
                     <div className="text-2xl font-bold text-purple-600">{spec.value}</div>
                     <div className="font-semibold text-gray-900">{spec.label}</div>
                     <div className="text-sm text-gray-600">{spec.desc}</div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h4 className="font-bold text-gray-900 mb-4">Live Performance Comparison</h4>
                 <div className="space-y-3">
-                  {[
-                    { provider: "CloudAdda VPS", speed: "1,247 MB/s", bar: 100 },
-                    { provider: "AWS t3.medium", speed: "387 MB/s", bar: 31 },
-                    { provider: "DigitalOcean", speed: "445 MB/s", bar: 36 },
-                    { provider: "Linode", speed: "523 MB/s", bar: 42 }
-                  ].map((bench, index) => (
-                    <div key={index} className="space-y-1">
+                  {[{
+                  provider: "CloudAdda VPS",
+                  speed: "1,247 MB/s",
+                  bar: 100
+                }, {
+                  provider: "AWS t3.medium",
+                  speed: "387 MB/s",
+                  bar: 31
+                }, {
+                  provider: "DigitalOcean",
+                  speed: "445 MB/s",
+                  bar: 36
+                }, {
+                  provider: "Linode",
+                  speed: "523 MB/s",
+                  bar: 42
+                }].map((bench, index) => <div key={index} className="space-y-1">
                       <div className="flex justify-between text-sm">
                         <span className={index === 0 ? "font-bold text-purple-600" : "text-gray-600"}>{bench.provider}</span>
                         <span className={index === 0 ? "font-bold text-purple-600" : "text-gray-600"}>{bench.speed}</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
-                          className={`h-2 rounded-full ${index === 0 ? "bg-purple-500" : "bg-gray-400"}`}
-                          style={{ width: `${bench.bar}%` }}
-                        ></div>
+                        <div className={`h-2 rounded-full ${index === 0 ? "bg-purple-500" : "bg-gray-400"}`} style={{
+                      width: `${bench.bar}%`
+                    }}></div>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <img 
-                src="/lovable-uploads/d79d4d0f-d833-4a83-b822-c8d2899c8870.png" 
-                alt="Modern Data Center Infrastructure" 
-                className="w-full h-96 object-contain"
-              />
+              <img src="/lovable-uploads/d79d4d0f-d833-4a83-b822-c8d2899c8870.png" alt="Modern Data Center Infrastructure" className="w-full h-96 object-contain" />
             </div>
           </div>
         </div>
@@ -490,57 +447,47 @@ const VPS = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { 
-                name: "Web Applications", 
-                icon: Globe, 
-                description: "React, Vue, Django, Rails - your framework runs faster here",
-                customers: "2,400+ apps hosted"
-              },
-              { 
-                name: "AI/ML Workloads", 
-                icon: Brain, 
-                description: "GPU instances for training, inference APIs that actually scale",
-                customers: "150+ AI startups"
-              },
-              { 
-                name: "Game Servers", 
-                icon: Monitor, 
-                description: "Sub-20ms latency, DDoS protection, automatic scaling",
-                customers: "500+ game servers"
-              },
-              { 
-                name: "Development", 
-                icon: Settings, 
-                description: "Staging environments that mirror production perfectly",
-                customers: "1,200+ dev teams"
-              },
-              { 
-                name: "E-commerce", 
-                icon: BarChart3, 
-                description: "Black Friday ready, PCI compliant, always-on monitoring",
-                customers: "800+ online stores"
-              },
-              { 
-                name: "Databases", 
-                icon: Database, 
-                description: "PostgreSQL, MongoDB, Redis - optimized storage layers",
-                customers: "3,000+ databases"
-              },
-              { 
-                name: "APIs", 
-                icon: Server, 
-                description: "REST, GraphQL, microservices with auto-scaling",
-                customers: "5,000+ APIs"
-              },
-              { 
-                name: "Startups", 
-                icon: Rocket, 
-                description: "MVP to IPO, we scale with your growth story",
-                customers: "400+ funded startups"
-              }
-            ].map((useCase, index) => (
-              <div key={index} className="group hover:scale-105 transition-all duration-300">
+            {[{
+            name: "Web Applications",
+            icon: Globe,
+            description: "React, Vue, Django, Rails - your framework runs faster here",
+            customers: "2,400+ apps hosted"
+          }, {
+            name: "AI/ML Workloads",
+            icon: Brain,
+            description: "GPU instances for training, inference APIs that actually scale",
+            customers: "150+ AI startups"
+          }, {
+            name: "Game Servers",
+            icon: Monitor,
+            description: "Sub-20ms latency, DDoS protection, automatic scaling",
+            customers: "500+ game servers"
+          }, {
+            name: "Development",
+            icon: Settings,
+            description: "Staging environments that mirror production perfectly",
+            customers: "1,200+ dev teams"
+          }, {
+            name: "E-commerce",
+            icon: BarChart3,
+            description: "Black Friday ready, PCI compliant, always-on monitoring",
+            customers: "800+ online stores"
+          }, {
+            name: "Databases",
+            icon: Database,
+            description: "PostgreSQL, MongoDB, Redis - optimized storage layers",
+            customers: "3,000+ databases"
+          }, {
+            name: "APIs",
+            icon: Server,
+            description: "REST, GraphQL, microservices with auto-scaling",
+            customers: "5,000+ APIs"
+          }, {
+            name: "Startups",
+            icon: Rocket,
+            description: "MVP to IPO, we scale with your growth story",
+            customers: "400+ funded startups"
+          }].map((useCase, index) => <div key={index} className="group hover:scale-105 transition-all duration-300">
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-purple-200 transition-all duration-300 hover:shadow-xl h-full">
                   <div className="text-center">
                     <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
@@ -551,8 +498,7 @@ const VPS = () => {
                     <div className="text-xs text-purple-600 font-medium">{useCase.customers}</div>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -567,18 +513,27 @@ const VPS = () => {
 
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-              {[
-                { metric: "Migration Success Rate", value: "100%", description: "Not a single failed migration in 3 years" },
-                { metric: "Zero Downtime", value: "98.7%", description: "Your users won't even notice the switch" },
-                { metric: "Customer Retention", value: "99.1%", description: "Once they switch, they never leave" },
-                { metric: "Performance Boost", value: "187%", description: "Average speed increase post-migration" }
-              ].map((stat, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
+              {[{
+              metric: "Migration Success Rate",
+              value: "100%",
+              description: "Not a single failed migration in 3 years"
+            }, {
+              metric: "Zero Downtime",
+              value: "98.7%",
+              description: "Your users won't even notice the switch"
+            }, {
+              metric: "Customer Retention",
+              value: "99.1%",
+              description: "Once they switch, they never leave"
+            }, {
+              metric: "Performance Boost",
+              value: "187%",
+              description: "Average speed increase post-migration"
+            }].map((stat, index) => <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
                   <div className="text-3xl font-bold text-purple-600 mb-2">{stat.value}</div>
                   <div className="font-semibold text-gray-900 mb-2">{stat.metric}</div>
                   <div className="text-sm text-gray-600">{stat.description}</div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 text-center">
@@ -636,39 +591,32 @@ const VPS = () => {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Trusted by 10,000+ Developers</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Trusted by 1,000+ Developers</h2>
             <p className="text-xl text-gray-600">From weekend warriors to unicorn CTOs</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "We migrated from AWS and cut our hosting costs by 60%. Same performance, better support, zero downtime migration.",
-                author: "Rajesh Kumar",
-                title: "CTO, TechStartup",
-                company: "Series A Startup",
-                rating: 5
-              },
-              {
-                quote: "Their support team actually knows what they're talking about. Fixed our Redis clustering issue in 20 minutes.",
-                author: "Sarah Chen",
-                title: "Lead DevOps Engineer",
-                company: "E-commerce Platform",
-                rating: 5
-              },
-              {
-                quote: "Been running our ML training pipelines here for 8 months. Never had a single outage during our critical batch jobs.",
-                author: "David Rodriguez",
-                title: "ML Engineering Manager",
-                company: "AI Company",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+            {[{
+            quote: "We migrated from AWS and cut our hosting costs by 60%. Same performance, better support, zero downtime migration.",
+            author: "Rajesh Kumar",
+            title: "CTO, TechStartup",
+            company: "Series A Startup",
+            rating: 5
+          }, {
+            quote: "Their support team actually knows what they're talking about. Fixed our Redis clustering issue in 20 minutes.",
+            author: "Sarah Chen",
+            title: "Lead DevOps Engineer",
+            company: "E-commerce Platform",
+            rating: 5
+          }, {
+            quote: "Been running our ML training pipelines here for 8 months. Never had a single outage during our critical batch jobs.",
+            author: "David Rodriguez",
+            title: "ML Engineering Manager",
+            company: "AI Company",
+            rating: 5
+          }].map((testimonial, index) => <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
                 <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
+                  {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />)}
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
                 <div className="flex items-center space-x-4">
@@ -681,8 +629,7 @@ const VPS = () => {
                     <div className="text-xs text-gray-500">{testimonial.company}</div>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -778,8 +725,6 @@ const VPS = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default VPS;
