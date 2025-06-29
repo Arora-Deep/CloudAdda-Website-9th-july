@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const TrainingLabs = () => {
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -130,20 +131,20 @@ const TrainingLabs = () => {
 
             <div className="space-y-8">
               {[{
-              title: "Weekend VM Config Hell",
-              description: "You spend your Friday nights setting up 50 VMs for Monday. Your family wonders if you hate them.",
+              title: "Weekend Lab Config Hell",
+              description: "You spend your Friday nights setting up 50 labs for Monday. Your family wonders if you hate them.",
               icon: Clock
             }, {
               title: "Mid-Session Meltdown",
-              description: "15 minutes into a bootcamp, labs crash. Students stare. You sweat.",
+              description: "15 minutes into a bootcamp, labs crash. Participants stare. You sweat.",
               icon: AlertTriangle
             }, {
               title: "Support Black Hole",
-              description: "2 AM panic. A bot replies: \"Try restarting.\" Your session's in 5 hours.",
+              description: "2 AM panic. An agent replies: \"Try restarting.\" Your session's in 5 hours.",
               icon: MessageCircle
             }, {
               title: "Cost Bomb",
-              description: "You forget to turn off instances. ₹500 becomes ₹5,000. Again.",
+              description: "You forget to turn off instances. $50 becomes $500. Again.",
               icon: DollarSign
             }].map((pain, index) => <div key={index} className="group hover:scale-105 transition-all duration-300">
                   <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-red-200 transition-all duration-300 hover:shadow-xl">
@@ -184,9 +185,9 @@ const TrainingLabs = () => {
             features: ["Peak activity handling", "Real-time monitoring", "Auto-failover", "99.9% uptime"]
           }, {
             title: "Support That Actually Helps",
-            description: "24/7 engineers with training infra experience. Emergency hotline. <2 hour SLA. No bots — ever.",
+            description: "Instant support with training infra experience. Emergency hotline. No bots — ever.",
             icon: Users,
-            features: ["24/7 engineers", "Emergency hotline", "<2 hour SLA", "No bots ever"]
+            features: ["Instant support", "Emergency hotline", "Training experts", "No bots ever"]
           }].map((solution, index) => <div key={index} className="group hover:scale-105 transition-all duration-500">
                 <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl h-full">
                   <div className="flex flex-col h-full">
@@ -269,12 +270,12 @@ const TrainingLabs = () => {
                 
                 <p className="text-lg text-gray-600 leading-relaxed">View participant screens, take control when needed, and provide instant help. No more walking around the classroom or dealing with "it's not working" complaints.</p>
                 
-                <ul className="space-y-4">
-                  {["Remote screen viewing", "Take control assistance", "File sharing & transfers", "Real-time chat support"].map((feature, index) => <li key={index} className="flex items-center space-x-3">
+                <div className="grid grid-cols-2 gap-4">
+                  {["Remote screen viewing", "Take control assistance"].map((feature, index) => <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-500" />
                       <span className="text-gray-700">{feature}</span>
-                    </li>)}
-                </ul>
+                    </div>)}
+                </div>
               </div>
             </div>
 
@@ -294,7 +295,7 @@ const TrainingLabs = () => {
                 </p>
                 
                 <ul className="space-y-4">
-                  {["Pre-built curriculum templates", "Auto-scaling based on enrollment", "Custom environment configuration", "Bulk student onboarding"].map((feature, index) => <li key={index} className="flex items-center space-x-3">
+                  {["Pre-built curriculum templates", "Auto-scaling based on enrollment", "Custom environment configuration", "Bulk participant onboarding"].map((feature, index) => <li key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-500" />
                       <span className="text-gray-700">{feature}</span>
                     </li>)}
@@ -318,14 +319,8 @@ const TrainingLabs = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Purpose-Built for Every Kind of Training</h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div className="relative">
-              <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
-                [Split-screen showing 6 types of training environments]
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="overflow-hidden">
+            <div className="flex animate-marquee space-x-8">
               {[{
               title: "Coding Bootcamps",
               description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs, version control.",
@@ -342,48 +337,26 @@ const TrainingLabs = () => {
               title: "Corporate Upskilling",
               description: "Compliance-ready labs, scalable to 10,000+ users.",
               icon: Users
-            }].map((useCase, index) => <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <useCase.icon className="w-5 h-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900 mb-2">{useCase.title}</h3>
-                      <p className="text-sm text-gray-600">{useCase.description}</p>
-                    </div>
-                  </div>
-                </div>)}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[{
-            title: "Networking & Systems Training",
-            description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.",
-            icon: Users
-          }, {
-            title: "Hackathons & Workshops",
-            description: "On-demand environments for 100s of participants. Instant provisioning, no local setup, perfect for time-boxed events.",
-            icon: Rocket
-          }, {
-            title: "Networking Labs",
-            description: "Simulated enterprise network environments for training on routing, switching, and troubleshooting at scale.",
-            icon: Users
-          }, {
-            title: "Capture the Flag (CTF) Competitions",
-            description: "Realistic attack-defense setups for cybersecurity contests, team-based or individual.",
-            icon: Shield
-          }, {
-            title: "Certification Prep Labs",
-            description: "Practice environments preloaded with the exact tools and configs needed for cert exams (e.g., RHCE, OSCP, CEH).",
-            icon: Star
-          }].map((useCase, index) => <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+            }, {
+              title: "Networking & Systems Training",
+              description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.",
+              icon: Users
+            }, {
+              title: "Hackathons & Workshops",
+              description: "On-demand environments for 100s of participants. Instant provisioning, no local setup, perfect for time-boxed events.",
+              icon: Rocket
+            }, {
+              title: "Networking Labs",
+              description: "Simulated enterprise network environments for training on routing, switching, and troubleshooting at scale.",
+              icon: Users
+            }].map((useCase, index) => <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 min-w-[300px] flex-shrink-0">
                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                   <useCase.icon className="w-6 h-6 text-purple-600" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-3">{useCase.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
               </div>)}
+            </div>
           </div>
         </div>
       </section>
@@ -431,13 +404,10 @@ const TrainingLabs = () => {
             answer: "No problem — instant tweaks, mid-session scaling, and live config support."
           }, {
             question: "What if things break during class?",
-            answer: "Real engineers. 24/7. <2 hour SLA. No bots. No \"please wait.\""
+            answer: "Real engineers. Instant support. No bots. No \"please wait.\""
           }, {
             question: "What if we're not technical enough to explain what we need?",
-            answer: "Our onboarding team speaks fluent training. Just tell us what you teach — we handle the rest."
-          }, {
-            question: "What if it's too complicated to manage?",
-            answer: "You get a simple dashboard. We manage everything else."
+            answer: "Just tell us what you teach — we handle the rest."
           }, {
             question: "What if this is too good to be true?",
             answer: "Ask our customers. Or better — try it and see for yourself."
@@ -552,11 +522,11 @@ const TrainingLabs = () => {
 
           <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200">
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">15,000+</div>
+              <div className="text-3xl font-bold text-purple-600">1,500+</div>
               <div className="text-gray-600">Students Trained Weekly</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">500+</div>
+              <div className="text-3xl font-bold text-purple-600">100+</div>
               <div className="text-gray-600">Training Companies</div>
             </div>
             <div className="text-center">
@@ -623,4 +593,5 @@ const TrainingLabs = () => {
       </footer>
     </div>;
 };
+
 export default TrainingLabs;
