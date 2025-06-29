@@ -167,7 +167,7 @@ const TrainingLabs = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Infrastructure Built Only For Trainers</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Infrastructure Built For Trainers</h2>
             <div className="w-32 h-1 bg-purple-500 mx-auto rounded-full"></div>
           </div>
 
