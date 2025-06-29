@@ -265,12 +265,9 @@ const TrainingLabs = () => {
                   <span className="text-blue-700 font-semibold">Remote Access</span>
                 </div>
                 
-                <h3 className="text-3xl font-bold text-gray-900">Help Students Without Leaving Your Seat</h3>
+                <h3 className="text-3xl font-bold text-gray-900">Help participants Without Leaving Your Seat</h3>
                 
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  View student screens, take control when needed, and provide instant help. 
-                  No more walking around the classroom or dealing with "it's not working" complaints.
-                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">View participant screens, take control when needed, and provide instant help. No more walking around the classroom or dealing with "it's not working" complaints.</p>
                 
                 <ul className="space-y-4">
                   {["Remote screen viewing", "Take control assistance", "File sharing & transfers", "Real-time chat support"].map((feature, index) => <li key={index} className="flex items-center space-x-3">
