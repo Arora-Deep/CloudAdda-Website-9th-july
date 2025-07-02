@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -148,51 +147,6 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <Card className="bg-gray-50 border-0 shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-gray-900 flex items-center">
-                      <Phone className="w-5 h-5 mr-2 text-purple-600" />
-                      Prefer Email or Phone?
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3 p-3 bg-white rounded-lg">
-                      <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                        <Mail className="w-5 h-5 text-purple-600" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-900 text-sm">Email</div>
-                        <div className="text-gray-600 text-sm">hello@cloudadda.com</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-white rounded-lg">
-                      <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-orange-600" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-900 text-sm">Phone</div>
-                        <div className="text-gray-600 text-sm">+91-98765-43210</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-white rounded-lg">
-                      <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                        <Clock className="w-5 h-5 text-purple-600" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-900 text-sm">Availability</div>
-                        <div className="text-gray-600 text-sm">Mon–Sat, 10 AM – 7 PM IST</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-100">
-                  <h3 className="font-bold text-blue-900 mb-3 text-xl">Bonus:</h3>
-                  <p className="text-blue-800 text-lg">We've been known to answer emails embarrassingly fast. Try us.</p>
-                </div>
-              </div>
             </div>
 
             {/* Right Side - Form */}
@@ -200,54 +154,69 @@ const Contact = () => {
               <div className="bg-gradient-to-r from-purple-600 to-orange-600 p-8">
                 <CardTitle className="text-3xl font-bold text-white text-center">Talk to Us</CardTitle>
               </div>
-              <CardContent className="p-8 space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-semibold text-gray-700 mb-2 block">Full Name *</label>
-                    <Input placeholder="Your full name" className="border-gray-200 focus:border-purple-500" />
-                  </div>
-                  <div>
-                    <label className="text-sm font-semibold text-gray-700 mb-2 block">Work Email *</label>
-                    <Input type="email" placeholder="you@company.com" className="border-gray-200 focus:border-purple-500" />
-                  </div>
+              <CardContent className="p-8">
+                {/* Formaloo Form Embed */}
+                <div className="w-full">
+                  <iframe
+                    src="https://formaloo.net/contact-form"
+                    width="100%"
+                    height="600"
+                    frameBorder="0"
+                    className="rounded-lg"
+                    title="Contact Form"
+                  />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-semibold text-gray-700 mb-2 block">Phone Number</label>
-                    <Input placeholder="+91-XXXXX-XXXXX" className="border-gray-200 focus:border-purple-500" />
-                  </div>
-                  <div>
-                    <label className="text-sm font-semibold text-gray-700 mb-2 block">Company Name</label>
-                    <Input placeholder="Your company" className="border-gray-200 focus:border-purple-500" />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-2 block">What do you need help with?</label>
-                  <Select>
-                    <SelectTrigger className="border-gray-200 focus:border-purple-500">
-                      <SelectValue placeholder="Choose an option" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="training-labs">Training Labs</SelectItem>
-                      <SelectItem value="cloud-desktops">Cloud Desktops (DaaS)</SelectItem>
-                      <SelectItem value="vps">VPS</SelectItem>
-                      <SelectItem value="not-sure">Not Sure Yet</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-2 block">Message *</label>
-                  <Textarea rows={4} placeholder="Tell us about your requirements..." className="border-gray-200 focus:border-purple-500" />
-                </div>
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-orange-600 hover:from-purple-700 hover:to-orange-700 text-white rounded-full py-4 text-lg font-semibold">
-                  → Get in Touch
-                  <Send className="ml-2 h-5 w-5" />
-                </Button>
-                <p className="text-center text-sm text-gray-500 italic">
+                <p className="text-center text-sm text-gray-500 italic mt-4">
                   🧃 No spam. No cold calls. Just genuinely helpful humans.
                 </p>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Contact Info and Bonus Section - Side by Side */}
+          <div className="grid md:grid-cols-2 gap-8 mt-16">
+            <Card className="bg-gray-50 border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl text-gray-900 flex items-center">
+                  <Phone className="w-5 h-5 mr-2 text-purple-600" />
+                  Prefer Email or Phone?
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center space-x-3 p-3 bg-white rounded-lg">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900 text-sm">Email</div>
+                    <div className="text-gray-600 text-sm">hello@cloudadda.com</div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3 p-3 bg-white rounded-lg">
+                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-orange-600" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900 text-sm">Phone</div>
+                    <div className="text-gray-600 text-sm">+91-98765-43210</div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3 p-3 bg-white rounded-lg">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900 text-sm">Availability</div>
+                    <div className="text-gray-600 text-sm">Mon–Sat, 10 AM – 7 PM IST</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-100">
+              <h3 className="font-bold text-blue-900 mb-3 text-xl">Bonus:</h3>
+              <p className="text-blue-800 text-lg">We've been known to answer emails embarrassingly fast. Try us.</p>
+            </div>
           </div>
         </div>
       </section>
