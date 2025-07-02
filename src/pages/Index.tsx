@@ -1,8 +1,9 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Play, Users, Zap, Shield, Server, Monitor, Cloud, CheckCircle, Star, Clock, Award, TrendingUp, Target, Lightbulb, BookOpen, Heart, Calendar, Download, ChevronRight, Sparkles, Quote, PlusCircle, Minus, Plus } from "lucide-react";
+import { ArrowRight, Play, Users, Zap, Shield, Server, Monitor, Cloud, CheckCircle, Star, Clock, Award, TrendingUp, Target, Lightbulb, BookOpen, Heart, Calendar, Download, ChevronRight, Sparkles, Quote, PlusCircle, Minus, Plus, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
