@@ -5,6 +5,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -55,24 +56,28 @@ const Index = () => {
     name: "Company 8",
     logo: "/placeholder.svg"
   }];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeading(prev => (prev + 1) % headings.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlideIndex(prev => (prev + 1) % slidingWords.length);
     }, 2500);
     return () => clearInterval(slideInterval);
   }, []);
+
   useEffect(() => {
     const logoInterval = setInterval(() => {
       setCurrentLogoIndex(prev => (prev + 1) % customerLogos.length);
     }, 2000);
     return () => clearInterval(logoInterval);
   }, []);
+
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -139,7 +144,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section - SIMPLIFIED AND BRIEF */}
-      <section className="bg-white pt-16 pb-20">
+      <section className="bg-white pt-16 pb-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -165,6 +170,21 @@ const Index = () => {
             </div>
             <div className="relative">
               <img src="/lovable-uploads/6df3b19a-2c57-45c8-89b1-a0f0e58db9ab.png" alt="3D illustration of a person with laptop and lightbulb idea" className="w-full max-w-lg mx-auto" />
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Company Logos Marquee */}
+        <div className="absolute bottom-0 left-0 right-0 bg-transparent overflow-hidden py-4">
+          <div className="relative">
+            <div className="flex animate-marquee-fast">
+              {customerLogos.concat(customerLogos).map((logo, index) => (
+                <div key={index} className="flex-shrink-0 mx-8 flex items-center justify-center">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300 w-32 h-16 flex items-center justify-center">
+                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
