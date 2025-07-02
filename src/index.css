@@ -92,5 +92,5 @@
 }
 
 .animate-marquee-fast {
-  animation: marquee-fast 8s linear infinite;
+  animation: marquee-fast 15s linear infinite;
 }
