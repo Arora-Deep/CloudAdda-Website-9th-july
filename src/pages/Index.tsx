@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -135,6 +136,34 @@ const Index = () => {
             <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50">
               Book a Demo
             </Button>
+          </div>
+        </div>
+
+        {/* Company Logo Marquee */}
+        <div className="mt-16 overflow-hidden bg-transparent py-8">
+          <div className="relative">
+            <div className="animate-marquee-fast whitespace-nowrap flex items-center">
+              <div className="flex items-center space-x-16 mx-8">
+                <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/google.com" alt="Google" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/amazon.com" alt="Amazon" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/ibm.com" alt="IBM" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/oracle.com" alt="Oracle" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/salesforce.com" alt="Salesforce" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/adobe.com" alt="Adobe" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/netflix.com" alt="Netflix" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+              </div>
+              <div className="flex items-center space-x-16 mx-8">
+                <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/google.com" alt="Google" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/amazon.com" alt="Amazon" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/ibm.com" alt="IBM" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/oracle.com" alt="Oracle" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/salesforce.com" alt="Salesforce" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/adobe.com" alt="Adobe" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+                <img src="https://logo.clearbit.com/netflix.com" alt="Netflix" className="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
