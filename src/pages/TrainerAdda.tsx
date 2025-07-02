@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -73,86 +72,79 @@ const TrainerAdda = () => {
   }, []);
 
   const blogPosts = [{
-    id: "building-effective-cloud-training",
-    title: "Building Effective Cloud Training Programs",
-    description: "A comprehensive guide to designing and implementing cloud training curricula that drive real results.",
+    id: "zero-to-live-playbook",
+    title: "Zero to Live — How to Deliver a Flawless Virtual Training Lab in 3 Hours",
+    description: "The complete playbook for modern trainers - from training plan to fully functional, cloud-hosted lab environment in just 3 hours.",
     category: "Training Strategy",
-    readTime: "8 min read",
+    readTime: "12 min read",
     date: "Dec 15, 2024",
-    author: "Priya Sharma",
+    author: "CloudAdda Team",
     featured: true,
   }, {
-    id: "remote-lab-management",
-    title: "Remote Lab Management Best Practices",
-    description: "Tips and tricks for managing virtual training environments across distributed teams.",
-    category: "Technical Guide",
-    readTime: "12 min read",
+    id: "training-lab-costs",
+    title: "Why Your Training Lab Costs Are So High (And How to Cut Them by 70%)",
+    description: "Breaking down the hidden cost traps of traditional virtual lab setups and how next-gen platforms help trainers save 60–80%.",
+    category: "Cost Management",
+    readTime: "8 min read",
     date: "Dec 12, 2024",
-    author: "Rajesh Kumar",
+    author: "CloudAdda Team",
     featured: false,
   }, {
-    id: "cost-optimization-training",
-    title: "Cost Optimization for Training Infrastructure",
-    description: "How to reduce training costs by 40% without compromising on quality or performance.",
-    category: "Cost Management",
+    id: "daas-takeover-2025",
+    title: "Why DaaS Is Taking Over: The Shift Away from Laptops in 2025",
+    description: "Smart companies are moving away from traditional laptops to cloud desktops. Here's why and how to make the switch.",
+    category: "Technology Trends",
     readTime: "6 min read",
     date: "Dec 10, 2024",
-    author: "Anjali Mehta",
+    author: "CloudAdda Team",
     featured: false,
   }];
 
   const caseStudies = [{
-    id: "techcorp-transformation",
-    title: "TechCorp's Digital Transformation Journey",
-    description: "How TechCorp trained 500+ developers on cloud technologies in 6 months",
-    company: "TechCorp",
-    results: "500+ developers trained, 85% certification rate",
-    category: "Enterprise Training",
-  }, {
-    id: "startup-accelerator-bootcamp",
-    title: "StartupAccelerator's Bootcamp Success",
-    description: "Scaling technical education for 50 startups simultaneously",
-    company: "StartupAccelerator",
-    results: "50 startups, 200+ participants, 95% satisfaction",
-    category: "Bootcamp",
+    id: "call-center-cloud-desktops",
+    title: "How a Call Center Saved ₹20 Lakhs by Moving to Cloud Desktops",
+    description: "A mid-sized call center with 200 agents transformed their operations and cut costs dramatically",
+    company: "Call Center Case Study",
+    results: "₹20L annual savings, 98.7% uptime, 33% productivity boost",
+    category: "Cloud Desktops",
   }];
 
   const playbooks = [{
-    id: "aws-certification",
-    title: "AWS Certification Training Playbook",
-    description: "Complete curriculum and lab setup for AWS certification preparation",
-    type: "Cloud Platform",
-    duration: "4 weeks",
+    id: "zero-to-live",
+    title: "Zero to Live — Virtual Training Lab in 3 Hours",
+    description: "The complete playbook every modern trainer needs to deliver flawless virtual training labs",
+    type: "Training Strategy",
+    duration: "3 hours",
   }, {
-    id: "devops-fundamentals",
-    title: "DevOps Fundamentals Workshop",
-    description: "Hands-on DevOps training with real-world scenarios and tools",
-    type: "DevOps",
-    duration: "2 weeks",
+    id: "scaling-1000-students",
+    title: "Scaling to 1,000 Students: Infrastructure Strategies",
+    description: "Infrastructure strategies that don't break mid-session when scaling to thousands of students",
+    type: "Scaling Guide",
+    duration: "Advanced",
   }, {
-    id: "kubernetes-mastery",
-    title: "Kubernetes Mastery Program",
-    description: "Advanced Kubernetes training with practical deployment scenarios",
-    type: "Container Orchestration",
-    duration: "3 weeks",
+    id: "virtual-lab-checklist",
+    title: "The Ultimate Virtual Lab Checklist",
+    description: "Don't miss these 7 critical things before you go live with your virtual training environment",
+    type: "Checklist",
+    duration: "Pre-Launch",
   }];
 
   const downloads = [{
-    title: "Training ROI Calculator",
-    description: "Calculate the return on investment for your training programs",
-    type: "Excel Template",
+    title: "Lab Planning Worksheet",
+    description: "Speed up your lab environment definition with our comprehensive planning template",
+    type: "PDF Template",
     size: "2.5 MB",
     downloads: "1.2k"
   }, {
-    title: "Lab Setup Checklist",
-    description: "Complete checklist for setting up virtual training environments",
+    title: "Virtual Lab Setup Checklist",
+    description: "15-point readiness checklist with pre-launch verification and troubleshooting guide",
     type: "PDF Guide",
     size: "850 KB",
     downloads: "3.4k"
   }, {
-    title: "Curriculum Planning Template",
-    description: "Professional template for designing training curricula",
-    type: "PowerPoint",
+    title: "Trainer Onboarding Checklist",
+    description: "Complete onboarding checklist to get trainers up and running quickly",
+    type: "PDF Template",
     size: "1.8 MB",
     downloads: "2.1k"
   }];
@@ -306,10 +298,10 @@ const TrainerAdda = () => {
                 <CardContent>
                   <div className="space-y-3 mb-6">
                     {[
-                      "Complete curriculum guide",
-                      "Lab setup instructions",
-                      "Assessment materials",
-                      "Instructor resources"
+                      "Complete step-by-step guide",
+                      "Real-world examples",
+                      "Downloadable templates",
+                      "Expert tips and tricks"
                     ].map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-3">
                         <CheckCircle className="w-5 h-5 text-green-500" />
