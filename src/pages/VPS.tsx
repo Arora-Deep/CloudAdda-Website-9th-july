@@ -408,39 +408,10 @@ const VPS = () => {
                   </Button>
                 </div>
                 {showComingSoon && (
-                  <div className="text-center py-4 text-purple-600 font-semibold">
+                  <div className="text-center py-8 text-purple-600 font-semibold text-lg">
                     Coming Soon!
                   </div>
                 )}
-                <div className="space-y-3">
-                  {[{
-                  provider: "CloudAdda VPS",
-                  speed: "1,247 MB/s",
-                  bar: 100
-                }, {
-                  provider: "AWS t3.medium",
-                  speed: "387 MB/s",
-                  bar: 31
-                }, {
-                  provider: "DigitalOcean",
-                  speed: "445 MB/s",
-                  bar: 36
-                }, {
-                  provider: "Linode",
-                  speed: "523 MB/s",
-                  bar: 42
-                }].map((bench, index) => <div key={index} className="space-y-1">
-                      <div className="flex justify-between text-sm">
-                        <span className={index === 0 ? "font-bold text-purple-600" : "text-gray-600"}>{bench.provider}</span>
-                        <span className={index === 0 ? "font-bold text-purple-600" : "text-gray-600"}>{bench.speed}</span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div className={`h-2 rounded-full ${index === 0 ? "bg-purple-500" : "bg-gray-400"}`} style={{
-                      width: `${bench.bar}%`
-                    }}></div>
-                      </div>
-                    </div>)}
-                </div>
               </div>
             </div>
 
