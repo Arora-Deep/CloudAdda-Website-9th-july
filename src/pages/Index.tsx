@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, CheckCircle, Star, Users, Zap, Shield, Clock, GraduationCap, Award, Target, Globe, TrendingUp, Building2, Briefcase, Heart, Lightbulb, Code2, Database, Server, Cpu } from "lucide-react";
+import { ArrowRight, CheckCircle, Star, Users, Zap, Shield, Clock, GraduationCap, Award, Target, Globe, TrendingUp, Building2, Briefcase, Heart, Lightbulb, Code2, Database, Server, Cpu, Monitor, Activity, HardDrive, Settings, Rocket, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
