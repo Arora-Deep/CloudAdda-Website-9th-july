@@ -73,88 +73,88 @@ const TrainerAdda = () => {
   }, []);
 
   const blogPosts = [{
-    id: "building-effective-cloud-training",
-    title: "Building Effective Cloud Training Programs",
-    description: "A comprehensive guide to designing and implementing cloud training curricula that drive real results.",
-    category: "Training Strategy",
+    id: "training-lab-costs",
+    title: "Why Your Training Lab Costs Are So High (And How to Cut Them by 70%)",
+    description: "Break down the hidden cost traps of traditional virtual lab setups and discover how next-gen platforms help trainers save 60–80% without compromising quality.",
+    category: "Cost Management",
     readTime: "8 min read",
     date: "Dec 15, 2024",
-    author: "Priya Sharma",
+    author: "CloudAdda Team",
     featured: true,
   }, {
-    id: "remote-lab-management",
-    title: "Remote Lab Management Best Practices",
-    description: "Tips and tricks for managing virtual training environments across distributed teams.",
-    category: "Technical Guide",
-    readTime: "12 min read",
+    id: "call-center-case-study",
+    title: "Behind the Screen: How a Call Center Saved ₹20 Lakhs by Moving to Cloud Desktops",
+    description: "A mid-sized call center's journey from operational chaos to streamlined efficiency with cloud desktops.",
+    category: "Case Study",
+    readTime: "6 min read",
     date: "Dec 12, 2024",
-    author: "Rajesh Kumar",
+    author: "CloudAdda Team",
     featured: false,
   }, {
-    id: "cost-optimization-training",
-    title: "Cost Optimization for Training Infrastructure",
-    description: "How to reduce training costs by 40% without compromising on quality or performance.",
-    category: "Cost Management",
-    readTime: "6 min read",
+    id: "daas-shift-2025",
+    title: "Why DaaS Is Taking Over: The Shift Away from Laptops in 2025",
+    description: "Explore why smart companies are moving away from laptops to Desktop-as-a-Service solutions.",
+    category: "Industry Trends",
+    readTime: "5 min read",
     date: "Dec 10, 2024",
-    author: "Anjali Mehta",
+    author: "CloudAdda Team",
     featured: false,
   }];
 
   const caseStudies = [{
-    id: "techcorp-transformation",
-    title: "TechCorp's Digital Transformation Journey",
-    description: "How TechCorp trained 500+ developers on cloud technologies in 6 months",
-    company: "TechCorp",
-    results: "500+ developers trained, 85% certification rate",
-    category: "Enterprise Training",
+    id: "call-center-transformation",
+    title: "Call Center's ₹20 Lakh Cloud Desktop Transformation",
+    description: "How a 200-agent call center eliminated operational chaos and saved ₹20 lakhs annually",
+    company: "Mid-sized Call Center",
+    results: "₹20L saved annually, 98.7% uptime, 33% productivity boost",
+    category: "Cloud Desktops",
   }, {
-    id: "startup-accelerator-bootcamp",
-    title: "StartupAccelerator's Bootcamp Success",
-    description: "Scaling technical education for 50 startups simultaneously",
-    company: "StartupAccelerator",
-    results: "50 startups, 200+ participants, 95% satisfaction",
-    category: "Bootcamp",
+    id: "laptop-to-daas-migration",
+    title: "Enterprise DaaS Migration Success Story",
+    description: "Complete transition from traditional laptops to cloud desktops across multiple departments",
+    company: "Enterprise Client",
+    results: "70% cost reduction, instant setup, enhanced security",
+    category: "DaaS Migration",
   }];
 
   const playbooks = [{
-    id: "aws-certification",
-    title: "AWS Certification Training Playbook",
-    description: "Complete curriculum and lab setup for AWS certification preparation",
-    type: "Cloud Platform",
-    duration: "4 weeks",
+    id: "zero-to-live-lab",
+    title: "Zero to Live — How to Deliver a Flawless Virtual Training Lab in 3 Hours",
+    description: "The complete blueprint to go from training plan to fully functional, cloud-hosted lab in just 3 hours",
+    type: "Lab Setup",
+    duration: "3 hours",
   }, {
-    id: "devops-fundamentals",
-    title: "DevOps Fundamentals Workshop",
-    description: "Hands-on DevOps training with real-world scenarios and tools",
-    type: "DevOps",
-    duration: "2 weeks",
+    id: "scaling-1000-students",
+    title: "Scaling to 1,000 Students: Infrastructure Strategies That Don't Break Mid-Session",
+    description: "Proven strategies to scale training infrastructure without crashes or failures during high-load sessions",
+    type: "Scaling",
+    duration: "Enterprise",
   }, {
-    id: "kubernetes-mastery",
-    title: "Kubernetes Mastery Program",
-    description: "Advanced Kubernetes training with practical deployment scenarios",
-    type: "Container Orchestration",
-    duration: "3 weeks",
+    id: "virtual-lab-checklist",
+    title: "The Ultimate Virtual Lab Checklist: 7 Things Before You Go Live",
+    description: "Essential pre-launch checklist to prevent virtual training failures and ensure smooth sessions",
+    type: "Quality Assurance",
+    duration: "Pre-Launch",
   }];
 
   const downloads = [{
-    title: "Training ROI Calculator",
-    description: "Calculate the return on investment for your training programs",
-    type: "Excel Template",
-    size: "2.5 MB",
-    downloads: "1.2k"
+    title: "Lab Planning Worksheet",
+    description: "Complete worksheet for defining lab environments and requirements",
+    type: "PDF Template",
+    size: "2.1 MB",
+    downloads: "3.2k"
   }, {
-    title: "Lab Setup Checklist",
-    description: "Complete checklist for setting up virtual training environments",
+    title: "Ultimate Lab Setup Checklist",
+    description: "15-point readiness checklist with troubleshooting flowchart and command sheets",
     type: "PDF Guide",
-    size: "850 KB",
-    downloads: "3.4k"
-  }, {
-    title: "Curriculum Planning Template",
-    description: "Professional template for designing training curricula",
-    type: "PowerPoint",
     size: "1.8 MB",
-    downloads: "2.1k"
+    downloads: "4.1k"
+  }, {
+    title: "Trainer Onboarding Checklist",
+    description: "Step-by-step onboarding process for new training environments",
+    type: "PDF Checklist",
+    size: "950 KB",
+    downloads: "2.8k"
   }];
 
   return (
@@ -285,7 +285,7 @@ const TrainerAdda = () => {
             </Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Complete Training Playbooks</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore detailed curricula and methodologies that guarantee training success.
+              Detailed blueprints and methodologies that guarantee training success.
             </p>
           </div>
 
@@ -306,10 +306,10 @@ const TrainerAdda = () => {
                 <CardContent>
                   <div className="space-y-3 mb-6">
                     {[
-                      "Complete curriculum guide",
-                      "Lab setup instructions",
-                      "Assessment materials",
-                      "Instructor resources"
+                      "Step-by-step implementation guide",
+                      "Real-world tested strategies",
+                      "Downloadable resources included",
+                      "Expert tips and best practices"
                     ].map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-3">
                         <CheckCircle className="w-5 h-5 text-green-500" />
@@ -338,9 +338,9 @@ const TrainerAdda = () => {
               <Lightbulb className="w-4 h-4 mr-2" />
               Adda Insights
             </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Technical Insights & Tutorials</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Technical Insights & Analysis</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Deep dives, comparisons, and practical guides to master cloud infrastructure.
+              In-depth analysis, cost breakdowns, and industry trends to help you make informed decisions.
             </p>
           </div>
 
@@ -395,7 +395,7 @@ const TrainerAdda = () => {
             </Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Real Success Stories</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              See how organizations transform their training with CloudAdda.
+              See how organizations transform their operations with CloudAdda solutions.
             </p>
           </div>
 
@@ -441,7 +441,7 @@ const TrainerAdda = () => {
             </Badge>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Essential Resources</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Professional templates, calculators, and guides to accelerate your training programs.
+              Professional templates, checklists, and worksheets to accelerate your training programs.
             </p>
           </div>
 
