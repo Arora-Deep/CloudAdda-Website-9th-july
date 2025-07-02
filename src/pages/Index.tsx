@@ -170,6 +170,37 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Company Logo Marquee */}
+      <section className="py-12 bg-gray-50 border-t border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <p className="text-sm text-gray-600 font-semibold tracking-wider uppercase">
+              Trusted by 500+ Companies Worldwide
+            </p>
+          </div>
+          
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((index) => (
+                <div key={index} className="flex-shrink-0 mx-8 w-32 h-16 flex items-center justify-center">
+                  <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
+                    <div className="w-20 h-8 bg-gray-300 rounded opacity-60"></div>
+                  </div>
+                </div>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((index) => (
+                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-8 w-32 h-16 flex items-center justify-center">
+                  <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
+                    <div className="w-20 h-8 bg-gray-300 rounded opacity-60"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* The Pain Section - UPDATED */}
       <section className="py-20 bg-purple-600 text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
