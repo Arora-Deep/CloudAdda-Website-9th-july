@@ -1,10 +1,12 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowRight, CheckCircle, Star, Users, Zap, Shield, Clock, GraduationCap, Award, Target, Globe, TrendingUp, Building2, Briefcase, Heart, Lightbulb, Code2, Database, Server, Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -30,31 +32,17 @@ const Index = () => {
   }];
 
   // Customer logos for carousel
-  const customerLogos = [{
-    name: "Company 1",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 2",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 3",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 4",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 5",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 6",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 7",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 8",
-    logo: "/placeholder.svg"
-  }];
+  const trustedCompanies = [
+    { name: "TechCorp", logo: "https://via.placeholder.com/120x40/4F46E5/FFFFFF?text=TechCorp" },
+    { name: "DataSys", logo: "https://via.placeholder.com/120x40/059669/FFFFFF?text=DataSys" },
+    { name: "CloudTech", logo: "https://via.placeholder.com/120x40/DC2626/FFFFFF?text=CloudTech" },
+    { name: "DevHub", logo: "https://via.placeholder.com/120x40/7C3AED/FFFFFF?text=DevHub" },
+    { name: "InnovateLab", logo: "https://via.placeholder.com/120x40/EA580C/FFFFFF?text=InnovateLab" },
+    { name: "CodeAcademy", logo: "https://via.placeholder.com/120x40/0891B2/FFFFFF?text=CodeAcademy" },
+    { name: "SkillForge", logo: "https://via.placeholder.com/120x40/BE185D/FFFFFF?text=SkillForge" },
+    { name: "EduTech", logo: "https://via.placeholder.com/120x40/16A34A/FFFFFF?text=EduTech" },
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeading(prev => (prev + 1) % headings.length);
@@ -69,11 +57,12 @@ const Index = () => {
   }, []);
   useEffect(() => {
     const logoInterval = setInterval(() => {
-      setCurrentLogoIndex(prev => (prev + 1) % customerLogos.length);
+      setCurrentLogoIndex(prev => (prev + 1) % trustedCompanies.length);
     }, 2000);
     return () => clearInterval(logoInterval);
   }, []);
-  return <div className="min-h-screen bg-white">
+
+  return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,7 +82,10 @@ const Index = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
                         <NavigationMenuLink asChild>
-                          <Link to="/training-labs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link
+                            to="/training-labs"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
                             <div className="text-sm font-medium leading-none">Training Labs</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Provisioned lab environments for training companies
@@ -101,7 +93,10 @@ const Index = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link
+                            to="/cloud-desktops"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
                             <div className="text-sm font-medium leading-none">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Fast, secure desktops accessible from anywhere
@@ -109,7 +104,10 @@ const Index = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/vps" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link
+                            to="/vps"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
                             <div className="text-sm font-medium leading-none">VPS Hosting</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               High-performance VPS with AMD EPYC processors
@@ -138,33 +136,48 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section - SIMPLIFIED AND BRIEF */}
-      <section className="bg-white pt-16 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Stop Fighting the Infra.<br />
-                  <span className="text-purple-600">Start Shipping Work.</span>
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">CloudAdda runs your Virtual Training Labs, Cloud Desktops & VPS — so your team doesn't have to.</p>
-                <p className="text-lg text-gray-800 font-semibold">
-                  No chaos. No cloud headaches. Just clean infra that does its damn job.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                  Let's Fix Your Infra
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
-                  See Pricing
-                </Button>
-              </div>
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center">
+            <Badge className="mb-8 bg-orange-100 text-orange-800 border-orange-200">
+              <Zap className="w-4 h-4 mr-2" />
+              Simple. Scalable. Human.
+            </Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+              <span className="text-foreground">Infrastructure</span><br />
+              <span className="text-orange-500">That Just Works</span>
+            </h1>
+            <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+              Stop wrestling with cloud complexity. Get training labs, cloud desktops, and VPS that deploy in hours, not days. 
+              Built for trainers, developers, and teams who need reliable infrastructure without the headaches.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-4">
+                Start Free Trial
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50 rounded-full px-8 py-4">
+                Book a Demo
+              </Button>
             </div>
-            <div className="relative">
-              <img src="/lovable-uploads/6df3b19a-2c57-45c8-89b1-a0f0e58db9ab.png" alt="3D illustration of a person with laptop and lightbulb idea" className="w-full max-w-lg mx-auto" />
+
+            {/* Company Logo Marquee */}
+            <div className="mt-16">
+              <p className="text-sm text-muted-foreground mb-8 font-medium">Trusted by leading training companies</p>
+              <div className="relative overflow-hidden">
+                <div className="flex animate-marquee space-x-12">
+                  {trustedCompanies.concat(trustedCompanies).map((company, index) => (
+                    <div key={index} className="flex-shrink-0">
+                      <img 
+                        src={company.logo} 
+                        alt={company.name}
+                        className="h-10 opacity-60 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -688,11 +701,11 @@ const Index = () => {
           {/* Premium CTA */}
           <div className="text-center mt-16">
             <div className="inline-flex items-center justify-center space-x-2 bg-purple-100 text-purple-600 px-6 py-3 rounded-full text-sm font-semibold mb-6">
-              <HeartHandshake className="w-4 h-4" />
+              <Heart className="w-4 h-4" />
               <span>Trusted by 500+ Companies Worldwide</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-lg px-8 py-4">
                 Experience the Difference
                 <Rocket className="ml-2 h-5 w-5" />
               </Button>
@@ -772,7 +785,7 @@ const Index = () => {
               <div className="flex transition-transform duration-1000 ease-in-out" style={{
               transform: `translateX(-${currentLogoIndex * (100 / 4)}%)`
             }}>
-                {customerLogos.concat(customerLogos).map((logo, index) => <div key={index} className="flex-shrink-0 w-1/4 px-8 flex items-center justify-center">
+                {trustedCompanies.map((logo, index) => <div key={index} className="flex-shrink-0 w-1/4 px-8 flex items-center justify-center">
                     <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 w-full max-w-[200px] h-20 flex items-center justify-center">
                       <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300" />
                     </div>
