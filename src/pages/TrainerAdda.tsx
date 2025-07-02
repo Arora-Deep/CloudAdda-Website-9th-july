@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -72,28 +73,28 @@ const TrainerAdda = () => {
   }, []);
 
   const blogPosts = [{
-    id: "new-economics-virtual-training",
-    title: "Why Your Training Lab Costs Are So High (And How to Cut Them by 70%)",
-    description: "This article breaks down the hidden cost traps of traditional virtual lab setups and shows you how next-gen platforms like CloudAdda help trainers save 60–80% without compromising quality.",
-    category: "Cost Management",
+    id: "building-effective-cloud-training",
+    title: "Building Effective Cloud Training Programs",
+    description: "A comprehensive guide to designing and implementing cloud training curricula that drive real results.",
+    category: "Training Strategy",
     readTime: "8 min read",
     date: "Dec 15, 2024",
     author: "Priya Sharma",
     featured: true,
   }, {
-    id: "call-center-success-story",
-    title: "Behind the Screen: How a Call Center Saved ₹20 Lakhs by Moving to Cloud Desktops",
-    description: "A mid-sized call center with 200 agents was drowning in operational issues. Here's how they transformed their business.",
-    category: "Case Study",
+    id: "remote-lab-management",
+    title: "Remote Lab Management Best Practices",
+    description: "Tips and tricks for managing virtual training environments across distributed teams.",
+    category: "Technical Guide",
     readTime: "12 min read",
     date: "Dec 12, 2024",
     author: "Rajesh Kumar",
     featured: false,
   }, {
-    id: "daas-taking-over-2025",
-    title: "Why DaaS Is Taking Over: The Shift Away from Laptops in 2025",
-    description: "Smart companies are asking: Why burn ₹70,000–₹1,20,000 per employee on hardware that slows down, breaks, or walks away when you can give your team a faster, safer, cloud desktop for a fraction of the cost?",
-    category: "Industry Trends",
+    id: "cost-optimization-training",
+    title: "Cost Optimization for Training Infrastructure",
+    description: "How to reduce training costs by 40% without compromising on quality or performance.",
+    category: "Cost Management",
     readTime: "6 min read",
     date: "Dec 10, 2024",
     author: "Anjali Mehta",
@@ -117,41 +118,41 @@ const TrainerAdda = () => {
   }];
 
   const playbooks = [{
-    id: "zero-to-live-3-hours",
-    title: "Zero to Live — How to Deliver a Flawless Virtual Training Lab in 3 Hours",
-    description: "The Playbook Every Modern Trainer Needs. This guide walks you through exactly how to go from a training plan on paper to a fully functional, cloud-hosted lab environment that's ready to teach in just 3 hours.",
-    type: "Quick Setup",
-    duration: "3 hours",
+    id: "aws-certification",
+    title: "AWS Certification Training Playbook",
+    description: "Complete curriculum and lab setup for AWS certification preparation",
+    type: "Cloud Platform",
+    duration: "4 weeks",
   }, {
-    id: "scaling-1000-students",
-    title: "Scaling to 1,000 Students: Infrastructure Strategies That Don't Break Mid-Session",
-    description: "Every trainer's nightmare: halfway through a session, 400 students drop off. This guide helps you avoid that disaster—and scale with confidence.",
-    type: "Scaling",
-    duration: "Advanced",
+    id: "devops-fundamentals",
+    title: "DevOps Fundamentals Workshop",
+    description: "Hands-on DevOps training with real-world scenarios and tools",
+    type: "DevOps",
+    duration: "2 weeks",
   }, {
-    id: "virtual-lab-checklist",
-    title: "The Ultimate Virtual Lab Checklist: Don't Miss These 7 Things Before You Go Live",
-    description: "Most virtual training failures don't happen during the session — they happen before it even starts. This checklist saves you from those moments.",
-    type: "Quality Assurance",
-    duration: "Pre-launch",
+    id: "kubernetes-mastery",
+    title: "Kubernetes Mastery Program",
+    description: "Advanced Kubernetes training with practical deployment scenarios",
+    type: "Container Orchestration",
+    duration: "3 weeks",
   }];
 
   const downloads = [{
-    title: "The Ultimate Lab Setup Checklist",
-    description: "15-point readiness checklist for every lab, pre-launch config verification, backup plan template, troubleshooting flowchart, quick-access command sheet for Linux & Windows",
-    type: "PDF Guide",
-    size: "850 KB",
-    downloads: "3.4k"
-  }, {
-    title: "Lab Planning Worksheet",
-    description: "Complete worksheet to define your exact lab needs, tools, OS requirements, and network configurations",
+    title: "Training ROI Calculator",
+    description: "Calculate the return on investment for your training programs",
     type: "Excel Template",
     size: "2.5 MB",
     downloads: "1.2k"
   }, {
-    title: "Trainer Onboarding Checklist",
-    description: "Step-by-step checklist to ensure smooth trainer onboarding and lab deployment",
+    title: "Lab Setup Checklist",
+    description: "Complete checklist for setting up virtual training environments",
     type: "PDF Guide",
+    size: "850 KB",
+    downloads: "3.4k"
+  }, {
+    title: "Curriculum Planning Template",
+    description: "Professional template for designing training curricula",
+    type: "PowerPoint",
     size: "1.8 MB",
     downloads: "2.1k"
   }];
