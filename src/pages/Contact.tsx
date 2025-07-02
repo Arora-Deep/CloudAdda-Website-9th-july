@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -149,47 +148,49 @@ const Contact = () => {
                 </div>
               </div>
 
-              <Card className="bg-gray-50 border-0 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-gray-900 flex items-center">
-                    <Phone className="w-6 h-6 mr-3 text-purple-600" />
-                    Prefer Email or Phone?
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-center space-x-4 p-4 bg-white rounded-lg">
-                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-purple-600" />
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <Card className="bg-gray-50 border-0 shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="text-2xl text-gray-900 flex items-center">
+                      <Phone className="w-6 h-6 mr-3 text-purple-600" />
+                      Prefer Email or Phone?
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div className="flex items-center space-x-4 p-4 bg-white rounded-lg">
+                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        <Mail className="w-6 h-6 text-purple-600" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">Email</div>
+                        <div className="text-gray-600">hello@cloudadda.com</div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Email</div>
-                      <div className="text-gray-600">hello@cloudadda.com</div>
+                    <div className="flex items-center space-x-4 p-4 bg-white rounded-lg">
+                      <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                        <Phone className="w-6 h-6 text-orange-600" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">Phone</div>
+                        <div className="text-gray-600">+91-98765-43210</div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center space-x-4 p-4 bg-white rounded-lg">
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-orange-600" />
+                    <div className="flex items-center space-x-4 p-4 bg-white rounded-lg">
+                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        <Clock className="w-6 h-6 text-purple-600" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">Availability</div>
+                        <div className="text-gray-600">Mon–Sat, 10 AM – 7 PM IST</div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Phone</div>
-                      <div className="text-gray-600">+91-98765-43210</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4 p-4 bg-white rounded-lg">
-                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                      <Clock className="w-6 h-6 text-purple-600" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Availability</div>
-                      <div className="text-gray-600">Mon–Sat, 10 AM – 7 PM IST</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
 
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
-                <h3 className="font-bold text-blue-900 mb-3 text-xl">Bonus:</h3>
-                <p className="text-blue-800 text-lg">We've been known to answer emails embarrassingly fast. Try us.</p>
+                <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100 flex flex-col justify-center">
+                  <h3 className="font-bold text-blue-900 mb-3 text-xl">Bonus:</h3>
+                  <p className="text-blue-800 text-lg">We've been known to answer emails embarrassingly fast. Try us.</p>
+                </div>
               </div>
             </div>
 
