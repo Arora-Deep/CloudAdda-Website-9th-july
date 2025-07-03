@@ -159,7 +159,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section - SIMPLIFIED AND BRIEF */}
-      <section className="bg-white pt-16 pb-20">
+      <section className="bg-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -190,30 +190,30 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Company Logo Marquee - Transparent overlay on hero */}
-      <section className="py-8 bg-transparent">
+      {/* Company Logo Marquee - Directly attached to hero, bigger logos, no fade */}
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden">
             <div className="flex animate-marquee">
               {customerLogos.map((logo, index) => (
-                <div key={index} className="flex-shrink-0 mx-8 w-32 h-16 flex items-center justify-center">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-gray-200/50 w-full h-full flex items-center justify-center">
+                <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center hover:shadow-md transition-shadow duration-300">
                     <img 
                       src={logo.logo} 
                       alt={logo.name} 
-                      className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                 </div>
               ))}
               {/* Duplicate for seamless loop */}
               {customerLogos.map((logo, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-8 w-32 h-16 flex items-center justify-center">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-gray-200/50 w-full h-full flex items-center justify-center">
+                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center hover:shadow-md transition-shadow duration-300">
                     <img 
                       src={logo.logo} 
                       alt={logo.name} 
-                      className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                 </div>
