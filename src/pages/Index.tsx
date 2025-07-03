@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -197,7 +198,7 @@ const Index = () => {
             <div className="flex animate-marquee-fast">
               {customerLogos.map((logo, index) => (
                 <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
+                  <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
                     <img 
                       src={logo.logo} 
                       alt={logo.name} 
@@ -209,7 +210,7 @@ const Index = () => {
               {/* Duplicate for seamless loop */}
               {customerLogos.map((logo, index) => (
                 <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
+                  <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
                     <img 
                       src={logo.logo} 
                       alt={logo.name} 
