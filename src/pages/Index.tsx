@@ -194,14 +194,14 @@ const Index = () => {
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden">
-            <div className="flex animate-marquee">
+            <div className="flex animate-marquee-fast">
               {customerLogos.map((logo, index) => (
                 <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center hover:shadow-md transition-shadow duration-300">
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
                     <img 
                       src={logo.logo} 
                       alt={logo.name} 
-                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="max-w-full max-h-full object-contain"
                     />
                   </div>
                 </div>
@@ -209,11 +209,11 @@ const Index = () => {
               {/* Duplicate for seamless loop */}
               {customerLogos.map((logo, index) => (
                 <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center hover:shadow-md transition-shadow duration-300">
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
                     <img 
                       src={logo.logo} 
                       alt={logo.name} 
-                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="max-w-full max-h-full object-contain"
                     />
                   </div>
                 </div>
