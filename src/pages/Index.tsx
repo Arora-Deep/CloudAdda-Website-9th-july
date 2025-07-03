@@ -5,6 +5,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -29,32 +30,50 @@ const Index = () => {
     highlight: "Delivers"
   }];
 
-  // Customer logos for carousel
-  const customerLogos = [{
-    name: "Company 1",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 2",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 3",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 4",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 5",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 6",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 7",
-    logo: "/placeholder.svg"
-  }, {
-    name: "Company 8",
-    logo: "/placeholder.svg"
-  }];
+  // Customer logos for carousel - Updated with actual logos
+  const customerLogos = [
+    {
+      name: "NIIT",
+      logo: "/lovable-uploads/15f02da9-f936-4b39-a769-8baf4f7c05ff.png"
+    },
+    {
+      name: "Bennett & Coleman - The Times of India",
+      logo: "/lovable-uploads/b8a0bbbe-66be-4c64-826a-4bba7e8c5684.png"
+    },
+    {
+      name: "Royal Arabian Destination Management",
+      logo: "/lovable-uploads/cc781258-e902-4178-8607-3c48b3ae0f4a.png"
+    },
+    {
+      name: "Indian Institute of Science",
+      logo: "/lovable-uploads/8d8ce7c4-1e77-4147-a1ae-2452ae2cf683.png"
+    },
+    {
+      name: "Red Hat",
+      logo: "/lovable-uploads/b35e7ed6-37e6-49c5-a22b-f48ae5ca78df.png"
+    },
+    {
+      name: "Molecular Filtration Group",
+      logo: "/lovable-uploads/ef895104-df65-4cbf-86e7-26f55337c5fa.png"
+    },
+    {
+      name: "Focus Group",
+      logo: "/lovable-uploads/41eb1686-5580-434b-947a-5e21f578c058.png"
+    },
+    {
+      name: "NUAGE",
+      logo: "/lovable-uploads/4f827c05-6a04-4635-b840-f9bc202e40ca.png"
+    },
+    {
+      name: "Stride Data",
+      logo: "/lovable-uploads/8a964dfa-c86e-485d-8c6e-f934d08e9d39.png"
+    },
+    {
+      name: "EdForce",
+      logo: "/lovable-uploads/db3358c1-b1a9-4070-a4a3-87901202446e.png"
+    }
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeading(prev => (prev + 1) % headings.length);
@@ -73,6 +92,7 @@ const Index = () => {
     }, 2000);
     return () => clearInterval(logoInterval);
   }, []);
+
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -175,18 +195,26 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden">
             <div className="flex animate-marquee">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((index) => (
+              {customerLogos.map((logo, index) => (
                 <div key={index} className="flex-shrink-0 mx-8 w-32 h-16 flex items-center justify-center">
                   <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-gray-200/50 w-full h-full flex items-center justify-center">
-                    <div className="w-20 h-8 bg-gray-300 rounded opacity-60"></div>
+                    <img 
+                      src={logo.logo} 
+                      alt={logo.name} 
+                      className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
                 </div>
               ))}
               {/* Duplicate for seamless loop */}
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((index) => (
+              {customerLogos.map((logo, index) => (
                 <div key={`duplicate-${index}`} className="flex-shrink-0 mx-8 w-32 h-16 flex items-center justify-center">
                   <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-gray-200/50 w-full h-full flex items-center justify-center">
-                    <div className="w-20 h-8 bg-gray-300 rounded opacity-60"></div>
+                    <img 
+                      src={logo.logo} 
+                      alt={logo.name} 
+                      className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
                 </div>
               ))}
