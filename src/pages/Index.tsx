@@ -150,7 +150,7 @@ const Index = () => {
                 Log In
               </Button>
               <Link to="/contact">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
+                <Button variant="orange" className="rounded-full px-6">
                   Start Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -177,7 +177,7 @@ const Index = () => {
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Button size="lg" variant="orange" className="text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                     Let's Fix Your Infra
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -337,7 +337,7 @@ const Index = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/contact">
-                    <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+                    <Button variant="orange" className="rounded-full px-8 py-3">
                       Schedule a Lab Call
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -411,7 +411,7 @@ const Index = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/contact">
-                    <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+                    <Button variant="orange" className="rounded-full px-8 py-3">
                       Launch a Desktop
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -496,7 +496,7 @@ const Index = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/contact">
-                    <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+                    <Button variant="orange" className="rounded-full px-8 py-3">
                       Get a VPS Now
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -650,7 +650,7 @@ const Index = () => {
               Tired of the "Before" life? Join the companies that made the switch to smart, scalable cloud.
             </h3>
             <Link to="/contact">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button size="lg" variant="orange" className="text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                 Explore Our Platform
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

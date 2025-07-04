@@ -31,7 +31,7 @@ const CloudDesktopsHero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
+              <Button size="lg" variant="orange" className="rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
                 Try Free for 7 Days
                 <Monitor className="ml-2 h-5 w-5" />
               </Button>

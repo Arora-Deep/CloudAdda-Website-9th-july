@@ -14,7 +14,7 @@ const CloudDesktopsFinalCTA = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+          <Button size="lg" variant="orange" className="text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
             Start Your Free Trial
             <Monitor className="ml-3 h-6 w-6" />
           </Button>
