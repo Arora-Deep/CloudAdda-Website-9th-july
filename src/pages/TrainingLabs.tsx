@@ -237,10 +237,12 @@ const TrainingLabs = () => {
                 </p>
                 
                 <ul className="space-y-4">
-                  {["Real-time resource monitoring", "Instant lab status updates", "Performance analytics", "One-click environment controls"].map((feature, index) => <li key={index} className="flex items-center space-x-3">
+                  {["Real-time resource monitoring", "Instant lab status updates", "Performance analytics", "One-click environment controls"].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-500" />
                       <span className="text-gray-700">{feature}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
               
@@ -270,40 +272,44 @@ const TrainingLabs = () => {
                 <p className="text-lg text-gray-600 leading-relaxed">View participant screens, take control when needed, and provide instant help. No more walking around the classroom or dealing with "it's not working" complaints.</p>
                 
                 <div className="grid grid-cols-2 gap-4">
-                  {["Remote screen viewing", "Take control assistance"].map((feature, index) => <div key={index} className="flex items-center space-x-3">
+                  {["Remote screen viewing", "Take control assistance"].map((feature, index) => (
+                    <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-500" />
                       <span className="text-gray-700">{feature}</span>
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
-            {/* Feature 3: Lab Deployment */}
+            {/* Feature 3: Custom Lab Configuration */}
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
                 <div className="inline-flex items-center space-x-2 bg-green-100 rounded-full px-4 py-2">
                   <Rocket className="w-5 h-5 text-green-600" />
-                  <span className="text-green-700 font-semibold">Instant Deployment</span>
+                  <span className="text-green-700 font-semibold">Custom Configuration</span>
                 </div>
                 
-                <h3 className="text-3xl font-bold text-gray-900">Deploy Labs in minutes, Not days</h3>
+                <h3 className="text-3xl font-bold text-gray-900">We Build Your Perfect Lab Environment</h3>
                 
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Pre-configured templates for every training scenario. Just select your curriculum type, 
-                  set the number of students, and click deploy. Your entire class is ready in minutes.
+                  While we have pre-configured templates for common training scenarios, we custom-build and configure 
+                  each lab environment to match your specific curriculum requirements and training needs. You focus on teaching — we handle the infrastructure.
                 </p>
                 
                 <ul className="space-y-4">
-                  {["Pre-built curriculum templates", "Auto-scaling based on enrollment", "Custom environment configuration", "Bulk participant onboarding"].map((feature, index) => <li key={index} className="flex items-center space-x-3">
+                  {["Custom-built for your curriculum", "Pre-configured training templates", "Tailored to your specific needs", "Ready-to-use lab access provided"].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-500" />
                       <span className="text-gray-700">{feature}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
               
               <div className="relative">
                 <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 h-96 flex items-center justify-center text-gray-400">
-                  [Dashboard Screenshot: Lab deployment interface with template selection, scaling options, and deployment progress]
+                  [Dashboard Screenshot: Lab configuration interface showing custom environment setup and template options]
                 </div>
               </div>
             </div>
