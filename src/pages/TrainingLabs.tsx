@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const TrainingLabs = () => {
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -247,8 +248,17 @@ const TrainingLabs = () => {
               </div>
               
               <div className="relative">
-                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 h-96 flex items-center justify-center text-gray-400">
-                  [Dashboard Screenshot: Overview screen showing multiple lab environments with status indicators, resource usage charts, and student activity]
+                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+                  <div style={{position:"relative", width:"100%", height:"0px", paddingBottom:"56.250%"}}>
+                    <iframe 
+                      allow="fullscreen;autoplay" 
+                      allowFullScreen 
+                      height="100%" 
+                      src="https://streamable.com/e/71cyqu?autoplay=1&muted=1" 
+                      width="100%" 
+                      style={{border:"none", width:"100%", height:"100%", position:"absolute", left:"0px", top:"0px", overflow:"hidden"}}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -256,8 +266,17 @@ const TrainingLabs = () => {
             {/* Feature 2: Student Access Control */}
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative order-2 lg:order-1">
-                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 h-96 flex items-center justify-center text-gray-400">
-                  [Dashboard Screenshot: Student management interface showing remote access controls, screen sharing, and assistance tools]
+                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+                  <div style={{position:"relative", width:"100%", height:"0px", paddingBottom:"56.250%"}}>
+                    <iframe 
+                      allow="fullscreen;autoplay" 
+                      allowFullScreen 
+                      height="100%" 
+                      src="https://streamable.com/e/71cyqu?autoplay=1&muted=1" 
+                      width="100%" 
+                      style={{border:"none", width:"100%", height:"100%", position:"absolute", left:"0px", top:"0px", overflow:"hidden"}}
+                    />
+                  </div>
                 </div>
               </div>
               
@@ -308,8 +327,17 @@ const TrainingLabs = () => {
               </div>
               
               <div className="relative">
-                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 h-96 flex items-center justify-center text-gray-400">
-                  [Dashboard Screenshot: Lab configuration interface showing custom environment setup and template options]
+                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+                  <div style={{position:"relative", width:"100%", height:"0px", paddingBottom:"56.250%"}}>
+                    <iframe 
+                      allow="fullscreen;autoplay" 
+                      allowFullScreen 
+                      height="100%" 
+                      src="https://streamable.com/e/71cyqu?autoplay=1&muted=1" 
+                      width="100%" 
+                      style={{border:"none", width:"100%", height:"100%", position:"absolute", left:"0px", top:"0px", overflow:"hidden"}}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
