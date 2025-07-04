@@ -5,7 +5,6 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -31,49 +30,37 @@ const Index = () => {
   }];
 
   // Customer logos for carousel - Updated with actual logos
-  const customerLogos = [
-    {
-      name: "NIIT",
-      logo: "/lovable-uploads/15f02da9-f936-4b39-a769-8baf4f7c05ff.png"
-    },
-    {
-      name: "Bennett & Coleman - The Times of India",
-      logo: "/lovable-uploads/b8a0bbbe-66be-4c64-826a-4bba7e8c5684.png"
-    },
-    {
-      name: "Royal Arabian Destination Management",
-      logo: "/lovable-uploads/cc781258-e902-4178-8607-3c48b3ae0f4a.png"
-    },
-    {
-      name: "Indian Institute of Science",
-      logo: "/lovable-uploads/8d8ce7c4-1e77-4147-a1ae-2452ae2cf683.png"
-    },
-    {
-      name: "Red Hat",
-      logo: "/lovable-uploads/b35e7ed6-37e6-49c5-a22b-f48ae5ca78df.png"
-    },
-    {
-      name: "Molecular Filtration Group",
-      logo: "/lovable-uploads/ef895104-df65-4cbf-86e7-26f55337c5fa.png"
-    },
-    {
-      name: "Focus Group",
-      logo: "/lovable-uploads/41eb1686-5580-434b-947a-5e21f578c058.png"
-    },
-    {
-      name: "NUAGE",
-      logo: "/lovable-uploads/4f827c05-6a04-4635-b840-f9bc202e40ca.png"
-    },
-    {
-      name: "Stride Data",
-      logo: "/lovable-uploads/8a964dfa-c86e-485d-8c6e-f934d08e9d39.png"
-    },
-    {
-      name: "EdForce",
-      logo: "/lovable-uploads/db3358c1-b1a9-4070-a4a3-87901202446e.png"
-    }
-  ];
-
+  const customerLogos = [{
+    name: "NIIT",
+    logo: "/lovable-uploads/15f02da9-f936-4b39-a769-8baf4f7c05ff.png"
+  }, {
+    name: "Bennett & Coleman - The Times of India",
+    logo: "/lovable-uploads/b8a0bbbe-66be-4c64-826a-4bba7e8c5684.png"
+  }, {
+    name: "Royal Arabian Destination Management",
+    logo: "/lovable-uploads/cc781258-e902-4178-8607-3c48b3ae0f4a.png"
+  }, {
+    name: "Indian Institute of Science",
+    logo: "/lovable-uploads/8d8ce7c4-1e77-4147-a1ae-2452ae2cf683.png"
+  }, {
+    name: "Red Hat",
+    logo: "/lovable-uploads/b35e7ed6-37e6-49c5-a22b-f48ae5ca78df.png"
+  }, {
+    name: "Molecular Filtration Group",
+    logo: "/lovable-uploads/ef895104-df65-4cbf-86e7-26f55337c5fa.png"
+  }, {
+    name: "Focus Group",
+    logo: "/lovable-uploads/41eb1686-5580-434b-947a-5e21f578c058.png"
+  }, {
+    name: "NUAGE",
+    logo: "/lovable-uploads/4f827c05-6a04-4635-b840-f9bc202e40ca.png"
+  }, {
+    name: "Stride Data",
+    logo: "/lovable-uploads/8a964dfa-c86e-485d-8c6e-f934d08e9d39.png"
+  }, {
+    name: "EdForce",
+    logo: "/lovable-uploads/db3358c1-b1a9-4070-a4a3-87901202446e.png"
+  }];
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeading(prev => (prev + 1) % headings.length);
@@ -92,7 +79,6 @@ const Index = () => {
     }, 2000);
     return () => clearInterval(logoInterval);
   }, []);
-
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -149,18 +135,16 @@ const Index = () => {
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
-              <Link to="/contact">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                  Start Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+              <Button className="text-white rounded-full px-6 bg-purple-600 hover:bg-purple-500">
+                Start Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section - SIMPLIFIED AND BRIEF */}
       <section className="bg-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -176,17 +160,13 @@ const Index = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact">
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                    Let's Fix Your Infra
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link to="/pricing">
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
-                    See Pricing
-                  </Button>
-                </Link>
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                  Let's Fix Your Infra
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
+                  See Pricing
+                </Button>
               </div>
             </div>
             <div className="relative">
@@ -196,40 +176,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Company Logo Marquee */}
+      {/* Company Logo Marquee - Directly attached to hero, bigger logos, no fade */}
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden">
             <div className="flex animate-marquee-fast">
-              {customerLogos.map((logo, index) => (
-                <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+              {customerLogos.map((logo, index) => <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img 
-                      src={logo.logo} 
-                      alt={logo.name} 
-                      className="max-w-full max-h-full object-contain"
-                    />
+                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain" />
                   </div>
-                </div>
-              ))}
+                </div>)}
               {/* Duplicate for seamless loop */}
-              {customerLogos.map((logo, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+              {customerLogos.map((logo, index) => <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img 
-                      src={logo.logo} 
-                      alt={logo.name} 
-                      className="max-w-full max-h-full object-contain"
-                    />
+                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain" />
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Pain Section */}
+      {/* The Pain Section - UPDATED */}
       <section className="py-20 bg-purple-600 text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -271,7 +239,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Who It's For Section */}
+      {/* Who It's For Section - MOVED UP */}
       <section className="py-32 bg-gray-50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
@@ -314,7 +282,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Fix Section - UPDATED WITH LEARN MORE BUTTONS */}
+      {/* The Fix Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -335,19 +303,10 @@ const Index = () => {
                   <p className="text-sm text-purple-600 font-semibold">For Training Firms & Enterprises</p>
                   <p className="text-lg text-gray-600 leading-relaxed">We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole hands-on cloud lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.</p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/contact">
-                    <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-                      Schedule a Lab Call
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                  <Link to="/training-labs">
-                    <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
-                      Learn More
-                    </Button>
-                  </Link>
-                </div>
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+                  Schedule a Lab Call
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </div>
               
               <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8">
@@ -409,19 +368,10 @@ const Index = () => {
                     <p><span className="font-semibold">Built-in snapshots, security policies, and remote access</span></p>
                   </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/contact">
-                    <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-                      Launch a Desktop
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                  <Link to="/cloud-desktops">
-                    <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
-                      Learn More
-                    </Button>
-                  </Link>
-                </div>
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+                  Launch a Desktop
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </div>
               
               <div className="lg:order-1 bg-gradient-to-br from-purple-50 to-pink-100 rounded-3xl p-8">
@@ -494,19 +444,10 @@ const Index = () => {
                     <p><span className="font-semibold">Indian & global locations. Backups included.</span></p>
                   </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/contact">
-                    <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-                      Get a VPS Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                  <Link to="/vps">
-                    <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
-                      Learn More
-                    </Button>
-                  </Link>
-                </div>
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+                  Get a VPS Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </div>
               
               <div className="bg-gradient-to-br from-orange-50 to-red-100 rounded-3xl p-8">
@@ -568,7 +509,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Switch You Didn't Know You Needed Section */}
+      {/* The Switch You Didn't Know You Needed Section - CLEANER TABLE WITH BIGGER IMAGES */}
       <section className="py-32 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -585,12 +526,12 @@ const Index = () => {
           </div>
 
           <div className="grid lg:grid-cols-7 gap-8 items-center">
-            {/* Left Image - Confused Person */}
+            {/* Left Image - Confused Person - MUCH BIGGER */}
             <div className="lg:col-span-2 flex justify-center">
               <img src="/lovable-uploads/9b9e01c2-e3f9-4704-9bc8-59a73b35ce7d.png" alt="Confused person representing before state" className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" />
             </div>
 
-            {/* Center Table */}
+            {/* Center Table - MUCH CLEANER DESIGN */}
             <div className="lg:col-span-3">
               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
                 <div className="overflow-x-auto">
@@ -638,28 +579,31 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right Image - Happy Person */}
+            {/* Right Image - Happy Person - MUCH BIGGER */}
             <div className="lg:col-span-2 flex justify-center">
               <img src="/lovable-uploads/8a2d7816-a253-40ef-a846-db190a4798a5.png" alt="Happy person representing after state" className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" />
             </div>
           </div>
 
-          {/* Call to Action - SINGLE CTA */}
+          {/* Call to Action */}
           <div className="text-center mt-20">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">
               Tired of the "Before" life? Join the companies that made the switch to smart, scalable cloud.
             </h3>
-            <Link to="/contact">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                 Explore Our Platform
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-            </Link>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
+                Talk to a Human
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why Us Section */}
+      {/* Why Us Section - REDESIGNED WITH CAROUSEL */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Horizontally Sliding Title */}
@@ -768,23 +712,26 @@ const Index = () => {
               </div>)}
           </div>
           
-          {/* Premium CTA - SINGLE CTA */}
+          {/* Premium CTA */}
           <div className="text-center mt-16">
             <div className="inline-flex items-center justify-center space-x-2 bg-purple-100 text-purple-600 px-6 py-3 rounded-full text-sm font-semibold mb-6">
               <HeartHandshake className="w-4 h-4" />
               <span>Trusted by 500+ Companies Worldwide</span>
             </div>
-            <Link to="/contact">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                 Experience the Difference
                 <Rocket className="ml-2 h-5 w-5" />
               </Button>
-            </Link>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-purple-600 text-purple-600 hover:bg-purple-50">
+                Talk to Our Team
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section - UPDATED WITHOUT CUSTOMER LOGO CAROUSEL */}
+      {/* Testimonials Section - REDESIGNED */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
@@ -839,6 +786,30 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Customer Logo Carousel */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Trusted by 500+ Companies Worldwide</h3>
+            <p className="text-gray-600">Join industry leaders who've made the smart switch</p>
+          </div>
+          
+          <div className="relative">
+            <div className="flex justify-center items-center overflow-hidden">
+              <div className="flex transition-transform duration-1000 ease-in-out" style={{
+              transform: `translateX(-${currentLogoIndex * (100 / 4)}%)`
+            }}>
+                {customerLogos.concat(customerLogos).map((logo, index) => <div key={index} className="flex-shrink-0 w-1/4 px-8 flex items-center justify-center">
+                    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 w-full max-w-[200px] h-20 flex items-center justify-center">
+                      <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  </div>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About CloudAdda Section */}
       <section className="py-20 bg-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -859,7 +830,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Section - CLEANER DESIGN WITH HIGHLIGHTED "NO HIDDEN GOTCHAS" */}
       <section className="py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -884,8 +855,7 @@ const Index = () => {
             description: "We ask 3-5 questions about your training needs, then deliver a complete lab environment.",
             features: ["Same-day delivery possible", "Fully customized environments", "Windows, Linux, or mixed stacks", "Scalable to any number of users"],
             cta: "Get Custom Quote",
-            gradient: "from-blue-500 to-blue-600",
-            link: "/contact"
+            gradient: "from-blue-500 to-blue-600"
           }, {
             title: "Virtual Desktops",
             price: "₹3,299",
@@ -893,8 +863,7 @@ const Index = () => {
             description: "High-performance cloud desktops with 2vCPU, 4GB RAM, and enterprise-grade security.",
             features: ["2vCPU, 4GB RAM, SSD storage", "99.9% uptime guarantee", "Built-in security & compliance", "Instant scaling"],
             cta: "Launch Desktop",
-            gradient: "from-purple-500 to-purple-600",
-            link: "/contact"
+            gradient: "from-purple-500 to-purple-600"
           }, {
             title: "VPS Hosting",
             price: "₹1,499",
@@ -902,8 +871,7 @@ const Index = () => {
             description: "NVMe-powered virtual servers with AMD EPYC processors and dedicated resources.",
             features: ["NVMe SSD storage", "AMD EPYC processors", "Full root access", "Multiple data center locations"],
             cta: "Get VPS Now",
-            gradient: "from-orange-500 to-orange-600",
-            link: "/contact"
+            gradient: "from-orange-500 to-orange-600"
           }].map((plan, index) => <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-200">
                   {/* Gradient top bar */}
@@ -933,12 +901,10 @@ const Index = () => {
                     </div>
                     
                     {/* CTA Button */}
-                    <Link to={plan.link}>
-                      <Button className={`w-full bg-gradient-to-r ${plan.gradient} hover:opacity-90 text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 shadow-lg`}>
-                        {plan.cta}
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Button>
-                    </Link>
+                    <Button className={`w-full bg-gradient-to-r ${plan.gradient} hover:opacity-90 text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 shadow-lg`}>
+                      {plan.cta}
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
                   </div>
                 </div>
               </div>)}
@@ -946,17 +912,15 @@ const Index = () => {
           
           <div className="text-center mt-16">
             <p className="text-gray-600 mb-6 text-lg">Need something custom? We've got you covered.</p>
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="text-orange-500 border-2 border-orange-500 hover:bg-orange-50 text-lg px-8 py-4 rounded-2xl">
-                Talk to Our Team
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+            <Button size="lg" variant="outline" className="text-orange-500 border-2 border-orange-500 hover:bg-orange-50 text-lg px-8 py-4 rounded-2xl">
+              Talk to Our Team
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* The Closer Section */}
+      {/* The Closer Section - SIMPLIFIED WITHOUT "DON'T LET THEM WIN" */}
       <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0">
@@ -1061,12 +1025,16 @@ const Index = () => {
                 Join 500+ companies who stopped fighting infrastructure and started winning customers.
               </p>
               
-              <Link to="/contact">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105">
                   Start Your Transformation
                   <Rocket className="ml-3 h-6 w-6" />
                 </Button>
-              </Link>
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
+                  Talk to Our Team
+                  <ArrowRight className="ml-3 h-6 w-6" />
+                </Button>
+              </div>
               
               <p className="text-sm text-gray-400 mt-6">
                 ⚡ Setup in hours, not weeks • 💰 Pay for what you use • 🔒 Enterprise security included
@@ -1093,30 +1061,30 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4">Solutions</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" className="hover:text-white transition-colors">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" className="hover:text-white transition-colors">Cloud Desktops</Link></li>
-                <li><Link to="/vps" className="hover:text-white transition-colors">VPS</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Custom Solutions</Link></li>
+                <li><a href="#" className="hover:text-white transition-colors">Training Labs</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Cloud Desktops</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">VPS</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Custom Solutions</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Careers</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Press</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link to="/support" className="hover:text-white transition-colors">Documentation</Link></li>
-                <li><Link to="/support" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link to="/trainer-adda" className="hover:text-white transition-colors">Community</Link></li>
-                <li><Link to="/support" className="hover:text-white transition-colors">Status</Link></li>
+                <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Community</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
               </ul>
             </div>
           </div>
@@ -1124,8 +1092,8 @@ const Index = () => {
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400">© 2024 CloudAdda. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
-              <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
