@@ -236,11 +236,9 @@ const Index = () => {
             {/* Left side - Content */}
             <div className="space-y-8">
               <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left">
-                <span className="text-white">You're Not a</span>
-                <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-yellow-400 bg-clip-text text-transparent"> Cloud Company.</span>
+                <span className="text-white">Focus on what you do best -</span>
                 <br />
-                <span className="text-white">So Why Are You Doing</span>
-                <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-yellow-400 bg-clip-text text-transparent"> Cloud's Job?</span>
+                <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-yellow-400 bg-clip-text text-transparent">we'll take care of the rest.</span>
               </h2>
               
               <div className="space-y-6 text-center lg:text-left">
@@ -466,16 +464,14 @@ const Index = () => {
                             <div className="bg-blue-600 h-2 rounded-full" style={{
                             width: '75%'
                           }}></div>
-                          </div>
                         </div>
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-gray-600">RAM</span>
-                          <div className="w-24 bg-gray-200 rounded-full h-2">
-                            <div className="bg-green-600 h-2 rounded-full" style={{
-                            width: '60%'
-                          }}></div>
-                          </div>
-                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-gray-600">RAM</span>
+                        <div className="w-24 bg-gray-200 rounded-full h-2">
+                          <div className="bg-green-600 h-2 rounded-full" style={{
+                          width: '60%'
+                        }}></div>
                       </div>
                     </div>
                   </div>
