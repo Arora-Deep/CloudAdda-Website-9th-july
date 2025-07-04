@@ -93,7 +93,8 @@ const Index = () => {
     return () => clearInterval(logoInterval);
   }, []);
 
-  return <div className="min-h-screen bg-white">
+  return (
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -291,7 +292,8 @@ const Index = () => {
                 If
               </div>
               
-              {["You're tired of spending hours configuring labs.", "You want your team to work — not wait for IT.", "You care about performance. But you care more about reliability.", "You want to scale, without feeling like you're managing a data center."].map((text, index) => <div key={index} className="flex items-start space-x-6 group">
+              {["You're tired of spending hours configuring labs.", "You want your team to work — not wait for IT.", "You care about performance. But you care more about reliability.", "You want to scale, without feeling like you're managing a data center."].map((text, index) => (
+                <div key={index} className="flex items-start space-x-6 group">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
                       {index + 1}
@@ -300,7 +302,8 @@ const Index = () => {
                   <p className="text-xl text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
                     {text}
                   </p>
-                </div>)}
+                </div>
+              ))}
               
               <div className="text-4xl lg:text-5xl font-bold text-purple-600 mt-12">
                 Then you're our people.
@@ -461,17 +464,15 @@ const Index = () => {
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-600">CPU</span>
                           <div className="w-24 bg-gray-200 rounded-full h-2">
-                            <div className="bg-blue-600 h-2 rounded-full" style={{
-                            width: '75%'
-                          }}></div>
+                            <div className="bg-blue-600 h-2 rounded-full" style={{width: '75%'}}></div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-gray-600">RAM</span>
-                        <div className="w-24 bg-gray-200 rounded-full h-2">
-                          <div className="bg-green-600 h-2 rounded-full" style={{
-                          width: '60%'
-                        }}></div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-gray-600">RAM</span>
+                          <div className="w-24 bg-gray-200 rounded-full h-2">
+                            <div className="bg-green-600 h-2 rounded-full" style={{width: '60%'}}></div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -624,14 +625,16 @@ const Index = () => {
                     }, {
                       before: "Confusing dashboards. No support.",
                       after: "Friendly support that actually helps."
-                    }].map((row, index) => <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
+                    }].map((row, index) => (
+                        <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
                           <td className="p-6 text-base text-gray-700 border-r border-gray-100 bg-red-25 leading-relaxed">
                             {row.before}
                           </td>
                           <td className="p-6 text-base text-gray-700 bg-green-25 leading-relaxed">
                             {row.after}
                           </td>
-                        </tr>)}
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -669,19 +672,23 @@ const Index = () => {
                 <div className="flex transition-transform duration-700 ease-in-out" style={{
                 transform: `translateX(-${currentSlideIndex * 100}%)`
               }}>
-                  {slidingWords.map((slide, index) => <div key={index} className="min-w-full flex items-center justify-center px-8">
+                  {slidingWords.map((slide, index) => (
+                    <div key={index} className="min-w-full flex items-center justify-center px-8">
                       <h2 className="text-4xl lg:text-6xl font-bold text-center leading-tight whitespace-nowrap">
                         <span className="text-gray-900">{slide.text} </span>
                         <span className="bg-gradient-to-r from-purple-800 via-purple-600 to-purple-300 bg-clip-text text-transparent">{slide.highlight}</span>
                       </h2>
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
             
             {/* Progress indicators */}
             <div className="flex justify-center mt-8 space-x-2">
-              {slidingWords.map((_, index) => <div key={index} className={`h-2 w-8 rounded-full transition-all duration-300 ${index === currentSlideIndex ? 'bg-purple-600' : 'bg-gray-300'}`} />)}
+              {slidingWords.map((_, index) => (
+                <div key={index} className={`h-2 w-8 rounded-full transition-all duration-300 ${index === currentSlideIndex ? 'bg-purple-600' : 'bg-gray-300'}`} />
+              ))}
             </div>
           </div>
           
@@ -703,13 +710,15 @@ const Index = () => {
             number: "500+",
             label: "Happy Clients",
             icon: Award
-          }].map((stat, index) => <div key={index} className="text-center group">
+          }].map((stat, index) => (
+              <div key={index} className="text-center group">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4 group-hover:bg-purple-600 transition-colors duration-300">
                   <stat.icon className="w-8 h-8 text-purple-600 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
-              </div>)}
+              </div>
+            ))}
           </div>
           
           {/* Premium Feature Cards */}
@@ -738,7 +747,8 @@ const Index = () => {
             description: "When you pay for performance, you get performance. Guaranteed resources, always.",
             color: "bg-gradient-to-br from-green-500 to-green-600",
             badge: "Guaranteed Performance"
-          }].map((item, index) => <div key={index} className="group relative">
+          }].map((item, index) => (
+              <div key={index} className="group relative">
                 <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden">
                   {/* Badge */}
                   <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-semibold">
@@ -765,7 +775,8 @@ const Index = () => {
                     <div className={`w-12 h-1 bg-gradient-to-r ${item.color.replace('bg-gradient-to-br', '')} rounded-full group-hover:w-20 transition-all duration-300`}></div>
                   </div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
           
           {/* Premium CTA - SINGLE CTA */}
@@ -813,10 +824,13 @@ const Index = () => {
             author: "CEO, EdTech Company",
             rating: 5,
             highlight: "saved our business"
-          }].map((testimonial, index) => <div key={index} className="group relative">
+          }].map((testimonial, index) => (
+              <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                   <div className="flex text-yellow-400 mb-6 justify-center">
-                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-6 h-6 fill-current" />)}
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-6 h-6 fill-current" />
+                    ))}
                   </div>
                   
                   <div className="relative mb-8">
@@ -834,7 +848,8 @@ const Index = () => {
                     </p>
                   </div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -905,7 +920,8 @@ const Index = () => {
             cta: "Get VPS Now",
             gradient: "from-orange-500 to-orange-600",
             link: "/contact"
-          }].map((plan, index) => <div key={index} className="group relative">
+          }].map((plan, index) => (
+              <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-200">
                   {/* Gradient top bar */}
                   <div className={`h-3 bg-gradient-to-r ${plan.gradient}`}></div>
@@ -925,12 +941,14 @@ const Index = () => {
                     
                     {/* Features */}
                     <div className="space-y-4 mb-8">
-                      {plan.features.map((feature, featureIndex) => <div key={featureIndex} className="flex items-center space-x-3">
+                      {plan.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center space-x-3">
                           <div className={`w-6 h-6 bg-gradient-to-r ${plan.gradient} rounded-full flex items-center justify-center flex-shrink-0`}>
                             <CheckCircle className="w-4 h-4 text-white" />
                           </div>
                           <span className="text-gray-700 text-base">{feature}</span>
-                        </div>)}
+                        </div>
+                      ))}
                     </div>
                     
                     {/* CTA Button */}
@@ -942,7 +960,8 @@ const Index = () => {
                     </Link>
                   </div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
           
           <div className="text-center mt-16">
@@ -1131,6 +1150,8 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
