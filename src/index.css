@@ -64,9 +64,21 @@
   * {
     @apply border-border;
   }
+  html {
+    @apply bg-black;
+  }
   body {
     @apply bg-black text-white;
   }
+  #root {
+    @apply bg-black min-h-screen;
+  }
+}
+
+/* Force black background on all elements */
+body, html, #root {
+  background-color: #000000 !important;
+  color: #ffffff !important;
 }
 
 @keyframes marquee {
