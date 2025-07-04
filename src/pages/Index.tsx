@@ -165,10 +165,13 @@ const Index = () => {
                   Let's Fix Your Infra
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" className="text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300" style={{ 
-                  background: 'radial-gradient(circle at center, #8b5cf6 0%, #7c3aed 30%, #6366f1 70%, #1e40af 100%)',
-                  backgroundSize: '150% 150%'
-                }}>
+                <Button 
+                  size="lg" 
+                  className="text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300" 
+                  style={{ 
+                    background: 'radial-gradient(circle at center, #8b5cf6 0%, #7c3aed 40%, #6366f1 80%, #1e40af 100%)'
+                  }}
+                >
                   Start Now
                 </Button>
               </div>
