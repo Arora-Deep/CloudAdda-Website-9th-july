@@ -168,7 +168,7 @@ const Index = () => {
               <div className="space-y-6">
                 <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Stop Fighting the Infra.<br />
-                  <span className="text-purple-600">Start Shipping Work.</span>
+                  <span className="bg-gradient-to-r from-purple-600 via-purple-500 to-blue-600 bg-clip-text text-transparent">Start Shipping Work.</span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">CloudAdda runs your Virtual Training Labs, Cloud Desktops & VPS — so your team doesn't have to.</p>
                 <p className="text-lg text-gray-800 font-semibold">
@@ -235,9 +235,12 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left side - Content */}
             <div className="space-y-8">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight text-center lg:text-left">
-                You're Not a Cloud Company.<br />
-                So Why Are You Doing Cloud's Job?
+              <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left">
+                <span className="text-white">You're Not a</span>
+                <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-yellow-400 bg-clip-text text-transparent"> Cloud Company.</span>
+                <br />
+                <span className="text-white">So Why Are You Doing</span>
+                <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-yellow-400 bg-clip-text text-transparent"> Cloud's Job?</span>
               </h2>
               
               <div className="space-y-6 text-center lg:text-left">
@@ -278,7 +281,7 @@ const Index = () => {
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               It's Not for Everyone.
               <br />
-              <span className="text-purple-600">
+              <span className="bg-gradient-to-r from-purple-600 via-purple-500 to-blue-600 bg-clip-text text-transparent">
                 Just the Smart Ones.
               </span>
             </h2>
@@ -318,8 +321,9 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              CloudAdda Handles Your Infra. So You Can Handle Your Business.
+            <h2 className="text-4xl font-bold mb-8">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 bg-clip-text text-transparent">CloudAdda Handles Your Infra.</span>
+              <span className="text-gray-900"> So You Can Handle Your Business.</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We don't give you a control panel and disappear. We deliver the infrastructure — fast, fully configured, and rock-solid.
@@ -575,7 +579,7 @@ const Index = () => {
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               The Switch You Didn't Know
               <br />
-              <span className="text-purple-600">
+              <span className="bg-gradient-to-r from-purple-600 via-purple-500 to-pink-600 bg-clip-text text-transparent">
                 You Needed.
               </span>
             </h2>
@@ -672,7 +676,7 @@ const Index = () => {
                   {slidingWords.map((slide, index) => <div key={index} className="min-w-full flex items-center justify-center px-8">
                       <h2 className="text-4xl lg:text-6xl font-bold text-center leading-tight whitespace-nowrap">
                         <span className="text-gray-900">{slide.text} </span>
-                        <span className="text-purple-600">{slide.highlight}</span>
+                        <span className="bg-gradient-to-r from-purple-600 via-purple-500 to-blue-600 bg-clip-text text-transparent">{slide.highlight}</span>
                       </h2>
                     </div>)}
                 </div>
@@ -788,8 +792,8 @@ const Index = () => {
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              What Our Customers Say
+            <h2 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">What Our Customers Say</span>
               <br />
               <span className="text-2xl lg:text-3xl font-normal text-gray-600">
                 (Before They Tell Their Friends)
@@ -843,7 +847,8 @@ const Index = () => {
       <section className="py-20 bg-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-8">
-            CloudAdda is Born in India, Built for the World
+            <span className="bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent">CloudAdda is Born in India,</span>
+            <span className="text-white"> Built for the World</span>
           </h2>
           <div className="max-w-4xl mx-auto space-y-6">
             <p className="text-xl">
@@ -864,12 +869,12 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              <span className="text-purple-600">
+              <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Transparent Pricing.
               </span>
               <br />
               <div className="inline-flex items-center justify-center bg-gradient-to-r from-orange-100 to-red-100 border-4 border-orange-400 rounded-3xl px-12 py-6 mt-8 shadow-lg">
-                <span className="text-4xl lg:text-5xl font-bold text-orange-600">
+                <span className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
                   No Hidden Gotchas. Ever.
                 </span>
               </div>
@@ -973,7 +978,7 @@ const Index = () => {
             </div>
             
             <h2 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-white via-purple-200 to-orange-200 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent">
                 Your Competition
               </span>
               <br />
