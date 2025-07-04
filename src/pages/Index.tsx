@@ -165,8 +165,9 @@ const Index = () => {
                   Let's Fix Your Infra
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
-                  See Pricing
+                <Button size="lg" className="bg-gradient-radial from-blue-500 via-purple-600 to-purple-700 hover:from-blue-600 hover:via-purple-700 hover:to-purple-800 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300" style={{ background: 'radial-gradient(ellipse at center, #3b82f6 0%, #9333ea 50%, #7c3aed 100%)' }}>
+                  Start Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
             </div>
