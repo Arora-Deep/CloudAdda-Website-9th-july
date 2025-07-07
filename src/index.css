@@ -96,24 +96,6 @@
   }
 }
 
-@keyframes marquee-slow {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes marquee-reverse-slow {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
@@ -124,14 +106,6 @@
 
 .animate-marquee-reverse {
   animation: marquee-reverse 35s linear infinite;
-}
-
-.animate-marquee-slow {
-  animation: marquee-slow 50s linear infinite;
-}
-
-.animate-marquee-reverse-slow {
-  animation: marquee-reverse-slow 55s linear infinite;
 }
 
 /* Ensure smooth scrolling to top for internal links */

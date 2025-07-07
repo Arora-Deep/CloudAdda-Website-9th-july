@@ -1,21 +1,16 @@
 
-const TermsOfService = () => {
-  const handleNavigation = (path: string) => {
-    window.location.href = path;
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
-  };
+import { Link } from "react-router-dom";
 
+const TermsOfService = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Simple Header */}
       <nav className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <button onClick={() => handleNavigation('/')} className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
-            </button>
+            </Link>
           </div>
         </div>
       </nav>
@@ -120,18 +115,8 @@ const TermsOfService = () => {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <img src="/lovable-uploads/7dbdbf50-fd3e-44fd-ae94-47ff369c1d01.png" alt="CloudAdda Logo" className="h-6 w-auto" />
-              <span className="font-bold">CloudAdda</span>
-            </div>
-            <p className="text-gray-400 text-center">© 2024 CloudAdda. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <button onClick={() => handleNavigation('/privacy-policy')} className="text-gray-400 hover:text-white transition-colors">Privacy Policy</button>
-              <button onClick={() => handleNavigation('/terms-of-service')} className="text-gray-400 hover:text-white transition-colors">Terms of Service</button>
-            </div>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gray-400">© 2024 CloudAdda. All rights reserved.</p>
         </div>
       </footer>
     </div>
