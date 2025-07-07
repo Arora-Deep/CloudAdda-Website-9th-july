@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -110,6 +111,13 @@ const Index = () => {
     }
   ];
 
+  const handleNavigation = (path: string) => {
+    window.location.href = path;
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeading(prev => (prev + 1) % headings.length);
@@ -137,7 +145,7 @@ const Index = () => {
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
               <div className="flex items-center space-x-2">
-                <img src="/lovable-uploads/9bc8f666-3076-423e-9425-f6233997cb50.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
+                <img src="/lovable-uploads/ab89b288-4111-435f-8c60-3551cd55182c.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -150,7 +158,7 @@ const Index = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
                         <NavigationMenuLink asChild>
-                          <Link to="/training-labs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/training-labs" onClick={() => handleNavigation('/training-labs')} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Training Labs</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Provisioned lab environments for training companies
@@ -158,7 +166,7 @@ const Index = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/cloud-desktops" onClick={() => handleNavigation('/cloud-desktops')} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Fast, secure desktops accessible from anywhere
@@ -166,7 +174,7 @@ const Index = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/vps" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/vps" onClick={() => handleNavigation('/vps')} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">VPS Hosting</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               High-performance VPS with AMD EPYC processors
@@ -178,20 +186,14 @@ const Index = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
-              <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
-              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
-              <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
+              <Link to="/trainer-adda" onClick={() => handleNavigation('/trainer-adda')} className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
+              <Link to="/about" onClick={() => handleNavigation('/about')} className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
+              <Link to="/pricing" onClick={() => handleNavigation('/pricing')} className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
+              <Link to="/contact" onClick={() => handleNavigation('/contact')} className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
+              <Link to="/support" onClick={() => handleNavigation('/support')} className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
-              <Link to="/contact">
-                <Button variant="orange" className="rounded-full px-6">
-                  Start Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
             </div>
           </div>
         </div>
@@ -213,13 +215,13 @@ const Index = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact">
+                <Link to="/contact" onClick={() => handleNavigation('/contact')}>
                   <Button size="lg" variant="orange" className="text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                     Book a Demo
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link to="/pricing">
+                <Link to="/pricing" onClick={() => handleNavigation('/pricing')}>
                   <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
                     See Pricing
                   </Button>
@@ -405,7 +407,7 @@ const Index = () => {
                   <p className="text-lg text-gray-600 leading-relaxed">We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole hands-on cloud lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.</p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/training-labs">
+                  <Link to="/training-labs" onClick={() => handleNavigation('/training-labs')}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
@@ -473,7 +475,7 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/cloud-desktops">
+                  <Link to="/cloud-desktops" onClick={() => handleNavigation('/cloud-desktops')}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
@@ -548,7 +550,7 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/vps">
+                  <Link to="/vps" onClick={() => handleNavigation('/vps')}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
@@ -814,7 +816,7 @@ const Index = () => {
           
           {/* Premium CTA - SINGLE CTA */}
           <div className="text-center mt-16">
-            <Link to="/contact">
+            <Link to="/contact" onClick={() => handleNavigation('/contact')}>
               <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                 Experience the Difference
                 <Rocket className="ml-2 h-5 w-5" />
@@ -937,7 +939,7 @@ const Index = () => {
             features: ["Same-day delivery possible", "Fully customized environments", "Windows, Linux, or mixed stacks", "Scalable to any number of users"],
             cta: "View Pricing",
             gradient: "from-blue-500 to-blue-600",
-            link: "/pricing#training-labs"
+            link: "/pricing"
           }, {
             title: "Virtual Desktops",
             price: "₹3,299",
@@ -946,7 +948,7 @@ const Index = () => {
             features: ["2vCPU, 4GB RAM, SSD storage", "99.9% uptime guarantee", "Built-in security & compliance", "Instant scaling"],
             cta: "View Pricing",
             gradient: "from-purple-500 to-purple-600",
-            link: "/pricing#cloud-desktops"
+            link: "/pricing"
           }, {
             title: "VPS Hosting",
             price: "₹1,499",
@@ -955,7 +957,7 @@ const Index = () => {
             features: ["NVMe SSD storage", "AMD EPYC processors", "Full root access", "Multiple data center locations"],
             cta: "View Pricing",
             gradient: "from-orange-500 to-orange-600",
-            link: "/pricing#vps"
+            link: "/pricing"
           }].map((plan, index) => (
               <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-200">
@@ -988,7 +990,7 @@ const Index = () => {
                     </div>
                     
                     {/* CTA Button */}
-                    <Link to={plan.link}>
+                    <Link to={plan.link} onClick={() => handleNavigation(plan.link)}>
                       <Button className={`w-full bg-gradient-to-r ${plan.gradient} hover:opacity-90 text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 shadow-lg`}>
                         {plan.cta}
                         <ArrowRight className="ml-2 h-5 w-5" />
@@ -1002,7 +1004,7 @@ const Index = () => {
           
           <div className="text-center mt-16">
             <p className="text-gray-600 mb-6 text-lg">Need something custom? We've got you covered.</p>
-            <Link to="/contact">
+            <Link to="/contact" onClick={() => handleNavigation('/contact')}>
               <Button size="lg" variant="outline" className="text-orange-500 border-2 border-orange-500 hover:bg-orange-50 text-lg px-8 py-4 rounded-2xl">
                 Talk to Our Team
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -1117,7 +1119,7 @@ const Index = () => {
                 Join 500+ companies who stopped fighting infrastructure and started winning customers.
               </p>
               
-              <Link to="/contact">
+              <Link to="/contact" onClick={() => handleNavigation('/contact')}>
                 <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105">
                   Start Your Transformation
                   <Rocket className="ml-3 h-6 w-6" />
@@ -1138,7 +1140,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <img src="/lovable-uploads/9bc8f666-3076-423e-9425-f6233997cb50.png" alt="CloudAdda Logo" className="h-8 w-auto" />
+                <img src="/lovable-uploads/ab89b288-4111-435f-8c60-3551cd55182c.png" alt="CloudAdda Logo" className="h-8 w-auto" />
                 <span className="font-bold text-xl">CloudAdda</span>
               </div>
               <p className="text-gray-400">
@@ -1149,30 +1151,30 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4">Solutions</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" className="hover:text-white transition-colors">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" className="hover:text-white transition-colors">Cloud Desktops</Link></li>
-                <li><Link to="/vps" className="hover:text-white transition-colors">VPS</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Custom Solutions</Link></li>
+                <li><Link to="/training-labs" onClick={() => handleNavigation('/training-labs')} className="hover:text-white transition-colors">Training Labs</Link></li>
+                <li><Link to="/cloud-desktops" onClick={() => handleNavigation('/cloud-desktops')} className="hover:text-white transition-colors">Cloud Desktops</Link></li>
+                <li><Link to="/vps" onClick={() => handleNavigation('/vps')} className="hover:text-white transition-colors">VPS</Link></li>
+                <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Custom Solutions</Link></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Careers</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Press</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+                <li><Link to="/about" onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">About Us</Link></li>
+                <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Careers</Link></li>
+                <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Press</Link></li>
+                <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link to="/support" className="hover:text-white transition-colors">Documentation</Link></li>
-                <li><Link to="/support" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link to="/trainer-adda" className="hover:text-white transition-colors">Community</Link></li>
-                <li><Link to="/support" className="hover:text-white transition-colors">Status</Link></li>
+                <li><Link to="/support" onClick={() => handleNavigation('/support')} className="hover:text-white transition-colors">Documentation</Link></li>
+                <li><Link to="/support" onClick={() => handleNavigation('/support')} className="hover:text-white transition-colors">Help Center</Link></li>
+                <li><Link to="/trainer-adda" onClick={() => handleNavigation('/trainer-adda')} className="hover:text-white transition-colors">Community</Link></li>
+                <li><Link to="/support" onClick={() => handleNavigation('/support')} className="hover:text-white transition-colors">Status</Link></li>
               </ul>
             </div>
           </div>
@@ -1180,8 +1182,8 @@ const Index = () => {
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400">© 2024 CloudAdda. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
-              <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="/privacy-policy" onClick={() => handleNavigation('/privacy-policy')} className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms-of-service" onClick={() => handleNavigation('/terms-of-service')} className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>
