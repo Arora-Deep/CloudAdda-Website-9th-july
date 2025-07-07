@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -96,8 +97,10 @@ const VPS = () => {
                   Deploy Your VPS Now
                   <Server className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                  View Live Benchmarks
+                <Button asChild size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
+                  <Link to="/pricing#vps">
+                    View Pricing
+                  </Link>
                 </Button>
               </div>
 
@@ -280,9 +283,11 @@ const VPS = () => {
             </div>
 
             <div className="text-center mt-16">
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-                End Your VPS Nightmare Today
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
+                <Link to="/contact">
+                  End Your VPS Nightmare Today
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
@@ -354,10 +359,6 @@ const VPS = () => {
             <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6 inline-block">
               <div className="text-lg font-bold text-purple-800 mb-2">Transparency Promise</div>
               <div className="text-purple-600 mb-4">What we advertise is what you get. No fine print, no gotchas.</div>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3">
-                See Live Benchmarks
-                <Activity className="ml-2 h-4 w-4" />
-              </Button>
             </div>
           </div>
         </div>
@@ -523,10 +524,6 @@ const VPS = () => {
             <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Migrate?</h3>
               <p className="text-gray-600 mb-6">Our engineers handle everything - from DNS to databases. Zero downtime guaranteed.</p>
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-4">
-                Get Free Migration Assessment
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
             </div>
           </div>
         </div>
@@ -538,7 +535,7 @@ const VPS = () => {
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Simple, Transparent Pricing</h2>
           
           <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl p-12 border border-purple-200">
-            <div className="text-6xl font-bold text-purple-600 mb-4">₹799</div>
+            <div className="text-6xl font-bold text-purple-600 mb-4">₹300</div>
             <div className="text-xl text-gray-600 mb-2">Starting from</div>
             <div className="text-gray-500 mb-8">per month</div>
             
@@ -561,59 +558,12 @@ const VPS = () => {
               </div>
             </div>
             
-            <Link to="/pricing">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-12 py-4 text-lg">
+            <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-12 py-4 text-lg">
+              <Link to="/pricing#vps">
                 View All Plans & Pricing
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Simplified Social Proof Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Trusted by 1,000+ Developers</h2>
-            <p className="text-xl text-gray-600">From weekend warriors to unicorn CTOs</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[{
-            quote: "We migrated from AWS and cut our hosting costs by 60%. Same performance, better support, zero downtime migration.",
-            author: "Rajesh Kumar",
-            title: "CTO, TechStartup",
-            company: "Series A Startup",
-            rating: 5
-          }, {
-            quote: "Their support team actually knows what they're talking about. Fixed our Redis clustering issue in 20 minutes.",
-            author: "Sarah Chen",
-            title: "Lead DevOps Engineer",
-            company: "E-commerce Platform",
-            rating: 5
-          }, {
-            quote: "Been running our ML training pipelines here for 8 months. Never had a single outage during our critical batch jobs.",
-            author: "David Rodriguez",
-            title: "ML Engineering Manager",
-            company: "AI Company",
-            rating: 5
-          }].map((testimonial, index) => <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />)}
-                </div>
-                <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                    <span className="text-purple-600 font-semibold">{testimonial.author.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                    <div className="text-sm text-gray-600">{testimonial.title}</div>
-                    <div className="text-xs text-gray-500">{testimonial.company}</div>
-                  </div>
-                </div>
-              </div>)}
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -633,14 +583,16 @@ const VPS = () => {
               Deploy Your VPS Now
               <Server className="ml-3 h-6 w-6" />
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-16 py-6 text-xl border-gray-300 hover:bg-gray-50">
-              Talk to an Engineer
+            <Button asChild size="lg" variant="outline" className="rounded-full px-16 py-6 text-xl border-gray-300 hover:bg-gray-50">
+              <Link to="/pricing#vps">
+                View Pricing
+              </Link>
             </Button>
           </div>
 
           <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200">
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">10,000+</div>
+              <div className="text-3xl font-bold text-purple-600">1,000+</div>
               <div className="text-gray-600">Happy Developers</div>
             </div>
             <div className="text-center">
