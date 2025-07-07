@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,7 +6,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Switch } from "@/components/ui/switch";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ArrowRight, CheckCircle, Zap, Shield, Users, Heart, Star, Globe, DollarSign, Calculator, Sparkles, GraduationCap, Monitor, Server, Check, Building, Target, Cpu, HardDrive, Network, ChevronDown } from "lucide-react";
+import { ArrowRight, CheckCircle, Zap, Shield, Users, Heart, Star, Globe, DollarSign, Calculator, Sparkles, GraduationCap, Monitor, Server, Check, Building, Target, Cpu, HardDrive, Network, ChevronDown, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 
@@ -191,14 +190,12 @@ const Pricing = () => {
                 deploying virtual desktops, or spinning up servers, every rupee delivers real-world value.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 group">
-                  <Calculator className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  Calculate Your Savings
-                </Button>
-                <Button size="lg" variant="outline" className="border-purple-500 text-purple-600 hover:bg-purple-50 group">
-                  <Sparkles className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-                  See Live Demo
-                </Button>
+                <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                  <Button size="lg" className="bg-orange-600 hover:bg-orange-700 group">
+                    <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                    Talk to Sales
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="lg:col-span-5">
