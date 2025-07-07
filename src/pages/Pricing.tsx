@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,6 +13,7 @@ import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
   const [vpsBilling, setVpsBilling] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
+  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -216,6 +218,20 @@ const Pricing = () => {
                 </Button>
               ))}
             </div>
+            
+            {/* Currency Toggle */}
+            <div className="mt-6 pt-4 border-t border-gray-200">
+              <h4 className="font-medium text-sm text-gray-700 mb-3">Currency</h4>
+              <div className="flex items-center space-x-3">
+                <span className={`text-sm ${currency === 'INR' ? 'font-semibold text-orange-600' : 'text-gray-500'}`}>INR</span>
+                <Switch
+                  checked={currency === 'USD'}
+                  onCheckedChange={(checked) => setCurrency(checked ? 'USD' : 'INR')}
+                  className="data-[state=checked]:bg-orange-500"
+                />
+                <span className={`text-sm ${currency === 'USD' ? 'font-semibold text-orange-600' : 'text-gray-500'}`}>USD</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -311,7 +327,7 @@ const Pricing = () => {
 
           {/* Cloud Desktops Section - Replace with new component */}
           <section id="cloud-desktops" className="py-12">
-            <CloudDesktopsPricing />
+            <CloudDesktopsPricing currency={currency} />
           </section>
 
           {/* VPS Section with Updated Table */}
@@ -370,30 +386,23 @@ const Pricing = () => {
                 {vpsPlans.map((plan, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
                     <div className="flex justify-between items-start mb-3">
-                      <h4 className="font-bold text-gray-900">{plan.name}</h4>
-                      <div className="text-right">
+                      <div className="grid grid-cols-3 gap-2 text-sm flex-1">
+                        <div>
+                          <span className="font-medium">CPU:</span> {plan.vcpu}
+                        </div>
+                        <div>
+                          <span className="font-medium">RAM:</span> {plan.ram}
+                        </div>
+                        <div>
+                          <span className="font-medium">Storage:</span> {plan.storage}
+                        </div>
+                      </div>
+                      <div className="text-right ml-4">
                         <div className="text-lg font-bold text-orange-600">
-                          ₹{getVpsPrice(plan.priceINR).toLocaleString()}
-                        </div>
-                        <div className="text-xs text-gray-500">
-                          ${getVpsPrice(plan.priceUSD)}
+                          {currency === 'INR' ? '₹' : '$'}{getVpsPrice(currency === 'INR' ? plan.priceINR : plan.priceUSD).toLocaleString()}
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-3 gap-2 text-sm">
-                      <div>
-                        <span className="font-medium">CPU:</span> {plan.vcpu}
-                      </div>
-                      <div>
-                        <span className="font-medium">RAM:</span> {plan.ram}
-                      </div>
-                      <div>
-                        <span className="font-medium">Storage:</span> {plan.storage}
-                      </div>
-                    </div>
-                    <Button size="sm" className="w-full mt-3 bg-purple-500 hover:bg-purple-600 text-white">
-                      Deploy Now
-                    </Button>
                   </div>
                 ))}
               </div>
@@ -403,32 +412,20 @@ const Pricing = () => {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-gray-50">
-                      <TableHead className="font-bold text-foreground">Plan</TableHead>
                       <TableHead className="font-bold text-foreground">vCPU</TableHead>
                       <TableHead className="font-bold text-foreground">RAM</TableHead>
                       <TableHead className="font-bold text-foreground">Storage</TableHead>
-                      <TableHead className="font-bold text-foreground">Price INR/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
-                      <TableHead className="font-bold text-foreground">Price USD/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
-                      <TableHead className="font-bold text-foreground">Action</TableHead>
+                      <TableHead className="font-bold text-foreground">Price {currency}/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {vpsPlans.map((plan, index) => (
                       <TableRow key={index} className="hover:bg-gray-50">
-                        <TableCell className="font-semibold">{plan.name}</TableCell>
                         <TableCell>{plan.vcpu}</TableCell>
                         <TableCell>{plan.ram}</TableCell>
                         <TableCell>{plan.storage}</TableCell>
                         <TableCell className="font-bold text-orange-600">
-                          ₹{getVpsPrice(plan.priceINR).toLocaleString()}
-                        </TableCell>
-                        <TableCell className="font-bold text-green-600">
-                          ${getVpsPrice(plan.priceUSD)}
-                        </TableCell>
-                        <TableCell>
-                          <Button size="sm" className="bg-purple-500 hover:bg-purple-600 text-white">
-                            Deploy Now
-                          </Button>
+                          {currency === 'INR' ? '₹' : '$'}{getVpsPrice(currency === 'INR' ? plan.priceINR : plan.priceUSD).toLocaleString()}
                         </TableCell>
                       </TableRow>
                     ))}
