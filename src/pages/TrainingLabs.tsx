@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play } from "lucide-react";
+import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainingLabs = () => {
@@ -84,13 +84,17 @@ const TrainingLabs = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                  Request Your Custom Lab
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" asChild className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
+                  <Link to="/contact">
+                    Request Your Custom Lab
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch a Live Demo
+                <Button size="lg" variant="outline" asChild className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
+                  <Link to="/pricing#training-labs">
+                    <Play className="mr-2 h-5 w-5" />
+                    View Pricing
+                  </Link>
                 </Button>
               </div>
 
@@ -408,9 +412,11 @@ const TrainingLabs = () => {
                 <p>With CloudAdda, infrastructure fades into the background. You get total peace of mind, super-fast setup, and labs that just work — every single time.</p>
               </div>
 
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg">
-                Experience Effortless Training
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" asChild className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg">
+                <Link to="/contact">
+                  Experience Effortless Training
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
             </div>
 
@@ -546,9 +552,11 @@ const TrainingLabs = () => {
           </h2>
           <p className="text-xl text-gray-600 mb-12">Skip the stress. Delight your participants. Reclaim your weekends.</p>
           
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-            Get Your Custom Lab Setup
-            <ArrowRight className="ml-3 h-6 w-6" />
+          <Button size="lg" asChild className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+            <Link to="/contact">
+              Get Your Custom Lab Setup
+              <ArrowRight className="ml-3 h-6 w-6" />
+            </Link>
           </Button>
 
           <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200">
