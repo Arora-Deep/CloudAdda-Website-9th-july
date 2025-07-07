@@ -12,7 +12,6 @@ import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
   const [vpsBilling, setVpsBilling] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
-  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -32,41 +31,41 @@ const Pricing = () => {
 
   // Updated VPS plans based on the uploaded pricing image
   const vpsPlans = [
-    { vcpu: "1", ram: "0.5GB", storage: "20GB", priceINR: 200, priceUSD: 2 },
-    { vcpu: "1", ram: "1GB", storage: "25GB", priceINR: 350, priceUSD: 4 },
-    { vcpu: "1", ram: "2GB", storage: "30GB", priceINR: 550, priceUSD: 6 },
-    { vcpu: "2", ram: "4GB", storage: "50GB", priceINR: 1000, priceUSD: 12 },
-    { vcpu: "2", ram: "8GB", storage: "50GB", priceINR: 1400, priceUSD: 17 },
-    { vcpu: "2", ram: "16GB", storage: "75GB", priceINR: 2350, priceUSD: 28 },
-    { vcpu: "4", ram: "8GB", storage: "75GB", priceINR: 1850, priceUSD: 22 },
-    { vcpu: "4", ram: "16GB", storage: "100GB", priceINR: 2800, priceUSD: 33 },
-    { vcpu: "4", ram: "32GB", storage: "150GB", priceINR: 4700, priceUSD: 56 },
-    { vcpu: "6", ram: "12GB", storage: "100GB", priceINR: 2700, priceUSD: 32 },
-    { vcpu: "6", ram: "24GB", storage: "125GB", priceINR: 4050, priceUSD: 48 },
-    { vcpu: "6", ram: "48GB", storage: "160GB", priceINR: 6600, priceUSD: 79 },
-    { vcpu: "8", ram: "16GB", storage: "100GB", priceINR: 3400, priceUSD: 40 },
-    { vcpu: "8", ram: "32GB", storage: "150GB", priceINR: 5300, priceUSD: 63 },
-    { vcpu: "8", ram: "64GB", storage: "180GB", priceINR: 8680, priceUSD: 103 },
-    { vcpu: "12", ram: "24GB", storage: "160GB", priceINR: 5160, priceUSD: 61 },
-    { vcpu: "12", ram: "48GB", storage: "180GB", priceINR: 7680, priceUSD: 91 },
-    { vcpu: "16", ram: "32GB", storage: "200GB", priceINR: 6800, priceUSD: 81 },
-    { vcpu: "16", ram: "64GB", storage: "250GB", priceINR: 10340, priceUSD: 123 },
-    { vcpu: "16", ram: "128GB", storage: "300GB", priceINR: 17000, priceUSD: 202 },
-    { vcpu: "24", ram: "48GB", storage: "250GB", priceINR: 9900, priceUSD: 118 },
-    { vcpu: "24", ram: "96GB", storage: "350GB", priceINR: 15300, priceUSD: 182 },
-    { vcpu: "24", ram: "192GB", storage: "450GB", priceINR: 25500, priceUSD: 304 },
-    { vcpu: "32", ram: "64GB", storage: "350GB", priceINR: 13300, priceUSD: 158 },
-    { vcpu: "32", ram: "128GB", storage: "450GB", priceINR: 20300, priceUSD: 242 },
-    { vcpu: "32", ram: "192GB", storage: "500GB", priceINR: 27000, priceUSD: 321 },
-    { vcpu: "32", ram: "256GB", storage: "650GB", priceINR: 34300, priceUSD: 408 },
-    { vcpu: "48", ram: "96GB", storage: "600GB", priceINR: 20400, priceUSD: 243 },
-    { vcpu: "48", ram: "192GB", storage: "700GB", priceINR: 30600, priceUSD: 364 },
-    { vcpu: "64", ram: "128GB", storage: "650GB", priceINR: 26300, priceUSD: 313 },
-    { vcpu: "64", ram: "256GB", storage: "800GB", priceINR: 40000, priceUSD: 476 },
-    { vcpu: "64", ram: "512GB", storage: "1000GB", priceINR: 66800, priceUSD: 795 },
-    { vcpu: "96", ram: "192GB", storage: "1200GB", priceINR: 40800, priceUSD: 486 },
-    { vcpu: "96", ram: "384GB", storage: "1500GB", priceINR: 61800, priceUSD: 736 },
-    { vcpu: "96", ram: "768GB", storage: "3000GB", priceINR: 109200, priceUSD: 1300 }
+    { name: "VPS-1", vcpu: "1", ram: "0.5GB", storage: "20GB", priceINR: 200, priceUSD: 2 },
+    { name: "VPS-2", vcpu: "1", ram: "1GB", storage: "25GB", priceINR: 350, priceUSD: 4 },
+    { name: "VPS-3", vcpu: "1", ram: "2GB", storage: "30GB", priceINR: 550, priceUSD: 6 },
+    { name: "VPS-4", vcpu: "2", ram: "4GB", storage: "50GB", priceINR: 1000, priceUSD: 12 },
+    { name: "VPS-5", vcpu: "2", ram: "8GB", storage: "50GB", priceINR: 1400, priceUSD: 17 },
+    { name: "VPS-6", vcpu: "2", ram: "16GB", storage: "75GB", priceINR: 2350, priceUSD: 28 },
+    { name: "VPS-7", vcpu: "4", ram: "8GB", storage: "75GB", priceINR: 1850, priceUSD: 22 },
+    { name: "VPS-8", vcpu: "4", ram: "16GB", storage: "100GB", priceINR: 2800, priceUSD: 33 },
+    { name: "VPS-9", vcpu: "4", ram: "32GB", storage: "150GB", priceINR: 4700, priceUSD: 56 },
+    { name: "VPS-10", vcpu: "6", ram: "12GB", storage: "100GB", priceINR: 2700, priceUSD: 32 },
+    { name: "VPS-11", vcpu: "6", ram: "24GB", storage: "125GB", priceINR: 4050, priceUSD: 48 },
+    { name: "VPS-12", vcpu: "6", ram: "48GB", storage: "160GB", priceINR: 6600, priceUSD: 79 },
+    { name: "VPS-13", vcpu: "8", ram: "16GB", storage: "100GB", priceINR: 3400, priceUSD: 40 },
+    { name: "VPS-14", vcpu: "8", ram: "32GB", storage: "150GB", priceINR: 5300, priceUSD: 63 },
+    { name: "VPS-15", vcpu: "8", ram: "64GB", storage: "180GB", priceINR: 8680, priceUSD: 103 },
+    { name: "VPS-16", vcpu: "12", ram: "24GB", storage: "160GB", priceINR: 5160, priceUSD: 61 },
+    { name: "VPS-17", vcpu: "12", ram: "48GB", storage: "180GB", priceINR: 7680, priceUSD: 91 },
+    { name: "VPS-18", vcpu: "16", ram: "32GB", storage: "200GB", priceINR: 6800, priceUSD: 81 },
+    { name: "VPS-19", vcpu: "16", ram: "64GB", storage: "250GB", priceINR: 10340, priceUSD: 123 },
+    { name: "VPS-20", vcpu: "16", ram: "128GB", storage: "300GB", priceINR: 17000, priceUSD: 202 },
+    { name: "VPS-21", vcpu: "24", ram: "48GB", storage: "250GB", priceINR: 9900, priceUSD: 118 },
+    { name: "VPS-22", vcpu: "24", ram: "96GB", storage: "350GB", priceINR: 15300, priceUSD: 182 },
+    { name: "VPS-23", vcpu: "24", ram: "192GB", storage: "450GB", priceINR: 25500, priceUSD: 304 },
+    { name: "VPS-24", vcpu: "32", ram: "64GB", storage: "350GB", priceINR: 13300, priceUSD: 158 },
+    { name: "VPS-25", vcpu: "32", ram: "128GB", storage: "450GB", priceINR: 20300, priceUSD: 242 },
+    { name: "VPS-26", vcpu: "32", ram: "192GB", storage: "500GB", priceINR: 27000, priceUSD: 321 },
+    { name: "VPS-27", vcpu: "32", ram: "256GB", storage: "650GB", priceINR: 34300, priceUSD: 408 },
+    { name: "VPS-28", vcpu: "48", ram: "96GB", storage: "600GB", priceINR: 20400, priceUSD: 243 },
+    { name: "VPS-29", vcpu: "48", ram: "192GB", storage: "700GB", priceINR: 30600, priceUSD: 364 },
+    { name: "VPS-30", vcpu: "64", ram: "128GB", storage: "650GB", priceINR: 26300, priceUSD: 313 },
+    { name: "VPS-31", vcpu: "64", ram: "256GB", storage: "800GB", priceINR: 40000, priceUSD: 476 },
+    { name: "VPS-32", vcpu: "64", ram: "512GB", storage: "1000GB", priceINR: 66800, priceUSD: 795 },
+    { name: "VPS-33", vcpu: "96", ram: "192GB", storage: "1200GB", priceINR: 40800, priceUSD: 486 },
+    { name: "VPS-34", vcpu: "96", ram: "384GB", storage: "1500GB", priceINR: 61800, priceUSD: 736 },
+    { name: "VPS-35", vcpu: "96", ram: "768GB", storage: "3000GB", priceINR: 109200, priceUSD: 1300 }
   ];
 
   return (
@@ -217,21 +216,6 @@ const Pricing = () => {
                 </Button>
               ))}
             </div>
-            
-            {/* Currency Toggle */}
-            <div className="mt-6 pt-4 border-t border-gray-200">
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-gray-700">Currency</span>
-                <div className="flex items-center space-x-2">
-                  <span className={`text-sm ${currency === 'INR' ? 'font-bold text-orange-600' : 'text-gray-500'}`}>₹ INR</span>
-                  <Switch
-                    checked={currency === 'USD'}
-                    onCheckedChange={(checked) => setCurrency(checked ? 'USD' : 'INR')}
-                  />
-                  <span className={`text-sm ${currency === 'USD' ? 'font-bold text-orange-600' : 'text-gray-500'}`}>$ USD</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -327,7 +311,7 @@ const Pricing = () => {
 
           {/* Cloud Desktops Section - Replace with new component */}
           <section id="cloud-desktops" className="py-12">
-            <CloudDesktopsPricing currency={currency} />
+            <CloudDesktopsPricing />
           </section>
 
           {/* VPS Section with Updated Table */}
@@ -386,21 +370,25 @@ const Pricing = () => {
                 {vpsPlans.map((plan, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
                     <div className="flex justify-between items-start mb-3">
-                      <div className="grid grid-cols-3 gap-2 text-sm flex-1">
-                        <div>
-                          <span className="font-medium">CPU:</span> {plan.vcpu}
+                      <h4 className="font-bold text-gray-900">{plan.name}</h4>
+                      <div className="text-right">
+                        <div className="text-lg font-bold text-orange-600">
+                          ₹{getVpsPrice(plan.priceINR).toLocaleString()}
                         </div>
-                        <div>
-                          <span className="font-medium">RAM:</span> {plan.ram}
-                        </div>
-                        <div>
-                          <span className="font-medium">Storage:</span> {plan.storage}
+                        <div className="text-xs text-gray-500">
+                          ${getVpsPrice(plan.priceUSD)}
                         </div>
                       </div>
-                      <div className="text-right ml-4">
-                        <div className="text-lg font-bold text-orange-600">
-                          {currency === 'INR' ? '₹' : '$'}{getVpsPrice(currency === 'INR' ? plan.priceINR : plan.priceUSD).toLocaleString()}
-                        </div>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 text-sm">
+                      <div>
+                        <span className="font-medium">CPU:</span> {plan.vcpu}
+                      </div>
+                      <div>
+                        <span className="font-medium">RAM:</span> {plan.ram}
+                      </div>
+                      <div>
+                        <span className="font-medium">Storage:</span> {plan.storage}
                       </div>
                     </div>
                     <Button size="sm" className="w-full mt-3 bg-purple-500 hover:bg-purple-600 text-white">
@@ -415,21 +403,27 @@ const Pricing = () => {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-gray-50">
+                      <TableHead className="font-bold text-foreground">Plan</TableHead>
                       <TableHead className="font-bold text-foreground">vCPU</TableHead>
                       <TableHead className="font-bold text-foreground">RAM</TableHead>
                       <TableHead className="font-bold text-foreground">Storage</TableHead>
-                      <TableHead className="font-bold text-foreground">Price {currency}/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
+                      <TableHead className="font-bold text-foreground">Price INR/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
+                      <TableHead className="font-bold text-foreground">Price USD/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
                       <TableHead className="font-bold text-foreground">Action</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {vpsPlans.map((plan, index) => (
                       <TableRow key={index} className="hover:bg-gray-50">
+                        <TableCell className="font-semibold">{plan.name}</TableCell>
                         <TableCell>{plan.vcpu}</TableCell>
                         <TableCell>{plan.ram}</TableCell>
                         <TableCell>{plan.storage}</TableCell>
                         <TableCell className="font-bold text-orange-600">
-                          {currency === 'INR' ? '₹' : '$'}{getVpsPrice(currency === 'INR' ? plan.priceINR : plan.priceUSD).toLocaleString()}
+                          ₹{getVpsPrice(plan.priceINR).toLocaleString()}
+                        </TableCell>
+                        <TableCell className="font-bold text-green-600">
+                          ${getVpsPrice(plan.priceUSD)}
                         </TableCell>
                         <TableCell>
                           <Button size="sm" className="bg-purple-500 hover:bg-purple-600 text-white">
