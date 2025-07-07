@@ -29,6 +29,45 @@ const Pricing = () => {
     return Math.round(basePrice * multipliers[vpsBilling]);
   };
 
+  // Updated VPS plans based on the uploaded pricing image
+  const vpsPlans = [
+    { name: "VPS-1", vcpu: "1", ram: "0.5GB", storage: "20GB", priceINR: 200, priceUSD: 2 },
+    { name: "VPS-2", vcpu: "1", ram: "1GB", storage: "25GB", priceINR: 350, priceUSD: 4 },
+    { name: "VPS-3", vcpu: "1", ram: "2GB", storage: "30GB", priceINR: 550, priceUSD: 6 },
+    { name: "VPS-4", vcpu: "2", ram: "4GB", storage: "50GB", priceINR: 1000, priceUSD: 12 },
+    { name: "VPS-5", vcpu: "2", ram: "8GB", storage: "50GB", priceINR: 1400, priceUSD: 17 },
+    { name: "VPS-6", vcpu: "2", ram: "16GB", storage: "75GB", priceINR: 2350, priceUSD: 28 },
+    { name: "VPS-7", vcpu: "4", ram: "8GB", storage: "75GB", priceINR: 1850, priceUSD: 22 },
+    { name: "VPS-8", vcpu: "4", ram: "16GB", storage: "100GB", priceINR: 2800, priceUSD: 33 },
+    { name: "VPS-9", vcpu: "4", ram: "32GB", storage: "150GB", priceINR: 4700, priceUSD: 56 },
+    { name: "VPS-10", vcpu: "6", ram: "12GB", storage: "100GB", priceINR: 2700, priceUSD: 32 },
+    { name: "VPS-11", vcpu: "6", ram: "24GB", storage: "125GB", priceINR: 4050, priceUSD: 48 },
+    { name: "VPS-12", vcpu: "6", ram: "48GB", storage: "160GB", priceINR: 6600, priceUSD: 79 },
+    { name: "VPS-13", vcpu: "8", ram: "16GB", storage: "100GB", priceINR: 3400, priceUSD: 40 },
+    { name: "VPS-14", vcpu: "8", ram: "32GB", storage: "150GB", priceINR: 5300, priceUSD: 63 },
+    { name: "VPS-15", vcpu: "8", ram: "64GB", storage: "180GB", priceINR: 8680, priceUSD: 103 },
+    { name: "VPS-16", vcpu: "12", ram: "24GB", storage: "160GB", priceINR: 5160, priceUSD: 61 },
+    { name: "VPS-17", vcpu: "12", ram: "48GB", storage: "180GB", priceINR: 7680, priceUSD: 91 },
+    { name: "VPS-18", vcpu: "16", ram: "32GB", storage: "200GB", priceINR: 6800, priceUSD: 81 },
+    { name: "VPS-19", vcpu: "16", ram: "64GB", storage: "250GB", priceINR: 10340, priceUSD: 123 },
+    { name: "VPS-20", vcpu: "16", ram: "128GB", storage: "300GB", priceINR: 17000, priceUSD: 202 },
+    { name: "VPS-21", vcpu: "24", ram: "48GB", storage: "250GB", priceINR: 9900, priceUSD: 118 },
+    { name: "VPS-22", vcpu: "24", ram: "96GB", storage: "350GB", priceINR: 15300, priceUSD: 182 },
+    { name: "VPS-23", vcpu: "24", ram: "192GB", storage: "450GB", priceINR: 25500, priceUSD: 304 },
+    { name: "VPS-24", vcpu: "32", ram: "64GB", storage: "350GB", priceINR: 13300, priceUSD: 158 },
+    { name: "VPS-25", vcpu: "32", ram: "128GB", storage: "450GB", priceINR: 20300, priceUSD: 242 },
+    { name: "VPS-26", vcpu: "32", ram: "192GB", storage: "500GB", priceINR: 27000, priceUSD: 321 },
+    { name: "VPS-27", vcpu: "32", ram: "256GB", storage: "650GB", priceINR: 34300, priceUSD: 408 },
+    { name: "VPS-28", vcpu: "48", ram: "96GB", storage: "600GB", priceINR: 20400, priceUSD: 243 },
+    { name: "VPS-29", vcpu: "48", ram: "192GB", storage: "700GB", priceINR: 30600, priceUSD: 364 },
+    { name: "VPS-30", vcpu: "64", ram: "128GB", storage: "650GB", priceINR: 26300, priceUSD: 313 },
+    { name: "VPS-31", vcpu: "64", ram: "256GB", storage: "800GB", priceINR: 40000, priceUSD: 476 },
+    { name: "VPS-32", vcpu: "64", ram: "512GB", storage: "1000GB", priceINR: 66800, priceUSD: 795 },
+    { name: "VPS-33", vcpu: "96", ram: "192GB", storage: "1200GB", priceINR: 40800, priceUSD: 486 },
+    { name: "VPS-34", vcpu: "96", ram: "384GB", storage: "1500GB", priceINR: 61800, priceUSD: 736 },
+    { name: "VPS-35", vcpu: "96", ram: "768GB", storage: "3000GB", priceINR: 109200, priceUSD: 1300 }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -154,12 +193,12 @@ const Pricing = () => {
       </section>
 
       {/* Main Content with Sidebar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-8">
-        {/* Sticky Sidebar Navigation */}
-        <div className="w-64 flex-shrink-0">
-          <div className="sticky top-24 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8">
+        {/* Sticky Sidebar Navigation - Mobile optimized */}
+        <div className="w-full lg:w-64 flex-shrink-0">
+          <div className="sticky top-24 bg-white border border-gray-200 rounded-2xl p-4 lg:p-6 shadow-sm">
             <h3 className="font-bold text-lg text-foreground mb-4">Quick Navigation</h3>
-            <div className="space-y-2">
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
               {[
                 { label: "Training Labs", id: "training-labs", icon: GraduationCap },
                 { label: "Cloud Desktops", id: "cloud-desktops", icon: Monitor },
@@ -170,10 +209,10 @@ const Pricing = () => {
                   key={index}
                   variant="ghost" 
                   onClick={() => scrollToSection(item.id)}
-                  className="w-full justify-start text-left group hover:bg-purple-50 hover:text-purple-600"
+                  className="w-full justify-start text-left group hover:bg-purple-50 hover:text-purple-600 text-sm lg:text-base"
                 >
-                  <item.icon className="w-4 h-4 mr-3 group-hover:scale-110 transition-transform" />
-                  {item.label}
+                  <item.icon className="w-4 h-4 mr-2 lg:mr-3 group-hover:scale-110 transition-transform" />
+                  <span className="hidden sm:inline">{item.label}</span>
                 </Button>
               ))}
             </div>
@@ -181,7 +220,7 @@ const Pricing = () => {
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex-1 space-y-24 pb-24">
+        <div className="flex-1 space-y-16 lg:space-y-24 pb-16 lg:pb-24">
           {/* Training Labs Section - Enhanced */}
           <section id="training-labs" className="py-12">
             <div className="text-center mb-16">
@@ -270,176 +309,23 @@ const Pricing = () => {
             </div>
           </section>
 
-          {/* Cloud Desktops Section - Enhanced */}
+          {/* Cloud Desktops Section - Replace with new component */}
           <section id="cloud-desktops" className="py-12">
-            <div className="text-center mb-16">
-              <Badge className="mb-6 bg-purple-100 text-purple-800 border-purple-200">
-                <Monitor className="w-4 h-4 mr-2" />
-                Virtual Desktop Infrastructure
-              </Badge>
-              <h2 className="text-5xl font-bold text-foreground mb-6">Cloud Desktops (DaaS)</h2>
-              <p className="text-2xl text-muted-foreground font-light mb-8">
-                Access your work environment from anywhere. Secure, scalable, and always up-to-date.
-              </p>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                No more "it works on my machine" — everyone gets the same powerful, consistent desktop experience 
-                whether they're working from home, office, or anywhere in between.
-              </p>
-            </div>
-
-            {/* Benefits Section */}
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {[
-                {
-                  icon: Shield,
-                  title: "Enterprise Security",
-                  description: "Your data never leaves our secure data centers. End-to-end encryption and compliance-ready infrastructure."
-                },
-                {
-                  icon: Zap,
-                  title: "Instant Scaling",
-                  description: "Need more power for a project? Upgrade instantly. Project done? Scale back down. Pay only for what you use."
-                },
-                {
-                  icon: Users,
-                  title: "Team Collaboration",
-                  description: "Shared environments, real-time collaboration, and centralized software management for your entire team."
-                }
-              ].map((benefit, index) => (
-                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <CardHeader className="text-center">
-                    <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <benefit.icon className="w-8 h-8 text-purple-600" />
-                    </div>
-                    <CardTitle className="text-xl">{benefit.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-center text-base leading-relaxed">
-                      {benefit.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Pricing Plans */}
-            <div className="space-y-12">
-              {/* Light Users */}
-              <div>
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold text-foreground mb-4">For Everyday Work</h3>
-                  <p className="text-lg text-muted-foreground">Perfect for administrative tasks, document work, and light applications</p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                  {[
-                    {
-                      name: "Essential",
-                      specs: "2 vCPU • 4GB RAM • 50GB SSD",
-                      price: "₹1,499",
-                      description: "Email, web browsing, office documents",
-                      features: ["Pre-installed Office Suite", "Web browsers & basic tools", "24/7 support", "Daily backups"]
-                    },
-                    {
-                      name: "Professional",
-                      specs: "4 vCPU • 8GB RAM • 100GB SSD",
-                      price: "₹2,599",
-                      description: "CRM, advanced office work, light multitasking",
-                      features: ["Everything in Essential", "Advanced productivity tools", "Multiple monitor support", "Priority support"]
-                    }
-                  ].map((plan, index) => (
-                    <Card key={index} className="shadow-lg border hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                      <CardHeader className="text-center">
-                        <CardTitle className="text-xl text-foreground">{plan.name}</CardTitle>
-                        <CardDescription className="text-muted-foreground">{plan.specs}</CardDescription>
-                        <div className="text-3xl font-bold text-foreground mt-4">{plan.price}<span className="text-lg text-muted-foreground">/month</span></div>
-                        <p className="text-sm text-muted-foreground">{plan.description}</p>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="space-y-3">
-                          {plan.features.map((feature, idx) => (
-                            <div key={idx} className="flex items-center space-x-2">
-                              <Check className="w-4 h-4 text-green-500" />
-                              <span className="text-sm text-muted-foreground">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                        <Button className="w-full mt-6 bg-purple-600 hover:bg-purple-700">Get Started</Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
-              {/* Power Users */}
-              <div>
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold text-foreground mb-4">For Developers & Creators</h3>
-                  <p className="text-lg text-muted-foreground">High-performance environments for development, design, and intensive work</p>
-                </div>
-                
-                <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                  {[
-                    {
-                      name: "Developer",
-                      specs: "6 vCPU • 16GB RAM • 200GB NVMe",
-                      price: "₹4,399",
-                      description: "Full-stack development, IDEs, testing environments",
-                      popular: false
-                    },
-                    {
-                      name: "Team Lead",
-                      specs: "8 vCPU • 32GB RAM • 300GB NVMe",
-                      price: "₹6,599",
-                      description: "Heavy multitasking, large builds, team management tools",
-                      popular: true
-                    },
-                    {
-                      name: "Workstation",
-                      specs: "12 vCPU • 64GB RAM • 500GB NVMe + GPU",
-                      price: "From ₹9,999",
-                      description: "ML/AI development, 3D rendering, video editing",
-                      popular: false
-                    }
-                  ].map((plan, index) => (
-                    <Card key={index} className={`shadow-lg border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
-                      plan.popular ? 'border-2 border-orange-500 scale-105' : ''
-                    }`}>
-                      {plan.popular && (
-                        <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white">
-                          Most Popular
-                        </Badge>
-                      )}
-                      <CardHeader className="text-center">
-                        <CardTitle className="text-xl text-foreground">{plan.name}</CardTitle>
-                        <CardDescription className="text-muted-foreground">{plan.specs}</CardDescription>
-                        <div className="text-3xl font-bold text-foreground mt-4">{plan.price}<span className="text-lg text-muted-foreground">/month</span></div>
-                        <p className="text-sm text-muted-foreground">{plan.description}</p>
-                      </CardHeader>
-                      <CardContent>
-                        <Button className={`w-full ${plan.popular ? 'bg-orange-500 hover:bg-orange-600' : 'bg-purple-600 hover:bg-purple-700'}`}>
-                          {plan.name === "Workstation" ? "Contact Sales" : "Start Free Trial"}
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <CloudDesktopsPricing />
           </section>
 
-          {/* VPS Section with Table */}
+          {/* VPS Section with Updated Table */}
           <section id="vps-hosting" className="py-12">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12 lg:mb-16">
               <Badge className="mb-6 bg-green-100 text-green-800 border-green-200">
                 <Server className="w-4 h-4 mr-2" />
                 High-Performance Virtual Servers
               </Badge>
-              <h2 className="text-5xl font-bold text-foreground mb-6">VPS Hosting</h2>
-              <p className="text-2xl text-muted-foreground font-light mb-8">
+              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">VPS Hosting</h2>
+              <p className="text-xl lg:text-2xl text-muted-foreground font-light mb-8">
                 Raw power. Full control. Built on AMD EPYC + NVMe.
               </p>
-              <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+              <p className="text-base lg:text-lg text-muted-foreground max-w-4xl mx-auto">
                 From lightweight applications to enterprise workloads, our VPS solutions deliver 
                 consistent performance with 99.9% uptime guarantee.
               </p>
@@ -448,7 +334,7 @@ const Pricing = () => {
             {/* Billing Toggle */}
             <div className="flex justify-center mb-8">
               <div className="bg-white rounded-xl p-2 shadow-lg border border-gray-200">
-                <div className="flex space-x-2">
+                <div className="flex space-x-1 lg:space-x-2">
                   {[
                     { key: 'monthly', label: 'Monthly' },
                     { key: 'quarterly', label: 'Quarterly' },
@@ -457,7 +343,7 @@ const Pricing = () => {
                     <button
                       key={option.key}
                       onClick={() => setVpsBilling(option.key as typeof vpsBilling)}
-                      className={`px-6 py-3 rounded-lg font-medium transition-all ${
+                      className={`px-3 lg:px-6 py-2 lg:py-3 rounded-lg font-medium transition-all text-sm lg:text-base ${
                         vpsBilling === option.key
                           ? 'bg-orange-500 text-white shadow-md'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
@@ -472,14 +358,48 @@ const Pricing = () => {
               </div>
             </div>
 
-            {/* VPS Pricing Table */}
+            {/* VPS Pricing Table - Mobile Optimized */}
             <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden mb-12">
-              <div className="p-8 bg-orange-500 text-white text-center">
-                <h3 className="text-2xl font-bold mb-2">VPS Plans Comparison</h3>
-                <p className="opacity-90">Choose the perfect configuration for your needs</p>
+              <div className="p-6 lg:p-8 bg-orange-500 text-white text-center">
+                <h3 className="text-xl lg:text-2xl font-bold mb-2">VPS Plans Comparison</h3>
+                <p className="opacity-90 text-sm lg:text-base">Choose the perfect configuration for your needs</p>
               </div>
               
-              <div className="overflow-x-auto">
+              {/* Mobile: Card Layout */}
+              <div className="block lg:hidden p-4 space-y-4 max-h-96 overflow-y-auto">
+                {vpsPlans.map((plan, index) => (
+                  <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                    <div className="flex justify-between items-start mb-3">
+                      <h4 className="font-bold text-gray-900">{plan.name}</h4>
+                      <div className="text-right">
+                        <div className="text-lg font-bold text-orange-600">
+                          ₹{getVpsPrice(plan.priceINR).toLocaleString()}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          ${getVpsPrice(plan.priceUSD)}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 text-sm">
+                      <div>
+                        <span className="font-medium">CPU:</span> {plan.vcpu}
+                      </div>
+                      <div>
+                        <span className="font-medium">RAM:</span> {plan.ram}
+                      </div>
+                      <div>
+                        <span className="font-medium">Storage:</span> {plan.storage}
+                      </div>
+                    </div>
+                    <Button size="sm" className="w-full mt-3 bg-purple-500 hover:bg-purple-600 text-white">
+                      Deploy Now
+                    </Button>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop: Table Layout */}
+              <div className="hidden lg:block overflow-x-auto">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-gray-50">
@@ -487,78 +407,26 @@ const Pricing = () => {
                       <TableHead className="font-bold text-foreground">vCPU</TableHead>
                       <TableHead className="font-bold text-foreground">RAM</TableHead>
                       <TableHead className="font-bold text-foreground">Storage</TableHead>
-                      <TableHead className="font-bold text-foreground">Price/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
+                      <TableHead className="font-bold text-foreground">Price INR/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
+                      <TableHead className="font-bold text-foreground">Price USD/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
                       <TableHead className="font-bold text-foreground">Action</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {[
-                      {
-                        name: "Starter VPS",
-                        vcpu: "2",
-                        ram: "4GB",
-                        storage: "50GB NVMe",
-                        basePrice: 999,
-                        popular: false
-                      },
-                      {
-                        name: "Growth VPS",
-                        vcpu: "4",
-                        ram: "8GB",
-                        storage: "100GB NVMe",
-                        basePrice: 1999,
-                        popular: true
-                      },
-                      {
-                        name: "Pro VPS",
-                        vcpu: "8",
-                        ram: "16GB",
-                        storage: "200GB NVMe",
-                        basePrice: 3599,
-                        popular: false
-                      },
-                      {
-                        name: "Power VPS",
-                        vcpu: "12",
-                        ram: "32GB",
-                        storage: "500GB NVMe",
-                        basePrice: 5999,
-                        popular: false
-                      },
-                      {
-                        name: "Enterprise VPS",
-                        vcpu: "16",
-                        ram: "64GB",
-                        storage: "1TB NVMe",
-                        basePrice: 9999,
-                        popular: false
-                      },
-                      {
-                        name: "Max VPS",
-                        vcpu: "24",
-                        ram: "128GB",
-                        storage: "2TB NVMe",
-                        basePrice: 15999,
-                        popular: false
-                      }
-                    ].map((plan, index) => (
-                      <TableRow key={index} className={plan.popular ? "bg-orange-50 border-l-4 border-l-orange-500" : ""}>
-                        <TableCell className="font-semibold">
-                          <div className="flex items-center space-x-2">
-                            <span>{plan.name}</span>
-                            {plan.popular && <Badge className="bg-orange-500 text-white text-xs">Popular</Badge>}
-                          </div>
-                        </TableCell>
+                    {vpsPlans.map((plan, index) => (
+                      <TableRow key={index} className="hover:bg-gray-50">
+                        <TableCell className="font-semibold">{plan.name}</TableCell>
                         <TableCell>{plan.vcpu}</TableCell>
                         <TableCell>{plan.ram}</TableCell>
                         <TableCell>{plan.storage}</TableCell>
                         <TableCell className="font-bold text-orange-600">
-                          ₹{getVpsPrice(plan.basePrice).toLocaleString()}
-                          {vpsBilling === 'quarterly' && <span className="text-xs text-gray-500 block">/quarter</span>}
-                          {vpsBilling === 'yearly' && <span className="text-xs text-gray-500 block">/year</span>}
+                          ₹{getVpsPrice(plan.priceINR).toLocaleString()}
+                        </TableCell>
+                        <TableCell className="font-bold text-green-600">
+                          ${getVpsPrice(plan.priceUSD)}
                         </TableCell>
                         <TableCell>
-                          <Button size="sm" className={plan.popular ? "bg-orange-500 hover:bg-orange-600 text-white" : "bg-purple-500 hover:bg-purple-600 text-white"}>
+                          <Button size="sm" className="bg-purple-500 hover:bg-purple-600 text-white">
                             Deploy Now
                           </Button>
                         </TableCell>
@@ -569,18 +437,18 @@ const Pricing = () => {
               </div>
             </div>
 
-            {/* VPS Features */}
-            <div className="grid md:grid-cols-4 gap-6">
+            {/* VPS Features - Mobile Optimized */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
               {[
                 { icon: Shield, title: "Full Root Access", desc: "Complete control over your server environment" },
                 { icon: Cpu, title: "AMD EPYC Processors", desc: "Latest generation high-performance CPUs" },
                 { icon: HardDrive, title: "NVMe SSD Storage", desc: "Ultra-fast storage for superior performance" },
                 { icon: Network, title: "High-Speed Network", desc: "Premium bandwidth with low latency" }
               ].map((feature, index) => (
-                <div key={index} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                  <feature.icon className="w-12 h-12 text-green-500 mx-auto mb-4" />
-                  <h4 className="font-semibold text-foreground mb-2">{feature.title}</h4>
-                  <p className="text-sm text-muted-foreground">{feature.desc}</p>
+                <div key={index} className="text-center p-4 lg:p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <feature.icon className="w-8 lg:w-12 h-8 lg:h-12 text-green-500 mx-auto mb-3 lg:mb-4" />
+                  <h4 className="font-semibold text-foreground mb-2 text-sm lg:text-base">{feature.title}</h4>
+                  <p className="text-xs lg:text-sm text-muted-foreground">{feature.desc}</p>
                 </div>
               ))}
             </div>
