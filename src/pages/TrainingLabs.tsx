@@ -84,14 +84,18 @@ const TrainingLabs = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                  Request Your Custom Lab
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch a Live Demo
-                </Button>
+                <Link to="/contact">
+                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
+                    Request Your Custom Lab
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/pricing">
+                  <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
+                    <Play className="mr-2 h-5 w-5" />
+                    View Pricing
+                  </Button>
+                </Link>
               </div>
 
               <div className="grid grid-cols-3 gap-8 pt-8">
@@ -249,16 +253,16 @@ const TrainingLabs = () => {
               
               <div className="relative">
                 <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-                  <div style={{position:"relative", width:"100%", height:"0px", paddingBottom:"56.250%"}}>
-                    <iframe 
-                      allow="fullscreen;autoplay" 
-                      allowFullScreen 
-                      height="100%" 
-                      src="https://streamable.com/e/71cyqu?autoplay=1&muted=1" 
-                      width="100%" 
-                      style={{border:"none", width:"100%", height:"100%", position:"absolute", left:"0px", top:"0px", overflow:"hidden"}}
-                    />
-                  </div>
+                  <video 
+                    className="w-full h-auto"
+                    controls
+                    muted
+                    autoPlay
+                    loop
+                  >
+                    <source src="https://media.cloudadda.com/file/clouaddda-training-page-vid-1-view-all-labs.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
@@ -267,16 +271,16 @@ const TrainingLabs = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative order-2 lg:order-1">
                 <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-                  <div style={{position:"relative", width:"100%", height:"0px", paddingBottom:"56.250%"}}>
-                    <iframe 
-                      allow="fullscreen;autoplay" 
-                      allowFullScreen 
-                      height="100%" 
-                      src="https://streamable.com/e/71cyqu?autoplay=1&muted=1" 
-                      width="100%" 
-                      style={{border:"none", width:"100%", height:"100%", position:"absolute", left:"0px", top:"0px", overflow:"hidden"}}
-                    />
-                  </div>
+                  <video 
+                    className="w-full h-auto"
+                    controls
+                    muted
+                    autoPlay
+                    loop
+                  >
+                    <source src="https://media.cloudadda.com/file/CA-Training-page-vid-2-without-leaving-youre-seat.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               
@@ -301,43 +305,28 @@ const TrainingLabs = () => {
               </div>
             </div>
 
-            {/* Feature 3: Custom Lab Configuration */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Feature 3: Custom Lab Configuration - Centered */}
+            <div className="max-w-4xl mx-auto text-center space-y-12">
               <div className="space-y-8">
                 <div className="inline-flex items-center space-x-2 bg-green-100 rounded-full px-4 py-2">
                   <Rocket className="w-5 h-5 text-green-600" />
                   <span className="text-green-700 font-semibold">Custom Configuration</span>
                 </div>
                 
-                <h3 className="text-3xl font-bold text-gray-900">We Build Your Perfect Lab Environment</h3>
+                <h3 className="text-4xl font-bold text-gray-900">We Build Your Perfect Lab Environment</h3>
                 
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
                   While we have pre-configured templates for common training scenarios, we custom-build and configure 
                   each lab environment to match your specific curriculum requirements and training needs. You focus on teaching — we handle the infrastructure.
                 </p>
                 
-                <ul className="space-y-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
                   {["Custom-built for your curriculum", "Pre-configured training templates", "Tailored to your specific needs", "Ready-to-use lab access provided"].map((feature, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-green-500" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
+                    <div key={index} className="flex flex-col items-center space-y-2 text-center">
+                      <CheckCircle className="w-8 h-8 text-green-500" />
+                      <span className="text-sm text-gray-700">{feature}</span>
+                    </div>
                   ))}
-                </ul>
-              </div>
-              
-              <div className="relative">
-                <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-                  <div style={{position:"relative", width:"100%", height:"0px", paddingBottom:"56.250%"}}>
-                    <iframe 
-                      allow="fullscreen;autoplay" 
-                      allowFullScreen 
-                      height="100%" 
-                      src="https://streamable.com/e/71cyqu?autoplay=1&muted=1" 
-                      width="100%" 
-                      style={{border:"none", width:"100%", height:"100%", position:"absolute", left:"0px", top:"0px", overflow:"hidden"}}
-                    />
-                  </div>
                 </div>
               </div>
             </div>
@@ -408,10 +397,12 @@ const TrainingLabs = () => {
                 <p>With CloudAdda, infrastructure fades into the background. You get total peace of mind, super-fast setup, and labs that just work — every single time.</p>
               </div>
 
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg">
-                Experience Effortless Training
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link to="/contact">
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg">
+                  Experience Effortless Training
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
 
             <div className="relative">
@@ -546,10 +537,12 @@ const TrainingLabs = () => {
           </h2>
           <p className="text-xl text-gray-600 mb-12">Skip the stress. Delight your participants. Reclaim your weekends.</p>
           
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-            Get Your Custom Lab Setup
-            <ArrowRight className="ml-3 h-6 w-6" />
-          </Button>
+          <Link to="/contact">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              Get Your Custom Lab Setup
+              <ArrowRight className="ml-3 h-6 w-6" />
+            </Button>
+          </Link>
 
           <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200">
             <div className="text-center">
