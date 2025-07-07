@@ -2,46 +2,37 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, Phone } from "lucide-react";
 
-interface CloudDesktopsPricingProps {
-  currency: 'INR' | 'USD';
-}
-
-const CloudDesktopsPricing = ({ currency }: CloudDesktopsPricingProps) => {
+const CloudDesktopsPricing = () => {
   const rolePlans = [
     { 
       name: "Essential", 
       idealFor: "Admins, HR, Finance, Light Users",
-      priceINR: "₹1,499", 
-      priceUSD: "$18",
+      price: "₹1,499", 
       specs: ["2 vCPU", "4 GB RAM", "100 GB NVMe SSD"]
     },
     { 
       name: "Standard", 
       idealFor: "Developers, QA, Analysts",
-      priceINR: "₹2,499", 
-      priceUSD: "$30",
+      price: "₹2,499", 
       specs: ["4 vCPU", "8 GB RAM", "200 GB NVMe SSD"]
     },
     { 
       name: "Power", 
       idealFor: "DevOps, Architects, Designers",
-      priceINR: "₹3,799", 
-      priceUSD: "$46",
+      price: "₹3,799", 
       specs: ["6 vCPU", "16 GB RAM", "300 GB NVMe SSD"],
       popular: true
     },
     { 
       name: "Ultra", 
       idealFor: "Heavy Dev, AI/ML, GPU workloads",
-      priceINR: "₹5,499", 
-      priceUSD: "$66",
+      price: "₹5,499", 
       specs: ["8 vCPU", "32 GB RAM", "500 GB NVMe SSD"]
     },
     { 
       name: "Custom Setup", 
       idealFor: "Mixed teams or enterprise deployments",
-      priceINR: "Contact Us", 
-      priceUSD: "Contact Us",
+      price: "Contact Us", 
       specs: ["Fully tailored specs", "GPU options", "SSO integration", "Enterprise features"]
     }
   ];
@@ -98,10 +89,8 @@ const CloudDesktopsPricing = ({ currency }: CloudDesktopsPricingProps) => {
                 </div>
                 
                 <div className="mb-4">
-                  <div className="text-2xl font-bold text-gray-900">
-                    {currency === 'INR' ? plan.priceINR : plan.priceUSD}
-                  </div>
-                  {(currency === 'INR' ? plan.priceINR : plan.priceUSD) !== "Contact Us" && (
+                  <div className="text-2xl font-bold text-gray-900">{plan.price}</div>
+                  {plan.price !== "Contact Us" && (
                     <div className="text-sm text-gray-600">Per User/Month</div>
                   )}
                 </div>
@@ -159,9 +148,7 @@ const CloudDesktopsPricing = ({ currency }: CloudDesktopsPricingProps) => {
                       </div>
                     </td>
                     <td className="px-6 py-4 text-center">
-                      <div className="text-lg font-bold text-gray-900">
-                        {currency === 'INR' ? plan.priceINR : plan.priceUSD}
-                      </div>
+                      <div className="text-lg font-bold text-gray-900">{plan.price}</div>
                     </td>
                   </tr>
                 ))}
