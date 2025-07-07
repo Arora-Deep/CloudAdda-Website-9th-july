@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Users, Target, Award, Heart, Shield, Globe, Zap, Lightbulb, Handshake, Building, Eye } from "lucide-react";
+import { ArrowRight, Users, Target, Heart, Shield, Globe, Zap, Lightbulb, Handshake, Building, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -115,10 +115,6 @@ const About = () => {
                   <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
                   Join the Mission
                 </Button>
-                <Button size="lg" variant="outline" className="border-orange-500 text-orange-600 hover:bg-orange-50 group">
-                  <Users className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  Meet the Humans Behind It
-                </Button>
               </div>
             </div>
             <div className="lg:col-span-5">
@@ -160,12 +156,11 @@ const About = () => {
             </Badge>
             <h2 className="text-4xl font-bold text-foreground">The Numbers Tell Our Story</h2>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {[
-              { icon: Users, number: "10,000+", label: "Teams Empowered", color: "purple", delay: "0ms" },
-              { icon: Globe, number: "25+", label: "Countries Served", color: "orange", delay: "200ms" },
-              { icon: Zap, number: "99.98%", label: "Uptime Guarantee", color: "purple", delay: "400ms" },
-              { icon: Award, number: "50+", label: "Awards & Recognitions", color: "orange", delay: "600ms" }
+              { icon: Users, number: "1,000+", label: "Teams Empowered", color: "purple", delay: "0ms" },
+              { icon: Globe, number: "15+", label: "Cities Served", color: "orange", delay: "200ms" },
+              { icon: Zap, number: "99.98%", label: "Uptime Guarantee", color: "purple", delay: "400ms" }
             ].map((stat, index) => (
               <div key={index} className="text-center group" style={{ animationDelay: stat.delay }}>
                 <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-all duration-300 ${
@@ -320,16 +315,8 @@ const About = () => {
             Whether you're a company ready to migrate, a partner looking to collaborate, 
             or someone who wants to join the CloudAdda journey — let's talk.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex justify-center">
             <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 group">
-              <Building className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              View Careers
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 group">
-              <Handshake className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-              Partner With Us
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 group">
               <Heart className="w-5 h-5 mr-2 group-hover:scale-125 transition-transform" />
               Say Hello
             </Button>
