@@ -1,12 +1,70 @@
-import React from "react";
+
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Headphones, MessageSquare, FileText, Zap, Clock, Users, Star, Search, HelpCircle, CheckCircle } from "lucide-react";
+import { ArrowRight, Headphones, MessageSquare, FileText, Zap, Clock, Users, Star, Search, HelpCircle, CheckCircle, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Support = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    offering: '',
+    priority: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/YOUR_SUPPORT_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        alert('Support ticket submitted successfully! We\'ll get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          offering: '',
+          priority: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        alert('There was an error submitting your ticket. Please try again.');
+      }
+    } catch (error) {
+      alert('There was an error submitting your ticket. Please try again.');
+    }
+    
+    setIsSubmitting(false);
+  };
+
   const faqs = [
     {
       question: "How quickly can you provision a training lab?",
@@ -235,26 +293,151 @@ const Support = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Need Help?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Submit Support Ticket</h2>
             <p className="text-xl text-gray-600">Describe your issue and we'll get back to you quickly</p>
           </div>
 
           <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden">
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6">
-              <CardTitle className="text-2xl font-bold text-white text-center">Submit Support Request</CardTitle>
+              <CardTitle className="text-2xl font-bold text-white text-center">Support Request</CardTitle>
             </div>
             <CardContent className="p-8">
-              {/* Formaloo Support Form Embed */}
-              <div className="w-full">
-                <iframe
-                  src="https://formaloo.net/support-form"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  className="rounded-lg"
-                  title="Support Form"
-                />
-              </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <Input
+                      id="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      className="w-full"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <Input
+                      id="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className="w-full"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number
+                    </label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      className="w-full"
+                      placeholder="+1 (555) 000-0000"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                      Company Name
+                    </label>
+                    <Input
+                      id="company"
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => handleInputChange('company', e.target.value)}
+                      className="w-full"
+                      placeholder="Your company"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="offering" className="block text-sm font-medium text-gray-700 mb-2">
+                      Related Service *
+                    </label>
+                    <Select onValueChange={(value) => handleInputChange('offering', value)} required>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select the related service" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="training-labs">Training Labs</SelectItem>
+                        <SelectItem value="cloud-desktops">Cloud Desktops</SelectItem>
+                        <SelectItem value="vps-hosting">VPS Hosting</SelectItem>
+                        <SelectItem value="billing">Billing & Account</SelectItem>
+                        <SelectItem value="technical">Technical Issue</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <label htmlFor="priority" className="block text-sm font-medium text-gray-700 mb-2">
+                      Priority Level *
+                    </label>
+                    <Select onValueChange={(value) => handleInputChange('priority', value)} required>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select priority" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="low">Low - General question</SelectItem>
+                        <SelectItem value="medium">Medium - Non-urgent issue</SelectItem>
+                        <SelectItem value="high">High - Service disruption</SelectItem>
+                        <SelectItem value="critical">Critical - Complete outage</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    Subject *
+                  </label>
+                  <Input
+                    id="subject"
+                    type="text"
+                    required
+                    value={formData.subject}
+                    onChange={(e) => handleInputChange('subject', e.target.value)}
+                    className="w-full"
+                    placeholder="Brief description of the issue"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Detailed Description *
+                  </label>
+                  <Textarea
+                    id="message"
+                    required
+                    value={formData.message}
+                    onChange={(e) => handleInputChange('message', e.target.value)}
+                    className="w-full min-h-[150px]"
+                    placeholder="Please provide detailed information about your issue, including steps to reproduce, error messages, and any relevant context..."
+                  />
+                </div>
+
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  {isSubmitting ? 'Submitting...' : 'Submit Support Ticket'}
+                  <Send className="w-5 h-5 ml-2" />
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </div>

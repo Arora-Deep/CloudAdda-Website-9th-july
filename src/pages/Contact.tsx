@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,10 +7,60 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle, Heart, ExternalLink } from "lucide-react";
+import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    offering: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        alert('Thank you! Your message has been sent successfully.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          offering: '',
+          message: ''
+        });
+      } else {
+        alert('There was an error sending your message. Please try again.');
+      }
+    } catch (error) {
+      alert('There was an error sending your message. Please try again.');
+    }
+    
+    setIsSubmitting(false);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -156,19 +206,109 @@ const Contact = () => {
                 <CardTitle className="text-3xl font-bold text-white text-center">Talk to Us</CardTitle>
               </div>
               <CardContent className="p-8">
-                {/* Formaloo Form Link */}
-                <div className="w-full text-center">
-                  <a 
-                    href="https://forms.deepcloud.in/z90yp4" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3 w-full bg-gradient-to-r from-purple-600 to-orange-600 text-white px-8 py-6 rounded-xl text-lg font-semibold hover:from-purple-700 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                        Full Name *
+                      </label>
+                      <Input
+                        id="name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => handleInputChange('name', e.target.value)}
+                        className="w-full"
+                        placeholder="Your full name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        Email Address *
+                      </label>
+                      <Input
+                        id="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => handleInputChange('email', e.target.value)}
+                        className="w-full"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                        Phone Number
+                      </label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange('phone', e.target.value)}
+                        className="w-full"
+                        placeholder="+1 (555) 000-0000"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                        Company Name
+                      </label>
+                      <Input
+                        id="company"
+                        type="text"
+                        value={formData.company}
+                        onChange={(e) => handleInputChange('company', e.target.value)}
+                        className="w-full"
+                        placeholder="Your company"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="offering" className="block text-sm font-medium text-gray-700 mb-2">
+                      What do you need help with? *
+                    </label>
+                    <Select onValueChange={(value) => handleInputChange('offering', value)} required>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select an offering" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="training-labs">Training Labs</SelectItem>
+                        <SelectItem value="cloud-desktops">Cloud Desktops</SelectItem>
+                        <SelectItem value="vps-hosting">VPS Hosting</SelectItem>
+                        <SelectItem value="custom-solution">Custom Solution</SelectItem>
+                        <SelectItem value="general-inquiry">General Inquiry</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      Message *
+                    </label>
+                    <Textarea
+                      id="message"
+                      required
+                      value={formData.message}
+                      onChange={(e) => handleInputChange('message', e.target.value)}
+                      className="w-full min-h-[120px]"
+                      placeholder="Tell us about your project or requirements..."
+                    />
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-purple-600 to-orange-600 hover:from-purple-700 hover:to-orange-700 text-white py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
-                    <MessageCircle className="w-6 h-6" />
-                    Open Contact Form
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                </div>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    <Send className="w-5 h-5 ml-2" />
+                  </Button>
+                </form>
+                
                 <p className="text-center text-sm text-gray-500 italic mt-6">
                   🧃 No spam. No cold calls. Just genuinely helpful humans.
                 </p>
