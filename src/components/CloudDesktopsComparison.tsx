@@ -78,12 +78,6 @@ const CloudDesktopsComparison = () => {
             </TableBody>
           </Table>
         </div>
-
-        <div className="text-center mt-16">
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold">
-            Experience the CloudAdda Difference
-          </button>
-        </div>
       </div>
     </section>
   );

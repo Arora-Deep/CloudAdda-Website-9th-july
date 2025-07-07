@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { Monitor, Play } from "lucide-react";
+import { Monitor } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CloudDesktopsFinalCTA = () => {
   return (
@@ -14,13 +15,16 @@ const CloudDesktopsFinalCTA = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <Button size="lg" variant="orange" className="text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-            Start Your Free Trial
-            <Monitor className="ml-3 h-6 w-6" />
+          <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-16 py-6 text-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <Link to="/contact">
+              Get a Free Trial
+              <Monitor className="ml-3 h-6 w-6" />
+            </Link>
           </Button>
-          <Button size="lg" variant="outline" className="rounded-full px-16 py-6 text-xl border-orange-300 text-orange-600 hover:bg-orange-50">
-            See a Live Demo
-            <Play className="ml-3 h-6 w-6" />
+          <Button asChild size="lg" variant="outline" className="rounded-full px-16 py-6 text-xl border-orange-300 text-orange-600 hover:bg-orange-50">
+            <Link to="/pricing#cloud-desktops">
+              View Pricing
+            </Link>
           </Button>
         </div>
 

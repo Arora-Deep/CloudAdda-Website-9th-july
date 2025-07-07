@@ -1,93 +1,88 @@
 
-import { Clock, Shield, Settings, Users, Unlock, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Users, TrendingUp, Shield, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CloudDesktopsTeamBenefits = () => {
   const benefits = [
     {
-      title: "Always-On Workspaces",
-      description: "No boot-up delays, no lost progress, no waiting around for your computer to start.",
-      icon: Clock,
-      stat: "10 sec",
-      statLabel: "Boot time"
-    },
-    {
-      title: "Zero Downtime Guarantee", 
-      description: "We monitor, maintain, and patch your systems silently in the background.",
-      icon: Shield,
-      stat: "99.98%",
-      statLabel: "Uptime SLA"
-    },
-    {
-      title: "Custom Templates",
-      description: "We build your development environment exactly how your team needs it configured.",
-      icon: Settings,
-      stat: "10 min",
-      statLabel: "Setup time"
-    },
-    {
-      title: "Human Support",
-      description: "Real people, real engineers providing real fast help when you need it most.",
       icon: Users,
-      stat: "20 min",
-      statLabel: "Human support"
+      title: "IT Teams Get Their Lives Back",
+      description: "No more late-night laptop fixes, no more endless support tickets. Everything's managed centrally, updated automatically, and secured by default."
     },
     {
-      title: "No Lock-In",
-      description: "Monthly plans with no long-term contracts. Cancel or scale anytime you want.",
-      icon: Unlock,
-      stat: "0",
-      statLabel: "Contracts required"
+      icon: TrendingUp,
+      title: "Employees Stay Productive",
+      description: "Access the same high-performance desktop from home, office, or anywhere. No VPN slowdowns, no compatibility issues, just pure productivity."
     },
     {
-      title: "Optimized Performance",
-      description: "AMD EPYC processors and NVMe storage deliver consistent desktop performance.",
-      icon: Zap,
-      stat: "High",
-      statLabel: "Performance rating"
+      icon: Shield,
+      title: "C-Suite Sleeps Better",
+      description: "Zero data on local devices means zero data breaches from stolen laptops. Full compliance, complete audit trails, and enterprise-grade security."
     }
   ];
 
+  const painPoints = [
+    "Laptop procurement delays holding up new hires",
+    "Different performance across team members",
+    "Security nightmares with remote work",
+    "Expensive hardware refresh cycles",
+    "Complex software licensing and updates"
+  ];
+
   return (
-    <section className="py-32 bg-gray-50">
+    <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold mb-6 text-purple-600">
-            Why Teams Love CloudAdda
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            Ready to Transform Your Team?
           </h2>
-          <p className="text-2xl text-gray-600">The benefits that matter to your team</p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Say goodbye to these common pain points that slow down every growing company
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-12">
+        {/* Pain Points */}
+        <div className="bg-white rounded-2xl p-8 mb-16 shadow-lg">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Stop Dealing With:</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {painPoints.map((point, index) => (
+              <div key={index} className="flex items-start space-x-3">
+                <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                </div>
+                <span className="text-gray-700">{point}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Benefits */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {benefits.map((benefit, index) => (
-            <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <benefit.icon className="w-8 h-8 text-white" />
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                <benefit.icon className="w-8 h-8 text-blue-600" />
               </div>
               
-              <div className="mb-4">
-                <div className="text-4xl font-bold text-purple-600">{benefit.stat}</div>
-                <div className="text-sm text-gray-500 uppercase tracking-wide">{benefit.statLabel}</div>
-              </div>
-              
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {benefit.title}
               </h3>
               
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {benefit.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-20">
-          <div className="bg-orange-500 rounded-2xl p-12 text-white">
-            <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Team?</h3>
-            <p className="text-xl mb-8 opacity-90">Join thousands of teams already working smarter, not harder.</p>
-            <button className="bg-white text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100">
-              Start Your Free Trial
-            </button>
-          </div>
+        {/* CTA Section */}
+        <div className="text-center">
+          <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-12 py-6 text-xl shadow-lg hover:shadow-xl transition-all">
+            <Link to="/contact">
+              Talk to an Expert
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

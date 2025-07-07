@@ -6,7 +6,6 @@ import CloudDesktopsFullyConfigured from "@/components/CloudDesktopsFullyConfigu
 import CloudDesktopsUseCases from "@/components/CloudDesktopsUseCases";
 import CloudDesktopsComparison from "@/components/CloudDesktopsComparison";
 import CloudDesktopsTeamBenefits from "@/components/CloudDesktopsTeamBenefits";
-import CloudDesktopsTrustSignals from "@/components/CloudDesktopsTrustSignals";
 import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 import CloudDesktopsMigration from "@/components/CloudDesktopsMigration";
 import CloudDesktopsFinalCTA from "@/components/CloudDesktopsFinalCTA";
@@ -100,8 +99,6 @@ const CloudDesktops = () => {
       <CloudDesktopsUseCases />
       <CloudDesktopsComparison />
       <CloudDesktopsTeamBenefits />
-      <CloudDesktopsTrustSignals />
-      <CloudDesktopsPricing />
       <CloudDesktopsMigration />
       <CloudDesktopsFinalCTA />
       <CloudDesktopsFooter />

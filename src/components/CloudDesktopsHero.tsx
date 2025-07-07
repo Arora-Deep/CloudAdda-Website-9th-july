@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Monitor } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CloudDesktopsHero = () => {
   return (
@@ -31,12 +32,16 @@ const CloudDesktopsHero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6">
-              <Button size="lg" variant="orange" className="rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                Try Free for 7 Days
-                <Monitor className="ml-2 h-5 w-5" />
+              <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
+                <Link to="/contact">
+                  Get a Free Trial
+                  <Monitor className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-orange-300 text-orange-600 hover:bg-orange-50">
-                Launch a Desktop Now
+              <Button asChild size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-orange-300 text-orange-600 hover:bg-orange-50">
+                <Link to="/pricing#cloud-desktops">
+                  View Pricing
+                </Link>
               </Button>
             </div>
 

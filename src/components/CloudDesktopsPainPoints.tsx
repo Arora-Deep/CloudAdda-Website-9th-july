@@ -1,5 +1,7 @@
 
 import { CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CloudDesktopsPainPoints = () => {
   const cloudAddaBenefits = [
@@ -29,9 +31,21 @@ const CloudDesktopsPainPoints = () => {
             </div>
           </div>
 
-          <p className="text-lg text-gray-600 mt-8 max-w-4xl mx-auto">
+          <p className="text-lg text-gray-600 mt-8 mb-8 max-w-4xl mx-auto">
             Whether you're answering support calls, editing massive video files, managing hospital data, or running your entire business — CloudAdda gives you a desktop that never slows down, never crashes, and never holds you back.
           </p>
+
+          <div className="bg-blue-50 rounded-2xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Stop Asking "Will It Work?"</h3>
+            <p className="text-lg text-gray-600 mb-6">
+              The answer is always yes. Our cloud desktops are built to handle anything you throw at them.
+            </p>
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-3">
+              <Link to="/contact">
+                Talk to Us
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
