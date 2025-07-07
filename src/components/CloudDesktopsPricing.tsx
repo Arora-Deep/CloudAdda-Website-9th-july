@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface CloudDesktopsPricingProps {
   currency: 'INR' | 'USD';
@@ -207,21 +208,25 @@ const CloudDesktopsPricing = ({ currency }: CloudDesktopsPricingProps) => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            size="lg" 
-            className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
-          >
-            <span className="mr-2">⚡</span>
-            Launch Your Desktop Now
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50 rounded-full px-8 py-4 text-lg w-full sm:w-auto"
-          >
-            <Phone className="mr-2 h-5 w-5" />
-            Talk to Sales for Custom Plans
-          </Button>
+          <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <Button 
+              size="lg" 
+              className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
+            >
+              <span className="mr-2">⚡</span>
+              Launch Your Desktop Now
+            </Button>
+          </Link>
+          <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50 rounded-full px-8 py-4 text-lg w-full sm:w-auto"
+            >
+              <Phone className="mr-2 h-5 w-5" />
+              Talk to Sales for Custom Plans
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

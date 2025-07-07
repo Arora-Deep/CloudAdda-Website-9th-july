@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Switch } from "@/components/ui/switch";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ArrowRight, CheckCircle, Zap, Shield, Users, Heart, Star, Globe, DollarSign, Calculator, Sparkles, GraduationCap, Monitor, Server, Check, Building, Target, Cpu, HardDrive, Network } from "lucide-react";
+import { ArrowRight, CheckCircle, Zap, Shield, Users, Heart, Star, Globe, DollarSign, Calculator, Sparkles, GraduationCap, Monitor, Server, Check, Building, Target, Cpu, HardDrive, Network, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 
@@ -133,13 +134,32 @@ const Pricing = () => {
               <Link to="/pricing" className="text-orange-500 font-medium">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
-                Log In
-              </Button>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                Start Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+                    Log In
+                    <ChevronDown className="ml-2 h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem>
+                    <a href="https://trainer.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full">
+                      Trainer Login
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <a href="https://trainee.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full">
+                      Trainee Login
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
+                  Contact Us
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -316,10 +336,12 @@ const Pricing = () => {
                       <span>Free consultation and infrastructure planning</span>
                     </div>
                   </div>
-                  <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 font-semibold w-full">
-                    Get Custom Quote
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
+                  <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 font-semibold w-full">
+                      Get Custom Quote
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -412,19 +434,19 @@ const Pricing = () => {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-gray-50">
-                      <TableHead className="font-bold text-foreground">vCPU</TableHead>
-                      <TableHead className="font-bold text-foreground">RAM</TableHead>
-                      <TableHead className="font-bold text-foreground">Storage</TableHead>
-                      <TableHead className="font-bold text-foreground">Price {currency}/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
+                      <TableHead className="font-bold text-foreground w-1/4">vCPU</TableHead>
+                      <TableHead className="font-bold text-foreground w-1/4">RAM</TableHead>
+                      <TableHead className="font-bold text-foreground w-1/4">Storage</TableHead>
+                      <TableHead className="font-bold text-foreground w-1/4 text-center">Price {currency}/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {vpsPlans.map((plan, index) => (
                       <TableRow key={index} className="hover:bg-gray-50">
-                        <TableCell>{plan.vcpu}</TableCell>
-                        <TableCell>{plan.ram}</TableCell>
-                        <TableCell>{plan.storage}</TableCell>
-                        <TableCell className="font-bold text-orange-600">
+                        <TableCell className="text-center">{plan.vcpu}</TableCell>
+                        <TableCell className="text-center">{plan.ram}</TableCell>
+                        <TableCell className="text-center">{plan.storage}</TableCell>
+                        <TableCell className="font-bold text-orange-600 text-center">
                           {currency === 'INR' ? '₹' : '$'}{getVpsPrice(currency === 'INR' ? plan.priceINR : plan.priceUSD).toLocaleString()}
                         </TableCell>
                       </TableRow>
@@ -432,6 +454,16 @@ const Pricing = () => {
                   </TableBody>
                 </Table>
               </div>
+            </div>
+
+            {/* Talk to Sales Button */}
+            <div className="text-center mb-8">
+              <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
+                  Talk to Sales
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
 
             {/* VPS Features - Mobile Optimized */}
@@ -482,9 +514,11 @@ const Pricing = () => {
                   Not sure what plan is right? Or want help creating a perfect bundle for your team?
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 font-semibold">
-                    Talk to an Expert
-                  </Button>
+                  <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 font-semibold">
+                      Talk to an Expert
+                    </Button>
+                  </Link>
                   <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-semibold">
                     View Demo
                   </Button>
