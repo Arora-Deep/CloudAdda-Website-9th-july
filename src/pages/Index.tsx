@@ -30,7 +30,7 @@ const Index = () => {
     highlight: "Delivers"
   }];
 
-  // Updated customer logos with new images
+  // Customer logos for carousel - Updated with actual logos
   const customerLogos = [
     {
       name: "NIIT",
@@ -71,42 +71,6 @@ const Index = () => {
     {
       name: "EdForce",
       logo: "/lovable-uploads/db3358c1-b1a9-4070-a4a3-87901202446e.png"
-    },
-    {
-      name: "Xebia",
-      logo: "/lovable-uploads/168f3b7e-5abe-4850-bdac-add53e21fcb4.png"
-    },
-    {
-      name: "Mazenet",
-      logo: "/lovable-uploads/78472758-6da6-4403-9e80-a1e2d61a0893.png"
-    },
-    {
-      name: "Unext",
-      logo: "/lovable-uploads/b30cdbbc-43d3-4690-bc58-4817dcedd4d6.png"
-    },
-    {
-      name: "SpringPeople",
-      logo: "/lovable-uploads/df4fd201-2c8e-4ad6-b65a-1f0d13add86d.png"
-    },
-    {
-      name: "Novel Vista",
-      logo: "/lovable-uploads/21459b8a-fdf1-42f6-8503-d17013aede66.png"
-    },
-    {
-      name: "Overture Research",
-      logo: "/lovable-uploads/c65616c4-1ed8-4c76-8cd6-93f0ddd9a95a.png"
-    },
-    {
-      name: "Learnlytica",
-      logo: "/lovable-uploads/eb28034e-23b0-4ede-a4d8-635ce65d965e.png"
-    },
-    {
-      name: "LeelaJay",
-      logo: "/lovable-uploads/4e4d4486-2767-498c-816b-a1beee44cbf9.png"
-    },
-    {
-      name: "Alchemy",
-      logo: "/lovable-uploads/02252fc8-4957-494c-82db-1f7917b81b8b.png"
     }
   ];
 
@@ -137,7 +101,7 @@ const Index = () => {
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
               <div className="flex items-center space-x-2">
-                <img src="/lovable-uploads/9bc8f666-3076-423e-9425-f6233997cb50.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
+                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -233,13 +197,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Company Logo Marquee - Updated with dual direction */}
+      {/* Company Logo Marquee */}
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden space-y-4">
-            {/* First row - left to right */}
-            <div className="flex animate-marquee">
-              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => (
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee-fast">
+              {customerLogos.map((logo, index) => (
                 <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
                     <img 
@@ -251,34 +214,7 @@ const Index = () => {
                 </div>
               ))}
               {/* Duplicate for seamless loop */}
-              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
-                  <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img 
-                      src={logo.logo} 
-                      alt={logo.name} 
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Second row - right to left */}
-            <div className="flex animate-marquee-reverse">
-              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => (
-                <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
-                  <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img 
-                      src={logo.logo} 
-                      alt={logo.name} 
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
-                </div>
-              ))}
-              {/* Duplicate for seamless loop */}
-              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => (
+              {customerLogos.map((logo, index) => (
                 <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
                     <img 
@@ -821,7 +757,7 @@ const Index = () => {
               </Button>
             </Link>
             
-            <div className="mt-12">
+            <div className="mt-8">
               <div className="inline-flex items-center justify-center space-x-2 bg-purple-100 text-purple-600 px-6 py-3 rounded-full text-sm font-semibold">
                 <HeartHandshake className="w-4 h-4" />
                 <span>Trusted by 500+ Companies Worldwide</span>
@@ -1138,7 +1074,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <img src="/lovable-uploads/9bc8f666-3076-423e-9425-f6233997cb50.png" alt="CloudAdda Logo" className="h-8 w-auto" />
+                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
                 <span className="font-bold text-xl">CloudAdda</span>
               </div>
               <p className="text-gray-400">
