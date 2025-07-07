@@ -16,6 +16,13 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CloudDesktops = () => {
+  const handleNavigation = (path: string) => {
+    window.location.href = path;
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -23,7 +30,7 @@ const CloudDesktops = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <Link to="/" className="flex items-center space-x-2">
+              <Link to="/" onClick={() => handleNavigation('/')} className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
               </Link>
             </div>
@@ -39,6 +46,7 @@ const CloudDesktops = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/training-labs"
+                            onClick={() => handleNavigation('/training-labs')}
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none">Training Labs</div>
@@ -50,6 +58,7 @@ const CloudDesktops = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/cloud-desktops"
+                            onClick={() => handleNavigation('/cloud-desktops')}
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none">Cloud Desktops</div>
@@ -61,6 +70,7 @@ const CloudDesktops = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/vps"
+                            onClick={() => handleNavigation('/vps')}
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none">VPS Hosting</div>
@@ -74,11 +84,11 @@ const CloudDesktops = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
-              <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
-              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
-              <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
+              <Link to="/trainer-adda" onClick={() => handleNavigation('/trainer-adda')} className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
+              <Link to="/about" onClick={() => handleNavigation('/about')} className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
+              <Link to="/pricing" onClick={() => handleNavigation('/pricing')} className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
+              <Link to="/contact" onClick={() => handleNavigation('/contact')} className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
+              <Link to="/support" onClick={() => handleNavigation('/support')} className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
