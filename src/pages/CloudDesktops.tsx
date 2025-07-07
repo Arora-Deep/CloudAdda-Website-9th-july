@@ -12,7 +12,6 @@ import CloudDesktopsFinalCTA from "@/components/CloudDesktopsFinalCTA";
 import CloudDesktopsFooter from "@/components/CloudDesktopsFooter";
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CloudDesktops = () => {
@@ -30,9 +29,9 @@ const CloudDesktops = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <Link to="/" onClick={() => handleNavigation('/')} className="flex items-center space-x-2">
+              <button onClick={() => handleNavigation('/')} className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
-              </Link>
+              </button>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <NavigationMenu>
@@ -44,57 +43,50 @@ const CloudDesktops = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/training-labs"
+                          <button
                             onClick={() => handleNavigation('/training-labs')}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-left"
                           >
                             <div className="text-sm font-medium leading-none">Training Labs</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Provisioned lab environments for training companies
                             </p>
-                          </Link>
+                          </button>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/cloud-desktops"
+                          <button
                             onClick={() => handleNavigation('/cloud-desktops')}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-left"
                           >
                             <div className="text-sm font-medium leading-none">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Fast, secure desktops accessible from anywhere
                             </p>
-                          </Link>
+                          </button>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/vps"
+                          <button
                             onClick={() => handleNavigation('/vps')}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-left"
                           >
                             <div className="text-sm font-medium leading-none">VPS Hosting</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               High-performance VPS with AMD EPYC processors
                             </p>
-                          </Link>
+                          </button>
                         </NavigationMenuLink>
                       </div>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <Link to="/trainer-adda" onClick={() => handleNavigation('/trainer-adda')} className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
-              <Link to="/about" onClick={() => handleNavigation('/about')} className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
-              <Link to="/pricing" onClick={() => handleNavigation('/pricing')} className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
-              <Link to="/contact" onClick={() => handleNavigation('/contact')} className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
-              <Link to="/support" onClick={() => handleNavigation('/support')} className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+              <button onClick={() => handleNavigation('/trainer-adda')} className="text-gray-700 hover:text-orange-500 transition-colors">Resources</button>
+              <button onClick={() => handleNavigation('/about')} className="text-gray-700 hover:text-orange-500 transition-colors">About Us</button>
+              <button onClick={() => handleNavigation('/pricing')} className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</button>
+              <button onClick={() => handleNavigation('/contact')} className="text-gray-700 hover:text-orange-500 transition-colors">Contact</button>
+              <button onClick={() => handleNavigation('/support')} className="text-gray-700 hover:text-orange-500 transition-colors">Support</button>
+              <Button variant="ghost" className="text-orange-500 hover:text-orange-600 rounded-full px-6">
                 Log In
-              </Button>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                Start Now
-                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
