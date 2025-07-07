@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle, Heart, ExternalLink } from "lucide-react";
+import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -156,20 +155,18 @@ const Contact = () => {
                 <CardTitle className="text-3xl font-bold text-white text-center">Talk to Us</CardTitle>
               </div>
               <CardContent className="p-8">
-                {/* Formaloo Form Link */}
-                <div className="w-full text-center">
-                  <a 
-                    href="https://forms.deepcloud.in/z90yp4" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3 w-full bg-gradient-to-r from-purple-600 to-orange-600 text-white px-8 py-6 rounded-xl text-lg font-semibold hover:from-purple-700 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                  >
-                    <MessageCircle className="w-6 h-6" />
-                    Open Contact Form
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
+                {/* Formaloo Form Embed */}
+                <div className="w-full">
+                  <iframe
+                    src="https://formaloo.net/contact-form"
+                    width="100%"
+                    height="600"
+                    frameBorder="0"
+                    className="rounded-lg"
+                    title="Contact Form"
+                  />
                 </div>
-                <p className="text-center text-sm text-gray-500 italic mt-6">
+                <p className="text-center text-sm text-gray-500 italic mt-4">
                   🧃 No spam. No cold calls. Just genuinely helpful humans.
                 </p>
               </CardContent>
