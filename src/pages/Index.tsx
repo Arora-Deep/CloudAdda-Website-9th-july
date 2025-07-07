@@ -179,7 +179,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
                   <Button size="lg" variant="orange" className="text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                    Let's Fix Your Infra
+                    Book a Demo
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
@@ -341,12 +341,6 @@ const Index = () => {
                   <p className="text-lg text-gray-600 leading-relaxed">We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole hands-on cloud lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.</p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/contact">
-                    <Button variant="orange" className="rounded-full px-8 py-3">
-                      Schedule a Lab Call
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
                   <Link to="/training-labs">
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
@@ -415,12 +409,6 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/contact">
-                    <Button variant="orange" className="rounded-full px-8 py-3">
-                      Launch a Desktop
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
                   <Link to="/cloud-desktops">
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
@@ -496,12 +484,6 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/contact">
-                    <Button variant="orange" className="rounded-full px-8 py-3">
-                      Get a VPS Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
                   <Link to="/vps">
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
@@ -646,19 +628,6 @@ const Index = () => {
               <img src="/lovable-uploads/8a2d7816-a253-40ef-a846-db190a4798a5.png" alt="Happy person representing after state" className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" />
             </div>
           </div>
-
-          {/* Call to Action - SINGLE CTA */}
-          <div className="text-center mt-20">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">
-              Tired of the "Before" life? Join the companies that made the switch to smart, scalable cloud.
-            </h3>
-            <Link to="/contact">
-              <Button size="lg" variant="orange" className="text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                Explore Our Platform
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -781,16 +750,19 @@ const Index = () => {
           
           {/* Premium CTA - SINGLE CTA */}
           <div className="text-center mt-16">
-            <div className="inline-flex items-center justify-center space-x-2 bg-purple-100 text-purple-600 px-6 py-3 rounded-full text-sm font-semibold mb-6">
-              <HeartHandshake className="w-4 h-4" />
-              <span>Trusted by 500+ Companies Worldwide</span>
-            </div>
             <Link to="/contact">
               <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                 Experience the Difference
                 <Rocket className="ml-2 h-5 w-5" />
               </Button>
             </Link>
+            
+            <div className="mt-8">
+              <div className="inline-flex items-center justify-center space-x-2 bg-purple-100 text-purple-600 px-6 py-3 rounded-full text-sm font-semibold">
+                <HeartHandshake className="w-4 h-4" />
+                <span>Trusted by 500+ Companies Worldwide</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -899,27 +871,27 @@ const Index = () => {
             subtitle: "Based on your exact requirements",
             description: "We ask 3-5 questions about your training needs, then deliver a complete lab environment.",
             features: ["Same-day delivery possible", "Fully customized environments", "Windows, Linux, or mixed stacks", "Scalable to any number of users"],
-            cta: "Get Custom Quote",
+            cta: "View Pricing",
             gradient: "from-blue-500 to-blue-600",
-            link: "/contact"
+            link: "/pricing#training-labs"
           }, {
             title: "Virtual Desktops",
             price: "₹3,299",
             subtitle: "per user/month",
             description: "High-performance cloud desktops with 2vCPU, 4GB RAM, and enterprise-grade security.",
             features: ["2vCPU, 4GB RAM, SSD storage", "99.9% uptime guarantee", "Built-in security & compliance", "Instant scaling"],
-            cta: "Launch Desktop",
+            cta: "View Pricing",
             gradient: "from-purple-500 to-purple-600",
-            link: "/contact"
+            link: "/pricing#cloud-desktops"
           }, {
             title: "VPS Hosting",
             price: "₹1,499",
             subtitle: "per month",
             description: "NVMe-powered virtual servers with AMD EPYC processors and dedicated resources.",
             features: ["NVMe SSD storage", "AMD EPYC processors", "Full root access", "Multiple data center locations"],
-            cta: "Get VPS Now",
+            cta: "View Pricing",
             gradient: "from-orange-500 to-orange-600",
-            link: "/contact"
+            link: "/pricing#vps"
           }].map((plan, index) => (
               <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-200">
