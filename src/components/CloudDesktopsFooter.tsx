@@ -8,7 +8,7 @@ const CloudDesktopsFooter = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
+              <img src="/lovable-uploads/9bc8f666-3076-423e-9425-f6233997cb50.png" alt="CloudAdda Logo" className="h-8 w-auto" />
               <span className="font-bold text-xl">CloudAdda</span>
             </div>
             <p className="text-gray-400">
