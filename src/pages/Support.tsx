@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -35,7 +34,7 @@ const Support = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_SUPPORT_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/mkgbalwp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
