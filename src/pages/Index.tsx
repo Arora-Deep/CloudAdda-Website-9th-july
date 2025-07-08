@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -191,11 +192,6 @@ const Index = () => {
               <Link to="/pricing" onClick={() => handleNavigation('/pricing')} className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" onClick={() => handleNavigation('/contact')} className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" onClick={() => handleNavigation('/support')} className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Link to="/contact" onClick={() => handleNavigation('/contact')}>
-                <Button variant="orange" className="text-white">
-                  Start Now
-                </Button>
-              </Link>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
@@ -226,6 +222,11 @@ const Index = () => {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
+              <Link to="/contact" onClick={() => handleNavigation('/contact')}>
+                <Button variant="orange" className="text-white rounded-full">
+                  Start Now
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
