@@ -193,7 +193,7 @@ const Index = () => {
               <Link to="/support" onClick={() => handleNavigation('/support')} className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
               <Link to="/contact" onClick={() => handleNavigation('/contact')}>
                 <Button variant="orange" className="text-white">
-                  Contact Us
+                  Start Now
                 </Button>
               </Link>
               <DropdownMenu>
@@ -439,11 +439,11 @@ const Index = () => {
                   <p className="text-lg text-gray-600 leading-relaxed">We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole hands-on cloud lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.</p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/training-labs" onClick={() => handleNavigation('/training-labs')}>
+                  <a href="/training-labs" onClick={() => { window.location.href = '/training-labs'; setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 100); }}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </div>
               
@@ -507,11 +507,11 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/cloud-desktops" onClick={() => handleNavigation('/cloud-desktops')}>
+                  <a href="/cloud-desktops" onClick={() => { window.location.href = '/cloud-desktops'; setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 100); }}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </div>
               
@@ -582,11 +582,11 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/vps" onClick={() => handleNavigation('/vps')}>
+                  <a href="/vps" onClick={() => { window.location.href = '/vps'; setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 100); }}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </div>
               
@@ -879,47 +879,89 @@ const Index = () => {
           </div>
           
           <div className="grid lg:grid-cols-3 gap-12">
-            {[{
-            quote: "It's like magic. I told them what we needed. Next morning, 40 labs were live. No bugs. No BS.",
-            author: "Founder, Corporate Training Platform",
-            rating: 5,
-            highlight: "magic"
-          }, {
-            quote: "We switched from AWS Workspaces to CloudAdda. Better speeds. Better support. Better everything.",
-            author: "Head of IT, Fintech Startup",
-            rating: 5,
-            highlight: "Better everything"
-          }, {
-            quote: "Honestly? They saved our training business.",
-            author: "CEO, EdTech Company",
-            rating: 5,
-            highlight: "saved our business"
-          }].map((testimonial, index) => (
-              <div key={index} className="group relative">
-                <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                  <div className="flex text-yellow-400 mb-6 justify-center">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-6 h-6 fill-current" />
-                    ))}
-                  </div>
-                  
-                  <div className="relative mb-8">
-                    <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
-                    <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
-                      {testimonial.quote}
-                    </p>
-                    <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
-                    <p className="font-semibold text-gray-900 text-lg">
-                      {testimonial.author}
-                    </p>
-                  </div>
+            <div className="group relative">
+              <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="flex text-yellow-400 mb-6 justify-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 fill-current" />
+                  ))}
+                </div>
+                
+                <div className="relative mb-8">
+                  <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
+                  <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
+                    CloudAdda's support team provides immediate solutions, helping with difficult labs others can't complete. The platform has streamlined our workflow, enhancing productivity with seamless cloud collaboration. Its virtual training labs offer an intuitive interface, clear instructions, and a well-organized layout, making the learning process effective. I wholeheartedly recommend CloudAdda for its user-friendly interface, comprehensive content, and hands-on exercises.
+                  </p>
+                  <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
+                  <p className="font-semibold text-gray-900 text-lg">
+                    Vigneshwaran
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    IT Infrastructure Manager, Mazenet Solution Pvt Ltd
+                  </p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="group relative">
+              <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="flex text-yellow-400 mb-6 justify-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 fill-current" />
+                  ))}
+                </div>
+                
+                <div className="relative mb-8">
+                  <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
+                  <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
+                    CloudAdda's labs, used by my team of 100 trainees for IT Infra training, were supported by an efficient team that quickly resolved minor issues professionally. The seamless, interruption-free experience ensured high-quality learning. The user-friendly interface and comprehensive batch management were extremely useful. I strongly recommend CloudAdda for its effective virtual labs and excellent support team.
+                  </p>
+                  <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
+                  <p className="font-semibold text-gray-900 text-lg">
+                    Abdul Raouf
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    IT Trainer & Consultant
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="flex text-yellow-400 mb-6 justify-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 fill-current" />
+                  ))}
+                </div>
+                
+                <div className="relative mb-8">
+                  <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
+                  <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
+                    CloudAdda's exceptional Virtual Lab support, with prompt and effective assistance, ensures smooth operation and success. Its unmatched customer support and advanced features enhance the learning experience, setting it apart. The platform's reliability, accessibility, and seamless integration streamline processes, fostering efficiency. With an intuitive interface and excellent support, CloudAdda is ideal for effective training. Highly recommended for its robust features and user-friendly design.
+                  </p>
+                  <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
+                  <p className="font-semibold text-gray-900 text-lg">
+                    Gunjan Arora
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    DELIVERY MANAGER- LEARNING SERVICES, NIIT - StackRoute
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1046,7 +1088,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Closer Section */}
+      {/* The Closer Section - REMOVED TESTIMONIAL */}
       <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0">
@@ -1114,11 +1156,9 @@ const Index = () => {
                   <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto">
                     <Rocket className="w-10 h-10 text-white" />
                   </div>
-                  <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 border border-green-500/30 rounded-xl p-6">
-                    <p className="text-lg text-white font-semibold">
-                      "We switched to CloudAdda and grew 300% in 6 months. Best decision ever."
-                    </p>
-                    <p className="text-sm text-gray-400 mt-2">- CEO, Leading Training Company</p>
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-white mb-4">Ready to Make the Switch?</h3>
+                    <p className="text-gray-300">Join the companies that stopped fighting infrastructure and started winning customers.</p>
                   </div>
                 </div>
               </div>
