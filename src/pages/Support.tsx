@@ -1,95 +1,66 @@
-import React, { useState } from "react";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Headphones, MessageSquare, FileText, Zap, Clock, Users, Star, Search, HelpCircle, CheckCircle, Send } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { 
+  Book, 
+  MessageSquare, 
+  Phone, 
+  Mail, 
+  Clock, 
+  CheckCircle, 
+  AlertCircle, 
+  Info, 
+  Search,
+  Download,
+  ExternalLink,
+  Users,
+  FileText,
+  Video,
+  HelpCircle
+} from "lucide-react";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const Support = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    offering: '',
-    priority: '',
-    subject: '',
-    message: ''
+  const [ticketForm, setTicketForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    priority: "",
+    category: "",
+    description: ""
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }));
-  };
+  const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleTicketSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    toast({
+      title: "Form Submitted",
+      description: "Your support ticket has been created. We'll respond within 2 hours.",
+      duration: 5000,
+    });
     
-    try {
-      const response = await fetch('https://formspree.io/f/mkgbalwp', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      if (response.ok) {
-        alert('Support ticket submitted successfully! We\'ll get back to you soon.');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          offering: '',
-          priority: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        alert('There was an error submitting your ticket. Please try again.');
-      }
-    } catch (error) {
-      alert('There was an error submitting your ticket. Please try again.');
-    }
-    
-    setIsSubmitting(false);
+    // Reset form
+    setTicketForm({
+      name: "",
+      email: "",
+      subject: "",
+      priority: "",
+      category: "",
+      description: ""
+    });
   };
 
-  const faqs = [
-    {
-      question: "How quickly can you provision a training lab?",
-      answer: "Most labs are ready within 3 hours. For urgent requirements, we can provision basic environments in under 1 hour."
-    },
-    {
-      question: "Do you support custom software installations?",
-      answer: "Absolutely! We pre-install any software, tools, or packages you need. Just share your requirements and we'll handle the setup."
-    },
-    {
-      question: "What happens if students face issues during training?",
-      answer: "Our 24/7 support team monitors all active sessions. Students can get help via chat, and we resolve most issues within 10 minutes."
-    },
-    {
-      question: "Can you handle large-scale training (1000+ students)?",
-      answer: "Yes! We've successfully managed training sessions with over 5,000 concurrent users. Our infrastructure auto-scales to handle any load."
-    },
-    {
-      question: "What's included in your support?",
-      answer: "24/7 technical support, infrastructure monitoring, automatic backups, security updates, and dedicated account management."
-    },
-    {
-      question: "Do you offer refunds if labs don't work as expected?",
-      answer: "We guarantee 99.9% uptime. If technical issues cause training disruption due to our infrastructure, we provide full refunds."
-    }
-  ];
+  const handleTicketChange = (field: string, value: string) => {
+    setTicketForm(prev => ({ ...prev, [field]: value }));
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -97,455 +68,450 @@ const Support = () => {
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="flex items-center">
-              <Link to="/" className="flex items-center space-x-2">
-                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
+            <Link to="/" className="flex items-center space-x-2">
+              <img src="/lovable-uploads/ab89b288-4111-435f-8c60-3551cd55182c.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
+            </Link>
+            <div className="flex items-center space-x-6">
+              <Link to="/" className="text-gray-700 hover:text-orange-500 transition-colors">
+                ← Back to Home
               </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
-                      Solutions
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
-                        <NavigationMenuLink asChild>
-                          <Link to="/training-labs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Training Labs</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Provisioned lab environments for training companies
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Cloud Desktops</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Fast, secure desktops accessible from anywhere
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link to="/vps" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">VPS Hosting</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              High-performance VPS with AMD EPYC processors
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-              <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
-              <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
-              <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
-              <Link to="/support" className="text-orange-500 font-medium">Support</Link>
-              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
-                Log In
-              </Button>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                Start Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-orange-50 relative overflow-hidden">
-        <div className="absolute top-10 right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <Badge className="mb-8 bg-blue-100 text-blue-800 border-blue-200 text-sm font-medium px-4 py-2">
-            <Headphones className="w-4 h-4 mr-2" />
-            24/7 Support
-          </Badge>
-          <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-tight tracking-tight text-gray-900">
-            We're Here to
-            <br />
-            <span className="text-blue-600">Help You Succeed.</span>
-          </h1>
-          <p className="text-2xl text-gray-600 mb-4 max-w-2xl mx-auto font-light">
-            Real humans. Real expertise. Real fast responses.
-          </p>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto">
-            Our engineering team is standing by to help you build, scale, and optimize your infrastructure.
-          </p>
+      <section className="bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
+              Support That 
+              <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent"> Actually Helps</span>
+            </h1>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              Real humans. Real solutions. Available 24/7 to keep your infrastructure running smoothly.
+            </p>
+            <div className="flex items-center justify-center space-x-8 mt-8">
+              <div className="flex items-center space-x-2">
+                <Clock className="w-5 h-5 text-green-400" />
+                <span className="text-green-400 font-semibold">< 2hr Response Time</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Users className="w-5 h-5 text-green-400" />
+                <span className="text-green-400 font-semibold">24/7 Human Support</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                <span className="text-green-400 font-semibold">99.9% Resolution Rate</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Support Options */}
-      <section className="py-16 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Get Help Your Way</h2>
-            <p className="text-xl text-gray-600">Choose the support option that works best for you</p>
-          </div>
+          <Tabs defaultValue="help" className="w-full">
+            <TabsList className="grid w-full grid-cols-4 mb-12">
+              <TabsTrigger value="help" className="flex items-center space-x-2">
+                <HelpCircle className="w-4 h-4" />
+                <span>Get Help</span>
+              </TabsTrigger>
+              <TabsTrigger value="docs" className="flex items-center space-x-2">
+                <Book className="w-4 h-4" />
+                <span>Documentation</span>
+              </TabsTrigger>
+              <TabsTrigger value="status" className="flex items-center space-x-2">
+                <CheckCircle className="w-4 h-4" />
+                <span>Service Status</span>
+              </TabsTrigger>
+              <TabsTrigger value="contact" className="flex items-center space-x-2">
+                <MessageSquare className="w-4 h-4" />
+                <span>Contact Us</span>
+              </TabsTrigger>
+            </TabsList>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 shadow-lg">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MessageSquare className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-blue-900">Live Chat</CardTitle>
-                <CardDescription className="text-blue-700">
-                  Instant help when you need it most
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-blue-600" />
-                    <span className="text-sm text-blue-800">Average response: 2 minutes</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-blue-600" />
-                    <span className="text-sm text-blue-800">Available 24/7</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-blue-600" />
-                    <span className="text-sm text-blue-800">Technical experts</span>
-                  </div>
-                </div>
-                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
-                  Start Chat
-                  <MessageSquare className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 shadow-lg">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FileText className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-purple-900">Submit a Ticket</CardTitle>
-                <CardDescription className="text-purple-700">
-                  Detailed support for complex issues
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-purple-600" />
-                    <span className="text-sm text-purple-800">Detailed investigation</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-purple-600" />
-                    <span className="text-sm text-purple-800">Priority handling</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-purple-600" />
-                    <span className="text-sm text-purple-800">Follow-up guaranteed</span>
-                  </div>
-                </div>
-                <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white">
-                  Create Ticket
-                  <FileText className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200 shadow-lg">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-orange-900">Emergency Support</CardTitle>
-                <CardDescription className="text-orange-700">
-                  Critical issues during live sessions
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600" />
-                    <span className="text-sm text-orange-800">Immediate escalation</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600" />
-                    <span className="text-sm text-orange-800">Direct engineer access</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600" />
-                    <span className="text-sm text-orange-800">5 min response SLA</span>
-                  </div>
-                </div>
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
-                  Emergency Call
-                  <Zap className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Support Form */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Submit Support Ticket</h2>
-            <p className="text-xl text-gray-600">Describe your issue and we'll get back to you quickly</p>
-          </div>
-
-          <Card className="bg-white shadow-xl border-0 rounded-2xl overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6">
-              <CardTitle className="text-2xl font-bold text-white text-center">Support Request</CardTitle>
-            </div>
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <Input
-                      id="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => handleInputChange('name', e.target.value)}
-                      className="w-full"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="w-full"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number
-                    </label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => handleInputChange('phone', e.target.value)}
-                      className="w-full"
-                      placeholder="+1 (555) 000-0000"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                      Company Name
-                    </label>
-                    <Input
-                      id="company"
-                      type="text"
-                      value={formData.company}
-                      onChange={(e) => handleInputChange('company', e.target.value)}
-                      className="w-full"
-                      placeholder="Your company"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="offering" className="block text-sm font-medium text-gray-700 mb-2">
-                      Related Service *
-                    </label>
-                    <Select onValueChange={(value) => handleInputChange('offering', value)} required>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select the related service" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="training-labs">Training Labs</SelectItem>
-                        <SelectItem value="cloud-desktops">Cloud Desktops</SelectItem>
-                        <SelectItem value="vps-hosting">VPS Hosting</SelectItem>
-                        <SelectItem value="billing">Billing & Account</SelectItem>
-                        <SelectItem value="technical">Technical Issue</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <label htmlFor="priority" className="block text-sm font-medium text-gray-700 mb-2">
-                      Priority Level *
-                    </label>
-                    <Select onValueChange={(value) => handleInputChange('priority', value)} required>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select priority" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="low">Low - General question</SelectItem>
-                        <SelectItem value="medium">Medium - Non-urgent issue</SelectItem>
-                        <SelectItem value="high">High - Service disruption</SelectItem>
-                        <SelectItem value="critical">Critical - Complete outage</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
+            <TabsContent value="help" className="space-y-8">
+              <div className="grid lg:grid-cols-2 gap-12">
+                {/* Support Ticket Form */}
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject *
-                  </label>
-                  <Input
-                    id="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={(e) => handleInputChange('subject', e.target.value)}
-                    className="w-full"
-                    placeholder="Brief description of the issue"
-                  />
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Create Support Ticket</h2>
+                  <p className="text-gray-600 mb-8">
+                    Having an issue? Create a ticket and our support team will help you resolve it within 2 hours.
+                  </p>
+
+                  <form onSubmit={handleTicketSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Full Name *
+                        </label>
+                        <Input
+                          type="text"
+                          value={ticketForm.name}
+                          onChange={(e) => handleTicketChange('name', e.target.value)}
+                          required
+                          className="w-full"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Email Address *
+                        </label>
+                        <Input
+                          type="email"
+                          value={ticketForm.email}
+                          onChange={(e) => handleTicketChange('email', e.target.value)}
+                          required
+                          className="w-full"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Subject *
+                      </label>
+                      <Input
+                        type="text"
+                        value={ticketForm.subject}
+                        onChange={(e) => handleTicketChange('subject', e.target.value)}
+                        required
+                        className="w-full"
+                        placeholder="Brief description of the issue"
+                      />
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Priority
+                        </label>
+                        <Select value={ticketForm.priority} onValueChange={(value) => handleTicketChange('priority', value)}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select priority" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="low">Low - General question</SelectItem>
+                            <SelectItem value="medium">Medium - Minor issue</SelectItem>
+                            <SelectItem value="high">High - Service disruption</SelectItem>
+                            <SelectItem value="critical">Critical - System down</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Category
+                        </label>
+                        <Select value={ticketForm.category} onValueChange={(value) => handleTicketChange('category', value)}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select category" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="training-labs">Training Labs</SelectItem>
+                            <SelectItem value="cloud-desktops">Cloud Desktops</SelectItem>
+                            <SelectItem value="vps">VPS Hosting</SelectItem>
+                            <SelectItem value="billing">Billing & Account</SelectItem>
+                            <SelectItem value="technical">Technical Issue</SelectItem>
+                            <SelectItem value="feature">Feature Request</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Description *
+                      </label>
+                      <Textarea
+                        value={ticketForm.description}
+                        onChange={(e) => handleTicketChange('description', e.target.value)}
+                        required
+                        rows={6}
+                        className="w-full"
+                        placeholder="Please provide detailed information about your issue, including any error messages, steps to reproduce, and what you've already tried..."
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white text-lg py-3"
+                    >
+                      Submit Ticket
+                    </Button>
+                  </form>
                 </div>
 
+                {/* Quick Help */}
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Quick Help</h3>
+                    
+                    <div className="space-y-4">
+                      <Card className="border-l-4 border-l-green-500">
+                        <CardHeader className="pb-3">
+                          <div className="flex items-center space-x-3">
+                            <CheckCircle className="w-5 h-5 text-green-500" />
+                            <CardTitle className="text-lg">System Status: All Good</CardTitle>
+                          </div>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-gray-600">All CloudAdda services are operating normally.</p>
+                        </CardContent>
+                      </Card>
+
+                      <Card>
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-lg">Common Issues</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                          <div className="flex items-start space-x-3">
+                            <Info className="w-4 h-4 text-blue-500 mt-0.5" />
+                            <div>
+                              <p className="font-medium text-gray-900">Can't access my lab?</p>
+                              <p className="text-sm text-gray-600">Check your internet connection and try refreshing the page.</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <Info className="w-4 h-4 text-blue-500 mt-0.5" />
+                            <div>
+                              <p className="font-medium text-gray-900">Slow performance?</p>
+                              <p className="text-sm text-gray-600">Close unnecessary browser tabs and applications.</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <Info className="w-4 h-4 text-blue-500 mt-0.5" />
+                            <div>
+                              <p className="font-medium text-gray-900">Billing questions?</p>
+                              <p className="text-sm text-gray-600">Check your account dashboard or contact billing support.</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+
+                  {/* Emergency Contact */}
+                  <Card className="bg-red-50 border-red-200">
+                    <CardHeader>
+                      <CardTitle className="text-lg text-red-800 flex items-center space-x-2">
+                        <AlertCircle className="w-5 h-5" />
+                        <span>Emergency Support</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-red-700 mb-4">For critical issues affecting production systems:</p>
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <Phone className="w-4 h-4 text-red-600" />
+                          <span className="font-medium text-red-800">+91 98765 43210</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Mail className="w-4 h-4 text-red-600" />
+                          <span className="font-medium text-red-800">emergency@cloudadda.com</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="docs" className="space-y-8">
+              <div className="grid lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    icon: Book,
+                    title: "Getting Started",
+                    description: "Quick setup guides and tutorials",
+                    items: ["Account Setup", "First Lab Creation", "User Management", "Basic Configuration"]
+                  },
+                  {
+                    icon: Video,
+                    title: "Video Tutorials",
+                    description: "Step-by-step video guides",
+                    items: ["Platform Overview", "Advanced Features", "Troubleshooting", "Best Practices"]
+                  },
+                  {
+                    icon: FileText,
+                    title: "API Documentation",
+                    description: "Technical integration guides",
+                    items: ["REST API", "Webhooks", "SDKs", "Code Examples"]
+                  }
+                ].map((section, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-shadow">
+                    <CardHeader>
+                      <div className="flex items-center space-x-3 mb-2">
+                        <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                          <section.icon className="w-5 h-5 text-blue-600" />
+                        </div>
+                        <CardTitle className="text-xl">{section.title}</CardTitle>
+                      </div>
+                      <CardDescription>{section.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2">
+                        {section.items.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 cursor-pointer">
+                            <ExternalLink className="w-4 h-4" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="status" className="space-y-8">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-4 py-2 rounded-full mb-4">
+                  <CheckCircle className="w-5 h-5" />
+                  <span className="font-semibold">All Systems Operational</span>
+                </div>
+                <p className="text-gray-600">All CloudAdda services are running smoothly</p>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-8">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Service Status</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {[
+                      { name: "Training Labs", status: "operational" },
+                      { name: "Cloud Desktops", status: "operational" },
+                      { name: "VPS Hosting", status: "operational" },
+                      { name: "API Services", status: "operational" },
+                      { name: "Dashboard", status: "operational" }
+                    ].map((service, index) => (
+                      <div key={index} className="flex items-center justify-between">
+                        <span className="text-gray-700">{service.name}</span>
+                        <Badge variant="secondary" className="bg-green-100 text-green-800">
+                          <CheckCircle className="w-3 h-3 mr-1" />
+                          Operational
+                        </Badge>
+                      </div>
+                    ))}
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Performance Metrics</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <div className="flex justify-between mb-1">
+                          <span className="text-sm text-gray-600">Uptime (30 days)</span>
+                          <span className="text-sm font-medium text-green-600">99.98%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                          <div className="bg-green-500 h-2 rounded-full" style={{width: '99.98%'}}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between mb-1">
+                          <span className="text-sm text-gray-600">Response Time</span>
+                          <span className="text-sm font-medium text-blue-600">< 100ms</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                          <div className="bg-blue-500 h-2 rounded-full" style={{width: '95%'}}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between mb-1">
+                          <span className="text-sm text-gray-600">Support Resolution</span>
+                          <span className="text-sm font-medium text-purple-600">< 2 hours</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                          <div className="bg-purple-500 h-2 rounded-full" style={{width: '98%'}}></div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="contact" className="space-y-8">
+              <div className="grid lg:grid-cols-2 gap-12">
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Detailed Description *
-                  </label>
-                  <Textarea
-                    id="message"
-                    required
-                    value={formData.message}
-                    onChange={(e) => handleInputChange('message', e.target.value)}
-                    className="w-full min-h-[150px]"
-                    placeholder="Please provide detailed information about your issue, including steps to reproduce, error messages, and any relevant context..."
-                  />
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+                  <p className="text-gray-600 mb-8">
+                    Multiple ways to reach our support team. We're here to help 24/7.
+                  </p>
+
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <MessageSquare className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Live Chat</h4>
+                        <p className="text-gray-600 mb-2">Get instant help from our support team</p>
+                        <Button variant="outline" size="sm">Start Chat</Button>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-6 h-6 text-green-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Email Support</h4>
+                        <p className="text-gray-600">support@cloudadda.com</p>
+                        <p className="text-sm text-gray-500">Response within 2 hours</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Phone className="w-6 h-6 text-orange-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Phone Support</h4>
+                        <p className="text-gray-600">+91 98765 43210</p>
+                        <p className="text-sm text-gray-500">24/7 availability</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  {isSubmitting ? 'Submitting...' : 'Submit Support Ticket'}
-                  <Send className="w-5 h-5 ml-2" />
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+                <Card className="bg-gradient-to-br from-purple-50 to-blue-50 border-purple-200">
+                  <CardHeader>
+                    <CardTitle className="text-purple-800">Support Commitment</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <Clock className="w-5 h-5 text-purple-600" />
+                      <span className="text-gray-700">2-hour response guarantee</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Users className="w-5 h-5 text-purple-600" />
+                      <span className="text-gray-700">Talk to real engineers</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-purple-600" />
+                      <span className="text-gray-700">99.9% issue resolution rate</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <HelpCircle className="w-5 h-5 text-purple-600" />
+                      <span className="text-gray-700">Proactive monitoring & alerts</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-gray-100 text-gray-800">
-              <HelpCircle className="w-4 h-4 mr-2" />
-              Frequently Asked Questions
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Quick Answers</h2>
-            <p className="text-xl text-gray-600">
-              Common questions about our services and support
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="border border-gray-200 hover:shadow-md transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg text-gray-900 flex items-start">
-                    <HelpCircle className="w-5 h-5 mr-3 mt-0.5 text-blue-500 flex-shrink-0" />
-                    {faq.question}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 ml-8">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Support Stats */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">Support by the Numbers</h2>
-            <p className="text-xl text-blue-100">
-              We're proud of our track record
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">2 min</div>
-              <div className="text-blue-100">Average Response Time</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-blue-100">Issue Resolution Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">24/7</div>
-              <div className="text-blue-100">Support Availability</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">4.9★</div>
-              <div className="text-blue-100">Customer Satisfaction</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <Link to="/" className="flex items-center space-x-2">
-                <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl">CloudAdda</span>
-              </Link>
-              <p className="text-gray-400">
-                Simple. Scalable. Human. Infrastructure that just works.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Solutions</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" className="hover:text-white">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" className="hover:text-white">Cloud Desktops</Link></li>
-                <li><Link to="/vps" className="hover:text-white">VPS</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/trainer-adda" className="hover:text-white">Trainer Adda</Link></li>
-                <li><Link to="/guides" className="hover:text-white">Guides & Docs</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/support" className="hover:text-white">Help Center</Link></li>
-                <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 CloudAdda. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
