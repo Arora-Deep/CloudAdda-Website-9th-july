@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { BookOpen, Users, Target, ArrowRight, Star, Clock, GraduationCap, Award, CheckCircle, Download, FileText, Lightbulb, Heart, Calendar, ChevronRight, Sparkles, TrendingUp, Eye, Headphones } from "lucide-react";
+import { BookOpen, Users, Target, ArrowRight, Star, Clock, GraduationCap, Award, CheckCircle, Download, FileText, Lightbulb, Heart, Calendar, ChevronRight, Sparkles, TrendingUp, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainerAdda = () => {
@@ -248,35 +248,28 @@ const TrainerAdda = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-32 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7">
-              <Badge className="mb-4 bg-orange-500 text-white">
-                <Sparkles className="w-4 h-4 mr-2" />
-                Expert Training Resources
-              </Badge>
-              <h1 className="text-5xl font-bold mb-6 text-gray-900">
-                CloudAdda Resources Hub
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Everything you need to deliver world-class training experiences. From proven methodologies 
-                to ready-made curricula, we've got your training success covered.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button size="lg" variant="orange" className="group">
-                  <BookOpen className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  Explore Resources
-                </Button>
-                <Button size="lg" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
-                  <Download className="w-5 h-5 mr-2" />
-                  Download Guide
-                </Button>
-              </div>
-            </div>
-            <div className="lg:col-span-5">
-              <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-80 w-auto" />
-            </div>
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Badge className="mb-4 bg-orange-500 text-white">
+            <Sparkles className="w-4 h-4 mr-2" />
+            Expert Training Resources
+          </Badge>
+          <h1 className="text-5xl font-bold mb-6 text-gray-900">
+            CloudAdda Resources Hub
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Everything you need to deliver world-class training experiences. From proven methodologies 
+            to ready-made curricula, we've got your training success covered.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+              <BookOpen className="w-5 h-5 mr-2" />
+              Explore Resources
+            </Button>
+            <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50">
+              <Download className="w-5 h-5 mr-2" />
+              Download Tools
+            </Button>
           </div>
         </div>
       </section>
@@ -546,25 +539,22 @@ const TrainerAdda = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-orange-50 to-blue-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Final CTA Section */}
+      <section className="py-16 bg-orange-500">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Training?</h2>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Join thousands of training professionals who trust CloudAdda for their infrastructure needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <Button size="lg" variant="orange" className="rounded-full px-12 py-6 text-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                Get Support
-                <Headphones className="ml-3 h-6 w-6" />
-              </Button>
-            </Link>
-            <Link to="/training-labs" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <Button size="lg" variant="outline" className="rounded-full px-12 py-6 text-xl border-orange-300 text-orange-600 hover:bg-orange-50">
-                Try Training Labs
-              </Button>
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100">
+              <Users className="w-5 h-5 mr-2" />
+              Start Free Trial
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-500">
+              <Calendar className="w-5 h-5 mr-2" />
+              Book Demo
+            </Button>
           </div>
         </div>
       </section>

@@ -1,8 +1,4 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
 import CloudDesktopsSolutions from "@/components/CloudDesktopsSolutions";
@@ -10,9 +6,14 @@ import CloudDesktopsFullyConfigured from "@/components/CloudDesktopsFullyConfigu
 import CloudDesktopsUseCases from "@/components/CloudDesktopsUseCases";
 import CloudDesktopsComparison from "@/components/CloudDesktopsComparison";
 import CloudDesktopsTeamBenefits from "@/components/CloudDesktopsTeamBenefits";
+import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 import CloudDesktopsMigration from "@/components/CloudDesktopsMigration";
 import CloudDesktopsFinalCTA from "@/components/CloudDesktopsFinalCTA";
 import CloudDesktopsFooter from "@/components/CloudDesktopsFooter";
+import { Button } from "@/components/ui/button";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CloudDesktops = () => {
   const handleNavigation = (path: string) => {
