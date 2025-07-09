@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -29,7 +28,8 @@ import {
   Award,
   CheckCircle,
   Lightbulb,
-  Heart
+  Heart,
+  ChevronDown
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -182,26 +182,39 @@ const Guides = () => {
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
-                    Log In
+                  <Button variant="ghost" className="text-orange-500 hover:text-orange-600 flex items-center space-x-1">
+                    <span>Log In</span>
+                    <ChevronDown className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg">
+                <DropdownMenuContent align="end" className="bg-white border border-gray-200 shadow-lg">
                   <DropdownMenuItem asChild>
-                    <a href="https://trainer.cloudadda.com/login" className="cursor-pointer hover:bg-gray-50">
+                    <a 
+                      href="https://trainer.cloudadda.com/login" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                    >
                       Trainer Log In
                     </a>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <a href="https://trainee.cloudadda.com/login" className="cursor-pointer hover:bg-gray-50">
+                    <a 
+                      href="https://trainee.cloudadda.com/login" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                    >
                       Trainee Log In
                     </a>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-6">
-                Start Now
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Button asChild className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-6">
+                <Link to="/contact">
+                  Start Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
