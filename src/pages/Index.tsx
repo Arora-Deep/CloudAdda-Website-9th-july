@@ -462,7 +462,7 @@ const Index = () => {
                 <div className="space-y-4">
                   <h3 className="text-3xl font-bold text-gray-900">Virtual Training Labs</h3>
                   <p className="text-sm text-purple-600 font-semibold">For Training Firms & Enterprises</p>
-                  <p className="text-lg text-gray-600 leading-relaxed">We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole hands-on cloud lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.</p>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-4">We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole hands-on cloud lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.</p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="/training-labs" onClick={() => { window.location.href = '/training-labs'; setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 100); }}>
@@ -527,8 +527,8 @@ const Index = () => {
                   <p className="text-sm text-purple-600 font-semibold">DaaS for Modern Teams</p>
                   <p className="text-lg text-gray-600 leading-relaxed mb-4">High-performance, secure virtual desktops — ready to power remote teams, call centers, dev shops, and full-scale organizations. Blazing fast, customizable, and easier than hiring IT admins.</p>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-semibold">Starts at ₹3,299/user/month</span></p>
-                    <p><span className="font-semibold">2vCPU, 4GB RAM, SSD/NVMe, 100% SLA</span></p>
+                    <p><span className="font-semibold">Starts at ₹1,499/user/month</span></p>
+                    <p><span className="font-semibold">Up to 2vCPU, 4GB RAM, SSD/NVMe, 100% SLA</span></p>
                     <p><span className="font-semibold">Built-in snapshots, security policies, and remote access</span></p>
                   </div>
                 </div>
@@ -602,8 +602,8 @@ const Index = () => {
                     Don't waste time on cheap, oversold VPS providers. CloudAdda gives you fast, isolated, NVMe-powered instances with real support and predictable performance.
                   </p>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-semibold">Starts at ₹699/month</span></p>
-                    <p><span className="font-semibold">1vCPU, 2GB RAM, full root access</span></p>
+                    <p><span className="font-semibold">Starts at ₹199/month</span></p>
+                    <p><span className="font-semibold">Up to 96vCPU, 768GB RAM, full root access</span></p>
                     <p><span className="font-semibold">Indian & global locations. Backups included.</span></p>
                   </div>
                 </div>
