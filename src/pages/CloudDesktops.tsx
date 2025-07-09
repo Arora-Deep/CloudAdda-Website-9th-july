@@ -1,3 +1,4 @@
+
 import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
 import CloudDesktopsSolutions from "@/components/CloudDesktopsSolutions";
@@ -121,11 +122,9 @@ const CloudDesktops = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
               
-              <Button asChild className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-6">
-                <Link to="/contact">
-                  Start Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+              <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-6">
+                Start Now
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
