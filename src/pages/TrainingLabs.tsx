@@ -1,10 +1,6 @@
-
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { ArrowRight, CheckCircle, Zap, Shield, Users, Heart, Star, Globe, GraduationCap, Target, ChevronDown, BookOpen, Clock, Laptop, Settings } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Clock, Shield, CheckCircle, Star, Laptop, Globe, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainingLabs = () => {
@@ -81,29 +77,10 @@ const TrainingLabs = () => {
               <Link to="/pricing" onClick={() => handleNavigation('/pricing')} className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" onClick={() => handleNavigation('/contact')} className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" onClick={() => handleNavigation('/support')} className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-orange-500 hover:text-orange-600 hover:bg-orange-50 group">
-                    Log In
-                    <ChevronDown className="ml-1 h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56 bg-white border border-gray-200 shadow-lg rounded-lg">
-                  <DropdownMenuItem onClick={() => handleNavigation('/login')}>
-                    Log In
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleNavigation('/signup')}>
-                    Sign Up
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              
-              <Button 
-                variant="orange" 
-                className="rounded-full px-6 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                onClick={() => handleNavigation('/signup')}
-              >
+              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+                Log In
+              </Button>
+              <Button variant="orange" className="rounded-full px-6">
                 Start Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
