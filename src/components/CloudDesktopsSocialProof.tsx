@@ -37,7 +37,7 @@ const CloudDesktopsSocialProof = () => {
 
     const intervalId = setInterval(() => {
       api.scrollNext();
-    }, 5000); // Auto-scroll every 5 seconds
+    }, 4000); // Auto-scroll every 4 seconds
 
     return () => clearInterval(intervalId);
   }, [api]);
@@ -50,11 +50,11 @@ const CloudDesktopsSocialProof = () => {
           <p className="text-xl text-gray-600">From solo developers to enterprise teams</p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <Carousel
             setApi={setApi}
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             className="w-full"
@@ -62,33 +62,35 @@ const CloudDesktopsSocialProof = () => {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="w-full">
-                  <div className="bg-gray-50 rounded-2xl p-12 hover:shadow-lg transition-all duration-300 text-center">
-                    <div className="flex items-center justify-center space-x-1 mb-8">
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-16 hover:shadow-xl transition-all duration-300 text-center border border-gray-200">
+                    <div className="flex items-center justify-center space-x-1 mb-10">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                        <Star key={i} className="w-7 h-7 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <p className="text-gray-700 leading-relaxed mb-8 text-lg italic">
-                      "{testimonial.quote}"
-                    </p>
-                    <div className="flex items-center justify-center space-x-4">
-                      <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                        <span className="text-blue-600 font-semibold text-lg">
+                    <div className="max-w-4xl mx-auto">
+                      <p className="text-gray-700 leading-relaxed mb-12 text-2xl italic font-light">
+                        "{testimonial.quote}"
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-center space-x-6">
+                      <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center border-2 border-blue-300">
+                        <span className="text-blue-700 font-bold text-xl">
                           {testimonial.author.charAt(0)}
                         </span>
                       </div>
                       <div className="text-left">
-                        <div className="font-semibold text-gray-900 text-lg">{testimonial.author}</div>
-                        <div className="text-gray-600">{testimonial.title}</div>
-                        <div className="text-sm text-gray-500">{testimonial.company}</div>
+                        <div className="font-bold text-gray-900 text-xl">{testimonial.author}</div>
+                        <div className="text-gray-600 text-lg">{testimonial.title}</div>
+                        <div className="text-gray-500">{testimonial.company}</div>
                       </div>
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
+            <CarouselPrevious className="left-8 bg-white/80 hover:bg-white shadow-lg" />
+            <CarouselNext className="right-8 bg-white/80 hover:bg-white shadow-lg" />
           </Carousel>
         </div>
       </div>
