@@ -1,11 +1,9 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { 
   BookOpen, 
   Search, 
@@ -180,26 +178,10 @@ const Guides = () => {
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
-                    Log In
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg">
-                  <DropdownMenuItem asChild>
-                    <a href="https://trainer.cloudadda.com/login" className="cursor-pointer hover:bg-gray-50">
-                      Trainer Log In
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <a href="https://trainee.cloudadda.com/login" className="cursor-pointer hover:bg-gray-50">
-                      Trainee Log In
-                    </a>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-6">
+              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+                Log In
+              </Button>
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
                 Start Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
