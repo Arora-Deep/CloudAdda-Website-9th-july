@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -52,7 +53,7 @@ const Pricing = () => {
     { name: "VPS-17", vcpu: "12", ram: "48GB", storage: "180GB", priceINR: 7680, priceUSD: 91 },
     { name: "VPS-18", vcpu: "16", ram: "32GB", storage: "200GB", priceINR: 6800, priceUSD: 81 },
     { name: "VPS-19", vcpu: "16", ram: "64GB", storage: "250GB", priceINR: 10340, priceUSD: 123 },
-    { name: "VPS-20", vcpu: "16", ram: "128GB", storage: "300GB", priceINR: 17000, priceUSD: 202 },
+    { name: "VPS-20", vcpu: "16", ram: "128GB", storage: "300GB", priceINR: 17000, priceUSD: 199 },
     { name: "VPS-21", vcpu: "24", ram: "48GB", storage: "250GB", priceINR: 9900, priceUSD: 118 },
     { name: "VPS-22", vcpu: "24", ram: "96GB", storage: "350GB", priceINR: 15300, priceUSD: 182 },
     { name: "VPS-23", vcpu: "24", ram: "192GB", storage: "450GB", priceINR: 25500, priceUSD: 304 },
