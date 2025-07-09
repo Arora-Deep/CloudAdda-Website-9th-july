@@ -92,7 +92,7 @@ const CloudDesktops = () => {
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
+              <Button variant="orange" className="rounded-full px-6">
                 Start Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

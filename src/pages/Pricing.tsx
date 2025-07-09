@@ -15,6 +15,13 @@ const Pricing = () => {
   const [vpsBilling, setVpsBilling] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
+  const handleNavigation = (path: string) => {
+    window.location.href = path;
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -71,13 +78,13 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <Link to="/" className="flex items-center space-x-2">
+              <Link to="/" onClick={() => handleNavigation('/')} className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
               </Link>
             </div>
@@ -133,32 +140,13 @@ const Pricing = () => {
               <Link to="/pricing" className="text-orange-500 font-medium">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
-                    Log In
-                    <ChevronDown className="ml-2 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem>
-                    <a href="https://trainer.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full">
-                      Trainer Login
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <a href="https://trainee.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full">
-                      Trainee Login
-                    </a>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                  Contact Us
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+                Log In
+              </Button>
+              <Button variant="orange" className="rounded-full px-6">
+                Start Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>
