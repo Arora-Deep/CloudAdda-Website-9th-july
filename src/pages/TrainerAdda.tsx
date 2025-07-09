@@ -1,163 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { BookOpen, Users, Target, ArrowRight, Star, Clock, GraduationCap, Award, CheckCircle, Download, FileText, Lightbulb, Heart, Calendar, ChevronRight, Sparkles, TrendingUp, Eye } from "lucide-react";
+import { ArrowRight, BookOpen, Users, TrendingUp, FileText, Video, Download, ExternalLink, Play, Star, Calendar, Clock, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useMetaTags } from "@/utils/metaTags";
 
 const TrainerAdda = () => {
-  const [activeSection, setActiveSection] = useState("trainer-playbook");
-
-  const resourceSections = [
-    {
-      id: "trainer-playbook",
-      label: "Trainer Playbook",
-      description: "Complete curricula and lab setups",
-      icon: BookOpen,
-    },
-    {
-      id: "adda-insights",
-      label: "Adda Insights", 
-      description: "Technical tutorials and guides",
-      icon: Lightbulb,
-    },
-    {
-      id: "customer-stories",
-      label: "Success Stories",
-      description: "Real-world case studies",
-      icon: Heart,
-    },
-    {
-      id: "downloads",
-      label: "Downloads",
-      description: "Free resources and tools",
-      icon: Download,
-    },
-    {
-      id: "adda-dispatch",
-      label: "The Adda Dispatch",
-      description: "Monthly updates and tips",
-      icon: Calendar,
-    }
-  ];
-
-  const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = resourceSections.map(section => section.id);
-      const scrollPosition = window.scrollY + 200;
-
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const blogPosts = [{
-    id: "training-lab-costs",
-    title: "Why Your Training Lab Costs Are So High (And How to Cut Them by 70%)",
-    description: "Break down the hidden cost traps of traditional virtual lab setups and discover how next-gen platforms help trainers save 60–80% without compromising quality.",
-    category: "Cost Management",
-    readTime: "8 min read",
-    date: "Dec 15, 2024",
-    author: "CloudAdda Team",
-    featured: true,
-  }, {
-    id: "call-center-case-study",
-    title: "Behind the Screen: How a Call Center Saved ₹20 Lakhs by Moving to Cloud Desktops",
-    description: "A mid-sized call center's journey from operational chaos to streamlined efficiency with cloud desktops.",
-    category: "Case Study",
-    readTime: "6 min read",
-    date: "Dec 12, 2024",
-    author: "CloudAdda Team",
-    featured: false,
-  }, {
-    id: "daas-shift-2025",
-    title: "Why DaaS Is Taking Over: The Shift Away from Laptops in 2025",
-    description: "Explore why smart companies are moving away from laptops to Desktop-as-a-Service solutions.",
-    category: "Industry Trends",
-    readTime: "5 min read",
-    date: "Dec 10, 2024",
-    author: "CloudAdda Team",
-    featured: false,
-  }];
-
-  const caseStudies = [{
-    id: "call-center-transformation",
-    title: "Call Center's ₹20 Lakh Cloud Desktop Transformation",
-    description: "How a 200-agent call center eliminated operational chaos and saved ₹20 lakhs annually",
-    company: "Mid-sized Call Center",
-    results: "₹20L saved annually, 98.7% uptime, 33% productivity boost",
-    category: "Cloud Desktops",
-  }, {
-    id: "laptop-to-daas-migration",
-    title: "Enterprise DaaS Migration Success Story",
-    description: "Complete transition from traditional laptops to cloud desktops across multiple departments",
-    company: "Enterprise Client",
-    results: "70% cost reduction, instant setup, enhanced security",
-    category: "DaaS Migration",
-  }];
-
-  const playbooks = [{
-    id: "zero-to-live-lab",
-    title: "Zero to Live — How to Deliver a Flawless Virtual Training Lab in 3 Hours",
-    description: "The complete blueprint to go from training plan to fully functional, cloud-hosted lab in just 3 hours",
-    type: "Lab Setup",
-    duration: "3 hours",
-  }, {
-    id: "scaling-1000-students",
-    title: "Scaling to 1,000 Students: Infrastructure Strategies That Don't Break Mid-Session",
-    description: "Proven strategies to scale training infrastructure without crashes or failures during high-load sessions",
-    type: "Scaling",
-    duration: "Enterprise",
-  }, {
-    id: "virtual-lab-checklist",
-    title: "The Ultimate Virtual Lab Checklist: 7 Things Before You Go Live",
-    description: "Essential pre-launch checklist to prevent virtual training failures and ensure smooth sessions",
-    type: "Quality Assurance",
-    duration: "Pre-Launch",
-  }];
-
-  const downloads = [{
-    title: "Lab Planning Worksheet",
-    description: "Complete worksheet for defining lab environments and requirements",
-    type: "PDF Template",
-    size: "2.1 MB",
-    downloads: "3.2k"
-  }, {
-    title: "Ultimate Lab Setup Checklist",
-    description: "15-point readiness checklist with troubleshooting flowchart and command sheets",
-    type: "PDF Guide",
-    size: "1.8 MB",
-    downloads: "4.1k"
-  }, {
-    title: "Trainer Onboarding Checklist",
-    description: "Step-by-step onboarding process for new training environments",
-    type: "PDF Checklist",
-    size: "950 KB",
-    downloads: "2.8k"
-  }];
+  useMetaTags({
+    title: "Adda Insights – Cloud Infra, Training Labs & VDI Trends | CloudAdda",
+    description: "Stay ahead with insights on virtual training delivery, DaaS adoption, and cloud infra optimization. Trusted by trainers, IT teams & remote-first businesses."
+  });
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,7 +34,10 @@ const TrainerAdda = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
                         <NavigationMenuLink asChild>
-                          <Link to="/training-labs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link
+                            to="/training-labs"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
                             <div className="text-sm font-medium leading-none">Training Labs</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Provisioned lab environments for training companies
@@ -185,7 +45,10 @@ const TrainerAdda = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link
+                            to="/cloud-desktops"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
                             <div className="text-sm font-medium leading-none">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Fast, secure desktops accessible from anywhere
@@ -193,7 +56,10 @@ const TrainerAdda = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link to="/vps" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link
+                            to="/vps"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
                             <div className="text-sm font-medium leading-none">VPS Hosting</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               High-performance VPS with AMD EPYC processors
@@ -205,7 +71,7 @@ const TrainerAdda = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
+              <Link to="/trainer-adda" className="text-orange-500 font-medium">Resources</Link>
               <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
@@ -222,106 +88,100 @@ const TrainerAdda = () => {
         </div>
       </nav>
 
-      {/* Small Navigation Bar for Sections - Moved here after hero */}
-      <div className="bg-gray-50 border-b border-gray-200 sticky top-20 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto py-4 space-x-6">
-            {resourceSections.map((section) => {
-              const IconComponent = section.icon;
-              return (
-                <button
-                  key={section.id}
-                  onClick={() => scrollToSection(section.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${
-                    activeSection === section.id
-                      ? 'bg-orange-500 text-white shadow-sm'
-                      : 'text-gray-600 hover:text-orange-500 hover:bg-white'
-                  }`}
-                >
-                  <IconComponent className="w-4 h-4" />
-                  <span className="text-sm font-medium">{section.label}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
       {/* Hero Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-4 bg-orange-500 text-white">
-            <Sparkles className="w-4 h-4 mr-2" />
-            Expert Training Resources
-          </Badge>
-          <h1 className="text-5xl font-bold mb-6 text-gray-900">
-            CloudAdda Resources Hub
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Everything you need to deliver world-class training experiences. From proven methodologies 
-            to ready-made curricula, we've got your training success covered.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-              <BookOpen className="w-5 h-5 mr-2" />
-              Explore Resources
-            </Button>
-            <Button size="lg" variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50">
-              <Download className="w-5 h-5 mr-2" />
-              Download Tools
-            </Button>
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
+              <div className="inline-block mb-8">
+                <Badge className="mb-4 bg-purple-100 text-purple-800 border-purple-200 text-sm font-medium px-4 py-2">
+                  Empowering Trainers
+                </Badge>
+              </div>
+              <h1 className="text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
+                Unlock Your
+                <br />
+                <span className="text-purple-600 relative">
+                  Training
+                  <div className="absolute -bottom-4 left-0 w-full h-1 bg-orange-500 transform -rotate-1"></div>
+                </span>
+                <br />
+                Potential
+              </h1>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-px bg-purple-600"></div>
+                <div className="text-2xl font-bold text-foreground">Resources, Insights, Community.</div>
+              </div>
+              <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
+                Welcome to the CloudAdda Trainer's Hub — your go-to destination for resources, insights, and community support to elevate your training programs.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 group">
+                  <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                  Explore Resources
+                </Button>
+              </div>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="relative flex justify-center">
+                <img
+                  src="/lovable-uploads/49849491-e36f-4981-8c11-a4b43a9d911f.png"
+                  alt="CloudAdda Hero - VR Tech Innovation"
+                  className="w-full max-w-md h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Trainer Playbook Section */}
-      <section id="trainer-playbook" className="py-16 bg-gray-50">
+      {/* Key Resources Section */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-blue-500 text-white">
+          <div className="text-center mb-16">
+            <Badge className="mb-6 bg-orange-100 text-orange-800 border-orange-200">
               <BookOpen className="w-4 h-4 mr-2" />
-              Trainer Playbooks
+              Key Resources
             </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Complete Training Playbooks</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Detailed blueprints and methodologies that guarantee training success.
-            </p>
+            <h2 className="text-4xl font-bold text-foreground">Essential Tools for Modern Trainers</h2>
           </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {playbooks.map((playbook, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border border-gray-200">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <Badge className="bg-blue-500 text-white">{playbook.type}</Badge>
-                    <div className="text-sm text-gray-500 flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {playbook.duration}
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: TrendingUp,
+                title: "Industry Insights",
+                description: "Stay ahead with the latest trends in cloud infrastructure, training methodologies, and remote learning.",
+                link: "#",
+                color: "purple"
+              },
+              {
+                icon: FileText,
+                title: "Downloadable Guides",
+                description: "Access our library of guides, checklists, and templates to streamline your training processes.",
+                link: "#",
+                color: "orange"
+              },
+              {
+                icon: Video,
+                title: "Video Tutorials",
+                description: "Learn from our expert-led video tutorials covering everything from lab setup to advanced training techniques.",
+                link: "#",
+                color: "purple"
+              }
+            ].map((resource, index) => (
+              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2" style={{ animationDelay: `${index * 100}ms` }}>
+                <CardHeader className="text-center pb-4">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-300 ${
+                    resource.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'
+                  }`}>
+                    <resource.icon className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl">{playbook.title}</CardTitle>
-                  <CardDescription>{playbook.description}</CardDescription>
+                  <CardTitle className="text-xl font-bold">{resource.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3 mb-6">
-                    {[
-                      "Step-by-step implementation guide",
-                      "Real-world tested strategies",
-                      "Downloadable resources included",
-                      "Expert tips and best practices"
-                    ].map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-green-500" />
-                        <span className="text-sm text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Link to={`/playbook/${playbook.id}`}>
-                    <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
-                      View Playbook
-                      <Eye className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
+                  <p className="text-muted-foreground leading-relaxed text-center">
+                    {resource.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -329,54 +189,105 @@ const TrainerAdda = () => {
         </div>
       </section>
 
-      {/* Adda Insights Section */}
-      <section id="adda-insights" className="py-16 bg-white">
+      {/* Community and Collaboration Section */}
+      <section className="py-24 bg-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-orange-500 text-white">
-              <Lightbulb className="w-4 h-4 mr-2" />
-              Adda Insights
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Technical Insights & Analysis</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              In-depth analysis, cost breakdowns, and industry trends to help you make informed decisions.
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <Badge className="mb-8 bg-orange-100 text-orange-800 border-orange-200">
+                <Users className="w-4 h-4 mr-2" />
+                Connect & Collaborate
+              </Badge>
+              <h2 className="text-5xl font-bold text-foreground mb-8 leading-tight">
+                Join Our Community of
+                <br />
+                <span className="text-orange-600">Passionate</span>
+                <br />
+                <span className="text-purple-600">Trainers</span>
+              </h2>
+              <div className="space-y-8 text-muted-foreground text-lg leading-relaxed">
+                <p>
+                  Connect with fellow trainers, share insights, and collaborate on innovative training solutions.
+                </p>
+                <div className="bg-white p-8 rounded-2xl border-l-4 border-purple-500 shadow-sm">
+                  <p className="text-foreground font-bold text-2xl mb-4">
+                    "The CloudAdda community has been invaluable in helping me refine my training programs and connect with other experts."
+                  </p>
+                  <p className="text-muted-foreground italic">- A Satisfied Trainer</p>
+                </div>
+                <p>
+                  Access exclusive forums, webinars, and networking events designed to foster collaboration and growth.
+                </p>
+                <p className="font-bold text-foreground text-xl">Let's build the future of training together.</p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="bg-white rounded-3xl p-12 shadow-lg border border-orange-100">
+                <div className="text-center space-y-8">
+                  <div>
+                    <div className="text-6xl font-black text-purple-600 mb-2">500+</div>
+                    <div className="text-xl font-semibold text-foreground">Active Community Members</div>
+                    <div className="w-full h-2 bg-purple-500 rounded-full mt-4"></div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <ArrowRight className="w-8 h-8 text-muted-foreground" />
+                  </div>
+                  <div>
+                    <div className="text-6xl font-black text-orange-600 mb-2">95%</div>
+                    <div className="text-xl font-semibold text-foreground">Member Satisfaction Rate</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold text-foreground mb-6">Trainer Success Stories</h2>
+            <div className="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Read how trainers are leveraging CloudAdda to deliver exceptional learning experiences and achieve outstanding results.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <Card key={index} className={`hover:shadow-lg transition-shadow ${post.featured ? 'border-orange-500 border-2' : 'border-gray-200'}`}>
-                {post.featured && (
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-orange-500 text-white">
-                      <Star className="w-3 h-3 mr-1" />
-                      Featured
-                    </Badge>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Star,
+                title: "Enhanced Engagement",
+                description: "Trainers report a significant increase in student engagement and knowledge retention with CloudAdda's interactive labs.",
+                color: "purple"
+              },
+              {
+                icon: Calendar,
+                title: "Streamlined Scheduling",
+                description: "Effortlessly schedule and manage training sessions with our intuitive platform, saving valuable time and resources.",
+                color: "orange"
+              },
+              {
+                icon: Clock,
+                title: "Reduced Setup Time",
+                description: "Say goodbye to lengthy setup processes. CloudAdda's ready-to-use environments allow trainers to focus on what they do best — teaching.",
+                color: "purple"
+              }
+            ].map((story, index) => (
+              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2" style={{ animationDelay: `${index * 100}ms` }}>
+                <CardHeader className="text-center pb-4">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-300 ${
+                    story.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'
+                  }`}>
+                    <story.icon className="w-8 h-8 text-white" />
                   </div>
-                )}
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <Badge variant="outline">{post.category}</Badge>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {post.readTime}
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl">{post.title}</CardTitle>
-                  <CardDescription>{post.description}</CardDescription>
+                  <CardTitle className="text-xl font-bold">{story.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex items-center justify-between">
-                    <div className="text-sm text-gray-500">
-                      By {post.author} • {post.date}
-                    </div>
-                    <Link to={`/blog/${post.id}`}>
-                      <Button variant="ghost" size="sm" className="text-orange-500 hover:text-orange-600">
-                        Read More
-                        <ArrowRight className="w-4 h-4 ml-1" />
-                      </Button>
-                    </Link>
-                  </div>
+                  <p className="text-muted-foreground leading-relaxed text-center">
+                    {story.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -384,219 +295,79 @@ const TrainerAdda = () => {
         </div>
       </section>
 
-      {/* Customer Stories Section */}
-      <section id="customer-stories" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-green-500 text-white">
-              <Heart className="w-4 h-4 mr-2" />
-              Success Stories
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Real Success Stories</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              See how organizations transform their operations with CloudAdda solutions.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border border-gray-200">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <Badge variant="outline">{study.category}</Badge>
-                    <div className="text-sm font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">{study.company}</div>
-                  </div>
-                  <CardTitle className="text-xl">{study.title}</CardTitle>
-                  <CardDescription>{study.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="bg-green-50 rounded-lg p-4 mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                      <TrendingUp className="w-5 h-5 mr-2 text-green-600" />
-                      Key Results:
-                    </h4>
-                    <p className="text-gray-700">{study.results}</p>
-                  </div>
-                  <Link to={`/case-study/${study.id}`}>
-                    <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-                      Read Full Case Study
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Downloads Section */}
-      <section id="downloads" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-purple-500 text-white">
-              <Download className="w-4 h-4 mr-2" />
-              Free Downloads
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Essential Resources</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Professional templates, checklists, and worksheets to accelerate your training programs.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {downloads.map((download, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border border-gray-200">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <FileText className="w-8 h-8 text-white" />
-                  </div>
-                  <CardTitle className="text-xl">{download.title}</CardTitle>
-                  <CardDescription>{download.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="flex justify-between items-center mb-4 text-sm text-gray-500">
-                    <span>{download.type}</span>
-                    <span>{download.size}</span>
-                  </div>
-                  <div className="mb-4">
-                    <Badge variant="outline" className="text-green-600 border-green-200">
-                      {download.downloads} downloads
-                    </Badge>
-                  </div>
-                  <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white">
-                    Download Free
-                    <Download className="w-4 h-4 ml-2" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Adda Dispatch Section */}
-      <section id="adda-dispatch" className="py-16 bg-gradient-to-br from-cyan-50 to-blue-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-cyan-500 text-white">
-              <Calendar className="w-4 h-4 mr-2" />
-              The Adda Dispatch
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Coming Soon</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Monthly insights, industry best practices, and behind-the-scenes from the CloudAdda team. 
-              Get ready for the most comprehensive resource in cloud training.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-lg p-8 text-center shadow-lg border border-cyan-100">
-            <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Sparkles className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Industry-Leading Insights</h3>
-            <p className="text-lg text-gray-600 mb-6 max-w-xl mx-auto">
-              We're crafting something special - a monthly newsletter packed with cutting-edge training methodologies, 
-              industry trends, expert interviews, and exclusive insights from top training professionals.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Lightbulb className="w-6 h-6 text-cyan-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Expert Insights</h4>
-                <p className="text-sm text-gray-600">Best practices from industry leaders</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <TrendingUp className="w-6 h-6 text-blue-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Market Trends</h4>
-                <p className="text-sm text-gray-600">Latest developments in cloud training</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Target className="w-6 h-6 text-purple-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Actionable Tips</h4>
-                <p className="text-sm text-gray-600">Practical strategies you can implement</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Get notified when we launch" 
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500" 
-              />
-              <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white">
-                Notify Me
-              </Button>
-            </div>
-            <p className="text-sm text-gray-500 mt-4">Be the first to know when The Adda Dispatch launches</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="py-16 bg-orange-500">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Training?</h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Join thousands of training professionals who trust CloudAdda for their infrastructure needs.
+      {/* CTA Section with Diagonal Layout */}
+      <section className="py-24 bg-purple-600 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full -translate-y-32 translate-x-32 opacity-10"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-500 rounded-full translate-y-24 -translate-x-24 opacity-10"></div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <Badge className="mb-8 bg-white/20 text-white border-white/30">
+            <Download className="w-4 h-4 mr-2" />
+            Download Our Free Resources
+          </Badge>
+          <h2 className="text-5xl font-bold mb-8">Elevate Your Training Today</h2>
+          <p className="text-xl text-white/90 mb-12 leading-relaxed max-w-4xl mx-auto">
+            Access exclusive resources, connect with a vibrant community, and unlock the full potential of your training programs with CloudAdda.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100">
-              <Users className="w-5 h-5 mr-2" />
-              Start Free Trial
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-500">
-              <Calendar className="w-5 h-5 mr-2" />
-              Book Demo
+          <div className="flex justify-center">
+            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 group">
+              <ExternalLink className="w-5 h-5 mr-2 group-hover:scale-125 transition-transform" />
+              Explore Now
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Vision Section with Centered Focus */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="w-24 h-24 bg-orange-500 rounded-3xl flex items-center justify-center mx-auto mb-8 transform hover:rotate-12 transition-transform duration-500">
+            <User className="w-12 h-12 text-white" />
+          </div>
+          <h2 className="text-5xl font-bold text-foreground mb-8">Our Vision</h2>
+          <div className="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
+          <p className="text-2xl text-muted-foreground leading-relaxed font-light">
+            To empower trainers worldwide with the tools, resources, and community support they need to create exceptional learning experiences.
+          </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-white border-t border-border py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl">CloudAdda</span>
+                <span className="font-bold text-xl text-foreground">CloudAdda</span>
               </Link>
-              <p className="text-gray-400">
+              <p className="text-muted-foreground">
                 Simple. Scalable. Human. Infrastructure that just works.
               </p>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Solutions</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" className="hover:text-white">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" className="hover:text-white">Cloud Desktops</Link></li>
-                <li><Link to="/vps" className="hover:text-white">VPS</Link></li>
+              <h3 className="font-semibold mb-4 text-foreground">Solutions</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/training-labs" className="hover:text-foreground transition-colors">Training Labs</Link></li>
+                <li><Link to="/cloud-desktops" className="hover:text-foreground transition-colors">Cloud Desktops</Link></li>
+                <li><Link to="/vps" className="hover:text-foreground transition-colors">VPS</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/trainer-adda" className="hover:text-white">Trainer Adda</Link></li>
-                <li><Link to="/guides" className="hover:text-white">Guides & Docs</Link></li>
+              <h3 className="font-semibold mb-4 text-foreground">Company</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/about" className="hover:text-foreground transition-colors">About Us</Link></li>
+                <li><Link to="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
+                <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/support" className="hover:text-white">Help Center</Link></li>
-                <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
+              <h3 className="font-semibold mb-4 text-foreground">Support</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/support" className="hover:text-foreground transition-colors">Help Center</Link></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Documentation</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Status</a></li>
               </ul>
             </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 CloudAdda. All rights reserved.</p>
           </div>
         </div>
       </footer>

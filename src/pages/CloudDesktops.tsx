@@ -1,4 +1,3 @@
-
 import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
 import CloudDesktopsSolutions from "@/components/CloudDesktopsSolutions";
@@ -14,8 +13,14 @@ import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useMetaTags } from "@/utils/metaTags";
 
 const CloudDesktops = () => {
+  useMetaTags({
+    title: "Cloud Desktops (VDI) for Teams | DaaS by CloudAdda",
+    description: "Secure, powerful desktops in the cloud — Windows, Linux, or macOS. Perfect for developers, call centers, BPOs, designers, and remote teams. Instant access. Fully managed."
+  });
+
   const handleNavigation = (path: string) => {
     window.location.href = path;
     setTimeout(() => {
