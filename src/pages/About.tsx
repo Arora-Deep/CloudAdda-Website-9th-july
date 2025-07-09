@@ -5,14 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ArrowRight, Users, Target, Heart, Shield, Globe, Zap, Lightbulb, Handshake, Building, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useMetaTags } from "@/utils/metaTags";
 
 const About = () => {
-  useMetaTags({
-    title: "About CloudAdda – Simplifying Training Labs, VDI & Cloud Hosting",
-    description: "CloudAdda was built to make training labs and remote infrastructure painless. Learn how we support 1K+ users across multiple countries with simple, scalable cloud."
-  });
-
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}

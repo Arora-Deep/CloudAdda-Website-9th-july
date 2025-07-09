@@ -1,19 +1,14 @@
-import React from "react";
+
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Server, Shield, Zap, Users, CheckCircle, Clock, Wifi } from "lucide-react";
+import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useMetaTags } from "@/utils/metaTags";
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from "@/components/ui/navigation-menu";
+import { useState } from "react";
 
 const VPS = () => {
-  useMetaTags({
-    title: "Cloud VPS Hosting India | NVMe + AMD EPYC | CloudAdda",
-    description: "High-speed VPS with NVMe storage and AMD EPYC performance. Perfect for devs, apps, and remote workloads. Starts at ₹699/month. SSD fast, human-supported."
-  });
+  const [showComingSoon, setShowComingSoon] = useState(false);
 
-  return <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -668,5 +663,4 @@ const VPS = () => {
       </footer>
     </div>;
 };
-
 export default VPS;
