@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { 
   BookOpen, 
   Search, 
@@ -27,7 +28,8 @@ import {
   Award,
   CheckCircle,
   Lightbulb,
-  Heart
+  Heart,
+  ChevronDown
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -178,13 +180,42 @@ const Guides = () => {
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
-                Log In
-              </Button>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                Start Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="text-orange-500 hover:text-orange-600 flex items-center gap-1">
+                    Log In
+                    <ChevronDown className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48 bg-white border border-gray-200 shadow-lg">
+                  <DropdownMenuItem asChild>
+                    <a 
+                      href="https://trainer.cloudadda.com/login" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
+                    >
+                      Trainer Log In
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a 
+                      href="https://trainee.cloudadda.com/login" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
+                    >
+                      Trainee Log In
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <Link to="/contact">
+                <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full px-6">
+                  Start Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
