@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Users, Target, Heart, Shield, Globe, Zap, Lightbulb, Handshake, Building, Eye } from "lucide-react";
+import { ArrowRight, Users, Target, Heart, Shield, Globe, Zap, Lightbulb, Handshake, Building, Eye, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +83,7 @@ const About = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
+      <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
@@ -111,10 +111,17 @@ const About = () => {
                 and refreshingly easy to use — for everyone, everywhere.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 group">
-                  <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                  Join the Mission
-                </Button>
+                <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                  <Button size="lg" variant="orange" className="group">
+                    <Users className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                    Join Our Team
+                  </Button>
+                </Link>
+                <Link to="/pricing" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                  <Button size="lg" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
+                    See Our Solutions
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="lg:col-span-5">
@@ -302,10 +309,8 @@ const About = () => {
       </section>
 
       {/* CTA Section with Diagonal Layout */}
-      <section className="py-24 bg-purple-600 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full -translate-y-32 translate-x-32 opacity-10"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-500 rounded-full translate-y-24 -translate-x-24 opacity-10"></div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+      <section className="py-24 bg-gradient-to-br from-orange-50 to-blue-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge className="mb-8 bg-white/20 text-white border-white/30">
             <Handshake className="w-4 h-4 mr-2" />
             Want to Work With Us?
@@ -315,11 +320,18 @@ const About = () => {
             Whether you're a company ready to migrate, a partner looking to collaborate, 
             or someone who wants to join the CloudAdda journey — let's talk.
           </p>
-          <div className="flex justify-center">
-            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 group">
-              <Heart className="w-5 h-5 mr-2 group-hover:scale-125 transition-transform" />
-              Say Hello
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <Button size="lg" variant="orange" className="rounded-full px-12 py-6 text-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                Get In Touch
+                <Mail className="ml-3 h-6 w-6" />
+              </Button>
+            </Link>
+            <Link to="/pricing" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <Button size="lg" variant="outline" className="rounded-full px-12 py-6 text-xl border-orange-300 text-orange-600 hover:bg-orange-50">
+                View Our Solutions
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

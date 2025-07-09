@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play } from "lucide-react";
+import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play, FlaskConical } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainingLabs = () => {
@@ -70,10 +70,10 @@ const TrainingLabs = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-16 pb-24">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
               <h1 className="text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl">
                 Stop Fighting Infrastructure.
                 <span className="block text-purple-600">Start Teaching.</span>
@@ -84,18 +84,13 @@ const TrainingLabs = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link to="/contact">
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                    Request Your Custom Lab
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link to="/pricing">
-                  <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                    <Play className="mr-2 h-5 w-5" />
-                    View Pricing
-                  </Button>
-                </Link>
+                <Button size="lg" variant="orange" className="group">
+                  <Rocket className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  Launch Your Lab
+                </Button>
+                <Button size="lg" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
+                  See Demo
+                </Button>
               </div>
 
               <div className="grid grid-cols-3 gap-8 pt-8">
@@ -529,34 +524,26 @@ const TrainingLabs = () => {
         </div>
       </section>
 
-      {/* Final CTA Banner */}
-      <section className="py-24 bg-white">
+      {/* Final CTA */}
+      <section className="py-24 bg-gradient-to-br from-orange-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-8">
             Ready to Train Without Limits?
           </h2>
           <p className="text-xl text-gray-600 mb-12">Skip the stress. Delight your participants. Reclaim your weekends.</p>
           
-          <Link to="/contact">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-              Get Your Custom Lab Setup
-              <ArrowRight className="ml-3 h-6 w-6" />
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button size="lg" variant="orange" className="rounded-full px-12 py-6 text-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <Link to="/contact" className="flex items-center">
+                Get Started Today
+                <FlaskConical className="ml-3 h-6 w-6" />
+              </Link>
             </Button>
-          </Link>
-
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">1,500+</div>
-              <div className="text-gray-600">Students Trained Weekly</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">100+</div>
-              <div className="text-gray-600">Training Companies</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">99.9%</div>
-              <div className="text-gray-600">Session Success Rate</div>
-            </div>
+            <Button size="lg" variant="outline" className="rounded-full px-12 py-6 text-xl border-orange-300 text-orange-600 hover:bg-orange-50">
+              <Link to="/pricing#training-labs">
+                View Pricing
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -617,4 +604,5 @@ const TrainingLabs = () => {
       </footer>
     </div>;
 };
+
 export default TrainingLabs;

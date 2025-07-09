@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -8,7 +7,8 @@ import { useState } from "react";
 const VPS = () => {
   const [showComingSoon, setShowComingSoon] = useState(false);
 
-  return <div className="min-h-screen bg-white">
+  return (
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,10 +74,10 @@ const VPS = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-16 pb-24">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
               <div className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium bg-purple-50 text-purple-700 border border-purple-200">
                 <Server className="mr-2 h-4 w-4" />
                 VPS Hosting That Actually Delivers
@@ -93,14 +93,12 @@ const VPS = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                  Deploy Your VPS Now
-                  <Server className="ml-2 h-5 w-5" />
+                <Button size="lg" variant="orange" className="group">
+                  <Zap className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  Start Your VPS Now
                 </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                  <Link to="/pricing#vps">
-                    View Pricing
-                  </Link>
+                <Button size="lg" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
+                  View Pricing
                 </Button>
               </div>
 
@@ -569,7 +567,7 @@ const VPS = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gradient-to-br from-orange-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-8">
             Ready for VPS That Actually Works?
@@ -579,11 +577,13 @@ const VPS = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-              Deploy Your VPS Now
-              <Server className="ml-3 h-6 w-6" />
+            <Button size="lg" variant="orange" className="rounded-full px-12 py-6 text-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <Link to="/contact" className="flex items-center">
+                Start Your VPS
+                <Server className="ml-3 h-6 w-6" />
+              </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full px-16 py-6 text-xl border-gray-300 hover:bg-gray-50">
+            <Button size="lg" variant="outline" className="rounded-full px-12 py-6 text-xl border-orange-300 text-orange-600 hover:bg-orange-50">
               <Link to="/pricing#vps">
                 View Pricing
               </Link>
@@ -661,6 +661,8 @@ const VPS = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default VPS;

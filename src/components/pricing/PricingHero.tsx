@@ -33,7 +33,7 @@ const PricingHero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 group">
+                <Button size="lg" variant="orange" className="group">
                   <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Talk to Sales
                 </Button>
