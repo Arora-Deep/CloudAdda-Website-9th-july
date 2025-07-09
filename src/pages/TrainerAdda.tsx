@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { ArrowRight, BookOpen, Users, Target, Zap, CheckCircle, Star, Award, Heart, Globe, ChevronDown } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Target, Zap, CheckCircle, Star, Award, Heart, Globe, ChevronDown, TrendingUp, FileText, Video, Download, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TrainerAdda = () => {
