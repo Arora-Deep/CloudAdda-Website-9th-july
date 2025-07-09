@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -12,6 +11,7 @@ const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const headings = ["The Cloud Company That Actually Cares.", "Premium Infrastructure. Human Touch.", "Where Performance Meets Compassion.", "Your Success Is Our Mission."];
 
   // New sliding words for the "Cloud Company That Actually Cares" section
@@ -112,6 +112,25 @@ const Index = () => {
     }
   ];
 
+  // Testimonials data
+  const testimonials = [
+    {
+      quote: "CloudAdda's support team provides immediate solutions, helping with difficult labs others can't complete. The platform has streamlined our workflow, enhancing productivity with seamless cloud collaboration. Its virtual training labs offer an intuitive interface, clear instructions, and a well-organized layout, making the learning process effective. I wholeheartedly recommend CloudAdda for its user-friendly interface, comprehensive content, and hands-on exercises.",
+      author: "Vigneshwaran",
+      position: "IT Infrastructure Manager, Mazenet Solution Pvt Ltd"
+    },
+    {
+      quote: "CloudAdda's labs, used by my team of 100 trainees for IT Infra training, were supported by an efficient team that quickly resolved minor issues professionally. The seamless, interruption-free experience ensured high-quality learning. The user-friendly interface and comprehensive batch management were extremely useful. I strongly recommend CloudAdda for its effective virtual labs and excellent support team.",
+      author: "Abdul Raouf",
+      position: "IT Trainer & Consultant"
+    },
+    {
+      quote: "CloudAdda's exceptional Virtual Lab support, with prompt and effective assistance, ensures smooth operation and success. Its unmatched customer support and advanced features enhance the learning experience, setting it apart. The platform's reliability, accessibility, and seamless integration streamline processes, fostering efficiency. With an intuitive interface and excellent support, CloudAdda is ideal for effective training. Highly recommended for its robust features and user-friendly design.",
+      author: "Gunjan Arora",
+      position: "DELIVERY MANAGER- LEARNING SERVICES, NIIT - StackRoute"
+    }
+  ];
+
   const handleNavigation = (path: string) => {
     window.location.href = path;
     setTimeout(() => {
@@ -136,6 +155,12 @@ const Index = () => {
       setCurrentLogoIndex(prev => (prev + 1) % customerLogos.length);
     }, 2000);
     return () => clearInterval(logoInterval);
+  }, []);
+  useEffect(() => {
+    const testimonialInterval = setInterval(() => {
+      setCurrentTestimonialIndex(prev => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(testimonialInterval);
   }, []);
 
   return (
@@ -866,7 +891,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section - UPDATED WITHOUT CUSTOMER LOGO CAROUSEL */}
+      {/* Testimonials Section - UPDATED WITH SINGLE CARD AND AUTO-SCROLL */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
@@ -879,89 +904,44 @@ const Index = () => {
             </h2>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="group relative">
-              <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="flex text-yellow-400 mb-6 justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-current" />
-                  ))}
-                </div>
-                
-                <div className="relative mb-8">
-                  <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
-                  <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
-                    CloudAdda's support team provides immediate solutions, helping with difficult labs others can't complete. The platform has streamlined our workflow, enhancing productivity with seamless cloud collaboration. Its virtual training labs offer an intuitive interface, clear instructions, and a well-organized layout, making the learning process effective. I wholeheartedly recommend CloudAdda for its user-friendly interface, comprehensive content, and hands-on exercises.
-                  </p>
-                  <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
-                  <p className="font-semibold text-gray-900 text-lg">
-                    Vigneshwaran
-                  </p>
-                  <p className="text-gray-600 text-sm">
-                    IT Infrastructure Manager, Mazenet Solution Pvt Ltd
-                  </p>
-                </div>
+          <div className="max-w-5xl mx-auto">
+            <div className="relative bg-white rounded-3xl p-12 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div className="flex text-yellow-400 mb-6 justify-center">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 fill-current" />
+                ))}
+              </div>
+              
+              <div className="relative mb-8">
+                <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
+                <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic text-center min-h-[120px] flex items-center justify-center">
+                  {testimonials[currentTestimonialIndex].quote}
+                </p>
+                <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
+                <p className="font-semibold text-gray-900 text-lg">
+                  {testimonials[currentTestimonialIndex].author}
+                </p>
+                <p className="text-gray-600 text-sm">
+                  {testimonials[currentTestimonialIndex].position}
+                </p>
               </div>
             </div>
-
-            <div className="group relative">
-              <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="flex text-yellow-400 mb-6 justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-current" />
-                  ))}
-                </div>
-                
-                <div className="relative mb-8">
-                  <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
-                  <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
-                    CloudAdda's labs, used by my team of 100 trainees for IT Infra training, were supported by an efficient team that quickly resolved minor issues professionally. The seamless, interruption-free experience ensured high-quality learning. The user-friendly interface and comprehensive batch management were extremely useful. I strongly recommend CloudAdda for its effective virtual labs and excellent support team.
-                  </p>
-                  <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
-                  <p className="font-semibold text-gray-900 text-lg">
-                    Abdul Raouf
-                  </p>
-                  <p className="text-gray-600 text-sm">
-                    IT Trainer & Consultant
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative">
-              <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="flex text-yellow-400 mb-6 justify-center">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-current" />
-                  ))}
-                </div>
-                
-                <div className="relative mb-8">
-                  <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
-                  <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
-                    CloudAdda's exceptional Virtual Lab support, with prompt and effective assistance, ensures smooth operation and success. Its unmatched customer support and advanced features enhance the learning experience, setting it apart. The platform's reliability, accessibility, and seamless integration streamline processes, fostering efficiency. With an intuitive interface and excellent support, CloudAdda is ideal for effective training. Highly recommended for its robust features and user-friendly design.
-                  </p>
-                  <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
-                  <p className="font-semibold text-gray-900 text-lg">
-                    Gunjan Arora
-                  </p>
-                  <p className="text-gray-600 text-sm">
-                    DELIVERY MANAGER- LEARNING SERVICES, NIIT - StackRoute
-                  </p>
-                </div>
-              </div>
+            
+            {/* Dots indicator */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonialIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                    index === currentTestimonialIndex ? 'bg-purple-600' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
