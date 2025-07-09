@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -878,107 +879,91 @@ const Index = () => {
             </h2>
           </div>
           
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full max-w-5xl mx-auto"
-          >
-            <CarouselContent>
-              <CarouselItem className="w-full">
-                <div className="group relative">
-                  <div className="relative bg-white rounded-3xl p-12 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div className="flex text-yellow-400 mb-8 justify-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-8 h-8 fill-current" />
-                      ))}
-                    </div>
-                    
-                    <div className="relative mb-10">
-                      <div className="text-8xl text-purple-200 absolute -top-6 -left-4 font-serif">"</div>
-                      <p className="text-2xl text-gray-700 leading-relaxed relative z-10 italic text-center max-w-4xl mx-auto">
-                        CloudAdda's support team provides immediate solutions, helping with difficult labs others can't complete. The platform has streamlined our workflow, enhancing productivity with seamless cloud collaboration. Its virtual training labs offer an intuitive interface, clear instructions, and a well-organized layout, making the learning process effective. I wholeheartedly recommend CloudAdda for its user-friendly interface, comprehensive content, and hands-on exercises.
-                      </p>
-                      <div className="text-8xl text-purple-200 absolute -bottom-10 -right-4 font-serif rotate-180">"</div>
-                    </div>
-                    
-                    <div className="text-center">
-                      <div className="w-20 h-1 bg-purple-600 rounded-full mx-auto mb-6"></div>
-                      <p className="font-semibold text-gray-900 text-2xl mb-2">
-                        Vigneshwaran
-                      </p>
-                      <p className="text-gray-600 text-lg">
-                        IT Infrastructure Manager, Mazenet Solution Pvt Ltd
-                      </p>
-                    </div>
-                  </div>
+          <div className="grid lg:grid-cols-3 gap-12">
+            <div className="group relative">
+              <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="flex text-yellow-400 mb-6 justify-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 fill-current" />
+                  ))}
                 </div>
-              </CarouselItem>
+                
+                <div className="relative mb-8">
+                  <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
+                  <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
+                    CloudAdda's support team provides immediate solutions, helping with difficult labs others can't complete. The platform has streamlined our workflow, enhancing productivity with seamless cloud collaboration. Its virtual training labs offer an intuitive interface, clear instructions, and a well-organized layout, making the learning process effective. I wholeheartedly recommend CloudAdda for its user-friendly interface, comprehensive content, and hands-on exercises.
+                  </p>
+                  <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
+                  <p className="font-semibold text-gray-900 text-lg">
+                    Vigneshwaran
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    IT Infrastructure Manager, Mazenet Solution Pvt Ltd
+                  </p>
+                </div>
+              </div>
+            </div>
 
-              <CarouselItem className="w-full">
-                <div className="group relative">
-                  <div className="relative bg-white rounded-3xl p-12 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div className="flex text-yellow-400 mb-8 justify-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-8 h-8 fill-current" />
-                      ))}
-                    </div>
-                    
-                    <div className="relative mb-10">
-                      <div className="text-8xl text-purple-200 absolute -top-6 -left-4 font-serif">"</div>
-                      <p className="text-2xl text-gray-700 leading-relaxed relative z-10 italic text-center max-w-4xl mx-auto">
-                        CloudAdda's labs, used by my team of 100 trainees for IT Infra training, were supported by an efficient team that quickly resolved minor issues professionally. The seamless, interruption-free experience ensured high-quality learning. The user-friendly interface and comprehensive batch management were extremely useful. I strongly recommend CloudAdda for its effective virtual labs and excellent support team.
-                      </p>
-                      <div className="text-8xl text-purple-200 absolute -bottom-10 -right-4 font-serif rotate-180">"</div>
-                    </div>
-                    
-                    <div className="text-center">
-                      <div className="w-20 h-1 bg-purple-600 rounded-full mx-auto mb-6"></div>
-                      <p className="font-semibold text-gray-900 text-2xl mb-2">
-                        Abdul Raouf
-                      </p>
-                      <p className="text-gray-600 text-lg">
-                        IT Trainer & Consultant
-                      </p>
-                    </div>
-                  </div>
+            <div className="group relative">
+              <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="flex text-yellow-400 mb-6 justify-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 fill-current" />
+                  ))}
                 </div>
-              </CarouselItem>
+                
+                <div className="relative mb-8">
+                  <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
+                  <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
+                    CloudAdda's labs, used by my team of 100 trainees for IT Infra training, were supported by an efficient team that quickly resolved minor issues professionally. The seamless, interruption-free experience ensured high-quality learning. The user-friendly interface and comprehensive batch management were extremely useful. I strongly recommend CloudAdda for its effective virtual labs and excellent support team.
+                  </p>
+                  <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
+                  <p className="font-semibold text-gray-900 text-lg">
+                    Abdul Raouf
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    IT Trainer & Consultant
+                  </p>
+                </div>
+              </div>
+            </div>
 
-              <CarouselItem className="w-full">
-                <div className="group relative">
-                  <div className="relative bg-white rounded-3xl p-12 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                    <div className="flex text-yellow-400 mb-8 justify-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-8 h-8 fill-current" />
-                      ))}
-                    </div>
-                    
-                    <div className="relative mb-10">
-                      <div className="text-8xl text-purple-200 absolute -top-6 -left-4 font-serif">"</div>
-                      <p className="text-2xl text-gray-700 leading-relaxed relative z-10 italic text-center max-w-4xl mx-auto">
-                        CloudAdda's exceptional Virtual Lab support, with prompt and effective assistance, ensures smooth operation and success. Its unmatched customer support and advanced features enhance the learning experience, setting it apart. The platform's reliability, accessibility, and seamless integration streamline processes, fostering efficiency. With an intuitive interface and excellent support, CloudAdda is ideal for effective training. Highly recommended for its robust features and user-friendly design.
-                      </p>
-                      <div className="text-8xl text-purple-200 absolute -bottom-10 -right-4 font-serif rotate-180">"</div>
-                    </div>
-                    
-                    <div className="text-center">
-                      <div className="w-20 h-1 bg-purple-600 rounded-full mx-auto mb-6"></div>
-                      <p className="font-semibold text-gray-900 text-2xl mb-2">
-                        Gunjan Arora
-                      </p>
-                      <p className="text-gray-600 text-lg">
-                        DELIVERY MANAGER- LEARNING SERVICES, NIIT - StackRoute
-                      </p>
-                    </div>
-                  </div>
+            <div className="group relative">
+              <div className="relative bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="flex text-yellow-400 mb-6 justify-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 fill-current" />
+                  ))}
                 </div>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+                
+                <div className="relative mb-8">
+                  <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
+                  <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic">
+                    CloudAdda's exceptional Virtual Lab support, with prompt and effective assistance, ensures smooth operation and success. Its unmatched customer support and advanced features enhance the learning experience, setting it apart. The platform's reliability, accessibility, and seamless integration streamline processes, fostering efficiency. With an intuitive interface and excellent support, CloudAdda is ideal for effective training. Highly recommended for its robust features and user-friendly design.
+                  </p>
+                  <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-1 bg-purple-600 rounded-full mx-auto mb-4"></div>
+                  <p className="font-semibold text-gray-900 text-lg">
+                    Gunjan Arora
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    DELIVERY MANAGER- LEARNING SERVICES, NIIT - StackRoute
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
