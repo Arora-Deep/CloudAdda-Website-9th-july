@@ -1,4 +1,8 @@
-
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
 import CloudDesktopsSolutions from "@/components/CloudDesktopsSolutions";
@@ -6,14 +10,9 @@ import CloudDesktopsFullyConfigured from "@/components/CloudDesktopsFullyConfigu
 import CloudDesktopsUseCases from "@/components/CloudDesktopsUseCases";
 import CloudDesktopsComparison from "@/components/CloudDesktopsComparison";
 import CloudDesktopsTeamBenefits from "@/components/CloudDesktopsTeamBenefits";
-import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 import CloudDesktopsMigration from "@/components/CloudDesktopsMigration";
 import CloudDesktopsFinalCTA from "@/components/CloudDesktopsFinalCTA";
 import CloudDesktopsFooter from "@/components/CloudDesktopsFooter";
-import { Button } from "@/components/ui/button";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const CloudDesktops = () => {
   const handleNavigation = (path: string) => {
@@ -92,7 +91,7 @@ const CloudDesktops = () => {
               <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
                 Log In
               </Button>
-              <Button variant="orange" className="rounded-full px-6">
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
                 Start Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
