@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -150,11 +149,25 @@ const Pricing = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56 bg-white border border-gray-200 shadow-lg rounded-lg">
-                  <DropdownMenuItem onClick={() => handleNavigation('/login')}>
-                    Log In
+                  <DropdownMenuItem asChild>
+                    <a 
+                      href="https://trainer.cloudadda.com/login" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full"
+                    >
+                      Trainer Log In
+                    </a>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => handleNavigation('/signup')}>
-                    Sign Up
+                  <DropdownMenuItem asChild>
+                    <a 
+                      href="https://trainee.cloudadda.com/login" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full"
+                    >
+                      Trainee Log In
+                    </a>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
