@@ -1,8 +1,9 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown } from "lucide-react";
+import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown, Code } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from "@/components/ui/navigation-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 
 const VPS = () => {
@@ -61,12 +62,30 @@ const VPS = () => {
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
               <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
-                Log In
-              </Button>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
-                Start Now
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+                    Log In
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg z-50">
+                  <DropdownMenuItem asChild>
+                    <a href="https://trainer.cloudadda.com/login" className="w-full cursor-pointer">
+                      Trainer Log In
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="https://trainee.cloudadda.com/login" className="w-full cursor-pointer">
+                      Trainee Log In
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <Button asChild variant="orange" className="rounded-full px-6">
+                <Link to="/contact">
+                  Start Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
@@ -171,7 +190,6 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Our Solution Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -227,7 +245,6 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Developer Reality Check - Updated to be cleaner */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -237,7 +254,6 @@ const VPS = () => {
 
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Current VPS Problems */}
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Your Current VPS Experience</h3>
                 
@@ -259,7 +275,6 @@ const VPS = () => {
                   </div>)}
               </div>
 
-              {/* CloudAdda Experience */}
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Your CloudAdda Experience</h3>
                 
@@ -294,7 +309,6 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Real vs Marketing Specs - Updated Table */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -364,7 +378,6 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Technical Superiority Section - Updated with new image */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -423,7 +436,6 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Use Cases Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -488,7 +500,6 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Migration Success Rate - Simplified */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -529,7 +540,6 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Simplified Pricing Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Simple, Transparent Pricing</h2>
@@ -568,7 +578,6 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-8">
@@ -607,7 +616,6 @@ const VPS = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
