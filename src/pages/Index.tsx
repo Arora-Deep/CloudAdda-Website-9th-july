@@ -528,7 +528,7 @@ const Index = () => {
                   <p className="text-lg text-gray-600 leading-relaxed mb-4">High-performance, secure virtual desktops — ready to power remote teams, call centers, dev shops, and full-scale organizations. Blazing fast, customizable, and easier than hiring IT admins.</p>
                   <div className="space-y-2 text-sm">
                     <p><span className="font-semibold">Starts at ₹1,499/user/month</span></p>
-                    <p><span className="font-semibold">Up to 2vCPU, 4GB RAM, SSD/NVMe, 100% SLA</span></p>
+                    <p><span className="font-semibold">From 2vCPU, 4GB RAM, SSD/NVMe, 100% SLA</span></p>
                     <p><span className="font-semibold">Built-in snapshots, security policies, and remote access</span></p>
                   </div>
                 </div>
@@ -603,7 +603,7 @@ const Index = () => {
                   </p>
                   <div className="space-y-2 text-sm">
                     <p><span className="font-semibold">Starts at ₹199/month</span></p>
-                    <p><span className="font-semibold">Up to 96vCPU, 768GB RAM, full root access</span></p>
+                    <p><span className="font-semibold">From 96vCPU, 768GB RAM, full root access</span></p>
                     <p><span className="font-semibold">Indian & global locations. Backups included.</span></p>
                   </div>
                 </div>
