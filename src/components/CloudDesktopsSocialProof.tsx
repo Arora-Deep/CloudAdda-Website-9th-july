@@ -1,11 +1,7 @@
 
 import { Star } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { useEffect, useState } from "react";
 
 const CloudDesktopsSocialProof = () => {
-  const [api, setApi] = useState<any>();
-
   const testimonials = [
     {
       quote: "We reduced our development environment costs by 60% while doubling performance. Our team is more productive than ever.",
@@ -30,18 +26,6 @@ const CloudDesktopsSocialProof = () => {
     }
   ];
 
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    const intervalId = setInterval(() => {
-      api.scrollNext();
-    }, 4000); // Auto-scroll every 4 seconds
-
-    return () => clearInterval(intervalId);
-  }, [api]);
-
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,48 +34,35 @@ const CloudDesktopsSocialProof = () => {
           <p className="text-xl text-gray-600">From solo developers to enterprise teams</p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <Carousel
-            setApi={setApi}
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="w-full">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-16 hover:shadow-xl transition-all duration-300 text-center border border-gray-200">
-                    <div className="flex items-center justify-center space-x-1 mb-10">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-7 h-7 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <div className="max-w-4xl mx-auto">
-                      <p className="text-gray-700 leading-relaxed mb-12 text-2xl italic font-light">
-                        "{testimonial.quote}"
-                      </p>
-                    </div>
-                    <div className="flex items-center justify-center space-x-6">
-                      <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center border-2 border-blue-300">
-                        <span className="text-blue-700 font-bold text-xl">
-                          {testimonial.author.charAt(0)}
-                        </span>
-                      </div>
-                      <div className="text-left">
-                        <div className="font-bold text-gray-900 text-xl">{testimonial.author}</div>
-                        <div className="text-gray-600 text-lg">{testimonial.title}</div>
-                        <div className="text-gray-500">{testimonial.company}</div>
-                      </div>
-                    </div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center space-x-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span className="text-blue-600 font-semibold">{testimonial.author.charAt(0)}</span>
                   </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-8 bg-white/80 hover:bg-white shadow-lg" />
-            <CarouselNext className="right-8 bg-white/80 hover:bg-white shadow-lg" />
-          </Carousel>
+                  <div>
+                    <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                    <div className="text-sm text-gray-600">{testimonial.title}</div>
+                    <div className="text-xs text-gray-500">{testimonial.company}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="relative">
+            <div className="bg-gray-100 rounded-3xl h-96 flex items-center justify-center text-gray-400">
+              [3D Illustration: Happy diverse development team celebrating with laptops showing cloud desktops]
+            </div>
+          </div>
         </div>
       </div>
     </section>
