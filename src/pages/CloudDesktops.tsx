@@ -1,3 +1,4 @@
+
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
 import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
@@ -73,7 +74,7 @@ const CloudDesktops = () => {
       <CloudDesktopsTrustSignals />
       
       {/* Pricing */}
-      <CloudDesktopsPricing />
+      <CloudDesktopsPricing currency="INR" />
       
       {/* Final CTA */}
       <CloudDesktopsFinalCTA />
