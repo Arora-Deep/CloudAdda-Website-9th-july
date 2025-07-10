@@ -14,9 +14,11 @@ import {
 import { Monitor, Users, Server, BookOpen } from 'lucide-react';
 import MobileNavigation from './MobileNavigation';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const ResponsiveNavigation = () => {
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -33,100 +35,107 @@ const ResponsiveNavigation = () => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-6">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <Link
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-orange-50 to-orange-100 p-6 no-underline outline-none focus:shadow-md"
-                            to="/cloud-desktops"
-                          >
-                            <Monitor className="h-6 w-6" />
-                            <div className="mb-2 mt-4 text-lg font-medium">
-                              Cloud Desktops
-                            </div>
-                            <p className="text-sm leading-tight text-muted-foreground">
-                              High-performance cloud-native desktops. Work from anywhere.
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to="/training-labs"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="flex items-center space-x-2">
-                              <Users className="h-4 w-4" />
-                              <div className="text-sm font-medium leading-none">Training Labs</div>
-                            </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Hands-on cloud training environments.
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to="/vps"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="flex items-center space-x-2">
-                              <Server className="h-4 w-4" />
-                              <div className="text-sm font-medium leading-none">VPS</div>
-                            </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Virtual private servers for your projects.
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/trainer-adda" className={cn(navigationMenuTriggerStyle(), isActive('/trainer-adda') && 'bg-accent text-accent-foreground')}>
-                    <BookOpen className="mr-2 h-4 w-4" />
-                    Trainer Adda
-                  </Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/pricing" className={cn(navigationMenuTriggerStyle(), isActive('/pricing') && 'bg-accent text-accent-foreground')}>
-                    Pricing
-                  </Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/about" className={cn(navigationMenuTriggerStyle(), isActive('/about') && 'bg-accent text-accent-foreground')}>
-                    About
-                  </Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/support" className={cn(navigationMenuTriggerStyle(), isActive('/support') && 'bg-accent text-accent-foreground')}>
-                    Support
-                  </Link>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+          {/* Desktop Navigation - Hidden on mobile */}
+          {!isMobile && (
+            <div className="hidden lg:flex lg:items-center lg:space-x-6">
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        <li className="row-span-3">
+                          <NavigationMenuLink asChild>
+                            <Link
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-orange-50 to-orange-100 p-6 no-underline outline-none focus:shadow-md"
+                              to="/cloud-desktops"
+                            >
+                              <Monitor className="h-6 w-6" />
+                              <div className="mb-2 mt-4 text-lg font-medium">
+                                Cloud Desktops
+                              </div>
+                              <p className="text-sm leading-tight text-muted-foreground">
+                                High-performance cloud-native desktops. Work from anywhere.
+                              </p>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                        <li>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to="/training-labs"
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            >
+                              <div className="flex items-center space-x-2">
+                                <Users className="h-4 w-4" />
+                                <div className="text-sm font-medium leading-none">Training Labs</div>
+                              </div>
+                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                Hands-on cloud training environments.
+                              </p>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                        <li>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to="/vps"
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            >
+                              <div className="flex items-center space-x-2">
+                                <Server className="h-4 w-4" />
+                                <div className="text-sm font-medium leading-none">VPS</div>
+                              </div>
+                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                Virtual private servers for your projects.
+                              </p>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  
+                  <NavigationMenuItem>
+                    <Link to="/trainer-adda" className={cn(navigationMenuTriggerStyle(), isActive('/trainer-adda') && 'bg-accent text-accent-foreground')}>
+                      <BookOpen className="mr-2 h-4 w-4" />
+                      Trainer Adda
+                    </Link>
+                  </NavigationMenuItem>
+                  
+                  <NavigationMenuItem>
+                    <Link to="/pricing" className={cn(navigationMenuTriggerStyle(), isActive('/pricing') && 'bg-accent text-accent-foreground')}>
+                      Pricing
+                    </Link>
+                  </NavigationMenuItem>
+                  
+                  <NavigationMenuItem>
+                    <Link to="/about" className={cn(navigationMenuTriggerStyle(), isActive('/about') && 'bg-accent text-accent-foreground')}>
+                      About
+                    </Link>
+                  </NavigationMenuItem>
+                  
+                  <NavigationMenuItem>
+                    <Link to="/support" className={cn(navigationMenuTriggerStyle(), isActive('/support') && 'bg-accent text-accent-foreground')}>
+                      Support
+                    </Link>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
 
-            <Button asChild className="bg-orange-500 hover:bg-orange-600">
-              <Link to="/contact">Get Started</Link>
-            </Button>
+              <Button asChild className="bg-orange-500 hover:bg-orange-600">
+                <Link to="/contact">Get Started</Link>
+              </Button>
+            </div>
+          )}
+
+          {/* Mobile Navigation - Always visible on mobile */}
+          {isMobile && <MobileNavigation />}
+          
+          {/* Fallback for when hook hasn't determined mobile state yet */}
+          <div className="lg:hidden">
+            <MobileNavigation />
           </div>
-
-          {/* Mobile Navigation */}
-          <MobileNavigation />
         </div>
       </div>
     </header>
