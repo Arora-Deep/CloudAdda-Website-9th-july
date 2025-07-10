@@ -1,4 +1,4 @@
-
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -6,6 +6,11 @@ import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircl
 import { Link } from "react-router-dom";
 
 const TrainingLabs = () => {
+  usePageMeta({
+    title: "Virtual Training Labs for IT, AI, Networking & More | CloudAdda",
+    description: "Deliver hands-on, scalable training labs for any curriculum — Linux, AI/ML, Networking & more. No control panels. Just ready-to-use lab environments, built for trainers."
+  });
+
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,8 +9,14 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { ArrowRight, CheckCircle, Zap, Shield, Users, Heart, Star, Globe, DollarSign, Calculator, Sparkles, GraduationCap, Monitor, Server, Check, Building, Target, Cpu, HardDrive, Network, ChevronDown, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const Pricing = () => {
+  usePageMeta({
+    title: "Training Labs, VDI & VPS Pricing | CloudAdda",
+    description: "Explore CloudAdda's pricing for custom training labs, scalable VDI cloud desktops, and high-speed VPS hosting. Predictable, fair pricing — no surprises."
+  });
+
   const [isAnnual, setIsAnnual] = useState(false);
   const [vpsBilling, setVpsBilling] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');

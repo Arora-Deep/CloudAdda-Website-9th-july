@@ -14,8 +14,14 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const CloudDesktops = () => {
+  usePageMeta({
+    title: "Cloud Desktops (VDI) for Teams | DaaS by CloudAdda",
+    description: "Secure, powerful desktops in the cloud — Windows, Linux, or macOS. Perfect for developers, call centers, BPOs, designers, and remote teams. Instant access. Fully managed."
+  });
+
   const handleNavigation = (path: string) => {
     window.location.href = path;
     setTimeout(() => {
