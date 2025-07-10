@@ -60,34 +60,34 @@ const CloudDesktopsUseCases = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 sm:py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="text-gray-900">Stop Asking "Will It Work?"</span><br />
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
+            <span className="text-gray-900">Stop Asking "Will It Work?"</span><br className="hidden sm:block" />
             <span className="text-orange-500">Start Asking "How Fast Can I Get Started?"</span>
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-lg sm:text-xl text-gray-600">
             If you work with a screen, this is for you.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {useCases.map((useCase, index) => (
             <div 
               key={index} 
-              className={`p-8 rounded-2xl ${useCase.bgColor} ${useCase.borderColor} border-2 hover:shadow-lg transition-all duration-300`}
+              className={`p-6 sm:p-8 rounded-xl sm:rounded-2xl ${useCase.bgColor} ${useCase.borderColor} border-2 hover:shadow-lg transition-all duration-300`}
             >
               <div className="text-center">
-                <div className={`w-16 h-16 ${useCase.iconBg} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                  <useCase.icon className={`w-8 h-8 ${useCase.iconColor}`} />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 ${useCase.iconBg} rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6`}>
+                  <useCase.icon className={`w-6 h-6 sm:w-8 sm:h-8 ${useCase.iconColor}`} />
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                   {useCase.name}
                 </h3>
                 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   {useCase.description}
                 </p>
               </div>
@@ -95,8 +95,8 @@ const CloudDesktopsUseCases = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <p className="text-lg text-gray-600">
+        <div className="text-center mt-12 sm:mt-16">
+          <p className="text-base sm:text-lg text-gray-600">
             Not sure if it fits your workflow? 
             <a href="#" className="text-orange-600 hover:text-orange-700 font-semibold ml-2 underline decoration-2 underline-offset-4">
               Talk to us →
