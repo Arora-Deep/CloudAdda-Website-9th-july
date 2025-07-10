@@ -36,7 +36,7 @@ const ResponsiveNavigation = () => {
           </Link>
 
           {/* Desktop Navigation - Hidden on mobile */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-6">
+          <div className="hidden md:flex md:items-center md:space-x-6">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -128,7 +128,7 @@ const ResponsiveNavigation = () => {
           </div>
 
           {/* Mobile Navigation - Always visible on small screens */}
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <MobileNavigation />
           </div>
         </div>
