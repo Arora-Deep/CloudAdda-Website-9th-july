@@ -29,13 +29,17 @@ const MobileNavigation = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="md:hidden">
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon" className="p-2">
-            <Menu className="h-6 w-6" />
-            <span className="sr-only">Open menu</span>
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <span className="sr-only">Toggle menu</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="right" className="w-[300px] sm:w-[400px]">
@@ -61,7 +65,7 @@ const MobileNavigation = () => {
                           ? 'bg-orange-50 text-orange-600 border-l-4 border-orange-500'
                           : 'text-gray-700 hover:bg-gray-50 hover:text-orange-600'
                       }`}
-                      onClick={() => setIsOpen(false)}
+                      onClick={handleLinkClick}
                     >
                       {Icon && <Icon className="h-5 w-5" />}
                       <span>{item.name}</span>
@@ -72,7 +76,7 @@ const MobileNavigation = () => {
             </ul>
             <div className="mt-8 pt-6 border-t border-gray-200">
               <Button asChild className="w-full bg-orange-500 hover:bg-orange-600">
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <Link to="/contact" onClick={handleLinkClick}>
                   Get Started
                 </Link>
               </Button>
