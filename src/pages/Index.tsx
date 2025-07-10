@@ -6,14 +6,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { usePageMeta } from "@/hooks/usePageMeta";
 
 const Index = () => {
-  usePageMeta({
-    title: "CloudAdda – Virtual Training Labs, Cloud Desktops (VDI) & VPS Hosting",
-    description: "Run powerful virtual training labs, high-performance VDI desktops, and NVMe VPS servers with CloudAdda. Same-day setup, 99.9% uptime, and real human support."
-  });
-
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
