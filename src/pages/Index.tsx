@@ -6,6 +6,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ResponsiveNavigation from "@/components/ResponsiveNavigation";
 
 const Index = () => {
   const [currentHeading, setCurrentHeading] = useState(0);
@@ -166,96 +167,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center">
-              <div className="flex items-center space-x-2">
-                <img src="/lovable-uploads/ab89b288-4111-435f-8c60-3551cd55182c.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
-              </div>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
-                      Solutions
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
-                        <NavigationMenuLink asChild>
-                          <Link to="/training-labs" onClick={() => handleNavigation('/training-labs')} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Training Labs</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Provisioned lab environments for training companies
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link to="/cloud-desktops" onClick={() => handleNavigation('/cloud-desktops')} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Cloud Desktops</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Fast, secure desktops accessible from anywhere
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link to="/vps" onClick={() => handleNavigation('/vps')} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">VPS Hosting</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              High-performance VPS with AMD EPYC processors
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-              <Link to="/trainer-adda" onClick={() => handleNavigation('/trainer-adda')} className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
-              <Link to="/about" onClick={() => handleNavigation('/about')} className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
-              <Link to="/pricing" onClick={() => handleNavigation('/pricing')} className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
-              <Link to="/contact" onClick={() => handleNavigation('/contact')} className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
-              <Link to="/support" onClick={() => handleNavigation('/support')} className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
-                    Log In
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuItem asChild>
-                    <a 
-                      href="https://trainer.cloudadda.com/login" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="cursor-pointer"
-                    >
-                      Trainer Login
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <a 
-                      href="https://trainee.cloudadda.com/login" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="cursor-pointer"
-                    >
-                      Trainee Login
-                    </a>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              <Link to="/contact" onClick={() => handleNavigation('/contact')}>
-                <Button variant="orange" className="text-white rounded-full">
-                  Start Now
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <ResponsiveNavigation />
 
       {/* Hero Section */}
       <section className="bg-white pt-16 pb-8">

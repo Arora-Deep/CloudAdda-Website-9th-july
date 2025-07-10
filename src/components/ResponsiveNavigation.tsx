@@ -11,14 +11,13 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import { Monitor, Users, Server, BookOpen } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Monitor, Users, Server, BookOpen, ChevronDown } from 'lucide-react';
 import MobileNavigation from './MobileNavigation';
 import { cn } from '@/lib/utils';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const ResponsiveNavigation = () => {
   const location = useLocation();
-  const isMobile = useIsMobile();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -122,8 +121,39 @@ const ResponsiveNavigation = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <Button asChild className="bg-orange-500 hover:bg-orange-600">
-              <Link to="/contact">Get Started</Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+                  Log In
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem asChild>
+                  <a 
+                    href="https://trainer.cloudadda.com/login" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="cursor-pointer"
+                  >
+                    Trainer Login
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a 
+                    href="https://trainee.cloudadda.com/login" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="cursor-pointer"
+                  >
+                    Trainee Login
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white rounded-full">
+              <Link to="/contact">Start Now</Link>
             </Button>
           </div>
 

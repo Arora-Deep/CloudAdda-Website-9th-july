@@ -25,6 +25,8 @@ const MobileNavigation = () => {
     { name: 'About', href: '/about', icon: null },
     { name: 'Support', href: '/support', icon: Phone },
     { name: 'Contact', href: '/contact', icon: Mail },
+    { name: 'Trainer Login', href: 'https://trainer.cloudadda.com/login', icon: null, external: true },
+    { name: 'Trainee Login', href: 'https://trainee.cloudadda.com/login', icon: null, external: true },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -61,18 +63,31 @@ const MobileNavigation = () => {
               const Icon = item.icon;
               return (
                 <li key={item.name}>
-                  <Link
-                    to={item.href}
-                    className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                      isActive(item.href)
-                        ? 'bg-orange-50 text-orange-600 border-l-4 border-orange-500'
-                        : 'text-gray-700 hover:bg-gray-50 hover:text-orange-600'
-                    }`}
-                    onClick={handleLinkClick}
-                  >
-                    {Icon && <Icon className="h-5 w-5 flex-shrink-0" />}
-                    <span>{item.name}</span>
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors text-gray-700 hover:bg-gray-50 hover:text-orange-600`}
+                      onClick={handleLinkClick}
+                    >
+                      {Icon && <Icon className="h-5 w-5 flex-shrink-0" />}
+                      <span>{item.name}</span>
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                        isActive(item.href)
+                          ? 'bg-orange-50 text-orange-600 border-l-4 border-orange-500'
+                          : 'text-gray-700 hover:bg-gray-50 hover:text-orange-600'
+                      }`}
+                      onClick={handleLinkClick}
+                    >
+                      {Icon && <Icon className="h-5 w-5 flex-shrink-0" />}
+                      <span>{item.name}</span>
+                    </Link>
+                  )}
                 </li>
               );
             })}
