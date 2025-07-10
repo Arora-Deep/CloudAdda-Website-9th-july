@@ -32,8 +32,14 @@ import {
   ChevronDown
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const Guides = () => {
+  usePageMeta({
+    title: "Adda Insights – Cloud Infra, Training Labs & VDI Trends | CloudAdda",
+    description: "Stay ahead with insights on virtual training delivery, DaaS adoption, and cloud infra optimization. Trusted by trainers, IT teams & remote-first businesses."
+  });
+
   const guides = [
     {
       title: "Getting Started with CloudAdda",
