@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    allowedHosts: ["www.cloudadda.com"],
+    allowedHosts: true,
   },
   plugins: [
     react(),
