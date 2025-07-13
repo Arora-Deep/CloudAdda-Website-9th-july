@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -315,7 +316,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 text-sm">Availability</div>
-                    <div className="text-gray-600 text-sm">9 AM – 9 PM IST</div>
+                    <div className="text-gray-600 text-sm">9 AM – 9 PM IST (Mon-Sat)</div>
                   </div>
                 </div>
               </CardContent>
@@ -359,8 +360,16 @@ const Contact = () => {
                 
               </Link>
               <p className="text-muted-foreground">
-                Simple. Scalable. Human. Infrastructure that just works.
+                CloudAdda is India's leading provider of Virtual Training Labs, Cloud Desktops (DaaS), VDI solutions, and high-performance VPS hosting. We help training companies, IT teams, developers, call centers, and remote workforces deploy secure, scalable cloud infrastructure in hours — not weeks. From fully managed training environments to lightning-fast cloud desktops and NVMe VPS servers, CloudAdda is trusted by 5,000+ users across 25+ countries.
               </p>
+              <div className="space-y-2 text-sm">
+                <div className="text-muted-foreground">
+                  <strong>Email:</strong> support@cloudadda.com
+                </div>
+                <div className="text-muted-foreground">
+                  <strong>Phone:</strong> +91 080-69459494
+                </div>
+              </div>
             </div>
             <div>
               <h3 className="font-semibold mb-4 text-foreground">Solutions</h3>

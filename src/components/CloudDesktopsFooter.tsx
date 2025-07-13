@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 const CloudDesktopsFooter = () => {
@@ -12,8 +13,6 @@ const CloudDesktopsFooter = () => {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               CloudAdda is India's leading provider of Virtual Training Labs, Cloud Desktops (DaaS), VDI solutions, and high-performance VPS hosting. We help training companies, IT teams, developers, call centers, and remote workforces deploy secure, scalable cloud infrastructure in hours — not weeks. From fully managed training environments to lightning-fast cloud desktops and NVMe VPS servers, CloudAdda is trusted by 5,000+ users across 25+ countries.
-              <br /><br />
-              Built on AMD EPYC CPUs and pure NVMe storage, our infrastructure is optimized for performance, uptime, and security. Whether you're running developer VMs, virtual classrooms, remote desktops, or enterprise apps — CloudAdda simplifies cloud for businesses that need reliability, speed, and support.
             </p>
             <div className="space-y-2 text-sm">
               <div className="text-gray-400">
@@ -57,7 +56,7 @@ const CloudDesktopsFooter = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400">© 2024 CloudAdda. All rights reserved.</p>
+          <p className="text-gray-400">© 2025 CloudAdda. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy-policy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
