@@ -6,10 +6,8 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ArrowRight, Users, Target, Heart, Shield, Globe, Zap, Lightbulb, Handshake, Building, Eye, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,10 +27,7 @@ const About = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/training-labs"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/training-labs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Training Labs</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Provisioned lab environments for training companies
@@ -40,10 +35,7 @@ const About = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/cloud-desktops"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Fast, secure desktops accessible from anywhere
@@ -51,10 +43,7 @@ const About = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/vps"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/vps" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">VPS Hosting</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               High-performance VPS with AMD EPYC processors
@@ -80,22 +69,12 @@ const About = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48 bg-white border border-gray-200 shadow-lg">
                   <DropdownMenuItem asChild>
-                    <a 
-                      href="https://trainer.cloudadda.com/login" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
-                    >
+                    <a href="https://trainer.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer">
                       Trainer Log In
                     </a>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <a 
-                      href="https://trainee.cloudadda.com/login" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
-                    >
+                    <a href="https://trainee.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer">
                       Trainee Log In
                     </a>
                   </DropdownMenuItem>
@@ -149,11 +128,7 @@ const About = () => {
             </div>
             <div className="lg:col-span-5">
               <div className="relative flex justify-center">
-                <img 
-                  src="/lovable-uploads/dc9c54ab-5975-48cf-93e2-b4f1f2327553.png" 
-                  alt="CloudAdda Hero - VR Tech Innovation" 
-                  className="w-full max-w-md h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
-                />
+                <img src="/lovable-uploads/dc9c54ab-5975-48cf-93e2-b4f1f2327553.png" alt="CloudAdda Hero - VR Tech Innovation" className="w-full max-w-md h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300" />
               </div>
             </div>
           </div>
@@ -187,21 +162,33 @@ const About = () => {
             <h2 className="text-4xl font-bold text-foreground">The Numbers Tell Our Story</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {[
-              { icon: Users, number: "1,000+", label: "Teams Empowered", color: "purple", delay: "0ms" },
-              { icon: Globe, number: "15+", label: "Cities Served", color: "orange", delay: "200ms" },
-              { icon: Zap, number: "99.98%", label: "Uptime Guarantee", color: "purple", delay: "400ms" }
-            ].map((stat, index) => (
-              <div key={index} className="text-center group" style={{ animationDelay: stat.delay }}>
-                <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-all duration-300 ${
-                  stat.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'
-                }`}>
+            {[{
+            icon: Users,
+            number: "1,000+",
+            label: "Teams Empowered",
+            color: "purple",
+            delay: "0ms"
+          }, {
+            icon: Globe,
+            number: "15+",
+            label: "Cities Served",
+            color: "orange",
+            delay: "200ms"
+          }, {
+            icon: Zap,
+            number: "99.98%",
+            label: "Uptime Guarantee",
+            color: "purple",
+            delay: "400ms"
+          }].map((stat, index) => <div key={index} className="text-center group" style={{
+            animationDelay: stat.delay
+          }}>
+                <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-all duration-300 ${stat.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'}`}>
                   <stat.icon className="w-10 h-10 text-white" />
                 </div>
                 <div className="text-4xl font-black mb-2 text-foreground">{stat.number}</div>
                 <div className="text-muted-foreground font-medium">{stat.label}</div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -273,49 +260,41 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Zap,
-                title: "Innovation That Matters",
-                description: "We don't build features. We build breakthroughs. We chase the ideas that move the industry forward.",
-                color: "purple"
-              },
-              {
-                icon: Heart,
-                title: "Obsession with Customer Success",
-                description: "From onboarding to support — we're in your corner. We don't sleep until your cloud setup works like magic.",
-                color: "orange"
-              },
-              {
-                icon: Shield,
-                title: "Built on Trust",
-                description: "No fine print. No lock-ins. No shady upsells. Just transparency, reliability, and integrity at every step.",
-                color: "purple"
-              },
-              {
-                icon: Target,
-                title: "Speed with Simplicity",
-                description: "Complex infrastructure, made beautifully simple. The way cloud was always meant to be.",
-                color: "orange"
-              },
-              {
-                icon: Globe,
-                title: "Global, But Personal",
-                description: "We're proudly built in India, trusted everywhere. Wherever you are, CloudAdda feels close.",
-                color: "purple"
-              },
-              {
-                icon: Users,
-                title: "Great People. Greater Work.",
-                description: "We hire smart, trust deeply, and empower people to do their best work ever. The result? A team that loves what they build — and it shows.",
-                color: "orange"
-              }
-            ].map((value, index) => (
-              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2" style={{ animationDelay: `${index * 100}ms` }}>
+            {[{
+            icon: Zap,
+            title: "Innovation That Matters",
+            description: "We don't build features. We build breakthroughs. We chase the ideas that move the industry forward.",
+            color: "purple"
+          }, {
+            icon: Heart,
+            title: "Obsession with Customer Success",
+            description: "From onboarding to support — we're in your corner. We don't sleep until your cloud setup works like magic.",
+            color: "orange"
+          }, {
+            icon: Shield,
+            title: "Built on Trust",
+            description: "No fine print. No lock-ins. No shady upsells. Just transparency, reliability, and integrity at every step.",
+            color: "purple"
+          }, {
+            icon: Target,
+            title: "Speed with Simplicity",
+            description: "Complex infrastructure, made beautifully simple. The way cloud was always meant to be.",
+            color: "orange"
+          }, {
+            icon: Globe,
+            title: "Global, But Personal",
+            description: "We're proudly built in India, trusted everywhere. Wherever you are, CloudAdda feels close.",
+            color: "purple"
+          }, {
+            icon: Users,
+            title: "Great People. Greater Work.",
+            description: "We hire smart, trust deeply, and empower people to do their best work ever. The result? A team that loves what they build — and it shows.",
+            color: "orange"
+          }].map((value, index) => <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
                 <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-300 ${
-                  value.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'
-                }`}>
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-300 ${value.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'}`}>
                     <value.icon className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-xl font-bold">{value.title}</CardTitle>
@@ -325,8 +304,7 @@ const About = () => {
                     {value.description}
                   </p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -376,7 +354,7 @@ const About = () => {
             <div className="space-y-4">
               <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl text-foreground">CloudAdda</span>
+                
               </Link>
               <p className="text-muted-foreground">
                 Simple. Scalable. Human. Infrastructure that just works.
@@ -409,8 +387,6 @@ const About = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
