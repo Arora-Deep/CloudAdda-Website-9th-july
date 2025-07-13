@@ -7,60 +7,55 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { BookOpen, Users, Target, ArrowRight, Star, Clock, GraduationCap, Award, CheckCircle, Download, FileText, Lightbulb, Heart, Calendar, ChevronRight, Sparkles, TrendingUp, Eye, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const TrainerAdda = () => {
   const [activeSection, setActiveSection] = useState("trainer-playbook");
-
-  const resourceSections = [
-    {
-      id: "trainer-playbook",
-      label: "Trainer Playbook",
-      description: "Complete curricula and lab setups",
-      icon: BookOpen,
-    },
-    {
-      id: "adda-insights", 
-      label: "Adda Insights",
-      description: "Technical tutorials and guides",
-      icon: Lightbulb,
-    },
-    {
-      id: "customer-stories",
-      label: "Success Stories",
-      description: "Real-world case studies",
-      icon: Heart,
-    },
-    {
-      id: "downloads",
-      label: "Downloads",
-      description: "Free resources and tools",
-      icon: Download,
-    },
-    {
-      id: "adda-dispatch",
-      label: "The Adda Dispatch",
-      description: "Monthly updates and tips",
-      icon: Calendar,
-    }
-  ];
-
+  const resourceSections = [{
+    id: "trainer-playbook",
+    label: "Trainer Playbook",
+    description: "Complete curricula and lab setups",
+    icon: BookOpen
+  }, {
+    id: "adda-insights",
+    label: "Adda Insights",
+    description: "Technical tutorials and guides",
+    icon: Lightbulb
+  }, {
+    id: "customer-stories",
+    label: "Success Stories",
+    description: "Real-world case studies",
+    icon: Heart
+  }, {
+    id: "downloads",
+    label: "Downloads",
+    description: "Free resources and tools",
+    icon: Download
+  }, {
+    id: "adda-dispatch",
+    label: "The Adda Dispatch",
+    description: "Monthly updates and tips",
+    icon: Calendar
+  }];
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   };
-
   useEffect(() => {
     const handleScroll = () => {
       const sections = resourceSections.map(section => section.id);
       const scrollPosition = window.scrollY + 200;
-
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
+          const {
+            offsetTop,
+            offsetHeight
+          } = element;
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(sectionId);
             break;
@@ -68,11 +63,9 @@ const TrainerAdda = () => {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const blogPosts = [{
     id: "training-lab-costs",
     title: "Why Your Training Lab Costs Are So High (And How to Cut Them by 70%)",
@@ -81,7 +74,7 @@ const TrainerAdda = () => {
     readTime: "8 min read",
     date: "Dec 15, 2024",
     author: "CloudAdda Team",
-    featured: true,
+    featured: true
   }, {
     id: "call-center-case-study",
     title: "Behind the Screen: How a Call Center Saved ₹20 Lakhs by Moving to Cloud Desktops",
@@ -90,7 +83,7 @@ const TrainerAdda = () => {
     readTime: "6 min read",
     date: "Dec 12, 2024",
     author: "CloudAdda Team",
-    featured: false,
+    featured: false
   }, {
     id: "daas-shift-2025",
     title: "Why DaaS Is Taking Over: The Shift Away from Laptops in 2025",
@@ -99,31 +92,28 @@ const TrainerAdda = () => {
     readTime: "5 min read",
     date: "Dec 10, 2024",
     author: "CloudAdda Team",
-    featured: false,
+    featured: false
   }];
-
   const playbooks = [{
     id: "zero-to-live-lab",
     title: "Zero to Live — How to Deliver a Flawless Virtual Training Lab in 3 Hours",
     description: "The complete blueprint to go from training plan to fully functional, cloud-hosted lab in just 3 hours",
     type: "Lab Setup",
-    duration: "3 hours",
+    duration: "3 hours"
   }, {
     id: "scaling-1000-students",
     title: "Scaling to 1,000 Students: Infrastructure Strategies That Don't Break Mid-Session",
     description: "Proven strategies to scale training infrastructure without crashes or failures during high-load sessions",
     type: "Scaling",
-    duration: "Enterprise",
+    duration: "Enterprise"
   }, {
     id: "virtual-lab-checklist",
     title: "The Ultimate Virtual Lab Checklist: 7 Things Before You Go Live",
     description: "Essential pre-launch checklist to prevent virtual training failures and ensure smooth sessions",
     type: "Quality Assurance",
-    duration: "Pre-Launch",
+    duration: "Pre-Launch"
   }];
-
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Adda Insights – Cloud Infra, virtual Training Labs & VDI Trends | CloudAdda</title>
         <meta name="description" content="Stay ahead with insights on virtual training delivery, DaaS adoption, and cloud infra optimization. Trusted by trainers, IT teams & remote-first businesses." />
@@ -190,22 +180,12 @@ const TrainerAdda = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-48 bg-white border border-gray-200 shadow-lg">
                     <DropdownMenuItem asChild>
-                      <a 
-                        href="https://trainer.cloudadda.com/login" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
-                      >
+                      <a href="https://trainer.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer">
                         Trainer Log In
                       </a>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <a 
-                        href="https://trainee.cloudadda.com/login" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
-                      >
+                      <a href="https://trainee.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer">
                         Trainee Log In
                       </a>
                     </DropdownMenuItem>
@@ -226,23 +206,13 @@ const TrainerAdda = () => {
         <div className="bg-gray-50 border-b border-gray-200 sticky top-20 z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex overflow-x-auto py-4 space-x-6">
-              {resourceSections.map((section) => {
-                const IconComponent = section.icon;
-                return (
-                  <button
-                    key={section.id}
-                    onClick={() => scrollToSection(section.id)}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${
-                      activeSection === section.id
-                        ? 'bg-orange-500 text-white shadow-sm'
-                        : 'text-gray-600 hover:text-orange-500 hover:bg-white'
-                    }`}
-                  >
+              {resourceSections.map(section => {
+              const IconComponent = section.icon;
+              return <button key={section.id} onClick={() => scrollToSection(section.id)} className={`flex items-center space-x-2 px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${activeSection === section.id ? 'bg-orange-500 text-white shadow-sm' : 'text-gray-600 hover:text-orange-500 hover:bg-white'}`}>
                     <IconComponent className="w-4 h-4" />
                     <span className="text-sm font-medium">{section.label}</span>
-                  </button>
-                );
-              })}
+                  </button>;
+            })}
             </div>
           </div>
         </div>
@@ -289,8 +259,7 @@ const TrainerAdda = () => {
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8">
-              {playbooks.map((playbook, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow border border-gray-200">
+              {playbooks.map((playbook, index) => <Card key={index} className="hover:shadow-lg transition-shadow border border-gray-200">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-4">
                       <Badge className="bg-blue-500 text-white">{playbook.type}</Badge>
@@ -304,17 +273,10 @@ const TrainerAdda = () => {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3 mb-6">
-                      {[
-                        "Step-by-step implementation guide",
-                        "Real-world tested strategies",
-                        "Downloadable resources included",
-                        "Expert tips and best practices"
-                      ].map((feature, idx) => (
-                        <div key={idx} className="flex items-center space-x-3">
+                      {["Step-by-step implementation guide", "Real-world tested strategies", "Downloadable resources included", "Expert tips and best practices"].map((feature, idx) => <div key={idx} className="flex items-center space-x-3">
                           <CheckCircle className="w-5 h-5 text-green-500" />
                           <span className="text-sm text-gray-700">{feature}</span>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                     <Link to={`/playbook/${playbook.id}`}>
                       <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
@@ -323,8 +285,7 @@ const TrainerAdda = () => {
                       </Button>
                     </Link>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -344,16 +305,13 @@ const TrainerAdda = () => {
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8">
-              {blogPosts.map((post, index) => (
-                <Card key={index} className={`hover:shadow-lg transition-shadow ${post.featured ? 'border-orange-500 border-2' : 'border-gray-200'}`}>
-                  {post.featured && (
-                    <div className="absolute top-4 right-4">
+              {blogPosts.map((post, index) => <Card key={index} className={`hover:shadow-lg transition-shadow ${post.featured ? 'border-orange-500 border-2' : 'border-gray-200'}`}>
+                  {post.featured && <div className="absolute top-4 right-4">
                       <Badge className="bg-orange-500 text-white">
                         <Star className="w-3 h-3 mr-1" />
                         Featured
                       </Badge>
-                    </div>
-                  )}
+                    </div>}
                   <CardHeader>
                     <div className="flex items-center justify-between mb-4">
                       <Badge variant="outline">{post.category}</Badge>
@@ -378,8 +336,7 @@ const TrainerAdda = () => {
                       </Link>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -408,11 +365,7 @@ const TrainerAdda = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input 
-                  type="email" 
-                  placeholder="Get notified when we launch" 
-                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500" 
-                />
+                <input type="email" placeholder="Get notified when we launch" className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500" />
                 <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white">
                   Notify Me
                 </Button>
@@ -470,11 +423,7 @@ const TrainerAdda = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input 
-                  type="email" 
-                  placeholder="Get notified when we launch" 
-                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" 
-                />
+                <input type="email" placeholder="Get notified when we launch" className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" />
                 <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white">
                   Notify Me
                 </Button>
@@ -534,11 +483,7 @@ const TrainerAdda = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input 
-                  type="email" 
-                  placeholder="Get notified when we launch" 
-                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500" 
-                />
+                <input type="email" placeholder="Get notified when we launch" className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
                 <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white">
                   Notify Me
                 </Button>
@@ -575,7 +520,7 @@ const TrainerAdda = () => {
               <div className="space-y-4">
                 <Link to="/" className="flex items-center space-x-2">
                   <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                  <span className="font-bold text-xl">CloudAdda</span>
+                  
                 </Link>
                 <p className="text-gray-400">
                   Simple. Scalable. Human. Infrastructure that just works.
@@ -610,8 +555,6 @@ const TrainerAdda = () => {
           </div>
         </footer>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default TrainerAdda;
