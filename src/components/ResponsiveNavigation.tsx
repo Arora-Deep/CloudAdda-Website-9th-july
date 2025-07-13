@@ -9,12 +9,10 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { Monitor, Users, Server, BookOpen, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import MobileNavigation from './MobileNavigation';
-import { cn } from '@/lib/utils';
 
 const ResponsiveNavigation = () => {
   const location = useLocation();
@@ -22,105 +20,62 @@ const ResponsiveNavigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" 
-              alt="CloudAdda Logo" 
-              className="h-8 w-auto sm:h-10" 
-            />
-          </Link>
-
-          {/* Desktop Navigation - Hidden on mobile */}
-          <div className="hidden md:flex md:items-center md:space-x-6">
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center space-x-2">
+              <img 
+                src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" 
+                alt="CloudAdda Logo" 
+                className="h-16 w-auto object-contain" 
+              />
+            </Link>
+          </div>
+          
+          <div className="hidden md:flex items-center space-x-8">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <Link
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-orange-50 to-orange-100 p-6 no-underline outline-none focus:shadow-md"
-                            to="/cloud-desktops"
-                          >
-                            <Monitor className="h-6 w-6" />
-                            <div className="mb-2 mt-4 text-lg font-medium">
-                              Cloud Desktops
-                            </div>
-                            <p className="text-sm leading-tight text-muted-foreground">
-                              High-performance cloud-native desktops. Work from anywhere.
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to="/training-labs"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="flex items-center space-x-2">
-                              <Users className="h-4 w-4" />
-                              <div className="text-sm font-medium leading-none">Training Labs</div>
-                            </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Hands-on cloud training environments.
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to="/vps"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="flex items-center space-x-2">
-                              <Server className="h-4 w-4" />
-                              <div className="text-sm font-medium leading-none">VPS</div>
-                            </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Virtual private servers for your projects.
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
+                    Solutions
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="min-w-[400px] p-0 bg-white border border-gray-200 shadow-lg rounded-lg z-50">
+                    <div className="grid gap-0 p-0 w-[400px] lg:w-[500px] lg:grid-cols-1">
+                      <NavigationMenuLink asChild>
+                        <Link to="/training-labs" className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100">
+                          <div className="text-sm font-medium leading-none text-gray-900">Training Labs</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-gray-600">
+                            Provisioned lab environments for training companies
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100">
+                          <div className="text-sm font-medium leading-none text-gray-900">Cloud Desktops</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-gray-600">
+                            Fast, secure desktops accessible from anywhere
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link to="/vps" className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50">
+                          <div className="text-sm font-medium leading-none text-gray-900">VPS Hosting</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-gray-600">
+                            High-performance VPS with AMD EPYC processors
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
                   </NavigationMenuContent>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/trainer-adda" className={cn(navigationMenuTriggerStyle(), isActive('/trainer-adda') && 'bg-accent text-accent-foreground')}>
-                    <BookOpen className="mr-2 h-4 w-4" />
-                    Trainer Adda
-                  </Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/pricing" className={cn(navigationMenuTriggerStyle(), isActive('/pricing') && 'bg-accent text-accent-foreground')}>
-                    Pricing
-                  </Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/about" className={cn(navigationMenuTriggerStyle(), isActive('/about') && 'bg-accent text-accent-foreground')}>
-                    About
-                  </Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/support" className={cn(navigationMenuTriggerStyle(), isActive('/support') && 'bg-accent text-accent-foreground')}>
-                    Support
-                  </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-
+            <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
+            <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
+            <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">Contact</Link>
+            <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
@@ -128,42 +83,34 @@ const ResponsiveNavigation = () => {
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
+              <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg z-50">
                 <DropdownMenuItem asChild>
-                  <a 
-                    href="https://trainer.cloudadda.com/login" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="cursor-pointer"
-                  >
-                    Trainer Login
+                  <a href="https://trainer.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full cursor-pointer">
+                    Trainer Log In
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a 
-                    href="https://trainee.cloudadda.com/login" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="cursor-pointer"
-                  >
-                    Trainee Login
+                  <a href="https://trainee.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full cursor-pointer">
+                    Trainee Log In
                   </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-
-            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white rounded-full">
-              <Link to="/contact">Start Now</Link>
+            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
+              <Link to="/contact">
+                Start Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </div>
-
-          {/* Mobile Navigation - Always visible on small screens */}
+          
+          {/* Mobile Navigation */}
           <div className="md:hidden">
             <MobileNavigation />
           </div>
         </div>
       </div>
-    </header>
+    </nav>
   );
 };
 
