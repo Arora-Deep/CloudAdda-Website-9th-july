@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -31,6 +32,7 @@ const Pricing = () => {
     return Math.round(basePrice * multipliers[vpsBilling]);
   };
 
+  // Updated VPS plans based on the uploaded pricing image
   const vpsPlans = [
     { name: "VPS-1", vcpu: "1", ram: "0.5GB", storage: "20GB", priceINR: 200, priceUSD: 2 },
     { name: "VPS-2", vcpu: "1", ram: "1GB", storage: "25GB", priceINR: 350, priceUSD: 4 },
@@ -433,7 +435,7 @@ const Pricing = () => {
                       <TableHead className="font-bold text-foreground w-1/4">vCPU</TableHead>
                       <TableHead className="font-bold text-foreground w-1/4">RAM</TableHead>
                       <TableHead className="font-bold text-foreground w-1/4">Storage</TableHead>
-                      <TableHead className="font-bold text-foreground w-1/4 text-center">Price {currency}/Month</TableHead>
+                      <TableHead className="font-bold text-foreground w-1/4 text-center">Price {currency}/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -562,9 +564,6 @@ const Pricing = () => {
                 <li><a href="#" className="hover:text-foreground transition-colors">Status</a></li>
               </ul>
             </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 CloudAdda. All rights reserved.</p>
           </div>
         </div>
       </footer>

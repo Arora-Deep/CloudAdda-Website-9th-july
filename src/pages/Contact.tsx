@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,7 +9,6 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle, Heart, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -21,14 +19,12 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -58,7 +54,6 @@ const Contact = () => {
     }
     setIsSubmitting(false);
   };
-
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -298,7 +293,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 text-sm">Email</div>
-                    <div className="text-gray-600 text-sm">support@cloudadda.com</div>
+                    <div className="text-gray-600 text-sm">hello@cloudadda.com</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-white rounded-lg">
@@ -307,7 +302,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 text-sm">Phone</div>
-                    <div className="text-gray-600 text-sm">+91 080-69459494</div>
+                    <div className="text-gray-600 text-sm">+91-98765-43210</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-white rounded-lg">
@@ -316,7 +311,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 text-sm">Availability</div>
-                    <div className="text-gray-600 text-sm">9 AM – 9 PM IST (Mon-Sat)</div>
+                    <div className="text-gray-600 text-sm">Mon–Sat, 10 AM – 7 PM IST</div>
                   </div>
                 </div>
               </CardContent>
@@ -360,16 +355,8 @@ const Contact = () => {
                 
               </Link>
               <p className="text-muted-foreground">
-                CloudAdda is India's leading provider of Virtual Training Labs, Cloud Desktops (DaaS), VDI solutions, and high-performance VPS hosting. We help training companies, IT teams, developers, call centers, and remote workforces deploy secure, scalable cloud infrastructure in hours — not weeks. From fully managed training environments to lightning-fast cloud desktops and NVMe VPS servers, CloudAdda is trusted by 5,000+ users across 25+ countries.
+                Simple. Scalable. Human. Infrastructure that just works.
               </p>
-              <div className="space-y-2 text-sm">
-                <div className="text-muted-foreground">
-                  <strong>Email:</strong> support@cloudadda.com
-                </div>
-                <div className="text-muted-foreground">
-                  <strong>Phone:</strong> +91 080-69459494
-                </div>
-              </div>
             </div>
             <div>
               <h3 className="font-semibold mb-4 text-foreground">Solutions</h3>
@@ -398,5 +385,4 @@ const Contact = () => {
       </footer>
     </div>;
 };
-
 export default Contact;

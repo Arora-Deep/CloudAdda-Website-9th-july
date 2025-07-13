@@ -1,8 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const TrainingLabs = () => {
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -66,12 +68,22 @@ const TrainingLabs = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48 bg-white border border-gray-200 shadow-lg">
                   <DropdownMenuItem asChild>
-                    <a href="https://trainer.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer">
+                    <a 
+                      href="https://trainer.cloudadda.com/login" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
+                    >
                       Trainer Log In
                     </a>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <a href="https://trainee.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer">
+                    <a 
+                      href="https://trainee.cloudadda.com/login" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
+                    >
                       Trainee Log In
                     </a>
                   </DropdownMenuItem>
@@ -261,16 +273,24 @@ const TrainingLabs = () => {
                 </p>
                 
                 <ul className="space-y-4">
-                  {["Real-time resource monitoring", "Instant lab status updates", "Performance analytics", "One-click environment controls"].map((feature, index) => <li key={index} className="flex items-center space-x-3">
+                  {["Real-time resource monitoring", "Instant lab status updates", "Performance analytics", "One-click environment controls"].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-500" />
                       <span className="text-gray-700">{feature}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
               
               <div className="relative">
                 <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-                  <video className="w-full h-auto" controls muted autoPlay loop>
+                  <video 
+                    className="w-full h-auto"
+                    controls
+                    muted
+                    autoPlay
+                    loop
+                  >
                     <source src="https://media.cloudadda.com/file/clouaddda-training-page-vid-1-view-all-labs.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
@@ -282,7 +302,13 @@ const TrainingLabs = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative order-2 lg:order-1">
                 <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-                  <video className="w-full h-auto" controls muted autoPlay loop>
+                  <video 
+                    className="w-full h-auto"
+                    controls
+                    muted
+                    autoPlay
+                    loop
+                  >
                     <source src="https://media.cloudadda.com/file/CA-Training-page-vid-2-without-leaving-youre-seat.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
@@ -300,10 +326,12 @@ const TrainingLabs = () => {
                 <p className="text-lg text-gray-600 leading-relaxed">View participant screens, take control when needed, and provide instant help. No more walking around the classroom or dealing with "it's not working" complaints.</p>
                 
                 <div className="grid grid-cols-2 gap-4">
-                  {["Remote screen viewing", "Take control assistance"].map((feature, index) => <div key={index} className="flex items-center space-x-3">
+                  {["Remote screen viewing", "Take control assistance"].map((feature, index) => (
+                    <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-6 h-6 text-green-500" />
                       <span className="text-gray-700">{feature}</span>
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -324,10 +352,12 @@ const TrainingLabs = () => {
                 </p>
                 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
-                  {["Custom-built for your curriculum", "Pre-configured training templates", "Tailored to your specific needs", "Ready-to-use lab access provided"].map((feature, index) => <div key={index} className="flex flex-col items-center space-y-2 text-center">
+                  {["Custom-built for your curriculum", "Pre-configured training templates", "Tailored to your specific needs", "Ready-to-use lab access provided"].map((feature, index) => (
+                    <div key={index} className="flex flex-col items-center space-y-2 text-center">
                       <CheckCircle className="w-8 h-8 text-green-500" />
                       <span className="text-sm text-gray-700">{feature}</span>
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -569,7 +599,7 @@ const TrainingLabs = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                
+                <span className="font-bold text-xl">CloudAdda</span>
               </div>
               <p className="text-gray-400">
                 Born in India, Built for the World. Infrastructure that just works.

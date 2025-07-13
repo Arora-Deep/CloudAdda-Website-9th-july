@@ -9,6 +9,7 @@ import CloudDesktopsTeamBenefits from "@/components/CloudDesktopsTeamBenefits";
 import CloudDesktopsFullyConfigured from "@/components/CloudDesktopsFullyConfigured";
 import CloudDesktopsMigration from "@/components/CloudDesktopsMigration";
 import CloudDesktopsComparison from "@/components/CloudDesktopsComparison";
+import CloudDesktopsRealityCheck from "@/components/CloudDesktopsRealityCheck";
 import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
 import CloudDesktopsFinalCTA from "@/components/CloudDesktopsFinalCTA";
 import CloudDesktopsFooter from "@/components/CloudDesktopsFooter";
@@ -44,6 +45,9 @@ const CloudDesktops = () => {
       
       {/* Comparison */}
       <CloudDesktopsComparison />
+      
+      {/* Reality Check */}
+      <CloudDesktopsRealityCheck />
       
       {/* Pricing */}
       <CloudDesktopsPricing currency="INR" />

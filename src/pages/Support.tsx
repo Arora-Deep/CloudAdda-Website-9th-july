@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ArrowRight, Headphones, MessageSquare, FileText, Zap, Clock, Users, Star, Search, HelpCircle, CheckCircle, Send } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const Support = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -20,23 +21,27 @@ const Support = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
     try {
       const response = await fetch('https://formspree.io/f/mkgbalwp', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
+      
       if (response.ok) {
         alert('Support ticket submitted successfully! We\'ll get back to you soon.');
         setFormData({
@@ -55,28 +60,39 @@ const Support = () => {
     } catch (error) {
       alert('There was an error submitting your ticket. Please try again.');
     }
+    
     setIsSubmitting(false);
   };
-  const faqs = [{
-    question: "How quickly can you provision a training lab?",
-    answer: "Most labs are ready within 3 hours. For urgent requirements, we can provision basic environments in under 1 hour."
-  }, {
-    question: "Do you support custom software installations?",
-    answer: "Absolutely! We pre-install any software, tools, or packages you need. Just share your requirements and we'll handle the setup."
-  }, {
-    question: "What happens if students face issues during training?",
-    answer: "Our 24/7 support team monitors all active sessions. Students can get help via chat, and we resolve most issues within 10 minutes."
-  }, {
-    question: "Can you handle large-scale training (1000+ students)?",
-    answer: "Yes! We've successfully managed training sessions with over 5,000 concurrent users. Our infrastructure auto-scales to handle any load."
-  }, {
-    question: "What's included in your support?",
-    answer: "24/7 technical support, infrastructure monitoring, automatic backups, security updates, and dedicated account management."
-  }, {
-    question: "Do you offer refunds if labs don't work as expected?",
-    answer: "We guarantee 99.9% uptime. If technical issues cause training disruption due to our infrastructure, we provide full refunds."
-  }];
-  return <div className="min-h-screen bg-white">
+
+  const faqs = [
+    {
+      question: "How quickly can you provision a training lab?",
+      answer: "Most labs are ready within 3 hours. For urgent requirements, we can provision basic environments in under 1 hour."
+    },
+    {
+      question: "Do you support custom software installations?",
+      answer: "Absolutely! We pre-install any software, tools, or packages you need. Just share your requirements and we'll handle the setup."
+    },
+    {
+      question: "What happens if students face issues during training?",
+      answer: "Our 24/7 support team monitors all active sessions. Students can get help via chat, and we resolve most issues within 10 minutes."
+    },
+    {
+      question: "Can you handle large-scale training (1000+ students)?",
+      answer: "Yes! We've successfully managed training sessions with over 5,000 concurrent users. Our infrastructure auto-scales to handle any load."
+    },
+    {
+      question: "What's included in your support?",
+      answer: "24/7 technical support, infrastructure monitoring, automatic backups, security updates, and dedicated account management."
+    },
+    {
+      question: "Do you offer refunds if labs don't work as expected?",
+      answer: "We guarantee 99.9% uptime. If technical issues cause training disruption due to our infrastructure, we provide full refunds."
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -291,13 +307,29 @@ const Support = () => {
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
-                    <Input id="name" type="text" required value={formData.name} onChange={e => handleInputChange('name', e.target.value)} className="w-full" placeholder="Your full name" />
+                    <Input
+                      id="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      className="w-full"
+                      placeholder="Your full name"
+                    />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       Email Address *
                     </label>
-                    <Input id="email" type="email" required value={formData.email} onChange={e => handleInputChange('email', e.target.value)} className="w-full" placeholder="your@email.com" />
+                    <Input
+                      id="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className="w-full"
+                      placeholder="your@email.com"
+                    />
                   </div>
                 </div>
                 
@@ -306,13 +338,27 @@ const Support = () => {
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number
                     </label>
-                    <Input id="phone" type="tel" value={formData.phone} onChange={e => handleInputChange('phone', e.target.value)} className="w-full" placeholder="+1 (555) 000-0000" />
+                    <Input
+                      id="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      className="w-full"
+                      placeholder="+1 (555) 000-0000"
+                    />
                   </div>
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                       Company Name
                     </label>
-                    <Input id="company" type="text" value={formData.company} onChange={e => handleInputChange('company', e.target.value)} className="w-full" placeholder="Your company" />
+                    <Input
+                      id="company"
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => handleInputChange('company', e.target.value)}
+                      className="w-full"
+                      placeholder="Your company"
+                    />
                   </div>
                 </div>
 
@@ -321,7 +367,7 @@ const Support = () => {
                     <label htmlFor="offering" className="block text-sm font-medium text-gray-700 mb-2">
                       Related Service *
                     </label>
-                    <Select onValueChange={value => handleInputChange('offering', value)} required>
+                    <Select onValueChange={(value) => handleInputChange('offering', value)} required>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select the related service" />
                       </SelectTrigger>
@@ -339,7 +385,7 @@ const Support = () => {
                     <label htmlFor="priority" className="block text-sm font-medium text-gray-700 mb-2">
                       Priority Level *
                     </label>
-                    <Select onValueChange={value => handleInputChange('priority', value)} required>
+                    <Select onValueChange={(value) => handleInputChange('priority', value)} required>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select priority" />
                       </SelectTrigger>
@@ -357,17 +403,36 @@ const Support = () => {
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                     Subject *
                   </label>
-                  <Input id="subject" type="text" required value={formData.subject} onChange={e => handleInputChange('subject', e.target.value)} className="w-full" placeholder="Brief description of the issue" />
+                  <Input
+                    id="subject"
+                    type="text"
+                    required
+                    value={formData.subject}
+                    onChange={(e) => handleInputChange('subject', e.target.value)}
+                    className="w-full"
+                    placeholder="Brief description of the issue"
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Detailed Description *
                   </label>
-                  <Textarea id="message" required value={formData.message} onChange={e => handleInputChange('message', e.target.value)} className="w-full min-h-[150px]" placeholder="Please provide detailed information about your issue, including steps to reproduce, error messages, and any relevant context..." />
+                  <Textarea
+                    id="message"
+                    required
+                    value={formData.message}
+                    onChange={(e) => handleInputChange('message', e.target.value)}
+                    className="w-full min-h-[150px]"
+                    placeholder="Please provide detailed information about your issue, including steps to reproduce, error messages, and any relevant context..."
+                  />
                 </div>
 
-                <Button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
                   {isSubmitting ? 'Submitting...' : 'Submit Support Ticket'}
                   <Send className="w-5 h-5 ml-2" />
                 </Button>
@@ -392,7 +457,8 @@ const Support = () => {
           </div>
 
           <div className="space-y-6">
-            {faqs.map((faq, index) => <Card key={index} className="border border-gray-200 hover:shadow-md transition-shadow">
+            {faqs.map((faq, index) => (
+              <Card key={index} className="border border-gray-200 hover:shadow-md transition-shadow">
                 <CardHeader>
                   <CardTitle className="text-lg text-gray-900 flex items-start">
                     <HelpCircle className="w-5 h-5 mr-3 mt-0.5 text-blue-500 flex-shrink-0" />
@@ -402,7 +468,8 @@ const Support = () => {
                 <CardContent>
                   <p className="text-gray-600 ml-8">{faq.answer}</p>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -445,7 +512,7 @@ const Support = () => {
             <div className="space-y-4">
               <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                
+                <span className="font-bold text-xl">CloudAdda</span>
               </Link>
               <p className="text-gray-400">
                 Simple. Scalable. Human. Infrastructure that just works.
@@ -479,6 +546,8 @@ const Support = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Support;

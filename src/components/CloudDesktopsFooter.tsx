@@ -11,17 +11,9 @@ const CloudDesktopsFooter = () => {
               <img src="/lovable-uploads/9bc8f666-3076-423e-9425-f6233997cb50.png" alt="CloudAdda Logo" className="h-8 w-auto" />
               <span className="font-bold text-xl">CloudAdda</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              CloudAdda is India's leading provider of Virtual Training Labs, Cloud Desktops (DaaS), VDI solutions, and high-performance VPS hosting. We help training companies, IT teams, developers, call centers, and remote workforces deploy secure, scalable cloud infrastructure in hours — not weeks. From fully managed training environments to lightning-fast cloud desktops and NVMe VPS servers, CloudAdda is trusted by 5,000+ users across 25+ countries.
+            <p className="text-gray-400">
+              Born in India, Built for the World. Infrastructure that just works.
             </p>
-            <div className="space-y-2 text-sm">
-              <div className="text-gray-400">
-                <strong>Email:</strong> support@cloudadda.com
-              </div>
-              <div className="text-gray-400">
-                <strong>Phone:</strong> +91 080-69459494
-              </div>
-            </div>
           </div>
           
           <div>
@@ -56,7 +48,7 @@ const CloudDesktopsFooter = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400">© 2025 CloudAdda. All rights reserved.</p>
+          <p className="text-gray-400">© 2024 CloudAdda. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy-policy" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
