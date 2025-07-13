@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,19 @@ import { ArrowRight, Users, Target, Heart, Shield, Globe, Zap, Lightbulb, Handsh
 import { Link } from "react-router-dom";
 
 const About = () => {
+  useEffect(() => {
+    document.title = "About CloudAdda – Simplifying Training Labs, VDI & Cloud Hosting";
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'CloudAdda was built to make training labs and remote infrastructure painless. Learn how we support 1K+ users across multiple countries with simple, scalable cloud.');
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}

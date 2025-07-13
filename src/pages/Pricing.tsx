@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +14,19 @@ const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
   const [vpsBilling, setVpsBilling] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
+
+  useEffect(() => {
+    document.title = "Training Labs, VDI & VPS Pricing | CloudAdda";
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Explore CloudAdda\'s pricing for custom training labs, scalable VDI cloud desktops, and high-speed VPS hosting. Predictable, fair pricing — no surprises.');
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
