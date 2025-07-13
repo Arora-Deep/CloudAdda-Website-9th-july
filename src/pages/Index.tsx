@@ -1058,7 +1058,7 @@ const Index = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <img src="/lovable-uploads/ab89b288-4111-435f-8c60-3551cd55182c.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl">CloudAdda</span>
+                
               </div>
               <p className="text-gray-400">
                 Born in India, Built for the World. Infrastructure that just works.
