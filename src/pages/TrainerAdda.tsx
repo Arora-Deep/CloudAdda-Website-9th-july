@@ -102,22 +102,6 @@ const TrainerAdda = () => {
     featured: false,
   }];
 
-  const caseStudies = [{
-    id: "call-center-transformation",
-    title: "Call Center's ₹20 Lakh Cloud Desktop Transformation",
-    description: "How a 200-agent call center eliminated operational chaos and saved ₹20 lakhs annually",
-    company: "Mid-sized Call Center",
-    results: "₹20L saved annually, 98.7% uptime, 33% productivity boost",
-    category: "Cloud Desktops",
-  }, {
-    id: "laptop-to-daas-migration",
-    title: "Enterprise DaaS Migration Success Story",
-    description: "Complete transition from traditional laptops to cloud desktops across multiple departments",
-    company: "Enterprise Client",
-    results: "70% cost reduction, instant setup, enhanced security",
-    category: "DaaS Migration",
-  }];
-
   const playbooks = [{
     id: "zero-to-live-lab",
     title: "Zero to Live — How to Deliver a Flawless Virtual Training Lab in 3 Hours",
@@ -136,26 +120,6 @@ const TrainerAdda = () => {
     description: "Essential pre-launch checklist to prevent virtual training failures and ensure smooth sessions",
     type: "Quality Assurance",
     duration: "Pre-Launch",
-  }];
-
-  const downloads = [{
-    title: "Lab Planning Worksheet",
-    description: "Complete worksheet for defining lab environments and requirements",
-    type: "PDF Template",
-    size: "2.1 MB",
-    downloads: "3.2k"
-  }, {
-    title: "Ultimate Lab Setup Checklist",
-    description: "15-point readiness checklist with troubleshooting flowchart and command sheets",
-    type: "PDF Guide",
-    size: "1.8 MB",
-    downloads: "4.1k"
-  }, {
-    title: "Trainer Onboarding Checklist",
-    description: "Step-by-step onboarding process for new training environments",
-    type: "PDF Checklist",
-    size: "950 KB",
-    downloads: "2.8k"
   }];
 
   return (
@@ -420,7 +384,7 @@ const TrainerAdda = () => {
           </div>
         </section>
 
-        {/* Customer Stories Section */}
+        {/* Customer Stories Section - Coming Soon */}
         <section id="customer-stories" className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -428,85 +392,94 @@ const TrainerAdda = () => {
                 <Heart className="w-4 h-4 mr-2" />
                 Success Stories
               </Badge>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Real Success Stories</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Coming Soon</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                See how organizations transform their operations with CloudAdda solutions.
+                We're curating real success stories and case studies from organizations who have transformed their operations with CloudAdda solutions.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
-              {caseStudies.map((study, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow border border-gray-200">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-4">
-                      <Badge variant="outline">{study.category}</Badge>
-                      <div className="text-sm font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">{study.company}</div>
-                    </div>
-                    <CardTitle className="text-xl">{study.title}</CardTitle>
-                    <CardDescription>{study.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="bg-green-50 rounded-lg p-4 mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                        <TrendingUp className="w-5 h-5 mr-2 text-green-600" />
-                        Key Results:
-                      </h4>
-                      <p className="text-gray-700">{study.results}</p>
-                    </div>
-                    <Link to={`/case-study/${study.id}`}>
-                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-                        Read Full Case Study
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="bg-white rounded-lg p-8 text-center shadow-lg border border-green-100">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Heart className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Real Stories, Real Results</h3>
+              <p className="text-lg text-gray-600 mb-6 max-w-xl mx-auto">
+                We're working with our customers to bring you authentic case studies showing how CloudAdda has helped transform their training delivery and remote infrastructure.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input 
+                  type="email" 
+                  placeholder="Get notified when we launch" 
+                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500" 
+                />
+                <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white">
+                  Notify Me
+                </Button>
+              </div>
+              <p className="text-sm text-gray-500 mt-4">Be the first to read our customer success stories</p>
             </div>
           </div>
         </section>
 
-        {/* Downloads Section */}
+        {/* Downloads Section - Coming Soon */}
         <section id="downloads" className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-purple-500 text-white">
                 <Download className="w-4 h-4 mr-2" />
-                Free Downloads
+                Essential Resources
               </Badge>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Essential Resources</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Coming Soon</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Professional templates, checklists, and worksheets to accelerate your training programs.
+                We're preparing comprehensive templates, checklists, and worksheets to accelerate your training programs.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8">
-              {downloads.map((download, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow border border-gray-200">
-                  <CardHeader className="text-center">
-                    <div className="w-16 h-16 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                      <FileText className="w-8 h-8 text-white" />
-                    </div>
-                    <CardTitle className="text-xl">{download.title}</CardTitle>
-                    <CardDescription>{download.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <div className="flex justify-between items-center mb-4 text-sm text-gray-500">
-                      <span>{download.type}</span>
-                      <span>{download.size}</span>
-                    </div>
-                    <div className="mb-4">
-                      <Badge variant="outline" className="text-green-600 border-green-200">
-                        {download.downloads} downloads
-                      </Badge>
-                    </div>
-                    <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white">
-                      Download Free
-                      <Download className="w-4 h-4 ml-2" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="bg-white rounded-lg p-8 text-center shadow-lg border border-purple-100">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Download className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Professional Resources Library</h3>
+              <p className="text-lg text-gray-600 mb-6 max-w-xl mx-auto">
+                We're creating a comprehensive collection of professional templates, planning worksheets, setup checklists, and troubleshooting guides to make your training delivery seamless.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <FileText className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Templates</h4>
+                  <p className="text-sm text-gray-600">Professional planning worksheets</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <CheckCircle className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Checklists</h4>
+                  <p className="text-sm text-gray-600">Comprehensive setup guides</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <Lightbulb className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Guides</h4>
+                  <p className="text-sm text-gray-600">Expert tips and best practices</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input 
+                  type="email" 
+                  placeholder="Get notified when we launch" 
+                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" 
+                />
+                <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white">
+                  Notify Me
+                </Button>
+              </div>
+              <p className="text-sm text-gray-500 mt-4">Be the first to access our resource library</p>
             </div>
           </div>
         </section>
