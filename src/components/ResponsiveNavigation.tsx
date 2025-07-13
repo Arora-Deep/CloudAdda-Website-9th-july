@@ -96,7 +96,7 @@ const ResponsiveNavigation = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
+            <Button asChild variant="orange" className="rounded-full px-6">
               <Link to="/contact">
                 Start Now
                 <ArrowRight className="ml-2 h-4 w-4" />
