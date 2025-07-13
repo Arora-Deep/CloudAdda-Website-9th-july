@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
-
 const VPS = () => {
   useEffect(() => {
     document.title = "Cloud VPS Hosting | NVMe + AMD EPYC | CloudAdda";
-    
+
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -20,9 +19,7 @@ const VPS = () => {
       document.head.appendChild(meta);
     }
   }, []);
-
   const [showComingSoon, setShowComingSoon] = useState(false);
-
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -426,20 +423,13 @@ const VPS = () => {
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <div className="flex justify-between items-center mb-4">
                   <h4 className="font-bold text-gray-900">Live Performance Comparison</h4>
-                  <Button 
-                    onClick={() => setShowComingSoon(true)}
-                    variant="outline" 
-                    size="sm"
-                    className="text-purple-600 border-purple-600 hover:bg-purple-50"
-                  >
+                  <Button onClick={() => setShowComingSoon(true)} variant="outline" size="sm" className="text-purple-600 border-purple-600 hover:bg-purple-50">
                     View
                   </Button>
                 </div>
-                {showComingSoon && (
-                  <div className="text-center py-8 text-purple-600 font-semibold text-lg">
+                {showComingSoon && <div className="text-center py-8 text-purple-600 font-semibold text-lg">
                     Coming Soon!
-                  </div>
-                )}
+                  </div>}
               </div>
             </div>
 
@@ -636,7 +626,7 @@ const VPS = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl">CloudAdda</span>
+                
               </div>
               <p className="text-gray-400">
                 Born in India, Built for the World. Infrastructure that just works.
