@@ -1,25 +1,13 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Cpu, HardDrive, Globe, TrendingUp, Brain, BarChart3, CheckCircle, Zap, Server, Database, Settings, Rocket, Activity, Award, Users, Shield, Clock, DollarSign, Wrench, AlertTriangle, Star, Linkedin, Twitter, Github, Mail, Phone, MapPin, X, ChevronRight, ThumbsUp, Timer, TrendingDown, Code } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const VPS = () => {
   const [showComingSoon, setShowComingSoon] = useState(false);
-
-  useEffect(() => {
-    document.title = "Cloud VPS Hosting  | NVMe + AMD EPYC | CloudAdda";
-    
-    // Update or create meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', 'High-speed VPS with NVMe storage and AMD EPYC performance. Perfect for devs, apps, and remote workloads. Starts at ₹699/month. SSD fast, human-supported.');
-  }, []);
 
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -512,7 +500,7 @@ const VPS = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Migration Made Simple</h2>
@@ -683,5 +671,4 @@ const VPS = () => {
       </footer>
     </div>;
 };
-
 export default VPS;
