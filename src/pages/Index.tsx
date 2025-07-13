@@ -7,23 +7,7 @@ import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settin
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
-
 const Index = () => {
-  useEffect(() => {
-    document.title = "CloudAdda – Virtual Training Labs, Cloud Desktops (VDI) & VPS Hosting";
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Run powerful virtual training labs, high-performance VDI desktops, and NVMe VPS servers with CloudAdda. Same-day setup, 99.9% uptime, and real human support.');
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = 'Run powerful virtual training labs, high-performance VDI desktops, and NVMe VPS servers with CloudAdda. Same-day setup, 99.9% uptime, and real human support.';
-      document.head.appendChild(meta);
-    }
-  }, []);
-
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
@@ -49,111 +33,88 @@ const Index = () => {
   }];
 
   // Updated customer logos with new images
-  const customerLogos = [
-    {
-      name: "NIIT",
-      logo: "/lovable-uploads/15f02da9-f936-4b39-a769-8baf4f7c05ff.png"
-    },
-    {
-      name: "Bennett & Coleman - The Times of India",
-      logo: "/lovable-uploads/b8a0bbbe-66be-4c64-826a-4bba7e8c5684.png"
-    },
-    {
-      name: "Royal Arabian Destination Management",
-      logo: "/lovable-uploads/cc781258-e902-4178-8607-3c48b3ae0f4a.png"
-    },
-    {
-      name: "Indian Institute of Science",
-      logo: "/lovable-uploads/8d8ce7c4-1e77-4147-a1ae-2452ae2cf683.png"
-    },
-    {
-      name: "Red Hat",
-      logo: "/lovable-uploads/b35e7ed6-37e6-49c5-a22b-f48ae5ca78df.png"
-    },
-    {
-      name: "Molecular Filtration Group",
-      logo: "/lovable-uploads/ef895104-df65-4cbf-86e7-26f55337c5fa.png"
-    },
-    {
-      name: "Focus Group",
-      logo: "/lovable-uploads/41eb1686-5580-434b-947a-5e21f578c058.png"
-    },
-    {
-      name: "NUAGE",
-      logo: "/lovable-uploads/4f827c05-6a04-4635-b840-f9bc202e40ca.png"
-    },
-    {
-      name: "Stride Data",
-      logo: "/lovable-uploads/8a964dfa-c86e-485d-8c6e-f934d08e9d39.png"
-    },
-    {
-      name: "EdForce",
-      logo: "/lovable-uploads/db3358c1-b1a9-4070-a4a3-87901202446e.png"
-    },
-    {
-      name: "Xebia",
-      logo: "/lovable-uploads/168f3b7e-5abe-4850-bdac-add53e21fcb4.png"
-    },
-    {
-      name: "Mazenet",
-      logo: "/lovable-uploads/78472758-6da6-4403-9e80-a1e2d61a0893.png"
-    },
-    {
-      name: "Unext",
-      logo: "/lovable-uploads/b30cdbbc-43d3-4690-bc58-4817dcedd4d6.png"
-    },
-    {
-      name: "SpringPeople",
-      logo: "/lovable-uploads/df4fd201-2c8e-4ad6-b65a-1f0d13add86d.png"
-    },
-    {
-      name: "Novel Vista",
-      logo: "/lovable-uploads/21459b8a-fdf1-42f6-8503-d17013aede66.png"
-    },
-    {
-      name: "Overture Research",
-      logo: "/lovable-uploads/c65616c4-1ed8-4c76-8cd6-93f0ddd9a95a.png"
-    },
-    {
-      name: "Learnlytica",
-      logo: "/lovable-uploads/eb28034e-23b0-4ede-a4d8-635ce65d965e.png"
-    },
-    {
-      name: "LeelaJay",
-      logo: "/lovable-uploads/4e4d4486-2767-498c-816b-a1beee44cbf9.png"
-    },
-    {
-      name: "Alchemy",
-      logo: "/lovable-uploads/02252fc8-4957-494c-82db-1f7917b81b8b.png"
-    }
-  ];
+  const customerLogos = [{
+    name: "NIIT",
+    logo: "/lovable-uploads/15f02da9-f936-4b39-a769-8baf4f7c05ff.png"
+  }, {
+    name: "Bennett & Coleman - The Times of India",
+    logo: "/lovable-uploads/b8a0bbbe-66be-4c64-826a-4bba7e8c5684.png"
+  }, {
+    name: "Royal Arabian Destination Management",
+    logo: "/lovable-uploads/cc781258-e902-4178-8607-3c48b3ae0f4a.png"
+  }, {
+    name: "Indian Institute of Science",
+    logo: "/lovable-uploads/8d8ce7c4-1e77-4147-a1ae-2452ae2cf683.png"
+  }, {
+    name: "Red Hat",
+    logo: "/lovable-uploads/b35e7ed6-37e6-49c5-a22b-f48ae5ca78df.png"
+  }, {
+    name: "Molecular Filtration Group",
+    logo: "/lovable-uploads/ef895104-df65-4cbf-86e7-26f55337c5fa.png"
+  }, {
+    name: "Focus Group",
+    logo: "/lovable-uploads/41eb1686-5580-434b-947a-5e21f578c058.png"
+  }, {
+    name: "NUAGE",
+    logo: "/lovable-uploads/4f827c05-6a04-4635-b840-f9bc202e40ca.png"
+  }, {
+    name: "Stride Data",
+    logo: "/lovable-uploads/8a964dfa-c86e-485d-8c6e-f934d08e9d39.png"
+  }, {
+    name: "EdForce",
+    logo: "/lovable-uploads/db3358c1-b1a9-4070-a4a3-87901202446e.png"
+  }, {
+    name: "Xebia",
+    logo: "/lovable-uploads/168f3b7e-5abe-4850-bdac-add53e21fcb4.png"
+  }, {
+    name: "Mazenet",
+    logo: "/lovable-uploads/78472758-6da6-4403-9e80-a1e2d61a0893.png"
+  }, {
+    name: "Unext",
+    logo: "/lovable-uploads/b30cdbbc-43d3-4690-bc58-4817dcedd4d6.png"
+  }, {
+    name: "SpringPeople",
+    logo: "/lovable-uploads/df4fd201-2c8e-4ad6-b65a-1f0d13add86d.png"
+  }, {
+    name: "Novel Vista",
+    logo: "/lovable-uploads/21459b8a-fdf1-42f6-8503-d17013aede66.png"
+  }, {
+    name: "Overture Research",
+    logo: "/lovable-uploads/c65616c4-1ed8-4c76-8cd6-93f0ddd9a95a.png"
+  }, {
+    name: "Learnlytica",
+    logo: "/lovable-uploads/eb28034e-23b0-4ede-a4d8-635ce65d965e.png"
+  }, {
+    name: "LeelaJay",
+    logo: "/lovable-uploads/4e4d4486-2767-498c-816b-a1beee44cbf9.png"
+  }, {
+    name: "Alchemy",
+    logo: "/lovable-uploads/02252fc8-4957-494c-82db-1f7917b81b8b.png"
+  }];
 
   // Testimonials data
-  const testimonials = [
-    {
-      quote: "CloudAdda's support team provides immediate solutions, helping with difficult labs others can't complete. The platform has streamlined our workflow, enhancing productivity with seamless cloud collaboration. Its virtual training labs offer an intuitive interface, clear instructions, and a well-organized layout, making the learning process effective. I wholeheartedly recommend CloudAdda for its user-friendly interface, comprehensive content, and hands-on exercises.",
-      author: "Vigneshwaran",
-      position: "IT Infrastructure Manager, Mazenet Solution Pvt Ltd"
-    },
-    {
-      quote: "CloudAdda's labs, used by my team of 100 trainees for IT Infra training, were supported by an efficient team that quickly resolved minor issues professionally. The seamless, interruption-free experience ensured high-quality learning. The user-friendly interface and comprehensive batch management were extremely useful. I strongly recommend CloudAdda for its effective virtual labs and excellent support team.",
-      author: "Abdul Raouf",
-      position: "IT Trainer & Consultant"
-    },
-    {
-      quote: "CloudAdda's exceptional Virtual Lab support, with prompt and effective assistance, ensures smooth operation and success. Its unmatched customer support and advanced features enhance the learning experience, setting it apart. The platform's reliability, accessibility, and seamless integration streamline processes, fostering efficiency. With an intuitive interface and excellent support, CloudAdda is ideal for effective training. Highly recommended for its robust features and user-friendly design.",
-      author: "Gunjan Arora",
-      position: "DELIVERY MANAGER- LEARNING SERVICES, NIIT - StackRoute"
-    }
-  ];
-
+  const testimonials = [{
+    quote: "CloudAdda's support team provides immediate solutions, helping with difficult labs others can't complete. The platform has streamlined our workflow, enhancing productivity with seamless cloud collaboration. Its virtual training labs offer an intuitive interface, clear instructions, and a well-organized layout, making the learning process effective. I wholeheartedly recommend CloudAdda for its user-friendly interface, comprehensive content, and hands-on exercises.",
+    author: "Vigneshwaran",
+    position: "IT Infrastructure Manager, Mazenet Solution Pvt Ltd"
+  }, {
+    quote: "CloudAdda's labs, used by my team of 100 trainees for IT Infra training, were supported by an efficient team that quickly resolved minor issues professionally. The seamless, interruption-free experience ensured high-quality learning. The user-friendly interface and comprehensive batch management were extremely useful. I strongly recommend CloudAdda for its effective virtual labs and excellent support team.",
+    author: "Abdul Raouf",
+    position: "IT Trainer & Consultant"
+  }, {
+    quote: "CloudAdda's exceptional Virtual Lab support, with prompt and effective assistance, ensures smooth operation and success. Its unmatched customer support and advanced features enhance the learning experience, setting it apart. The platform's reliability, accessibility, and seamless integration streamline processes, fostering efficiency. With an intuitive interface and excellent support, CloudAdda is ideal for effective training. Highly recommended for its robust features and user-friendly design.",
+    author: "Gunjan Arora",
+    position: "DELIVERY MANAGER- LEARNING SERVICES, NIIT - StackRoute"
+  }];
   const handleNavigation = (path: string) => {
     window.location.href = path;
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }, 100);
   };
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeading(prev => (prev + 1) % headings.length);
@@ -178,9 +139,7 @@ const Index = () => {
     }, 5000);
     return () => clearInterval(testimonialInterval);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <ResponsiveNavigation />
 
@@ -226,56 +185,32 @@ const Index = () => {
           <div className="relative overflow-hidden space-y-4">
             {/* First row - left to right */}
             <div className="flex animate-marquee">
-              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => (
-                <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img 
-                      src={logo.logo} 
-                      alt={logo.name} 
-                      className="max-w-full max-h-full object-contain"
-                    />
+                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain" />
                   </div>
-                </div>
-              ))}
+                </div>)}
               {/* Duplicate for seamless loop */}
-              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img 
-                      src={logo.logo} 
-                      alt={logo.name} 
-                      className="max-w-full max-h-full object-contain"
-                    />
+                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain" />
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
             
             {/* Second row - right to left */}
             <div className="flex animate-marquee-reverse">
-              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => (
-                <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img 
-                      src={logo.logo} 
-                      alt={logo.name} 
-                      className="max-w-full max-h-full object-contain"
-                    />
+                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain" />
                   </div>
-                </div>
-              ))}
+                </div>)}
               {/* Duplicate for seamless loop */}
-              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img 
-                      src={logo.logo} 
-                      alt={logo.name} 
-                      className="max-w-full max-h-full object-contain"
-                    />
+                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain" />
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -343,8 +278,7 @@ const Index = () => {
                 If
               </div>
               
-              {["You're tired of spending hours configuring labs.", "You want your team to work — not wait for IT.", "You care about performance. But you care more about reliability.", "You want to scale, without feeling like you're managing a data center."].map((text, index) => (
-                <div key={index} className="flex items-start space-x-6 group">
+              {["You're tired of spending hours configuring labs.", "You want your team to work — not wait for IT.", "You care about performance. But you care more about reliability.", "You want to scale, without feeling like you're managing a data center."].map((text, index) => <div key={index} className="flex items-start space-x-6 group">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
                       {index + 1}
@@ -353,8 +287,7 @@ const Index = () => {
                   <p className="text-xl text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
                     {text}
                   </p>
-                </div>
-              ))}
+                </div>)}
               
               <div className="text-4xl lg:text-5xl font-bold text-purple-600 mt-12">
                 Then you're our people.
@@ -392,7 +325,15 @@ const Index = () => {
                   <p className="text-lg text-gray-600 leading-relaxed mb-4">We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole hands-on cloud lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.</p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/training-labs" onClick={() => { window.location.href = '/training-labs'; setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 100); }}>
+                  <a href="/training-labs" onClick={() => {
+                  window.location.href = '/training-labs';
+                  setTimeout(() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: 'smooth'
+                    });
+                  }, 100);
+                }}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
@@ -460,7 +401,15 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/cloud-desktops" onClick={() => { window.location.href = '/cloud-desktops'; setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 100); }}>
+                  <a href="/cloud-desktops" onClick={() => {
+                  window.location.href = '/cloud-desktops';
+                  setTimeout(() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: 'smooth'
+                    });
+                  }, 100);
+                }}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
@@ -503,13 +452,17 @@ const Index = () => {
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-600">CPU</span>
                           <div className="w-24 bg-gray-200 rounded-full h-2">
-                            <div className="bg-blue-600 h-2 rounded-full" style={{width: '75%'}}></div>
+                            <div className="bg-blue-600 h-2 rounded-full" style={{
+                            width: '75%'
+                          }}></div>
                           </div>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-600">RAM</span>
                           <div className="w-24 bg-gray-200 rounded-full h-2">
-                            <div className="bg-green-600 h-2 rounded-full" style={{width: '60%'}}></div>
+                            <div className="bg-green-600 h-2 rounded-full" style={{
+                            width: '60%'
+                          }}></div>
                           </div>
                         </div>
                       </div>
@@ -535,7 +488,15 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/vps" onClick={() => { window.location.href = '/vps'; setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 100); }}>
+                  <a href="/vps" onClick={() => {
+                  window.location.href = '/vps';
+                  setTimeout(() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: 'smooth'
+                    });
+                  }, 100);
+                }}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
@@ -658,16 +619,14 @@ const Index = () => {
                     }, {
                       before: "Confusing dashboards. No support.",
                       after: "Friendly support that actually helps."
-                    }].map((row, index) => (
-                        <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
+                    }].map((row, index) => <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
                           <td className="p-6 text-base text-gray-700 border-r border-gray-100 bg-red-25 leading-relaxed">
                             {row.before}
                           </td>
                           <td className="p-6 text-base text-gray-700 bg-green-25 leading-relaxed">
                             {row.after}
                           </td>
-                        </tr>
-                      ))}
+                        </tr>)}
                     </tbody>
                   </table>
                 </div>
@@ -692,23 +651,19 @@ const Index = () => {
                 <div className="flex transition-transform duration-700 ease-in-out" style={{
                 transform: `translateX(-${currentSlideIndex * 100}%)`
               }}>
-                  {slidingWords.map((slide, index) => (
-                    <div key={index} className="min-w-full flex items-center justify-center px-8">
+                  {slidingWords.map((slide, index) => <div key={index} className="min-w-full flex items-center justify-center px-8">
                       <h2 className="text-4xl lg:text-6xl font-bold text-center leading-tight whitespace-nowrap">
                         <span className="text-gray-900">{slide.text} </span>
                         <span className="bg-gradient-to-r from-purple-800 via-purple-600 to-purple-300 bg-clip-text text-transparent">{slide.highlight}</span>
                       </h2>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
             
             {/* Progress indicators */}
             <div className="flex justify-center mt-8 space-x-2">
-              {slidingWords.map((_, index) => (
-                <div key={index} className={`h-2 w-8 rounded-full transition-all duration-300 ${index === currentSlideIndex ? 'bg-purple-600' : 'bg-gray-300'}`} />
-              ))}
+              {slidingWords.map((_, index) => <div key={index} className={`h-2 w-8 rounded-full transition-all duration-300 ${index === currentSlideIndex ? 'bg-purple-600' : 'bg-gray-300'}`} />)}
             </div>
           </div>
           
@@ -730,15 +685,13 @@ const Index = () => {
             number: "500+",
             label: "Happy Clients",
             icon: Award
-          }].map((stat, index) => (
-              <div key={index} className="text-center group">
+          }].map((stat, index) => <div key={index} className="text-center group">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4 group-hover:bg-purple-600 transition-colors duration-300">
                   <stat.icon className="w-8 h-8 text-purple-600 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           {/* Premium Feature Cards */}
@@ -767,8 +720,7 @@ const Index = () => {
             description: "When you pay for performance, you get performance. Guaranteed resources, always.",
             color: "bg-gradient-to-br from-green-500 to-green-600",
             badge: "Guaranteed Performance"
-          }].map((item, index) => (
-              <div key={index} className="group relative">
+          }].map((item, index) => <div key={index} className="group relative">
                 <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden">
                   {/* Badge */}
                   <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-semibold">
@@ -795,8 +747,7 @@ const Index = () => {
                     <div className={`w-12 h-1 bg-gradient-to-r ${item.color.replace('bg-gradient-to-br', '')} rounded-full group-hover:w-20 transition-all duration-300`}></div>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           {/* Premium CTA - SINGLE CTA */}
@@ -834,9 +785,7 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <div className="relative bg-white rounded-3xl p-12 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
               <div className="flex text-yellow-400 mb-6 justify-center">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-current" />
-                ))}
+                {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-current" />)}
               </div>
               
               <div className="relative mb-8">
@@ -860,15 +809,7 @@ const Index = () => {
             
             {/* Dots indicator */}
             <div className="flex justify-center mt-8 space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonialIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                    index === currentTestimonialIndex ? 'bg-purple-600' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
+              {testimonials.map((_, index) => <button key={index} onClick={() => setCurrentTestimonialIndex(index)} className={`w-3 h-3 rounded-full transition-colors duration-300 ${index === currentTestimonialIndex ? 'bg-purple-600' : 'bg-gray-300'}`} />)}
             </div>
           </div>
         </div>
@@ -940,8 +881,7 @@ const Index = () => {
             cta: "View Pricing",
             gradient: "from-orange-500 to-orange-600",
             link: "/pricing"
-          }].map((plan, index) => (
-              <div key={index} className="group relative">
+          }].map((plan, index) => <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-200">
                   {/* Gradient top bar */}
                   <div className={`h-3 bg-gradient-to-r ${plan.gradient}`}></div>
@@ -961,14 +901,12 @@ const Index = () => {
                     
                     {/* Features */}
                     <div className="space-y-4 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-3">
+                      {plan.features.map((feature, featureIndex) => <div key={featureIndex} className="flex items-center space-x-3">
                           <div className={`w-6 h-6 bg-gradient-to-r ${plan.gradient} rounded-full flex items-center justify-center flex-shrink-0`}>
                             <CheckCircle className="w-4 h-4 text-white" />
                           </div>
                           <span className="text-gray-700 text-base">{feature}</span>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                     
                     {/* CTA Button */}
@@ -980,8 +918,7 @@ const Index = () => {
                     </Link>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <div className="text-center mt-16">
@@ -1134,7 +1071,7 @@ const Index = () => {
                 <li><Link to="/training-labs" onClick={() => handleNavigation('/training-labs')} className="hover:text-white transition-colors">Training Labs</Link></li>
                 <li><Link to="/cloud-desktops" onClick={() => handleNavigation('/cloud-desktops')} className="hover:text-white transition-colors">Cloud Desktops</Link></li>
                 <li><Link to="/vps" onClick={() => handleNavigation('/vps')} className="hover:text-white transition-colors">VPS</Link></li>
-                <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Custom Solutions</Link></li>
+                
               </ul>
             </div>
             
@@ -1168,8 +1105,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
