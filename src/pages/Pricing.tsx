@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -435,7 +434,7 @@ const Pricing = () => {
                       <TableHead className="font-bold text-foreground w-1/4">vCPU</TableHead>
                       <TableHead className="font-bold text-foreground w-1/4">RAM</TableHead>
                       <TableHead className="font-bold text-foreground w-1/4">Storage</TableHead>
-                      <TableHead className="font-bold text-foreground w-1/4 text-center">Price {currency}/{vpsBilling === 'monthly' ? 'Month' : vpsBilling === 'quarterly' ? 'Quarter' : 'Year'}</TableHead>
+                      <TableHead className="font-bold text-foreground w-1/4 text-center">Price {currency}/Month</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>

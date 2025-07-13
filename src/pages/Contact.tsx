@@ -9,6 +9,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle, Heart, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -19,12 +20,14 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -54,6 +57,7 @@ const Contact = () => {
     }
     setIsSubmitting(false);
   };
+
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -293,7 +297,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 text-sm">Email</div>
-                    <div className="text-gray-600 text-sm">hello@cloudadda.com</div>
+                    <div className="text-gray-600 text-sm">support@cloudadda.com</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-white rounded-lg">
@@ -302,7 +306,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 text-sm">Phone</div>
-                    <div className="text-gray-600 text-sm">+91-98765-43210</div>
+                    <div className="text-gray-600 text-sm">+91 080-69459494</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-white rounded-lg">
@@ -311,7 +315,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 text-sm">Availability</div>
-                    <div className="text-gray-600 text-sm">Mon–Sat, 10 AM – 7 PM IST</div>
+                    <div className="text-gray-600 text-sm">9 AM – 9 PM IST</div>
                   </div>
                 </div>
               </CardContent>
@@ -385,4 +389,5 @@ const Contact = () => {
       </footer>
     </div>;
 };
+
 export default Contact;
