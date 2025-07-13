@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const CloudDesktopsFooter = () => {
@@ -11,9 +10,19 @@ const CloudDesktopsFooter = () => {
               <img src="/lovable-uploads/9bc8f666-3076-423e-9425-f6233997cb50.png" alt="CloudAdda Logo" className="h-8 w-auto" />
               <span className="font-bold text-xl">CloudAdda</span>
             </div>
-            <p className="text-gray-400">
-              Born in India, Built for the World. Infrastructure that just works.
+            <p className="text-gray-400 text-sm leading-relaxed">
+              CloudAdda is India's leading provider of Virtual Training Labs, Cloud Desktops (DaaS), VDI solutions, and high-performance VPS hosting. We help training companies, IT teams, developers, call centers, and remote workforces deploy secure, scalable cloud infrastructure in hours — not weeks. From fully managed training environments to lightning-fast cloud desktops and NVMe VPS servers, CloudAdda is trusted by 5,000+ users across 25+ countries.
+              <br /><br />
+              Built on AMD EPYC CPUs and pure NVMe storage, our infrastructure is optimized for performance, uptime, and security. Whether you're running developer VMs, virtual classrooms, remote desktops, or enterprise apps — CloudAdda simplifies cloud for businesses that need reliability, speed, and support.
             </p>
+            <div className="space-y-2 text-sm">
+              <div className="text-gray-400">
+                <strong>Email:</strong> support@cloudadda.com
+              </div>
+              <div className="text-gray-400">
+                <strong>Phone:</strong> +91 080-69459494
+              </div>
+            </div>
           </div>
           
           <div>
