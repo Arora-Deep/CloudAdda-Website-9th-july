@@ -2,15 +2,12 @@
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
 import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
-import CloudDesktopsSolutions from "@/components/CloudDesktopsSolutions";
-import CloudDesktopsUseCases from "@/components/CloudDesktopsUseCases";
-import CloudDesktopsTechnical from "@/components/CloudDesktopsTechnical";
-import CloudDesktopsTeamBenefits from "@/components/CloudDesktopsTeamBenefits";
+import CloudDesktopsWay from "@/components/CloudDesktopsWay";
 import CloudDesktopsFullyConfigured from "@/components/CloudDesktopsFullyConfigured";
-import CloudDesktopsMigration from "@/components/CloudDesktopsMigration";
+import CloudDesktopsStopAsking from "@/components/CloudDesktopsStopAsking";
 import CloudDesktopsComparison from "@/components/CloudDesktopsComparison";
 import CloudDesktopsRealityCheck from "@/components/CloudDesktopsRealityCheck";
-import CloudDesktopsPricing from "@/components/CloudDesktopsPricing";
+import CloudDesktopsMigration from "@/components/CloudDesktopsMigration";
 import CloudDesktopsFinalCTA from "@/components/CloudDesktopsFinalCTA";
 import CloudDesktopsFooter from "@/components/CloudDesktopsFooter";
 
@@ -19,40 +16,31 @@ const CloudDesktops = () => {
     <div className="min-h-screen bg-white">
       <ResponsiveNavigation />
       
-      {/* Hero Section */}
+      {/* Hero */}
       <CloudDesktopsHero />
       
-      {/* Pain Points */}
+      {/* Say Goodbye to Local Machines */}
       <CloudDesktopsPainPoints />
       
-      {/* Solutions */}
-      <CloudDesktopsSolutions />
+      {/* The CloudAdda Way */}
+      <CloudDesktopsWay />
       
-      {/* Use Cases */}
-      <CloudDesktopsUseCases />
-      
-      {/* Technical Specs */}
-      <CloudDesktopsTechnical />
-      
-      {/* Team Benefits */}
-      <CloudDesktopsTeamBenefits />
-      
-      {/* Fully Configured */}
+      {/* Fully Configured Ready to Go */}
       <CloudDesktopsFullyConfigured />
       
-      {/* Migration */}
-      <CloudDesktopsMigration />
+      {/* Stop Asking "Will It Work" */}
+      <CloudDesktopsStopAsking />
       
-      {/* Comparison */}
+      {/* Traditional Laptops vs CloudAdda Desktops */}
       <CloudDesktopsComparison />
       
-      {/* Reality Check */}
+      {/* Ready to Transform Your Team */}
       <CloudDesktopsRealityCheck />
       
-      {/* Pricing */}
-      <CloudDesktopsPricing currency="INR" />
+      {/* Migration - We Handle Everything */}
+      <CloudDesktopsMigration />
       
-      {/* Final CTA */}
+      {/* The Future of Work Isn't on Your Laptop */}
       <CloudDesktopsFinalCTA />
       
       {/* Footer */}
