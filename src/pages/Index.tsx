@@ -9,6 +9,21 @@ import { Link } from "react-router-dom";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "CloudAdda – Virtual Training Labs, Cloud Desktops (VDI) & VPS Hosting";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Run powerful virtual training labs, high-performance VDI desktops, and NVMe VPS servers with CloudAdda. Same-day setup, 99.9% uptime, and real human support.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Run powerful virtual training labs, high-performance VDI desktops, and NVMe VPS servers with CloudAdda. Same-day setup, 99.9% uptime, and real human support.';
+      document.head.appendChild(meta);
+    }
+  }, []);
+
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);

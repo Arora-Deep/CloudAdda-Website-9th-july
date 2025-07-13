@@ -1,4 +1,4 @@
-
+import { useEffect } from "react";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
 import CloudDesktopsHero from "@/components/CloudDesktopsHero";
 import CloudDesktopsPainPoints from "@/components/CloudDesktopsPainPoints";
@@ -12,6 +12,21 @@ import CloudDesktopsFinalCTA from "@/components/CloudDesktopsFinalCTA";
 import CloudDesktopsFooter from "@/components/CloudDesktopsFooter";
 
 const CloudDesktops = () => {
+  useEffect(() => {
+    document.title = "Cloud Desktops (VDI) for Teams | DaaS by CloudAdda";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Secure, powerful desktops in the cloud — Windows, Linux, or macOS. Perfect for developers, call centers, BPOs, designers, and remote teams. Instant access. Fully managed.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Secure, powerful desktops in the cloud — Windows, Linux, or macOS. Perfect for developers, call centers, BPOs, designers, and remote teams. Instant access. Fully managed.';
+      document.head.appendChild(meta);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <ResponsiveNavigation />
