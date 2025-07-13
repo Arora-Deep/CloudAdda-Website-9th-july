@@ -9,7 +9,6 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle, Heart, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -20,27 +19,23 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     try {
       const response = await fetch('https://formspree.io/f/xnnvyyek', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData)
       });
-      
       if (response.ok) {
         alert('Thank you! Your message has been sent successfully.');
         setFormData({
@@ -57,12 +52,9 @@ const Contact = () => {
     } catch (error) {
       alert('There was an error sending your message. Please try again.');
     }
-    
     setIsSubmitting(false);
   };
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,10 +74,7 @@ const Contact = () => {
                     <NavigationMenuContent>
                       <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/training-labs"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/training-labs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Training Labs</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Provisioned lab environments for training companies
@@ -93,10 +82,7 @@ const Contact = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/cloud-desktops"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Cloud Desktops</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Fast, secure desktops accessible from anywhere
@@ -104,10 +90,7 @@ const Contact = () => {
                           </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            to="/vps"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
+                          <Link to="/vps" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">VPS Hosting</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               High-performance VPS with AMD EPYC processors
@@ -133,22 +116,12 @@ const Contact = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48 bg-white border border-gray-200 shadow-lg">
                   <DropdownMenuItem asChild>
-                    <a 
-                      href="https://trainer.cloudadda.com/login" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
-                    >
+                    <a href="https://trainer.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer">
                       Trainer Log In
                     </a>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <a 
-                      href="https://trainee.cloudadda.com/login" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
-                    >
+                    <a href="https://trainee.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer">
                       Trainee Log In
                     </a>
                   </DropdownMenuItem>
@@ -241,29 +214,13 @@ const Contact = () => {
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                         Full Name *
                       </label>
-                      <Input
-                        id="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => handleInputChange('name', e.target.value)}
-                        className="w-full"
-                        placeholder="Your full name"
-                      />
+                      <Input id="name" type="text" required value={formData.name} onChange={e => handleInputChange('name', e.target.value)} className="w-full" placeholder="Your full name" />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                         Email Address *
                       </label>
-                      <Input
-                        id="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => handleInputChange('email', e.target.value)}
-                        className="w-full"
-                        placeholder="your@email.com"
-                      />
+                      <Input id="email" type="email" required value={formData.email} onChange={e => handleInputChange('email', e.target.value)} className="w-full" placeholder="your@email.com" />
                     </div>
                   </div>
                   
@@ -272,27 +229,13 @@ const Contact = () => {
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                         Phone Number
                       </label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => handleInputChange('phone', e.target.value)}
-                        className="w-full"
-                        placeholder="+1 (555) 000-0000"
-                      />
+                      <Input id="phone" type="tel" value={formData.phone} onChange={e => handleInputChange('phone', e.target.value)} className="w-full" placeholder="+1 (555) 000-0000" />
                     </div>
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                         Company Name
                       </label>
-                      <Input
-                        id="company"
-                        type="text"
-                        value={formData.company}
-                        onChange={(e) => handleInputChange('company', e.target.value)}
-                        className="w-full"
-                        placeholder="Your company"
-                      />
+                      <Input id="company" type="text" value={formData.company} onChange={e => handleInputChange('company', e.target.value)} className="w-full" placeholder="Your company" />
                     </div>
                   </div>
 
@@ -300,7 +243,7 @@ const Contact = () => {
                     <label htmlFor="offering" className="block text-sm font-medium text-gray-700 mb-2">
                       What do you need help with? *
                     </label>
-                    <Select onValueChange={(value) => handleInputChange('offering', value)} required>
+                    <Select onValueChange={value => handleInputChange('offering', value)} required>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select an offering" />
                       </SelectTrigger>
@@ -318,21 +261,10 @@ const Contact = () => {
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                       Message *
                     </label>
-                    <Textarea
-                      id="message"
-                      required
-                      value={formData.message}
-                      onChange={(e) => handleInputChange('message', e.target.value)}
-                      className="w-full min-h-[120px]"
-                      placeholder="Tell us about your project or requirements..."
-                    />
+                    <Textarea id="message" required value={formData.message} onChange={e => handleInputChange('message', e.target.value)} className="w-full min-h-[120px]" placeholder="Tell us about your project or requirements..." />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-purple-600 to-orange-600 hover:from-purple-700 hover:to-orange-700 text-white py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-                  >
+                  <Button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-purple-600 to-orange-600 hover:from-purple-700 hover:to-orange-700 text-white py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                     <Send className="w-5 h-5 ml-2" />
                   </Button>
@@ -420,7 +352,7 @@ const Contact = () => {
             <div className="space-y-4">
               <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                <span className="font-bold text-xl text-foreground">CloudAdda</span>
+                
               </Link>
               <p className="text-muted-foreground">
                 Simple. Scalable. Human. Infrastructure that just works.
@@ -451,8 +383,6 @@ const Contact = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
