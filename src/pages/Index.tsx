@@ -144,7 +144,7 @@ const Index = () => {
       <ResponsiveNavigation />
 
       {/* Hero Section */}
-      <section className="bg-white pt-16 pb-8">
+      <section className="bg-white pt-16 pb-8" role="banner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -180,37 +180,45 @@ const Index = () => {
       </section>
 
       {/* Company Logo Marquee - Updated with dual direction */}
-      <section className="py-8 bg-white">
+      <section className="py-8 bg-white" aria-label="Trusted by leading companies">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden space-y-4">
             {/* First row - left to right */}
             <div className="flex animate-marquee">
-              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => (
+                <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain" />
+                    <img src={logo.logo} alt={`${logo.name} logo`} className="max-w-full max-h-full object-contain" />
                   </div>
-                </div>)}
+                </div>
+              ))}
               {/* Duplicate for seamless loop */}
-              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => (
+                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain" />
+                    <img src={logo.logo} alt={`${logo.name} logo`} className="max-w-full max-h-full object-contain" />
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
             
             {/* Second row - right to left */}
             <div className="flex animate-marquee-reverse">
-              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => (
+                <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain" />
+                    <img src={logo.logo} alt={`${logo.name} logo`} className="max-w-full max-h-full object-contain" />
                   </div>
-                </div>)}
+                </div>
+              ))}
               {/* Duplicate for seamless loop */}
-              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
+              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => (
+                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
                   <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img src={logo.logo} alt={logo.name} className="max-w-full max-h-full object-contain" />
+                    <img src={logo.logo} alt={`${logo.name} logo`} className="max-w-full max-h-full object-contain" />
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -278,7 +286,8 @@ const Index = () => {
                 If
               </div>
               
-              {["You're tired of spending hours configuring labs.", "You want your team to work — not wait for IT.", "You care about performance. But you care more about reliability.", "You want to scale, without feeling like you're managing a data center."].map((text, index) => <div key={index} className="flex items-start space-x-6 group">
+              {["You're tired of spending hours configuring labs.", "You want your team to work — not wait for IT.", "You care about performance. But you care more about reliability.", "You want to scale, without feeling like you're managing a data center."].map((text, index) => (
+                <div key={index} className="flex items-start space-x-6 group">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
                       {index + 1}
@@ -287,7 +296,8 @@ const Index = () => {
                   <p className="text-xl text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
                     {text}
                   </p>
-                </div>)}
+                </div>
+              ))}
               
               <div className="text-4xl lg:text-5xl font-bold text-purple-600 mt-12">
                 Then you're our people.
@@ -302,7 +312,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Fix Section - UPDATED WITH LEARN MORE BUTTONS */}
+      {/* The Fix Section - Our Services */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -317,7 +327,7 @@ const Index = () => {
 
           <div className="space-y-24">
             {/* Training Labs */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <article className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <div className="space-y-4">
                   <h3 className="text-3xl font-bold text-gray-900">Virtual Training Labs</h3>
@@ -326,14 +336,14 @@ const Index = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="/training-labs" onClick={() => {
-                  window.location.href = '/training-labs';
-                  setTimeout(() => {
-                    window.scrollTo({
-                      top: 0,
-                      behavior: 'smooth'
-                    });
-                  }, 100);
-                }}>
+                    window.location.href = '/training-labs';
+                    setTimeout(() => {
+                      window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                      });
+                    }, 100);
+                  }}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
@@ -385,10 +395,10 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
             
             {/* Virtual Desktops */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <article className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="lg:order-2 space-y-6">
                 <div className="space-y-4">
                   <h3 className="text-3xl font-bold text-gray-900">Cloud Desktops</h3>
@@ -402,14 +412,14 @@ const Index = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="/cloud-desktops" onClick={() => {
-                  window.location.href = '/cloud-desktops';
-                  setTimeout(() => {
-                    window.scrollTo({
-                      top: 0,
-                      behavior: 'smooth'
-                    });
-                  }, 100);
-                }}>
+                    window.location.href = '/cloud-desktops';
+                    setTimeout(() => {
+                      window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                      });
+                    }, 100);
+                  }}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
@@ -452,17 +462,13 @@ const Index = () => {
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-600">CPU</span>
                           <div className="w-24 bg-gray-200 rounded-full h-2">
-                            <div className="bg-blue-600 h-2 rounded-full" style={{
-                            width: '75%'
-                          }}></div>
+                            <div className="bg-blue-600 h-2 rounded-full" style={{ width: '75%' }}></div>
                           </div>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-600">RAM</span>
                           <div className="w-24 bg-gray-200 rounded-full h-2">
-                            <div className="bg-green-600 h-2 rounded-full" style={{
-                            width: '60%'
-                          }}></div>
+                            <div className="bg-green-600 h-2 rounded-full" style={{ width: '60%' }}></div>
                           </div>
                         </div>
                       </div>
@@ -470,10 +476,10 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
 
             {/* VPS */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <article className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <div className="space-y-4">
                   <h3 className="text-3xl font-bold text-gray-900">Virtual Private Servers</h3>
@@ -489,14 +495,14 @@ const Index = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="/vps" onClick={() => {
-                  window.location.href = '/vps';
-                  setTimeout(() => {
-                    window.scrollTo({
-                      top: 0,
-                      behavior: 'smooth'
-                    });
-                  }, 100);
-                }}>
+                    window.location.href = '/vps';
+                    setTimeout(() => {
+                      window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                      });
+                    }, 100);
+                  }}>
                     <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
                       Learn More
                     </Button>
@@ -558,7 +564,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -602,31 +608,33 @@ const Index = () => {
                     </thead>
                     <tbody className="divide-y divide-gray-100">
                       {[{
-                      before: "Manual infra setup. Every time.",
-                      after: "Labs provisioned in hours — just send a config."
-                    }, {
-                      before: "Labs crash mid-session. Chaos.",
-                      after: "Rock-solid infra, every session."
-                    }, {
-                      before: "Devs on slow laptops. Lag everywhere.",
-                      after: "Fast cloud desktops built to scale."
-                    }, {
-                      before: "Zoom + IDE = system freeze.",
-                      after: "Secure, lag-free access — even for remote teams."
-                    }, {
-                      before: "AWS bills with no logic.",
-                      after: "Flat pricing. No surprises."
-                    }, {
-                      before: "Confusing dashboards. No support.",
-                      after: "Friendly support that actually helps."
-                    }].map((row, index) => <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
+                        before: "Manual infra setup. Every time.",
+                        after: "Labs provisioned in hours — just send a config."
+                      }, {
+                        before: "Labs crash mid-session. Chaos.",
+                        after: "Rock-solid infra, every session."
+                      }, {
+                        before: "Devs on slow laptops. Lag everywhere.",
+                        after: "Fast cloud desktops built to scale."
+                      }, {
+                        before: "Zoom + IDE = system freeze.",
+                        after: "Secure, lag-free access — even for remote teams."
+                      }, {
+                        before: "AWS bills with no logic.",
+                        after: "Flat pricing. No surprises."
+                      }, {
+                        before: "Confusing dashboards. No support.",
+                        after: "Friendly support that actually helps."
+                      }].map((row, index) => (
+                        <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
                           <td className="p-6 text-base text-gray-700 border-r border-gray-100 bg-red-25 leading-relaxed">
                             {row.before}
                           </td>
                           <td className="p-6 text-base text-gray-700 bg-green-25 leading-relaxed">
                             {row.after}
                           </td>
-                        </tr>)}
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -649,78 +657,85 @@ const Index = () => {
             <div className="h-32 flex items-center justify-center overflow-hidden">
               <div className="relative w-full max-w-6xl mx-auto">
                 <div className="flex transition-transform duration-700 ease-in-out" style={{
-                transform: `translateX(-${currentSlideIndex * 100}%)`
-              }}>
-                  {slidingWords.map((slide, index) => <div key={index} className="min-w-full flex items-center justify-center px-8">
+                  transform: `translateX(-${currentSlideIndex * 100}%)`
+                }}>
+                  {slidingWords.map((slide, index) => (
+                    <div key={index} className="min-w-full flex items-center justify-center px-8">
                       <h2 className="text-4xl lg:text-6xl font-bold text-center leading-tight whitespace-nowrap">
                         <span className="text-gray-900">{slide.text} </span>
                         <span className="bg-gradient-to-r from-purple-800 via-purple-600 to-purple-300 bg-clip-text text-transparent">{slide.highlight}</span>
                       </h2>
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
             
             {/* Progress indicators */}
             <div className="flex justify-center mt-8 space-x-2">
-              {slidingWords.map((_, index) => <div key={index} className={`h-2 w-8 rounded-full transition-all duration-300 ${index === currentSlideIndex ? 'bg-purple-600' : 'bg-gray-300'}`} />)}
+              {slidingWords.map((_, index) => (
+                <div key={index} className={`h-2 w-8 rounded-full transition-all duration-300 ${index === currentSlideIndex ? 'bg-purple-600' : 'bg-gray-300'}`} />
+              ))}
             </div>
           </div>
           
           {/* Trust Indicators */}
           <div className="grid md:grid-cols-4 gap-8 mb-16">
             {[{
-            number: "99.9%",
-            label: "Uptime SLA",
-            icon: Shield
-          }, {
-            number: "24/7",
-            label: "Human Support",
-            icon: Users
-          }, {
-            number: "< 2hrs",
-            label: "Setup Time",
-            icon: Clock
-          }, {
-            number: "500+",
-            label: "Happy Clients",
-            icon: Award
-          }].map((stat, index) => <div key={index} className="text-center group">
+              number: "99.9%",
+              label: "Uptime SLA",
+              icon: Shield
+            }, {
+              number: "24/7",
+              label: "Human Support",
+              icon: Users
+            }, {
+              number: "< 2hrs",
+              label: "Setup Time",
+              icon: Clock
+            }, {
+              number: "500+",
+              label: "Happy Clients",
+              icon: Award
+            }].map((stat, index) => (
+              <div key={index} className="text-center group">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4 group-hover:bg-purple-600 transition-colors duration-300">
                   <stat.icon className="w-8 h-8 text-purple-600 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
-              </div>)}
+              </div>
+            ))}
           </div>
           
           {/* Premium Feature Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[{
-            icon: Users,
-            title: "You Talk to Humans",
-            description: "Engineers, not bots. Every ticket. Every time. Real people who understand your problems.",
-            color: "bg-gradient-to-br from-blue-500 to-blue-600",
-            badge: "Human Touch"
-          }, {
-            icon: Settings,
-            title: "We Customize Everything",
-            description: "No one-size-fits-all. We tailor setups to your exact use case and requirements.",
-            color: "bg-gradient-to-br from-purple-500 to-purple-600",
-            badge: "Bespoke Solutions"
-          }, {
-            icon: Zap,
-            title: "We Move Fast",
-            description: "Environments provisioned in hours, not days. Speed without compromising quality.",
-            color: "bg-gradient-to-br from-orange-500 to-orange-600",
-            badge: "Lightning Speed"
-          }, {
-            icon: Shield,
-            title: "We Don't Oversell",
-            description: "When you pay for performance, you get performance. Guaranteed resources, always.",
-            color: "bg-gradient-to-br from-green-500 to-green-600",
-            badge: "Guaranteed Performance"
-          }].map((item, index) => <div key={index} className="group relative">
+              icon: Users,
+              title: "You Talk to Humans",
+              description: "Engineers, not bots. Every ticket. Every time. Real people who understand your problems.",
+              color: "bg-gradient-to-br from-blue-500 to-blue-600",
+              badge: "Human Touch"
+            }, {
+              icon: Settings,
+              title: "We Customize Everything",
+              description: "No one-size-fits-all. We tailor setups to your exact use case and requirements.",
+              color: "bg-gradient-to-br from-purple-500 to-purple-600",
+              badge: "Bespoke Solutions"
+            }, {
+              icon: Zap,
+              title: "We Move Fast",
+              description: "Environments provisioned in hours, not days. Speed without compromising quality.",
+              color: "bg-gradient-to-br from-orange-500 to-orange-600",
+              badge: "Lightning Speed"
+            }, {
+              icon: Shield,
+              title: "We Don't Oversell",
+              description: "When you pay for performance, you get performance. Guaranteed resources, always.",
+              color: "bg-gradient-to-br from-green-500 to-green-600",
+              badge: "Guaranteed Performance"
+            }].map((item, index) => (
+              <div key={index} className="group relative">
                 <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden">
                   {/* Badge */}
                   <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-semibold">
@@ -747,7 +762,8 @@ const Index = () => {
                     <div className={`w-12 h-1 bg-gradient-to-r ${item.color.replace('bg-gradient-to-br', '')} rounded-full group-hover:w-20 transition-all duration-300`}></div>
                   </div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
           
           {/* Premium CTA - SINGLE CTA */}
@@ -769,7 +785,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section - UPDATED WITH SINGLE CARD AND AUTO-SCROLL */}
+      {/* Testimonials Section */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
@@ -785,14 +801,16 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <div className="relative bg-white rounded-3xl p-12 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
               <div className="flex text-yellow-400 mb-6 justify-center">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-current" />)}
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 fill-current" />
+                ))}
               </div>
               
               <div className="relative mb-8">
                 <div className="text-6xl text-purple-200 absolute -top-4 -left-2 font-serif">"</div>
-                <p className="text-xl text-gray-700 leading-relaxed relative z-10 italic text-center min-h-[120px] flex items-center justify-center">
+                <blockquote className="text-xl text-gray-700 leading-relaxed relative z-10 italic text-center min-h-[120px] flex items-center justify-center">
                   {testimonials[currentTestimonialIndex].quote}
-                </p>
+                </blockquote>
                 <div className="text-6xl text-purple-200 absolute -bottom-8 -right-2 font-serif rotate-180">"</div>
               </div>
               
@@ -809,7 +827,9 @@ const Index = () => {
             
             {/* Dots indicator */}
             <div className="flex justify-center mt-8 space-x-2">
-              {testimonials.map((_, index) => <button key={index} onClick={() => setCurrentTestimonialIndex(index)} className={`w-3 h-3 rounded-full transition-colors duration-300 ${index === currentTestimonialIndex ? 'bg-purple-600' : 'bg-gray-300'}`} />)}
+              {testimonials.map((_, index) => (
+                <button key={index} onClick={() => setCurrentTestimonialIndex(index)} className={`w-3 h-3 rounded-full transition-colors duration-300 ${index === currentTestimonialIndex ? 'bg-purple-600' : 'bg-gray-300'}`} />
+              ))}
             </div>
           </div>
         </div>
@@ -837,7 +857,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-32 bg-white relative">
+      <section className="py-32 bg-white relative" id="pricing">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
@@ -855,33 +875,34 @@ const Index = () => {
           
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {[{
-            title: "Training Labs",
-            price: "Custom Quote",
-            subtitle: "Based on your exact requirements",
-            description: "We ask 3-5 questions about your training needs, then deliver a complete lab environment.",
-            features: ["Same-day delivery possible", "Fully customized environments", "Windows, Linux, or mixed stacks", "Scalable to any number of users"],
-            cta: "View Pricing",
-            gradient: "from-blue-500 to-blue-600",
-            link: "/pricing"
-          }, {
-            title: "Virtual Desktops",
-            price: "₹3,299",
-            subtitle: "per user/month",
-            description: "High-performance cloud desktops with 2vCPU, 4GB RAM, and enterprise-grade security.",
-            features: ["2vCPU, 4GB RAM, SSD storage", "99.9% uptime guarantee", "Built-in security & compliance", "Instant scaling"],
-            cta: "View Pricing",
-            gradient: "from-purple-500 to-purple-600",
-            link: "/pricing"
-          }, {
-            title: "VPS Hosting",
-            price: "₹1,499",
-            subtitle: "per month",
-            description: "NVMe-powered virtual servers with AMD EPYC processors and dedicated resources.",
-            features: ["NVMe SSD storage", "AMD EPYC processors", "Full root access", "Multiple data center locations"],
-            cta: "View Pricing",
-            gradient: "from-orange-500 to-orange-600",
-            link: "/pricing"
-          }].map((plan, index) => <div key={index} className="group relative">
+              title: "Training Labs",
+              price: "Custom Quote",
+              subtitle: "Based on your exact requirements",
+              description: "We ask 3-5 questions about your training needs, then deliver a complete lab environment.",
+              features: ["Same-day delivery possible", "Fully customized environments", "Windows, Linux, or mixed stacks", "Scalable to any number of users"],
+              cta: "View Pricing",
+              gradient: "from-blue-500 to-blue-600",
+              link: "/pricing"
+            }, {
+              title: "Virtual Desktops",
+              price: "₹3,299",
+              subtitle: "per user/month",
+              description: "High-performance cloud desktops with 2vCPU, 4GB RAM, and enterprise-grade security.",
+              features: ["2vCPU, 4GB RAM, SSD storage", "99.9% uptime guarantee", "Built-in security & compliance", "Instant scaling"],
+              cta: "View Pricing",
+              gradient: "from-purple-500 to-purple-600",
+              link: "/pricing"
+            }, {
+              title: "VPS Hosting",
+              price: "₹1,499",
+              subtitle: "per month",
+              description: "NVMe-powered virtual servers with AMD EPYC processors and dedicated resources.",
+              features: ["NVMe SSD storage", "AMD EPYC processors", "Full root access", "Multiple data center locations"],
+              cta: "View Pricing",
+              gradient: "from-orange-500 to-orange-600",
+              link: "/pricing"
+            }].map((plan, index) => (
+              <div key={index} className="group relative">
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-100 hover:border-purple-200">
                   {/* Gradient top bar */}
                   <div className={`h-3 bg-gradient-to-r ${plan.gradient}`}></div>
@@ -900,14 +921,16 @@ const Index = () => {
                     <p className="text-gray-600 text-center mb-8 leading-relaxed text-lg">{plan.description}</p>
                     
                     {/* Features */}
-                    <div className="space-y-4 mb-8">
-                      {plan.features.map((feature, featureIndex) => <div key={featureIndex} className="flex items-center space-x-3">
+                    <ul className="space-y-4 mb-8">
+                      {plan.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center space-x-3">
                           <div className={`w-6 h-6 bg-gradient-to-r ${plan.gradient} rounded-full flex items-center justify-center flex-shrink-0`}>
                             <CheckCircle className="w-4 h-4 text-white" />
                           </div>
                           <span className="text-gray-700 text-base">{feature}</span>
-                        </div>)}
-                    </div>
+                        </li>
+                      ))}
+                    </ul>
                     
                     {/* CTA Button */}
                     <Link to={plan.link} onClick={() => handleNavigation(plan.link)}>
@@ -918,7 +941,8 @@ const Index = () => {
                     </Link>
                   </div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
           
           <div className="text-center mt-16">
@@ -933,7 +957,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Closer Section - REMOVED TESTIMONIAL */}
+      {/* The Closer Section */}
       <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0">
@@ -1058,7 +1082,6 @@ const Index = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <img src="/lovable-uploads/ab89b288-4111-435f-8c60-3551cd55182c.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                
               </div>
               <p className="text-gray-400">
                 Born in India, Built for the World. Infrastructure that just works.
@@ -1067,32 +1090,37 @@ const Index = () => {
             
             <div>
               <h3 className="font-semibold mb-4">Solutions</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" onClick={() => handleNavigation('/training-labs')} className="hover:text-white transition-colors">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" onClick={() => handleNavigation('/cloud-desktops')} className="hover:text-white transition-colors">Cloud Desktops</Link></li>
-                <li><Link to="/vps" onClick={() => handleNavigation('/vps')} className="hover:text-white transition-colors">VPS</Link></li>
-                
-              </ul>
+              <nav>
+                <ul className="space-y-2 text-gray-400">
+                  <li><Link to="/training-labs" onClick={() => handleNavigation('/training-labs')} className="hover:text-white transition-colors">Training Labs</Link></li>
+                  <li><Link to="/cloud-desktops" onClick={() => handleNavigation('/cloud-desktops')} className="hover:text-white transition-colors">Cloud Desktops</Link></li>
+                  <li><Link to="/vps" onClick={() => handleNavigation('/vps')} className="hover:text-white transition-colors">VPS</Link></li>
+                </ul>
+              </nav>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/about" onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Careers</Link></li>
-                <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Press</Link></li>
-                <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Contact</Link></li>
-              </ul>
+              <nav>
+                <ul className="space-y-2 text-gray-400">
+                  <li><Link to="/about" onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">About Us</Link></li>
+                  <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Careers</Link></li>
+                  <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Press</Link></li>
+                  <li><Link to="/contact" onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Contact</Link></li>
+                </ul>
+              </nav>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/support" onClick={() => handleNavigation('/support')} className="hover:text-white transition-colors">Documentation</Link></li>
-                <li><Link to="/support" onClick={() => handleNavigation('/support')} className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link to="/trainer-adda" onClick={() => handleNavigation('/trainer-adda')} className="hover:text-white transition-colors">Community</Link></li>
-                <li><Link to="/support" onClick={() => handleNavigation('/support')} className="hover:text-white transition-colors">Status</Link></li>
-              </ul>
+              <nav>
+                <ul className="space-y-2 text-gray-400">
+                  <li><Link to="/support" onClick={() => handleNavigation('/support')} className="hover:text-white transition-colors">Documentation</Link></li>
+                  <li><Link to="/support" onClick={() => handleNavigation('/support')} className="hover:text-white transition-colors">Help Center</Link></li>
+                  <li><Link to="/trainer-adda" onClick={() => handleNavigation('/trainer-adda')} className="hover:text-white transition-colors">Community</Link></li>
+                  <li><Link to="/support" onClick={() => handleNavigation('/support')} className="hover:text-white transition-colors">Status</Link></li>
+                </ul>
+              </nav>
             </div>
           </div>
           
