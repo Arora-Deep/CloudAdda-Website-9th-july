@@ -9,7 +9,6 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ArrowRight, Mail, Phone, Clock, Send, MessageCircle, CheckCircle, Heart, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -20,14 +19,12 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -57,7 +54,6 @@ const Contact = () => {
     }
     setIsSubmitting(false);
   };
-
   return <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -323,7 +319,7 @@ const Contact = () => {
 
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-100">
               <h3 className="font-bold text-blue-900 mb-3 text-xl">Bonus:</h3>
-              <p className="text-blue-800 text-lg">We've been known to answer emails embarrassingly fast. Try us.</p>
+              <p className="text-blue-800 text-lg">We've been known to solve queries embarrassingly fast. Try us.</p>
             </div>
           </div>
         </div>
@@ -389,5 +385,4 @@ const Contact = () => {
       </footer>
     </div>;
 };
-
 export default Contact;
