@@ -25,8 +25,8 @@ const MobileNavigation = () => {
     { name: 'About', href: '/about', icon: null },
     { name: 'Support', href: '/support', icon: Phone },
     { name: 'Contact', href: '/contact', icon: Mail },
-    { name: 'Trainer Login', href: 'https://trainer.cloudadda.com/login', icon: null, external: true },
-    { name: 'Trainee Login', href: 'https://trainee.cloudadda.com/login', icon: null, external: true },
+    { name: 'Trainer Login', href: 'https://trainer-v2.cloudadda.com/login', icon: null, external: true },
+    { name: 'Trainee Login', href: 'https://trainee-v2.cloudadda.com/login', icon: null, external: true },
   ];
 
   const isActive = (path: string) => location.pathname === path;

@@ -190,9 +190,9 @@ const Guides = () => {
                 <DropdownMenuContent align="end" className="w-48 bg-white border border-gray-200 shadow-lg">
                   <DropdownMenuItem asChild>
                     <a 
-                      href="https://trainer.cloudadda.com/login" 
+                      href="https://trainer-v2.cloudadda.com/login" 
                       target="_blank" 
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer" 
                       className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
                     >
                       Trainer Log In
@@ -200,8 +200,8 @@ const Guides = () => {
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <a 
-                      href="https://trainee.cloudadda.com/login" 
-                      target="_blank" 
+                      href="https://trainee-v2.cloudadda.com/login" 
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer"
                     >

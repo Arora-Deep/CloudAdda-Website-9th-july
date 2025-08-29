@@ -346,12 +346,12 @@ const Pricing = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuItem>
-                      <a href="https://trainer.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full">
+                      <a href="https://trainer-v2.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full">
                         Trainer Login
                       </a>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                      <a href="https://trainee.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full">
+                      <a href="https://trainee-v2.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full">
                         Trainee Login
                       </a>
                     </DropdownMenuItem>

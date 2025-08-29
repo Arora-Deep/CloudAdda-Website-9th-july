@@ -85,12 +85,12 @@ const ResponsiveNavigation = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg z-50">
                 <DropdownMenuItem asChild>
-                  <a href="https://trainer.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full cursor-pointer">
+                  <a href="https://trainer-v2.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full cursor-pointer">
                     Trainer Log In
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="https://trainee.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full cursor-pointer">
+                  <a href="https://trainee-v2.cloudadda.com/login" target="_blank" rel="noopener noreferrer" className="w-full cursor-pointer">
                     Trainee Log In
                   </a>
                 </DropdownMenuItem>
