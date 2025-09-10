@@ -37,7 +37,7 @@ const ResponsiveNavigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent focus:outline-none focus:ring-0 focus:bg-transparent focus:text-orange-500">
                     Solutions
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="min-w-[400px] p-0 bg-white border border-gray-200 shadow-lg rounded-lg z-50">
@@ -78,7 +78,7 @@ const ResponsiveNavigation = () => {
             <Link to="/support" className="text-gray-700 hover:text-orange-500 transition-colors">Support</Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-orange-500 hover:text-orange-600">
+                <Button variant="ghost" className="text-orange-500 hover:text-orange-600 focus:outline-none focus:ring-0 focus:bg-transparent">
                   Log In
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
