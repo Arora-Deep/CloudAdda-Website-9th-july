@@ -149,25 +149,20 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Stop Fighting the Infra.<br />
-                  <span className="bg-gradient-to-r from-purple-800 via-purple-600 to-purple-400 bg-clip-text text-transparent">Start Shipping Work.</span>
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Fully Managed Virtual Labs for Live IT Training
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">CloudAdda runs your Virtual Training Labs, Cloud Desktops & VPS — so your team doesn't have to.</p>
+                <p className="text-xl text-gray-600 leading-relaxed">CloudAdda helps training companies deliver reliable, hands-on cloud labs at scale — without worrying about infrastructure, unpredictable cloud bills, or lab failures during live sessions.</p>
                 <p className="text-lg text-gray-800 font-semibold">
                   No chaos. No cloud headaches. Just clean infra that does its damn job.
                 </p>
+                <p className="text-sm text-gray-500 italic">Built specifically for live & corporate training</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact" onClick={() => handleNavigation('/contact')}>
                   <Button size="lg" variant="orange" className="text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                    Book a Demo
+                    Talk to a Training Labs Expert
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link to="/pricing" onClick={() => handleNavigation('/pricing')}>
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-50">
-                    See Pricing
                   </Button>
                 </Link>
               </div>
@@ -230,31 +225,31 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left side - Content */}
             <div className="space-y-8">
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left">
-                <span className="text-white">Focus on what you do best -</span>
-                <br />
-                <span className="bg-gradient-to-r from-orange-400 via-orange-300 to-yellow-400 bg-clip-text text-transparent">we'll take care of the rest.</span>
+            <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left">
+                <span className="text-white">The Problem Training Teams Face</span>
               </h2>
               
               <div className="space-y-6 text-center lg:text-left">
                 <p className="text-xl text-white leading-relaxed">
-                  You're not here to manage servers.
-                </p>
-                <p className="text-2xl lg:text-3xl font-bold text-white leading-relaxed">
-                  You're here to teach. Build. Scale. Win.
-                </p>
-                <p className="text-xl text-white leading-relaxed">
-                  But you're stuck in cloud chaos — provisioning environments, babysitting infra, solving support tickets.
+                  Every growing training company eventually hits the same wall:
                 </p>
                 
+                <ul className="space-y-3 text-left">
+                  {["Cloud bills that spike unpredictably", "Labs breaking mid-session", "Trainers forced to troubleshoot instead of teach", "Inconsistent environments across learners", "Scaling batches becoming risky and stressful"].map((item, index) => (
+                    <li key={index} className="flex items-center space-x-3 text-lg text-white">
+                      <span className="text-orange-400 text-xl">✗</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                
                 <div className="mt-12 space-y-4">
-                  <div className="text-3xl lg:text-4xl font-bold text-orange-400">
-                    That's our job.
-                  </div>
                   <p className="text-xl text-white leading-relaxed">
-                    We run your labs, your virtual desktops, your cloud infra.<br />
-                    You run your business. Simple.
+                    Infrastructure becomes the bottleneck.
                   </p>
+                  <div className="text-3xl lg:text-4xl font-bold text-orange-400">
+                    CloudAdda removes it.
+                  </div>
                 </div>
               </div>
             </div>
