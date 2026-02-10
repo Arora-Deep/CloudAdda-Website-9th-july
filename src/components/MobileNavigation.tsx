@@ -17,9 +17,7 @@ const MobileNavigation = () => {
 
   const navigationItems = [
     { name: 'Home', href: '/', icon: null },
-    { name: 'Cloud Desktops', href: '/cloud-desktops', icon: Monitor },
     { name: 'Training Labs', href: '/training-labs', icon: Users },
-    { name: 'VPS', href: '/vps', icon: Server },
     { name: 'Trainer Adda', href: '/trainer-adda', icon: BookOpen },
     { name: 'Pricing', href: '/pricing', icon: DollarSign },
     { name: 'About', href: '/about', icon: null },

@@ -50,22 +50,6 @@ const ResponsiveNavigation = () => {
                           </p>
                         </Link>
                       </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100">
-                          <div className="text-sm font-medium leading-none text-gray-900">Cloud Desktops</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-gray-600">
-                            Fast, secure desktops accessible from anywhere
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link to="/vps" className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50">
-                          <div className="text-sm font-medium leading-none text-gray-900">VPS Hosting</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-gray-600">
-                            High-performance VPS with AMD EPYC processors
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
