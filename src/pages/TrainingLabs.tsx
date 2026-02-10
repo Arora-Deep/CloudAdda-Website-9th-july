@@ -46,22 +46,6 @@ const TrainingLabs = () => {
                             </p>
                           </Link>
                         </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link to="/cloud-desktops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Cloud Desktops</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Fast, secure desktops accessible from anywhere
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link to="/vps" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">VPS Hosting</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              High-performance VPS with AMD EPYC processors
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
                       </div>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -595,9 +579,6 @@ const TrainingLabs = () => {
               <h3 className="font-semibold mb-4">Solutions</h3>
               <ul className="space-y-2 text-gray-400">
                 <li><Link to="/training-labs" className="hover:text-white transition-colors">Training Labs</Link></li>
-                <li><Link to="/cloud-desktops" className="hover:text-white transition-colors">Virtual Desktops</Link></li>
-                <li><Link to="/vps" className="hover:text-white transition-colors">VPS</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">Custom Solutions</a></li>
               </ul>
             </div>
             

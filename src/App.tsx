@@ -11,8 +11,6 @@ import Contact from "./pages/Contact";
 import Support from "./pages/Support";
 import TrainerAdda from "./pages/TrainerAdda";
 import TrainingLabs from "./pages/TrainingLabs";
-import CloudDesktops from "./pages/CloudDesktops";
-import VPS from "./pages/VPS";
 import NotFound from "./pages/NotFound";
 import BlogView from "./pages/BlogView";
 import CaseStudyView from "./pages/CaseStudyView";
@@ -37,8 +35,6 @@ const App = () => (
             <Route path="/support" element={<Support />} />
             <Route path="/trainer-adda" element={<TrainerAdda />} />
             <Route path="/training-labs" element={<TrainingLabs />} />
-            <Route path="/cloud-desktops" element={<CloudDesktops />} />
-            <Route path="/vps" element={<VPS />} />
             <Route path="/guides" element={<Guides />} />
             <Route path="/blog/:slug" element={<BlogView />} />
             <Route path="/case-study/:slug" element={<CaseStudyView />} />
