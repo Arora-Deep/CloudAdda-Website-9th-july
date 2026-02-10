@@ -262,6 +262,55 @@ const Index = () => {
         </div>
       </section>
 
+      {/* What CloudAdda Does Section */}
+      <section className="py-20 bg-background relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              What CloudAdda Does
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              CloudAdda provides fully managed virtual lab environments designed specifically for:
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              { icon: <Play className="w-8 h-8" />, title: "Instructor-led live IT training" },
+              { icon: <Users className="w-8 h-8" />, title: "Corporate upskilling programs" },
+              { icon: <Settings className="w-8 h-8" />, title: "Multi-batch, multi-technology delivery" },
+            ].map((item, index) => (
+              <div key={index} className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300">
+                <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center text-white mx-auto mb-4">
+                  {item.icon}
+                </div>
+                <p className="text-lg font-semibold text-foreground">{item.title}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+            <div>
+              <h3 className="text-2xl font-bold text-foreground mb-6">You tell us:</h3>
+              <ul className="space-y-4">
+                {["Course stack", "Batch size", "Duration"].map((item, index) => (
+                  <li key={index} className="flex items-center space-x-4 text-lg text-muted-foreground">
+                    <CheckCircle className="w-6 h-6 text-purple-600 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-purple-600 rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-4">We handle everything else</h3>
+              <p className="text-lg text-purple-100">
+                Provisioning, monitoring, resets, and scale.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Who It's For Section */}
       <section className="py-32 bg-gray-50 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
