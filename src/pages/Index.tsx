@@ -741,19 +741,12 @@ const Index = () => {
 
 
       {/* The Closer Section */}
-      <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
-        </div>
-        
+      <section className="py-32 bg-white text-gray-900 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-purple-800/30 backdrop-blur-sm border border-purple-500/30 rounded-full px-6 py-3 mb-8">
-              <Sparkles className="w-5 h-5 text-orange-400" />
-              <span className="text-orange-400 font-semibold">The Moment of Truth</span>
+            <div className="inline-flex items-center space-x-2 bg-orange-50 border border-orange-200 rounded-full px-6 py-3 mb-8">
+              <Sparkles className="w-5 h-5 text-orange-500" />
+              <span className="text-orange-600 font-semibold">The Moment of Truth</span>
             </div>
             
             <h2 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
@@ -761,7 +754,7 @@ const Index = () => {
                 Your Competition
               </span>
               <br />
-              <span className="text-white">
+              <span className="text-gray-900">
                 Is Already Moving.
               </span>
             </h2>
@@ -771,89 +764,77 @@ const Index = () => {
             <div className="space-y-8">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-red-500/20 border border-red-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Target className="w-6 h-6 text-red-400" />
+                  <div className="w-12 h-12 bg-red-50 border border-red-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Target className="w-6 h-6 text-red-500" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">While You're Managing Servers...</h3>
-                    <p className="text-gray-300">They're training more customers, launching faster, and scaling without the headaches.</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">While You're Managing Servers...</h3>
+                    <p className="text-gray-600">They're training more customers, launching faster, and scaling without the headaches.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-orange-500/20 border border-orange-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-6 h-6 text-orange-400" />
+                  <div className="w-12 h-12 bg-orange-50 border border-orange-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-6 h-6 text-orange-500" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">While You're Fighting Downtime...</h3>
-                    <p className="text-gray-300">They're building reputation, winning clients, and growing revenue.</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">While You're Fighting Downtime...</h3>
+                    <p className="text-gray-600">They're building reputation, winning clients, and growing revenue.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Lightbulb className="w-6 h-6 text-purple-400" />
+                  <div className="w-12 h-12 bg-purple-50 border border-purple-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Lightbulb className="w-6 h-6 text-purple-500" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">While You're Troubleshooting...</h3>
-                    <p className="text-gray-300">They're innovating, creating, and leaving you behind.</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">While You're Troubleshooting...</h3>
+                    <p className="text-gray-600">They're innovating, creating, and leaving you behind.</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-purple-600/20 to-orange-600/20 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
+              <div className="bg-gradient-to-br from-red-50 to-orange-50 border border-red-200 rounded-3xl p-8">
                 <div className="text-center space-y-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto">
-                    <Rocket className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold text-white mb-4">Ready to Make the Switch?</h3>
-                    <p className="text-gray-300">Join the companies that stopped fighting infrastructure and started winning customers.</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">The Cost of Waiting</h3>
+                  <div className="grid grid-cols-1 gap-6">
+                    <div className="text-center">
+                      <div className="text-4xl font-bold text-red-500 mb-1">$10K+</div>
+                      <p className="text-gray-600">Lost revenue per month from infrastructure issues</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-4xl font-bold text-orange-500 mb-1">40hrs</div>
+                      <p className="text-gray-600">Wasted weekly on server management</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-4xl font-bold text-purple-500 mb-1">60%</div>
+                      <p className="text-gray-600">Of teams switch within 6 months anyway</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Urgency Section */}
-          <div className="text-center space-y-8 mb-16">
-            <div className="bg-gradient-to-r from-red-600/20 to-orange-600/20 border border-red-500/30 rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold text-white mb-4">The Cost of Waiting</h3>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-red-400 mb-2">$10K+</div>
-                  <p className="text-gray-300">Lost revenue per month from infrastructure issues</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-orange-400 mb-2">40hrs</div>
-                  <p className="text-gray-300">Wasted weekly on server management</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-purple-400 mb-2">60%</div>
-                  <p className="text-gray-300">Of teams switch within 6 months anyway</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-500/30 rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold text-white mb-6">Make The Switch. Today.</h3>
-              <p className="text-xl text-gray-300 mb-8">
-                Join 500+ companies who stopped fighting infrastructure and started winning customers.
-              </p>
-              
-              <Link to="/contact" onClick={() => handleNavigation('/contact')}>
-                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105">
-                  Start Your Transformation
-                  <Rocket className="ml-3 h-6 w-6" />
-                </Button>
-              </Link>
-              
-              <p className="text-sm text-gray-400 mt-6">
-                ⚡ Setup in hours, not weeks • 💰 Pay for what you use • 🔒 Enterprise security included
-              </p>
-            </div>
+          {/* CTA */}
+          <div className="text-center space-y-6">
+            <h3 className="text-3xl font-bold text-gray-900">Make The Switch. Today.</h3>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Join 500+ companies who stopped fighting infrastructure and started winning customers.
+            </p>
+            
+            <Link to="/contact" onClick={() => handleNavigation('/contact')}>
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105">
+                Start Your Transformation
+                <Rocket className="ml-3 h-6 w-6" />
+              </Button>
+            </Link>
+            
+            <p className="text-sm text-gray-500 mt-6">
+              ⚡ Setup in hours, not weeks • 💰 Pay for what you use • 🔒 Enterprise security included
+            </p>
           </div>
         </div>
       </section>
