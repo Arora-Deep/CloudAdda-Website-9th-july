@@ -220,7 +220,7 @@ const Index = () => {
       </section>
 
       {/* The Pain Section */}
-      <section className="py-20 bg-gradient-to-b from-[hsl(270,50%,15%)] via-[hsl(265,45%,25%)] to-[hsl(275,40%,18%)] text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-[hsl(270,45%,12%)] via-[hsl(265,50%,28%)] to-[hsl(270,45%,12%)] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left side - Content */}
