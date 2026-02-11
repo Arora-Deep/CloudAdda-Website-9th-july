@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles, ChevronDown } from "lucide-react";
+import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles, ChevronDown, DollarSign, Building } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
@@ -258,6 +258,34 @@ const Index = () => {
             <div className="flex justify-center lg:justify-end">
               <img src="/lovable-uploads/69230053-96f2-4f6a-ad77-9419979d6f8e.png" alt="Frustrated person at desk with laptop" className="w-full max-w-lg h-auto object-contain" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Training Companies Choose CloudAdda */}
+      <section className="py-20 bg-muted/50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Why Training Companies Choose CloudAdda
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: <Target className="w-8 h-8" />, title: "Designed for Training, Not Generic Cloud Use", desc: "Built from the ground up for live training workflows." },
+              { icon: <DollarSign className="w-8 h-8" />, title: "Predictable, Batch-Based Pricing", desc: "No surprise cloud bills. Pricing per learner, per batch." },
+              { icon: <Zap className="w-8 h-8" />, title: "Zero Operational Overhead", desc: "No infra setup. No monitoring. No firefighting." },
+              { icon: <Building className="w-8 h-8" />, title: "Proven at Enterprise Scale", desc: "Used by large training providers delivering high-volume programs." },
+            ].map((item, index) => (
+              <div key={index} className="bg-card border border-border rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                <div className="w-14 h-14 bg-purple-600 rounded-xl flex items-center justify-center text-white mb-5">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
