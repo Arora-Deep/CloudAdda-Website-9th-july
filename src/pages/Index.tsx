@@ -154,7 +154,7 @@ const Index = () => {
                   <br />
                   <span className="text-gray-900 whitespace-nowrap">Virtual Training Labs</span>
                   <br />
-                  <span className="bg-gradient-to-r from-orange-600 via-orange-400 to-yellow-400 bg-clip-text text-transparent">for Live IT Training</span>
+                  <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">for Live IT Training</span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">CloudAdda helps training companies deliver reliable, hands-on cloud labs at scale — without worrying about infrastructure, unpredictable cloud bills, or lab failures during live sessions.</p>
                  <p className="text-lg text-gray-800 font-semibold">
