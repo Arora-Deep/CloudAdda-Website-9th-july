@@ -352,25 +352,31 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              { number: 1, title: "Designed for Training, Not Generic Cloud Use", description: "Built from the ground up for live training workflows." },
-              { number: 2, title: "Predictable, Batch-Based Pricing", description: "No surprise cloud bills. Pricing per learner, per batch." },
-              { number: 3, title: "Zero Operational Overhead", description: "No infra setup. No monitoring. No firefighting." },
-              { number: 4, title: "Proven at Enterprise Scale", description: "Used by large training providers delivering high-volume programs." },
-            ].map((item) => (
-              <div key={item.number} className="flex items-start space-x-6 group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
-                    {item.number}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              {[
+                { number: 1, title: "Designed for Training, Not Generic Cloud Use", description: "Built from the ground up for live training workflows." },
+                { number: 2, title: "Predictable, Batch-Based Pricing", description: "No surprise cloud bills. Pricing per learner, per batch." },
+                { number: 3, title: "Zero Operational Overhead", description: "No infra setup. No monitoring. No firefighting." },
+                { number: 4, title: "Proven at Enterprise Scale", description: "Used by large training providers delivering high-volume programs." },
+              ].map((item) => (
+                <div key={item.number} className="flex items-start space-x-6 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      {item.number}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">{item.title}</h3>
+                    <p className="text-gray-700 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            
+            <div className="flex justify-center">
+              <img src="/lovable-uploads/f690fdec-4d37-4062-af23-158e9b86a21e.png" alt="Professional man in business suit with welcoming gesture" className="w-full max-w-lg" />
+            </div>
           </div>
         </div>
       </section>
