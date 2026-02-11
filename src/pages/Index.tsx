@@ -223,37 +223,35 @@ const Index = () => {
       </section>
 
       {/* The Pain Section */}
-      <section className="py-20 bg-gradient-to-r from-[hsl(270,45%,18%)] via-[hsl(265,50%,38%)] to-[hsl(270,45%,18%)] text-white relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-gradient-to-r from-[hsl(270,45%,18%)] via-[hsl(265,50%,38%)] to-[hsl(270,45%,18%)] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Left side - Content */}
-            <div className="space-y-8">
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left">
-                <span className="text-white">The Problem Training Teams Face</span>
+            <div className="space-y-10">
+              <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left">
+                The Problem Training<br />Teams Face
               </h2>
               
-              <div className="space-y-6 text-center lg:text-left">
-                <p className="text-xl text-white leading-relaxed">
-                  Every growing training company eventually hits the same wall:
+              <p className="text-lg text-purple-200 leading-relaxed text-center lg:text-left">
+                Every growing training company eventually hits the same wall:
+              </p>
+              
+              <ul className="space-y-5 text-left">
+                {["Cloud bills that spike unpredictably", "Labs breaking mid-session", "Trainers forced to troubleshoot instead of teach", "Inconsistent environments across learners", "Scaling batches becoming risky and stressful"].map((item, index) => (
+                  <li key={index} className="flex items-start space-x-4 text-lg text-white/90">
+                    <span className="text-orange-400 text-xl mt-0.5 flex-shrink-0">✗</span>
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="pt-6 border-t border-white/10 space-y-3">
+                <p className="text-lg text-purple-200 leading-relaxed">
+                  Infrastructure becomes the bottleneck.
                 </p>
-                
-                <ul className="space-y-3 text-left">
-                  {["Cloud bills that spike unpredictably", "Labs breaking mid-session", "Trainers forced to troubleshoot instead of teach", "Inconsistent environments across learners", "Scaling batches becoming risky and stressful"].map((item, index) => (
-                    <li key={index} className="flex items-center space-x-3 text-lg text-white">
-                      <span className="text-orange-400 text-xl">✗</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="mt-12 space-y-4">
-                  <p className="text-xl text-white leading-relaxed">
-                    Infrastructure becomes the bottleneck.
-                  </p>
-                  <div className="text-3xl lg:text-4xl font-bold text-orange-400">
-                    CloudAdda removes it.
-                  </div>
-                </div>
+                <p className="text-3xl lg:text-4xl font-bold text-orange-400">
+                  CloudAdda removes it.
+                </p>
               </div>
             </div>
             
