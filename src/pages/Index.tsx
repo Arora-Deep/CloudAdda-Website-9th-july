@@ -438,10 +438,10 @@ const Index = () => {
                   <span className="text-orange-700 font-semibold">Snapshot & Revert</span>
                 </div>
                 
-                <h3 className="text-3xl font-bold text-foreground">Students Break Things? No Problem.</h3>
+                <h3 className="text-3xl font-bold text-foreground">Something Broke? Just Revert.</h3>
                 
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Students can snapshot their lab environment and instantly revert back to a working state if something goes wrong. No waiting for IT support, no reconfiguring from scratch — just one click to get back on track.
+                  If a student misconfigures something or breaks their environment, they can instantly revert back to a pre-saved snapshot. No downtime, no waiting for support — just one click to get back on track.
                 </p>
                 
                 <ul className="space-y-4">
