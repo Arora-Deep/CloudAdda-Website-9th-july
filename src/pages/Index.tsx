@@ -157,10 +157,9 @@ const Index = () => {
                   <span className="bg-gradient-to-r from-orange-600 via-orange-400 to-yellow-400 bg-clip-text text-transparent">for Live IT Training</span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">CloudAdda helps training companies deliver reliable, hands-on cloud labs at scale — without worrying about infrastructure, unpredictable cloud bills, or lab failures during live sessions.</p>
-                <p className="text-lg text-gray-800 font-semibold">
-                  No chaos. No cloud headaches. Just clean infra that does its damn job.
-                </p>
-                <p className="text-sm text-gray-500 italic">Built specifically for live & corporate training</p>
+                 <p className="text-lg text-gray-800 font-semibold">
+                   Built specifically for live & corporate training. No chaos. No cloud headaches.
+                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact" onClick={() => handleNavigation('/contact')}>
