@@ -384,91 +384,107 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Fix Section - Our Services */}
-      <section className="py-20 bg-white">
+      {/* Simple Dashboard. Powerful Control. */}
+      <section className="py-24 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-8">
-              <span className="bg-gradient-to-r from-blue-700 via-purple-700 to-purple-400 bg-clip-text text-transparent">CloudAdda Handles Your Infra.</span>
-              <span className="text-gray-900"> So You Can Handle Your Business.</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We don't give you a control panel and disappear. We deliver the infrastructure — fast, fully configured, and rock-solid.
-            </p>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Simple Dashboard. Powerful Control.</h2>
+            <p className="text-xl text-muted-foreground">Manage hundreds of students and labs from one intuitive interface</p>
           </div>
 
           <div className="space-y-24">
-            {/* Training Labs */}
-            <article className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-6">
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-bold text-gray-900">Virtual Training Labs</h3>
-                  <p className="text-sm text-purple-600 font-semibold">For Training Firms & Enterprises</p>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-4">We don't give you a console. We give you results. Send us your exact training requirements — Windows, Linux, custom stacks, networking labs — and we deliver the whole hands-on cloud lab, fully configured, at scale. Faster than your internal team. More reliable than ad-hoc clouds.</p>
+            {/* Feature 1: Easy Management */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <div className="inline-flex items-center space-x-2 bg-purple-100 rounded-full px-4 py-2">
+                  <Activity className="w-5 h-5 text-purple-600" />
+                  <span className="text-purple-700 font-semibold">Easy Management</span>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/training-labs" onClick={() => {
-                    window.location.href = '/training-labs';
-                    setTimeout(() => {
-                      window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                      });
-                    }, 100);
-                  }}>
-                    <Button variant="outline" className="rounded-full px-8 py-3 border-orange-500 text-orange-500 hover:bg-orange-50">
-                      Learn More
-                    </Button>
-                  </a>
+                
+                <h3 className="text-3xl font-bold text-foreground">Monitor All Labs at a Glance</h3>
+                
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  See real-time status of every student's environment. CPU usage, memory consumption, 
+                  network activity — all in one clean dashboard. No more guessing if labs are working.
+                </p>
+                
+                <ul className="space-y-4">
+                  {["Real-time resource monitoring", "Instant lab status updates", "Performance analytics", "One-click environment controls"].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-500" />
+                      <span className="text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="relative">
+                <div className="bg-white rounded-2xl shadow-2xl border border-border overflow-hidden">
+                  <video className="w-full h-auto" controls muted autoPlay loop>
+                    <source src="https://media.cloudadda.com/file/clouaddda-training-page-vid-1-view-all-labs.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+
+            {/* Feature 2: Student Access Control */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="relative order-2 lg:order-1">
+                <div className="bg-white rounded-2xl shadow-2xl border border-border overflow-hidden">
+                  <video className="w-full h-auto" controls muted autoPlay loop>
+                    <source src="https://media.cloudadda.com/file/CA-Training-page-vid-2-without-leaving-youre-seat.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8">
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <div className="flex items-center justify-between mb-6">
-                    <h4 className="text-lg font-semibold text-gray-900">Training Lab Dashboard</h4>
-                    <div className="flex space-x-2">
-                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              <div className="space-y-8 order-1 lg:order-2">
+                <div className="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2">
+                  <Users className="w-5 h-5 text-blue-600" />
+                  <span className="text-blue-700 font-semibold">Remote Access</span>
+                </div>
+                
+                <h3 className="text-3xl font-bold text-foreground">Help Participants Without Leaving Your Seat</h3>
+                
+                <p className="text-lg text-muted-foreground leading-relaxed">View participant screens, take control when needed, and provide instant help. No more walking around the classroom or dealing with "it's not working" complaints.</p>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  {["Remote screen viewing", "Take control assistance"].map((feature, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-500" />
+                      <span className="text-muted-foreground">{feature}</span>
                     </div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg border border-green-200">
-                      <div className="flex items-center space-x-3">
-                        <Monitor className="w-5 h-5 text-green-600" />
-                        <span className="text-sm font-medium text-gray-900">Windows Lab Environment</span>
-                      </div>
-                      <span className="text-xs bg-green-600 text-white px-2 py-1 rounded-full">Active</span>
-                    </div>
-                    
-                    <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <div className="flex items-center space-x-3">
-                        <Server className="w-5 h-5 text-blue-600" />
-                        <span className="text-sm font-medium text-gray-900">Linux Server Stack</span>
-                      </div>
-                      <span className="text-xs bg-blue-600 text-white px-2 py-1 rounded-full">Running</span>
-                    </div>
-                    
-                    <div className="flex items-center justify-between p-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <div className="flex items-center space-x-3">
-                        <Database className="w-5 h-5 text-purple-600" />
-                        <span className="text-sm font-medium text-gray-900">Network Lab Setup</span>
-                      </div>
-                      <span className="text-xs bg-purple-600 text-white px-2 py-1 rounded-full">Ready</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 pt-4 border-t border-gray-200">
-                    <div className="text-sm text-gray-600">
-                      <span className="font-semibold">40 instances</span> • <span className="font-semibold">99.9% uptime</span> • <span className="font-semibold">2hr setup</span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
-            </article>
-            
+            </div>
+
+            {/* Feature 3: Custom Lab Configuration */}
+            <div className="max-w-4xl mx-auto text-center space-y-12">
+              <div className="space-y-8">
+                <div className="inline-flex items-center space-x-2 bg-green-100 rounded-full px-4 py-2">
+                  <Rocket className="w-5 h-5 text-green-600" />
+                  <span className="text-green-700 font-semibold">Custom Configuration</span>
+                </div>
+                
+                <h3 className="text-4xl font-bold text-foreground">We Build Your Perfect Lab Environment</h3>
+                
+                <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                  While we have pre-configured templates for common training scenarios, we custom-build and configure 
+                  each lab environment to match your specific curriculum requirements and training needs. You focus on teaching — we handle the infrastructure.
+                </p>
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                  {["Custom-built for your curriculum", "Pre-configured training templates", "Tailored to your specific needs", "Ready-to-use lab access provided"].map((feature, index) => (
+                    <div key={index} className="flex flex-col items-center space-y-2 text-center">
+                      <CheckCircle className="w-8 h-8 text-green-500" />
+                      <span className="text-sm text-muted-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
