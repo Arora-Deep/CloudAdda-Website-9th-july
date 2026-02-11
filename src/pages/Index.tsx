@@ -150,7 +150,7 @@ const Index = () => {
             <div className="space-y-8">
               <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-                  <span className="bg-gradient-to-r from-[hsl(270,45%,18%)] via-[hsl(265,50%,38%)] to-[hsl(270,45%,18%)] bg-clip-text text-transparent">Fully Managed</span>
+                  <span className="bg-gradient-to-r from-purple-700 via-purple-500 to-purple-400 bg-clip-text text-transparent">Fully Managed</span>
                   <br />
                   <span className="text-gray-900 whitespace-nowrap">Virtual Training Labs</span>
                   <br />
