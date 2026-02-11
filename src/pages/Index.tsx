@@ -150,11 +150,11 @@ const Index = () => {
             <div className="space-y-8">
               <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-                  <span className="text-purple-600">Fully Managed</span>
+                  <span className="bg-gradient-to-r from-purple-700 via-purple-500 to-purple-400 bg-clip-text text-transparent">Fully Managed</span>
                   <br />
-                  <span className="text-gray-900">Virtual Training Labs</span>
+                  <span className="text-gray-900 whitespace-nowrap">Virtual Training Labs</span>
                   <br />
-                  <span className="text-orange-500">for Live IT Training</span>
+                  <span className="bg-gradient-to-r from-orange-600 via-orange-400 to-yellow-400 bg-clip-text text-transparent">for Live IT Training</span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">CloudAdda helps training companies deliver reliable, hands-on cloud labs at scale — without worrying about infrastructure, unpredictable cloud bills, or lab failures during live sessions.</p>
                 <p className="text-lg text-gray-800 font-semibold">
