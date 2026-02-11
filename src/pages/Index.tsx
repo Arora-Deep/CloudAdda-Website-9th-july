@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles, ChevronDown, DollarSign, Building } from "lucide-react";
+import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles, ChevronDown, DollarSign, Building, RotateCcw } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
@@ -430,7 +430,40 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Feature 3: Custom Lab Configuration */}
+            {/* Feature 3: Snapshot & Revert */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <div className="inline-flex items-center space-x-2 bg-orange-100 rounded-full px-4 py-2">
+                  <RotateCcw className="w-5 h-5 text-orange-600" />
+                  <span className="text-orange-700 font-semibold">Snapshot & Revert</span>
+                </div>
+                
+                <h3 className="text-3xl font-bold text-foreground">Students Break Things? No Problem.</h3>
+                
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Students can snapshot their lab environment and instantly revert back to a working state if something goes wrong. No waiting for IT support, no reconfiguring from scratch — just one click to get back on track.
+                </p>
+                
+                <ul className="space-y-4">
+                  {["One-click snapshot before risky changes", "Instant rollback to last working state", "Students stay unblocked and keep learning", "No trainer intervention needed"].map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-6 h-6 text-green-500" />
+                      <span className="text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="relative">
+                <div className="bg-white rounded-2xl shadow-2xl border border-border p-12 flex flex-col items-center justify-center min-h-[300px]">
+                  <RotateCcw className="w-16 h-16 text-orange-500 mb-6" />
+                  <p className="text-xl font-semibold text-foreground mb-2">Snapshot & Revert</p>
+                  <p className="text-muted-foreground text-center">Break it. Fix it. Learn from it.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Feature 4: Custom Lab Configuration */}
             <div className="max-w-4xl mx-auto text-center space-y-12">
               <div className="space-y-8">
                 <div className="inline-flex items-center space-x-2 bg-green-100 rounded-full px-4 py-2">
