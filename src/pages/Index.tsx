@@ -455,10 +455,40 @@ const Index = () => {
               </div>
               
               <div className="relative">
-                <div className="bg-white rounded-2xl shadow-2xl border border-border p-12 flex flex-col items-center justify-center min-h-[300px]">
-                  <RotateCcw className="w-16 h-16 text-orange-500 mb-6" />
-                  <p className="text-xl font-semibold text-foreground mb-2">Snapshot & Revert</p>
-                  <p className="text-muted-foreground text-center">Break it. Fix it. Learn from it.</p>
+                <div className="bg-white rounded-2xl shadow-2xl border border-border overflow-hidden">
+                  <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-8 space-y-6">
+                    <div className="flex items-center justify-between bg-white rounded-xl p-4 shadow-sm border border-border">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span className="font-medium text-foreground text-sm">Lab Environment — Running</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">Snapshot saved 2 min ago</span>
+                    </div>
+                    <div className="flex items-center justify-center space-x-4">
+                      <div className="flex flex-col items-center space-y-2 bg-white rounded-xl p-5 shadow-sm border border-border flex-1">
+                        <HardDrive className="w-8 h-8 text-orange-500" />
+                        <span className="text-sm font-semibold text-foreground">Take Snapshot</span>
+                        <span className="text-xs text-muted-foreground text-center">Save current state</span>
+                      </div>
+                      <ArrowRight className="w-6 h-6 text-muted-foreground" />
+                      <div className="flex flex-col items-center space-y-2 bg-white rounded-xl p-5 shadow-sm border border-border flex-1">
+                        <RotateCcw className="w-8 h-8 text-orange-500" />
+                        <span className="text-sm font-semibold text-foreground">Revert</span>
+                        <span className="text-xs text-muted-foreground text-center">Restore in one click</span>
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-xl p-4 shadow-sm border border-border">
+                      <p className="text-xs font-semibold text-foreground mb-2">Saved Snapshots</p>
+                      <div className="space-y-2">
+                        {["Before Docker config change", "Clean install baseline"].map((name, i) => (
+                          <div key={i} className="flex items-center justify-between text-xs bg-orange-50 rounded-lg px-3 py-2">
+                            <span className="text-foreground">{name}</span>
+                            <span className="text-orange-600 font-medium cursor-pointer">Restore</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
