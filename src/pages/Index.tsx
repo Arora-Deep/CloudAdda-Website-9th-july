@@ -149,10 +149,12 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight">
-                  <span className="text-purple-600">Fully Managed</span>{" "}
-                  <span className="text-gray-900">Virtual Labs for</span>{" "}
-                  <span className="text-orange-500">Live IT Training</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                  <span className="text-purple-600">Fully Managed</span>
+                  <br />
+                  <span className="text-gray-900">Virtual Training Labs</span>
+                  <br />
+                  <span className="text-orange-500">for Live IT Training</span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">CloudAdda helps training companies deliver reliable, hands-on cloud labs at scale — without worrying about infrastructure, unpredictable cloud bills, or lab failures during live sessions.</p>
                 <p className="text-lg text-gray-800 font-semibold">
