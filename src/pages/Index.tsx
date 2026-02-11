@@ -353,22 +353,22 @@ const Index = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+            <div className="space-y-6">
               {[
-                { number: 1, title: "Designed for Training, Not Generic Cloud Use", description: "Built from the ground up for live training workflows." },
-                { number: 2, title: "Predictable, Batch-Based Pricing", description: "No surprise cloud bills. Pricing per learner, per batch." },
-                { number: 3, title: "Zero Operational Overhead", description: "No infra setup. No monitoring. No firefighting." },
-                { number: 4, title: "Proven at Enterprise Scale", description: "Used by large training providers delivering high-volume programs." },
+                { number: 1, title: "Designed for Training, Not Generic Cloud Use", description: "Built from the ground up for live training workflows.", icon: "🎯" },
+                { number: 2, title: "Predictable, Batch-Based Pricing", description: "No surprise cloud bills. Pricing per learner, per batch.", icon: "💰" },
+                { number: 3, title: "Zero Operational Overhead", description: "No infra setup. No monitoring. No firefighting.", icon: "⚡" },
+                { number: 4, title: "Proven at Enterprise Scale", description: "Used by large training providers delivering high-volume programs.", icon: "🏢" },
               ].map((item) => (
-                <div key={item.number} className="flex items-start space-x-6 group">
+                <div key={item.number} className="flex items-start space-x-5 group bg-white/80 backdrop-blur-sm rounded-2xl p-5 border border-purple-100 hover:border-purple-300 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
-                      {item.number}
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-700 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md">
+                      {item.icon}
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-purple-700 transition-colors duration-300">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">{item.description}</p>
                   </div>
                 </div>
               ))}
