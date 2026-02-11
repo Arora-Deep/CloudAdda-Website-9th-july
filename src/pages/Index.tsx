@@ -223,44 +223,41 @@ const Index = () => {
       </section>
 
       {/* The Pain Section */}
-      <section className="py-20 bg-gradient-to-r from-[hsl(270,45%,18%)] via-[hsl(265,50%,38%)] to-[hsl(270,45%,18%)] text-white relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-gradient-to-r from-[hsl(270,45%,18%)] via-[hsl(265,50%,38%)] to-[hsl(270,45%,18%)] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left side - Content */}
-            <div className="space-y-8">
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left">
-                <span className="text-white">The Problem Training Teams Face</span>
-              </h2>
-              
-              <div className="space-y-6 text-center lg:text-left">
-                <p className="text-xl text-white leading-relaxed">
-                  Every growing training company eventually hits the same wall:
-                </p>
-                
-                <ul className="space-y-3 text-left">
-                  {["Cloud bills that spike unpredictably", "Labs breaking mid-session", "Trainers forced to troubleshoot instead of teach", "Inconsistent environments across learners", "Scaling batches becoming risky and stressful"].map((item, index) => (
-                    <li key={index} className="flex items-center space-x-3 text-lg text-white">
-                      <span className="text-orange-400 text-xl">✗</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="mt-12 space-y-4">
-                  <p className="text-xl text-white leading-relaxed">
-                    Infrastructure becomes the bottleneck.
-                  </p>
-                  <div className="text-3xl lg:text-4xl font-bold text-orange-400">
-                    CloudAdda removes it.
-                  </div>
-                </div>
+          {/* Section Header - Centered */}
+          <div className="text-center mb-16 lg:mb-20">
+            <p className="text-orange-400 font-semibold tracking-widest uppercase text-sm mb-4">The Real Problem</p>
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+              The Problem Training<br />Teams Face
+            </h2>
+            <p className="text-xl text-purple-200 mt-6 max-w-2xl mx-auto leading-relaxed">
+              Every growing training company eventually hits the same wall:
+            </p>
+          </div>
+
+          {/* Pain Points Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16 lg:mb-20">
+            {[
+              { icon: "💸", text: "Cloud bills that spike unpredictably" },
+              { icon: "🔥", text: "Labs breaking mid-session" },
+              { icon: "🛠️", text: "Trainers forced to troubleshoot instead of teach" },
+              { icon: "⚠️", text: "Inconsistent environments across learners" },
+              { icon: "📈", text: "Scaling batches becoming risky and stressful" },
+            ].map((item, index) => (
+              <div key={index} className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300">
+                <span className="text-3xl mb-3 block">{item.icon}</span>
+                <p className="text-white text-lg font-medium leading-snug">{item.text}</p>
               </div>
-            </div>
-            
-            {/* Right side - Image */}
-            <div className="flex justify-center lg:justify-end">
-              <img src="/lovable-uploads/69230053-96f2-4f6a-ad77-9419979d6f8e.png" alt="Frustrated person at desk with laptop" className="w-full max-w-lg h-auto object-contain" />
-            </div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center">
+            <p className="text-purple-200 text-xl mb-3">Infrastructure becomes the bottleneck.</p>
+            <p className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-orange-400 to-yellow-300 bg-clip-text text-transparent">
+              CloudAdda removes it.
+            </p>
           </div>
         </div>
       </section>
