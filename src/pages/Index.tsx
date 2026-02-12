@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles, ChevronDown, DollarSign, Building, RotateCcw } from "lucide-react";
+import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles, ChevronDown, DollarSign, Building, RotateCcw, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
@@ -473,81 +473,60 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Switch You Didn't Know You Needed Section */}
-      <section className="py-32 bg-gray-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              The Switch You Didn't Know
-              <br />
+      {/* Before & After Section */}
+      <section className="py-24 lg:py-32 bg-gray-50 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              From Unstable Labs to{' '}
               <span className="bg-gradient-to-r from-purple-800 via-purple-600 to-purple-300 bg-clip-text text-transparent">
-                You Needed.
+                Predictable Training Delivery
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See what life's like on the other side — faster, simpler, happier.
+              See how training teams operate before and after moving to managed virtual labs.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-7 gap-8 items-center">
-            {/* Left Image - Confused Person */}
-            <div className="lg:col-span-2 flex justify-center">
-              <img src="/lovable-uploads/9b9e01c2-e3f9-4704-9bc8-59a73b35ce7d.png" alt="Confused person representing before state" className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Left Column - Without */}
+            <div className="bg-gray-100 rounded-2xl p-8 lg:p-10">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Without Managed Labs</h3>
+              <ul className="space-y-4">
+                {[
+                  "Manual environment setup before every batch",
+                  "Cloud credits running out mid-session",
+                  "Trainers troubleshooting instead of teaching",
+                  "Billing unpredictability",
+                  "Learners facing lag and crashes"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-gray-600 text-lg">
+                    <X className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Center Table */}
-            <div className="lg:col-span-3">
-              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="bg-gradient-to-r from-red-50 to-green-50">
-                        <th className="text-left p-8 text-xl font-bold text-red-600 border-r border-gray-200">
-                          ❌ Before CloudAdda
-                        </th>
-                        <th className="text-left p-8 text-xl font-bold text-green-600">
-                          ✅ After CloudAdda
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-100">
-                      {[{
-                        before: "Manual infra setup. Every time.",
-                        after: "Labs provisioned in hours — just send a config."
-                      }, {
-                        before: "Labs crash mid-session. Chaos.",
-                        after: "Rock-solid infra, every session."
-                      }, {
-                        before: "Devs on slow laptops. Lag everywhere.",
-                        after: "Fast cloud desktops built to scale."
-                      }, {
-                        before: "Zoom + IDE = system freeze.",
-                        after: "Secure, lag-free access — even for remote teams."
-                      }, {
-                        before: "AWS bills with no logic.",
-                        after: "Flat pricing. No surprises."
-                      }, {
-                        before: "Confusing dashboards. No support.",
-                        after: "Friendly support that actually helps."
-                      }].map((row, index) => (
-                        <tr key={index} className="hover:bg-gray-25 transition-all duration-200">
-                          <td className="p-6 text-base text-gray-700 border-r border-gray-100 bg-red-25 leading-relaxed">
-                            {row.before}
-                          </td>
-                          <td className="p-6 text-base text-gray-700 bg-green-25 leading-relaxed">
-                            {row.after}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Image - Happy Person */}
-            <div className="lg:col-span-2 flex justify-center">
-              <img src="/lovable-uploads/8a2d7816-a253-40ef-a846-db190a4798a5.png" alt="Happy person representing after state" className="w-full max-w-lg h-auto object-contain transform scale-[2.5]" />
+            {/* Right Column - With CloudAdda */}
+            <div className="bg-white rounded-2xl p-8 lg:p-10 border-2 border-green-100 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                With <span className="text-green-600">CloudAdda</span>
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  "Pre-configured labs provisioned per learner",
+                  "Stable, isolated environments",
+                  "Full batch lifecycle management",
+                  "Predictable pricing per batch",
+                  "Smooth, lag-free training sessions"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-gray-700 text-lg">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
