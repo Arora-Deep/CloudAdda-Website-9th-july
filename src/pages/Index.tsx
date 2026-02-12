@@ -819,22 +819,25 @@ const Index = () => {
           </div>
 
           {/* CTA */}
-          <div className="text-center space-y-6">
-            <h3 className="text-3xl font-bold text-gray-900">Make The Switch. Today.</h3>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center pt-8 border-t border-gray-100 space-y-4">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Join 500+ companies who stopped fighting infrastructure and started winning customers.
             </p>
             
             <Link to="/contact" onClick={() => handleNavigation('/contact')}>
-              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-xl px-12 py-6 rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105">
-                Start Your Transformation
-                <Rocket className="ml-3 h-6 w-6" />
+              <Button size="lg" variant="orange" className="rounded-full px-10 py-5 text-lg mt-2">
+                Talk to Us
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             
-            <p className="text-sm text-gray-500 mt-6">
-              ⚡ Setup in hours, not weeks • 💰 Pay for what you use • 🔒 Enterprise security included
-            </p>
+            <div className="flex items-center justify-center gap-6 text-sm text-gray-400 pt-2">
+              <span>Setup in hours</span>
+              <span className="w-1 h-1 rounded-full bg-gray-300" />
+              <span>Predictable pricing</span>
+              <span className="w-1 h-1 rounded-full bg-gray-300" />
+              <span>Enterprise security</span>
+            </div>
           </div>
         </div>
       </section>
