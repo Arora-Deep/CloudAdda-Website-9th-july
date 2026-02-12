@@ -263,44 +263,96 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Who It's For Section */}
-      <section className="py-32 bg-gray-50 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-              Why Training Companies
-              <br />
+      {/* How CloudAdda Powers Successful Training Delivery */}
+      <section className="py-24 lg:py-32 bg-white relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              How CloudAdda Powers{' '}
               <span className="bg-gradient-to-r from-purple-800 via-purple-600 to-purple-300 bg-clip-text text-transparent">
-                Choose CloudAdda
+                Successful Training Delivery
               </span>
             </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+              CloudAdda operates on its own physical cloud infrastructure — purpose-built to support live, hands-on training at scale.
+            </p>
+            <div className="max-w-2xl mx-auto space-y-1 text-lg text-gray-500 italic">
+              <p>This isn't public cloud credits.</p>
+              <p>This isn't shared developer hosting.</p>
+              <p className="text-gray-700 font-semibold not-italic">This is controlled training infrastructure designed around batches, learners, and instructors.</p>
+            </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              {[
-                { number: 1, title: "Designed for Training, Not Generic Cloud Use", description: "Built from the ground up for live training workflows." },
-                { number: 2, title: "Predictable, Batch-Based Pricing", description: "No surprise cloud bills. Pricing per learner, per batch." },
-                { number: 3, title: "Zero Operational Overhead", description: "No infra setup. No monitoring. No firefighting." },
-                { number: 4, title: "Proven at Enterprise Scale", description: "Used by large training providers delivering high-volume programs." },
-              ].map((item) => (
-                <div key={item.number} className="flex items-start space-x-6 group">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
-                      {item.number}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-gray-700 leading-relaxed">{item.description}</p>
-                  </div>
-                </div>
-              ))}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Pillar 1 */}
+            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                <Server className="w-6 h-6 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Dedicated Infrastructure Per Batch</h3>
+              <p className="text-gray-600 mb-5 text-sm">Your training programs don't compete with random cloud workloads. Every batch runs on capacity planned and allocated specifically for training delivery.</p>
+              <ul className="space-y-3 mb-6">
+                {["Controlled compute allocation per learner", "Isolated environments per batch", "Performance optimized for concurrent sessions", "No resource contention"].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t border-gray-200 pt-4 space-y-1 text-xs text-gray-500">
+                <p><span className="font-semibold text-gray-700">For enterprises:</span> this signals scale.</p>
+                <p><span className="font-semibold text-gray-700">For mid-size companies:</span> this signals reliability.</p>
+              </div>
             </div>
-            
-            <div className="flex justify-center">
-              <img src="/lovable-uploads/f690fdec-4d37-4062-af23-158e9b86a21e.png" alt="Professional man in business suit with welcoming gesture" className="w-full max-w-lg" />
+
+            {/* Pillar 2 */}
+            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                <Database className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Standardized, Ready-to-Deploy Lab Environments</h3>
+              <p className="text-gray-600 mb-5 text-sm">Stop rebuilding labs for every new batch. CloudAdda creates structured lab templates for each course — enabling fast, repeatable deployment.</p>
+              <ul className="space-y-3 mb-6">
+                {["Pre-configured technology stacks", "Version-controlled environments", "Rapid provisioning in minutes", "Identical experience for every learner"].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t border-gray-200 pt-4 space-y-1 text-xs text-gray-500">
+                <p><span className="font-semibold text-gray-700">Smaller institutes</span> read this as "saves time."</p>
+                <p><span className="font-semibold text-gray-700">Enterprises</span> read this as "controlled operations."</p>
+              </div>
             </div>
+
+            {/* Pillar 3 */}
+            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                <Activity className="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Fully Managed Training Lifecycle</h3>
+              <p className="text-gray-600 mb-5 text-sm">We don't just deploy servers — we manage the infrastructure during live sessions, ensuring stability and minimizing disruptions.</p>
+              <ul className="space-y-3 mb-6">
+                {["Access control per training schedule", "Real-time monitoring", "Lab resets when required", "Infrastructure oversight during live delivery"].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t border-gray-200 pt-4 text-xs text-gray-500">
+                <p className="font-semibold text-gray-700">Trainers focus on teaching.</p>
+                <p>We handle the infrastructure layer behind it.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-xl lg:text-2xl text-gray-700 font-medium max-w-4xl mx-auto leading-relaxed">
+              When your infrastructure is controlled, predictable, and purpose-built for training,{' '}
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-bold">scaling becomes simple — not stressful.</span>
+            </p>
           </div>
         </div>
       </section>
@@ -468,6 +520,48 @@ const Index = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Training Companies Choose CloudAdda */}
+      <section className="py-32 bg-gray-50 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              Why Training Companies
+              <br />
+              <span className="bg-gradient-to-r from-purple-800 via-purple-600 to-purple-300 bg-clip-text text-transparent">
+                Choose CloudAdda
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              {[
+                { number: 1, title: "Designed for Training, Not Generic Cloud Use", description: "Built from the ground up for live training workflows." },
+                { number: 2, title: "Predictable, Batch-Based Pricing", description: "No surprise cloud bills. Pricing per learner, per batch." },
+                { number: 3, title: "Zero Operational Overhead", description: "No infra setup. No monitoring. No firefighting." },
+                { number: 4, title: "Proven at Enterprise Scale", description: "Used by large training providers delivering high-volume programs." },
+              ].map((item) => (
+                <div key={item.number} className="flex items-start space-x-6 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      {item.number}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">{item.title}</h3>
+                    <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex justify-center">
+              <img src="/lovable-uploads/f690fdec-4d37-4062-af23-158e9b86a21e.png" alt="Professional man in business suit with welcoming gesture" className="w-full max-w-lg" />
             </div>
           </div>
         </div>
