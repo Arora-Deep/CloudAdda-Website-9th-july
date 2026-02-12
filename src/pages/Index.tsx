@@ -264,110 +264,73 @@ const Index = () => {
       </section>
 
       {/* How CloudAdda Powers Successful Training Delivery */}
-      <section className="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        {/* Subtle background decoration */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-br from-purple-100/40 to-orange-100/20 rounded-full blur-3xl -z-0" />
+      <section className="py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-br from-purple-100/30 to-orange-100/15 rounded-full blur-3xl -z-0" />
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 leading-tight">
               How CloudAdda Powers{' '}
               <span className="bg-gradient-to-r from-purple-800 via-purple-600 to-purple-300 bg-clip-text text-transparent">
                 Successful Training Delivery
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              CloudAdda operates on its own physical cloud infrastructure — purpose-built to support live, hands-on training at scale.
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Purpose-built physical cloud infrastructure for live, hands-on training at scale.
             </p>
           </div>
 
-          <div className="space-y-8 mb-20">
-            {/* Pillar 1 */}
-            <div className="group relative bg-white rounded-3xl border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="grid md:grid-cols-[auto_1fr] items-stretch">
-                <div className="bg-gradient-to-br from-purple-700 to-purple-900 p-8 md:p-10 flex flex-col items-center justify-center md:w-56 text-white">
-                  <span className="text-5xl font-black mb-2 opacity-90">01</span>
-                  <Server className="w-8 h-8 opacity-80" />
+          <div className="grid md:grid-cols-3 gap-5 mb-10">
+            {[
+              {
+                num: "01",
+                icon: <Server className="w-5 h-5" />,
+                gradient: "from-purple-700 to-purple-900",
+                accent: "text-purple-600",
+                title: "Dedicated Infrastructure Per Batch",
+                features: ["Controlled compute per learner", "Isolated batch environments", "Optimized for concurrency", "Zero resource contention"],
+              },
+              {
+                num: "02",
+                icon: <Database className="w-5 h-5" />,
+                gradient: "from-blue-600 to-blue-800",
+                accent: "text-blue-600",
+                title: "Standardized Lab Environments",
+                features: ["Pre-configured tech stacks", "Version-controlled environments", "Provisioning in minutes", "Identical learner experience"],
+              },
+              {
+                num: "03",
+                icon: <Activity className="w-5 h-5" />,
+                gradient: "from-orange-500 to-red-600",
+                accent: "text-orange-500",
+                title: "Fully Managed Training Lifecycle",
+                features: ["Schedule-based access control", "Real-time monitoring", "On-demand lab resets", "Live delivery oversight"],
+              },
+            ].map((pillar, idx) => (
+              <div key={idx} className="group relative bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-lg transition-all duration-400 overflow-hidden flex flex-col">
+                <div className={`bg-gradient-to-br ${pillar.gradient} px-6 py-4 flex items-center gap-3 text-white`}>
+                  <span className="text-2xl font-black opacity-80">{pillar.num}</span>
+                  {pillar.icon}
+                  <h3 className="text-base font-bold leading-tight">{pillar.title}</h3>
                 </div>
-                <div className="p-8 md:p-10 relative">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Dedicated Infrastructure Per Batch</h3>
-                  <p className="text-gray-600 mb-6 max-w-2xl">Your training programs don't compete with random cloud workloads. Every batch runs on capacity planned and allocated specifically for training delivery.</p>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {["Controlled compute allocation per learner", "Isolated environments per batch", "Performance optimized for concurrent sessions", "No resource contention"].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
-                        <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{item}</span>
-                      </div>
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <ul className="space-y-2.5">
+                    {pillar.features.map((item, i) => (
+                      <li key={i} className="flex items-center gap-2.5 text-sm text-gray-700">
+                        <CheckCircle className={`w-3.5 h-3.5 ${pillar.accent} flex-shrink-0`} />
+                        <span>{item}</span>
+                      </li>
                     ))}
-                  </div>
-                  <div className="mt-6 flex flex-wrap gap-4 text-sm">
-                    <span className="bg-purple-50 text-purple-700 font-medium px-4 py-1.5 rounded-full">Enterprise: signals scale</span>
-                    <span className="bg-orange-50 text-orange-700 font-medium px-4 py-1.5 rounded-full">Mid-size: signals reliability</span>
-                  </div>
+                  </ul>
                 </div>
               </div>
-            </div>
-
-            {/* Pillar 2 */}
-            <div className="group relative bg-white rounded-3xl border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="grid md:grid-cols-[auto_1fr] items-stretch">
-                <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 md:p-10 flex flex-col items-center justify-center md:w-56 text-white">
-                  <span className="text-5xl font-black mb-2 opacity-90">02</span>
-                  <Database className="w-8 h-8 opacity-80" />
-                </div>
-                <div className="p-8 md:p-10 relative">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Standardized, Ready-to-Deploy Lab Environments</h3>
-                  <p className="text-gray-600 mb-6 max-w-2xl">Stop rebuilding labs for every new batch. CloudAdda creates structured lab templates for each course — enabling fast, repeatable deployment.</p>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {["Pre-configured technology stacks", "Version-controlled environments", "Rapid provisioning in minutes", "Identical experience for every learner"].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
-                        <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 flex flex-wrap gap-4 text-sm">
-                    <span className="bg-blue-50 text-blue-700 font-medium px-4 py-1.5 rounded-full">Smaller institutes: saves time</span>
-                    <span className="bg-purple-50 text-purple-700 font-medium px-4 py-1.5 rounded-full">Enterprises: controlled operations</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Pillar 3 */}
-            <div className="group relative bg-white rounded-3xl border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="grid md:grid-cols-[auto_1fr] items-stretch">
-                <div className="bg-gradient-to-br from-orange-500 to-red-600 p-8 md:p-10 flex flex-col items-center justify-center md:w-56 text-white">
-                  <span className="text-5xl font-black mb-2 opacity-90">03</span>
-                  <Activity className="w-8 h-8 opacity-80" />
-                </div>
-                <div className="p-8 md:p-10 relative">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Fully Managed Training Lifecycle</h3>
-                  <p className="text-gray-600 mb-6 max-w-2xl">We don't just deploy servers — we manage the infrastructure during live sessions, ensuring stability and minimizing disruptions.</p>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {["Access control per training schedule", "Real-time monitoring", "Lab resets when required", "Infrastructure oversight during live delivery"].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
-                        <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 pt-5 border-t border-gray-100">
-                    <p className="text-gray-900 font-semibold">Trainers focus on teaching.</p>
-                    <p className="text-gray-500">We handle the infrastructure layer behind it.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="text-center">
-            <p className="text-xl lg:text-2xl text-gray-700 font-medium max-w-4xl mx-auto leading-relaxed">
-              When your infrastructure is controlled, predictable, and purpose-built for training,{' '}
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-bold">scaling becomes simple — not stressful.</span>
+            <p className="text-lg lg:text-xl text-gray-600 font-medium max-w-3xl mx-auto">
+              <span className="text-gray-800">Trainers focus on teaching.</span> We handle the infrastructure.{' '}
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-bold">Scaling becomes simple.</span>
             </p>
           </div>
         </div>
