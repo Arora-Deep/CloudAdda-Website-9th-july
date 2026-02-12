@@ -140,12 +140,11 @@ const TrainingLabs = () => {
       </section>
 
       {/* What CloudAdda Does Section */}
-      <section className="py-24 bg-gray-950 text-white relative overflow-hidden">
+      <section className="min-h-screen flex items-center bg-gray-950 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full py-24">
           <div className="text-center mb-20">
-            <p className="text-orange-400 font-semibold tracking-widest uppercase text-sm mb-4">How It Works</p>
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
               You Train.<br />
               <span className="text-gray-400">We Handle the Infra.</span>
@@ -560,39 +559,27 @@ const TrainingLabs = () => {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">From Signup to Live Training in 3 Hours</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Support That Actually Shows Up</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Training doesn't pause when infrastructure breaks — neither do we.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              {[{
-              hour: "Hour 1",
-              task: "Requirements call & infra design",
-              description: "We understand your curriculum and design the perfect lab environment."
-            }, {
-              hour: "Hour 2",
-              task: "Provisioning, config, and performance check",
-              description: "Your labs are built, tested, and optimized for your specific needs."
-            }, {
-              hour: "Hour 3",
-              task: "Team onboarding & lab access",
-              description: "Your team gets trained and receives access to the management dashboard."
-            }, {
-              hour: "Go Time",
-              task: "Labs go live. Monitored. Ready to teach",
-              description: "Everything is live, monitored, and ready for your first training session."
-            }].map((step, index) => <div key={index} className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">{step.hour}</span>
+            <div className="space-y-6">
+              {[
+                "Dedicated support during sessions",
+                "Fast issue resolution",
+                "Proactive monitoring",
+                "Engineers who understand training workflows"
+              ].map((item, index) => <div key={index} className="flex items-center space-x-4">
+                    <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-5 h-5 text-purple-600" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{step.task}</h3>
-                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
-                  </div>
-                </div>)}
+                    <span className="text-lg text-gray-800 font-medium">{item}</span>
+                  </div>)}
+              
+              <p className="text-lg text-gray-600 italic pt-4 border-t border-gray-200 mt-6">
+                This is managed service, not ticket ping-pong.
+              </p>
             </div>
 
             <div className="relative">
