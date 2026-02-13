@@ -561,65 +561,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Before & After Section */}
-      <section className="py-24 lg:py-32 bg-gray-50 relative">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              From Unstable Labs to{' '}
-              <span className="bg-gradient-to-r from-purple-800 via-purple-600 to-purple-300 bg-clip-text text-transparent">
-                Predictable Training Delivery
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how training teams operate before and after moving to managed virtual labs.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Left Column - Without */}
-            <div className="bg-gray-100 rounded-2xl p-8 lg:p-10">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Without Managed Labs</h3>
-              <ul className="space-y-4">
-                {[
-                  "Manual environment setup before every batch",
-                  "Cloud credits running out mid-session",
-                  "Trainers troubleshooting instead of teaching",
-                  "Billing unpredictability",
-                  "Learners facing lag and crashes"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-600 text-lg">
-                    <X className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Right Column - With CloudAdda */}
-            <div className="bg-white rounded-2xl p-8 lg:p-10 border-2 border-green-100 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                With <span className="text-green-600">CloudAdda</span>
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Pre-configured labs provisioned per learner",
-                  "Stable, isolated environments",
-                  "Full batch lifecycle management",
-                  "Predictable pricing per batch",
-                  "Smooth, lag-free training sessions"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-700 text-lg">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Why Us Section */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
