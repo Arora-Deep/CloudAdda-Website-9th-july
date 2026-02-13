@@ -88,54 +88,55 @@ const TrainingLabs = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-16 pb-24">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h1 className="text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl">
-                Stop Fighting Infrastructure.
-                <span className="block text-purple-600">Start Teaching.</span>
-              </h1>
-              
-              <p className="text-xl text-gray-600 leading-relaxed">
-                You bring the training content. We deliver ready-to-run lab environments that launch in minutes, scale effortlessly, and never crash mid-session.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Link to="/contact">
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                    Request Your Custom Lab
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link to="/pricing">
-                  <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                    <Play className="mr-2 h-5 w-5" />
-                    View Pricing
-                  </Button>
-                </Link>
-              </div>
+      <section className="relative overflow-hidden bg-white pt-20 pb-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
+            <span className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">Managed</span> Virtual
+            <br />Training Labs
+          </h1>
+          
+          <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-10">
+            Built specifically for live & corporate training. No chaos. No cloud headaches. Just labs that work — every single time.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <Link to="/contact">
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
+                Request Your Custom Lab
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/pricing">
+              <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
+                <Play className="mr-2 h-5 w-5" />
+                View Pricing
+              </Button>
+            </Link>
+          </div>
 
-              <div className="grid grid-cols-3 gap-8 pt-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">60x</div>
-                  <div className="text-sm text-gray-600">Faster Setup</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">99.9%</div>
-                  <div className="text-sm text-gray-600">Session Uptime</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">&lt;2hr</div>
-                  <div className="text-sm text-gray-600">Avg. Support Response</div>
-                </div>
-              </div>
+          <div className="flex justify-center gap-12 lg:gap-16">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-600">60x</div>
+              <div className="text-sm text-gray-600">Faster Setup</div>
             </div>
-            
-            <div className="relative flex justify-center items-center h-full min-h-[700px]">
-              <img src="/lovable-uploads/20d7ef7d-10ca-4015-9a31-37c2ec2b2b0b.png" alt="Training session illustration with instructor and student" className="w-full max-w-none h-auto object-contain scale-150 transform" />
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-600">99.9%</div>
+              <div className="text-sm text-gray-600">Session Uptime</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-600">&lt;2hr</div>
+              <div className="text-sm text-gray-600">Avg. Support Response</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Purple Gradient Banner */}
+      <section className="bg-gradient-to-r from-purple-700 via-purple-600 to-purple-800 py-10">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <p className="text-2xl lg:text-3xl font-bold text-white">
+            We do one thing — and we do it right.
+          </p>
         </div>
       </section>
 
@@ -673,6 +674,37 @@ const TrainingLabs = () => {
             <div className="text-center">
               <div className="text-3xl font-bold text-purple-600">99.9%</div>
               <div className="text-gray-600">Session Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stop Fighting Infrastructure Section */}
+      <section className="relative overflow-hidden bg-white py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h2 className="text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">
+                Stop Fighting Infrastructure.
+                <span className="block text-purple-600">Start Teaching.</span>
+              </h2>
+              
+              <p className="text-xl text-gray-600 leading-relaxed">
+                You bring the training content. We deliver ready-to-run lab environments that launch in minutes, scale effortlessly, and never crash mid-session.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Link to="/contact">
+                  <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
+                    Request Your Custom Lab
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            
+            <div className="relative flex justify-center items-center h-full min-h-[500px]">
+              <img src="/lovable-uploads/20d7ef7d-10ca-4015-9a31-37c2ec2b2b0b.png" alt="Training session illustration with instructor and student" className="w-full max-w-none h-auto object-contain scale-125 transform" />
             </div>
           </div>
         </div>
