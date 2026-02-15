@@ -304,49 +304,51 @@ const TrainingLabs = () => {
       </section>
 
       {/* Managed From Start to Finish */}
-      <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
+      <section className="py-28 bg-gray-50/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-5">
               Managed From Start to Finish
             </h2>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed mb-2">
               A Fully Managed Virtual <span className="bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent font-semibold">Training Lab Lifecycle</span>
             </p>
-            <p className="text-base text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-400 max-w-xl mx-auto leading-relaxed">
               CloudAdda handles your training infrastructure before, during, and after sessions.
             </p>
           </div>
 
-          {/* Lifecycle Steps */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
+          {/* Lifecycle Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
             {[
-              "Pre-batch provisioning",
-              "Access configuration",
-              "Live-session monitoring",
-              "Environment resets",
-              "Post-session lifecycle management"
+              { num: "01", title: "Pre-batch Provisioning", desc: "Environments are spun up and validated before your training batch begins." },
+              { num: "02", title: "Access Configuration", desc: "Student credentials, access windows, and permissions — set once, applied everywhere." },
+              { num: "03", title: "Live-session Monitoring", desc: "Real-time visibility into every active lab during live training delivery." },
+              { num: "04", title: "Environment Resets", desc: "One-click restore to clean state between sessions or student attempts." },
+              { num: "05", title: "Post-session Management", desc: "Automated teardown, usage reports, and resource reclamation after training ends." }
             ].map((step, index) => (
-              <div key={index} className="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-full px-6 py-3 hover:bg-purple-50 hover:border-purple-300 transition-all duration-300">
-                <div className="w-2 h-2 rounded-full bg-purple-600" />
-                <span className="text-sm font-medium text-gray-700">{step}</span>
+              <div key={index} className={`group bg-white border border-gray-200 rounded-3xl p-7 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-100/50 transition-all duration-300 ${index === 4 ? 'sm:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}>
+                <span className="text-3xl font-black bg-gradient-to-br from-purple-500 to-purple-700 bg-clip-text text-transparent">{step.num}</span>
+                <h3 className="text-lg font-bold text-gray-900 mt-4 mb-2 group-hover:text-purple-700 transition-colors">{step.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-center text-gray-500 max-w-2xl mx-auto mb-16 leading-relaxed">
-            Whether you run one batch or twenty in parallel, your lab infrastructure remains structured and predictable.
+          <p className="text-center text-gray-500 max-w-2xl mx-auto mb-14 leading-relaxed text-lg">
+            Whether you run one batch or twenty in parallel, your lab infrastructure remains <span className="text-gray-900 font-semibold">structured and predictable</span>.
           </p>
 
           {/* Bottom Callouts */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-3xl mx-auto">
             {[
               "No last-minute scrambling.",
               "No resource surprises.",
               "No downtime panic."
             ].map((line, index) => (
-              <div key={index} className="text-center bg-gray-50 border border-gray-200 rounded-2xl py-5 px-4 hover:border-purple-300 hover:bg-purple-50 transition-all duration-300">
-                <p className="text-gray-900 font-semibold">{line}</p>
+              <div key={index} className="flex items-center gap-3 bg-gray-900 rounded-full px-6 py-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                <p className="text-white text-sm font-medium">{line}</p>
               </div>
             ))}
           </div>
