@@ -179,42 +179,73 @@ const TrainingLabs = () => {
         </div>
       </section>
 
+      {/* Infrastructure Built For Trainers */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Infrastructure Built For Trainers</h2>
+            <div className="w-32 h-1 bg-purple-500 mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-12">
+            {[{
+              title: "Setup in Minutes",
+              description: "Share your curriculum → We configure everything. Pre-installed tools, auto-scaling, and ready-to-teach labs. Deploy to 10 or 10,000 with zero effort.",
+              icon: Clock,
+              features: ["Pre-installed tools", "Auto-scaling", "Zero effort deployment", "Custom configurations"]
+            }, {
+              title: "Engineered for Session Reliability",
+              description: "Handles peak student activity without crashing. Real-time monitoring + auto-failover. 99.9% uptime across 5,000+ sessions.",
+              icon: Shield,
+              features: ["Peak activity handling", "Real-time monitoring", "Auto-failover", "99.9% uptime"]
+            }, {
+              title: "Support That Actually Helps",
+              description: "Instant support with training infra experience. Emergency hotline. No bots — ever.",
+              icon: Users,
+              features: ["Instant support", "Emergency hotline", "Training experts", "No bots ever"]
+            }].map((solution, index) => <div key={index} className="group hover:scale-105 transition-all duration-500">
+                <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl h-full">
+                  <div className="flex flex-col h-full">
+                    <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
+                      <solution.icon className="w-8 h-8 text-purple-600" />
+                    </div>
+                    
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{solution.title}</h3>
+                      <p className="text-gray-600 leading-relaxed mb-6">{solution.description}</p>
+                      
+                      <ul className="space-y-2">
+                        {solution.features.map((feature, fIndex) => <li key={fIndex} className="flex items-center space-x-2 text-sm text-gray-600">
+                            <CheckCircle className="w-4 h-4 text-green-500" />
+                            <span>{feature}</span>
+                          </li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>)}
+          </div>
+        </div>
+      </section>
+
       {/* Built for Trainers. Loved by Students. */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
           <div className="text-center mb-20">
             <p className="text-sm font-semibold tracking-widest text-purple-600 uppercase mb-4">Built for Trainers. Loved by Students.</p>
             <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mx-auto rounded-full"></div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-20">
-            {/* How Trainers Benefit */}
             <div>
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">How Trainers Benefit</h3>
               
               <div className="space-y-8">
                 {[
-                  {
-                    num: "01",
-                    title: "Snapshot & Restore in Seconds",
-                    description: "Instantly revert lab environments to a clean state. No manual rebuilds. No wasted time."
-                  },
-                  {
-                    num: "02",
-                    title: "Batch-Based Control",
-                    description: "Deploy environments per batch. Manage access windows. Scale based on class size."
-                  },
-                  {
-                    num: "03",
-                    title: "Real-Time Oversight",
-                    description: "Monitor active labs during live sessions and intervene instantly if needed."
-                  },
-                  {
-                    num: "04",
-                    title: "Standardized Lab Templates",
-                    description: "Version-controlled environments aligned to your curriculum for consistent delivery across cohorts."
-                  }
+                  { num: "01", title: "Snapshot & Restore in Seconds", description: "Instantly revert lab environments to a clean state. No manual rebuilds. No wasted time." },
+                  { num: "02", title: "Batch-Based Control", description: "Deploy environments per batch. Manage access windows. Scale based on class size." },
+                  { num: "03", title: "Real-Time Oversight", description: "Monitor active labs during live sessions and intervene instantly if needed." },
+                  { num: "04", title: "Standardized Lab Templates", description: "Version-controlled environments aligned to your curriculum for consistent delivery across cohorts." }
                 ].map((item, index) => (
                   <div key={index} className="group flex gap-5">
                     <div className="flex-shrink-0">
@@ -236,28 +267,15 @@ const TrainingLabs = () => {
               </div>
             </div>
 
-            {/* How Students Benefit */}
             <div>
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">How Students Benefit</h3>
               
               <div className="space-y-6">
                 {[
-                  {
-                    title: "Browser-Based Access",
-                    description: "No installations. No configuration issues. Labs launch directly from a browser."
-                  },
-                  {
-                    title: "Isolated Personal Environments",
-                    description: "Every learner gets their own dedicated lab instance."
-                  },
-                  {
-                    title: "Consistent Performance",
-                    description: "Stable compute allocation prevents slowdowns during high concurrency."
-                  },
-                  {
-                    title: "Freedom to Experiment",
-                    description: "Break it. Rebuild it. Restore it. Learn by doing."
-                  }
+                  { title: "Browser-Based Access", description: "No installations. No configuration issues. Labs launch directly from a browser." },
+                  { title: "Isolated Personal Environments", description: "Every learner gets their own dedicated lab instance." },
+                  { title: "Consistent Performance", description: "Stable compute allocation prevents slowdowns during high concurrency." },
+                  { title: "Freedom to Experiment", description: "Break it. Rebuild it. Restore it. Learn by doing." }
                 ].map((item, index) => (
                   <div key={index} className="group bg-gray-50 hover:bg-purple-50 border border-gray-100 hover:border-purple-200 rounded-2xl p-6 transition-all duration-300">
                     <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
@@ -292,7 +310,6 @@ const TrainingLabs = () => {
             </p>
           </div>
 
-          {/* Lifecycle Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
             {[
               { num: "01", title: "Pre-batch Provisioning", desc: "Environments are spun up and validated before your training batch begins." },
@@ -313,7 +330,6 @@ const TrainingLabs = () => {
             Whether you run one batch or twenty in parallel, your lab infrastructure remains <span className="text-gray-900 font-semibold">structured and predictable</span>.
           </p>
 
-          {/* Bottom Callouts */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-3xl mx-auto">
             {[
               "No last-minute scrambling.",
@@ -329,7 +345,62 @@ const TrainingLabs = () => {
         </div>
       </section>
 
-      {/* Pain Section */}
+      {/* Purpose-Built for Every Kind of Training - Dual Marquee */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Purpose-Built for Every Kind of Training</h2>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {/* Row 1 - Left to Right */}
+          <div className="flex animate-marquee">
+            {[
+              { title: "Coding Bootcamps", description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs.", icon: Code },
+              { title: "Cybersecurity Ranges", description: "Isolated labs with vulnerable VMs, network sniffers, incident response simulators.", icon: Shield },
+              { title: "AI/ML & Data Science", description: "GPU-ready labs with Jupyter, TensorFlow, PyTorch, huge datasets.", icon: Brain },
+              { title: "Corporate Upskilling", description: "Compliance-ready labs, scalable to 10,000+ users.", icon: Users },
+              { title: "Coding Bootcamps", description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs.", icon: Code },
+              { title: "Cybersecurity Ranges", description: "Isolated labs with vulnerable VMs, network sniffers, incident response simulators.", icon: Shield },
+              { title: "AI/ML & Data Science", description: "GPU-ready labs with Jupyter, TensorFlow, PyTorch, huge datasets.", icon: Brain },
+              { title: "Corporate Upskilling", description: "Compliance-ready labs, scalable to 10,000+ users.", icon: Users },
+            ].map((useCase, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 min-w-[300px] flex-shrink-0 mx-3">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                  <useCase.icon className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-3">{useCase.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2 - Right to Left */}
+          <div className="flex animate-marquee-reverse">
+            {[
+              { title: "Networking & Systems", description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.", icon: Users },
+              { title: "Hackathons & Workshops", description: "On-demand environments for 100s of participants. Instant provisioning, no local setup.", icon: Rocket },
+              { title: "Networking Labs", description: "Simulated enterprise network environments for routing, switching, and troubleshooting at scale.", icon: Users },
+              { title: "DevOps & Cloud", description: "Kubernetes, Terraform, CI/CD pipelines — production-like environments for hands-on practice.", icon: Code },
+              { title: "Networking & Systems", description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.", icon: Users },
+              { title: "Hackathons & Workshops", description: "On-demand environments for 100s of participants. Instant provisioning, no local setup.", icon: Rocket },
+              { title: "Networking Labs", description: "Simulated enterprise network environments for routing, switching, and troubleshooting at scale.", icon: Users },
+              { title: "DevOps & Cloud", description: "Kubernetes, Terraform, CI/CD pipelines — production-like environments for hands-on practice.", icon: Code },
+            ].map((useCase, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 min-w-[300px] flex-shrink-0 mx-3">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                  <useCase.icon className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-3">{useCase.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Every Trainer's Worst Nightmare */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -343,84 +414,35 @@ const TrainingLabs = () => {
 
             <div className="space-y-8">
               {[{
-              title: "Weekend Lab Config Hell",
-              description: "You spend your Friday nights setting up 50 labs for Monday. Your family wonders if you hate them.",
-              icon: Clock
-            }, {
-              title: "Mid-Session Meltdown",
-              description: "15 minutes into a bootcamp, labs crash. Participants stare. You sweat.",
-              icon: AlertTriangle
-            }, {
-              title: "Support Black Hole",
-              description: "2 AM panic. An agent replies: \"Try restarting.\" Your session's in 5 hours.",
-              icon: MessageCircle
-            }, {
-              title: "Cost Bomb",
-              description: "You forget to turn off instances. $50 becomes $500. Again.",
-              icon: DollarSign
-            }].map((pain, index) => <div key={index} className="group hover:scale-105 transition-all duration-300">
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-red-200 transition-all duration-300 hover:shadow-xl">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center group-hover:bg-red-200 transition-colors">
-                        <pain.icon className="w-6 h-6 text-red-600" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">{pain.title}</h3>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{pain.description}</p>
+                title: "Weekend Lab Config Hell",
+                description: "You spend your Friday nights setting up 50 labs for Monday. Your family wonders if you hate them.",
+                icon: Clock
+              }, {
+                title: "Mid-Session Meltdown",
+                description: "15 minutes into a bootcamp, labs crash. Participants stare. You sweat.",
+                icon: AlertTriangle
+              }, {
+                title: "Support Black Hole",
+                description: "2 AM panic. An agent replies: \"Try restarting.\" Your session's in 5 hours.",
+                icon: MessageCircle
+              }, {
+                title: "Cost Bomb",
+                description: "You forget to turn off instances. $50 becomes $500. Again.",
+                icon: DollarSign
+              }].map((pain, index) => <div key={index} className="group hover:scale-105 transition-all duration-300">
+                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-red-200 transition-all duration-300 hover:shadow-xl">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center group-hover:bg-red-200 transition-colors">
+                          <pain.icon className="w-6 h-6 text-red-600" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-bold text-gray-900 mb-2">{pain.title}</h3>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{pain.description}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>)}
+                  </div>)}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Solution Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Infrastructure Built For Trainers</h2>
-            <div className="w-32 h-1 bg-purple-500 mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-12">
-            {[{
-            title: "Setup in Minutes",
-            description: "Share your curriculum → We configure everything. Pre-installed tools, auto-scaling, and ready-to-teach labs. Deploy to 10 or 10,000 with zero effort.",
-            icon: Clock,
-            features: ["Pre-installed tools", "Auto-scaling", "Zero effort deployment", "Custom configurations"]
-          }, {
-            title: "Engineered for Session Reliability",
-            description: "Handles peak student activity without crashing. Real-time monitoring + auto-failover. 99.9% uptime across 5,000+ sessions.",
-            icon: Shield,
-            features: ["Peak activity handling", "Real-time monitoring", "Auto-failover", "99.9% uptime"]
-          }, {
-            title: "Support That Actually Helps",
-            description: "Instant support with training infra experience. Emergency hotline. No bots — ever.",
-            icon: Users,
-            features: ["Instant support", "Emergency hotline", "Training experts", "No bots ever"]
-          }].map((solution, index) => <div key={index} className="group hover:scale-105 transition-all duration-500">
-                <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl h-full">
-                  <div className="flex flex-col h-full">
-                    <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
-                      <solution.icon className="w-8 h-8 text-purple-600" />
-                    </div>
-                    
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{solution.title}</h3>
-                      <p className="text-gray-600 leading-relaxed mb-6">{solution.description}</p>
-                      
-                      <ul className="space-y-2">
-                        {solution.features.map((feature, fIndex) => <li key={fIndex} className="flex items-center space-x-2 text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500" />
-                            <span>{feature}</span>
-                          </li>)}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>)}
           </div>
         </div>
       </section>
@@ -434,7 +456,6 @@ const TrainingLabs = () => {
           </div>
 
           <div className="space-y-24">
-            {/* Feature 1: Easy Management */}
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
                 <div className="inline-flex items-center space-x-2 bg-purple-100 rounded-full px-4 py-2">
@@ -467,7 +488,6 @@ const TrainingLabs = () => {
               </div>
             </div>
 
-            {/* Feature 2: Student Access Control */}
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative order-2 lg:order-1">
                 <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
@@ -497,7 +517,6 @@ const TrainingLabs = () => {
               </div>
             </div>
 
-            {/* Feature 3: Custom Lab Configuration - Centered */}
             <div className="max-w-4xl mx-auto text-center space-y-12">
               <div className="space-y-8">
                 <div className="inline-flex items-center space-x-2 bg-green-100 rounded-full px-4 py-2">
@@ -519,55 +538,6 @@ const TrainingLabs = () => {
                     </div>)}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trainer-Specific Use Cases */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Purpose-Built for Every Kind of Training</h2>
-          </div>
-
-          <div className="overflow-hidden">
-            <div className="flex animate-marquee space-x-8">
-              {[{
-              title: "Coding Bootcamps",
-              description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs, version control.",
-              icon: Code
-            }, {
-              title: "Cybersecurity Ranges",
-              description: "Isolated labs with vulnerable VMs, network sniffers, incident response simulators.",
-              icon: Shield
-            }, {
-              title: "AI/ML & Data Science",
-              description: "GPU-ready labs with Jupyter, TensorFlow, PyTorch, huge datasets.",
-              icon: Brain
-            }, {
-              title: "Corporate Upskilling",
-              description: "Compliance-ready labs, scalable to 10,000+ users.",
-              icon: Users
-            }, {
-              title: "Networking & Systems Training",
-              description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.",
-              icon: Users
-            }, {
-              title: "Hackathons & Workshops",
-              description: "On-demand environments for 100s of participants. Instant provisioning, no local setup, perfect for time-boxed events.",
-              icon: Rocket
-            }, {
-              title: "Networking Labs",
-              description: "Simulated enterprise network environments for training on routing, switching, and troubleshooting at scale.",
-              icon: Users
-            }].map((useCase, index) => <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 min-w-[300px] flex-shrink-0">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                  <useCase.icon className="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-3">{useCase.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
-              </div>)}
             </div>
           </div>
         </div>
