@@ -304,23 +304,22 @@ const TrainingLabs = () => {
       </section>
 
       {/* Managed From Start to Finish */}
-      <section className="py-24 bg-gray-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-        
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <section className="py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold tracking-widest text-purple-400 uppercase mb-4">Managed From Start to Finish</p>
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
-              A Fully Managed Virtual<br />
-              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Training Lab Lifecycle</span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
+              Managed From Start to Finish
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed mb-2">
+              A Fully Managed Virtual <span className="bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent font-semibold">Training Lab Lifecycle</span>
+            </p>
+            <p className="text-base text-gray-400 max-w-2xl mx-auto leading-relaxed">
               CloudAdda handles your training infrastructure before, during, and after sessions.
             </p>
           </div>
 
           {/* Lifecycle Steps */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
             {[
               "Pre-batch provisioning",
               "Access configuration",
@@ -328,14 +327,14 @@ const TrainingLabs = () => {
               "Environment resets",
               "Post-session lifecycle management"
             ].map((step, index) => (
-              <div key={index} className="flex items-center gap-3 bg-white/[0.05] border border-white/[0.1] rounded-full px-6 py-3 hover:bg-white/[0.1] hover:border-purple-500/30 transition-all duration-300">
-                <div className="w-2 h-2 rounded-full bg-purple-500" />
-                <span className="text-sm font-medium text-gray-200">{step}</span>
+              <div key={index} className="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-full px-6 py-3 hover:bg-purple-50 hover:border-purple-300 transition-all duration-300">
+                <div className="w-2 h-2 rounded-full bg-purple-600" />
+                <span className="text-sm font-medium text-gray-700">{step}</span>
               </div>
             ))}
           </div>
 
-          <p className="text-center text-gray-400 max-w-2xl mx-auto mb-16 leading-relaxed">
+          <p className="text-center text-gray-500 max-w-2xl mx-auto mb-16 leading-relaxed">
             Whether you run one batch or twenty in parallel, your lab infrastructure remains structured and predictable.
           </p>
 
@@ -346,8 +345,8 @@ const TrainingLabs = () => {
               "No resource surprises.",
               "No downtime panic."
             ].map((line, index) => (
-              <div key={index} className="text-center bg-white/[0.04] border border-white/[0.08] rounded-2xl py-5 px-4">
-                <p className="text-white font-semibold">{line}</p>
+              <div key={index} className="text-center bg-gray-50 border border-gray-200 rounded-2xl py-5 px-4 hover:border-purple-300 hover:bg-purple-50 transition-all duration-300">
+                <p className="text-gray-900 font-semibold">{line}</p>
               </div>
             ))}
           </div>
