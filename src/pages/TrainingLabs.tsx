@@ -88,46 +88,59 @@ const TrainingLabs = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-20 pb-28">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-4 leading-[1.1]">
-            <span className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">Managed</span> Virtual Training Labs.
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-purple-950 to-gray-950 pt-24 pb-32">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        {/* Glow accent */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-purple-600/20 rounded-full blur-[120px]" />
+
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/10 rounded-full px-5 py-2 mb-8">
+            <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="text-sm text-purple-200 font-medium">Fully Managed Infrastructure</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white mb-4 leading-[1.08]">
+            Managed Virtual
             <br />
-            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Built for Real Training.</span>
+            Training Labs.
+            <br />
+            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Built for Real Training.</span>
           </h1>
           
-          <p className="text-lg lg:text-xl text-gray-700 font-medium max-w-2xl mx-auto mt-6 mb-3">
+          <p className="text-lg lg:text-xl text-purple-100 font-medium max-w-2xl mx-auto mt-8 mb-2">
             You focus on delivering exceptional training.
           </p>
-          <p className="text-base lg:text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto mb-10">
+          <p className="text-base lg:text-lg text-purple-300/80 leading-relaxed max-w-3xl mx-auto mb-12">
             We deliver fully managed, ready-to-run lab environments — provisioned in minutes, auto-scaled on demand, and engineered for uninterrupted live sessions.
           </p>
 
-          {/* Feature checklist */}
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12 max-w-3xl mx-auto">
+          {/* Feature pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-14 max-w-4xl mx-auto">
             {[
               "Instant Lab Deployment",
-              "Browser-Based Access (No Local Setup)",
-              "Snapshot & Restore in Seconds",
+              "Browser-Based Access",
+              "Snapshot & Restore",
               "Multi-Batch Isolation",
               "99.9% Session Stability",
             ].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm lg:text-base text-gray-700">
-                <CheckCircle className="h-5 w-5 text-purple-600 shrink-0" />
-                <span>{item}</span>
+              <div key={item} className="flex items-center gap-2 bg-white/[0.07] backdrop-blur border border-white/10 rounded-full px-5 py-2.5">
+                <CheckCircle className="h-4 w-4 text-green-400 shrink-0" />
+                <span className="text-sm text-white/90 font-medium">{item}</span>
               </div>
             ))}
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 transition-all">
                 Book a Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
+              <Button size="lg" className="rounded-full px-10 py-4 text-lg bg-white/10 backdrop-blur border border-white/20 text-white hover:bg-white/20 transition-all">
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Talk to Our Team
               </Button>
