@@ -102,47 +102,10 @@ const TrainingLabs = () => {
           <p className="text-base lg:text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto mb-10">
             We deliver fully managed, ready-to-run lab environments — provisioned in minutes, auto-scaled on demand, and engineered for uninterrupted live sessions.
           </p>
-
-          {/* SLA Badges */}
-          <div className="flex flex-wrap justify-center gap-6 mb-12 max-w-3xl mx-auto">
-            {[
-              { value: "99.9%", label: "Uptime Guaranteed" },
-              { value: "24/7", label: "Instant Support" },
-              { value: "<5 min", label: "Lab Setup Time" },
-            ].map((sla) => (
-              <div key={sla.label} className="flex flex-col items-center bg-gradient-to-br from-purple-50 to-white border border-purple-100 rounded-2xl px-8 py-5 shadow-sm">
-                <span className="text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">{sla.value}</span>
-                <span className="text-sm text-gray-600 font-medium mt-1">{sla.label}</span>
-              </div>
-            ))}
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                Book a Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Talk to Our Team
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Purpose-Built for Every Kind of Training - Dual Marquee */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Purpose-Built for Every Kind of Training</h2>
-          </div>
         </div>
 
-        <div className="space-y-6">
+        {/* Training Type Marquee Strips */}
+        <div className="space-y-6 my-16 overflow-hidden">
           <div className="flex animate-marquee">
             {[
               { title: "Coding Bootcamps", description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs.", icon: Code },
@@ -185,7 +148,39 @@ const TrainingLabs = () => {
             ))}
           </div>
         </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* SLA Badges */}
+          <div className="flex flex-wrap justify-center gap-6 mb-12 max-w-3xl mx-auto">
+            {[
+              { value: "99.9%", label: "Uptime Guaranteed" },
+              { value: "24/7", label: "Instant Support" },
+              { value: "<5 min", label: "Lab Setup Time" },
+            ].map((sla) => (
+              <div key={sla.label} className="flex flex-col items-center bg-gradient-to-br from-purple-50 to-white border border-purple-100 rounded-2xl px-8 py-5 shadow-sm">
+                <span className="text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">{sla.value}</span>
+                <span className="text-sm text-gray-600 font-medium mt-1">{sla.label}</span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/contact">
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
+                Book a Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Talk to Our Team
+              </Button>
+            </Link>
+          </div>
+        </div>
       </section>
+
 
       <section className="py-24 lg:py-32 bg-gradient-to-r from-[hsl(270,45%,18%)] via-[hsl(265,50%,38%)] to-[hsl(270,45%,18%)] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
