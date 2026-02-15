@@ -356,10 +356,21 @@ const TrainingLabs = () => {
               { num: "01", title: "Pre-batch Provisioning", desc: "Environments are spun up and validated before your training batch begins." },
               { num: "02", title: "Access Configuration", desc: "Student credentials, access windows, and permissions — set once, applied everywhere." },
               { num: "03", title: "Live-session Monitoring", desc: "Real-time visibility into every active lab during live training delivery." },
+            ].map((step, index) => (
+              <div key={index} className="group bg-white border border-gray-200 rounded-3xl p-7 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-100/50 transition-all duration-300">
+                <span className="text-3xl font-black bg-gradient-to-br from-purple-500 to-purple-700 bg-clip-text text-transparent">{step.num}</span>
+                <h3 className="text-lg font-bold text-gray-900 mt-4 mb-2 group-hover:text-purple-700 transition-colors">{step.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-5 mb-20">
+            {[
               { num: "04", title: "Environment Resets", desc: "One-click restore to clean state between sessions or student attempts." },
               { num: "05", title: "Post-session Management", desc: "Automated teardown, usage reports, and resource reclamation after training ends." }
             ].map((step, index) => (
-              <div key={index} className={`group bg-white border border-gray-200 rounded-3xl p-7 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-100/50 transition-all duration-300 ${index === 4 ? 'sm:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}>
+              <div key={index} className="group bg-white border border-gray-200 rounded-3xl p-7 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-100/50 transition-all duration-300 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]">
                 <span className="text-3xl font-black bg-gradient-to-br from-purple-500 to-purple-700 bg-clip-text text-transparent">{step.num}</span>
                 <h3 className="text-lg font-bold text-gray-900 mt-4 mb-2 group-hover:text-purple-700 transition-colors">{step.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
@@ -386,6 +397,67 @@ const TrainingLabs = () => {
         </div>
       </section>
 
+      {/* Everything the CloudAdda Platform Gives You */}
+      <section className="py-28 bg-white overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-5">
+              Everything the <span className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">CloudAdda</span> Platform Gives You
+            </h2>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              One platform. Every capability your training business needs.
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Scattered feature points */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {[
+                "Pre-configured Lab Environments",
+                "Auto-scaling Infrastructure",
+                "Browser-Based Lab Access",
+                "Snapshot & Restore",
+                "Batch-Based Provisioning",
+                "Real-Time Lab Monitoring",
+                "Student Access Management",
+                "One-Click Environment Reset",
+                "Custom Curriculum Setup",
+                "Multi-Batch Isolation",
+                "GPU-Ready Instances",
+                "Automated Teardown",
+                "Usage Analytics & Reports",
+                "24/7 Engineer Support",
+                "Emergency Hotline",
+                "99.9% Uptime SLA",
+                "Session Stability Engine",
+                "Remote Screen Viewing",
+                "Take-Control Assistance",
+                "Predictable Per-Batch Pricing",
+                "Pre-Installed Tools & IDEs",
+                "Version-Controlled Templates",
+                "Auto-Failover Protection",
+                "Post-Session Reclamation",
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className={`flex items-center gap-3 rounded-2xl px-5 py-4 border transition-all duration-300 hover:scale-105 ${
+                    index % 3 === 0
+                      ? 'bg-purple-50 border-purple-100 hover:border-purple-300'
+                      : index % 3 === 1
+                      ? 'bg-orange-50 border-orange-100 hover:border-orange-300'
+                      : 'bg-gray-50 border-gray-200 hover:border-gray-400'
+                  }`}
+                >
+                  <CheckCircle className={`w-5 h-5 flex-shrink-0 ${
+                    index % 3 === 0 ? 'text-purple-500' : index % 3 === 1 ? 'text-orange-500' : 'text-gray-500'
+                  }`} />
+                  <span className="text-sm font-medium text-gray-800">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
 
       {/* The Real Win Section */}
