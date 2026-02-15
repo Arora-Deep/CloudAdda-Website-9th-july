@@ -88,44 +88,67 @@ const TrainingLabs = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-20 pb-28">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
-            <span className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">Managed</span> Virtual
-            <br />Training Labs
-          </h1>
-          
-          <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-10">
-            Built specifically for live & corporate training. No chaos. No cloud headaches. Just labs that work — every single time.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <Link to="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                Request Your Custom Lab
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/pricing">
-              <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                <Play className="mr-2 h-5 w-5" />
-                View Pricing
-              </Button>
-            </Link>
-          </div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-purple-950 pt-24 pb-32">
+        {/* Subtle grid overlay */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+        {/* Gradient orb */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
 
-          <div className="flex justify-center gap-12 lg:gap-16">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">60x</div>
-              <div className="text-sm text-gray-600">Faster Setup</div>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Content */}
+            <div className="space-y-8">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
+                <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500 bg-clip-text text-transparent">Managed Virtual</span>
+                <br />
+                <span className="text-white">Training Labs.</span>
+                <br />
+                <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Built for Real Training.</span>
+              </h1>
+
+              <p className="text-lg lg:text-xl text-gray-400 leading-relaxed max-w-xl">
+                You focus on delivering exceptional training.
+              </p>
+              <p className="text-base lg:text-lg text-gray-500 leading-relaxed max-w-xl">
+                We deliver fully managed, ready-to-run lab environments — provisioned in minutes, auto-scaled on demand, and engineered for uninterrupted live sessions.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <Link to="/contact">
+                  <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-lg shadow-orange-500/20 hover:shadow-xl hover:shadow-orange-500/30 transition-all">
+                    Book a Demo
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all">
+                    Talk to Our Team
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">99.9%</div>
-              <div className="text-sm text-gray-600">Session Uptime</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">&lt;2hr</div>
-              <div className="text-sm text-gray-600">Avg. Support Response</div>
+
+            {/* Right - Feature checklist */}
+            <div className="relative">
+              <div className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-3xl p-8 lg:p-10 space-y-5">
+                {[
+                  "Instant Lab Deployment",
+                  "Browser-Based Access (No Local Setup)",
+                  "Snapshot & Restore in Seconds",
+                  "Multi-Batch Isolation",
+                  "99.9% Session Stability"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center gap-4 group">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-green-500/20 group-hover:scale-110 transition-transform">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="text-white text-lg font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Decorative glow behind the card */}
+              <div className="absolute -inset-4 bg-purple-500/5 rounded-[2rem] blur-2xl pointer-events-none -z-10" />
             </div>
           </div>
         </div>
