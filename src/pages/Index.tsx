@@ -549,6 +549,9 @@ const Index = () => {
                 Choose CloudAdda
               </span>
             </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-6 leading-relaxed">
+              We are your extended IT arm — here to help and support your training, not compete with you like other virtual lab providers. <span className="font-semibold text-gray-900">We don't do trainings. We support them.</span>
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
