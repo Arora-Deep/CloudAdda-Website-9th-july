@@ -134,8 +134,59 @@ const TrainingLabs = () => {
         </div>
       </section>
 
+      {/* Purpose-Built for Every Kind of Training - Dual Marquee */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Purpose-Built for Every Kind of Training</h2>
+          </div>
+        </div>
 
-      {/* The Pain Section */}
+        <div className="space-y-6">
+          <div className="flex animate-marquee">
+            {[
+              { title: "Coding Bootcamps", description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs.", icon: Code },
+              { title: "Cybersecurity Ranges", description: "Isolated labs with vulnerable VMs, network sniffers, incident response simulators.", icon: Shield },
+              { title: "AI/ML & Data Science", description: "GPU-ready labs with Jupyter, TensorFlow, PyTorch, huge datasets.", icon: Brain },
+              { title: "Corporate Upskilling", description: "Compliance-ready labs, scalable to 10,000+ users.", icon: Users },
+              { title: "Coding Bootcamps", description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs.", icon: Code },
+              { title: "Cybersecurity Ranges", description: "Isolated labs with vulnerable VMs, network sniffers, incident response simulators.", icon: Shield },
+              { title: "AI/ML & Data Science", description: "GPU-ready labs with Jupyter, TensorFlow, PyTorch, huge datasets.", icon: Brain },
+              { title: "Corporate Upskilling", description: "Compliance-ready labs, scalable to 10,000+ users.", icon: Users },
+            ].map((useCase, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 min-w-[300px] flex-shrink-0 mx-3">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                  <useCase.icon className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-3">{useCase.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex animate-marquee-reverse">
+            {[
+              { title: "Networking & Systems", description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.", icon: Users },
+              { title: "Hackathons & Workshops", description: "On-demand environments for 100s of participants. Instant provisioning, no local setup.", icon: Rocket },
+              { title: "Networking Labs", description: "Simulated enterprise network environments for routing, switching, and troubleshooting at scale.", icon: Users },
+              { title: "DevOps & Cloud", description: "Kubernetes, Terraform, CI/CD pipelines — production-like environments for hands-on practice.", icon: Code },
+              { title: "Networking & Systems", description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.", icon: Users },
+              { title: "Hackathons & Workshops", description: "On-demand environments for 100s of participants. Instant provisioning, no local setup.", icon: Rocket },
+              { title: "Networking Labs", description: "Simulated enterprise network environments for routing, switching, and troubleshooting at scale.", icon: Users },
+              { title: "DevOps & Cloud", description: "Kubernetes, Terraform, CI/CD pipelines — production-like environments for hands-on practice.", icon: Code },
+            ].map((useCase, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 min-w-[300px] flex-shrink-0 mx-3">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                  <useCase.icon className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-3">{useCase.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 lg:py-32 bg-gradient-to-r from-[hsl(270,45%,18%)] via-[hsl(265,50%,38%)] to-[hsl(270,45%,18%)] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -226,16 +277,11 @@ const TrainingLabs = () => {
       {/* Built for Trainers. Loved by Students. */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <p className="text-sm font-semibold tracking-widest text-purple-600 uppercase mb-4">Built for Trainers. Loved by Students.</p>
-            <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mx-auto rounded-full"></div>
-          </div>
-
           <div className="grid lg:grid-cols-2 gap-20">
-            <div>
+            <div className="flex flex-col">
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">How Trainers Benefit</h3>
               
-              <div className="space-y-8">
+              <div className="space-y-8 flex-1">
                 {[
                   { num: "01", title: "Snapshot & Restore in Seconds", description: "Instantly revert lab environments to a clean state. No manual rebuilds. No wasted time." },
                   { num: "02", title: "Batch-Based Control", description: "Deploy environments per batch. Manage access windows. Scale based on class size." },
@@ -262,10 +308,10 @@ const TrainingLabs = () => {
               </div>
             </div>
 
-            <div>
+            <div className="flex flex-col">
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">How Students Benefit</h3>
               
-              <div className="space-y-6">
+              <div className="space-y-6 flex-1">
                 {[
                   { title: "Browser-Based Access", description: "No installations. No configuration issues. Labs launch directly from a browser." },
                   { title: "Isolated Personal Environments", description: "Every learner gets their own dedicated lab instance." },
@@ -340,60 +386,7 @@ const TrainingLabs = () => {
         </div>
       </section>
 
-      {/* Purpose-Built for Every Kind of Training - Dual Marquee */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Purpose-Built for Every Kind of Training</h2>
-          </div>
-        </div>
 
-        <div className="space-y-6">
-          {/* Row 1 - Left to Right */}
-          <div className="flex animate-marquee">
-            {[
-              { title: "Coding Bootcamps", description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs.", icon: Code },
-              { title: "Cybersecurity Ranges", description: "Isolated labs with vulnerable VMs, network sniffers, incident response simulators.", icon: Shield },
-              { title: "AI/ML & Data Science", description: "GPU-ready labs with Jupyter, TensorFlow, PyTorch, huge datasets.", icon: Brain },
-              { title: "Corporate Upskilling", description: "Compliance-ready labs, scalable to 10,000+ users.", icon: Users },
-              { title: "Coding Bootcamps", description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs.", icon: Code },
-              { title: "Cybersecurity Ranges", description: "Isolated labs with vulnerable VMs, network sniffers, incident response simulators.", icon: Shield },
-              { title: "AI/ML & Data Science", description: "GPU-ready labs with Jupyter, TensorFlow, PyTorch, huge datasets.", icon: Brain },
-              { title: "Corporate Upskilling", description: "Compliance-ready labs, scalable to 10,000+ users.", icon: Users },
-            ].map((useCase, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 min-w-[300px] flex-shrink-0 mx-3">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                  <useCase.icon className="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-3">{useCase.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Row 2 - Right to Left */}
-          <div className="flex animate-marquee-reverse">
-            {[
-              { title: "Networking & Systems", description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.", icon: Users },
-              { title: "Hackathons & Workshops", description: "On-demand environments for 100s of participants. Instant provisioning, no local setup.", icon: Rocket },
-              { title: "Networking Labs", description: "Simulated enterprise network environments for routing, switching, and troubleshooting at scale.", icon: Users },
-              { title: "DevOps & Cloud", description: "Kubernetes, Terraform, CI/CD pipelines — production-like environments for hands-on practice.", icon: Code },
-              { title: "Networking & Systems", description: "Layer 2/3 labs, routers, firewalls, VLANs, Linux OS internals — all isolated per student.", icon: Users },
-              { title: "Hackathons & Workshops", description: "On-demand environments for 100s of participants. Instant provisioning, no local setup.", icon: Rocket },
-              { title: "Networking Labs", description: "Simulated enterprise network environments for routing, switching, and troubleshooting at scale.", icon: Users },
-              { title: "DevOps & Cloud", description: "Kubernetes, Terraform, CI/CD pipelines — production-like environments for hands-on practice.", icon: Code },
-            ].map((useCase, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 min-w-[300px] flex-shrink-0 mx-3">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                  <useCase.icon className="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-3">{useCase.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* The Real Win Section */}
       <section className="py-24 bg-purple-600 text-white">
