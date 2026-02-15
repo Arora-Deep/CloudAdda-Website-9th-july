@@ -141,16 +141,16 @@ const TrainingLabs = () => {
       </section>
 
       {/* Built for Trainers Section */}
-      <section className="min-h-screen flex items-center bg-gray-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+      <section className="min-h-screen flex items-center bg-gradient-to-br from-purple-700 via-purple-800 to-purple-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full py-24">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
               Most Clouds Are Built for Developers.<br />
-              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Ours Is Built for Trainers.</span>
+              <span className="text-white/90">Ours Is Built for Trainers.</span>
             </h2>
-            <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
               Public cloud platforms are optimized for software teams.
               CloudAdda is engineered specifically for live instructor-led training, corporate upskilling programs, and multi-batch course delivery.
             </p>
@@ -158,48 +158,48 @@ const TrainingLabs = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto auto-rows-[200px]">
             {/* Row 1, Col 1 */}
-            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+            <div className="group bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-8 flex flex-col justify-end hover:bg-white/15 hover:border-white/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center text-white mb-4 group-hover:bg-white/25 group-hover:scale-110 transition-all duration-500">
                 <Gauge className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold text-white mb-1">Stable Performance</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">Live lab environments that stay responsive under peak student load.</p>
+              <p className="text-sm text-white/60 leading-relaxed">Live lab environments that stay responsive under peak student load.</p>
             </div>
 
             {/* Row 1-2, Col 2 - Tall card spanning 2 rows */}
-            <div className="group row-span-2 bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+            <div className="group row-span-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-8 flex flex-col justify-end hover:bg-white/15 hover:border-white/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center text-white mb-4 group-hover:bg-white/25 group-hover:scale-110 transition-all duration-500">
                 <Shield className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold text-white mb-1">Zero Session Crashes</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">Auto-failover and real-time monitoring ensure uninterrupted training sessions every time.</p>
+              <p className="text-sm text-white/60 leading-relaxed">Auto-failover and real-time monitoring ensure uninterrupted training sessions every time.</p>
             </div>
 
             {/* Row 1, Col 3 */}
-            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+            <div className="group bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-8 flex flex-col justify-end hover:bg-white/15 hover:border-white/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center text-white mb-4 group-hover:bg-white/25 group-hover:scale-110 transition-all duration-500">
                 <Users className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold text-white mb-1">Batch Isolation</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">Every batch runs in its own isolated environment with zero cross-contamination.</p>
+              <p className="text-sm text-white/60 leading-relaxed">Every batch runs in its own isolated environment with zero cross-contamination.</p>
             </div>
 
             {/* Row 2, Col 1 */}
-            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+            <div className="group bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-8 flex flex-col justify-end hover:bg-white/15 hover:border-white/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center text-white mb-4 group-hover:bg-white/25 group-hover:scale-110 transition-all duration-500">
                 <Rocket className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold text-white mb-1">Instant Provisioning</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">Spin up labs for your entire class in minutes, not hours.</p>
+              <p className="text-sm text-white/60 leading-relaxed">Spin up labs for your entire class in minutes, not hours.</p>
             </div>
 
             {/* Row 2, Col 3 */}
-            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+            <div className="group bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-8 flex flex-col justify-end hover:bg-white/15 hover:border-white/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center text-white mb-4 group-hover:bg-white/25 group-hover:scale-110 transition-all duration-500">
                 <UserCheck className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold text-white mb-1">Instructor-Level Control</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">Full visibility and control over every student's lab from a single dashboard.</p>
+              <p className="text-sm text-white/60 leading-relaxed">Full visibility and control over every student's lab from a single dashboard.</p>
             </div>
           </div>
         </div>
