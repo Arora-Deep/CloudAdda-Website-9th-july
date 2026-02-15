@@ -205,6 +205,104 @@ const TrainingLabs = () => {
         </div>
       </section>
 
+      {/* Built for Trainers. Loved by Students. */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <p className="text-sm font-semibold tracking-widest text-purple-600 uppercase mb-4">Built for Trainers. Loved by Students.</p>
+            <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-20">
+            {/* How Trainers Benefit */}
+            <div>
+              <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">How Trainers Benefit</h3>
+              
+              <div className="space-y-8">
+                {[
+                  {
+                    num: "01",
+                    title: "Snapshot & Restore in Seconds",
+                    description: "Instantly revert lab environments to a clean state. No manual rebuilds. No wasted time."
+                  },
+                  {
+                    num: "02",
+                    title: "Batch-Based Control",
+                    description: "Deploy environments per batch. Manage access windows. Scale based on class size."
+                  },
+                  {
+                    num: "03",
+                    title: "Real-Time Oversight",
+                    description: "Monitor active labs during live sessions and intervene instantly if needed."
+                  },
+                  {
+                    num: "04",
+                    title: "Standardized Lab Templates",
+                    description: "Version-controlled environments aligned to your curriculum for consistent delivery across cohorts."
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="group flex gap-5">
+                    <div className="flex-shrink-0">
+                      <span className="text-3xl font-black bg-gradient-to-br from-purple-500 to-purple-700 bg-clip-text text-transparent">{item.num}</span>
+                    </div>
+                    <div className="border-l-2 border-gray-200 group-hover:border-purple-400 transition-colors pl-5">
+                      <h4 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h4>
+                      <p className="text-gray-600 leading-relaxed text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-12 bg-gray-950 rounded-2xl p-6">
+                <p className="text-white font-semibold text-lg">
+                  Your trainers teach.<br />
+                  <span className="text-purple-400">They don't troubleshoot infrastructure.</span>
+                </p>
+              </div>
+            </div>
+
+            {/* How Students Benefit */}
+            <div>
+              <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">How Students Benefit</h3>
+              
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "Browser-Based Access",
+                    description: "No installations. No configuration issues. Labs launch directly from a browser."
+                  },
+                  {
+                    title: "Isolated Personal Environments",
+                    description: "Every learner gets their own dedicated lab instance."
+                  },
+                  {
+                    title: "Consistent Performance",
+                    description: "Stable compute allocation prevents slowdowns during high concurrency."
+                  },
+                  {
+                    title: "Freedom to Experiment",
+                    description: "Break it. Rebuild it. Restore it. Learn by doing."
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="group bg-gray-50 hover:bg-purple-50 border border-gray-100 hover:border-purple-200 rounded-2xl p-6 transition-all duration-300">
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
+                    <p className="text-gray-600 leading-relaxed text-sm">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-12 bg-gray-950 rounded-2xl p-6">
+                <p className="text-white font-semibold text-lg">
+                  Students focus on learning —<br />
+                  <span className="text-orange-400">not fighting setup errors.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pain Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
