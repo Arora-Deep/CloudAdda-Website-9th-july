@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles, ChevronDown, DollarSign, Building, RotateCcw, X } from "lucide-react";
+import { Cloud, Users, Shield, Zap, Play, CheckCircle, ArrowRight, Globe, Settings, BarChart3, Star, Award, Clock, HeartHandshake, Rocket, Monitor, Server, Database, Activity, Cpu, HardDrive, Target, TrendingUp, Lightbulb, Sparkles, ChevronDown, DollarSign, Building, RotateCcw, X, Gauge, UserCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
@@ -222,42 +222,61 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Pain Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-r from-[hsl(270,45%,18%)] via-[hsl(265,50%,38%)] to-[hsl(270,45%,18%)] text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            {/* Left side - Content */}
-            <div className="space-y-10">
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left">
-                The Problem Training<br />Teams Face
-              </h2>
-              
-              <p className="text-lg text-purple-200 leading-relaxed text-center lg:text-left">
-                Every growing training company eventually hits the same wall:
-              </p>
-              
-              <ul className="space-y-5 text-left">
-                {["Cloud bills that spike unpredictably", "Labs breaking mid-session", "Trainers forced to troubleshoot instead of teach", "Inconsistent environments across learners", "Scaling batches becoming risky and stressful"].map((item, index) => (
-                  <li key={index} className="flex items-start space-x-4 text-lg text-white/90">
-                    <span className="text-orange-400 text-xl mt-0.5 flex-shrink-0">✗</span>
-                    <span className="leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="pt-6 border-t border-white/10 space-y-3">
-                <p className="text-lg text-purple-200 leading-relaxed">
-                  Infrastructure becomes the bottleneck.
-                </p>
-                <p className="text-3xl lg:text-4xl font-bold text-orange-400">
-                  CloudAdda removes it.
-                </p>
+      {/* Most Clouds Are Built for Developers */}
+      <section className="min-h-screen flex items-center bg-gray-950 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full py-24">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+              Most Clouds Are Built for Developers.<br />
+              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Ours Is Built for Trainers.</span>
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Public cloud platforms are optimized for software teams.
+              CloudAdda is engineered specifically for live instructor-led training, corporate upskilling programs, and multi-batch course delivery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto auto-rows-[200px]">
+            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                <Gauge className="w-6 h-6" />
               </div>
+              <h3 className="text-base font-bold text-white mb-1">Stable Performance</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">Live lab environments that stay responsive under peak student load.</p>
             </div>
-            
-            {/* Right side - Image */}
-            <div className="flex justify-center lg:justify-end">
-              <img src="/lovable-uploads/69230053-96f2-4f6a-ad77-9419979d6f8e.png" alt="Frustrated person at desk with laptop" className="w-full max-w-lg h-auto object-contain" />
+
+            <div className="group row-span-2 bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                <Shield className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-white mb-1">Zero Session Crashes</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">Auto-failover and real-time monitoring ensure uninterrupted training sessions every time.</p>
+            </div>
+
+            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                <Users className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-white mb-1">Batch Isolation</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">Every batch runs in its own isolated environment with zero cross-contamination.</p>
+            </div>
+
+            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                <Rocket className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-white mb-1">Instant Provisioning</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">Spin up labs for your entire class in minutes, not hours.</p>
+            </div>
+
+            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                <UserCheck className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-white mb-1">Instructor-Level Control</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">Full visibility and control over every student's lab from a single dashboard.</p>
             </div>
           </div>
         </div>
