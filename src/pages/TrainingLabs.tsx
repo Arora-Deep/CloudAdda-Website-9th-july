@@ -103,18 +103,16 @@ const TrainingLabs = () => {
             We deliver fully managed, ready-to-run lab environments — provisioned in minutes, auto-scaled on demand, and engineered for uninterrupted live sessions.
           </p>
 
-          {/* Feature checklist */}
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12 max-w-3xl mx-auto">
+          {/* SLA Badges */}
+          <div className="flex flex-wrap justify-center gap-6 mb-12 max-w-3xl mx-auto">
             {[
-              "Instant Lab Deployment",
-              "Browser-Based Access (No Local Setup)",
-              "Snapshot & Restore in Seconds",
-              "Multi-Batch Isolation",
-              "99.9% Session Stability",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm lg:text-base text-gray-700">
-                <CheckCircle className="h-5 w-5 text-purple-600 shrink-0" />
-                <span>{item}</span>
+              { value: "99.9%", label: "Uptime Guaranteed" },
+              { value: "24/7", label: "Instant Support" },
+              { value: "<5 min", label: "Lab Setup Time" },
+            ].map((sla) => (
+              <div key={sla.label} className="flex flex-col items-center bg-gradient-to-br from-purple-50 to-white border border-purple-100 rounded-2xl px-8 py-5 shadow-sm">
+                <span className="text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">{sla.value}</span>
+                <span className="text-sm text-gray-600 font-medium mt-1">{sla.label}</span>
               </div>
             ))}
           </div>
@@ -136,14 +134,6 @@ const TrainingLabs = () => {
         </div>
       </section>
 
-      {/* Purple Gradient Banner */}
-      <section className="bg-gradient-to-r from-purple-700 via-purple-600 to-purple-800 py-10">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-2xl lg:text-3xl font-bold text-white">
-            We do one thing — and we do it right.
-          </p>
-        </div>
-      </section>
 
       {/* The Pain Section */}
       <section className="py-24 lg:py-32 bg-gradient-to-r from-[hsl(270,45%,18%)] via-[hsl(265,50%,38%)] to-[hsl(270,45%,18%)] text-white relative overflow-hidden">
