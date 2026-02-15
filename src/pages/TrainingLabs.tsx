@@ -140,74 +140,37 @@ const TrainingLabs = () => {
         </div>
       </section>
 
-      {/* What CloudAdda Does Section */}
+      {/* Built for Trainers Section */}
       <section className="min-h-screen flex items-center bg-gray-950 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full py-24">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-              You Train.<br />
-              <span className="text-gray-400">We Handle the Infra.</span>
+              Most Clouds Are Built for Developers.<br />
+              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Ours Is Built for Trainers.</span>
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Tell us what you need. We provision, manage, and scale your lab environments — so you never think about infrastructure again.
+            <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Public cloud platforms are optimized for software teams.
+              CloudAdda is engineered specifically for live instructor-led training, corporate upskilling programs, and multi-batch course delivery.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-5xl mx-auto">
             {[
-              { step: "01", title: "Define Your Training", description: "Share your course stack, batch size, and session schedule. That's all we need.", icon: <Target className="w-6 h-6" /> },
-              { step: "02", title: "We Build & Deploy", description: "Fully configured lab environments, spun up and ready before your first session.", icon: <Shield className="w-6 h-6" /> },
-              { step: "03", title: "Train With Confidence", description: "Monitoring, resets, scaling, and support — all handled. You just teach.", icon: <Rocket className="w-6 h-6" /> },
+              { icon: <Gauge className="w-7 h-7" />, label: "Stable live lab performance" },
+              { icon: <Shield className="w-7 h-7" />, label: "Zero session crashes" },
+              { icon: <Users className="w-7 h-7" />, label: "Batch isolation" },
+              { icon: <Rocket className="w-7 h-7" />, label: "Instant provisioning" },
+              { icon: <UserCheck className="w-7 h-7" />, label: "Instructor-level control" },
             ].map((item, index) => (
-              <div key={index} className="relative group">
-                <div className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-3xl p-8 lg:p-10 h-full hover:bg-white/[0.07] hover:border-white/[0.15] transition-all duration-500">
-                  <div className="flex items-center justify-between mb-8">
-                    <span className="text-5xl font-black text-white/10 group-hover:text-orange-400/20 transition-colors duration-500">{item.step}</span>
-                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 group-hover:bg-orange-500/20 transition-all duration-500">
-                      {item.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{item.description}</p>
+              <div key={index} className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 text-center hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mx-auto mb-5 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                  {item.icon}
                 </div>
-                {index < 2 && (
-                  <div className="hidden md:flex absolute -right-4 lg:-right-5 top-1/2 -translate-y-1/2 z-10">
-                    <ArrowRight className="w-5 h-5 text-gray-600" />
-                  </div>
-                )}
+                <p className="text-sm lg:text-base font-semibold text-gray-200 leading-snug">{item.label}</p>
               </div>
             ))}
-          </div>
-
-          <div className="bg-gradient-to-br from-orange-500/10 to-purple-500/10 border border-white/[0.08] rounded-3xl p-10 lg:p-14">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-orange-400 font-semibold text-sm tracking-widest uppercase mb-4">Purpose-Built</p>
-                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                  Not another generic cloud.<br />
-                  <span className="text-gray-400">Built for training.</span>
-                </h3>
-                <p className="text-gray-400 text-lg leading-relaxed">
-                  Every feature, every workflow, every support interaction is designed around one thing — making live IT training seamless.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {[
-                  { icon: <Play className="w-5 h-5" />, label: "Instructor-Led Training" },
-                  { icon: <Users className="w-5 h-5" />, label: "Corporate Upskilling" },
-                  { icon: <Code className="w-5 h-5" />, label: "Multi-Batch Delivery" },
-                ].map((item, index) => (
-                  <div key={index} className="bg-white/[0.05] border border-white/[0.08] rounded-2xl p-6 text-center hover:bg-white/[0.08] transition-all duration-300">
-                    <div className="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/20 flex items-center justify-center text-purple-400 mx-auto mb-3">
-                      {item.icon}
-                    </div>
-                    <p className="text-sm font-medium text-gray-300">{item.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
