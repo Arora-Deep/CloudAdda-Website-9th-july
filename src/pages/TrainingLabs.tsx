@@ -90,43 +90,48 @@ const TrainingLabs = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white pt-20 pb-28">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6">
-            <span className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">Managed</span> Virtual
-            <br />Training Labs
+          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-4 leading-[1.1]">
+            <span className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">Managed</span> Virtual Training Labs.
+            <br />
+            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Built for Real Training.</span>
           </h1>
           
-          <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-10">
-            Built specifically for live & corporate training. No chaos. No cloud headaches. Just labs that work — every single time.
+          <p className="text-lg lg:text-xl text-gray-700 font-medium max-w-2xl mx-auto mt-6 mb-3">
+            You focus on delivering exceptional training.
           </p>
+          <p className="text-base lg:text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto mb-10">
+            We deliver fully managed, ready-to-run lab environments — provisioned in minutes, auto-scaled on demand, and engineered for uninterrupted live sessions.
+          </p>
+
+          {/* Feature checklist */}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12 max-w-3xl mx-auto">
+            {[
+              "Instant Lab Deployment",
+              "Browser-Based Access (No Local Setup)",
+              "Snapshot & Restore in Seconds",
+              "Multi-Batch Isolation",
+              "99.9% Session Stability",
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-sm lg:text-base text-gray-700">
+                <CheckCircle className="h-5 w-5 text-purple-600 shrink-0" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
               <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
-                Request Your Custom Lab
+                Book a Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link to="/pricing">
+            <Link to="/contact">
               <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
-                <Play className="mr-2 h-5 w-5" />
-                View Pricing
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Talk to Our Team
               </Button>
             </Link>
-          </div>
-
-          <div className="flex justify-center gap-12 lg:gap-16">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">60x</div>
-              <div className="text-sm text-gray-600">Faster Setup</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">99.9%</div>
-              <div className="text-sm text-gray-600">Session Uptime</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">&lt;2hr</div>
-              <div className="text-sm text-gray-600">Avg. Support Response</div>
-            </div>
           </div>
         </div>
       </section>
