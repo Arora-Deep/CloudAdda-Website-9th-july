@@ -156,21 +156,51 @@ const TrainingLabs = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-5xl mx-auto">
-            {[
-              { icon: <Gauge className="w-7 h-7" />, label: "Stable live lab performance" },
-              { icon: <Shield className="w-7 h-7" />, label: "Zero session crashes" },
-              { icon: <Users className="w-7 h-7" />, label: "Batch isolation" },
-              { icon: <Rocket className="w-7 h-7" />, label: "Instant provisioning" },
-              { icon: <UserCheck className="w-7 h-7" />, label: "Instructor-level control" },
-            ].map((item, index) => (
-              <div key={index} className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 text-center hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-                <div className="w-14 h-14 rounded-2xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mx-auto mb-5 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
-                  {item.icon}
-                </div>
-                <p className="text-sm lg:text-base font-semibold text-gray-200 leading-snug">{item.label}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto auto-rows-[200px]">
+            {/* Row 1, Col 1 */}
+            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                <Gauge className="w-6 h-6" />
               </div>
-            ))}
+              <h3 className="text-base font-bold text-white mb-1">Stable Performance</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">Live lab environments that stay responsive under peak student load.</p>
+            </div>
+
+            {/* Row 1-2, Col 2 - Tall card spanning 2 rows */}
+            <div className="group row-span-2 bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                <Shield className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-white mb-1">Zero Session Crashes</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">Auto-failover and real-time monitoring ensure uninterrupted training sessions every time.</p>
+            </div>
+
+            {/* Row 1, Col 3 */}
+            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                <Users className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-white mb-1">Batch Isolation</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">Every batch runs in its own isolated environment with zero cross-contamination.</p>
+            </div>
+
+            {/* Row 2, Col 1 */}
+            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                <Rocket className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-white mb-1">Instant Provisioning</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">Spin up labs for your entire class in minutes, not hours.</p>
+            </div>
+
+            {/* Row 2, Col 3 */}
+            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
+                <UserCheck className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-white mb-1">Instructor-Level Control</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">Full visibility and control over every student's lab from a single dashboard.</p>
+            </div>
           </div>
         </div>
       </section>
