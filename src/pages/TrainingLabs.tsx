@@ -306,16 +306,21 @@ const TrainingLabs = () => {
             <div className="flex flex-col">
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">How Students Benefit</h3>
               
-              <div className="space-y-6 flex-1">
+              <div className="space-y-8 flex-1">
                 {[
-                  { title: "Browser-Based Access", description: "No installations. No configuration issues. Labs launch directly from a browser." },
-                  { title: "Isolated Personal Environments", description: "Every learner gets their own dedicated lab instance." },
-                  { title: "Consistent Performance", description: "Stable compute allocation prevents slowdowns during high concurrency." },
-                  { title: "Freedom to Experiment", description: "Break it. Rebuild it. Restore it. Learn by doing." }
+                  { num: "01", title: "Browser-Based Access", description: "No installations. No configuration issues. Labs launch directly from a browser." },
+                  { num: "02", title: "Isolated Personal Environments", description: "Every learner gets their own dedicated lab instance." },
+                  { num: "03", title: "Consistent Performance", description: "Stable compute allocation prevents slowdowns during high concurrency." },
+                  { num: "04", title: "Freedom to Experiment", description: "Break it. Rebuild it. Restore it. Learn by doing." }
                 ].map((item, index) => (
-                  <div key={index} className="group bg-gray-50 hover:bg-purple-50 border border-gray-100 hover:border-purple-200 rounded-2xl p-6 transition-all duration-300">
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
-                    <p className="text-gray-600 leading-relaxed text-sm">{item.description}</p>
+                  <div key={index} className="group flex gap-5">
+                    <div className="flex-shrink-0">
+                      <span className="text-3xl font-black bg-gradient-to-br from-orange-500 to-red-500 bg-clip-text text-transparent">{item.num}</span>
+                    </div>
+                    <div className="border-l-2 border-gray-200 group-hover:border-orange-400 transition-colors pl-5">
+                      <h4 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h4>
+                      <p className="text-gray-600 leading-relaxed text-sm">{item.description}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -405,48 +410,34 @@ const TrainingLabs = () => {
           </div>
 
           <div className="relative">
-            {/* Scattered feature points */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {/* Honeycomb-style feature showcase */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                "Pre-configured Lab Environments",
-                "Auto-scaling Infrastructure",
-                "Browser-Based Lab Access",
-                "Snapshot & Restore",
-                "Batch-Based Provisioning",
-                "Real-Time Lab Monitoring",
-                "Student Access Management",
-                "One-Click Environment Reset",
-                "Custom Curriculum Setup",
-                "Multi-Batch Isolation",
-                "GPU-Ready Instances",
-                "Automated Teardown",
-                "Usage Analytics & Reports",
-                "24/7 Engineer Support",
-                "Emergency Hotline",
-                "99.9% Uptime SLA",
-                "Session Stability Engine",
-                "Remote Screen Viewing",
-                "Take-Control Assistance",
-                "Predictable Per-Batch Pricing",
-                "Pre-Installed Tools & IDEs",
-                "Version-Controlled Templates",
-                "Auto-Failover Protection",
-                "Post-Session Reclamation",
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center gap-3 rounded-2xl px-5 py-4 border transition-all duration-300 hover:scale-105 ${
-                    index % 3 === 0
-                      ? 'bg-purple-50 border-purple-100 hover:border-purple-300'
-                      : index % 3 === 1
-                      ? 'bg-orange-50 border-orange-100 hover:border-orange-300'
-                      : 'bg-gray-50 border-gray-200 hover:border-gray-400'
-                  }`}
-                >
-                  <CheckCircle className={`w-5 h-5 flex-shrink-0 ${
-                    index % 3 === 0 ? 'text-purple-500' : index % 3 === 1 ? 'text-orange-500' : 'text-gray-500'
-                  }`} />
-                  <span className="text-sm font-medium text-gray-800">{feature}</span>
+                { category: "Lab Setup", features: ["Pre-configured Lab Environments", "Custom Curriculum Setup", "Pre-Installed Tools & IDEs", "Version-Controlled Templates"] },
+                { category: "Scaling & Performance", features: ["Auto-scaling Infrastructure", "GPU-Ready Instances", "Session Stability Engine", "Auto-Failover Protection"] },
+                { category: "Management", features: ["Batch-Based Provisioning", "Student Access Management", "Multi-Batch Isolation", "One-Click Environment Reset"] },
+                { category: "Monitoring & Analytics", features: ["Real-Time Lab Monitoring", "Remote Screen Viewing", "Take-Control Assistance", "Usage Analytics & Reports"] },
+                { category: "Lifecycle", features: ["Snapshot & Restore", "Automated Teardown", "Post-Session Reclamation", "Browser-Based Lab Access"] },
+                { category: "Support & Pricing", features: ["24/7 Engineer Support", "Emergency Hotline", "99.9% Uptime SLA", "Predictable Per-Batch Pricing"] },
+              ].map((group, gIndex) => (
+                <div key={gIndex} className={`rounded-3xl p-7 border transition-all duration-300 hover:shadow-xl ${
+                  gIndex % 3 === 0 ? 'bg-gradient-to-br from-purple-50 to-white border-purple-100 hover:border-purple-300' :
+                  gIndex % 3 === 1 ? 'bg-gradient-to-br from-orange-50 to-white border-orange-100 hover:border-orange-300' :
+                  'bg-gradient-to-br from-gray-50 to-white border-gray-200 hover:border-gray-400'
+                }`}>
+                  <h3 className={`text-xs font-bold uppercase tracking-widest mb-5 ${
+                    gIndex % 3 === 0 ? 'text-purple-600' : gIndex % 3 === 1 ? 'text-orange-600' : 'text-gray-500'
+                  }`}>{group.category}</h3>
+                  <ul className="space-y-3">
+                    {group.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="flex items-center gap-3">
+                        <CheckCircle className={`w-4 h-4 flex-shrink-0 ${
+                          gIndex % 3 === 0 ? 'text-purple-500' : gIndex % 3 === 1 ? 'text-orange-500' : 'text-gray-400'
+                        }`} />
+                        <span className="text-sm font-medium text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -612,39 +603,8 @@ const TrainingLabs = () => {
         </div>
       </section>
 
-      {/* How It Works Timeline */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Support That Actually Shows Up</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Training doesn't pause when infrastructure breaks — neither do we.</p>
-          </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              {[
-                "Dedicated support during sessions",
-                "Fast issue resolution",
-                "Proactive monitoring",
-                "Engineers who understand training workflows"
-              ].map((item, index) => <div key={index} className="flex items-center space-x-4">
-                    <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-5 h-5 text-purple-600" />
-                    </div>
-                    <span className="text-lg text-gray-800 font-medium">{item}</span>
-                  </div>)}
-              
-              <p className="text-lg text-gray-600 italic pt-4 border-t border-gray-200 mt-6">
-                This is managed service, not ticket ping-pong.
-              </p>
-            </div>
 
-            <div className="relative">
-              <img src="/lovable-uploads/da1c17cc-16bf-47be-834a-68e473782db8.png" alt="Support representative helping with setup" className="w-full h-auto rounded-3xl" />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA Banner */}
       <section className="py-24 bg-white">
