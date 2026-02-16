@@ -549,9 +549,18 @@ const Index = () => {
                 Choose CloudAdda
               </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-6 leading-relaxed">
-              We are your extended IT arm — here to help and support your training, not compete with you like other virtual lab providers. <span className="font-semibold text-gray-900">We don't do trainings. We support them.</span>
-            </p>
+            <div className="relative max-w-4xl mx-auto mt-12 mb-4">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-orange-500/10 to-purple-600/10 rounded-3xl blur-2xl" />
+              <div className="relative border border-purple-200/60 rounded-3xl px-10 py-10 bg-white/80 backdrop-blur-sm">
+                <p className="text-xl md:text-2xl text-gray-700 leading-relaxed text-center mb-6">
+                  We are your <span className="font-bold bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">extended IT arm</span> — here to help and support your training, not compete with you like other virtual lab providers.
+                </p>
+                <p className="text-2xl md:text-3xl font-black text-center tracking-tight">
+                  <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">We don't do trainings.</span>{" "}
+                  <span className="text-gray-900">We support them.</span>
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
