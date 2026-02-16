@@ -220,62 +220,13 @@ const TrainingLabs = () => {
         </div>
       </section>
 
-      {/* Infrastructure Built For Trainers */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Infrastructure Built For Trainers</h2>
-            <div className="w-32 h-1 bg-purple-500 mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-12">
-            {[{
-              title: "Setup in Minutes",
-              description: "Share your curriculum → We configure everything. Pre-installed tools, auto-scaling, and ready-to-teach labs. Deploy to 10 or 10,000 with zero effort.",
-              icon: Clock,
-              features: ["Pre-installed tools", "Auto-scaling", "Zero effort deployment", "Custom configurations"]
-            }, {
-              title: "Engineered for Session Reliability",
-              description: "Handles peak student activity without crashing. Real-time monitoring + auto-failover. 99.9% uptime across 5,000+ sessions.",
-              icon: Shield,
-              features: ["Peak activity handling", "Real-time monitoring", "Auto-failover", "99.9% uptime"]
-            }, {
-              title: "Support That Actually Helps",
-              description: "Instant support with training infra experience. Emergency hotline. No bots — ever.",
-              icon: Users,
-              features: ["Instant support", "Emergency hotline", "Training experts", "No bots ever"]
-            }].map((solution, index) => <div key={index} className="group hover:scale-105 transition-all duration-500">
-                <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-purple-200 transition-all duration-300 hover:shadow-2xl h-full">
-                  <div className="flex flex-col h-full">
-                    <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
-                      <solution.icon className="w-8 h-8 text-purple-600" />
-                    </div>
-                    
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{solution.title}</h3>
-                      <p className="text-gray-600 leading-relaxed mb-6">{solution.description}</p>
-                      
-                      <ul className="space-y-2">
-                        {solution.features.map((feature, fIndex) => <li key={fIndex} className="flex items-center space-x-2 text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500" />
-                            <span>{feature}</span>
-                          </li>)}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>)}
-          </div>
-        </div>
-      </section>
-
       {/* How CloudAdda Powers Successful Training Delivery */}
       <section className="py-24 lg:py-32 bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-purple-100/20 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight whitespace-nowrap">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               How CloudAdda Powers{' '}
               <span className="bg-gradient-to-r from-purple-800 via-purple-600 to-purple-300 bg-clip-text text-transparent">
                 Successful Training Delivery
@@ -286,7 +237,7 @@ const TrainingLabs = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-20">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-8">
             <div className="group relative rounded-3xl p-[1px] bg-gradient-to-b from-purple-200 via-gray-200 to-transparent hover:-translate-y-2 transition-all duration-500">
               <div className="bg-white rounded-3xl p-8 lg:p-10 h-full relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-purple-400 to-purple-600" />
@@ -343,6 +294,44 @@ const TrainingLabs = () => {
                 </ul>
               </div>
             </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-20">
+            {[{
+              num: "04", title: "Setup in Minutes",
+              description: "Share your curriculum → We configure everything. Pre-installed tools, auto-scaling, and ready-to-teach labs.",
+              gradient: "from-teal-200 via-gray-200 to-transparent", bar: "from-teal-500 via-teal-400 to-teal-600", textColor: "text-teal-500",
+              features: ["Pre-installed tools", "Auto-scaling", "Zero effort deployment", "Custom configurations"]
+            }, {
+              num: "05", title: "Engineered for Session Reliability",
+              description: "Handles peak student activity without crashing. Real-time monitoring + auto-failover. 99.9% uptime.",
+              gradient: "from-indigo-200 via-gray-200 to-transparent", bar: "from-indigo-500 via-indigo-400 to-indigo-600", textColor: "text-indigo-500",
+              features: ["Peak activity handling", "Real-time monitoring", "Auto-failover", "99.9% uptime"]
+            }, {
+              num: "06", title: "Support That Actually Helps",
+              description: "Instant support with training infra experience. Emergency hotline. No bots — ever.",
+              gradient: "from-rose-200 via-gray-200 to-transparent", bar: "from-rose-500 via-rose-400 to-rose-600", textColor: "text-rose-500",
+              features: ["Instant support", "Emergency hotline", "Training experts", "No bots ever"]
+            }].map((item, index) => (
+              <div key={index} className={`group relative rounded-3xl p-[1px] bg-gradient-to-b ${item.gradient} hover:-translate-y-2 transition-all duration-500`}>
+                <div className="bg-white rounded-3xl p-8 lg:p-10 h-full relative overflow-hidden">
+                  <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${item.bar}`} />
+                  <span className={`inline-block text-xs font-bold uppercase tracking-widest ${item.textColor} mb-6`}>{item.num}</span>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-500 mb-6 text-sm leading-relaxed">{item.description}</p>
+                  <ul className="space-y-3">
+                    {item.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+                        <div className="w-5 h-5 rounded-full bg-green-50 flex items-center justify-center mt-0.5 flex-shrink-0">
+                          <CheckCircle className="w-3.5 h-3.5 text-green-500" />
+                        </div>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="text-center">
