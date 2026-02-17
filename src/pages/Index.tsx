@@ -818,6 +818,42 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Support That Actually Shows Up */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Support That Actually Shows Up</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Training doesn't pause when infrastructure breaks — neither do we.</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              {[
+                "Dedicated support during sessions",
+                "Fast issue resolution",
+                "Proactive monitoring",
+                "Engineers who understand training workflows"
+              ].map((item, index) => (
+                <div key={index} className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <span className="text-lg text-gray-800 font-medium">{item}</span>
+                </div>
+              ))}
+              
+              <p className="text-lg text-gray-600 italic pt-4 border-t border-gray-200 mt-6">
+                This is managed service, not ticket ping-pong.
+              </p>
+            </div>
+
+            <div className="relative">
+              <img src="/lovable-uploads/da1c17cc-16bf-47be-834a-68e473782db8.png" alt="Support representative helping with setup" className="w-full h-auto rounded-3xl" />
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* The Closer Section */}
       <section className="py-32 bg-white text-gray-900 relative overflow-hidden">
@@ -916,42 +952,6 @@ const Index = () => {
               <span>Predictable pricing</span>
               <span className="w-1 h-1 rounded-full bg-gray-300" />
               <span>Enterprise security</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Support That Actually Shows Up */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Support That Actually Shows Up</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Training doesn't pause when infrastructure breaks — neither do we.</p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              {[
-                "Dedicated support during sessions",
-                "Fast issue resolution",
-                "Proactive monitoring",
-                "Engineers who understand training workflows"
-              ].map((item, index) => (
-                <div key={index} className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-5 h-5 text-purple-600" />
-                  </div>
-                  <span className="text-lg text-gray-800 font-medium">{item}</span>
-                </div>
-              ))}
-              
-              <p className="text-lg text-gray-600 italic pt-4 border-t border-gray-200 mt-6">
-                This is managed service, not ticket ping-pong.
-              </p>
-            </div>
-
-            <div className="relative">
-              <img src="/lovable-uploads/da1c17cc-16bf-47be-834a-68e473782db8.png" alt="Support representative helping with setup" className="w-full h-auto rounded-3xl" />
             </div>
           </div>
         </div>
