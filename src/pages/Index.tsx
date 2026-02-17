@@ -310,9 +310,6 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-orange-500 rounded-3xl blur-sm opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
               <div className="relative bg-gradient-to-br from-gray-950 to-gray-900 rounded-3xl p-10 lg:p-12 h-full flex flex-col justify-between">
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-6">
-                    <Server className="w-7 h-7 text-white" />
-                  </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3 leading-snug">
                     Structured Lab Infrastructure — Engineered for Live Training
                   </h3>
@@ -323,7 +320,7 @@ const Index = () => {
                     CloudAdda provisions isolated, high-performance lab environments built specifically for hands-on IT training delivery — not general-purpose hosting.
                   </p>
                   <p className="text-gray-300 text-sm font-semibold mb-3">Each learner receives:</p>
-                  <ul className="space-y-2 mb-5">
+                  <ul className="space-y-2">
                     {[
                       "A dedicated, sandboxed environment",
                       "Pre-configured tools aligned to your curriculum",
@@ -337,11 +334,6 @@ const Index = () => {
                       </li>
                     ))}
                   </ul>
-                  <div className="space-y-1">
-                    <p className="text-gray-500 text-sm font-medium">No shared chaos.</p>
-                    <p className="text-gray-500 text-sm font-medium">No unmanaged instances.</p>
-                    <p className="text-gray-500 text-sm font-medium">No surprises mid-session.</p>
-                  </div>
                 </div>
                 <div className="flex flex-wrap gap-3 mt-8">
                   {["Linux Labs", "Windows Labs", "Multi-VM Topologies", "GPU Workloads", "Custom Environments"].map((tag) => (
