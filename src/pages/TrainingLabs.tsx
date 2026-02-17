@@ -150,16 +150,16 @@ const TrainingLabs = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* SLA Badges */}
-          <div className="flex flex-wrap justify-center gap-6 mb-12 max-w-3xl mx-auto">
+          {/* SLA Stats */}
+          <div className="flex flex-wrap justify-center gap-10 mb-8">
             {[
-              { value: "99.9%", label: "Uptime Guaranteed" },
-              { value: "24/7", label: "Instant Support" },
-              { value: "<5 min", label: "Lab Setup Time" },
+              { value: "10x", label: "Faster Lab Setup" },
+              { value: "99.9%", label: "Session Uptime" },
+              { value: "<2hr", label: "Avg. Support Response" },
             ].map((sla) => (
-              <div key={sla.label} className="flex flex-col items-center bg-gradient-to-br from-purple-50 to-white border border-purple-100 rounded-2xl px-8 py-5 shadow-sm">
-                <span className="text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">{sla.value}</span>
-                <span className="text-sm text-gray-600 font-medium mt-1">{sla.label}</span>
+              <div key={sla.label} className="flex flex-col items-center">
+                <span className="text-2xl lg:text-3xl font-extrabold bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">{sla.value}</span>
+                <span className="text-xs text-gray-500 font-medium mt-0.5">{sla.label}</span>
               </div>
             ))}
           </div>
