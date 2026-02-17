@@ -118,11 +118,13 @@ const TrainingLabs = () => {
               { title: "Corporate Upskilling", description: "Compliance-ready labs, scalable to 10,000+ users.", icon: Users },
             ].map((useCase, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg p-3.5 hover:shadow-lg transition-all duration-300 min-w-[190px] flex-shrink-0 mx-2">
-                <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mb-2.5">
-                  <useCase.icon className="w-4 h-4 text-purple-600" />
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-6 h-6 bg-purple-100 rounded-md flex items-center justify-center flex-shrink-0">
+                    <useCase.icon className="w-3.5 h-3.5 text-purple-600" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-sm">{useCase.title}</h3>
                 </div>
-                <h3 className="font-bold text-gray-900 text-sm mb-1.5">{useCase.title}</h3>
-                <p className="text-gray-600 text-xs leading-relaxed">{useCase.description}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
               </div>
             ))}
           </div>
@@ -139,11 +141,13 @@ const TrainingLabs = () => {
               { title: "DevOps & Cloud", description: "Kubernetes, Terraform, CI/CD pipelines — production-like environments for hands-on practice.", icon: Code },
             ].map((useCase, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg p-3.5 hover:shadow-lg transition-all duration-300 min-w-[190px] flex-shrink-0 mx-2">
-                <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mb-2.5">
-                  <useCase.icon className="w-4 h-4 text-purple-600" />
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-6 h-6 bg-purple-100 rounded-md flex items-center justify-center flex-shrink-0">
+                    <useCase.icon className="w-3.5 h-3.5 text-purple-600" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-sm">{useCase.title}</h3>
                 </div>
-                <h3 className="font-bold text-gray-900 text-sm mb-1.5">{useCase.title}</h3>
-                <p className="text-gray-600 text-xs leading-relaxed">{useCase.description}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{useCase.description}</p>
               </div>
             ))}
           </div>
