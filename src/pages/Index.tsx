@@ -310,15 +310,38 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-orange-500 rounded-3xl blur-sm opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
               <div className="relative bg-gradient-to-br from-gray-950 to-gray-900 rounded-3xl p-10 lg:p-12 h-full flex flex-col justify-between">
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-8">
-                    <Monitor className="w-7 h-7 text-white" />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-6">
+                    <Server className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-snug">
-                    Ready-to-use cloud desktops & servers — pre-configured for your course.
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3 leading-snug">
+                    Structured Lab Infrastructure — Engineered for Live Training
                   </h3>
-                  <p className="text-gray-400 text-lg leading-relaxed">
-                    Whether it's AWS, Azure, Kubernetes, DevOps, or cybersecurity training — we build the lab environment your curriculum demands. Every student gets an isolated, high-performance workspace from day one.
+                  <p className="text-orange-400/90 text-base font-semibold mb-4">
+                    Every batch. Every learner. Every session.
                   </p>
+                  <p className="text-gray-400 text-base leading-relaxed mb-5">
+                    CloudAdda provisions isolated, high-performance lab environments built specifically for hands-on IT training delivery — not general-purpose hosting.
+                  </p>
+                  <p className="text-gray-300 text-sm font-semibold mb-3">Each learner receives:</p>
+                  <ul className="space-y-2 mb-5">
+                    {[
+                      "A dedicated, sandboxed environment",
+                      "Pre-configured tools aligned to your curriculum",
+                      "Controlled access & resource limits",
+                      "Session-level snapshot & restore",
+                      "Stable performance under peak concurrency"
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-gray-400">
+                        <CheckCircle className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="space-y-1">
+                    <p className="text-gray-500 text-sm font-medium">No shared chaos.</p>
+                    <p className="text-gray-500 text-sm font-medium">No unmanaged instances.</p>
+                    <p className="text-gray-500 text-sm font-medium">No surprises mid-session.</p>
+                  </div>
                 </div>
                 <div className="flex flex-wrap gap-3 mt-8">
                   {["Linux Labs", "Windows Labs", "Multi-VM Topologies", "GPU Workloads", "Custom Environments"].map((tag) => (
@@ -330,40 +353,45 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right: Feature List */}
+            {/* Right: Feature Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {[
                 {
                   icon: Rocket,
-                  title: "Labs in Minutes",
-                  desc: "Spin up 50+ student environments in under 5 minutes. No manual setup, no CLI commands.",
+                  title: "Provision Entire Batches Instantly",
+                  desc: "Deploy 50–500 isolated lab environments in minutes — with identical configurations and zero manual setup.",
+                  footer: "No scripts. No CLI work. No environment drift.",
                   gradient: "from-purple-500 to-purple-600"
                 },
                 {
                   icon: RotateCcw,
-                  title: "Snapshot & Revert",
-                  desc: "Students break things — that's the point. One-click revert brings any lab back to its original state.",
+                  title: "Controlled Snapshot & Recovery",
+                  desc: "One-click snapshot allows instant rollback to a clean state — per student, per batch, without affecting others.",
+                  footer: "Zero disruption.",
                   gradient: "from-blue-500 to-blue-600"
                 },
                 {
                   icon: Shield,
-                  title: "Isolated & Secure",
-                  desc: "Every lab runs in a sandboxed environment. No cross-contamination, no data leaks between batches.",
+                  title: "True Batch Isolation",
+                  desc: "Every learner operates in a secure, sandboxed environment. No cross-session contamination. No shared credentials.",
+                  footer: "No data bleed between cohorts.",
                   gradient: "from-teal-500 to-teal-600"
                 },
                 {
                   icon: BarChart3,
-                  title: "Trainer Dashboard",
-                  desc: "Monitor every student's progress, resource usage, and lab status in real-time from one screen.",
+                  title: "Operational Visibility for Trainers",
+                  desc: "Monitor resource usage, lab status, and learner activity in real-time — from one structured control interface.",
+                  footer: "Intervene when required. Scale when needed. Reset instantly.",
                   gradient: "from-orange-500 to-red-500"
                 }
               ].map((feature) => (
-                <div key={feature.title} className="group bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                <div key={feature.title} className="group bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col">
                   <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <feature.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h4 className="font-bold text-gray-900 mb-2">{feature.title}</h4>
-                  <p className="text-sm text-gray-500 leading-relaxed">{feature.desc}</p>
+                  <h4 className="font-bold text-gray-900 mb-2 text-sm">{feature.title}</h4>
+                  <p className="text-sm text-gray-500 leading-relaxed mb-3">{feature.desc}</p>
+                  <p className="text-xs text-gray-400 font-medium mt-auto">{feature.footer}</p>
                 </div>
               ))}
             </div>
