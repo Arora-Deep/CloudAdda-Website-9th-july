@@ -283,60 +283,46 @@ const Index = () => {
       </section>
 
       {/* What We Do — Virtual Training Labs */}
-      <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
+      <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
         {/* Subtle background accent */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-orange-50 via-purple-50 to-transparent rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/4" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Section Header */}
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-3 py-1 mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-orange-500" />
-              <span className="text-xs font-semibold text-orange-700">Our Core Product</span>
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-4 py-1.5 mb-6">
+              <Sparkles className="w-4 h-4 text-orange-500" />
+              <span className="text-sm font-semibold text-orange-700">Our Core Product</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight mb-3">
-              <span className="text-gray-900">Virtual Training Labs. </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">
+              <span className="text-gray-900">Virtual Training Labs.</span><br />
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Managed End-to-End.</span>
             </h2>
-            <p className="text-sm lg:text-base text-gray-500 max-w-2xl mx-auto">
-              Fully managed lab infrastructure — so trainers can focus on teaching, not troubleshooting.
+            <p className="text-lg lg:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
+              We give training companies a fully managed lab infrastructure — so trainers can focus on teaching, not troubleshooting cloud environments.
             </p>
           </div>
 
           {/* Main Value Prop Grid */}
-          <div className="grid lg:grid-cols-5 gap-5 mb-5">
-            {/* Left: Statement Card - takes 2 cols */}
-            <div className="lg:col-span-2 relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-orange-500 rounded-2xl blur-sm opacity-20" />
-              <div className="relative bg-gradient-to-br from-gray-950 to-gray-900 rounded-2xl p-6 lg:p-7 h-full flex flex-col justify-between">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+            {/* Left: Big Statement Card */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-orange-500 rounded-3xl blur-sm opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
+              <div className="relative bg-gradient-to-br from-gray-950 to-gray-900 rounded-3xl p-10 lg:p-12 h-full flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
-                      <Server className="w-5 h-5 text-white" />
-                    </div>
-                    <p className="text-orange-400/90 text-xs font-semibold">Every batch. Every learner. Every session.</p>
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-8">
+                    <Monitor className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-lg lg:text-xl font-bold text-white mb-3 leading-snug">
-                    Structured Lab Infrastructure — Engineered for Live Training
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-snug">
+                    Ready-to-use cloud desktops & servers — pre-configured for your course.
                   </h3>
-                  <ul className="space-y-1.5 mb-4">
-                    {[
-                      "Dedicated, sandboxed environments",
-                      "Pre-configured tools per curriculum",
-                      "Session-level snapshot & restore",
-                      "Stable performance at peak concurrency"
-                    ].map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-xs text-gray-400">
-                        <CheckCircle className="w-3.5 h-3.5 text-purple-400 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-gray-600 text-xs">No shared chaos · No unmanaged instances · No surprises</p>
+                  <p className="text-gray-400 text-lg leading-relaxed">
+                    Whether it's AWS, Azure, Kubernetes, DevOps, or cybersecurity training — we build the lab environment your curriculum demands. Every student gets an isolated, high-performance workspace from day one.
+                  </p>
                 </div>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {["Linux Labs", "Windows Labs", "Multi-VM", "GPU", "Custom Envs"].map((tag) => (
-                    <span key={tag} className="bg-white/10 text-white/70 text-[10px] px-2.5 py-1 rounded-full border border-white/10">
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {["Linux Labs", "Windows Labs", "Multi-VM Topologies", "GPU Workloads", "Custom Environments"].map((tag) => (
+                    <span key={tag} className="bg-white/10 text-white/80 text-sm px-3 py-1.5 rounded-full border border-white/10">
                       {tag}
                     </span>
                   ))}
@@ -344,48 +330,48 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right: Feature Cards - takes 3 cols, 2x2 grid */}
-            <div className="lg:col-span-3 grid grid-cols-2 gap-3">
+            {/* Right: Feature List */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {[
                 {
                   icon: Rocket,
-                  title: "Batch Provisioning",
-                  desc: "Deploy 50–500 isolated labs in minutes with zero manual setup.",
+                  title: "Labs in Minutes",
+                  desc: "Spin up 50+ student environments in under 5 minutes. No manual setup, no CLI commands.",
                   gradient: "from-purple-500 to-purple-600"
                 },
                 {
                   icon: RotateCcw,
-                  title: "Snapshot & Recovery",
-                  desc: "One-click rollback to clean state — per student, per batch.",
+                  title: "Snapshot & Revert",
+                  desc: "Students break things — that's the point. One-click revert brings any lab back to its original state.",
                   gradient: "from-blue-500 to-blue-600"
                 },
                 {
                   icon: Shield,
-                  title: "True Batch Isolation",
-                  desc: "Secure sandboxed environments. No cross-session contamination.",
+                  title: "Isolated & Secure",
+                  desc: "Every lab runs in a sandboxed environment. No cross-contamination, no data leaks between batches.",
                   gradient: "from-teal-500 to-teal-600"
                 },
                 {
                   icon: BarChart3,
                   title: "Trainer Dashboard",
-                  desc: "Monitor usage, lab status & learner activity in real-time.",
+                  desc: "Monitor every student's progress, resource usage, and lab status in real-time from one screen.",
                   gradient: "from-orange-500 to-red-500"
                 }
               ].map((feature) => (
-                <div key={feature.title} className="group bg-gray-50 hover:bg-white border border-gray-100 rounded-xl p-4 hover:shadow-md transition-all duration-300 flex flex-col">
-                  <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-3`}>
-                    <feature.icon className="w-4 h-4 text-white" />
+                <div key={feature.title} className="group bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <feature.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h4 className="font-bold text-gray-900 mb-1 text-xs">{feature.title}</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed">{feature.desc}</p>
+                  <h4 className="font-bold text-gray-900 mb-2">{feature.title}</h4>
+                  <p className="text-sm text-gray-500 leading-relaxed">{feature.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Bottom Stats Bar */}
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200 py-4 px-6">
-            <div className="grid grid-cols-4 gap-4 text-center">
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl border border-gray-200 p-8 lg:p-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
               {[
                 { value: "50,000+", label: "Labs Deployed" },
                 { value: "200+", label: "Training Partners" },
@@ -393,10 +379,10 @@ const Index = () => {
                 { value: "<5 min", label: "Avg. Setup Time" }
               ].map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-lg lg:text-xl font-extrabold bg-gradient-to-r from-purple-700 to-orange-500 bg-clip-text text-transparent">
+                  <div className="text-2xl lg:text-3xl font-extrabold bg-gradient-to-r from-purple-700 to-orange-500 bg-clip-text text-transparent mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-[10px] lg:text-xs text-gray-500 font-medium">{stat.label}</div>
+                  <div className="text-sm text-gray-500 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
