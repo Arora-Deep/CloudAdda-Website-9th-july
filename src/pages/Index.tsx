@@ -282,8 +282,113 @@ const Index = () => {
         </div>
       </section>
 
+      {/* What We Do — Virtual Training Labs */}
+      <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
+        {/* Subtle background accent */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-orange-50 via-purple-50 to-transparent rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/4" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Section Header */}
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-4 py-1.5 mb-6">
+              <Sparkles className="w-4 h-4 text-orange-500" />
+              <span className="text-sm font-semibold text-orange-700">Our Core Product</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">
+              <span className="text-gray-900">Virtual Training Labs.</span><br />
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Managed End-to-End.</span>
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
+              We give training companies a fully managed lab infrastructure — so trainers can focus on teaching, not troubleshooting cloud environments.
+            </p>
+          </div>
 
+          {/* Main Value Prop Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+            {/* Left: Big Statement Card */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-orange-500 rounded-3xl blur-sm opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
+              <div className="relative bg-gradient-to-br from-gray-950 to-gray-900 rounded-3xl p-10 lg:p-12 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-8">
+                    <Monitor className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-snug">
+                    Ready-to-use cloud desktops & servers — pre-configured for your course.
+                  </h3>
+                  <p className="text-gray-400 text-lg leading-relaxed">
+                    Whether it's AWS, Azure, Kubernetes, DevOps, or cybersecurity training — we build the lab environment your curriculum demands. Every student gets an isolated, high-performance workspace from day one.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {["Linux Labs", "Windows Labs", "Multi-VM Topologies", "GPU Workloads", "Custom Environments"].map((tag) => (
+                    <span key={tag} className="bg-white/10 text-white/80 text-sm px-3 py-1.5 rounded-full border border-white/10">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
 
+            {/* Right: Feature List */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {[
+                {
+                  icon: Rocket,
+                  title: "Labs in Minutes",
+                  desc: "Spin up 50+ student environments in under 5 minutes. No manual setup, no CLI commands.",
+                  gradient: "from-purple-500 to-purple-600"
+                },
+                {
+                  icon: RotateCcw,
+                  title: "Snapshot & Revert",
+                  desc: "Students break things — that's the point. One-click revert brings any lab back to its original state.",
+                  gradient: "from-blue-500 to-blue-600"
+                },
+                {
+                  icon: Shield,
+                  title: "Isolated & Secure",
+                  desc: "Every lab runs in a sandboxed environment. No cross-contamination, no data leaks between batches.",
+                  gradient: "from-teal-500 to-teal-600"
+                },
+                {
+                  icon: BarChart3,
+                  title: "Trainer Dashboard",
+                  desc: "Monitor every student's progress, resource usage, and lab status in real-time from one screen.",
+                  gradient: "from-orange-500 to-red-500"
+                }
+              ].map((feature) => (
+                <div key={feature.title} className="group bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <feature.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h4 className="font-bold text-gray-900 mb-2">{feature.title}</h4>
+                  <p className="text-sm text-gray-500 leading-relaxed">{feature.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom Stats Bar */}
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl border border-gray-200 p-8 lg:p-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+              {[
+                { value: "50,000+", label: "Labs Deployed" },
+                { value: "200+", label: "Training Partners" },
+                { value: "99.9%", label: "Session Uptime" },
+                { value: "<5 min", label: "Avg. Setup Time" }
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-2xl lg:text-3xl font-extrabold bg-gradient-to-r from-purple-700 to-orange-500 bg-clip-text text-transparent mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-500 font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Simple Dashboard. Powerful Control. */}
       <section className="py-24 bg-gradient-to-br from-purple-50 to-blue-50">
