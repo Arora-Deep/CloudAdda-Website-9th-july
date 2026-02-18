@@ -521,33 +521,37 @@ const TrainingLabs = () => {
 
 
       {/* You Don't Get a Portal and a Good Luck */}
-      <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="inline-block text-sm font-bold tracking-widest uppercase text-purple-600 mb-4">Ongoing Support</span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              You Don't Get a Portal and a <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">"Good Luck."</span>
-            </h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto">You get:</p>
-          </div>
+      <section className="py-24 bg-gray-950 text-white relative overflow-hidden">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h40v40H0z\' fill=\'none\' stroke=\'white\' stroke-width=\'.5\'/%3E%3C/svg%3E")' }} />
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 items-start">
+            {/* Left — Bold statement */}
+            <div className="lg:w-2/5 lg:sticky lg:top-32">
+              <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                You Don't Get a Portal and a <span className="text-orange-400">"Good Luck."</span>
+              </h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full mb-6" />
+              <p className="text-gray-400 text-lg leading-relaxed">
+                We don't disappear after provisioning.<br />
+                <span className="text-white font-semibold">We stay operationally accountable.</span>
+              </p>
+            </div>
 
-          <div className="grid sm:grid-cols-2 gap-5 mb-10">
-            {[
-              { num: "01", text: "Real engineers who understand training environments" },
-              { num: "02", text: "Fast response during live sessions" },
-              { num: "03", text: "Help mid-class, not post-mortem" },
-              { num: "04", text: "Infrastructure oversight before issues become visible" }
-            ].map((item) => (
-              <div key={item.num} className="bg-gray-50 border border-gray-100 rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-shadow">
-                <span className="text-2xl font-black bg-gradient-to-br from-purple-600 to-orange-500 bg-clip-text text-transparent leading-none">{item.num}</span>
-                <p className="text-gray-800 font-medium text-base leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center space-y-2">
-            <p className="text-gray-500 text-lg">We don't disappear after provisioning.</p>
-            <p className="text-gray-900 text-xl font-bold">We stay operationally accountable.</p>
+            {/* Right — Stacked cards */}
+            <div className="lg:w-3/5 space-y-4">
+              {[
+                { text: "Real engineers who understand training environments", accent: "border-l-purple-500" },
+                { text: "Fast response during live sessions", accent: "border-l-orange-500" },
+                { text: "Help mid-class, not post-mortem", accent: "border-l-purple-500" },
+                { text: "Infrastructure oversight before issues become visible", accent: "border-l-orange-500" }
+              ].map((item, index) => (
+                <div key={index} className={`border-l-4 ${item.accent} bg-white/[0.04] backdrop-blur-sm rounded-r-xl p-6 hover:bg-white/[0.07] transition-colors`}>
+                  <p className="text-white/90 text-lg font-medium">{item.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
