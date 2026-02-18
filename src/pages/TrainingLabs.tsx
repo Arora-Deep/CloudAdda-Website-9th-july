@@ -520,30 +520,44 @@ const TrainingLabs = () => {
       </section>
 
 
-      {/* The Real Win Section */}
+      {/* You Don't Get a Portal and a Good Luck */}
       <section className="py-24 bg-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h2 className="text-4xl font-bold">Your Focus Belongs on Teaching. We Handle the Chaos.</h2>
+              <h2 className="text-4xl font-bold">You Don't Get a Portal and a "Good Luck."</h2>
               
-              <div className="space-y-6 text-lg">
-                <p>You didn't become a trainer to debug VMs, babysit uptime, or fight network configs.</p>
-                <p>Your magic is in the teaching — helping people grow, switch careers, get certified, master hard things.</p>
-                <p>That's where your time should go. That's what we protect.</p>
-                <p>With CloudAdda, infrastructure fades into the background. You get total peace of mind, super-fast setup, and labs that just work — every single time.</p>
+              <p className="text-xl text-white/80">You get:</p>
+
+              <ul className="space-y-4">
+                {[
+                  "Real engineers who understand training environments",
+                  "Fast response during live sessions",
+                  "Help mid-class, not post-mortem",
+                  "Infrastructure oversight before issues become visible"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
+                    <span className="text-lg text-white/90">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="space-y-2 pt-4 border-t border-white/20">
+                <p className="text-lg text-white/80">We don't disappear after provisioning.</p>
+                <p className="text-lg text-white font-semibold">We stay operationally accountable.</p>
               </div>
 
               <Link to="/contact">
                 <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-4 text-lg">
-                  Experience Effortless Training
+                  Talk to Our Team
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
 
             <div className="relative">
-              <img src="/lovable-uploads/002bd955-500b-4161-945a-cdd484ff0c25.png" alt="Zen-like trainer in peaceful state" className="w-full h-auto rounded-3xl" />
+              <img src="/lovable-uploads/002bd955-500b-4161-945a-cdd484ff0c25.png" alt="CloudAdda support team" className="w-full h-auto rounded-3xl" />
             </div>
           </div>
         </div>
