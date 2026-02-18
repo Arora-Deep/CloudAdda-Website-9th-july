@@ -102,72 +102,14 @@ const Contact = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 via-orange-50 to-blue-50 relative overflow-hidden">
+      {/* Hero + Form Section */}
+      <section className="py-16 bg-gradient-to-br from-purple-50 via-orange-50 to-blue-50 relative overflow-hidden">
         <div className="absolute top-10 right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <Badge className="mb-8 bg-purple-100 text-purple-800 border-purple-200 text-sm font-medium px-4 py-2">
-            <MessageCircle className="w-4 h-4 mr-2" />
-            Let's Connect
-          </Badge>
-          <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-tight tracking-tight text-gray-900">
-            Let's Talk Cloud.
-            <br />
-            <span className="text-orange-600">Or Just Say Hi.</span>
-          </h1>
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-12 h-px bg-purple-600"></div>
-            <Heart className="w-6 h-6 text-orange-500" />
-            <div className="w-12 h-px bg-orange-600"></div>
-          </div>
-          <p className="text-2xl text-gray-600 mb-4 max-w-2xl mx-auto font-light">
-            We're real humans. We love infrastructure. We reply fast.
-          </p>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto">
-            Questions, quotes, confusion — throw it all at us.
-          </p>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-20">
-            {/* Left Side - Message & Contact Info */}
-            <div className="space-y-12">
-              <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-8 leading-tight">
-                  Here's What Happens When You Reach Out:
-                </h2>
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                    <CheckCircle className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
-                    <p className="text-lg text-gray-700 font-medium">We'll understand what you're trying to achieve — no jargon needed.</p>
-                  </div>
-                  <div className="flex items-start space-x-4 p-4 bg-orange-50 rounded-xl border border-orange-100">
-                    <CheckCircle className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
-                    <p className="text-lg text-gray-700 font-medium">You'll get actionable advice, not a sales pitch.</p>
-                  </div>
-                  <div className="flex items-start space-x-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
-                    <CheckCircle className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
-                    <p className="text-lg text-gray-700 font-medium">If needed, we'll set up a quick call or demo.</p>
-                  </div>
-                  <div className="flex items-start space-x-4 p-4 bg-orange-50 rounded-xl border border-orange-100">
-                    <CheckCircle className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
-                    <p className="text-lg text-gray-700 font-medium">You'll walk away knowing exactly what your next step is.</p>
-                  </div>
-                </div>
-                <div className="mt-8 p-6 bg-gradient-to-r from-purple-600 to-orange-600 rounded-2xl text-white">
-                  <p className="text-lg font-medium leading-relaxed">
-                    Whether it's a training lab for 300 students, virtual desktops for your remote team, or blazing-fast VPS — we've got you.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side - Form */}
-            <Card className="bg-white shadow-2xl border-0 rounded-3xl overflow-hidden h-fit">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Side - Form */}
+            <Card className="bg-white shadow-2xl border-0 rounded-3xl overflow-hidden h-fit order-2 lg:order-1">
               <div className="bg-gradient-to-r from-purple-600 to-orange-600 p-8">
                 <CardTitle className="text-3xl font-bold text-white text-center">Talk to Us</CardTitle>
               </div>
@@ -237,10 +179,56 @@ const Contact = () => {
                 </p>
               </CardContent>
             </Card>
-          </div>
 
+            {/* Right Side - Hero Content */}
+            <div className="space-y-8 order-1 lg:order-2 lg:sticky lg:top-28">
+              <Badge className="bg-purple-100 text-purple-800 border-purple-200 text-sm font-medium px-4 py-2">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Let's Connect
+              </Badge>
+              <h1 className="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-gray-900">
+                Ready to Transform
+                <br />
+                <span className="text-orange-600">Your Training?</span>
+              </h1>
+              <p className="text-xl text-gray-600 font-light">
+                We're real humans. We love what we do. We reply fast.
+              </p>
+              <p className="text-lg text-gray-500">
+                Questions, quotes, confusion — throw it all at us.
+              </p>
+
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-gray-900">Here's What Happens Next:</h3>
+                <div className="flex items-start space-x-3 p-3 bg-white/80 rounded-xl border border-purple-100">
+                  <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700">We'll understand what you're trying to achieve — no jargon needed.</p>
+                </div>
+                <div className="flex items-start space-x-3 p-3 bg-white/80 rounded-xl border border-orange-100">
+                  <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700">You'll get actionable advice, not a sales pitch.</p>
+                </div>
+                <div className="flex items-start space-x-3 p-3 bg-white/80 rounded-xl border border-purple-100">
+                  <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700">If needed, we'll set up a quick call or demo.</p>
+                </div>
+              </div>
+
+              <div className="p-5 bg-gradient-to-r from-purple-600 to-orange-600 rounded-2xl text-white">
+                <p className="text-base font-medium leading-relaxed">
+                  Whether it's a training lab for 300 students or a custom solution for your team — we've got you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Contact Info and Bonus Section - Side by Side */}
-          <div className="grid md:grid-cols-2 gap-8 mt-16">
+          <div className="grid md:grid-cols-2 gap-8">
             <Card className="bg-gray-50 border-0 shadow-lg">
               <CardHeader>
                 <CardTitle className="text-xl text-gray-900 flex items-center">
