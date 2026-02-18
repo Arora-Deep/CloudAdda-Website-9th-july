@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, Calendar, User, Share2, BookOpen, Lightbulb, Eye, Heart } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import BlogSidebar from "@/components/BlogSidebar";
 
 const BlogView = () => {
   const { id } = useParams();
@@ -19,8 +18,6 @@ const BlogView = () => {
       date: "Dec 15, 2024",
       author: "CloudAdda Team",
       authorBio: "Cost optimization experts with 15+ years in enterprise training infrastructure",
-      heroImage: "/lovable-uploads/2c2c88a8-7220-4594-bca2-cc4e5f6d6780.png",
-      contentImage: "/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png",
       views: "3.2k",
       likes: "248",
       content: `
@@ -119,7 +116,6 @@ const BlogView = () => {
         <div class="bg-gradient-to-r from-orange-500 to-blue-600 text-white p-8 rounded-2xl my-12 text-center">
           <h3 class="text-2xl font-bold mb-4">Ready to Cut Your Lab Costs?</h3>
           <p class="text-lg mb-6 opacity-90">Get a custom quote and see exactly how much you can save.</p>
-          <button class="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Get a Custom Quote →</button>
         </div>
       `
     },
@@ -131,8 +127,6 @@ const BlogView = () => {
       date: "Dec 12, 2024",
       author: "CloudAdda Team",
       authorBio: "Enterprise transformation specialists with proven track record",
-      heroImage: "/lovable-uploads/2c2c88a8-7220-4594-bca2-cc4e5f6d6780.png",
-      contentImage: "/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png",
       views: "2.8k",
       likes: "189",
       content: `
@@ -145,27 +139,19 @@ const BlogView = () => {
         <ul class="space-y-4 mb-8">
           <li class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-            <div>
-              <strong class="text-gray-900">Frequent laptop failures</strong>
-            </div>
+            <div><strong class="text-gray-900">Frequent laptop failures</strong></div>
           </li>
           <li class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-            <div>
-              <strong class="text-gray-900">Lost hours to crashes, updates, and malware</strong>
-            </div>
+            <div><strong class="text-gray-900">Lost hours to crashes, updates, and malware</strong></div>
           </li>
           <li class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-            <div>
-              <strong class="text-gray-900">A stretched IT team managing dozens of device issues weekly</strong>
-            </div>
+            <div><strong class="text-gray-900">A stretched IT team managing dozens of device issues weekly</strong></div>
           </li>
           <li class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div>
-            <div>
-              <strong class="text-gray-900">An out-of-control ₹35–₹40 lakh/year hardware and licensing budget</strong>
-            </div>
+            <div><strong class="text-gray-900">An out-of-control ₹35–₹40 lakh/year hardware and licensing budget</strong></div>
           </li>
         </ul>
 
@@ -179,31 +165,19 @@ const BlogView = () => {
         <ul class="space-y-4 mb-8">
           <li class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-            <div>
-              <strong class="text-gray-900">No More Laptops:</strong>
-              <span class="text-gray-700"> Agents now log into cloud desktops from simple thin clients or existing machines.</span>
-            </div>
+            <div><strong class="text-gray-900">No More Laptops:</strong><span class="text-gray-700"> Agents now log into cloud desktops from simple thin clients or existing machines.</span></div>
           </li>
           <li class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-            <div>
-              <strong class="text-gray-900">No Local Data:</strong>
-              <span class="text-gray-700"> Everything is secure in the cloud — with backups and snapshots built-in.</span>
-            </div>
+            <div><strong class="text-gray-900">No Local Data:</strong><span class="text-gray-700"> Everything is secure in the cloud — with backups and snapshots built-in.</span></div>
           </li>
           <li class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-            <div>
-              <strong class="text-gray-900">Same-Day Setup:</strong>
-              <span class="text-gray-700"> 200 desktops provisioned and deployed within 3 hours.</span>
-            </div>
+            <div><strong class="text-gray-900">Same-Day Setup:</strong><span class="text-gray-700"> 200 desktops provisioned and deployed within 3 hours.</span></div>
           </li>
           <li class="flex items-start space-x-3">
             <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-            <div>
-              <strong class="text-gray-900">Flat Monthly Cost:</strong>
-              <span class="text-gray-700"> No hardware refreshes, antivirus chaos, or bloated IT budgets.</span>
-            </div>
+            <div><strong class="text-gray-900">Flat Monthly Cost:</strong><span class="text-gray-700"> No hardware refreshes, antivirus chaos, or bloated IT budgets.</span></div>
           </li>
         </ul>
 
@@ -219,26 +193,10 @@ const BlogView = () => {
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-200">
-              <tr>
-                <td class="px-6 py-4 text-sm font-medium text-gray-900">Laptops & Software Licenses</td>
-                <td class="px-6 py-4 text-sm text-red-600">₹28L/year</td>
-                <td class="px-6 py-4 text-sm text-green-600">₹0 (thin clients used)</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-4 text-sm font-medium text-gray-900">IT Management Overhead</td>
-                <td class="px-6 py-4 text-sm text-red-600">₹10L/year</td>
-                <td class="px-6 py-4 text-sm text-green-600">₹4L/year</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-4 text-sm font-medium text-gray-900">Downtime & Security Losses</td>
-                <td class="px-6 py-4 text-sm text-red-600">₹6L/year</td>
-                <td class="px-6 py-4 text-sm text-green-600">₹0</td>
-              </tr>
-              <tr class="bg-yellow-50">
-                <td class="px-6 py-4 text-sm font-bold text-gray-900">Total Spend</td>
-                <td class="px-6 py-4 text-sm font-bold text-red-600">₹44L/year</td>
-                <td class="px-6 py-4 text-sm font-bold text-green-600">₹24L/year</td>
-              </tr>
+              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Laptops & Software Licenses</td><td class="px-6 py-4 text-sm text-red-600">₹28L/year</td><td class="px-6 py-4 text-sm text-green-600">₹0 (thin clients used)</td></tr>
+              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">IT Management Overhead</td><td class="px-6 py-4 text-sm text-red-600">₹10L/year</td><td class="px-6 py-4 text-sm text-green-600">₹4L/year</td></tr>
+              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Downtime & Security Losses</td><td class="px-6 py-4 text-sm text-red-600">₹6L/year</td><td class="px-6 py-4 text-sm text-green-600">₹0</td></tr>
+              <tr class="bg-yellow-50"><td class="px-6 py-4 text-sm font-bold text-gray-900">Total Spend</td><td class="px-6 py-4 text-sm font-bold text-red-600">₹44L/year</td><td class="px-6 py-4 text-sm font-bold text-green-600">₹24L/year</td></tr>
             </tbody>
           </table>
         </div>
@@ -263,56 +221,15 @@ const BlogView = () => {
         <div class="grid md:grid-cols-2 gap-6 my-8">
           <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
             <ul class="space-y-3">
-              <li class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span class="text-gray-700">98.7% agent uptime</span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span class="text-gray-700">Just 1 IT manager for 200 agents</span>
-              </li>
+              <li class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">98.7% agent uptime</span></li>
+              <li class="flex items-center space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span class="text-gray-700">Just 1 IT manager for 200 agents</span></li>
             </ul>
           </div>
           <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl">
             <ul class="space-y-3">
-              <li class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-                <span class="text-gray-700">Zero data loss or malware since the switch</span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-pink-500 rounded-full"></div>
-                <span class="text-gray-700">Better compliance, smoother audits</span>
-              </li>
+              <li class="flex items-center space-x-3"><div class="w-2 h-2 bg-purple-500 rounded-full"></div><span class="text-gray-700">Zero data loss or malware since the switch</span></li>
+              <li class="flex items-center space-x-3"><div class="w-2 h-2 bg-pink-500 rounded-full"></div><span class="text-gray-700">Better compliance, smoother audits</span></li>
             </ul>
-          </div>
-        </div>
-
-        <h2 id="heading-5" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🧲 Why This Matters for Your Business</h2>
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">Whether you're running a BPO, healthcare back office, or remote sales desk, your desktop doesn't need to live on a laptop.</p>
-
-        <div class="bg-gradient-to-r from-cyan-50 to-blue-50 p-8 rounded-2xl my-10">
-          <h3 class="text-xl font-bold text-gray-900 mb-4">CloudAdda Cloud Desktops give you:</h3>
-          <ul class="space-y-3">
-            <li class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-cyan-500 rounded-full"></div>
-              <span class="text-gray-700">✅ Predictable monthly pricing</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span class="text-gray-700">✅ Role-based configurations (2-core to 8-core+)</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-              <span class="text-gray-700">✅ Lightning-fast deployment and real human support</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-gradient-to-r from-orange-500 to-blue-600 text-white p-8 rounded-2xl my-12 text-center">
-          <h3 class="text-2xl font-bold mb-4">Ready to Transform Your Business?</h3>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">👉 Book a Free Demo for Your Team</button>
-            <button class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">👉 Explore Role-Based Plans</button>
           </div>
         </div>
       `
@@ -325,8 +242,6 @@ const BlogView = () => {
       date: "Dec 10, 2024",
       author: "CloudAdda Team",
       authorBio: "Future of work technology analysts and DaaS implementation experts",
-      heroImage: "/lovable-uploads/2c2c88a8-7220-4594-bca2-cc4e5f6d6780.png",
-      contentImage: "/lovable-uploads/1fc1b438-cdbd-423b-a581-fed76e12ae99.png",
       views: "2.1k",
       likes: "167",
       content: `
@@ -356,7 +271,7 @@ const BlogView = () => {
         <div class="grid md:grid-cols-2 gap-6 my-8">
           <div class="bg-blue-50 p-6 rounded-xl">
             <h4 class="font-semibold text-blue-900 mb-3">🖥 Productivity from Any Device</h4>
-            <p class="text-blue-800">Laptop stolen? Log in from your phone, tablet, or another machine. You're back in seconds. Your entire desktop lives in the cloud — untouched, uninterrupted.</p>
+            <p class="text-blue-800">Laptop stolen? Log in from your phone, tablet, or another machine. You're back in seconds.</p>
           </div>
           <div class="bg-green-50 p-6 rounded-xl">
             <h4 class="font-semibold text-green-900 mb-3">⚡ Instant Setup</h4>
@@ -364,11 +279,11 @@ const BlogView = () => {
           </div>
           <div class="bg-purple-50 p-6 rounded-xl">
             <h4 class="font-semibold text-purple-900 mb-3">🔐 Built-In Security</h4>
-            <p class="text-purple-800">Your data never touches local machines. End-to-end encryption, access controls, full audit trails. Security and compliance? Handled by design.</p>
+            <p class="text-purple-800">Your data never touches local machines. End-to-end encryption, access controls, full audit trails.</p>
           </div>
           <div class="bg-orange-50 p-6 rounded-xl">
-            <h4 class="font-semibold text-orange-900 mb-3">💸 Predictable Cost, No Surprise Breakdowns</h4>
-            <p class="text-orange-800">No CapEx. No surprise repair bills. Just one flat, scalable monthly cost — no matter how many desktops you spin up.</p>
+            <h4 class="font-semibold text-orange-900 mb-3">💸 Predictable Cost</h4>
+            <p class="text-orange-800">No CapEx. No surprise repair bills. Just one flat, scalable monthly cost.</p>
           </div>
         </div>
 
@@ -376,66 +291,24 @@ const BlogView = () => {
         
         <div class="bg-gradient-to-r from-gray-50 to-blue-50 p-8 rounded-2xl my-10">
           <ul class="space-y-4">
-            <li class="flex items-start space-x-3">
-              <div class="w-2 h-2 bg-gray-500 rounded-full mt-3 flex-shrink-0"></div>
-              <div>
-                <strong class="text-gray-900">Entry-level staff?</strong>
-                <span class="text-gray-700"> 2-core lightweight machines.</span>
-              </div>
-            </li>
-            <li class="flex items-start space-x-3">
-              <div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
-              <div>
-                <strong class="text-gray-900">Designers & Devs?</strong>
-                <span class="text-gray-700"> 8-core beasts with NVMe power.</span>
-              </div>
-            </li>
-            <li class="flex items-start space-x-3">
-              <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-              <div>
-                <strong class="text-gray-900">Finance, Ops, CX?</strong>
-                <span class="text-gray-700"> Tailored setups that match the workload.</span>
-              </div>
-            </li>
+            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-gray-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Entry-level staff?</strong><span class="text-gray-700"> 2-core lightweight machines.</span></div></li>
+            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Designers & Devs?</strong><span class="text-gray-700"> 8-core beasts with NVMe power.</span></div></li>
+            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Finance, Ops, CX?</strong><span class="text-gray-700"> Tailored setups that match the workload.</span></div></li>
           </ul>
         </div>
 
         <h2 id="heading-7" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🌐 Who's Already Making the Switch?</h2>
         
         <ul class="space-y-4 mb-8">
-          <li class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-purple-500 rounded-full mt-3 flex-shrink-0"></div>
-            <span class="text-gray-700">Developers running full-stack apps with Docker, Postgres, and Kubernetes</span>
-          </li>
-          <li class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div>
-            <span class="text-gray-700">Call centers scaling from 50 to 1,000 agents without lifting a laptop</span>
-          </li>
-          <li class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-            <span class="text-gray-700">Healthcare teams delivering care with HIPAA-grade compliance</span>
-          </li>
-          <li class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-orange-500 rounded-full mt-3 flex-shrink-0"></div>
-            <span class="text-gray-700">Remote-first startups with global teams working on unified cloud desktops</span>
-          </li>
-          <li class="flex items-start space-x-3">
-            <div class="w-2 h-2 bg-pink-500 rounded-full mt-3 flex-shrink-0"></div>
-            <span class="text-gray-700">Designers & CX teams collaborating in real time, without lag</span>
-          </li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-purple-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Developers running full-stack apps with Docker, Postgres, and Kubernetes</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Call centers scaling from 50 to 1,000 agents without lifting a laptop</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Healthcare teams delivering care with HIPAA-grade compliance</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-orange-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Remote-first startups with global teams working on unified cloud desktops</span></li>
         </ul>
 
         <h2 id="heading-8" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🧠 Final Thought: Your Next Desktop Isn't a Laptop</h2>
         <p class="text-lg leading-relaxed text-gray-700 mb-6">It's fast. It's secure. It's always with you. It runs on CloudAdda — powered by AMD EPYC, NVMe, and enterprise-grade reliability.</p>
         <p class="text-lg leading-relaxed text-gray-700 mb-8">💡 The future of work isn't carried in a backpack. It's floating securely in the cloud — ready whenever, wherever, however you work.</p>
-
-        <div class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white p-8 rounded-2xl my-12 text-center">
-          <h3 class="text-2xl font-bold mb-4">Ready to Make the Switch?</h3>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="bg-white text-cyan-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">👉 Launch a Cloud Desktop Today</button>
-            <button class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition-colors">👉 Explore Role-Based Pricing</button>
-          </div>
-        </div>
       `
     }
   };
@@ -443,32 +316,19 @@ const BlogView = () => {
   const post = posts[id as keyof typeof posts] || posts["training-lab-costs"];
 
   useEffect(() => {
-    // Smooth scroll behavior for anchor links
-    const handleAnchorClick = (e: Event) => {
-      const target = e.target as HTMLAnchorElement;
-      if (target.hash) {
-        e.preventDefault();
-        const element = document.querySelector(target.hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    };
-
-    document.addEventListener('click', handleAnchorClick);
-    return () => document.removeEventListener('click', handleAnchorClick);
-  }, []);
+    window.scrollTo(0, 0);
+  }, [id]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
-              <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-16 w-auto object-contain" />
+              <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-12 w-auto object-contain" />
             </Link>
-            <Link to="/trainer-adda" className="flex items-center space-x-2 text-orange-500 hover:text-orange-600 transition-colors">
+            <Link to="/trainer-adda" className="flex items-center space-x-2 text-orange-500 hover:text-orange-600 transition-colors text-sm font-medium">
               <ArrowLeft className="w-4 h-4" />
               Back to Resources
             </Link>
@@ -476,103 +336,44 @@ const BlogView = () => {
         </div>
       </nav>
 
-      {/* Hero Image */}
-      <div className="w-full h-96 relative overflow-hidden">
-        <img 
-          src={post.heroImage} 
-          alt={post.title}
-          className="w-full h-full object-cover"
+      {/* Article */}
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Meta */}
+        <div className="flex items-center gap-3 mb-6">
+          <Badge variant="outline" className="text-xs uppercase tracking-wide">{post.category}</Badge>
+          <span className="text-sm text-gray-500 flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{post.readTime}</span>
+          <span className="text-sm text-gray-500">{post.date}</span>
+        </div>
+
+        <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">{post.title}</h1>
+        <p className="text-lg text-gray-600 mb-8">{post.description}</p>
+
+        <div className="flex items-center gap-3 pb-8 mb-8 border-b border-gray-200">
+          <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+            <User className="w-5 h-5 text-white" />
+          </div>
+          <div>
+            <div className="font-medium text-gray-900 text-sm">{post.author}</div>
+            <div className="text-xs text-gray-500">{post.authorBio}</div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div 
+          className="prose prose-lg max-w-none"
+          dangerouslySetInnerHTML={{ __html: post.content }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
-        {/* Header Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-          <div className="flex flex-wrap items-center gap-4 mb-6">
-            <Badge className="bg-orange-500 text-white px-4 py-2 text-sm font-medium">
-              <Lightbulb className="w-3 h-3 mr-1" />
-              {post.category}
-            </Badge>
-            <div className="flex items-center text-gray-600 space-x-4">
-              <div className="flex items-center">
-                <Clock className="w-4 h-4 mr-1" />
-                {post.readTime}
-              </div>
-              <div className="flex items-center">
-                <Eye className="w-4 h-4 mr-1" />
-                {post.views} views
-              </div>
-              <div className="flex items-center">
-                <Heart className="w-4 h-4 mr-1" />
-                {post.likes} likes
-              </div>
-            </div>
-          </div>
-          
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">{post.title}</h1>
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">{post.description}</p>
-          
-          <div className="flex items-center justify-between border-t border-gray-200 pt-6">
-            <div className="flex items-center space-x-4">
-              <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full flex items-center justify-center">
-                <User className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-gray-900 text-lg">{post.author}</div>
-                <div className="text-sm text-gray-600">{post.authorBio}</div>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4 text-gray-600">
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-1" />
-                {post.date}
-              </div>
-              <Button variant="ghost" size="sm" className="text-gray-600 hover:text-orange-500">
-                <Share2 className="w-4 h-4 mr-1" />
-                Share
-              </Button>
-            </div>
-          </div>
+        {/* Bottom CTA */}
+        <div className="mt-16 pt-8 border-t border-gray-200 text-center">
+          <p className="text-gray-600 mb-4">Want to learn more about how CloudAdda can help?</p>
+          <Link to="/contact">
+            <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8">
+              Get in Touch
+            </Button>
+          </Link>
         </div>
-
-        {/* Main Content with Sidebar */}
-        <div className="flex gap-8 pb-12">
-          {/* Content - Much Wider */}
-          <article className="flex-1 max-w-5xl">
-            <div className="bg-white rounded-2xl shadow-lg p-12">
-              <div 
-                className="prose prose-lg max-w-none"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-            </div>
-
-            {/* CTA Footer */}
-            <footer className="bg-gradient-to-r from-orange-500 to-blue-600 rounded-2xl p-12 text-white text-center mt-12">
-              <BookOpen className="w-12 h-12 text-white mx-auto mb-4"  />
-              <h3 className="text-3xl font-bold mb-4">Ready to Optimize Your Infrastructure?</h3>
-              <p className="text-xl mb-8 opacity-90">
-                Get the infrastructure and resources you need to deliver world-class services.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 font-semibold">
-                  Start Free Trial
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Explore More Resources
-                </Button>
-              </div>
-            </footer>
-          </article>
-
-          {/* Right Sidebar - Social & CTA */}
-          <div className="w-64 flex-shrink-0">
-            <div className="sticky top-24">
-              <BlogSidebar content={post.content} showOnlyActions={true} />
-            </div>
-          </div>
-        </div>
-      </div>
+      </article>
     </div>
   );
 };
