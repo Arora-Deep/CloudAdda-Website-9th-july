@@ -34,27 +34,7 @@ const ResponsiveNavigation = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
-                    Solutions
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="min-w-[400px] p-0 bg-white border border-gray-200 shadow-lg rounded-lg z-50">
-                    <div className="grid gap-0 p-0 w-[400px] lg:w-[500px] lg:grid-cols-1">
-                      <NavigationMenuLink asChild>
-                        <Link to="/training-labs" className="block select-none space-y-1 rounded-none p-4 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 border-b border-gray-100">
-                          <div className="text-sm font-medium leading-none text-gray-900">Training Labs</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-gray-600">
-                            Provisioned lab environments for training companies
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            <Link to="/training-labs" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</Link>
             <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
             <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
             <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
