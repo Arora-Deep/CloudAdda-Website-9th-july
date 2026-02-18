@@ -35,27 +35,7 @@ const Pricing = () => {
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
-                <NavigationMenu>
-                  <NavigationMenuList>
-                    <NavigationMenuItem>
-                      <NavigationMenuTrigger className="text-gray-700 hover:text-orange-500 transition-colors bg-transparent">
-                        Solutions
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-1">
-                          <NavigationMenuLink asChild>
-                            <Link to="/training-labs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="text-sm font-medium leading-none">Training Labs</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                Provisioned lab environments for training companies
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </div>
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  </NavigationMenuList>
-                </NavigationMenu>
+                <Link to="/training-labs" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</Link>
                 <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
                 <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
                 <Link to="/pricing" className="text-orange-500 font-medium">Pricing</Link>
@@ -85,7 +65,7 @@ const Pricing = () => {
                 top: 0,
                 behavior: 'smooth'
               })}>
-                  <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6">
+                  <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full px-6">
                     Contact Us
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
