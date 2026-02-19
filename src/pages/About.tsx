@@ -2,12 +2,13 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { ArrowRight, Users, Target, Heart, Shield, Globe, Zap, Lightbulb, Handshake, Building, Eye, ChevronDown } from "lucide-react";
+import { ArrowRight, Users, Target, Heart, Shield, Globe, Zap, Lightbulb, Handshake, Eye, ChevronDown, GraduationCap, Headphones, MonitorPlay } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const About = () => {
-  return <div className="min-h-screen bg-background">
+  return (
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,108 +57,101 @@ const About = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-orange-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
               <div className="inline-block mb-8">
                 <Badge className="mb-4 bg-purple-100 text-purple-800 border-purple-200 text-sm font-medium px-4 py-2">
-                  Revolutionizing Infrastructure
+                  The Team Behind Your Training Labs
                 </Badge>
               </div>
-              <h1 className="text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
-                We're
+              <h1 className="text-6xl lg:text-7xl font-black mb-8 leading-[0.9] tracking-tight">
+                We Make
                 <br />
-                <span className="text-purple-600 relative">
-                  Revolutionizing
-                  <div className="absolute -bottom-4 left-0 w-full h-1 bg-orange-500 transform -rotate-1"></div>
+                <span className="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">
+                  Training Labs
                 </span>
                 <br />
-                Cloud Infrastructure
+                <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                  Just Work.
+                </span>
               </h1>
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-px bg-purple-600"></div>
-                <div className="text-2xl font-bold text-foreground">Simple. Scalable. Human.</div>
+                <div className="text-2xl font-bold text-foreground">Your Extended IT Arm for Training.</div>
               </div>
               <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
-                CloudAdda was born from a simple idea: cloud infrastructure should be fast, flexible, 
-                and refreshingly easy to use — for everyone, everywhere.
+                CloudAdda exists for one reason — so trainers can focus on teaching, not troubleshooting infrastructure. We manage the labs. You deliver the training.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 group">
-                  <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                  Join the Mission
-                </Button>
+                <Link to="/contact">
+                  <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white group">
+                    <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                    Talk to Us
+                  </Button>
+                </Link>
+                <Link to="/training-labs">
+                  <Button size="lg" variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50">
+                    See How It Works
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="lg:col-span-5">
               <div className="relative flex justify-center">
-                <img src="/lovable-uploads/dc9c54ab-5975-48cf-93e2-b4f1f2327553.png" alt="CloudAdda Hero - VR Tech Innovation" className="w-full max-w-md h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300" />
+                <img src="/lovable-uploads/dc9c54ab-5975-48cf-93e2-b4f1f2327553.png" alt="CloudAdda Team" className="w-full max-w-md h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission Statement with Unique Typography */}
-      <section className="py-24 bg-purple-600 text-white relative">
+      {/* Mission Statement */}
+      <section className="py-24 bg-gray-950 text-white relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl lg:text-6xl font-black mb-8 leading-tight">
-            We're not just building
+          <h2 className="text-4xl lg:text-5xl font-black mb-8 leading-tight">
+            We don't do trainings.
             <br />
-            <span className="text-orange-400">cloud products.</span>
+            <span className="text-orange-400">We support them.</span>
           </h2>
           <div className="w-24 h-1 bg-orange-400 mx-auto mb-8"></div>
-          <p className="text-2xl leading-relaxed max-w-4xl mx-auto font-light">
-            We're building a world where anyone — from a solo creator to a 500-seat enterprise — 
-            can launch powerful infrastructure without the headaches.
+          <p className="text-xl leading-relaxed max-w-4xl mx-auto font-light text-gray-300">
+            We are your extended IT arm — here to help and support your training, not compete with you like other virtual lab providers. From provisioning to post-session cleanup, we handle it all so you never have to worry about labs again.
           </p>
         </div>
       </section>
 
-      {/* Trust Stats with Unique Grid */}
+      {/* Trust Stats */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-orange-100 text-orange-800 border-orange-200">
-              <Globe className="w-4 h-4 mr-2" />
-              Trusted by Thousands, Loved Across the Globe
+              <GraduationCap className="w-4 h-4 mr-2" />
+              Trusted by Training Teams Everywhere
             </Badge>
             <h2 className="text-4xl font-bold text-foreground">The Numbers Tell Our Story</h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {[{
-            icon: Users,
-            number: "1,000+",
-            label: "Teams Empowered",
-            color: "purple",
-            delay: "0ms"
-          }, {
-            icon: Globe,
-            number: "15+",
-            label: "Cities Served",
-            color: "orange",
-            delay: "200ms"
-          }, {
-            icon: Zap,
-            number: "99.98%",
-            label: "Uptime Guarantee",
-            color: "purple",
-            delay: "400ms"
-          }].map((stat, index) => <div key={index} className="text-center group" style={{
-            animationDelay: stat.delay
-          }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: Users, number: "1,000+", label: "Trainers Supported", color: "purple" },
+              { icon: MonitorPlay, number: "50,000+", label: "Lab Sessions Delivered", color: "orange" },
+              { icon: Zap, number: "99.9%", label: "Uptime Guarantee", color: "purple" },
+              { icon: Headphones, number: "24/7", label: "Live Engineer Support", color: "orange" },
+            ].map((stat, index) => (
+              <div key={index} className="text-center group">
                 <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-all duration-300 ${stat.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'}`}>
                   <stat.icon className="w-10 h-10 text-white" />
                 </div>
                 <div className="text-4xl font-black mb-2 text-foreground">{stat.number}</div>
                 <div className="text-muted-foreground font-medium">{stat.label}</div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Origin Story with Split Layout */}
+      {/* Origin Story */}
       <section className="py-24 bg-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -167,27 +161,26 @@ const About = () => {
                 Our Origin Story
               </Badge>
               <h2 className="text-5xl font-bold text-foreground mb-8 leading-tight">
-                From <span className="text-orange-600">"Why is this so hard?"</span>
+                From <span className="text-orange-600">"Why do labs always break?"</span>
                 <br />
-                to <span className="text-purple-600">"This just works."</span>
+                to <span className="text-purple-600">"They just work now."</span>
               </h2>
               <div className="space-y-8 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  Our founders — engineers from some of the world's top tech companies — were tired. 
-                  Tired of spending weeks setting up dev environments. Tired of costly cloud platforms 
-                  wrapped in complexity.
+                  Our founders saw the same problem over and over — trainers wasting hours fighting unstable lab environments, 
+                  dealing with slow provisioning, and getting zero support when things went wrong mid-session.
                 </p>
                 <div className="bg-white p-8 rounded-2xl border-l-4 border-purple-500 shadow-sm">
                   <p className="text-foreground font-bold text-2xl mb-4">
-                    "What if spinning up cloud infrastructure was as easy as ordering a coffee?"
+                    "What if trainers never had to think about infrastructure again?"
                   </p>
-                  <p className="text-muted-foreground italic">And CloudAdda was born.</p>
+                  <p className="text-muted-foreground italic">That question became CloudAdda.</p>
                 </div>
                 <p>
-                  Today, we power cloud desktops, VPS hosting, and custom training labs for companies 
-                  across the world — from nimble startups in Bangalore to enterprise teams in Silicon Valley.
+                  Today, we power managed virtual training labs for IT trainers and corporate training teams 
+                  across India and beyond — handling everything from provisioning to post-session cleanup.
                 </p>
-                <p className="font-bold text-foreground text-xl">And we're just getting started.</p>
+                <p className="font-bold text-foreground text-xl">We don't just provide labs. We run them for you.</p>
               </div>
             </div>
             <div className="relative">
@@ -203,7 +196,7 @@ const About = () => {
                   </div>
                   <div>
                     <div className="text-6xl font-black text-orange-600 mb-2">2025</div>
-                    <div className="text-xl font-semibold text-foreground">Revolutionizing Infrastructure</div>
+                    <div className="text-xl font-semibold text-foreground">India's Managed Training Lab Platform</div>
                   </div>
                 </div>
               </div>
@@ -212,51 +205,57 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values Section with Staggered Cards */}
+      {/* Values Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold text-foreground mb-6">What Drives Us</h2>
             <div className="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              These values shape every decision, every product, and every customer conversation.
+              These values shape how we build, support, and partner with every training team.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[{
-            icon: Zap,
-            title: "Innovation That Matters",
-            description: "We don't build features. We build breakthroughs. We chase the ideas that move the industry forward.",
-            color: "purple"
-          }, {
-            icon: Heart,
-            title: "Obsession with Customer Success",
-            description: "From onboarding to support — we're in your corner. We don't sleep until your cloud setup works like magic.",
-            color: "orange"
-          }, {
-            icon: Shield,
-            title: "Built on Trust",
-            description: "No fine print. No lock-ins. No shady upsells. Just transparency, reliability, and integrity at every step.",
-            color: "purple"
-          }, {
-            icon: Target,
-            title: "Speed with Simplicity",
-            description: "Complex infrastructure, made beautifully simple. The way cloud was always meant to be.",
-            color: "orange"
-          }, {
-            icon: Globe,
-            title: "Global, But Personal",
-            description: "We're proudly built in India, trusted everywhere. Wherever you are, CloudAdda feels close.",
-            color: "purple"
-          }, {
-            icon: Users,
-            title: "Great People. Greater Work.",
-            description: "We hire smart, trust deeply, and empower people to do their best work ever. The result? A team that loves what they build — and it shows.",
-            color: "orange"
-          }].map((value, index) => <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2" style={{
-            animationDelay: `${index * 100}ms`
-          }}>
+            {[
+              {
+                icon: Handshake,
+                title: "Partnership, Not Just a Platform",
+                description: "We don't hand you a portal and say 'good luck.' We work alongside your team as your extended IT arm.",
+                color: "purple",
+              },
+              {
+                icon: Heart,
+                title: "Obsessed with Trainer Success",
+                description: "Every feature we build, every process we design, is to make trainers' lives easier. Your session success is our metric.",
+                color: "orange",
+              },
+              {
+                icon: Shield,
+                title: "Reliability You Can Count On",
+                description: "99.9% uptime isn't a marketing number — it's a promise. Labs that crash mid-session are unacceptable to us.",
+                color: "purple",
+              },
+              {
+                icon: Zap,
+                title: "Speed Without Compromise",
+                description: "Labs provisioned in minutes, not hours. Support that responds instantly, not after a ticket queue.",
+                color: "orange",
+              },
+              {
+                icon: Globe,
+                title: "Built in India, Trusted Everywhere",
+                description: "Proudly Indian, serving training teams globally. Local understanding with world-class infrastructure.",
+                color: "purple",
+              },
+              {
+                icon: Users,
+                title: "Real Engineers, Real Support",
+                description: "No ticket ping-pong. Our engineers understand training workflows and jump in when things need fixing — even mid-class.",
+                color: "orange",
+              },
+            ].map((value, index) => (
+              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
                 <CardHeader className="text-center pb-4">
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform duration-300 ${value.color === 'purple' ? 'bg-purple-500' : 'bg-orange-500'}`}>
                     <value.icon className="w-8 h-8 text-white" />
@@ -268,35 +267,42 @@ const About = () => {
                     {value.description}
                   </p>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section with Diagonal Layout */}
+      {/* CTA Section */}
       <section className="py-24 bg-purple-600 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full -translate-y-32 translate-x-32 opacity-10"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-500 rounded-full translate-y-24 -translate-x-24 opacity-10"></div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <Badge className="mb-8 bg-white/20 text-white border-white/30">
             <Handshake className="w-4 h-4 mr-2" />
-            Want to Work With Us?
+            Let's Work Together
           </Badge>
-          <h2 className="text-5xl font-bold mb-8">Ready to Join Our Mission?</h2>
+          <h2 className="text-5xl font-bold mb-8">Ready to Stop Fighting Lab Infrastructure?</h2>
           <p className="text-xl text-white/90 mb-12 leading-relaxed max-w-4xl mx-auto">
-            Whether you're a company ready to migrate, a partner looking to collaborate, 
-            or someone who wants to join the CloudAdda journey — let's talk.
+            Whether you're a solo trainer running weekend batches or an enterprise team delivering 50+ sessions a month — we'll make your labs run flawlessly.
           </p>
-          <div className="flex justify-center">
-            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 group">
-              <Heart className="w-5 h-5 mr-2 group-hover:scale-125 transition-transform" />
-              Say Hello
-            </Button>
+          <div className="flex justify-center gap-4">
+            <Link to="/contact">
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white group">
+                <Heart className="w-5 h-5 mr-2 group-hover:scale-125 transition-transform" />
+                Get Started
+              </Button>
+            </Link>
+            <Link to="/training-labs">
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+                Explore the Platform
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Vision Section with Centered Focus */}
+      {/* Vision Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="w-24 h-24 bg-orange-500 rounded-3xl flex items-center justify-center mx-auto mb-8 transform hover:rotate-12 transition-transform duration-500">
@@ -305,8 +311,7 @@ const About = () => {
           <h2 className="text-5xl font-bold text-foreground mb-8">Our Vision</h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
           <p className="text-2xl text-muted-foreground leading-relaxed font-light">
-            To become the simplest, most loved cloud platform in the world — one that powers 
-            everything from dev environments to entire digital businesses.
+            To become the most trusted managed training lab platform — where every trainer, everywhere, can deliver flawless hands-on sessions without ever worrying about infrastructure.
           </p>
         </div>
       </section>
@@ -318,16 +323,15 @@ const About = () => {
             <div className="space-y-4">
               <Link to="/" className="flex items-center space-x-2">
                 <img src="/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" alt="CloudAdda Logo" className="h-8 w-auto" />
-                
               </Link>
               <p className="text-muted-foreground">
-                Simple. Scalable. Human. Infrastructure that just works.
+                Managed Virtual Training Labs. We handle the infrastructure, you deliver the training.
               </p>
             </div>
             <div>
-              
+              <h3 className="font-semibold mb-4 text-foreground">Solutions</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/training-labs" className="hover:text-foreground transition-colors">Training Labs</Link></li>
+                <li><Link to="/training-labs" className="hover:text-foreground transition-colors">Virtual Training Labs</Link></li>
               </ul>
             </div>
             <div>
@@ -342,13 +346,15 @@ const About = () => {
               <h3 className="font-semibold mb-4 text-foreground">Support</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li><Link to="/support" className="hover:text-foreground transition-colors">Help Center</Link></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Documentation</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Status</a></li>
+                <li><Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link></li>
               </ul>
             </div>
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default About;
