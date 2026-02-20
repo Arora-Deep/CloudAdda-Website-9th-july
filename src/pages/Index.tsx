@@ -271,9 +271,9 @@ const Index = () => {
                 icon: Rocket,
                 title: "Instant Provisioning",
                 desc: "Spin up labs for your entire class in minutes, not hours.",
-                hoverStat: "1-Click",
-                hoverLabel: "Lab Deployment",
-                hoverDetail: "Request labs, we handle the rest — provisioned, configured, and ready before your session starts.",
+                hoverStat: "500+",
+                hoverLabel: "Labs Deployed at Once",
+                hoverDetail: "Massive parallel provisioning — spin up hundreds of lab environments simultaneously for even the largest training batches.",
                 rowSpan: false,
               },
               {
