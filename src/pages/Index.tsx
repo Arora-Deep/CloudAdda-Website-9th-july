@@ -239,45 +239,74 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto auto-rows-[200px]">
-            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
-                <Gauge className="w-6 h-6" />
-              </div>
-              <h3 className="text-base font-bold text-white mb-1">Stable Performance</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">Live lab environments that stay responsive under peak student load.</p>
-            </div>
+            {[
+              {
+                icon: Gauge,
+                title: "Stable Performance",
+                desc: "Live lab environments that stay responsive under peak student load.",
+                hoverStat: "99.9%",
+                hoverLabel: "Session Uptime SLA",
+                hoverDetail: "Engineered for zero lag — even with 500+ concurrent users.",
+                rowSpan: false,
+              },
+              {
+                icon: Shield,
+                title: "Zero Session Crashes",
+                desc: "Auto-failover and real-time monitoring ensure uninterrupted training sessions every time.",
+                hoverStat: "0",
+                hoverLabel: "Mid-Session Failures",
+                hoverDetail: "Real-time health checks, instant failover, and automatic session recovery — so no student ever loses progress.",
+                rowSpan: true,
+              },
+              {
+                icon: Users,
+                title: "Batch Isolation",
+                desc: "Every batch runs in its own isolated environment with zero cross-contamination.",
+                hoverStat: "100%",
+                hoverLabel: "Environment Isolation",
+                hoverDetail: "Dedicated compute, storage, and networking per batch — no noisy neighbors, ever.",
+                rowSpan: false,
+              },
+              {
+                icon: Rocket,
+                title: "Instant Provisioning",
+                desc: "Spin up labs for your entire class in minutes, not hours.",
+                hoverStat: "<5 min",
+                hoverLabel: "Avg. Provisioning Time",
+                hoverDetail: "From request to ready — full lab environments deployed and accessible in under 5 minutes.",
+                rowSpan: false,
+              },
+              {
+                icon: UserCheck,
+                title: "Instructor-Level Control",
+                desc: "Full visibility and control over every student's lab from a single dashboard.",
+                hoverStat: "1",
+                hoverLabel: "Dashboard for Everything",
+                hoverDetail: "Monitor progress, reset environments, extend sessions, and manage access — all from one place.",
+                rowSpan: false,
+              },
+            ].map((card, index) => (
+              <div
+                key={index}
+                className={`group relative bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl overflow-hidden hover:border-purple-500/30 transition-all duration-500 ${card.rowSpan ? 'row-span-2' : ''}`}
+              >
+                {/* Default face */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-end transition-opacity duration-500 group-hover:opacity-0">
+                  <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4">
+                    <card.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-base font-bold text-white mb-1">{card.title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{card.desc}</p>
+                </div>
 
-            <div className="group row-span-2 bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
-                <Shield className="w-6 h-6" />
+                {/* Hover face */}
+                <div className="absolute inset-0 p-8 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-purple-600/20 to-purple-900/30 backdrop-blur-sm">
+                  <span className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-purple-300 to-orange-400 bg-clip-text text-transparent mb-2">{card.hoverStat}</span>
+                  <span className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-3">{card.hoverLabel}</span>
+                  <p className="text-xs text-gray-300 leading-relaxed max-w-[220px]">{card.hoverDetail}</p>
+                </div>
               </div>
-              <h3 className="text-base font-bold text-white mb-1">Zero Session Crashes</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">Auto-failover and real-time monitoring ensure uninterrupted training sessions every time.</p>
-            </div>
-
-            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
-                <Users className="w-6 h-6" />
-              </div>
-              <h3 className="text-base font-bold text-white mb-1">Batch Isolation</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">Every batch runs in its own isolated environment with zero cross-contamination.</p>
-            </div>
-
-            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
-                <Rocket className="w-6 h-6" />
-              </div>
-              <h3 className="text-base font-bold text-white mb-1">Instant Provisioning</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">Spin up labs for your entire class in minutes, not hours.</p>
-            </div>
-
-            <div className="group bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 flex flex-col justify-end hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500/25 group-hover:scale-110 transition-all duration-500">
-                <UserCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-base font-bold text-white mb-1">Instructor-Level Control</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">Full visibility and control over every student's lab from a single dashboard.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
