@@ -569,32 +569,38 @@ const TrainingLabs = () => {
 
 
       {/* Final CTA Banner */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">
-            Ready to Train Without Limits?
+      <section className="py-28 bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
+            <span className="text-sm font-semibold text-purple-300 tracking-wide uppercase">Start Today</span>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
+            Ready to Train <span className="bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent">Without Limits?</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-12">Skip the stress. Delight your participants. Reclaim your weekends.</p>
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Skip the stress. Delight your participants. Reclaim your weekends.
+          </p>
           
           <Link to="/contact">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-16 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-xl px-16 py-6 rounded-full shadow-[0_0_40px_rgba(249,115,22,0.3)] hover:shadow-[0_0_60px_rgba(249,115,22,0.4)] transition-all duration-300">
               Get Your Custom Lab Setup
               <ArrowRight className="ml-3 h-6 w-6" />
             </Button>
           </Link>
 
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200">
+          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/10">
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">1,500+</div>
-              <div className="text-gray-600">Students Trained Weekly</div>
+              <div className="text-3xl font-bold text-white">1,500+</div>
+              <div className="text-gray-400 mt-1">Students Trained Weekly</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">100+</div>
-              <div className="text-gray-600">Training Companies</div>
+              <div className="text-3xl font-bold text-white">100+</div>
+              <div className="text-gray-400 mt-1">Training Companies</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">99.9%</div>
-              <div className="text-gray-600">Session Success Rate</div>
+              <div className="text-3xl font-bold text-white">99.9%</div>
+              <div className="text-gray-400 mt-1">Session Success Rate</div>
             </div>
           </div>
         </div>
