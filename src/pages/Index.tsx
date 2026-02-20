@@ -834,15 +834,15 @@ const Index = () => {
                 "Proactive monitoring",
                 "Engineers who understand training workflows"
               ].map((item, index) => (
-                <div key={index} className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-5 h-5 text-purple-600" />
+                <div key={index} className="flex items-center space-x-5">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-6 h-6 text-purple-600" />
                   </div>
-                  <span className="text-lg text-gray-800 font-medium">{item}</span>
+                  <span className="text-xl text-gray-800 font-medium">{item}</span>
                 </div>
               ))}
               
-              <p className="text-lg text-gray-600 italic pt-4 border-t border-gray-200 mt-6">
+              <p className="text-xl text-gray-600 italic pt-6 border-t border-gray-200 mt-8">
                 This is managed service, not ticket ping-pong.
               </p>
             </div>
