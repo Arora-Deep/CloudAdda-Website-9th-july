@@ -271,9 +271,9 @@ const Index = () => {
                 icon: Rocket,
                 title: "Instant Provisioning",
                 desc: "Spin up labs for your entire class in minutes, not hours.",
-                hoverStat: "<5 min",
-                hoverLabel: "Avg. Provisioning Time",
-                hoverDetail: "From request to ready — full lab environments deployed and accessible in under 5 minutes.",
+                hoverStat: "1-Click",
+                hoverLabel: "Lab Deployment",
+                hoverDetail: "Request labs, we handle the rest — provisioned, configured, and ready before your session starts.",
                 rowSpan: false,
               },
               {
