@@ -1,23 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Switch } from "@/components/ui/switch";
 import { ArrowRight, Shield, Users, Globe, DollarSign, GraduationCap, Check, Building, Target, ChevronDown, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 const Pricing = () => {
-  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return <>
       <Helmet>
@@ -97,8 +85,7 @@ const Pricing = () => {
                   <div className="text-2xl font-bold text-foreground">Zero waste. Full performance. Built to scale.</div>
                 </div>
                 <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
-                  At CloudAdda, we don't just offer pricing — we offer clarity. Whether you're running training labs, 
-                  deploying virtual desktops, or spinning up servers, every rupee delivers real-world value.
+                  Every training is different — your pricing should be too. We don't believe in one-size-fits-all plans. Your quote is built around your exact lab specs, batch size, duration, and support needs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6">
                   <Link to="/contact" onClick={() => window.scrollTo({
@@ -121,41 +108,9 @@ const Pricing = () => {
           </div>
         </section>
 
-        {/* Main Content with Sidebar */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8">
-          {/* Sticky Sidebar Navigation - Mobile optimized */}
-          <div className="w-full lg:w-64 flex-shrink-0">
-            <div className="sticky top-24 bg-white border border-gray-200 rounded-2xl p-4 lg:p-6 shadow-sm">
-              <h3 className="font-bold text-lg text-foreground mb-4">Quick Navigation</h3>
-              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
-                {[{
-                label: "Training Labs",
-                id: "training-labs",
-                icon: GraduationCap
-              }, {
-                label: "Billing Info",
-                id: "billing",
-                icon: Shield
-              }].map((item, index) => <Button key={index} variant="ghost" onClick={() => scrollToSection(item.id)} className="w-full justify-start text-left group hover:bg-purple-50 hover:text-purple-600 text-sm lg:text-base">
-                    <item.icon className="w-4 h-4 mr-2 lg:mr-3 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">{item.label}</span>
-                  </Button>)}
-              </div>
-              
-              {/* Currency Toggle */}
-              <div className="mt-6 pt-4 border-t border-gray-200">
-                <h4 className="font-medium text-sm text-gray-700 mb-3">Currency</h4>
-                <div className="flex items-center space-x-3">
-                  <span className={`text-sm ${currency === 'INR' ? 'font-semibold text-orange-600' : 'text-gray-500'}`}>INR</span>
-                  <Switch checked={currency === 'USD'} onCheckedChange={checked => setCurrency(checked ? 'USD' : 'INR')} className="data-[state=checked]:bg-orange-500" />
-                  <span className={`text-sm ${currency === 'USD' ? 'font-semibold text-orange-600' : 'text-gray-500'}`}>USD</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Scrollable Content */}
-          <div className="flex-1 space-y-16 lg:space-y-24 pb-16 lg:pb-24">
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-16 lg:space-y-24 pb-16 lg:pb-24">
             {/* Training Labs Section - Enhanced */}
             <section id="training-labs" className="py-12">
               <div className="text-center mb-16">
@@ -176,12 +131,11 @@ const Pricing = () => {
               {/* How Pricing Works */}
               <div className="mb-16">
                 <h3 className="text-2xl font-bold text-foreground mb-8 text-center">How We Price Your Labs</h3>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid sm:grid-cols-3 gap-6">
                   {[
                     { step: "01", title: "Lab Specs", desc: "CPU, RAM, storage, OS, and software stack per student machine", color: "from-purple-500 to-purple-600" },
                     { step: "02", title: "Batch Size", desc: "Number of concurrent students per session — scale from 10 to 500+", color: "from-orange-500 to-orange-600" },
                     { step: "03", title: "Duration", desc: "Single-day workshops, multi-week courses, or always-on environments", color: "from-purple-500 to-purple-600" },
-                    { step: "04", title: "Support Level", desc: "Standard monitoring or dedicated engineer on standby during sessions", color: "from-orange-500 to-orange-600" },
                   ].map((item, index) => (
                     <div key={index} className="relative bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
                       <div className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-r ${item.color} text-white text-sm font-bold mb-4`}>
@@ -191,6 +145,17 @@ const Pricing = () => {
                       <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              {/* Support Included Banner */}
+              <div className="bg-gradient-to-r from-purple-50 to-orange-50 border border-purple-200 rounded-2xl p-8 mb-16 flex flex-col md:flex-row items-center gap-6">
+                <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-foreground mb-1">24/7 Support with a Dedicated Engineer — Included in Every Training</h4>
+                  <p className="text-muted-foreground leading-relaxed">We believe in delivering the absolute best experience to our customers. That's why full 24/7 support with a dedicated engineer isn't an add-on — it's standard with every training we support.</p>
                 </div>
               </div>
 
@@ -276,44 +241,6 @@ const Pricing = () => {
             </section>
 
 
-            {/* Billing Section */}
-            <section id="billing" className="py-12">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-8">
-                  <Shield className="w-12 h-12 text-white" />
-                </div>
-                <h2 className="text-5xl font-bold text-foreground mb-8">Billing Made Beautiful</h2>
-                
-                <div className="grid md:grid-cols-2 gap-8 mb-16 text-left max-w-4xl mx-auto">
-                  {["GST invoices for all plans", "Pay monthly, quarterly, or yearly", "Zero lock-ins — cancel anytime", "Scale up or down whenever needed", "Dedicated account manager on enterprise plans"].map((feature, index) => <div key={index} className="flex items-center space-x-3">
-                      <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="text-muted-foreground text-lg">{feature}</span>
-                    </div>)}
-                </div>
-
-                <div className="bg-orange-500 rounded-3xl p-12 text-white shadow-xl max-w-4xl mx-auto">
-                  <h3 className="text-3xl font-bold mb-6">Need Help Choosing?</h3>
-                  <p className="text-xl mb-8 opacity-90">
-                    Not sure what plan is right? Or want help creating a perfect bundle for your team?
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                    <Link to="/contact" onClick={() => window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                  })}>
-                      <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 font-semibold">
-                        Talk to an Expert
-                      </Button>
-                    </Link>
-                    <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-semibold">
-                      View Demo
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </section>
           </div>
         </div>
 
