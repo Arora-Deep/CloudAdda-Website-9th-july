@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { ArrowRight, Users, Globe, GraduationCap, Check, Building, Target, ChevronDown, Phone, Headphones } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { ArrowRight, Shield, Users, Globe, DollarSign, GraduationCap, Check, Building, Target, ChevronDown, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 const Pricing = () => {
+  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return <>
       <Helmet>
-        <title>Custom Training Lab Pricing | CloudAdda</title>
-        <meta name="description" content="Every training is different — your pricing should be too. Get a custom quote built around your exact lab specs, batch size, duration, and support needs." />
+        <title>Training Labs, VDI & VPS Pricing | CloudAdda</title>
+        <meta name="description" content="Explore CloudAdda's pricing for custom training labs, scalable VDI cloud desktops, and high-speed VPS hosting. Predictable, fair pricing — no surprises." />
       </Helmet>
       <div className="min-h-screen bg-background">
         {/* Navigation */}
@@ -63,151 +76,245 @@ const Pricing = () => {
         </nav>
 
         {/* Hero Section */}
-        <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-            <Badge className="mb-8 bg-white/10 text-white border-white/20 text-sm font-medium px-5 py-2 backdrop-blur-sm">
-              <GraduationCap className="w-4 h-4 mr-2" />
-              Virtual Training Labs Pricing
-            </Badge>
-            <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-[0.95] tracking-tight text-white">
-              Every Training Is Different.{" "}
-              <span className="bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent">Your Pricing Should Be Too.</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-              We don't believe in one-size-fits-all plans. Your quote is built around your exact lab specs, batch size, duration, and support needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center">
-              <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-lg px-10 py-6 rounded-full shadow-[0_0_40px_rgba(249,115,22,0.3)] group">
-                  <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  Get a Custom Quote
-                </Button>
-              </Link>
-            </div>
-            <p className="text-sm text-gray-400 mt-6">Free consultation · No commitments · Response within 24 hours</p>
-          </div>
-        </section>
-
-        {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 lg:pb-24">
-          {/* How We Price Your Labs */}
-          <section className="py-16 lg:py-24">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">How We Price Your Labs</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Three factors shape your custom quote — everything else is included.</p>
-            </div>
-            <div className="grid sm:grid-cols-3 gap-8 mb-12">
-              {[
-                { step: "01", title: "Lab Specs", desc: "CPU, RAM, storage, OS, and software stack per student machine — configured exactly to your curriculum.", color: "from-purple-500 to-purple-600" },
-                { step: "02", title: "Batch Size", desc: "Number of concurrent students per session — whether it's 10 learners or 500+, we scale seamlessly.", color: "from-orange-500 to-orange-600" },
-                { step: "03", title: "Duration", desc: "Single-day workshops, multi-week bootcamps, or always-on environments — billed fairly for what you use.", color: "from-purple-500 to-purple-600" },
-              ].map((item, index) => (
-                <div key={index} className="relative bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-                  <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${item.color} text-white text-sm font-bold mb-5`}>
-                    {item.step}
-                  </div>
-                  <h4 className="text-xl font-bold text-foreground mb-3">{item.title}</h4>
-                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+        <section className="py-32 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7">
+                <div className="inline-block mb-8">
+                  <Badge className="mb-4 bg-orange-100 text-orange-800 border-orange-200 text-sm font-medium px-4 py-2">
+                    <DollarSign className="w-4 h-4 mr-2" />
+                    Zero Waste Pricing
+                  </Badge>
                 </div>
-              ))}
-            </div>
-
-            {/* Support Statement */}
-            <div className="bg-gradient-to-r from-purple-50 to-orange-50 border border-purple-100 rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row items-start md:items-center gap-6">
-              <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                <Headphones className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h4 className="text-xl font-bold text-foreground mb-2">Full 24/7 Support With a Dedicated Engineer — Included in Every Training</h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  We believe in delivering the absolute best customer experience. That's why every training engagement comes with a dedicated support engineer on standby — not a ticket queue. Your sessions are too important for anything less.
+                <h1 className="text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
+                  <span className="text-purple-600">Pricing</span>
+                  <br />
+                  <span className="text-gray-900">That Makes</span>
+                  <br />
+                  <span className="text-orange-600">CFOs Smile</span>
+                </h1>
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="text-2xl font-bold text-foreground">Zero waste. Full performance. Built to scale.</div>
+                </div>
+                <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
+                  At CloudAdda, we don't just offer pricing — we offer clarity. Whether you're running training labs, 
+                  deploying virtual desktops, or spinning up servers, every rupee delivers real-world value.
                 </p>
-              </div>
-            </div>
-          </section>
-
-          {/* What's Included */}
-          <section className="py-16">
-            <div className="grid lg:grid-cols-2 gap-10 mb-16">
-              <div className="bg-gray-50 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
-                  <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <Check className="w-5 h-5 text-purple-600" />
-                  </div>
-                  Included in Every Quote
-                </h3>
-                <div className="space-y-4">
-                  {[
-                    "Full infrastructure provisioning & teardown",
-                    "Pre-configured lab environments with your software stack",
-                    "Trainer & trainee dashboard access",
-                    "Batch isolation — zero cross-contamination",
-                    "Real-time monitoring & auto-recovery",
-                    "Dedicated account manager",
-                    "Post-session usage reports",
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-white" />
-                      </div>
-                      <span className="text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
-                  <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
-                    <Target className="w-5 h-5 text-orange-600" />
-                  </div>
-                  Built For
-                </h3>
-                <div className="space-y-4">
-                  {[
-                    { icon: Building, title: "Corporate L&D Teams", desc: "Upskilling programs at scale" },
-                    { icon: Users, title: "Training Companies", desc: "Multi-batch, multi-client delivery" },
-                    { icon: GraduationCap, title: "Certification Providers", desc: "Hands-on exam-prep environments" },
-                    { icon: Globe, title: "Remote & Hybrid Workshops", desc: "Global access, local performance" },
-                  ].map((use, index) => (
-                    <div key={index} className="flex items-start gap-4 p-3 rounded-xl hover:bg-white transition-colors">
-                      <div className="w-10 h-10 bg-orange-50 border border-orange-200 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <use.icon className="w-5 h-5 text-orange-500" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground">{use.title}</h4>
-                        <p className="text-sm text-muted-foreground">{use.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* CTA Card */}
-            <div className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 rounded-3xl p-10 lg:p-14 text-white text-center relative overflow-hidden">
-              <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
-              <div className="relative z-10">
-                <h3 className="text-3xl lg:text-4xl font-bold mb-4">
-                  Tell Us What You're Training.{" "}
-                  <span className="bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent">We'll Handle the Rest.</span>
-                </h3>
-                <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Share your curriculum, batch size, and timeline — we'll come back with a fully scoped infrastructure plan and a transparent quote within 24 hours.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                    <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-lg px-10 py-6 rounded-full shadow-[0_0_30px_rgba(249,115,22,0.3)]">
-                      Get a Custom Quote
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <Link to="/contact" onClick={() => window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+                })}>
+                    <Button size="lg" className="bg-orange-600 hover:bg-orange-700 group">
+                      <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                      Talk to Sales
                     </Button>
                   </Link>
                 </div>
-                <p className="text-sm text-gray-400 mt-6">Free consultation · No commitments · Response within 24 hours</p>
+              </div>
+              <div className="lg:col-span-5">
+                <div className="relative">
+                  <img src="/lovable-uploads/c219099e-0e5b-49c8-83b1-e799238baebd.png" alt="Business person with tablet sitting on piggy bank - cost savings" className="w-full h-auto max-w-lg object-contain rounded-3xl transform hover:scale-105 transition-transform duration-300" />
+                </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
+
+        {/* Main Content with Sidebar */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8">
+          {/* Sticky Sidebar Navigation - Mobile optimized */}
+          <div className="w-full lg:w-64 flex-shrink-0">
+            <div className="sticky top-24 bg-white border border-gray-200 rounded-2xl p-4 lg:p-6 shadow-sm">
+              <h3 className="font-bold text-lg text-foreground mb-4">Quick Navigation</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
+                {[{
+                label: "Training Labs",
+                id: "training-labs",
+                icon: GraduationCap
+              }, {
+                label: "Billing Info",
+                id: "billing",
+                icon: Shield
+              }].map((item, index) => <Button key={index} variant="ghost" onClick={() => scrollToSection(item.id)} className="w-full justify-start text-left group hover:bg-purple-50 hover:text-purple-600 text-sm lg:text-base">
+                    <item.icon className="w-4 h-4 mr-2 lg:mr-3 group-hover:scale-110 transition-transform" />
+                    <span className="hidden sm:inline">{item.label}</span>
+                  </Button>)}
+              </div>
+              
+              {/* Currency Toggle */}
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <h4 className="font-medium text-sm text-gray-700 mb-3">Currency</h4>
+                <div className="flex items-center space-x-3">
+                  <span className={`text-sm ${currency === 'INR' ? 'font-semibold text-orange-600' : 'text-gray-500'}`}>INR</span>
+                  <Switch checked={currency === 'USD'} onCheckedChange={checked => setCurrency(checked ? 'USD' : 'INR')} className="data-[state=checked]:bg-orange-500" />
+                  <span className={`text-sm ${currency === 'USD' ? 'font-semibold text-orange-600' : 'text-gray-500'}`}>USD</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scrollable Content */}
+          <div className="flex-1 space-y-16 lg:space-y-24 pb-16 lg:pb-24">
+            {/* Training Labs Section - Enhanced */}
+            <section id="training-labs" className="py-12">
+              <div className="text-center mb-16">
+                <Badge className="mb-6 bg-orange-100 text-orange-800 border-orange-200">
+                  <GraduationCap className="w-4 h-4 mr-2" />
+                  Virtual Training Labs
+                </Badge>
+                <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+                  Every Training Is Different.
+                  <br />
+                  <span className="text-orange-600">Your Pricing Should Be Too.</span>
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  We don't believe in one-size-fits-all plans. Your quote is built around your exact lab specs, batch size, duration, and support needs.
+                </p>
+              </div>
+
+              {/* How Pricing Works */}
+              <div className="mb-16">
+                <h3 className="text-2xl font-bold text-foreground mb-8 text-center">How We Price Your Labs</h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {[
+                    { step: "01", title: "Lab Specs", desc: "CPU, RAM, storage, OS, and software stack per student machine", color: "from-purple-500 to-purple-600" },
+                    { step: "02", title: "Batch Size", desc: "Number of concurrent students per session — scale from 10 to 500+", color: "from-orange-500 to-orange-600" },
+                    { step: "03", title: "Duration", desc: "Single-day workshops, multi-week courses, or always-on environments", color: "from-purple-500 to-purple-600" },
+                    { step: "04", title: "Support Level", desc: "Standard monitoring or dedicated engineer on standby during sessions", color: "from-orange-500 to-orange-600" },
+                  ].map((item, index) => (
+                    <div key={index} className="relative bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
+                      <div className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-r ${item.color} text-white text-sm font-bold mb-4`}>
+                        {item.step}
+                      </div>
+                      <h4 className="text-lg font-bold text-foreground mb-2">{item.title}</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* What's Included */}
+              <div className="grid lg:grid-cols-2 gap-10 mb-16">
+                <div className="bg-gray-50 rounded-2xl p-8">
+                  <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
+                    <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
+                      <Check className="w-5 h-5 text-purple-600" />
+                    </div>
+                    Included in Every Quote
+                  </h3>
+                  <div className="space-y-4">
+                    {[
+                      "Full infrastructure provisioning & teardown",
+                      "Pre-configured lab environments with your software stack",
+                      "Trainer & trainee dashboard access",
+                      "Batch isolation — zero cross-contamination",
+                      "Real-time monitoring & auto-recovery",
+                      "Dedicated account manager",
+                      "Post-session usage reports",
+                    ].map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Check className="w-3 h-3 text-white" />
+                        </div>
+                        <span className="text-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 rounded-2xl p-8">
+                  <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
+                    <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
+                      <Target className="w-5 h-5 text-orange-600" />
+                    </div>
+                    Built For
+                  </h3>
+                  <div className="space-y-4">
+                    {[
+                      { icon: Building, title: "Corporate L&D Teams", desc: "Upskilling programs at scale" },
+                      { icon: Users, title: "Training Companies", desc: "Multi-batch, multi-client delivery" },
+                      { icon: GraduationCap, title: "Certification Providers", desc: "Hands-on exam-prep environments" },
+                      { icon: Globe, title: "Remote & Hybrid Workshops", desc: "Global access, local performance" },
+                    ].map((use, index) => (
+                      <div key={index} className="flex items-start gap-4 p-3 rounded-xl hover:bg-white transition-colors">
+                        <div className="w-10 h-10 bg-orange-50 border border-orange-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <use.icon className="w-5 h-5 text-orange-500" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-foreground">{use.title}</h4>
+                          <p className="text-sm text-muted-foreground">{use.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Card */}
+              <div className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 rounded-3xl p-10 lg:p-14 text-white text-center relative overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+                <div className="relative z-10">
+                  <h3 className="text-3xl lg:text-4xl font-bold mb-4">
+                    Tell Us What You're Training.{" "}
+                    <span className="bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent">We'll Handle the Rest.</span>
+                  </h3>
+                  <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Share your curriculum, batch size, and timeline — we'll come back with a fully scoped infrastructure plan and a transparent quote within 24 hours.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                      <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-lg px-10 py-6 rounded-full shadow-[0_0_30px_rgba(249,115,22,0.3)]">
+                        Get a Custom Quote
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Button>
+                    </Link>
+                  </div>
+                  <p className="text-sm text-gray-400 mt-6">Free consultation · No commitments · Response within 24 hours</p>
+                </div>
+              </div>
+            </section>
+
+
+            {/* Billing Section */}
+            <section id="billing" className="py-12">
+              <div className="text-center">
+                <div className="w-24 h-24 bg-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                  <Shield className="w-12 h-12 text-white" />
+                </div>
+                <h2 className="text-5xl font-bold text-foreground mb-8">Billing Made Beautiful</h2>
+                
+                <div className="grid md:grid-cols-2 gap-8 mb-16 text-left max-w-4xl mx-auto">
+                  {["GST invoices for all plans", "Pay monthly, quarterly, or yearly", "Zero lock-ins — cancel anytime", "Scale up or down whenever needed", "Dedicated account manager on enterprise plans"].map((feature, index) => <div key={index} className="flex items-center space-x-3">
+                      <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-muted-foreground text-lg">{feature}</span>
+                    </div>)}
+                </div>
+
+                <div className="bg-orange-500 rounded-3xl p-12 text-white shadow-xl max-w-4xl mx-auto">
+                  <h3 className="text-3xl font-bold mb-6">Need Help Choosing?</h3>
+                  <p className="text-xl mb-8 opacity-90">
+                    Not sure what plan is right? Or want help creating a perfect bundle for your team?
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                    <Link to="/contact" onClick={() => window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })}>
+                      <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 font-semibold">
+                        Talk to an Expert
+                      </Button>
+                    </Link>
+                    <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-semibold">
+                      View Demo
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
 
         {/* Footer */}
