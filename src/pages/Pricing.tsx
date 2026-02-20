@@ -161,100 +161,116 @@ const Pricing = () => {
               <div className="text-center mb-16">
                 <Badge className="mb-6 bg-orange-100 text-orange-800 border-orange-200">
                   <GraduationCap className="w-4 h-4 mr-2" />
-                  Enterprise Training Solutions
+                  Virtual Training Labs
                 </Badge>
-                <h2 className="text-5xl font-bold text-foreground mb-8 leading-tight">
-                  Training Labs —
+                <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+                  Every Training Is Different.
                   <br />
-                  <span className="text-orange-600">Custom Infrastructure, Zero Hassle</span>
+                  <span className="text-orange-600">Your Pricing Should Be Too.</span>
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed">
-                  We handle 100% of the infrastructure. You focus on what matters — delivering world-class training experiences.
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  We don't believe in one-size-fits-all plans. Your quote is built around your exact lab specs, batch size, duration, and support needs.
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-12 mb-16">
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">What We Provide</h3>
-                    <div className="space-y-4">
-                      {[{
-                      title: "Complete Infrastructure Management",
-                      desc: "From server provisioning to network configuration, we handle it all"
-                    }, {
-                      title: "Custom Environment Setup",
-                      desc: "Pre-configured labs with your exact toolchain and software requirements"
-                    }, {
-                      title: "Multi-User Access Control",
-                      desc: "Role-based permissions, user management, and secure isolated environments"
-                    }, {
-                      title: "Real-time Monitoring",
-                      desc: "24/7 system monitoring with automatic scaling and performance optimization"
-                    }].map((feature, index) => <div key={index} className="flex items-start space-x-3 p-4 bg-orange-50 rounded-xl">
-                          <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <Check className="w-4 h-4 text-white" />
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-foreground">{feature.title}</h4>
-                            <p className="text-muted-foreground text-sm">{feature.desc}</p>
-                          </div>
-                        </div>)}
+              {/* How Pricing Works */}
+              <div className="mb-16">
+                <h3 className="text-2xl font-bold text-foreground mb-8 text-center">How We Price Your Labs</h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {[
+                    { step: "01", title: "Lab Specs", desc: "CPU, RAM, storage, OS, and software stack per student machine", color: "from-purple-500 to-purple-600" },
+                    { step: "02", title: "Batch Size", desc: "Number of concurrent students per session — scale from 10 to 500+", color: "from-orange-500 to-orange-600" },
+                    { step: "03", title: "Duration", desc: "Single-day workshops, multi-week courses, or always-on environments", color: "from-purple-500 to-purple-600" },
+                    { step: "04", title: "Support Level", desc: "Standard monitoring or dedicated engineer on standby during sessions", color: "from-orange-500 to-orange-600" },
+                  ].map((item, index) => (
+                    <div key={index} className="relative bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
+                      <div className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-r ${item.color} text-white text-sm font-bold mb-4`}>
+                        {item.step}
+                      </div>
+                      <h4 className="text-lg font-bold text-foreground mb-2">{item.title}</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                     </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* What's Included */}
+              <div className="grid lg:grid-cols-2 gap-10 mb-16">
+                <div className="bg-gray-50 rounded-2xl p-8">
+                  <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
+                    <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
+                      <Check className="w-5 h-5 text-purple-600" />
+                    </div>
+                    Included in Every Quote
+                  </h3>
+                  <div className="space-y-4">
+                    {[
+                      "Full infrastructure provisioning & teardown",
+                      "Pre-configured lab environments with your software stack",
+                      "Trainer & trainee dashboard access",
+                      "Batch isolation — zero cross-contamination",
+                      "Real-time monitoring & auto-recovery",
+                      "Dedicated account manager",
+                      "Post-session usage reports",
+                    ].map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Check className="w-3 h-3 text-white" />
+                        </div>
+                        <span className="text-foreground">{feature}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">Perfect For</h3>
-                    <div className="grid grid-cols-2 gap-4">
-                      {[{
-                      icon: Building,
-                      title: "Corporate L&D"
-                    }, {
-                      icon: Users,
-                      title: "Tech Bootcamps"
-                    }, {
-                      icon: Target,
-                      title: "Certification Training"
-                    }, {
-                      icon: Globe,
-                      title: "Remote Workshops"
-                    }].map((use, index) => <div key={index} className="text-center p-4 border border-orange-200 rounded-xl hover:bg-orange-50 transition-colors">
-                          <use.icon className="w-8 h-8 text-orange-500 mx-auto mb-2" />
-                          <p className="font-medium text-foreground">{use.title}</p>
-                        </div>)}
+                <div className="bg-gray-50 rounded-2xl p-8">
+                  <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-3">
+                    <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
+                      <Target className="w-5 h-5 text-orange-600" />
                     </div>
+                    Built For
+                  </h3>
+                  <div className="space-y-4">
+                    {[
+                      { icon: Building, title: "Corporate L&D Teams", desc: "Upskilling programs at scale" },
+                      { icon: Users, title: "Training Companies", desc: "Multi-batch, multi-client delivery" },
+                      { icon: GraduationCap, title: "Certification Providers", desc: "Hands-on exam-prep environments" },
+                      { icon: Globe, title: "Remote & Hybrid Workshops", desc: "Global access, local performance" },
+                    ].map((use, index) => (
+                      <div key={index} className="flex items-start gap-4 p-3 rounded-xl hover:bg-white transition-colors">
+                        <div className="w-10 h-10 bg-orange-50 border border-orange-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <use.icon className="w-5 h-5 text-orange-500" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-foreground">{use.title}</h4>
+                          <p className="text-sm text-muted-foreground">{use.desc}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
+                </div>
+              </div>
 
-                  <div className="bg-gradient-to-br from-orange-500 to-purple-600 rounded-2xl p-8 text-white">
-                    <h3 className="text-2xl font-bold mb-4">Custom Pricing</h3>
-                    <p className="text-lg mb-6 opacity-90">
-                      Every training program is unique. We design the perfect infrastructure based on your curriculum, user count, and duration.
-                    </p>
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-center space-x-2">
-                        <Check className="w-5 h-5" />
-                        <span>No fixed plans - completely customized</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Check className="w-5 h-5" />
-                        <span>Transparent pricing with detailed breakdown</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Check className="w-5 h-5" />
-                        <span>Free consultation and infrastructure planning</span>
-                      </div>
-                    </div>
-                    <Link to="/contact" onClick={() => window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                  })}>
-                      <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 font-semibold w-full">
-                        Get Custom Quote
+              {/* CTA Card */}
+              <div className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 rounded-3xl p-10 lg:p-14 text-white text-center relative overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+                <div className="relative z-10">
+                  <h3 className="text-3xl lg:text-4xl font-bold mb-4">
+                    Tell Us What You're Training.{" "}
+                    <span className="bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent">We'll Handle the Rest.</span>
+                  </h3>
+                  <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Share your curriculum, batch size, and timeline — we'll come back with a fully scoped infrastructure plan and a transparent quote within 24 hours.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                      <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-lg px-10 py-6 rounded-full shadow-[0_0_30px_rgba(249,115,22,0.3)]">
+                        Get a Custom Quote
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Button>
                     </Link>
                   </div>
+                  <p className="text-sm text-gray-400 mt-6">Free consultation · No commitments · Response within 24 hours</p>
                 </div>
               </div>
             </section>
