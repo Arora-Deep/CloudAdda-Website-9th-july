@@ -321,15 +321,20 @@ const Index = () => {
           <div className="text-center mb-16 lg:mb-20">
             <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-4 py-1.5 mb-6">
               <Sparkles className="w-4 h-4 text-orange-500" />
-              <span className="text-sm font-semibold text-orange-700">Our Core Product</span>
+              <span className="text-sm font-semibold text-orange-700">Our Core Solution</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">
               <span className="text-gray-900">Virtual Training Labs.</span><br />
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Managed End-to-End.</span>
             </h2>
-            <p className="text-lg lg:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg lg:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed mb-6">
               We give training companies a fully managed lab infrastructure — so trainers can focus on teaching, not troubleshooting cloud environments.
             </p>
+            <Link to="/training-labs">
+              <Button variant="orange" size="lg" className="rounded-full">
+                Explore Virtual Training Labs <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
           </div>
 
           {/* Main Value Prop Grid */}
