@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play, ChevronDown, Target, X } from "lucide-react";
@@ -539,31 +540,29 @@ const TrainingLabs = () => {
       {/* Objection Busters */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">What If You're Still Not Sure?</h2>
-          </div>
-
-          <div className="space-y-6">
+          <Accordion type="single" collapsible className="space-y-4">
             {[{
-            question: "What if this won't match our unique training format?",
-            answer: "We custom-build labs to your exact curriculum. You get a say in every detail."
-          }, {
-            question: "What if we need changes mid-course?",
-            answer: "No problem — instant tweaks, mid-session scaling, and live config support."
-          }, {
-            question: "What if things break during class?",
-            answer: "Real engineers. Instant support. No bots. No \"please wait.\""
-          }, {
-            question: "What if we're not technical enough to explain what we need?",
-            answer: "Just tell us what you teach — we handle the rest."
-          }, {
-            question: "What if this is too good to be true?",
-            answer: "Ask our customers. Or better — try it and see for yourself."
-          }].map((item, index) => <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                <h3 className="font-bold text-gray-900 mb-3">{item.question}</h3>
-                <p className="text-gray-600">{item.answer}</p>
-              </div>)}
-          </div>
+              question: "What if this won't match our unique training format?",
+              answer: "We custom-build labs to your exact curriculum. You get a say in every detail."
+            }, {
+              question: "What if we need changes mid-course?",
+              answer: "No problem — instant tweaks, mid-session scaling, and live config support."
+            }, {
+              question: "What if things break during class?",
+              answer: "Real engineers. Instant support. No bots. No \"please wait.\""
+            }, {
+              question: "What if we're not technical enough to explain what we need?",
+              answer: "Just tell us what you teach — we handle the rest."
+            }, {
+              question: "What if this is too good to be true?",
+              answer: "Ask our customers. Or better — try it and see for yourself."
+            }].map((item, index) => (
+              <AccordionItem key={index} value={`faq-${index}`} className="bg-white rounded-xl shadow-sm border border-gray-200 px-6">
+                <AccordionTrigger className="font-bold text-gray-900 text-left hover:no-underline">{item.question}</AccordionTrigger>
+                <AccordionContent className="text-gray-600">{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
