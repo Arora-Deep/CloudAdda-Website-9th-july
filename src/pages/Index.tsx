@@ -327,14 +327,9 @@ const Index = () => {
               <span className="text-gray-900">Virtual Training Labs.</span><br />
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Managed End-to-End.</span>
             </h2>
-            <p className="text-lg lg:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed mb-6">
+            <p className="text-lg lg:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
               We give training companies a fully managed lab infrastructure — so trainers can focus on teaching, not troubleshooting cloud environments.
             </p>
-            <Link to="/training-labs">
-              <Button variant="orange" size="lg" className="rounded-full">
-                Explore Virtual Training Labs <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
           </div>
 
           {/* Main Value Prop Grid */}
@@ -439,6 +434,13 @@ const Index = () => {
                   <div className="text-sm text-gray-500 font-medium">{stat.label}</div>
                 </div>
               ))}
+            </div>
+            <div className="text-center mt-8">
+              <Link to="/training-labs">
+                <Button variant="orange" size="lg" className="rounded-full">
+                  Explore Virtual Training Labs <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
