@@ -436,7 +436,7 @@ const Index = () => {
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link to="/training-labs">
+              <Link to="/virtual-training-labs">
                 <Button variant="orange" size="lg" className="rounded-full">
                   Explore Virtual Training Labs <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -1009,7 +1009,7 @@ const Index = () => {
               <h3 className="font-semibold mb-4">Solutions</h3>
               <nav>
                 <ul className="space-y-2 text-gray-400">
-                  <li><Link to="/training-labs" onClick={() => handleNavigation('/training-labs')} className="hover:text-white transition-colors">Training Labs</Link></li>
+                  <li><Link to="/virtual-training-labs" onClick={() => handleNavigation('/virtual-training-labs')} className="hover:text-white transition-colors">Virtual Training Labs</Link></li>
                 </ul>
               </nav>
             </div>

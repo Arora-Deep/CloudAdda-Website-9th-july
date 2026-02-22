@@ -45,28 +45,19 @@ const Guides = () => {
       downloads: "2.5K"
     },
     {
-      title: "Advanced VPS Configuration",
-      description: "Deep dive into server optimization and security best practices",
+      title: "Lab Environment Best Practices",
+      description: "Deep dive into training lab optimization and configuration",
       type: "Technical Guide",
-      category: "VPS",
+      category: "Virtual Training Labs",
       readTime: "30 min",
       difficulty: "Advanced",
       downloads: "1.8K"
     },
     {
-      title: "Cloud Desktop Deployment Guide",
-      description: "Step-by-step instructions for deploying scalable virtual desktops",
-      type: "Video Tutorial",
-      category: "Cloud Desktops",
-      readTime: "25 min",
-      difficulty: "Intermediate",
-      downloads: "3.1K"
-    },
-    {
       title: "Training Lab Architecture",
       description: "How to design and implement effective training environments",
       type: "Architecture Guide",
-      category: "Training Labs",
+      category: "Virtual Training Labs",
       readTime: "45 min",
       difficulty: "Advanced",
       downloads: "1.2K"
@@ -93,9 +84,7 @@ const Guides = () => {
 
   const categories = [
     { name: "Getting Started", count: 12, color: "bg-green-100 text-green-600" },
-    { name: "VPS", count: 18, color: "bg-blue-100 text-blue-600" },
-    { name: "Cloud Desktops", count: 15, color: "bg-purple-100 text-purple-600" },
-    { name: "Training Labs", count: 10, color: "bg-orange-100 text-orange-600" },
+    { name: "Virtual Training Labs", count: 18, color: "bg-orange-100 text-orange-600" },
     { name: "Security", count: 8, color: "bg-red-100 text-red-600" },
     { name: "Development", count: 6, color: "bg-yellow-100 text-yellow-600" }
   ];
@@ -129,7 +118,7 @@ const Guides = () => {
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/training-labs" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</Link>
+              <Link to="/virtual-training-labs" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</Link>
               <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
               <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
@@ -401,7 +390,7 @@ const Guides = () => {
             <div>
               <h3 className="font-semibold mb-4 text-foreground">Solutions</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/training-labs" className="hover:text-foreground transition-colors">Training Labs</Link></li>
+                <li><Link to="/virtual-training-labs" className="hover:text-foreground transition-colors">Virtual Training Labs</Link></li>
               </ul>
             </div>
             <div>

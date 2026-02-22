@@ -87,7 +87,7 @@ const Support = () => {
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/training-labs" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</Link>
+              <Link to="/virtual-training-labs" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</Link>
               <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
               <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
@@ -292,7 +292,7 @@ const Support = () => {
                         <SelectValue placeholder="Select the related service" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="training-labs">Training Labs</SelectItem>
+                        <SelectItem value="training-labs">Virtual Training Labs</SelectItem>
                         <SelectItem value="billing">Billing & Account</SelectItem>
                         <SelectItem value="technical">Technical Issue</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
@@ -418,7 +418,7 @@ const Support = () => {
             <div>
               <h3 className="font-semibold mb-4">Solutions</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link to="/training-labs" className="hover:text-white">Training Labs</Link></li>
+                <li><Link to="/virtual-training-labs" className="hover:text-white">Virtual Training Labs</Link></li>
               </ul>
             </div>
             <div>

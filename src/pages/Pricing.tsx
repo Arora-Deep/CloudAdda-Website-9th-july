@@ -9,8 +9,8 @@ const Pricing = () => {
 
   return <>
       <Helmet>
-        <title>Training Labs, VDI & VPS Pricing | CloudAdda</title>
-        <meta name="description" content="Explore CloudAdda's pricing for custom training labs, scalable VDI cloud desktops, and high-speed VPS hosting. Predictable, fair pricing — no surprises." />
+        <title>Virtual Training Labs Pricing | CloudAdda</title>
+        <meta name="description" content="Explore CloudAdda's pricing for custom virtual training labs. Predictable, fair pricing — no surprises." />
       </Helmet>
       <div className="min-h-screen bg-background">
         {/* Navigation */}
@@ -23,7 +23,7 @@ const Pricing = () => {
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-8">
-                <Link to="/training-labs" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</Link>
+                <Link to="/virtual-training-labs" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</Link>
                 <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
                 <Link to="/about" className="text-gray-700 hover:text-orange-500 transition-colors">About Us</Link>
                 <Link to="/pricing" className="text-orange-500 font-medium">Pricing</Link>
@@ -260,7 +260,7 @@ const Pricing = () => {
               <div>
                 <h3 className="font-semibold mb-4 text-foreground">Solutions</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li><Link to="/training-labs" className="hover:text-foreground transition-colors">Training Labs</Link></li>
+                  <li><Link to="/virtual-training-labs" className="hover:text-foreground transition-colors">Virtual Training Labs</Link></li>
                 </ul>
               </div>
               <div>

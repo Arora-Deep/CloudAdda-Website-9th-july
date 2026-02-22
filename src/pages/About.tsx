@@ -19,7 +19,7 @@ const About = () => {
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/training-labs" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</Link>
+              <Link to="/virtual-training-labs" className="text-gray-700 hover:text-orange-500 transition-colors">Solutions</Link>
               <Link to="/trainer-adda" className="text-gray-700 hover:text-orange-500 transition-colors">Resources</Link>
               <Link to="/about" className="text-orange-500 font-medium">About Us</Link>
               <Link to="/pricing" className="text-gray-700 hover:text-orange-500 transition-colors">Pricing</Link>
@@ -91,7 +91,7 @@ const About = () => {
                     Talk to Us
                   </Button>
                 </Link>
-                <Link to="/training-labs">
+                <Link to="/virtual-training-labs">
                   <Button size="lg" variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50">
                     See How It Works
                   </Button>
@@ -293,7 +293,7 @@ const About = () => {
                 Get Started
               </Button>
             </Link>
-            <Link to="/training-labs">
+            <Link to="/virtual-training-labs">
               <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
                 Explore the Platform
               </Button>
@@ -331,7 +331,7 @@ const About = () => {
             <div>
               <h3 className="font-semibold mb-4 text-foreground">Solutions</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/training-labs" className="hover:text-foreground transition-colors">Virtual Training Labs</Link></li>
+                <li><Link to="/virtual-training-labs" className="hover:text-foreground transition-colors">Virtual Training Labs</Link></li>
               </ul>
             </div>
             <div>

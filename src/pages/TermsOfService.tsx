@@ -35,8 +35,6 @@ const TermsOfService = () => {
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2">
               <li>Virtual Training Labs</li>
-              <li>Cloud Desktops (DaaS)</li>
-              <li>Virtual Private Servers (VPS)</li>
               <li>Related cloud infrastructure services</li>
             </ul>
           </section>
