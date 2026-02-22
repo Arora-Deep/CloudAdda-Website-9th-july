@@ -69,69 +69,24 @@ const TrainingLabs = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gray-950 pt-24 pb-32">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-        </div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-purple-600/20 via-orange-500/10 to-transparent rounded-full blur-3xl" />
-
+      <section className="relative overflow-hidden bg-white pt-20 pb-28">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-8">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-sm text-gray-300 font-medium">Trusted by 200+ Training Partners</span>
-          </div>
-
-          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.08]">
-            <span className="bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent">Managed</span> Virtual
+          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-4 leading-[1.1]">
+            <span className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">Managed</span> Virtual Training Labs.
             <br />
-            Training Labs.
-            <br />
-            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Built for Real Training.</span>
+            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Built for Real Training.</span>
           </h1>
           
-          <p className="text-lg lg:text-xl text-gray-300 font-medium max-w-2xl mx-auto mt-6 mb-2">
+          <p className="text-lg lg:text-xl text-gray-700 font-medium max-w-2xl mx-auto mt-6 mb-3">
             You focus on delivering exceptional training.
           </p>
-          <p className="text-base lg:text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto mb-12">
+          <p className="text-base lg:text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto mb-10">
             We deliver fully managed, ready-to-run lab environments — provisioned in minutes, auto-scaled on demand, and engineered for uninterrupted live sessions.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link to="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-[0_0_30px_rgba(249,115,22,0.3)] hover:shadow-[0_0_40px_rgba(249,115,22,0.5)] transition-all">
-                Book a Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-600 text-gray-300 hover:bg-white/5 hover:border-gray-400">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Talk to Our Team
-              </Button>
-            </Link>
-          </div>
-
-          {/* SLA Stats */}
-          <div className="flex flex-wrap justify-center gap-12 lg:gap-20">
-            {[
-              { value: "50,000+", label: "Labs Deployed" },
-              { value: "10x", label: "Faster Setup" },
-              { value: "99.9%", label: "Session Uptime" },
-              { value: "<2hr", label: "Avg. Support Response" },
-            ].map((sla, i) => (
-              <div key={sla.label} className="flex flex-col items-center">
-                <span className="text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">{sla.value}</span>
-                <span className="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">{sla.label}</span>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
 
-      {/* Training Type Marquee Strips */}
-      <section className="py-12 bg-gray-50 overflow-hidden">
-        <div className="space-y-4">
+        {/* Training Type Marquee Strips */}
+        <div className="space-y-4 my-10 overflow-hidden">
           <div className="flex animate-marquee">
             {[
               { title: "Coding Bootcamps", description: "Full-stack setups: Node.js, React, MongoDB, Docker. Real-world CI/CD flows, browser-based IDEs.", icon: Code },
@@ -174,8 +129,38 @@ const TrainingLabs = () => {
             ))}
           </div>
         </div>
-      </section>
 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* SLA Stats */}
+          <div className="flex flex-wrap justify-center gap-10 mb-8">
+            {[
+              { value: "10x", label: "Faster Lab Setup" },
+              { value: "99.9%", label: "Session Uptime" },
+              { value: "<2hr", label: "Avg. Support Response" },
+            ].map((sla) => (
+              <div key={sla.label} className="flex flex-col items-center">
+                <span className="text-2xl lg:text-3xl font-extrabold bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">{sla.value}</span>
+                <span className="text-xs text-gray-500 font-medium mt-0.5">{sla.label}</span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/contact">
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full px-10 py-4 text-lg shadow-lg hover:shadow-xl transition-all">
+                Book a Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="rounded-full px-10 py-4 text-lg border-gray-300 hover:bg-gray-50">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Talk to Our Team
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
 
       <section className="py-24 lg:py-32 bg-gradient-to-r from-[hsl(270,45%,18%)] via-[hsl(265,50%,38%)] to-[hsl(270,45%,18%)] text-white relative overflow-hidden">
