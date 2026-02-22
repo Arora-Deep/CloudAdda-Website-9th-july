@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,6 +10,10 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>About CloudAdda | Training Infrastructure Specialists</title>
+        <meta name="description" content="CloudAdda specializes in managed virtual training lab infrastructure built for IT training companies, bootcamps, and corporate L&D teams." />
+      </Helmet>
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,14 +72,14 @@ const About = () => {
                 </Badge>
               </div>
               <h1 className="text-6xl lg:text-7xl font-black mb-8 leading-[0.9] tracking-tight">
-                We Make
+                Built for
                 <br />
                 <span className="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">
-                  Training Labs
+                  Training.
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                  Just Work.
+                  Engineered for Reliability.
                 </span>
               </h1>
               <div className="flex items-center gap-4 mb-8">

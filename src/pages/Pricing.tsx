@@ -9,8 +9,8 @@ const Pricing = () => {
 
   return <>
       <Helmet>
-        <title>Virtual Training Labs Pricing | CloudAdda</title>
-        <meta name="description" content="Explore CloudAdda's pricing for custom virtual training labs. Predictable, fair pricing — no surprises." />
+        <title>Virtual Training Lab Pricing | Managed IT Lab Infrastructure</title>
+        <meta name="description" content="Transparent pricing for managed virtual training labs. Structured batch-based pricing with stable infrastructure for IT training companies and enterprises." />
       </Helmet>
       <div className="min-h-screen bg-background">
         {/* Navigation */}
@@ -75,11 +75,11 @@ const Pricing = () => {
                   </Badge>
                 </div>
                 <h1 className="text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
-                  <span className="text-purple-600">Pricing</span>
+                  <span className="text-purple-600">Virtual</span>
                   <br />
-                  <span className="text-gray-900">That Makes</span>
+                  <span className="text-gray-900">Training Lab</span>
                   <br />
-                  <span className="text-orange-600">CFOs Smile</span>
+                  <span className="text-orange-600">Pricing</span>
                 </h1>
                 <div className="flex items-center gap-4 mb-8">
                   <div className="text-2xl font-bold text-foreground">Zero waste. Full performance. Built to scale.</div>

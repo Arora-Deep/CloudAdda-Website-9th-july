@@ -5,18 +5,18 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play, ChevronDown, Target, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-const TrainingLabs = () => {
+const VirtualTrainingLabs = () => {
   useEffect(() => {
-    document.title = "Virtual Training Labs for IT, AI, Networking & More | CloudAdda";
+    document.title = "Managed Virtual Training Labs for IT Training | CloudAdda";
 
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Deliver hands-on, scalable training labs for any curriculum — Linux, AI/ML, Networking & more. No control panels. Just ready-to-use lab environments, built for trainers.');
+      metaDescription.setAttribute('content', 'CloudAdda provides fully managed virtual training labs for instructor-led IT programs, certification bootcamps, and corporate training. Provision labs in minutes with snapshot, batch isolation, and browser-based access.');
     } else {
       const meta = document.createElement('meta');
       meta.name = 'description';
-      meta.content = 'Deliver hands-on, scalable training labs for any curriculum — Linux, AI/ML, Networking & more. No control panels. Just ready-to-use lab environments, built for trainers.';
+      meta.content = 'CloudAdda provides fully managed virtual training labs for instructor-led IT programs, certification bootcamps, and corporate training. Provision labs in minutes with snapshot, batch isolation, and browser-based access.';
       document.head.appendChild(meta);
     }
   }, []);
@@ -72,9 +72,9 @@ const TrainingLabs = () => {
       <section className="relative overflow-hidden bg-white pt-20 pb-28">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-4 leading-[1.1]">
-            <span className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">Managed</span> Virtual Training Labs.
+            <span className="bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent">Managed</span> Virtual Training Labs
             <br />
-            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Built for Live, Hands-On IT Training.</span>
+            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Built for Live IT Training</span>
           </h1>
           
           <p className="text-lg lg:text-xl text-gray-700 font-medium max-w-2xl mx-auto mt-6 mb-3">
@@ -658,4 +658,4 @@ const TrainingLabs = () => {
       </footer>
     </div>;
 };
-export default TrainingLabs;
+export default VirtualTrainingLabs;

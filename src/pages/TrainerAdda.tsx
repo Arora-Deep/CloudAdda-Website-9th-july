@@ -92,8 +92,8 @@ const TrainerAdda = () => {
   return (
     <>
       <Helmet>
-        <title>Resources – Training Insights, Playbooks & Guides | CloudAdda</title>
-        <meta name="description" content="Explore our collection of training playbooks, insights, and guides to help you deliver world-class virtual training experiences." />
+        <title>Virtual Training Lab Resources & Guides | CloudAdda</title>
+        <meta name="description" content="Guides and insights on virtual training labs, hands-on IT training infrastructure, batch management, and scalable lab provisioning." />
       </Helmet>
       <div className="min-h-screen bg-white">
         <ResponsiveNavigation />
