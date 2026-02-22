@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -55,6 +56,10 @@ const Contact = () => {
     setIsSubmitting(false);
   };
   return <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Contact CloudAdda | Virtual Training Lab Experts</title>
+        <meta name="description" content="Talk to CloudAdda about managed virtual training labs for your IT training programs. Schedule a consultation and deploy your next batch with confidence." />
+      </Helmet>
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -187,9 +192,9 @@ const Contact = () => {
                 Let's Connect
               </Badge>
               <h1 className="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-gray-900">
-                Ready to Transform
+                Talk to Our
                 <br />
-                <span className="text-orange-600">Your Training?</span>
+                <span className="text-orange-600">Training Infrastructure Team</span>
               </h1>
               <p className="text-xl text-gray-600 font-light">
                 We're real humans. We love what we do. We reply fast.

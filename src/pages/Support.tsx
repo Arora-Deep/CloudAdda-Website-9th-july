@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -77,6 +78,10 @@ const Support = () => {
     answer: "We guarantee 99.9% uptime. If technical issues cause training disruption due to our infrastructure, we provide full refunds."
   }];
   return <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Support for Managed Virtual Training Labs | CloudAdda</title>
+        <meta name="description" content="Get technical support for your managed virtual training labs. Real engineers, fast response, live-session assistance." />
+      </Helmet>
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
