@@ -11,6 +11,17 @@ const Pricing = () => {
       <Helmet>
         <title>Virtual Training Lab Pricing | Managed IT Lab Infrastructure</title>
         <meta name="description" content="Transparent pricing for managed virtual training labs. Structured batch-based pricing with stable infrastructure for IT training companies and enterprises." />
+        <meta property="og:title" content="Virtual Training Lab Pricing | Managed IT Lab Infrastructure" />
+        <meta property="og:description" content="Transparent pricing for managed virtual training labs. Structured batch-based pricing with stable infrastructure." />
+        <meta property="og:url" content="https://cloudadda.com/pricing" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta property="og:site_name" content="CloudAdda" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Virtual Training Lab Pricing | Managed IT Lab Infrastructure" />
+        <meta name="twitter:description" content="Transparent pricing for managed virtual training labs. Structured batch-based pricing with stable infrastructure." />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href="https://cloudadda.com/pricing" />
       </Helmet>
       <div className="min-h-screen bg-background">
         {/* Navigation */}

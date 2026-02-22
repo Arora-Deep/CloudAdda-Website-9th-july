@@ -81,6 +81,17 @@ const Support = () => {
       <Helmet>
         <title>Support for Managed Virtual Training Labs | CloudAdda</title>
         <meta name="description" content="Get technical support for your managed virtual training labs. Real engineers, fast response, live-session assistance." />
+        <meta property="og:title" content="Support for Managed Virtual Training Labs | CloudAdda" />
+        <meta property="og:description" content="Get technical support for your managed virtual training labs. Real engineers, fast response, live-session assistance." />
+        <meta property="og:url" content="https://cloudadda.com/support" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta property="og:site_name" content="CloudAdda" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Support for Managed Virtual Training Labs | CloudAdda" />
+        <meta name="twitter:description" content="Get technical support for your managed virtual training labs. Real engineers, fast response, live-session assistance." />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href="https://cloudadda.com/support" />
       </Helmet>
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">

@@ -94,6 +94,17 @@ const TrainerAdda = () => {
       <Helmet>
         <title>Virtual Training Lab Resources & Guides | CloudAdda</title>
         <meta name="description" content="Guides and insights on virtual training labs, hands-on IT training infrastructure, batch management, and scalable lab provisioning." />
+        <meta property="og:title" content="Virtual Training Lab Resources & Guides | CloudAdda" />
+        <meta property="og:description" content="Guides and insights on virtual training labs, hands-on IT training infrastructure, batch management, and scalable lab provisioning." />
+        <meta property="og:url" content="https://cloudadda.com/trainer-adda" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta property="og:site_name" content="CloudAdda" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Virtual Training Lab Resources & Guides | CloudAdda" />
+        <meta name="twitter:description" content="Guides and insights on virtual training labs, hands-on IT training infrastructure, batch management, and scalable lab provisioning." />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href="https://cloudadda.com/trainer-adda" />
       </Helmet>
       <div className="min-h-screen bg-white">
         <ResponsiveNavigation />
