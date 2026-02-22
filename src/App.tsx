@@ -11,7 +11,7 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Support from "./pages/Support";
 import TrainerAdda from "./pages/TrainerAdda";
-import TrainingLabs from "./pages/TrainingLabs";
+import VirtualTrainingLabs from "./pages/VirtualTrainingLabs";
 import NotFound from "./pages/NotFound";
 import BlogView from "./pages/BlogView";
 import CaseStudyView from "./pages/CaseStudyView";
@@ -36,7 +36,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/support" element={<Support />} />
             <Route path="/trainer-adda" element={<TrainerAdda />} />
-            <Route path="/training-labs" element={<TrainingLabs />} />
+            <Route path="/virtual-training-labs" element={<VirtualTrainingLabs />} />
             <Route path="/guides" element={<Guides />} />
             <Route path="/blog/:slug" element={<BlogView />} />
             <Route path="/case-study/:slug" element={<CaseStudyView />} />

@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
-import CloudDesktopsFooter from "@/components/CloudDesktopsFooter";
+import Footer from "@/components/Footer";
 
 import imgZeroToLive from "@/assets/blog-zero-to-live-lab.jpg";
 import imgTrainingLabCosts from "@/assets/blog-training-lab-costs.jpg";
@@ -212,7 +212,7 @@ const TrainerAdda = () => {
           </div>
         </section>
 
-        <CloudDesktopsFooter />
+        <Footer />
       </div>
     </>
   );

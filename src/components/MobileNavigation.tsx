@@ -17,7 +17,7 @@ const MobileNavigation = () => {
 
   const navigationItems = [
     { name: 'Home', href: '/', icon: null },
-    { name: 'Training Labs', href: '/training-labs', icon: Users },
+    { name: 'Virtual Training Labs', href: '/virtual-training-labs', icon: Users },
     { name: 'Trainer Adda', href: '/trainer-adda', icon: BookOpen },
     { name: 'Pricing', href: '/pricing', icon: DollarSign },
     { name: 'About', href: '/about', icon: null },

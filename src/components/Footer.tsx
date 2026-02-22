@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const CloudDesktopsFooter = () => {
+const Footer = () => {
   return <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
@@ -16,18 +16,10 @@ const CloudDesktopsFooter = () => {
           <div>
             <h3 className="font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/training-labs" onClick={() => window.scrollTo({
+              <li><Link to="/virtual-training-labs" onClick={() => window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
-              })} className="hover:text-white transition-colors">Training Labs</Link></li>
-              <li><Link to="/cloud-desktops" onClick={() => window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-              })} className="hover:text-white transition-colors">Virtual Desktops</Link></li>
-              <li><Link to="/vps" onClick={() => window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-              })} className="hover:text-white transition-colors">VPS</Link></li>
+              })} className="hover:text-white transition-colors">Virtual Training Labs</Link></li>
               <li><Link to="/contact" onClick={() => window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -96,4 +88,4 @@ const CloudDesktopsFooter = () => {
       </div>
     </footer>;
 };
-export default CloudDesktopsFooter;
+export default Footer;
