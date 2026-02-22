@@ -144,6 +144,17 @@ const Index = () => {
       <Helmet>
         <title>Managed Virtual Training Labs | CloudAdda</title>
         <meta name="description" content="Fully managed virtual training labs built for live IT training, certification bootcamps, and corporate upskilling. Stable, scalable, browser-based lab environments." />
+        <meta property="og:title" content="Managed Virtual Training Labs | CloudAdda" />
+        <meta property="og:description" content="Fully managed virtual training labs built for live IT training, certification bootcamps, and corporate upskilling." />
+        <meta property="og:url" content="https://cloudadda.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta property="og:site_name" content="CloudAdda" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Managed Virtual Training Labs | CloudAdda" />
+        <meta name="twitter:description" content="Fully managed virtual training labs built for live IT training, certification bootcamps, and corporate upskilling." />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href="https://cloudadda.com/" />
       </Helmet>
       {/* Navigation */}
       <ResponsiveNavigation />

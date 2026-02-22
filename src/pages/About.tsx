@@ -13,6 +13,17 @@ const About = () => {
       <Helmet>
         <title>About CloudAdda | Training Infrastructure Specialists</title>
         <meta name="description" content="CloudAdda specializes in managed virtual training lab infrastructure built for IT training companies, bootcamps, and corporate L&D teams." />
+        <meta property="og:title" content="About CloudAdda | Training Infrastructure Specialists" />
+        <meta property="og:description" content="CloudAdda specializes in managed virtual training lab infrastructure built for IT training companies, bootcamps, and corporate L&D teams." />
+        <meta property="og:url" content="https://cloudadda.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta property="og:site_name" content="CloudAdda" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About CloudAdda | Training Infrastructure Specialists" />
+        <meta name="twitter:description" content="CloudAdda specializes in managed virtual training lab infrastructure built for IT training companies, bootcamps, and corporate L&D teams." />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href="https://cloudadda.com/about" />
       </Helmet>
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">

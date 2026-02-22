@@ -59,6 +59,17 @@ const Contact = () => {
       <Helmet>
         <title>Contact CloudAdda | Virtual Training Lab Experts</title>
         <meta name="description" content="Talk to CloudAdda about managed virtual training labs for your IT training programs. Schedule a consultation and deploy your next batch with confidence." />
+        <meta property="og:title" content="Contact CloudAdda | Virtual Training Lab Experts" />
+        <meta property="og:description" content="Talk to CloudAdda about managed virtual training labs for your IT training programs." />
+        <meta property="og:url" content="https://cloudadda.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta property="og:site_name" content="CloudAdda" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact CloudAdda | Virtual Training Lab Experts" />
+        <meta name="twitter:description" content="Talk to CloudAdda about managed virtual training labs for your IT training programs." />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href="https://cloudadda.com/contact" />
       </Helmet>
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
