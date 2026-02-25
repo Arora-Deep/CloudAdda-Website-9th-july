@@ -126,16 +126,9 @@ const Pricing = () => {
           <div className="space-y-16 lg:space-y-24 pb-16 lg:pb-24">
             {/* Training Labs Section - Enhanced */}
             <section id="training-labs" className="py-12">
-              <div className="text-center mb-16">
-                <Badge className="mb-6 bg-orange-100 text-orange-800 border-orange-200">
-                  <GraduationCap className="w-4 h-4 mr-2" />
-                  Virtual Training Labs
-                </Badge>
-              </div>
-
               {/* How Pricing Works */}
               <div className="mb-16">
-                <h3 className="text-2xl font-bold text-foreground mb-8 text-center">How We Price Your Labs</h3>
+                <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-12 text-center">How We Price Your Labs</h2>
                 <div className="grid sm:grid-cols-3 gap-6">
                   {[
                     { step: "01", title: "Lab Specs", desc: "CPU, RAM, storage, OS, and software stack per student machine", color: "from-purple-500 to-purple-600" },
