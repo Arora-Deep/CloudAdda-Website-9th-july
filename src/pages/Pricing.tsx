@@ -98,7 +98,7 @@ const Pricing = () => {
                   </div>
                 </div>
                 <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
-                  Every training is different — your pricing should be too. We don't believe in one-size-fits-all plans. Your quote is built around your exact lab specs, batch size, duration, and support needs.
+                  We don't believe in one-size-fits-all plans. Your quote is built around your exact lab specs, batch size, duration, and support needs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6">
                   <Link to="/contact" onClick={() => window.scrollTo({
@@ -131,14 +131,6 @@ const Pricing = () => {
                   <GraduationCap className="w-4 h-4 mr-2" />
                   Virtual Training Labs
                 </Badge>
-                <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-                  Every Training Is Different.
-                  <br />
-                  <span className="text-orange-600">Your Pricing Should Be Too.</span>
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  We don't believe in one-size-fits-all plans. Your quote is built around your exact lab specs, batch size, duration, and support needs.
-                </p>
               </div>
 
               {/* How Pricing Works */}
