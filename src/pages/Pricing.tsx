@@ -86,11 +86,11 @@ const Pricing = () => {
                   </Badge>
                 </div>
                 <h1 className="text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
-                  <span className="text-purple-600">Virtual</span>
+                  <span className="text-purple-600">Pricing</span>
                   <br />
-                  <span className="text-gray-900">Training Lab</span>
+                  <span className="text-gray-900">That Makes</span>
                   <br />
-                  <span className="text-orange-600">Pricing</span>
+                  <span className="text-orange-600">CFOs Smile</span>
                 </h1>
                 <div className="flex items-center gap-4 mb-8">
                   <div className="text-2xl font-bold text-foreground">Zero waste. Full performance. Built to scale.</div>
