@@ -86,14 +86,14 @@ const Pricing = () => {
                   </Badge>
                 </div>
                 <h1 className="text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tight">
-                  <span className="text-purple-600">Virtual</span>
+                  <span className="text-gray-900">Pricing</span>
                   <br />
-                  <span className="text-gray-900">Training Lab</span>
+                  <span className="text-gray-900">that makes</span>
                   <br />
-                  <span className="text-orange-600">Pricing</span>
+                  <span className="text-orange-600">CFO's smile.</span>
                 </h1>
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="text-2xl font-bold text-foreground">Zero waste. Full performance. Built to scale.</div>
+                  <div className="text-2xl font-bold text-foreground">Every Training Is Different. Your Pricing Should Be Too.</div>
                 </div>
                 <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
                   Every training is different — your pricing should be too. We don't believe in one-size-fits-all plans. Your quote is built around your exact lab specs, batch size, duration, and support needs.
