@@ -93,7 +93,9 @@ const Pricing = () => {
                   <span className="text-orange-600">CFOs Smile</span>
                 </h1>
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="text-2xl font-bold text-foreground">Zero waste. Full performance. Built to scale.</div>
+                  <div className="text-2xl font-bold text-foreground">
+                    <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Every training is different</span> — <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">your pricing should be too.</span>
+                  </div>
                 </div>
                 <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
                   Every training is different — your pricing should be too. We don't believe in one-size-fits-all plans. Your quote is built around your exact lab specs, batch size, duration, and support needs.
