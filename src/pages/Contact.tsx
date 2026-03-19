@@ -345,6 +345,9 @@ const Contact = () => {
               </ul>
             </div>
           </div>
+          <div className="border-t border-border mt-12 pt-8 text-center">
+            <p className="text-muted-foreground">© 2026 CloudAdda. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>;

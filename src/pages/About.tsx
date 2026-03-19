@@ -310,7 +310,7 @@ const About = () => {
               </Button>
             </Link>
             <Link to="/virtual-training-labs">
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 bg-white/10">
                 Explore the Platform
               </Button>
             </Link>
@@ -366,6 +366,9 @@ const About = () => {
                 <li><Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link></li>
               </ul>
             </div>
+          </div>
+          <div className="border-t border-border mt-12 pt-8 text-center">
+            <p className="text-muted-foreground">© 2026 CloudAdda. All rights reserved.</p>
           </div>
         </div>
       </footer>
