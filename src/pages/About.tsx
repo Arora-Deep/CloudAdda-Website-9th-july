@@ -310,7 +310,7 @@ const About = () => {
               </Button>
             </Link>
             <Link to="/virtual-training-labs">
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 bg-white/10">
                 Explore the Platform
               </Button>
             </Link>
