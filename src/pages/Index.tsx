@@ -246,7 +246,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
               Most Clouds Are Built for Developers.<br />
-              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Ours Is Built for Trainers.</span>
+              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">CloudAdda Is Built for Trainers.</span>
             </h2>
             <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Public cloud platforms are optimized for software teams.
