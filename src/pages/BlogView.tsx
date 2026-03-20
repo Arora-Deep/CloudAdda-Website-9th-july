@@ -1,9 +1,9 @@
-
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, User } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import BlogSidebar from "@/components/BlogSidebar";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
 

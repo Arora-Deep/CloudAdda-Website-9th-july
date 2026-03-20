@@ -32,6 +32,7 @@ import {
   ChevronDown
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Guides = () => {
   const guides = [

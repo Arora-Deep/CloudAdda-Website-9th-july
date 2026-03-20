@@ -4,23 +4,24 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ArrowRight, Clock, AlertTriangle, MessageCircle, DollarSign, CheckCircle, Users, Gauge, UserCheck, Rocket, Code, Shield, Brain, Star, FileCheck, Play, ChevronDown, Target, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-const VirtualTrainingLabs = () => {
-  useEffect(() => {
-    document.title = "Managed Virtual Training Labs for IT Training | CloudAdda";
+import { Helmet } from "react-helmet-async";
 
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'CloudAdda provides fully managed virtual training labs for instructor-led IT programs, certification bootcamps, and corporate training. Provision labs in minutes with snapshot, batch isolation, and browser-based access.');
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = 'CloudAdda provides fully managed virtual training labs for instructor-led IT programs, certification bootcamps, and corporate training. Provision labs in minutes with snapshot, batch isolation, and browser-based access.';
-      document.head.appendChild(meta);
-    }
-  }, []);
+const VirtualTrainingLabs = () => {
   return <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Managed Virtual Training Labs for IT Training | CloudAdda</title>
+        <meta name="description" content="CloudAdda provides fully managed virtual training labs for instructor-led IT programs, certification bootcamps, and corporate training. Provision labs in minutes with snapshot, batch isolation, and browser-based access." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cloudadda.com/virtual-training-labs" />
+        <meta property="og:title" content="Managed Virtual Training Labs | CloudAdda" />
+        <meta property="og:description" content="Fully managed virtual training labs built for live IT training, certification programs, and corporate upskilling." />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Managed Virtual Training Labs | CloudAdda" />
+        <meta name="twitter:description" content="Fully managed virtual training labs built for live IT training, certification programs, and corporate upskilling." />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href="https://cloudadda.com/virtual-training-labs" />
+      </Helmet>
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

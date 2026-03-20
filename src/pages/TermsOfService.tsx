@@ -1,9 +1,23 @@
-
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const TermsOfService = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Terms of Service | CloudAdda</title>
+        <meta name="description" content="Review CloudAdda's terms of service for using our managed virtual training lab platform." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cloudadda.com/terms-of-service" />
+        <meta property="og:title" content="Terms of Service | CloudAdda" />
+        <meta property="og:description" content="Review CloudAdda's terms of service for using our managed virtual training lab platform." />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Terms of Service | CloudAdda" />
+        <meta name="twitter:description" content="Review CloudAdda's terms of service for using our managed virtual training lab platform." />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href="https://cloudadda.com/terms-of-service" />
+      </Helmet>
       {/* Simple Header */}
       <nav className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

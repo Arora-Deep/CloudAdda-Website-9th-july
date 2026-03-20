@@ -1,9 +1,23 @@
-
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Privacy Policy | CloudAdda</title>
+        <meta name="description" content="Read CloudAdda's privacy policy on how we collect, use, and protect your data." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cloudadda.com/privacy-policy" />
+        <meta property="og:title" content="Privacy Policy | CloudAdda" />
+        <meta property="og:description" content="Read CloudAdda's privacy policy on how we collect, use, and protect your data." />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Privacy Policy | CloudAdda" />
+        <meta name="twitter:description" content="Read CloudAdda's privacy policy on how we collect, use, and protect your data." />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href="https://cloudadda.com/privacy-policy" />
+      </Helmet>
       {/* Simple Header */}
       <nav className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
