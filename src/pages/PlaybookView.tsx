@@ -153,6 +153,20 @@ const PlaybookView = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>{playbook.title} | CloudAdda</title>
+        <meta name="description" content={playbook.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://cloudadda.com/playbook/${id}`} />
+        <meta property="og:title" content={`${playbook.title} | CloudAdda`} />
+        <meta property="og:description" content={playbook.description} />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${playbook.title} | CloudAdda`} />
+        <meta name="twitter:description" content={playbook.description} />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href={`https://cloudadda.com/playbook/${id}`} />
+      </Helmet>
       <ResponsiveNavigation />
 
       {/* Cover Image */}

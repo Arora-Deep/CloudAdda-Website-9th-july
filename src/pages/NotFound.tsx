@@ -14,6 +14,11 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <Helmet>
+        <title>Page Not Found | CloudAdda</title>
+        <meta name="description" content="The page you're looking for doesn't exist. Return to CloudAdda's homepage." />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">404</h1>
         <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
