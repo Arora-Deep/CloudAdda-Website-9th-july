@@ -109,6 +109,20 @@ const Guides = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Guides & Resources | CloudAdda</title>
+        <meta name="description" content="Step-by-step guides, tutorials, and resources for setting up and managing virtual training labs with CloudAdda." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cloudadda.com/guides" />
+        <meta property="og:title" content="Guides & Resources | CloudAdda" />
+        <meta property="og:description" content="Step-by-step guides, tutorials, and resources for setting up and managing virtual training labs with CloudAdda." />
+        <meta property="og:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Guides & Resources | CloudAdda" />
+        <meta name="twitter:description" content="Step-by-step guides, tutorials, and resources for setting up and managing virtual training labs with CloudAdda." />
+        <meta name="twitter:image" content="https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png" />
+        <link rel="canonical" href="https://cloudadda.com/guides" />
+      </Helmet>
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
