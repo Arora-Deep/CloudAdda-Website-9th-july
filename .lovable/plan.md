@@ -1,70 +1,66 @@
 
 
-# SEO & Metadata Overhaul — Virtual Training Labs Only
+# Build-Time Pre-Rendering with vite-plugin-prerender
 
-## Summary
-Update all meta tags, titles, Schema.org data, and page-level Helmet tags across the entire site to reflect only "Virtual Training Labs" positioning. Remove all references to DaaS, VPS, cloud desktops, and hosting from metadata (blog content referencing these as article topics will be kept as-is since they are editorial content, not site positioning).
+## What This Does
+At build time, a headless browser visits each route, captures the fully-rendered HTML (including all Helmet meta tags), and saves it as a static `.html` file. Crawlers and social bots get complete HTML without needing JavaScript.
 
----
+## Important Note
+This plugin uses Puppeteer (headless Chrome) during `npm run build`. It works fine on your own server/CI where Chrome can run. In Lovable's preview environment, builds will still work normally — the prerender step only runs during production builds.
 
-## Changes by File
+## Changes
 
-### 1. `index.html` — Global Fallback Metadata
-- **Title**: "CloudAdda | Managed Virtual Training Labs for IT Training"
-- **Description**: "CloudAdda provides fully managed virtual training labs for IT training companies, bootcamps, and corporate upskilling. Browser-based, scalable, and built for reliable live sessions."
-- **Keywords**: "virtual training labs, managed virtual labs, IT training labs, instructor-led training labs, corporate training labs"
-- **OG/Twitter title**: "CloudAdda | Managed Virtual Training Labs"
-- **OG/Twitter description**: "Fully managed virtual training labs built for live IT training, certification programs, and corporate upskilling."
-- **OG/Twitter image**: Update to `https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png`
-- **Schema.org**: Remove WebSite SearchAction block, DaaS service block, VPS service block. Keep Organization and Virtual Training Labs service only.
-- Update Organization description to remove DaaS/VPS references.
+### 1. Install dependency
+- Add `vite-plugin-prerender` (npm package, based on puppeteer-based prerender-spa-plugin for Vite)
 
-### 2. `src/pages/VirtualTrainingLabs.tsx`
-- Remove the `useEffect` that manually sets `document.title` and meta description (lines 9-22).
-- Add `Helmet` import from `react-helmet-async`.
-- Add `<Helmet>` block with:
-  - Title: "Managed Virtual Training Labs for IT Training | CloudAdda"
-  - Description, OG, Twitter, canonical — matching existing manual content but via Helmet.
+### 2. Update `vite.config.ts`
+- Import and configure the prerender plugin
+- List all static routes to pre-render:
 
-### 3. `src/pages/PrivacyPolicy.tsx` — Add Helmet
-- Title: "Privacy Policy | CloudAdda"
-- Description: "Read CloudAdda's privacy policy on how we collect, use, and protect your data."
-- Canonical: `https://cloudadda.com/privacy-policy`
+```text
+/
+/about
+/pricing
+/contact
+/support
+/trainer-adda
+/virtual-training-labs
+/guides
+/blog/training-lab-costs
+/blog/call-center-case-study
+/blog/daas-shift-2025
+/playbook/zero-to-live-lab
+/playbook/scaling-1000-students
+/playbook/virtual-lab-checklist
+/case-study/all
+/privacy-policy
+/terms-of-service
+```
 
-### 4. `src/pages/TermsOfService.tsx` — Add Helmet
-- Title: "Terms of Service | CloudAdda"
-- Description: "Review CloudAdda's terms of service for using our managed virtual training lab platform."
-- Canonical: `https://cloudadda.com/terms-of-service`
+- Configure the renderer to wait until `document.title` is set (ensures Helmet has applied meta tags before capturing HTML)
 
-### 5. `src/pages/Guides.tsx` — Add Helmet
-- Title: "Guides & Resources | CloudAdda"
-- Description: "Step-by-step guides, tutorials, and resources for setting up and managing virtual training labs with CloudAdda."
-- Canonical: `https://cloudadda.com/guides`
+### 3. Output
+After `npm run build`, the `dist/` folder will contain:
+```text
+dist/
+  index.html          (pre-rendered homepage)
+  about/index.html
+  pricing/index.html
+  contact/index.html
+  blog/training-lab-costs/index.html
+  ... etc
+```
 
-### 6. `src/pages/BlogView.tsx` — Add Helmet
-- Dynamic title/description based on the selected post (e.g., `post.title + " | CloudAdda"`)
-- Add `Helmet` import.
+Each file has full HTML with correct `<title>`, `<meta>` tags, OG tags — exactly what crawlers need.
 
-### 7. `src/pages/CaseStudyView.tsx` — Add Helmet
-- Title: "Case Studies | CloudAdda"
-- Description: "Real-world case studies showing how training companies use CloudAdda's virtual labs."
-
-### 8. `src/pages/PlaybookView.tsx` — Add Helmet
-- Dynamic title/description based on the selected playbook.
-
-### 9. `src/pages/NotFound.tsx` — Add Helmet
-- Title: "Page Not Found | CloudAdda"
-- Description: "The page you're looking for doesn't exist."
-
----
-
-## Editorial Content (No Changes)
-Blog posts and playbooks that mention DaaS, VPS, or cloud desktops as article topics (e.g., "Why DaaS Is Taking Over") are editorial content and will **not** be modified — they are articles about those topics, not site positioning. The one VPS mention in PlaybookView is within article prose and stays as-is.
+### 4. Server compatibility
+Your existing server config (serving `index.html` for all routes) continues to work. The pre-rendered files are just static HTML that any web server will serve automatically when they match the path.
 
 ---
 
-## Technical Notes
-- All Helmet blocks will include: title, meta description, OG (title/description/image/url/type), Twitter (card/title/description/image), and canonical URL.
-- Social image consistently: `https://cloudadda.com/lovable-uploads/2797aeb8-75f1-469f-bf89-b1bdd8c25e91.png`
-- 9 files modified total. No layout or functionality changes.
+## Technical Details
+- Plugin: `vite-plugin-prerender` — runs Puppeteer at build time only
+- No runtime service, no external dependency, no cost
+- New blog/playbook posts will need their slugs added to the routes array in `vite.config.ts`
+- 2 files modified: `package.json` (new dep), `vite.config.ts` (plugin config)
 
