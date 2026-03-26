@@ -1,8 +1,28 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import vitePrerender from "vite-plugin-prerender";
+
+const routesToPrerender = [
+  "/",
+  "/about",
+  "/pricing",
+  "/contact",
+  "/support",
+  "/trainer-adda",
+  "/virtual-training-labs",
+  "/guides",
+  "/blog/training-lab-costs",
+  "/blog/call-center-case-study",
+  "/blog/daas-shift-2025",
+  "/playbook/zero-to-live-lab",
+  "/playbook/scaling-1000-students",
+  "/playbook/virtual-lab-checklist",
+  "/case-study/all",
+  "/privacy-policy",
+  "/terms-of-service",
+];
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -13,8 +33,14 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
+    mode === 'production' && vitePrerender({
+      routes: routesToPrerender,
+      renderer: {
+        renderAfterDocumentEvent: undefined,
+        renderAfterTime: 3000,
+      },
+    }),
   ].filter(Boolean),
   resolve: {
     alias: {
