@@ -11,9 +11,9 @@ import Footer from "@/components/Footer";
 import imgZeroToLive from "@/assets/blog-zero-to-live-lab.jpg";
 import imgTrainingLabCosts from "@/assets/blog-training-lab-costs.jpg";
 import imgScaling from "@/assets/blog-scaling-1000.jpg";
-import imgCallCenter from "@/assets/blog-call-center.jpg";
+import imgTrainingLabCaseStudy from "@/assets/blog-training-lab-case-study.jpg";
 import imgChecklist from "@/assets/blog-checklist.jpg";
-import imgDaas from "@/assets/blog-daas-shift.jpg";
+import imgLabDeliveryShift from "@/assets/blog-lab-delivery-shift.jpg";
 
 const TrainerAdda = () => {
   const allPosts = [
@@ -53,13 +53,13 @@ const TrainerAdda = () => {
     {
       id: "call-center-case-study",
       type: "blog",
-      title: "Behind the Screen: How a Call Center Saved ₹20 Lakhs by Moving to Cloud Desktops",
-      description: "A mid-sized call center's journey from operational chaos to streamlined efficiency with cloud desktops.",
-      category: "Case Study",
+      title: "Behind the Screen: How a Training Provider Saved ₹20 Lakhs with Managed Virtual Labs",
+      description: "How a training provider reduced delivery overhead and improved live-session reliability with managed virtual training labs.",
+      category: "Training Case Study",
       readTime: "6 min read",
       date: "Dec 12, 2024",
       featured: false,
-      image: imgCallCenter
+      image: imgTrainingLabCaseStudy
     },
     {
       id: "virtual-lab-checklist",
@@ -75,13 +75,13 @@ const TrainerAdda = () => {
     {
       id: "daas-shift-2025",
       type: "blog",
-      title: "Why DaaS Is Taking Over: The Shift Away from Laptops in 2025",
-      description: "Explore why smart companies are moving away from laptops to Desktop-as-a-Service solutions.",
-      category: "Industry Trends",
+      title: "Why Virtual Training Labs Are Replacing Manual Lab Setup in 2025",
+      description: "Explore why training teams are moving from manual setup to managed virtual training labs for reliable hands-on learning.",
+      category: "Virtual Lab Trends",
       readTime: "5 min read",
       date: "Dec 10, 2024",
       featured: false,
-      image: imgDaas
+      image: imgLabDeliveryShift
     }
   ];
 
