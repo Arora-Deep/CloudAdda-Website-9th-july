@@ -104,20 +104,20 @@ const BlogView = () => {
           <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
             <thead class="bg-gray-50"><tr><th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Expense Area</th><th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Before</th><th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">After CloudAdda</th></tr></thead>
             <tbody class="divide-y divide-gray-200">
-              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Laptops & Licenses</td><td class="px-6 py-4 text-sm text-red-600">₹28L/year</td><td class="px-6 py-4 text-sm text-green-600">₹0</td></tr>
-              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">IT Management</td><td class="px-6 py-4 text-sm text-red-600">₹10L/year</td><td class="px-6 py-4 text-sm text-green-600">₹4L/year</td></tr>
-              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Downtime & Security</td><td class="px-6 py-4 text-sm text-red-600">₹6L/year</td><td class="px-6 py-4 text-sm text-green-600">₹0</td></tr>
+              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Manual Lab Setup</td><td class="px-6 py-4 text-sm text-red-600">₹28L/year</td><td class="px-6 py-4 text-sm text-green-600">₹10L/year</td></tr>
+              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Delivery Support</td><td class="px-6 py-4 text-sm text-red-600">₹10L/year</td><td class="px-6 py-4 text-sm text-green-600">₹4L/year</td></tr>
+              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Re-runs & Live Issues</td><td class="px-6 py-4 text-sm text-red-600">₹6L/year</td><td class="px-6 py-4 text-sm text-green-600">₹0</td></tr>
               <tr class="bg-yellow-50"><td class="px-6 py-4 text-sm font-bold text-gray-900">Total</td><td class="px-6 py-4 text-sm font-bold text-red-600">₹44L/year</td><td class="px-6 py-4 text-sm font-bold text-green-600">₹24L/year</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="bg-green-50 p-8 rounded-2xl my-10 text-center"><h3 class="text-2xl font-bold text-green-900 mb-4">🎯 Net Annual Savings: ₹20,00,000+</h3><p class="text-lg text-green-800">📈 33% jump in agent productivity.</p></div>
+        <div class="bg-green-50 p-8 rounded-2xl my-10 text-center"><h3 class="text-2xl font-bold text-green-900 mb-4">🎯 Net Annual Savings: ₹20,00,000+</h3><p class="text-lg text-green-800">📈 33% improvement in live training delivery efficiency.</p></div>
         <h2 id="heading-3" class="text-3xl font-bold text-gray-900 mt-16 mb-8">💬 Feedback</h2>
-        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg"><p class="text-blue-900 font-medium text-lg italic">"We used to worry about patching machines and fighting viruses. Now we just onboard agents and go."</p></div>
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg"><p class="text-blue-900 font-medium text-lg italic">"We used to worry about whether every learner's lab would work. Now we start sessions on time and focus on teaching."</p></div>
         <h2 id="heading-4" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🧠 Final Result</h2>
         <div class="grid md:grid-cols-2 gap-6 my-8">
-          <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl"><ul class="space-y-3"><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">98.7% agent uptime</span></li><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span class="text-gray-700">Just 1 IT manager for 200 agents</span></li></ul></div>
-          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl"><ul class="space-y-3"><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-purple-500 rounded-full"></div><span class="text-gray-700">Zero data loss or malware</span></li><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-pink-500 rounded-full"></div><span class="text-gray-700">Better compliance, smoother audits</span></li></ul></div>
+          <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl"><ul class="space-y-3"><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">98.7% lab availability during sessions</span></li><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span class="text-gray-700">One delivery manager could support 200 learners</span></li></ul></div>
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl"><ul class="space-y-3"><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-purple-500 rounded-full"></div><span class="text-gray-700">Consistent tools and lab configuration</span></li><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-pink-500 rounded-full"></div><span class="text-gray-700">Cleaner handover, smoother sessions</span></li></ul></div>
         </div>
       `
     },
