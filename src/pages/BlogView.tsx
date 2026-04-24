@@ -155,21 +155,21 @@ const BlogView = () => {
         <h2 id="heading-6" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🧠 Smart Configs for Every Role</h2>
         <div class="bg-gradient-to-r from-gray-50 to-blue-50 p-8 rounded-2xl my-10">
           <ul class="space-y-4">
-            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-gray-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Entry-level staff?</strong><span class="text-gray-700"> 2-core lightweight machines.</span></div></li>
-            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Designers & Devs?</strong><span class="text-gray-700"> 8-core beasts with NVMe power.</span></div></li>
-            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Finance, Ops, CX?</strong><span class="text-gray-700"> Tailored setups that match the workload.</span></div></li>
+            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-gray-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Beginner cohorts?</strong><span class="text-gray-700"> Lightweight lab templates with guided access.</span></div></li>
+            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Developer training?</strong><span class="text-gray-700"> Prebuilt environments with the exact tools, packages, and exercises required.</span></div></li>
+            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Enterprise programs?</strong><span class="text-gray-700"> Batch-wise lab configurations that match curriculum, schedule, and support needs.</span></div></li>
           </ul>
         </div>
         <h2 id="heading-7" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🌐 Who's Already Making the Switch?</h2>
         <ul class="space-y-4 mb-8">
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-purple-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Developers running full-stack apps with Docker, Postgres, and Kubernetes</span></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Call centers scaling from 50 to 1,000 agents</span></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Healthcare teams with HIPAA-grade compliance</span></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-orange-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Remote-first startups with global teams</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-purple-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">IT training companies delivering DevOps, cloud, data, and cybersecurity programs</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Bootcamps scaling hands-on cohorts from 50 to 1,000 learners</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Corporate L&D teams running practical upskilling sessions</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-orange-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Training partners who need reliable labs across multiple batches</span></li>
         </ul>
         <h2 id="heading-8" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🧠 Final Thought</h2>
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">It's fast. It's secure. It's always with you. It runs on CloudAdda.</p>
-        <p class="text-lg leading-relaxed text-gray-700 mb-8">💡 The future of work isn't carried in a backpack. It's floating securely in the cloud.</p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">It's fast. It's reliable. It's built for live training. It runs on CloudAdda.</p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-8">💡 The future of hands-on IT training is managed, browser-based, and ready before learners arrive.</p>
       `
     }
   };
