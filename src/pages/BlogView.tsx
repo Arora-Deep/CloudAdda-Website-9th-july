@@ -8,8 +8,8 @@ import BlogSidebar from "@/components/BlogSidebar";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
 
 import imgTrainingLabCosts from "@/assets/blog-training-lab-costs.jpg";
-import imgCallCenter from "@/assets/blog-call-center.jpg";
-import imgDaas from "@/assets/blog-daas-shift.jpg";
+import imgTrainingLabCaseStudy from "@/assets/blog-training-lab-case-study.jpg";
+import imgLabDeliveryShift from "@/assets/blog-lab-delivery-shift.jpg";
 
 const BlogView = () => {
   const { id } = useParams();
@@ -73,31 +73,31 @@ const BlogView = () => {
       `
     },
     "call-center-case-study": {
-      title: "Behind the Screen: How a Call Center Saved ₹20 Lakhs by Moving to Cloud Desktops",
-      description: "A mid-sized call center's journey from operational chaos to streamlined efficiency with cloud desktops.",
-      category: "Case Study",
+      title: "Behind the Screen: How a Training Provider Saved ₹20 Lakhs with Managed Virtual Labs",
+      description: "How a training provider reduced delivery overhead and improved live-session reliability with managed virtual training labs.",
+      category: "Training Case Study",
       readTime: "6 min read",
       date: "Dec 12, 2024",
       author: "CloudAdda Team",
-      authorBio: "Enterprise transformation specialists with proven track record",
-      image: imgCallCenter,
+      authorBio: "Virtual training lab delivery specialists",
+      image: imgTrainingLabCaseStudy,
       content: `
-        <div class="prose-intro"><p class="text-xl leading-relaxed text-gray-700 mb-8">🧨 The Problem: A mid-sized call center with 200 agents was drowning in operational issues.</p></div>
+        <div class="prose-intro"><p class="text-xl leading-relaxed text-gray-700 mb-8">🧨 The Problem: A training provider with 200 learners per batch was losing time to manual lab setup and live-session failures.</p></div>
         <h2 id="heading-0" class="text-3xl font-bold text-gray-900 mt-12 mb-6">The Breaking Point</h2>
         <ul class="space-y-4 mb-8">
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Frequent laptop failures</strong></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Lost hours to crashes, updates, and malware</strong></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">A stretched IT team managing dozens of device issues weekly</strong></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">₹35–₹40 lakh/year hardware and licensing budget</strong></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Every batch needed repeated lab preparation</strong></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Lost hours to access issues, tool mismatch, and environment drift</strong></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">A stretched delivery team managing dozens of student tickets weekly</strong></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">₹35–₹40 lakh/year spent on setup, support, and rework</strong></div></li>
         </ul>
-        <div class="bg-red-50 border-l-4 border-red-500 p-6 my-8 rounded-r-lg"><p class="text-red-900 font-medium text-lg">Final breaking point: A ransomware attack. 72 hours of downtime. ₹6 lakhs in business loss.</p></div>
-        <h2 id="heading-1" class="text-3xl font-bold text-gray-900 mt-16 mb-8">💡 The Switch to Cloud Desktops</h2>
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 my-8 rounded-r-lg"><p class="text-red-900 font-medium text-lg">Final breaking point: One critical live cohort started late because half the learners could not access working labs.</p></div>
+        <h2 id="heading-1" class="text-3xl font-bold text-gray-900 mt-16 mb-8">💡 The Switch to Managed Virtual Training Labs</h2>
         <p class="text-lg leading-relaxed text-gray-700 mb-6">They turned to CloudAdda — here's what changed:</p>
         <ul class="space-y-4 mb-8">
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">No More Laptops:</strong><span class="text-gray-700"> Agents use thin clients or existing machines.</span></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">No Local Data:</strong><span class="text-gray-700"> Everything secure in the cloud.</span></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Same-Day Setup:</strong><span class="text-gray-700"> 200 desktops deployed within 3 hours.</span></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Flat Monthly Cost:</strong><span class="text-gray-700"> No hardware refreshes or bloated IT budgets.</span></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Ready-to-use labs:</strong><span class="text-gray-700"> Learners opened browser-based environments with tools already configured.</span></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Consistent student experience:</strong><span class="text-gray-700"> Every participant received the same tested setup.</span></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Same-Day Setup:</strong><span class="text-gray-700"> 200 learner labs prepared and verified within 3 hours.</span></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Predictable Delivery Cost:</strong><span class="text-gray-700"> No surprise setup effort or bloated support overhead.</span></div></li>
         </ul>
         <h2 id="heading-2" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🧮 The Savings Breakdown</h2>
         <div class="overflow-x-auto mb-8">
