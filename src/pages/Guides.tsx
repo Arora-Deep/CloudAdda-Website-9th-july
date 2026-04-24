@@ -38,7 +38,7 @@ const Guides = () => {
   const guides = [
     {
       title: "Getting Started with CloudAdda",
-      description: "Complete beginner's guide to setting up your first cloud environment",
+      description: "Complete beginner's guide to launching your first virtual training lab",
       type: "Documentation",
       category: "Getting Started",
       readTime: "15 min",
@@ -64,17 +64,17 @@ const Guides = () => {
       downloads: "1.2K"
     },
     {
-      title: "API Integration Manual",
-      description: "Complete reference for integrating with CloudAdda APIs",
-      type: "API Documentation",
-      category: "Development",
+      title: "Lab Operations Manual",
+      description: "Reference for training workflows, learner access, and lab delivery operations",
+      type: "Operations Guide",
+      category: "Lab Operations",
       readTime: "60 min",
       difficulty: "Advanced",
       downloads: "950"
     },
     {
       title: "Security Best Practices",
-      description: "Essential security configurations and monitoring setups",
+      description: "Essential access, monitoring, and support practices for training labs",
       type: "Security Guide",
       category: "Security",
       readTime: "35 min",
@@ -87,7 +87,7 @@ const Guides = () => {
     { name: "Getting Started", count: 12, color: "bg-green-100 text-green-600" },
     { name: "Virtual Training Labs", count: 18, color: "bg-orange-100 text-orange-600" },
     { name: "Security", count: 8, color: "bg-red-100 text-red-600" },
-    { name: "Development", count: 6, color: "bg-yellow-100 text-yellow-600" }
+    { name: "Lab Operations", count: 6, color: "bg-yellow-100 text-yellow-600" }
   ];
 
   const getDifficultyColor = (difficulty: string) => {
