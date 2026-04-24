@@ -198,7 +198,7 @@ const Guides = () => {
             </p>
             <p className="text-lg text-muted-foreground mb-12 max-w-4xl mx-auto">
               From quick start guides to advanced configurations, our comprehensive documentation 
-              helps you get the most out of your cloud infrastructure. Find step-by-step tutorials, 
+              helps you get the most out of your virtual training labs. Find step-by-step tutorials, 
               best practices, and technical references all in one place.
             </p>
             
@@ -329,8 +329,8 @@ const Guides = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "API Reference",
-                description: "Complete API documentation",
+                title: "Lab Operations",
+                description: "Batch setup and learner access workflows",
                 icon: FileText,
                 color: "bg-green-500"
               },
@@ -347,8 +347,8 @@ const Guides = () => {
                 color: "bg-purple-500"
               },
               {
-                title: "Community Forum",
-                description: "Get help from the community",
+                title: "Delivery Support",
+                description: "Get help from CloudAdda specialists",
                 icon: Users,
                 color: "bg-orange-500"
               }
@@ -399,7 +399,7 @@ const Guides = () => {
                 <span className="font-bold text-xl text-foreground">CloudAdda</span>
               </Link>
               <p className="text-muted-foreground">
-                Simple. Scalable. Human. Infrastructure that just works.
+                Simple. Scalable. Human. Virtual training labs that just work.
               </p>
             </div>
             <div>
