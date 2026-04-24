@@ -92,13 +92,13 @@ const PlaybookView = () => {
         <h3 id="heading-2" class="text-2xl font-semibold text-gray-900 mt-10 mb-6">2. Manual Scaling Is a Time Bomb</h3>
         <p class="text-lg leading-relaxed text-gray-700 mb-6">Pre-allocating resources works—until it doesn't.</p>
         <h3 id="heading-3" class="text-2xl font-semibold text-gray-900 mt-10 mb-6">3. Shared Resources = Sudden Failures</h3>
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">Cheap VPS might look fine on paper, but under load, they buckle.</p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">Generic shared lab environments might look fine on paper, but under live batch load, they buckle.</p>
         <h2 id="heading-4" class="text-3xl font-bold text-gray-900 mt-16 mb-8">The CloudAdda Scaling Philosophy</h2>
         <div class="grid md:grid-cols-2 gap-6 my-8">
           <div class="bg-blue-50 p-6 rounded-xl"><h4 class="font-semibold text-blue-900 mb-3">✅ Auto-Scaling</h4><p class="text-blue-800">Dynamic pre-provisioning based on login patterns.</p></div>
           <div class="bg-green-50 p-6 rounded-xl"><h4 class="font-semibold text-green-900 mb-3">✅ Workload Isolation</h4><p class="text-green-800">Every lab runs in isolated containers or VMs.</p></div>
           <div class="bg-purple-50 p-6 rounded-xl"><h4 class="font-semibold text-purple-900 mb-3">✅ Real-Time Monitoring</h4><p class="text-purple-800">CPU, memory, and IOPS per session in real-time.</p></div>
-          <div class="bg-orange-50 p-6 rounded-xl"><h4 class="font-semibold text-orange-900 mb-3">✅ Purpose-Built Infra</h4><p class="text-orange-800">Servers optimized for bursty training workloads.</p></div>
+          <div class="bg-orange-50 p-6 rounded-xl"><h4 class="font-semibold text-orange-900 mb-3">✅ Purpose-Built Lab Delivery</h4><p class="text-orange-800">Virtual training labs optimized for bursty hands-on learning workloads.</p></div>
         </div>
         <h2 id="heading-5" class="text-3xl font-bold text-gray-900 mt-16 mb-8">Strategies You Can Steal Today</h2>
         <h3 id="heading-6" class="text-2xl font-semibold text-gray-900 mt-10 mb-6">1. Use Parallel Lab Pools</h3>
@@ -108,7 +108,7 @@ const PlaybookView = () => {
         <h3 id="heading-8" class="text-2xl font-semibold text-gray-900 mt-10 mb-6">3. Integrate Smart Alerts</h3>
         <p class="text-lg leading-relaxed text-gray-700 mb-6">Set alerts on CPU/memory thresholds per lab.</p>
         <h2 id="heading-9" class="text-3xl font-bold text-gray-900 mt-16 mb-8">Final Thoughts</h2>
-        <p class="text-lg leading-relaxed text-gray-700 mb-8">With the right infra strategy, you scale effortlessly.</p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-8">With the right virtual training lab strategy, you scale effortlessly.</p>
       `
     },
     "virtual-lab-checklist": {

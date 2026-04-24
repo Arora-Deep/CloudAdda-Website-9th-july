@@ -38,7 +38,7 @@ const Guides = () => {
   const guides = [
     {
       title: "Getting Started with CloudAdda",
-      description: "Complete beginner's guide to setting up your first cloud environment",
+      description: "Complete beginner's guide to launching your first virtual training lab",
       type: "Documentation",
       category: "Getting Started",
       readTime: "15 min",
@@ -64,17 +64,17 @@ const Guides = () => {
       downloads: "1.2K"
     },
     {
-      title: "API Integration Manual",
-      description: "Complete reference for integrating with CloudAdda APIs",
-      type: "API Documentation",
-      category: "Development",
+      title: "Lab Operations Manual",
+      description: "Reference for training workflows, learner access, and lab delivery operations",
+      type: "Operations Guide",
+      category: "Lab Operations",
       readTime: "60 min",
       difficulty: "Advanced",
       downloads: "950"
     },
     {
       title: "Security Best Practices",
-      description: "Essential security configurations and monitoring setups",
+      description: "Essential access, monitoring, and support practices for training labs",
       type: "Security Guide",
       category: "Security",
       readTime: "35 min",
@@ -87,7 +87,7 @@ const Guides = () => {
     { name: "Getting Started", count: 12, color: "bg-green-100 text-green-600" },
     { name: "Virtual Training Labs", count: 18, color: "bg-orange-100 text-orange-600" },
     { name: "Security", count: 8, color: "bg-red-100 text-red-600" },
-    { name: "Development", count: 6, color: "bg-yellow-100 text-yellow-600" }
+    { name: "Lab Operations", count: 6, color: "bg-yellow-100 text-yellow-600" }
   ];
 
   const getDifficultyColor = (difficulty: string) => {
@@ -198,7 +198,7 @@ const Guides = () => {
             </p>
             <p className="text-lg text-muted-foreground mb-12 max-w-4xl mx-auto">
               From quick start guides to advanced configurations, our comprehensive documentation 
-              helps you get the most out of your cloud infrastructure. Find step-by-step tutorials, 
+              helps you get the most out of your virtual training labs. Find step-by-step tutorials, 
               best practices, and technical references all in one place.
             </p>
             
@@ -329,8 +329,8 @@ const Guides = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "API Reference",
-                description: "Complete API documentation",
+                title: "Lab Operations",
+                description: "Batch setup and learner access workflows",
                 icon: FileText,
                 color: "bg-green-500"
               },
@@ -347,8 +347,8 @@ const Guides = () => {
                 color: "bg-purple-500"
               },
               {
-                title: "Community Forum",
-                description: "Get help from the community",
+                title: "Delivery Support",
+                description: "Get help from CloudAdda specialists",
                 icon: Users,
                 color: "bg-orange-500"
               }
@@ -399,7 +399,7 @@ const Guides = () => {
                 <span className="font-bold text-xl text-foreground">CloudAdda</span>
               </Link>
               <p className="text-muted-foreground">
-                Simple. Scalable. Human. Infrastructure that just works.
+                Simple. Scalable. Human. Virtual training labs that just work.
               </p>
             </div>
             <div>

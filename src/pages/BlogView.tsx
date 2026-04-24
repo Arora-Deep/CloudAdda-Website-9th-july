@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Clock, User } from "lucide-react";
+import { Clock, User } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import BlogSidebar from "@/components/BlogSidebar";
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
 
 import imgTrainingLabCosts from "@/assets/blog-training-lab-costs.jpg";
-import imgCallCenter from "@/assets/blog-call-center.jpg";
-import imgDaas from "@/assets/blog-daas-shift.jpg";
+import imgTrainingLabCaseStudy from "@/assets/blog-training-lab-case-study.jpg";
+import imgLabDeliveryShift from "@/assets/blog-lab-delivery-shift.jpg";
 
 const BlogView = () => {
   const { id } = useParams();
@@ -73,103 +73,103 @@ const BlogView = () => {
       `
     },
     "call-center-case-study": {
-      title: "Behind the Screen: How a Call Center Saved ₹20 Lakhs by Moving to Cloud Desktops",
-      description: "A mid-sized call center's journey from operational chaos to streamlined efficiency with cloud desktops.",
-      category: "Case Study",
+      title: "Behind the Screen: How a Training Provider Saved ₹20 Lakhs with Managed Virtual Labs",
+      description: "How a training provider reduced delivery overhead and improved live-session reliability with managed virtual training labs.",
+      category: "Training Case Study",
       readTime: "6 min read",
       date: "Dec 12, 2024",
       author: "CloudAdda Team",
-      authorBio: "Enterprise transformation specialists with proven track record",
-      image: imgCallCenter,
+      authorBio: "Virtual training lab delivery specialists",
+      image: imgTrainingLabCaseStudy,
       content: `
-        <div class="prose-intro"><p class="text-xl leading-relaxed text-gray-700 mb-8">🧨 The Problem: A mid-sized call center with 200 agents was drowning in operational issues.</p></div>
+        <div class="prose-intro"><p class="text-xl leading-relaxed text-gray-700 mb-8">🧨 The Problem: A training provider with 200 learners per batch was losing time to manual lab setup and live-session failures.</p></div>
         <h2 id="heading-0" class="text-3xl font-bold text-gray-900 mt-12 mb-6">The Breaking Point</h2>
         <ul class="space-y-4 mb-8">
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Frequent laptop failures</strong></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Lost hours to crashes, updates, and malware</strong></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">A stretched IT team managing dozens of device issues weekly</strong></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">₹35–₹40 lakh/year hardware and licensing budget</strong></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Every batch needed repeated lab preparation</strong></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Lost hours to access issues, tool mismatch, and environment drift</strong></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">A stretched delivery team managing dozens of student tickets weekly</strong></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">₹35–₹40 lakh/year spent on setup, support, and rework</strong></div></li>
         </ul>
-        <div class="bg-red-50 border-l-4 border-red-500 p-6 my-8 rounded-r-lg"><p class="text-red-900 font-medium text-lg">Final breaking point: A ransomware attack. 72 hours of downtime. ₹6 lakhs in business loss.</p></div>
-        <h2 id="heading-1" class="text-3xl font-bold text-gray-900 mt-16 mb-8">💡 The Switch to Cloud Desktops</h2>
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 my-8 rounded-r-lg"><p class="text-red-900 font-medium text-lg">Final breaking point: One critical live cohort started late because half the learners could not access working labs.</p></div>
+        <h2 id="heading-1" class="text-3xl font-bold text-gray-900 mt-16 mb-8">💡 The Switch to Managed Virtual Training Labs</h2>
         <p class="text-lg leading-relaxed text-gray-700 mb-6">They turned to CloudAdda — here's what changed:</p>
         <ul class="space-y-4 mb-8">
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">No More Laptops:</strong><span class="text-gray-700"> Agents use thin clients or existing machines.</span></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">No Local Data:</strong><span class="text-gray-700"> Everything secure in the cloud.</span></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Same-Day Setup:</strong><span class="text-gray-700"> 200 desktops deployed within 3 hours.</span></div></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Flat Monthly Cost:</strong><span class="text-gray-700"> No hardware refreshes or bloated IT budgets.</span></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Ready-to-use labs:</strong><span class="text-gray-700"> Learners opened browser-based environments with tools already configured.</span></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Consistent student experience:</strong><span class="text-gray-700"> Every participant received the same tested setup.</span></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Same-Day Setup:</strong><span class="text-gray-700"> 200 learner labs prepared and verified within 3 hours.</span></div></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Predictable Delivery Cost:</strong><span class="text-gray-700"> No surprise setup effort or bloated support overhead.</span></div></li>
         </ul>
         <h2 id="heading-2" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🧮 The Savings Breakdown</h2>
         <div class="overflow-x-auto mb-8">
           <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
             <thead class="bg-gray-50"><tr><th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Expense Area</th><th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Before</th><th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">After CloudAdda</th></tr></thead>
             <tbody class="divide-y divide-gray-200">
-              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Laptops & Licenses</td><td class="px-6 py-4 text-sm text-red-600">₹28L/year</td><td class="px-6 py-4 text-sm text-green-600">₹0</td></tr>
-              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">IT Management</td><td class="px-6 py-4 text-sm text-red-600">₹10L/year</td><td class="px-6 py-4 text-sm text-green-600">₹4L/year</td></tr>
-              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Downtime & Security</td><td class="px-6 py-4 text-sm text-red-600">₹6L/year</td><td class="px-6 py-4 text-sm text-green-600">₹0</td></tr>
+              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Manual Lab Setup</td><td class="px-6 py-4 text-sm text-red-600">₹28L/year</td><td class="px-6 py-4 text-sm text-green-600">₹10L/year</td></tr>
+              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Delivery Support</td><td class="px-6 py-4 text-sm text-red-600">₹10L/year</td><td class="px-6 py-4 text-sm text-green-600">₹4L/year</td></tr>
+              <tr><td class="px-6 py-4 text-sm font-medium text-gray-900">Re-runs & Live Issues</td><td class="px-6 py-4 text-sm text-red-600">₹6L/year</td><td class="px-6 py-4 text-sm text-green-600">₹0</td></tr>
               <tr class="bg-yellow-50"><td class="px-6 py-4 text-sm font-bold text-gray-900">Total</td><td class="px-6 py-4 text-sm font-bold text-red-600">₹44L/year</td><td class="px-6 py-4 text-sm font-bold text-green-600">₹24L/year</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="bg-green-50 p-8 rounded-2xl my-10 text-center"><h3 class="text-2xl font-bold text-green-900 mb-4">🎯 Net Annual Savings: ₹20,00,000+</h3><p class="text-lg text-green-800">📈 33% jump in agent productivity.</p></div>
+        <div class="bg-green-50 p-8 rounded-2xl my-10 text-center"><h3 class="text-2xl font-bold text-green-900 mb-4">🎯 Net Annual Savings: ₹20,00,000+</h3><p class="text-lg text-green-800">📈 33% improvement in live training delivery efficiency.</p></div>
         <h2 id="heading-3" class="text-3xl font-bold text-gray-900 mt-16 mb-8">💬 Feedback</h2>
-        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg"><p class="text-blue-900 font-medium text-lg italic">"We used to worry about patching machines and fighting viruses. Now we just onboard agents and go."</p></div>
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg"><p class="text-blue-900 font-medium text-lg italic">"We used to worry about whether every learner's lab would work. Now we start sessions on time and focus on teaching."</p></div>
         <h2 id="heading-4" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🧠 Final Result</h2>
         <div class="grid md:grid-cols-2 gap-6 my-8">
-          <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl"><ul class="space-y-3"><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">98.7% agent uptime</span></li><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span class="text-gray-700">Just 1 IT manager for 200 agents</span></li></ul></div>
-          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl"><ul class="space-y-3"><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-purple-500 rounded-full"></div><span class="text-gray-700">Zero data loss or malware</span></li><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-pink-500 rounded-full"></div><span class="text-gray-700">Better compliance, smoother audits</span></li></ul></div>
+          <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl"><ul class="space-y-3"><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span class="text-gray-700">98.7% lab availability during sessions</span></li><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span class="text-gray-700">One delivery manager could support 200 learners</span></li></ul></div>
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl"><ul class="space-y-3"><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-purple-500 rounded-full"></div><span class="text-gray-700">Consistent tools and lab configuration</span></li><li class="flex items-center space-x-3"><div class="w-2 h-2 bg-pink-500 rounded-full"></div><span class="text-gray-700">Cleaner handover, smoother sessions</span></li></ul></div>
         </div>
       `
     },
     "daas-shift-2025": {
-      title: "Why DaaS Is Taking Over: The Shift Away from Laptops in 2025",
-      description: "Explore why smart companies are moving away from laptops to Desktop-as-a-Service solutions.",
-      category: "Industry Trends",
+      title: "Why Virtual Training Labs Are Replacing Manual Lab Setup in 2025",
+      description: "Explore why training teams are moving from manual setup to managed virtual training labs for reliable hands-on learning.",
+      category: "Virtual Lab Trends",
       readTime: "5 min read",
       date: "Dec 10, 2024",
       author: "CloudAdda Team",
-      authorBio: "Future of work technology analysts and DaaS implementation experts",
-      image: imgDaas,
+      authorBio: "Virtual training lab operations experts",
+      image: imgLabDeliveryShift,
       content: `
         <div class="prose-intro">
-          <p class="text-xl leading-relaxed text-gray-700 mb-8">🔥 The End of the Laptop Era?</p>
-          <p class="text-lg leading-relaxed text-gray-700 mb-8">Walk into any modern office and you'll still see rows of laptops. But in 2025, they're no longer the future — they're the friction.</p>
-          <p class="text-lg leading-relaxed text-gray-700 mb-8">Smart companies are asking: Why burn ₹70,000–₹1,20,000 per employee on hardware that slows down, breaks, or walks away?</p>
+          <p class="text-xl leading-relaxed text-gray-700 mb-8">🔥 The End of Manual Lab Setup?</p>
+          <p class="text-lg leading-relaxed text-gray-700 mb-8">Walk into any modern IT training program and you will still see teams preparing tools, access, and environments by hand. In 2025, that is no longer scalable — it is the bottleneck.</p>
+          <p class="text-lg leading-relaxed text-gray-700 mb-8">Smart training teams are asking: Why spend days rebuilding labs when learners need reliable browser-based environments before the session begins?</p>
         </div>
-        <h2 id="heading-0" class="text-3xl font-bold text-gray-900 mt-12 mb-6">💥 Laptops Weren't Built for This</h2>
+        <h2 id="heading-0" class="text-3xl font-bold text-gray-900 mt-12 mb-6">💥 Manual Labs Weren't Built for This</h2>
         <h3 id="heading-1" class="text-2xl font-semibold text-gray-900 mt-10 mb-6">They crash.</h3>
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">Spilled coffee. Overheating. Disk failures. It's not if — it's when.</p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">Version conflicts, missing packages, and untested access links interrupt sessions when trainers can least afford it.</p>
         <h3 id="heading-2" class="text-2xl font-semibold text-gray-900 mt-10 mb-6">They choke.</h3>
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">Docker, Chrome, Zoom, VS Code — your laptop turns into a jet engine before lunchtime.</p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">Heavy tools, concurrent learners, and hands-on exercises expose weak lab planning quickly.</p>
         <h3 id="heading-3" class="text-2xl font-semibold text-gray-900 mt-10 mb-6">They delay.</h3>
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">Onboarding takes days. Setups drag.</p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">Setup stretches into days, dry runs get skipped, and trainers lose valuable delivery time.</p>
         <h3 id="heading-4" class="text-2xl font-semibold text-gray-900 mt-10 mb-6">They terrify IT.</h3>
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">Sensitive data scattered across hundreds of machines. VPNs misconfigured.</p>
-        <h2 id="heading-5" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🚀 Why Teams Are Switching to DaaS in 2025</h2>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">Support teams are forced to troubleshoot hundreds of student environments while the live session is already running.</p>
+        <h2 id="heading-5" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🚀 Why Teams Are Switching to Managed Virtual Training Labs in 2025</h2>
         <div class="grid md:grid-cols-2 gap-6 my-8">
-          <div class="bg-blue-50 p-6 rounded-xl"><h4 class="font-semibold text-blue-900 mb-3">🖥 Productivity from Any Device</h4><p class="text-blue-800">Laptop stolen? Log in from your phone. You're back in seconds.</p></div>
-          <div class="bg-green-50 p-6 rounded-xl"><h4 class="font-semibold text-green-900 mb-3">⚡ Instant Setup</h4><p class="text-green-800">New hire today, fully productive in under 15 minutes.</p></div>
-          <div class="bg-purple-50 p-6 rounded-xl"><h4 class="font-semibold text-purple-900 mb-3">🔐 Built-In Security</h4><p class="text-purple-800">Data never touches local machines. End-to-end encryption.</p></div>
-          <div class="bg-orange-50 p-6 rounded-xl"><h4 class="font-semibold text-orange-900 mb-3">💸 Predictable Cost</h4><p class="text-orange-800">No CapEx. Just one flat, scalable monthly cost.</p></div>
+          <div class="bg-blue-50 p-6 rounded-xl"><h4 class="font-semibold text-blue-900 mb-3">🖥 Browser-Based Access</h4><p class="text-blue-800">Learners open the lab from a browser and start hands-on work without local setup.</p></div>
+          <div class="bg-green-50 p-6 rounded-xl"><h4 class="font-semibold text-green-900 mb-3">⚡ Fast Batch Setup</h4><p class="text-green-800">Training cohorts can be prepared, tested, and handed over quickly.</p></div>
+          <div class="bg-purple-50 p-6 rounded-xl"><h4 class="font-semibold text-purple-900 mb-3">🔐 Controlled Lab Access</h4><p class="text-purple-800">Learner environments are provisioned for the session and managed centrally.</p></div>
+          <div class="bg-orange-50 p-6 rounded-xl"><h4 class="font-semibold text-orange-900 mb-3">💸 Predictable Delivery</h4><p class="text-orange-800">Reduce surprise support effort, rework, and last-minute setup cost.</p></div>
         </div>
         <h2 id="heading-6" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🧠 Smart Configs for Every Role</h2>
         <div class="bg-gradient-to-r from-gray-50 to-blue-50 p-8 rounded-2xl my-10">
           <ul class="space-y-4">
-            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-gray-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Entry-level staff?</strong><span class="text-gray-700"> 2-core lightweight machines.</span></div></li>
-            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Designers & Devs?</strong><span class="text-gray-700"> 8-core beasts with NVMe power.</span></div></li>
-            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Finance, Ops, CX?</strong><span class="text-gray-700"> Tailored setups that match the workload.</span></div></li>
+            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-gray-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Beginner cohorts?</strong><span class="text-gray-700"> Lightweight lab templates with guided access.</span></div></li>
+            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Developer training?</strong><span class="text-gray-700"> Prebuilt environments with the exact tools, packages, and exercises required.</span></div></li>
+            <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><div><strong class="text-gray-900">Enterprise programs?</strong><span class="text-gray-700"> Batch-wise lab configurations that match curriculum, schedule, and support needs.</span></div></li>
           </ul>
         </div>
         <h2 id="heading-7" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🌐 Who's Already Making the Switch?</h2>
         <ul class="space-y-4 mb-8">
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-purple-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Developers running full-stack apps with Docker, Postgres, and Kubernetes</span></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Call centers scaling from 50 to 1,000 agents</span></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Healthcare teams with HIPAA-grade compliance</span></li>
-          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-orange-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Remote-first startups with global teams</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-purple-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">IT training companies delivering DevOps, cloud, data, and cybersecurity programs</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-blue-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Bootcamps scaling hands-on cohorts from 50 to 1,000 learners</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Corporate L&D teams running practical upskilling sessions</span></li>
+          <li class="flex items-start space-x-3"><div class="w-2 h-2 bg-orange-500 rounded-full mt-3 flex-shrink-0"></div><span class="text-gray-700">Training partners who need reliable labs across multiple batches</span></li>
         </ul>
         <h2 id="heading-8" class="text-3xl font-bold text-gray-900 mt-16 mb-8">🧠 Final Thought</h2>
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">It's fast. It's secure. It's always with you. It runs on CloudAdda.</p>
-        <p class="text-lg leading-relaxed text-gray-700 mb-8">💡 The future of work isn't carried in a backpack. It's floating securely in the cloud.</p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">It's fast. It's reliable. It's built for live training. It runs on CloudAdda.</p>
+        <p class="text-lg leading-relaxed text-gray-700 mb-8">💡 The future of hands-on IT training is managed, browser-based, and ready before learners arrive.</p>
       `
     }
   };
