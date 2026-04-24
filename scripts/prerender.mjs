@@ -14,30 +14,12 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { createServer } from 'http';
+import { publicRoutes } from './public-routes.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, '..', 'dist');
 const PORT = 45678;
-
-const ROUTES = [
-  '/',
-  '/about',
-  '/pricing',
-  '/contact',
-  '/support',
-  '/trainer-adda',
-  '/virtual-training-labs',
-  '/guides',
-  '/blog/training-lab-costs',
-  '/blog/call-center-case-study',
-  '/blog/daas-shift-2025',
-  '/playbook/zero-to-live-lab',
-  '/playbook/scaling-1000-students',
-  '/playbook/virtual-lab-checklist',
-  '/case-study/all',
-  '/privacy-policy',
-  '/terms-of-service',
-];
+const ROUTES = publicRoutes.map(route => route.path);
 
 // Simple static file server with SPA fallback
 function startServer() {

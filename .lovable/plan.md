@@ -1,22 +1,15 @@
+# Revised SEO, Prerendering, Sitemap, and Performance Plan
 
+## Confirmed Changes from Your Feedback
+- Remove `/corporate-training` completely from the plan.
+- Do not change any visible heading text.
+- Do not rewrite H1, H2, or H3 copy in this phase.
+- Heading structure fixes will be limited to technical tag adjustments only if needed, while keeping the exact same text.
 
-# Build-Time Pre-Rendering with vite-plugin-prerender
+## 1. Keep Existing Puppeteer Prerender Setup
+Use the current `scripts/prerender.mjs` approach. No external services like prerender.io.
 
-## What This Does
-At build time, a headless browser visits each route, captures the fully-rendered HTML (including all Helmet meta tags), and saves it as a static `.html` file. Crawlers and social bots get complete HTML without needing JavaScript.
-
-## Important Note
-This plugin uses Puppeteer (headless Chrome) during `npm run build`. It works fine on your own server/CI where Chrome can run. In Lovable's preview environment, builds will still work normally — the prerender step only runs during production builds.
-
-## Changes
-
-### 1. Install dependency
-- Add `vite-plugin-prerender` (npm package, based on puppeteer-based prerender-spa-plugin for Vite)
-
-### 2. Update `vite.config.ts`
-- Import and configure the prerender plugin
-- List all static routes to pre-render:
-
+Important routes to keep prerendered:
 ```text
 /
 /about
@@ -37,30 +30,94 @@ This plugin uses Puppeteer (headless Chrome) during `npm run build`. It works fi
 /terms-of-service
 ```
 
-- Configure the renderer to wait until `document.title` is set (ensures Helmet has applied meta tags before capturing HTML)
+No `/corporate-training` route will be added.
 
-### 3. Output
-After `npm run build`, the `dist/` folder will contain:
+## 2. Centralize Public Routes
+Create a shared route list so important public URLs are managed in one place.
+
+Use this shared list for:
+- prerendering
+- sitemap generation
+- future route maintenance
+
+This prevents forgetting to add a route in one place later.
+
+## 3. Sitemap and Robots
+Update sitemap handling so `/sitemap.xml` includes all public URLs from the shared route list.
+
+Keep robots simple and correct:
 ```text
-dist/
-  index.html          (pre-rendered homepage)
-  about/index.html
-  pricing/index.html
-  contact/index.html
-  blog/training-lab-costs/index.html
-  ... etc
+User-agent: *
+Allow: /
+
+Sitemap: https://cloudadda.com/sitemap.xml
 ```
 
-Each file has full HTML with correct `<title>`, `<meta>` tags, OG tags — exactly what crawlers need.
+## 4. Canonical Tags
+Ensure every public page has a canonical URL using the preferred domain:
+```text
+https://cloudadda.com
+```
 
-### 4. Server compatibility
-Your existing server config (serving `index.html` for all routes) continues to work. The pre-rendered files are just static HTML that any web server will serve automatically when they match the path.
+This helps Google treat non-www as the main version.
 
----
+The actual `www.cloudadda.com` to `cloudadda.com` 301 redirect must be configured on your server or DNS/CDN layer, not inside React.
+
+## 5. Build Workflow
+Add a convenient static build command that runs:
+```text
+vite build
+sitemap generation
+Puppeteer prerender
+```
+
+Example result:
+```text
+dist/index.html
+dist/virtual-training-labs/index.html
+dist/pricing/index.html
+dist/blog/training-lab-costs/index.html
+dist/sitemap.xml
+```
+
+## 6. Performance Improvements
+Make safe performance changes that do not alter your page copy:
+- Re-enable normal Vite code splitting instead of forcing one large bundle.
+- Lazy-load non-critical images where applicable.
+- Add async image decoding where applicable.
+- Keep JS/CSS minification enabled.
+- Avoid changing visible layout or heading wording.
+
+Image conversion to WebP can be handled separately if you want, because it may require reviewing every visual asset and replacing references carefully.
+
+## 7. Heading Structure Scope
+For this phase:
+- No heading text changes.
+- No marketing copy rewrites.
+- If a technical heading issue is found, only the HTML tag level may be adjusted while preserving the exact same text.
+
+Example allowed:
+```text
+<h2>Same exact heading text</h2>
+```
+changed to:
+```text
+<h3>Same exact heading text</h3>
+```
+
+Example not allowed in this phase:
+```text
+Changing the wording of the heading.
+```
 
 ## Technical Details
-- Plugin: `vite-plugin-prerender` — runs Puppeteer at build time only
-- No runtime service, no external dependency, no cost
-- New blog/playbook posts will need their slugs added to the routes array in `vite.config.ts`
-- 2 files modified: `package.json` (new dep), `vite.config.ts` (plugin config)
+Files likely to be updated:
+- `scripts/prerender.mjs`
+- new shared route file, such as `scripts/public-routes.mjs`
+- new sitemap generation script, such as `scripts/generate-sitemap.mjs`
+- `package.json`
+- `public/robots.txt`
+- relevant page SEO/canonical metadata only if missing
+- `vite.config.ts` for safe bundle splitting
 
+No `/corporate-training` page or route will be created.
