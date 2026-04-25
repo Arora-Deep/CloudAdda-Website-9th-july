@@ -301,10 +301,10 @@ const Contact = () => {
               <p className="text-white text-lg italic">"Run a hackathon for 500 people."</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-              <p className="text-white text-lg italic">"Give my team better desktops."</p>
+              <p className="text-white text-lg italic">"Spin up labs for our next certification batch."</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-              <p className="text-white text-lg italic">"Move away from a broken cloud setup."</p>
+              <p className="text-white text-lg italic">"Move off our broken training lab setup."</p>
             </div>
           </div>
           <p className="text-lg text-gray-300">We'll take it from there.</p>
