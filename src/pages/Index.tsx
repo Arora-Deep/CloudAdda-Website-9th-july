@@ -160,89 +160,90 @@ const Index = () => {
       <ResponsiveNavigation />
 
       {/* Hero Section */}
-      <section className="bg-white pt-16 pb-8" role="banner">
+      <section className="relative overflow-hidden bg-slate-50/70 pt-12 pb-10 lg:pt-20 lg:pb-14" role="banner">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-200 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+          <div className="grid lg:grid-cols-[0.92fr_1.08fr] gap-12 lg:gap-16 items-center">
+            <div className="space-y-7">
+              <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white px-3.5 py-2 text-xs font-bold uppercase tracking-[0.16em] text-purple-700 shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-green-500" />
+                Built for live training teams
+              </div>
+              <div className="space-y-5">
+                <h1 className="text-4xl sm:text-5xl lg:text-[4.15rem] font-extrabold leading-[1.02] tracking-tight">
                   <span className="bg-gradient-to-r from-purple-700 via-purple-500 to-purple-400 bg-clip-text text-transparent">Fully Managed</span>
                   <br />
                   <span className="text-gray-900 whitespace-nowrap">Virtual Training Labs</span>
                   <br />
                   <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">for Live IT Training</span>
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">CloudAdda helps training companies deliver reliable, hands-on cloud labs at scale — without worrying about infrastructure, unpredictable cloud bills, or lab failures during live sessions.</p>
-                 <p className="text-lg text-gray-800 font-semibold">
-                   Built specifically for live & corporate training. No chaos. No cloud headaches.
-                 </p>
+                <p className="max-w-xl text-lg lg:text-xl text-gray-600 leading-relaxed">CloudAdda helps training companies deliver reliable, hands-on cloud labs at scale — without worrying about infrastructure, unpredictable cloud bills, or lab failures during live sessions.</p>
+                <p className="text-base lg:text-lg text-gray-800 font-semibold">
+                  Built specifically for live & corporate training. No chaos. No cloud headaches.
+                </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link to="/contact" onClick={() => handleNavigation('/contact')}>
-                  <Button size="lg" variant="orange" className="text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Button size="lg" variant="orange" className="w-full sm:w-auto text-base px-7 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                     Talk to a Training Labs Expert
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
+                <Link to="/virtual-training-labs" onClick={() => handleNavigation('/virtual-training-labs')}>
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto text-base px-7 py-4 rounded-full border-gray-300 bg-white hover:bg-gray-50">
+                    See How It Works
+                  </Button>
+                </Link>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-gray-500">
+                <span className="inline-flex items-center gap-2"><CheckCircle className="h-4 w-4 text-green-600" /> Dedicated lab environments</span>
+                <span className="inline-flex items-center gap-2"><CheckCircle className="h-4 w-4 text-green-600" /> Human support</span>
               </div>
             </div>
-            <div className="relative">
-              <img src="/lovable-uploads/6df3b19a-2c57-45c8-89b1-a0f0e58db9ab.png" alt="3D illustration of a person with laptop and lightbulb idea" className="w-full max-w-lg mx-auto" />
+            <div className="relative lg:pl-4">
+              <div className="absolute -inset-4 rounded-[2rem] bg-purple-200/40 blur-2xl" />
+              <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gray-950 p-2 shadow-2xl shadow-purple-200/50">
+                <div className="flex items-center gap-2 border-b border-white/10 px-3 py-2.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
+                  <span className="ml-2 text-[11px] font-medium tracking-wide text-gray-400">CloudAdda Training Labs</span>
+                </div>
+                <video className="aspect-video w-full object-cover rounded-b-lg" muted autoPlay loop playsInline poster="/lovable-uploads/6df3b19a-2c57-45c8-89b1-a0f0e58db9ab.png" aria-label="CloudAdda virtual training lab dashboard preview">
+                  <source src="https://media.cloudadda.com/file/clouaddda-training-page-vid-1-view-all-labs.mp4" type="video/mp4" />
+                </video>
+                <div className="flex items-center justify-between gap-4 px-3 py-3 text-xs text-gray-300">
+                  <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-green-400" /> All lab environments operational</span>
+                  <span className="hidden sm:inline">Live visibility for trainers</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Company Logo Marquee - Updated with dual direction */}
-      <section className="py-8 bg-white" aria-label="Trusted by leading companies">
+      {/* Company Logo Marquee */}
+      <section className="border-y border-gray-100 bg-white py-7" aria-label="Trusted by leading companies">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden space-y-4">
-            {/* First row - left to right */}
-            <div className="flex animate-marquee">
-              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => (
-                <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
-                  <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img src={logo.logo} alt={`${logo.name} logo`} className="max-w-full max-h-full object-contain" />
-                  </div>
-                </div>
-              ))}
-              {/* Duplicate for seamless loop */}
-              {customerLogos.slice(0, Math.ceil(customerLogos.length / 2)).map((logo, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
-                  <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img src={logo.logo} alt={`${logo.name} logo`} className="max-w-full max-h-full object-contain" />
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Second row - right to left */}
-            <div className="flex animate-marquee-reverse">
-              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => (
-                <div key={index} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
-                  <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img src={logo.logo} alt={`${logo.name} logo`} className="max-w-full max-h-full object-contain" />
-                  </div>
-                </div>
-              ))}
-              {/* Duplicate for seamless loop */}
-              {customerLogos.slice(Math.ceil(customerLogos.length / 2)).map((logo, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center">
-                  <div className="bg-white rounded-lg p-2 shadow-sm border border-gray-200 w-full h-full flex items-center justify-center">
-                    <img src={logo.logo} alt={`${logo.name} logo`} className="max-w-full max-h-full object-contain" />
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="mb-5 flex flex-col gap-1 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400">Trusted by training & technology teams</p>
+            <p className="text-sm text-gray-500">Built for the sessions that matter</p>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {customerLogos.slice(0, 6).map((logo) => (
+              <div key={logo.name} className="flex h-14 items-center justify-center rounded-lg border border-gray-100 bg-gray-50/60 px-4 grayscale transition-all duration-300 hover:bg-white hover:grayscale-0">
+                <img src={logo.logo} alt={`${logo.name} logo`} loading="lazy" className="max-h-9 max-w-full object-contain" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Most Clouds Are Built for Developers */}
-      <section className="min-h-screen flex items-center bg-gray-950 text-white relative overflow-hidden">
+      <section className="bg-gray-950 text-white relative overflow-hidden py-24 lg:py-28">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
               Most Clouds Are Built for Developers.<br />
@@ -329,9 +330,6 @@ const Index = () => {
 
       {/* What We Do — Virtual Training Labs */}
       <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
-        {/* Subtle background accent */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-orange-50 via-purple-50 to-transparent rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/4" />
-        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Section Header */}
           <div className="text-center mb-16 lg:mb-20">
